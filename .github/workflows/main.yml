@@ -45,10 +45,7 @@ jobs:
       matrix:
         # MANUAL: Add your monitored git branches here
         branch:
-          - monitoring_myclient
-          - monitoring_myclient__integ_sandbox
-          - monitoring_myclient__recette_sandbox
-          - monitoring_myclient__preprod_sandbox
+          - monitoring_krinkelsgreencare__upeodev_sandbox
     steps:
       # Checkout repo
       - name: Checkout code
@@ -74,8 +71,8 @@ jobs:
       - name: Login & Retrieve Metadata
         env:
           # MANUAL: Update variables below to add authentication variables you need
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT}}
+          SFDX_CLIENT_ID_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_ID_MONITORING_KRINKELSGREENCARE__UPEODEV_SANDBOX}}
+          SFDX_CLIENT_KEY_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_KRINKELSGREENCARE__UPEODEV_SANDBOX}}
           SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
           SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
           SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
@@ -161,8 +158,8 @@ jobs:
       - name: Login & Run apex tests
         env:
           # MANUAL: Update variables below to add authentication variables you need
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT}}
+          SFDX_CLIENT_ID_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_ID_MONITORING_KRINKELSGREENCARE__UPEODEV_SANDBOX}}
+          SFDX_CLIENT_KEY_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_KRINKELSGREENCARE__UPEODEV_SANDBOX}}
           SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
           SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
           SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
