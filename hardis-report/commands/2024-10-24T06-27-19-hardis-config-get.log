@@ -1,0 +1,14 @@
+--level project --json--level user --json--level project --json[sfdx-hardis][command] git config --local core.quotepath false
+[sfdx-hardis] error: could not lock config file .git/config: File exists
+
+[sfdx-hardis] Defined "false" as git core.quotepath
+[sfdx-hardis] Defined "false" as git core.quotepath
+[sfdx-hardis] {}
+[sfdx-hardis] Defined vscode as git merge tool 
+[sfdx-hardis] Updated config file c:\Users\Frederik\krinkels-monitoring\config\user\.sfdx-hardis.Frederik.yml with values: 
+{
+  "installedApps": [
+    "git"
+  ]
+}
+[sfdx-hardis] {"installedApps":["git"]}

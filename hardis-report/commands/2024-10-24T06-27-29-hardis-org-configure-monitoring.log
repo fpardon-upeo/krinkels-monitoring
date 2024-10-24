@@ -1,0 +1,19 @@
+--websocket localhost:2702[sfdx-hardis][command] sf org display --json
+[sfdx-hardis] You are already connected as frederik.pardon@krinkels.be.upeodev on org https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com
+[sfdx-hardis] If this is NOT the org you want to play with, hit CTRL+C, then input sf hardis:org:select
+[sfdx-hardis] Updated config file C:\Users\Frederik\krinkels-monitoring\config\user\.sfdx-hardis.Frederik.yml with values: 
+{
+  "installedApps": [
+    "git",
+    "openssl"
+  ]
+}
+[sfdx-hardis][command] git config --null --show-origin --get-all remote.origin.url
+[sfdx-hardis] Monitoring pre-requisites documentation: https://sfdx-hardis.cloudity.com/salesforce-monitoring-config-home/#instructions
+[sfdx-hardis] 🦙 Did you configure the sfdx-hardis monitoring pre-requisites on your Git server ? Look up in VsCode ⬆️
+[sfdx-hardis] {"value":"yes"}
+[sfdx-hardis] 🦙 Please select or connect to the org that you want to monitor Look up in VsCode ⬆️
+[sfdx-hardis] Selection done but hidden in log because it contains sensitive information
+[sfdx-hardis][command] sf config set target-org=frederik.pardon@krinkels.be.upeodev --global --json
+[sfdx-hardis] Org frederik.pardon@krinkels.be.upeodev - https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com
+[sfdx-hardis] 
