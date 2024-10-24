@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Preventive</fullName>
+        <default>false</default>
+        <label>Preventive</label>
+    </customValue>
+    <customValue>
+        <fullName>Curative</fullName>
+        <default>false</default>
+        <label>Curative</label>
+    </customValue>
+    <masterLabel>Work Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

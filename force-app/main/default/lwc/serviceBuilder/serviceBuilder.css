@@ -1,0 +1,67 @@
+/**
+ * Created by Frederik on 5/31/2024.
+ */
+
+.slds-form-element_address {
+  display: none !important;
+  color: #1b96ff !important;
+  background: #2e844a !important;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--lwc-spacingMedium);
+  margin-right: var(--lwc-spacingMedium);
+}
+.wrapped-content {
+  white-space: pre-line;
+  word-break: break-all !important;
+}
+
+lightning-input {
+  width: 100%;
+  white-space: pre-line !important;
+}
+
+.panel_styling {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0.25rem;
+}
+
+.inline {
+  display: inline;
+}
+
+.animation {
+  transition: scale 0.5s;
+}
+
+.animation:hover {
+  transform: scale(1.05);
+}
+
+th {
+  padding-right: 0px;
+}
+
+th input:hover,
+.th-label:hover {
+  cursor: pointer;
+}
+
+/* lightning-button-icon {
+  margin-left: 0px;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+} */
+
+td input {
+  padding: 0px;
+}

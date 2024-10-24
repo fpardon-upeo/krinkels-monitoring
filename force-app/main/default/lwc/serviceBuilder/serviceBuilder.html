@@ -1,0 +1,473 @@
+<!--
+ - Created by Frederik on 5/31/2024.
+ -->
+
+<template>
+  <lightning-card
+    title="Contract Services"
+    icon-name="standard:contract_line_item"
+  >
+    <div class="slds-m-around_medium">
+      <div class="slds-grid slds-grow">
+        <lightning-spinner
+          if:true={isLoading}
+          alternative-text="Loading..."
+        ></lightning-spinner>
+        <div class="slds-col">
+          <table
+            class="slds-table slds-table_cell-buffer slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_striped slds-table_resizable-cols"
+          >
+            <thead>
+              <!--- the sorting logic was half-assed during the PoC phase, not fully working and more smoke and mirrors than anything else -->
+              <tr>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="selectRef"
+                  data-lwcref="selectRef"
+                  data-icon="utility:arrowdown"
+                  data-label={selectLabel}
+                  data-sort="none"
+                  style="width: 5%; height: 25px"
+                ></th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="serviceTypeRef"
+                  data-lwcref="serviceTypeRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={serviceTypeLabel}
+                  data-field="Product2.Name"
+                  data-sort="none"
+                  style="width: 20%"
+                >
+                  {serviceTypeLabel}
+                </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="projectCodeRef"
+                  data-lwcref="projectCodeRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={projectCodeLabel}
+                  data-field="Project_Code__c"
+                  data-sort="none"
+                >
+                  {projectCodeLabel}
+                </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="streetRef"
+                  data-lwcref="streetRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={streetLabel}
+                  data-field="Location__Street__s"
+                  data-sort="none"
+                  style="width: 15%"
+                >
+                  {streetLabel}
+                </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="cityRef"
+                  data-lwcref="cityRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={cityLabel}
+                  data-field="Location__City__s"
+                  data-sort="none"
+                >
+                  {cityLabel}
+                </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="zipCodeRef"
+                  data-lwcref="zipCodeRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={zipCodeLabel}
+                  data-field="Location__PostalCode__s"
+                  data-sort="none"
+                >
+                  {zipCodeLabel}
+                </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="startDateRef"
+                  data-lwcref="startDateRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={startDateLabel}
+                  data-field="StartDate"
+                  data-sort="none"
+                >
+                  {startDateLabel}
+                </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="endDateRef"
+                  data-lwcref="endDateRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={endDateLabel}
+                  data-field="EndDate"
+                  data-sort="none"
+                >
+                  {endDateLabel}
+                </th>
+                <th
+                  if:true={showActions}
+                  class="slds-text-align_center th-label"
+                  style="width: 10%"
+                  lwc:ref="actionsRef"
+                  data-lwcref="actionsRef"
+                  data-icon="utility:arrowdown"
+                  data-label={actionsLabel}
+                  data-sort="none"
+                >
+                  Actions
+                </th>
+              </tr>
+              <!--- search boxes under each column header, not working for the lookup component -->
+              <tr>
+                <th></th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="Product2.Name"
+                    data-type="text"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="Project_Code__c"
+                    data-type="text"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="Location__Street__s"
+                    data-type="text"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="Location__City__s"
+                    data-type="text"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="Location__PostalCode__s"
+                    data-type="text"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="StartDate"
+                    data-type="date"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="EndDate"
+                    data-type="date"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
+                <th lwc:if={showActions}>
+                  <!-- Empty cell for actions, clear all search terms and reset -->
+                  <lightning-button-icon
+                    icon-name="utility:clear"
+                    alternative-text="Clear"
+                    onclick={handleClearSearch}
+                    class="slds-m-left_small slds-align_absolute-center"
+                  ></lightning-button-icon>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- iterate over the contract lines to show -->
+              <template for:each={contractLinesToShow} for:item="service">
+                <tr
+                  key={service.Id}
+                  onmouseenter={setOtherRowOpacity}
+                  onmouseleave={resetRowOpacity}
+                  data-index={service.Index}
+                  data-id={service.Id}
+                >
+                  <td>
+                    <lightning-input
+                      variant="label-hidden"
+                      label="Select"
+                      data-index={service.Index}
+                      data-id={service.Id}
+                      onchange={handleCheck}
+                      value={service.IsSelected}
+                      type="checkbox"
+                    >
+                    </lightning-input>
+                  </td>
+                  <td>
+                    <lightning-record-picker
+                      label="Service Type"
+                      placeholder="Search Services..."
+                      object-api-name="Product2"
+                      value={service.Product2Id}
+                      variant="label-hidden"
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      data-isnew={service.IsNew}
+                      matching-info={productMatchingInfo}
+                      filter={productFilter}
+                      onchange={handleServiceChange}
+                      class="slds-cell-wrap"
+                    ></lightning-record-picker>
+                  </td>
+                  <td>
+                    <lightning-input
+                      type="text"
+                      name="project-code"
+                      label="Project Code"
+                      value={service.Project_Code__c}
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      variant="label-hidden"
+                      onchange={handleProjectCodeChange}
+                    ></lightning-input>
+                  </td>
+                  <td style="height: auto">
+                    <lightning-input
+                      type="text"
+                      name="street"
+                      label="Street"
+                      value={service.Location__Street__s}
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onchange={handleStreetChange}
+                      variant="label-hidden"
+                    ></lightning-input>
+                  </td>
+                  <td>
+                    <lightning-input
+                      type="text"
+                      name="city"
+                      label="City"
+                      value={service.Location__City__s}
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onchange={handleCityChange}
+                      variant="label-hidden"
+                    ></lightning-input>
+                  </td>
+                  <td>
+                    <lightning-input
+                      type="text"
+                      name="zip-code"
+                      label="Zip Code"
+                      value={service.Location__PostalCode__s}
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onchange={handleZipCodeChange}
+                      variant="label-hidden"
+                    ></lightning-input>
+                  </td>
+                  <td>
+                    <lightning-input
+                      type="date"
+                      name="start-date"
+                      label="Start Date"
+                      date-style="short"
+                      value={service.StartDate}
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onchange={handleStartDateChange}
+                      variant="label-hidden"
+                    ></lightning-input>
+                  </td>
+                  <td>
+                    <lightning-input
+                      type="date"
+                      name="end-date"
+                      label="End Date"
+                      date-style="short"
+                      value={service.EndDate}
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onchange={handleLineEndDateChange}
+                      variant="label-hidden"
+                    ></lightning-input>
+                  </td>
+                  <td class="slds-m-right_small" if:true={showActions}>
+                    <div class="actions-container">
+                      <lightning-button-icon
+                        icon-name="action:log_event"
+                        alternative-text="Set Recurrence"
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        onclick={handleSetRecurrence}
+                      ></lightning-button-icon>
+                      <lightning-button-icon
+                        class="slds-m-left_small"
+                        icon-name="action:edit"
+                        alternative-text="Edit record"
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        onclick={handleTogglePanel}
+                      ></lightning-button-icon>
+                      <lightning-button-icon
+                        class="slds-m-left_small"
+                        icon-name="action:delete"
+                        alternative-text="Delete record"
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        onclick={handleDeleteRow}
+                      ></lightning-button-icon>
+                    </div>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+        <!-- Side panel for editing the contract line items, suboptimal and in need of rework. Initially introduced as a way to show more data on the screen than
+                 was in the table -->
+        <div
+          class="slds-col slds-size_2-of-12 panel_styling"
+          if:true={showSidePanel}
+        >
+          <lightning-quick-action-panel
+            class="slds-is-open slds-panel_docked-right"
+          >
+            <div class="slds-panel__header">
+              <h2
+                class="slds-panel__header-title slds-text-heading_small slds-truncate"
+                title="Line Details"
+              >
+                Line Details
+              </h2>
+              <div class="slds-panel__header-actions">
+                <lightning-button-icon
+                  icon-name="utility:close"
+                  alternative-text="Close"
+                  onclick={handleTogglePanelClose}
+                  variant="bare"
+                  class="slds-button_icon-small"
+                ></lightning-button-icon>
+              </div>
+            </div>
+            <lightning-record-edit-form
+              record-id={selectedLineItemId}
+              object-api-name="ContractLineItem"
+              onsuccess={handleSuccess}
+            >
+              <lightning-messages> </lightning-messages>
+              <lightning-accordion
+                allow-multiple-sections-open
+                class="slds-m-bottom_medium"
+                active-section-name={activeSections}
+              >
+                <lightning-accordion-section name="generalInfo" label="General">
+                  <lightning-input-field field-name="Product2Id">
+                  </lightning-input-field>
+                  <lightning-input-field field-name="StartDate">
+                  </lightning-input-field>
+                  <lightning-input-field field-name="EndDate">
+                  </lightning-input-field>
+                  <lightning-input-field field-name="Planning_Type__c">
+                  </lightning-input-field>
+                  <lightning-output-field field-name="Recurrence_Pattern__c">
+                  </lightning-output-field>
+                </lightning-accordion-section>
+                <lightning-accordion-section
+                  name="locationInfo"
+                  label="Location"
+                >
+                  <lightning-input-field field-name="Location__Street__s">
+                  </lightning-input-field>
+                  <lightning-input-field field-name="Location__City__s">
+                  </lightning-input-field>
+                  <lightning-input-field field-name="Location__PostalCode__s">
+                  </lightning-input-field>
+                </lightning-accordion-section>
+              </lightning-accordion>
+              <div class="slds-grid slds-align-top slds-m-around_medium">
+                <lightning-button-icon
+                  icon-name="utility:left"
+                  alternative-text="Previous"
+                  onclick={handlePrevious}
+                  data-id={selectedLineItemId}
+                  class="slds-button_icon-small slds-m-right_small slds-col"
+                ></lightning-button-icon>
+                <lightning-button
+                  class="slds-col slds-m-left_small"
+                  variant="neutral"
+                  type="submit"
+                  name="update"
+                  label="Update"
+                >
+                </lightning-button>
+                <lightning-button-icon
+                  icon-name="utility:right"
+                  alternative-text="Next"
+                  onclick={handleNext}
+                  data-id={selectedLineItemId}
+                  class="slds-button_icon-small slds-m-left_small slds-col"
+                ></lightning-button-icon>
+              </div>
+            </lightning-record-edit-form>
+          </lightning-quick-action-panel>
+        </div>
+      </div>
+      <div class="button-container">
+        <lightning-button
+          label="Add Row"
+          class="slds-m-right_small"
+          onclick={handleAddActionRow}
+        ></lightning-button>
+        <lightning-button
+          label="Update Recurrence"
+          class="slds-m-right_small"
+          onclick={handleMassEditRecurrence}
+        ></lightning-button>
+        <lightning-button
+          label="Save"
+          onclick={handleSaveAll}
+        ></lightning-button>
+      </div>
+    </div>
+  </lightning-card>
+</template>

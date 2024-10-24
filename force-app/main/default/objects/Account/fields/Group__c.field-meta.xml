@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group__c</fullName>
+    <label>Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Kantoorgebouwen / Immeubles de bureaux</fullName>
+                <default>false</default>
+                <label>Kantoorgebouwen / Immeubles de bureaux</label>
+            </value>
+            <value>
+                <fullName>RVT &amp; Ziekenhuizen / Maisons de retraite &amp; hôpitaux</fullName>
+                <default>false</default>
+                <label>RVT &amp; Ziekenhuizen / Maisons de retraite &amp; hôpitaux</label>
+            </value>
+            <value>
+                <fullName>Scholen / Ecoles</fullName>
+                <default>false</default>
+                <label>Scholen / Ecoles</label>
+            </value>
+            <value>
+                <fullName>Semi-industriële gebouwen / Bâtiments semi-industriels</fullName>
+                <default>false</default>
+                <label>Semi-industriële gebouwen / Bâtiments semi-industriels</label>
+            </value>
+            <value>
+                <fullName>Verkoopspunten / Points de ventes</fullName>
+                <default>false</default>
+                <label>Verkoopspunten / Points de ventes</label>
+            </value>
+            <value>
+                <fullName>Woningen / Habitations</fullName>
+                <default>false</default>
+                <label>Woningen / Habitations</label>
+            </value>
+            <value>
+                <fullName>Technische gebouwen / Bâtiments techniques</fullName>
+                <default>false</default>
+                <label>Technische gebouwen / Bâtiments techniques</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
