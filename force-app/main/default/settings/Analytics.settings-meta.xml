@@ -13,8 +13,10 @@
     <enableAnalyticsSharingEnable>true</enableAnalyticsSharingEnable>
     <enableAutoCompleteCombo>true</enableAutoCompleteCombo>
     <enableAzureDLGen2OutputConnector>false</enableAzureDLGen2OutputConnector>
+    <enableCrtSetupLightningUiPref>false</enableCrtSetupLightningUiPref>
     <enableDashboardComponentSnapshot>true</enableDashboardComponentSnapshot>
     <enableDashboardFlexiTable>true</enableDashboardFlexiTable>
+    <enableDateFieldMinMaxAggPref>false</enableDateFieldMinMaxAggPref>
     <enableEmailReportsToPortalUsers>false</enableEmailReportsToPortalUsers>
     <enableFloatingReportHeaders>true</enableFloatingReportHeaders>
     <enableInsights>false</enableInsights>
@@ -31,10 +33,12 @@
     <enableQueryLiveConnectors>true</enableQueryLiveConnectors>
     <enableRemoveFooterForRepDisplay>false</enableRemoveFooterForRepDisplay>
     <enableRemoveFooterFromRepExp>true</enableRemoveFooterFromRepExp>
+    <enableReportCdnPref>true</enableReportCdnPref>
     <enableReportHideXlsExportPref>false</enableReportHideXlsExportPref>
     <enableReportInlineEditPref>true</enableReportInlineEditPref>
     <enableReportNotificationsEnable>true</enableReportNotificationsEnable>
     <enableReportSubOrgEmailPref>false</enableReportSubOrgEmailPref>
+    <enableReportingOnSDMPref>false</enableReportingOnSDMPref>
     <enableS1AnalyticsEclairEnable>true</enableS1AnalyticsEclairEnable>
     <enableS3OutputConnector>false</enableS3OutputConnector>
     <enableSFXJoinedReportsEnable>false</enableSFXJoinedReportsEnable>

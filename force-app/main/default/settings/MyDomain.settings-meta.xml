@@ -5,7 +5,10 @@
     <doesWarnOnForceComRedirect>false</doesWarnOnForceComRedirect>
     <doesWarnOnRedirect>false</doesWarnOnRedirect>
     <domainPartition>sandbox</domainPartition>
+    <enableCrossDomainPreviewCookies>true</enableCrossDomainPreviewCookies>
     <enableEdgeDuringRollout>true</enableEdgeDuringRollout>
+    <enableExtendedRedirections>false</enableExtendedRedirections>
+    <enableLegacyRedirections>true</enableLegacyRedirections>
     <enableNativeBrowserForAuthOnAndroid>false</enableNativeBrowserForAuthOnAndroid>
     <enableNativeBrowserForAuthOnIos>false</enableNativeBrowserForAuthOnIos>
     <enableShareBrowserSessionAndroidForAuth>false</enableShareBrowserSessionAndroidForAuth>

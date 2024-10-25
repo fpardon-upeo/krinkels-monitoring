@@ -15,11 +15,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MachineRestResource</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MaintenancePlanException</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>MaintenancePlanService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PersonnelRestResource</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProjectRestResource</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -200,6 +212,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Location.Van_Crew__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>MaintenanceAsset.Service_Territory__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -231,6 +248,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Product2.Work_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductItem.Van_Crew__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -623,6 +645,10 @@
         <field>WorkType.FSL__Exact_Appointments__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -802,7 +828,7 @@
         <layout>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Location-Location Layout</layout>
+        <layout>Location-Van Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
@@ -865,7 +891,7 @@
         <layout>ProductConsumedState-Product Consumed State Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ProductItem-Product Item Layout</layout>
+        <layout>ProductItem-Material Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ProductItemTransaction-Product Item Transaction Layout</layout>
@@ -970,10 +996,10 @@
         <layout>ServiceContract-Service Contract Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ServiceCrew-Service Crew Layout</layout>
+        <layout>ServiceCrew-Van Crew Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ServiceCrewMember-Service Crew Member Layout</layout>
+        <layout>ServiceCrewMember-Van Crew Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ServiceResource-Service Resource Layout</layout>

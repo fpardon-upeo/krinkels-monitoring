@@ -656,13 +656,21 @@
         <members>FSL__ut_retrieveDataActivityLog</members>
         <members>FSL__ut_servicesListService</members>
         <members>GanttRoundPinAction</members>
+        <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
+        <members>PersonnelRestResource</members>
+        <members>ProjectRestResource</members>
         <members>RRuleAdjuster</members>
         <members>RRuleCriteria</members>
         <members>ServiceAppointmentRescheduler</members>
         <members>ServiceBuilderController</members>
         <members>ServiceBuilderWrapper</members>
+        <members>sf_fieldservice__FSL_RESTController_GoogleApis_Directions</members>
+        <members>sf_fieldservice__FSL_RESTController_GoogleApis_Geo</members>
+        <members>sf_fieldservice__FSL_RESTController_GoogleApis_Requestor</members>
+        <members>sf_fieldservice__FSL_RESTController_GoogleApis_Tests</members>
+        <members>sf_fieldservice__PendingUploadErrorFixAndroid</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -917,6 +925,10 @@
         <name>BrandingSet</name>
     </types>
     <types>
+        <members>Operators_Briefcase</members>
+        <name>BriefcaseDefinition</name>
+    </types>
+    <types>
         <members>DataCloudCompanyMatch</members>
         <members>DataCloudGeoLocation</members>
         <members>DataCloudLeadAppend</members>
@@ -940,6 +952,7 @@
         <name>CompactLayout</name>
     </types>
     <types>
+        <members>ATAK</members>
         <members>CPQIntegrationUserApp</members>
         <members>sfdxhardis</members>
         <name>ConnectedApp</name>
@@ -950,6 +963,8 @@
         <members>Krinkels_Banner2</members>
         <members>Krinkels_Banner4</members>
         <members>Krinkels_Logo1</members>
+        <members>Krinkels_logo2</members>
+        <members>Untitled</members>
         <members>krinkels</members>
         <members>krinkels_logo</members>
         <name>ContentAsset</name>
@@ -1667,6 +1682,7 @@
         <members>Knowledge__kav.Procedure_Warnings__c</members>
         <members>Knowledge__kav.Question__c</members>
         <members>Location.Account__c</members>
+        <members>Location.Van_Crew__c</members>
         <members>MaintenanceAsset.Service_Territory__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
@@ -1680,6 +1696,7 @@
         <members>Opportunity__hd.StageName__c</members>
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
+        <members>ProductItem.Van_Crew__c</members>
         <members>ResourceAbsence.FSL__Approved__c</members>
         <members>ResourceAbsence.FSL__Duration_In_Minutes__c</members>
         <members>ResourceAbsence.FSL__EstTravelTimeFrom__c</members>
@@ -8296,6 +8313,9 @@
         <members>FSL__zh_CN</members>
         <members>FSL__zh_TW</members>
         <members>Knowledge__kav-en_US</members>
+        <members>Location-en_US</members>
+        <members>ProductItem-en_US</members>
+        <members>ProductItemTransaction-en_US</members>
         <members>ResourceAbsence-bg</members>
         <members>ResourceAbsence-cs</members>
         <members>ResourceAbsence-da</members>
@@ -8366,6 +8386,7 @@
         <members>ServiceCrew-de</members>
         <members>ServiceCrew-el</members>
         <members>ServiceCrew-en_GB</members>
+        <members>ServiceCrew-en_US</members>
         <members>ServiceCrew-es</members>
         <members>ServiceCrew-es_MX</members>
         <members>ServiceCrew-fi</members>
@@ -8398,6 +8419,7 @@
         <members>ServiceCrewMember-de</members>
         <members>ServiceCrewMember-el</members>
         <members>ServiceCrewMember-en_GB</members>
+        <members>ServiceCrewMember-en_US</members>
         <members>ServiceCrewMember-es</members>
         <members>ServiceCrewMember-es_MX</members>
         <members>ServiceCrewMember-fi</members>
@@ -8980,11 +9002,13 @@
         <members>LightningSalesConsole_UtilityBar</members>
         <members>LightningSales_UtilityBar</members>
         <members>LightningService_UtilityBar</members>
+        <members>Location_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
         <members>Maintenance_Plan_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
         <members>Opportunity_Record_Page</members>
         <members>Price_Book_Record_Page</members>
+        <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
         <members>Service_Appointment_Record_Page</members>
@@ -8992,6 +9016,7 @@
         <members>Service_Crew_Record_Page</members>
         <members>Service_Resource_Record_Page</members>
         <members>Service_Territory_Record_Page</members>
+        <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Record_Page</members>
         <members>Work_Type_Record_Page</members>
         <name>FlexiPage</name>
@@ -8999,11 +9024,13 @@
     <types>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
+        <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <name>Flow</name>
     </types>
     <types>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
+        <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <name>FlowDefinition</name>
     </types>
     <types>
@@ -9028,6 +9055,7 @@
     <types>
         <members>Antwerpen</members>
         <members>FIELD_SERVICE_Default</members>
+        <members>Operators</members>
         <name>Group</name>
     </types>
     <types>
@@ -9045,6 +9073,7 @@
         <members>mobileLanding</members>
         <members>sf_chttr_apps</members>
         <members>sf_com_apps</members>
+        <members>sf_fieldservice</members>
         <name>InstalledPackage</name>
     </types>
     <types>
@@ -9152,7 +9181,7 @@
         <members>Lead-Lead Layout</members>
         <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
         <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
-        <members>Location-Location Layout</members>
+        <members>Location-Van Layout</members>
         <members>Macro-Macro Layout</members>
         <members>MaintenanceAsset-Maintenance Asset Layout</members>
         <members>MaintenancePlan-Maintenance Plan Layout</members>
@@ -9170,7 +9199,7 @@
         <members>Product2-Product Layout</members>
         <members>ProductConsumed-Product Consumed Layout</members>
         <members>ProductConsumedState-Product Consumed State Layout</members>
-        <members>ProductItem-Product Item Layout</members>
+        <members>ProductItem-Material Item Layout</members>
         <members>ProductItemTransaction-Product Item Transaction Layout</members>
         <members>ProductRequest-Product Request Layout</members>
         <members>ProductRequestLineItem-Product Request Line Item Layout</members>
@@ -9207,8 +9236,8 @@
         <members>ServiceAppointment-Service Appointment Layout</members>
         <members>ServiceAppointmentCapacityUsage-Service Appointment Capacity Usage Layout</members>
         <members>ServiceContract-Service Contract Layout</members>
-        <members>ServiceCrew-Service Crew Layout</members>
-        <members>ServiceCrewMember-Service Crew Member Layout</members>
+        <members>ServiceCrew-Van Crew Layout</members>
+        <members>ServiceCrewMember-Van Crew Member Layout</members>
         <members>ServiceResource-FSL Service Resource Layout</members>
         <members>ServiceResource-Service Resource Layout</members>
         <members>ServiceResourceCapacity-Resource Capacity Layout</members>
@@ -9836,6 +9865,11 @@
         <name>MilestoneType</name>
     </types>
     <types>
+        <members>sf_fieldservice__S8e_F3d_S5e_for_A5d_o3h_m4e_app_detail__S8e_F3d_S5e_for_A5d_o3h_m4e_app_detailMobileApplicationDetail</members>
+        <members>sf_fieldservice__S8e_F3d_S5e_for_iOS_o3h_m4e_app_detail__S8e_F3d_S5e_for_iOS_o3h_m4e_app_detailMobileApplicationDetail</members>
+        <name>MobileApplicationDetail</name>
+    </types>
+    <types>
         <members>NotificationTypeConfig</members>
         <name>NotificationTypeConfig</name>
     </types>
@@ -10131,6 +10165,7 @@
         <members>FSL__Optimization_as_a_service</members>
         <members>FSL__Salesforce_API</members>
         <members>FSL__ServiceExpert_OAAS_Staging</members>
+        <members>sf_fieldservice__FSL_Google_Maps_API</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
@@ -11153,17 +11188,20 @@
         <members>Contract_Line_Item_Record_Page</members>
         <members>FSL__CapacityManagement</members>
         <members>Lead_Record_Page</members>
+        <members>Location_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
         <members>Maintenance_Plan_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
         <members>Opportunity_Record_Page</members>
         <members>Price_Book_Record_Page</members>
+        <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>Service_Appointment_Record_Page</members>
         <members>Service_Contract_Record_Page</members>
         <members>Service_Crew_Record_Page</members>
         <members>Service_Resource_Record_Page</members>
         <members>Service_Territory_Record_Page</members>
+        <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Record_Page</members>
         <members>Work_Type_Record_Page</members>
         <name>UiViewDefinition</name>

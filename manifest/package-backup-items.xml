@@ -2,8 +2,11 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>GanttRoundPinAction</members>
+        <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
+        <members>PersonnelRestResource</members>
+        <members>ProjectRestResource</members>
         <members>RRuleAdjuster</members>
         <members>RRuleCriteria</members>
         <members>ServiceAppointmentRescheduler</members>
@@ -43,6 +46,10 @@
         <name>BrandingSet</name>
     </types>
     <types>
+        <members>Operators_Briefcase</members>
+        <name>BriefcaseDefinition</name>
+    </types>
+    <types>
         <members>DataCloudCompanyMatch</members>
         <members>DataCloudGeoLocation</members>
         <members>DataCloudLeadAppend</members>
@@ -66,6 +73,8 @@
         <members>Krinkels_Banner2</members>
         <members>Krinkels_Banner4</members>
         <members>Krinkels_Logo1</members>
+        <members>Krinkels_logo2</members>
+        <members>Untitled</members>
         <members>krinkels</members>
         <members>krinkels_logo</members>
         <name>ContentAsset</name>
@@ -119,6 +128,7 @@
         <members>Knowledge__kav.Procedure_Warnings__c</members>
         <members>Knowledge__kav.Question__c</members>
         <members>Location.Account__c</members>
+        <members>Location.Van_Crew__c</members>
         <members>MaintenanceAsset.Service_Territory__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
@@ -132,6 +142,7 @@
         <members>Opportunity__hd.StageName__c</members>
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
+        <members>ProductItem.Van_Crew__c</members>
         <members>ResourceAbsence.FSL__Approved__c</members>
         <members>ResourceAbsence.FSL__Duration_In_Minutes__c</members>
         <members>ResourceAbsence.FSL__EstTravelTimeFrom__c</members>
@@ -334,11 +345,13 @@
         <members>LightningSalesConsole_UtilityBar</members>
         <members>LightningSales_UtilityBar</members>
         <members>LightningService_UtilityBar</members>
+        <members>Location_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
         <members>Maintenance_Plan_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
         <members>Opportunity_Record_Page</members>
         <members>Price_Book_Record_Page</members>
+        <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
         <members>Service_Appointment_Record_Page</members>
@@ -346,9 +359,18 @@
         <members>Service_Crew_Record_Page</members>
         <members>Service_Resource_Record_Page</members>
         <members>Service_Territory_Record_Page</members>
+        <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Record_Page</members>
         <members>Work_Type_Record_Page</members>
         <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <name>FlowDefinition</name>
     </types>
     <types>
         <members>LineItemQuantityProductDate</members>
@@ -372,6 +394,7 @@
     <types>
         <members>Antwerpen</members>
         <members>FIELD_SERVICE_Default</members>
+        <members>Operators</members>
         <name>Group</name>
     </types>
     <types>
@@ -442,7 +465,7 @@
         <members>Lead-Lead Layout</members>
         <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
         <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
-        <members>Location-Location Layout</members>
+        <members>Location-Van Layout</members>
         <members>Macro-Macro Layout</members>
         <members>MaintenanceAsset-Maintenance Asset Layout</members>
         <members>MaintenancePlan-Maintenance Plan Layout</members>
@@ -460,7 +483,7 @@
         <members>Product2-Product Layout</members>
         <members>ProductConsumed-Product Consumed Layout</members>
         <members>ProductConsumedState-Product Consumed State Layout</members>
-        <members>ProductItem-Product Item Layout</members>
+        <members>ProductItem-Material Item Layout</members>
         <members>ProductItemTransaction-Product Item Transaction Layout</members>
         <members>ProductRequest-Product Request Layout</members>
         <members>ProductRequestLineItem-Product Request Line Item Layout</members>
@@ -497,8 +520,8 @@
         <members>ServiceAppointment-Service Appointment Layout</members>
         <members>ServiceAppointmentCapacityUsage-Service Appointment Capacity Usage Layout</members>
         <members>ServiceContract-Service Contract Layout</members>
-        <members>ServiceCrew-Service Crew Layout</members>
-        <members>ServiceCrewMember-Service Crew Member Layout</members>
+        <members>ServiceCrew-Van Crew Layout</members>
+        <members>ServiceCrewMember-Van Crew Member Layout</members>
         <members>ServiceResource-FSL Service Resource Layout</members>
         <members>ServiceResource-Service Resource Layout</members>
         <members>ServiceResourceCapacity-Resource Capacity Layout</members>
@@ -1419,5 +1442,5 @@
         <members>Case.ChangePriorityToHigh</members>
         <name>WorkflowFieldUpdate</name>
     </types>
-    <version>61.0</version>
+    <version>62.0</version>
 </Package>

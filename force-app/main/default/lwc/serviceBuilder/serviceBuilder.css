@@ -42,26 +42,16 @@ lightning-input {
   transform: scale(1.05);
 }
 
-th {
-  padding-right: 0px;
-}
-
 th input:hover,
 .th-label:hover {
   cursor: pointer;
 }
 
-/* lightning-button-icon {
-  margin-left: 0px;
-}
-
-.actions-container {
+.editContract-buttons-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-} */
-
-td input {
-  padding: 0px;
+  padding-top: 0.5rem;
 }

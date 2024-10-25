@@ -7,7 +7,7 @@
     title="Contract Services"
     icon-name="standard:contract_line_item"
   >
-    <div class="slds-m-around_medium">
+    <div class="">
       <div class="slds-grid slds-grow">
         <lightning-spinner
           if:true={isLoading}
@@ -15,7 +15,7 @@
         ></lightning-spinner>
         <div class="slds-col">
           <table
-            class="slds-table slds-table_cell-buffer slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_striped slds-table_resizable-cols"
+            class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_striped slds-table_resizable-cols"
           >
             <thead>
               <!--- the sorting logic was half-assed during the PoC phase, not fully working and more smoke and mirrors than anything else -->
@@ -51,6 +51,7 @@
                   data-label={projectCodeLabel}
                   data-field="Project_Code__c"
                   data-sort="none"
+                  style="width: 10%"
                 >
                   {projectCodeLabel}
                 </th>
@@ -76,6 +77,7 @@
                   data-label={cityLabel}
                   data-field="Location__City__s"
                   data-sort="none"
+                  style="width: 10%"
                 >
                   {cityLabel}
                 </th>
@@ -88,6 +90,7 @@
                   data-label={zipCodeLabel}
                   data-field="Location__PostalCode__s"
                   data-sort="none"
+                  style="width: 10%"
                 >
                   {zipCodeLabel}
                 </th>
@@ -100,6 +103,7 @@
                   data-label={startDateLabel}
                   data-field="StartDate"
                   data-sort="none"
+                  style="width: 15%"
                 >
                   {startDateLabel}
                 </th>
@@ -112,6 +116,7 @@
                   data-label={endDateLabel}
                   data-field="EndDate"
                   data-sort="none"
+                  style="width: 15%"
                 >
                   {endDateLabel}
                 </th>
@@ -214,7 +219,7 @@
                     icon-name="utility:clear"
                     alternative-text="Clear"
                     onclick={handleClearSearch}
-                    class="slds-m-left_small slds-align_absolute-center"
+                    class="slds-align_absolute-center"
                   ></lightning-button-icon>
                 </th>
               </tr>
@@ -229,7 +234,7 @@
                   data-index={service.Index}
                   data-id={service.Id}
                 >
-                  <td>
+                  <td class="slds-text-align_center">
                     <lightning-input
                       variant="label-hidden"
                       label="Select"
@@ -252,7 +257,6 @@
                       data-index={service.Index}
                       data-isnew={service.IsNew}
                       matching-info={productMatchingInfo}
-                      filter={productFilter}
                       onchange={handleServiceChange}
                       class="slds-cell-wrap"
                     ></lightning-record-picker>
@@ -331,127 +335,49 @@
                       variant="label-hidden"
                     ></lightning-input>
                   </td>
-                  <td class="slds-m-right_small" if:true={showActions}>
-                    <div class="actions-container">
-                      <lightning-button-icon
-                        icon-name="action:log_event"
-                        alternative-text="Set Recurrence"
-                        data-id={service.Id}
-                        data-index={service.Index}
-                        onclick={handleSetRecurrence}
-                      ></lightning-button-icon>
+                  <td class="slds-text-align_center" if:true={showActions}>
+                    <lightning-button-icon
+                      icon-name="action:log_event"
+                      alternative-text="Set Recurrence"
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onclick={handleSetRecurrence}
+                    ></lightning-button-icon>
+                    <!-- Conditionally render the Edit button only if the row is not new -->
+                    <template if:false={service.IsNew}>
                       <lightning-button-icon
                         class="slds-m-left_small"
                         icon-name="action:edit"
                         alternative-text="Edit record"
                         data-id={service.Id}
                         data-index={service.Index}
-                        onclick={handleTogglePanel}
+                        onclick={handleOpenEditModal}
                       ></lightning-button-icon>
-                      <lightning-button-icon
-                        class="slds-m-left_small"
-                        icon-name="action:delete"
-                        alternative-text="Delete record"
-                        data-id={service.Id}
-                        data-index={service.Index}
-                        onclick={handleDeleteRow}
-                      ></lightning-button-icon>
-                    </div>
+                    </template>
+                    <lightning-button-icon
+                      class="slds-m-left_small"
+                      icon-name="utility:add"
+                      alternative-text="Copy Line"
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onclick={handleCopyLine}
+                    ></lightning-button-icon>
+                    <lightning-button-icon
+                      class="slds-m-left_small"
+                      icon-name="action:delete"
+                      alternative-text="Delete record"
+                      data-id={service.Id}
+                      data-index={service.Index}
+                      onclick={handleDeleteRow}
+                    ></lightning-button-icon>
                   </td>
                 </tr>
               </template>
             </tbody>
           </table>
         </div>
-        <!-- Side panel for editing the contract line items, suboptimal and in need of rework. Initially introduced as a way to show more data on the screen than
-                 was in the table -->
-        <div
-          class="slds-col slds-size_2-of-12 panel_styling"
-          if:true={showSidePanel}
-        >
-          <lightning-quick-action-panel
-            class="slds-is-open slds-panel_docked-right"
-          >
-            <div class="slds-panel__header">
-              <h2
-                class="slds-panel__header-title slds-text-heading_small slds-truncate"
-                title="Line Details"
-              >
-                Line Details
-              </h2>
-              <div class="slds-panel__header-actions">
-                <lightning-button-icon
-                  icon-name="utility:close"
-                  alternative-text="Close"
-                  onclick={handleTogglePanelClose}
-                  variant="bare"
-                  class="slds-button_icon-small"
-                ></lightning-button-icon>
-              </div>
-            </div>
-            <lightning-record-edit-form
-              record-id={selectedLineItemId}
-              object-api-name="ContractLineItem"
-              onsuccess={handleSuccess}
-            >
-              <lightning-messages> </lightning-messages>
-              <lightning-accordion
-                allow-multiple-sections-open
-                class="slds-m-bottom_medium"
-                active-section-name={activeSections}
-              >
-                <lightning-accordion-section name="generalInfo" label="General">
-                  <lightning-input-field field-name="Product2Id">
-                  </lightning-input-field>
-                  <lightning-input-field field-name="StartDate">
-                  </lightning-input-field>
-                  <lightning-input-field field-name="EndDate">
-                  </lightning-input-field>
-                  <lightning-input-field field-name="Planning_Type__c">
-                  </lightning-input-field>
-                  <lightning-output-field field-name="Recurrence_Pattern__c">
-                  </lightning-output-field>
-                </lightning-accordion-section>
-                <lightning-accordion-section
-                  name="locationInfo"
-                  label="Location"
-                >
-                  <lightning-input-field field-name="Location__Street__s">
-                  </lightning-input-field>
-                  <lightning-input-field field-name="Location__City__s">
-                  </lightning-input-field>
-                  <lightning-input-field field-name="Location__PostalCode__s">
-                  </lightning-input-field>
-                </lightning-accordion-section>
-              </lightning-accordion>
-              <div class="slds-grid slds-align-top slds-m-around_medium">
-                <lightning-button-icon
-                  icon-name="utility:left"
-                  alternative-text="Previous"
-                  onclick={handlePrevious}
-                  data-id={selectedLineItemId}
-                  class="slds-button_icon-small slds-m-right_small slds-col"
-                ></lightning-button-icon>
-                <lightning-button
-                  class="slds-col slds-m-left_small"
-                  variant="neutral"
-                  type="submit"
-                  name="update"
-                  label="Update"
-                >
-                </lightning-button>
-                <lightning-button-icon
-                  icon-name="utility:right"
-                  alternative-text="Next"
-                  onclick={handleNext}
-                  data-id={selectedLineItemId}
-                  class="slds-button_icon-small slds-m-left_small slds-col"
-                ></lightning-button-icon>
-              </div>
-            </lightning-record-edit-form>
-          </lightning-quick-action-panel>
-        </div>
       </div>
+
       <div class="button-container">
         <lightning-button
           label="Add Row"
@@ -466,8 +392,105 @@
         <lightning-button
           label="Save"
           onclick={handleSaveAll}
+          variant="brand"
         ></lightning-button>
       </div>
     </div>
   </lightning-card>
+
+  <!-- Rather than having a side panel, a modal would be a better solution for editing the contract -->
+  <template if:true={isModalOpen}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-labelledby="modal-heading-01"
+      aria-modal="true"
+      aria-describedby="modal-content-id-1"
+      class="slds-modal slds-fade-in-open"
+    >
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            title="Close"
+            onclick={closeModal}
+          >
+            <lightning-icon
+              icon-name="utility:close"
+              alternative-text="close"
+              variant="inverse"
+              size="small"
+            ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2
+            id="modal-heading-01"
+            class="slds-text-heading_medium slds-hyphenate"
+          >
+            Edit Contract Line
+          </h2>
+        </header>
+        <div
+          class="slds-modal__content slds-p-around_medium"
+          id="modal-content-id-1"
+        >
+          <lightning-record-edit-form
+            record-id={selectedLineItemId}
+            object-api-name="ContractLineItem"
+            onsuccess={handleSuccess}
+          >
+            <lightning-messages></lightning-messages>
+            <lightning-input-field
+              field-name="Product2Id"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="StartDate"
+            ></lightning-input-field>
+            <lightning-input-field field-name="EndDate"></lightning-input-field>
+            <lightning-input-field
+              field-name="Planning_Type__c"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Location__Street__s"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Location__City__s"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Location__PostalCode__s"
+            ></lightning-input-field>
+
+            <div class="editContract-buttons-container">
+              <lightning-button-icon
+                icon-name="utility:left"
+                alternative-text="Previous"
+                onclick={handlePrevious}
+                data-id={selectedLineItemId}
+              ></lightning-button-icon>
+
+              <lightning-button
+                variant="neutral"
+                label="Cancel"
+                onclick={closeModal}
+                class="slds-m-right_x-small"
+              ></lightning-button>
+              <lightning-button
+                variant="brand"
+                type="submit"
+                name="save"
+                label="Save"
+              ></lightning-button>
+              <lightning-button-icon
+                icon-name="utility:right"
+                alternative-text="Next"
+                onclick={handleNext}
+                data-id={selectedLineItemId}
+              ></lightning-button-icon>
+            </div>
+          </lightning-record-edit-form>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
 </template>

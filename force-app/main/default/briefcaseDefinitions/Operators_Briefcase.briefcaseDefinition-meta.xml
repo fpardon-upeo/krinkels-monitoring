@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BriefcaseDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <briefcaseRules>
+        <briefcaseRuleFilters>
+            <filterOperator>e</filterOperator>
+            <filterSeqNumber>1</filterSeqNumber>
+            <filterValue>Scheduled</filterValue>
+            <targetEntityField>Status</targetEntityField>
+        </briefcaseRuleFilters>
+        <briefcaseRuleFilters>
+            <filterOperator>e</filterOperator>
+            <filterSeqNumber>2</filterSeqNumber>
+            <filterValue>In Progress</filterValue>
+            <targetEntityField>Status</targetEntityField>
+        </briefcaseRuleFilters>
+        <briefcaseRuleFilters>
+            <filterOperator>e</filterOperator>
+            <filterSeqNumber>3</filterSeqNumber>
+            <filterValue>THIS_WEEK</filterValue>
+            <targetEntityField>SchedStartTime</targetEntityField>
+        </briefcaseRuleFilters>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <isAscendingOrder>false</isAscendingOrder>
+        <orderBy>SystemModstamp</orderBy>
+        <queryScope>Everything</queryScope>
+        <recordLimit>25000</recordLimit>
+        <relatedRules>
+            <isAscendingOrder>false</isAscendingOrder>
+            <queryScope>Everything</queryScope>
+            <recordLimit>25000</recordLimit>
+            <relationshipField>ParentRecordId</relationshipField>
+            <relationshipType>ChildToParent</relationshipType>
+            <targetEntity>WorkOrder</targetEntity>
+        </relatedRules>
+        <targetEntity>ServiceAppointment</targetEntity>
+    </briefcaseRules>
+    <description>Based on a set of rules and filters that select records to prime for offline use, the operators have access to the most relevant records, even when there is a network failure, irregular internet coverage or an area without Wi-Fi.</description>
+    <isActive>true</isActive>
+    <masterLabel>Operators Briefcase</masterLabel>
+</BriefcaseDefinition>

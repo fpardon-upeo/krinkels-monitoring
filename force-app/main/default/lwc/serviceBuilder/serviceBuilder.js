@@ -27,9 +27,9 @@ export default class ServiceBuilder extends LightningElement {
   frequencyOptions;
   planningTypeOptions;
   selectedRecords = [];
-  showSidePanel = false;
   showActions = true;
   selectedLineItemId;
+  isModalOpen = false;
   isLoading = true;
 
   // Accordion Sections
@@ -52,15 +52,15 @@ export default class ServiceBuilder extends LightningElement {
     additionalFields: [{ fieldPath: "ProductCode" }]
   };
 
-  productFilter = {
-    criteria: [
-      {
-        fieldPath: "RecordType.Name",
-        operator: "eq",
-        value: "Service Package"
-      }
-    ]
-  };
+  // productFilter = {
+  //   criteria: [
+  //     {
+  //       fieldPath: "RecordType.Name",
+  //       operator: "eq",
+  //       value: "Service Package"
+  //     }
+  //   ]
+  // };
 
   /**
    * @description Lifecycle hook called when the component is inserted into the DOM
@@ -76,6 +76,7 @@ export default class ServiceBuilder extends LightningElement {
     getContractLines({ recordId: this.recordId })
       .then((result) => {
         let index = 0;
+
         result.forEach((line) => {
           line.Index = index;
           line.IsNew = false;
@@ -120,22 +121,6 @@ export default class ServiceBuilder extends LightningElement {
     });
   }
 
-  // /**
-  //  * @description Sets pointer cursor style
-  //  * @param {Event} event - The event object
-  //  */
-  // setPointer(event) {
-  //   event.target.style.cursor = "pointer";
-  // }
-
-  // /**
-  //  * @description Resets cursor style to default
-  //  * @param {Event} event - The event object
-  //  */
-  // resetPointer(event) {
-  //   event.target.style.cursor = "default";
-  // }
-
   /**
    * @description Reindexes the contract lines
    */
@@ -159,73 +144,6 @@ export default class ServiceBuilder extends LightningElement {
       variant: variant
     });
     this.dispatchEvent(event);
-  }
-
-  /**
-   * @description Toggles the side panel open
-   * @param {Event} event - The event object
-   */
-  handleTogglePanel(event) {
-    let eventRecordId = event.target.dataset.id;
-    this.selectedLineItemId = eventRecordId;
-    this.showSidePanel = true;
-    this.showActions = false;
-    this.setOtherRowOpacity(event);
-  }
-
-  /**
-   * @description Toggles the side panel closed
-   */
-  handleTogglePanelClose() {
-    this.showSidePanel = false;
-    this.showActions = true;
-    this.resetRowOpacity();
-  }
-
-  /**
-   * @description Handles navigation to the previous record
-   * @param {Event} event - The event object
-   */
-  handlePrevious(event) {
-    let currentIndex =
-      this.filterResults.length > 0
-        ? this.filterResults.findIndex(
-            (line) => line.Id === this.selectedLineItemId
-          )
-        : this.contractLines.findIndex(
-            (line) => line.Id === this.selectedLineItemId
-          );
-    let previousIndex = currentIndex - 1;
-    this.selectedLineItemId =
-      this.filterResults.length > 0
-        ? this.filterResults[previousIndex].Id
-        : this.contractLines[previousIndex].Id;
-    event.target.dataset.id = this.selectedLineItemId;
-    event.target.dataset.index = previousIndex;
-    this.setOtherRowOpacity(event);
-  }
-
-  /**
-   * @description Handles navigation to the next record
-   * @param {Event} event - The event object
-   */
-  handleNext(event) {
-    let currentIndex =
-      this.filterResults.length > 0
-        ? this.filterResults.findIndex(
-            (line) => line.Id === this.selectedLineItemId
-          )
-        : this.contractLines.findIndex(
-            (line) => line.Id === this.selectedLineItemId
-          );
-    let nextIndex = currentIndex + 1;
-    this.selectedLineItemId =
-      this.filterResults.length > 0
-        ? this.filterResults[nextIndex].Id
-        : this.contractLines[nextIndex].Id;
-    event.target.dataset.id = this.selectedLineItemId;
-    event.target.dataset.index = nextIndex;
-    this.setOtherRowOpacity(event);
   }
 
   /**
@@ -297,11 +215,8 @@ export default class ServiceBuilder extends LightningElement {
    * @param {Event} event - The event object
    */
   async handleSetRecurrence(event) {
-    let recordId = event.target.dataset.id;
-    let index = event.target.dataset.index;
-    let selectedRecord = this.contractLines.find(
-      (line) => line.Id === recordId
-    );
+    let index = parseInt(event.target.dataset.index);
+    let selectedRecord = this.contractLines[index];
 
     try {
       const result = await recurrenceModal.open({
@@ -323,7 +238,6 @@ export default class ServiceBuilder extends LightningElement {
           "Recurrence pattern has been applied to selected record",
           "success"
         );
-        // Modal closed without trying to save anything, so do nothing
       } else {
         console.log("Modal closed without saving using cross icon button");
       }
@@ -335,43 +249,6 @@ export default class ServiceBuilder extends LightningElement {
         "error"
       );
     }
-  }
-
-  /**
-   * @description Adds a new row to the contract lines
-   */
-  handleAddActionRow() {
-    getContractLines({ recordId: this.recordId })
-      .then((result) => {
-        const startDate = result[0].ServiceContract.StartDate;
-        const endDate = result[0].ServiceContract.EndDate;
-
-        const newRow = {
-          Id: null,
-          Product2Id: null,
-          Frequency__c: "",
-          Planning_Type__c: "",
-          Quantity: 1,
-          UnitPrice: 0,
-          StartDate: startDate,
-          EndDate: endDate,
-          IsNew: true,
-          ServiceContractId: this.recordId
-        };
-
-        if (this.filterResults.length > 0) {
-          newRow.Index = this.filterResults.length;
-          this.filterResults.push(newRow);
-          this.filterResults = [...this.filterResults];
-        } else {
-          newRow.Index = this.contractLines.length;
-          this.contractLines.push(newRow);
-          this.contractLines = [...this.contractLines];
-        }
-      })
-      .catch((error) => {
-        console.error("Error adding new row:", error);
-      });
   }
 
   /**
@@ -425,7 +302,9 @@ export default class ServiceBuilder extends LightningElement {
   handleCheck(event) {
     let index = event.target.dataset.index;
     let value = event.target.checked;
+
     this.contractLines[index].IsSelected = value;
+
     this.contractLines = [...this.contractLines];
   }
 
@@ -436,6 +315,7 @@ export default class ServiceBuilder extends LightningElement {
   handleServiceChange(event) {
     let index = event.target.dataset.index;
     let value = event.detail.recordId;
+
     this.insertContractLine(index, value);
   }
 
@@ -444,6 +324,7 @@ export default class ServiceBuilder extends LightningElement {
    */
   handleMassEditRecurrence() {
     this.selectedRecords = this.contractLines.filter((line) => line.IsSelected);
+
     recurrenceModal
       .open({
         selectedRecords: this.selectedRecords,
@@ -541,6 +422,75 @@ export default class ServiceBuilder extends LightningElement {
   }
 
   /**
+   * @description Adds a new row to the contract lines
+   */
+  handleAddActionRow() {
+    getContractLines({ recordId: this.recordId })
+      .then((result) => {
+        const startDate = result[0].ServiceContract.StartDate;
+        const endDate = result[0].ServiceContract.EndDate;
+
+        const newRow = {
+          Id: null,
+          Product2Id: null,
+          Frequency__c: "",
+          Planning_Type__c: "",
+          Quantity: 1,
+          UnitPrice: 0,
+          StartDate: startDate,
+          EndDate: endDate,
+          IsNew: true,
+          ServiceContractId: this.recordId
+        };
+
+        if (this.filterResults.length > 0) {
+          newRow.Index = this.filterResults.length;
+          this.filterResults.push(newRow);
+          this.filterResults = [...this.filterResults];
+        } else {
+          newRow.Index = this.contractLines.length;
+          this.contractLines.push(newRow);
+          this.contractLines = [...this.contractLines];
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding new row:", error);
+      });
+  }
+
+  /**
+   * @description Handles copying a contract line
+   * @param {Event} event - The event object
+   */
+  handleCopyLine(event) {
+    const index = parseInt(event.target.dataset.index);
+    const originalLine = this.contractLines[index];
+
+    const newRow = {
+      Id: null,
+      Product2Id: originalLine.Product2Id,
+      Frequency__c: originalLine.Frequency__c,
+      Planning_Type__c: originalLine.Planning_Type__c,
+      Quantity: originalLine.Quantity,
+      UnitPrice: originalLine.UnitPrice,
+      StartDate: originalLine.StartDate,
+      EndDate: originalLine.EndDate,
+      Location__Street__s: originalLine.Location__Street__s,
+      Location__City__s: originalLine.Location__City__s,
+      Location__PostalCode__s: originalLine.Location__PostalCode__s,
+      Project_Code__c: originalLine.Project_Code__c,
+      IsNew: true,
+      IsSelected: false,
+      ServiceContractId: this.recordId,
+      Index: this.contractLines.length
+    };
+
+    this.contractLines.push(newRow);
+    this.contractLines = [...this.contractLines];
+    this.reIndex();
+  }
+
+  /**
    * @description Handles deletion of a contract line
    * @param {Event} event - The event object
    */
@@ -576,6 +526,7 @@ export default class ServiceBuilder extends LightningElement {
     this.contractLines.forEach((line, index) => {
       this.insertContractLine(index, line.Product2Id);
     });
+
     this.handleToast("Success", "All records have been saved", "success");
     this.reIndex();
   }
@@ -589,6 +540,7 @@ export default class ServiceBuilder extends LightningElement {
     let contractLine = this.contractLines[index];
     contractLine.Product2Id = value;
     contractLine.Location__CountryCode__s = "BE";
+
     saveContractLine({ contractLine: contractLine })
       .then((result) => {
         result.IsSelected = false;
@@ -602,5 +554,121 @@ export default class ServiceBuilder extends LightningElement {
         console.error("Error saving contract line:", error);
         this.contractLines = [...this.contractLines];
       });
+  }
+
+  /**
+   * @description Opens the edit modal for a contract line
+   * @param {Event} event - The event object
+   */
+  handleOpenEditModal(event) {
+    let eventRecordId = event.target.dataset.id;
+    this.selectedLineItemId = eventRecordId;
+
+    this.isModalOpen = true;
+  }
+
+  /**
+   * @description Closes the edit modal
+   */
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
+  /**
+   * @description Handles successful save of a record
+   * @param {Event} event - The success event
+   */
+  handleSuccess(event) {
+    this.handleToast("Success", "Record has been saved", "success");
+    this.closeModal();
+    this.loadContractLines();
+  }
+
+  /**
+   * @description Handles navigation to the previous record
+   * @param {Event} event - The event object
+   */
+  handlePrevious(event) {
+    let currentIndex =
+      this.filterResults.length > 0
+        ? this.filterResults.findIndex(
+            (line) => line.Id === this.selectedLineItemId
+          )
+        : this.contractLines.findIndex(
+            (line) => line.Id === this.selectedLineItemId
+          );
+
+    let previousIndex = currentIndex - 1;
+
+    // Loop to find the previous valid index
+    while (previousIndex !== currentIndex) {
+      if (previousIndex < 0) {
+        previousIndex = this.contractLines.length - 1;
+      }
+
+      const previousLine =
+        this.filterResults.length > 0
+          ? this.filterResults[previousIndex]
+          : this.contractLines[previousIndex];
+
+      if (previousLine && previousLine.Id) {
+        break;
+      }
+
+      previousIndex--;
+    }
+
+    this.selectedLineItemId =
+      this.filterResults.length > 0
+        ? this.filterResults[previousIndex].Id
+        : this.contractLines[previousIndex].Id;
+
+    event.target.dataset.id = this.selectedLineItemId;
+    event.target.dataset.index = previousIndex;
+    this.setOtherRowOpacity(event);
+  }
+
+  /**
+   * @description Handles navigation to the next record
+   * @param {Event} event - The event object
+   */
+  handleNext(event) {
+    let currentIndex =
+      this.filterResults.length > 0
+        ? this.filterResults.findIndex(
+            (line) => line.Id === this.selectedLineItemId
+          )
+        : this.contractLines.findIndex(
+            (line) => line.Id === this.selectedLineItemId
+          );
+
+    let nextIndex = currentIndex + 1;
+
+    // Loop to find the next valid index
+    while (nextIndex !== currentIndex) {
+      if (nextIndex >= this.contractLines.length) {
+        nextIndex = 0; // Wrap around to the start
+      }
+
+      const nextLine =
+        this.filterResults.length > 0
+          ? this.filterResults[nextIndex]
+          : this.contractLines[nextIndex];
+
+      if (nextLine && nextLine.Id) {
+        break; // Found a valid line
+      }
+
+      nextIndex++;
+    }
+
+    this.selectedLineItemId =
+      this.filterResults.length > 0
+        ? this.filterResults[nextIndex].Id
+        : this.contractLines[nextIndex].Id;
+
+    event.target.dataset.id = this.selectedLineItemId;
+    event.target.dataset.index = nextIndex;
+    this.setOtherRowOpacity(event);
   }
 }

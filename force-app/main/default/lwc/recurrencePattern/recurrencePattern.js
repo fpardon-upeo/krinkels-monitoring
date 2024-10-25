@@ -68,31 +68,19 @@ export default class RecurrencePattern extends LightningModal {
   ];
 
   connectedCallback() {
-    console.log("connectedCallback");
-    console.log("selectedEndDate", this.selectedEndDate);
-    console.log("selectedRecurrencePattern", this.selectedRecurrencePattern);
-
     if (this.recordId !== undefined) {
       this.selectedRecords.push(this.recordId);
       if (this.recordId.Recurrence_Pattern__c !== undefined) {
-        console.log(
-          "this.recordId.Recurrence_Pattern__c",
-          this.recordId.Recurrence_Pattern__c
-        );
         this.parseRRule(this.recordId.Recurrence_Pattern__c);
       }
     }
-    console.log("selectedRecords", JSON.stringify(this.selectedRecords));
   }
 
   parseRRule(rrule) {
     //Parse the RRULE string to set the selected options
     const parts = rrule.split(";");
-    console.log("parts", parts);
     for (const part of parts) {
       const [key, value] = part.split("=");
-      console.log("key", key);
-      console.log("value", value);
       switch (key.toUpperCase()) {
         case "FREQ":
           if (value === "DAILY") {
@@ -118,10 +106,6 @@ export default class RecurrencePattern extends LightningModal {
             this.selectedRecurrenceDays.push(day);
           });
           this.selectedRecurrenceDays = [...this.selectedRecurrenceDays];
-          console.log(
-            "selectedRecurrenceDays",
-            JSON.stringify(this.selectedRecurrenceDays)
-          );
           break;
         case "COUNT":
           this.selectedOccurrences = parseInt(value);
@@ -151,21 +135,13 @@ export default class RecurrencePattern extends LightningModal {
     }
   }
 
-  handleOkay() {
-    this.close("okay");
-  }
-
   handleSave() {
     if (this.selectedRecords.length === 0 && this.recordId !== undefined) {
       //Add the recordId to the selectedRecords array
       this.selectedRecords.push(this.recordId);
     }
 
-    console.log("saving");
-
     let records = JSON.parse(JSON.stringify(this.selectedRecords));
-
-    console.log("records", records);
 
     records.forEach((record) => {
       record.Recurrence_Pattern__c = this.completePattern;
@@ -173,15 +149,11 @@ export default class RecurrencePattern extends LightningModal {
       record.Frequency__c = this.selectedPeriod;
     });
 
-    console.log("selectedRecords in handleSave", JSON.stringify(records));
-
     this.close(JSON.stringify(records));
   }
 
   handlePeriodChange(event) {
-    this.selectedPeriod = event.detail.value;
-    console.log("selectedPeriod", this.selectedPeriod);
-    //Clear the values we don't need based on the selected period
+    this.selectedPeriod = event.detail.value; //Clear the values we don't need based on the selected period
     if (this.selectedPeriod !== "WEEKLY") {
       this.selectedRecurrenceDays = [];
     }
@@ -209,7 +181,6 @@ export default class RecurrencePattern extends LightningModal {
     this.selectedEndDate = event.detail.value;
     //We need the date to be in a format like '20240627T000000Z' for the RRULE string
     let date = new Date(this.selectedEndDate);
-    console.log("date", date);
     let year = date.getFullYear();
     let month = date.getMonth() + 1; //Months are zero based in javascript, took me a while to figure this out
 
@@ -226,7 +197,6 @@ export default class RecurrencePattern extends LightningModal {
     }
 
     this.selectedRruleEndDate = `${year}${month}${day}T000000Z`;
-    console.log("selectedEndDate", this.selectedRruleEndDate);
   }
 
   handleOccurrencesChange(event) {
@@ -254,10 +224,6 @@ export default class RecurrencePattern extends LightningModal {
 
   handleRecurrenceDaysChange(event) {
     this.selectedRecurrenceDays = event.detail.value;
-    console.log(
-      "selectedRecurrenceDays",
-      JSON.stringify(this.selectedRecurrenceDays)
-    );
   }
 
   handleRecurrenceMonthTypeChange(event) {
@@ -275,7 +241,6 @@ export default class RecurrencePattern extends LightningModal {
   }
 
   handleMonthWeekRecurrenceChange(event) {
-    console.log("event.detail.value", event.detail.value);
     this.selectedMonthWeekRecurrence = event.detail.value;
   }
 
@@ -375,7 +340,6 @@ export default class RecurrencePattern extends LightningModal {
   get PatternText() {
     let patternText = "";
     const parts = this.completePattern.split(";");
-    console.log("parts", parts);
 
     for (const part of parts) {
       const [key, value] = part.split("=");
@@ -406,8 +370,6 @@ export default class RecurrencePattern extends LightningModal {
           break;
       }
     }
-
-    console.log("patternText", patternText);
 
     return patternText;
   }

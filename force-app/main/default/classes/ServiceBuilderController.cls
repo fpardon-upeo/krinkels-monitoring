@@ -112,12 +112,14 @@ public without sharing class ServiceBuilderController {
       WHERE Product2Id = :contractLine.Product2Id
       LIMIT 1
     ];
+
     if (contractLine.Id == null) {
       contractLine.PricebookEntryId = pricebookEntry.Id;
       insert contractLine;
     } else {
       update contractLine;
     }
+
     return contractLine;
   }
 }
