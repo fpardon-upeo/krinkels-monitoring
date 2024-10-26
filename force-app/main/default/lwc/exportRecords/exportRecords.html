@@ -1,0 +1,27 @@
+<!--
+ - Created by Frederik on 10/25/2024.
+ -->
+
+<!-- Export Records -->
+<template>
+  <lightning-quick-action-panel header="Export Records">
+    <div class="slds-m-around_medium">
+      <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+      </template>
+      <template if:true={error}>
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error">
+          {error}
+        </div>
+      </template>
+      <div class="slds-align_absolute-center">
+        <lightning-button
+          label="Export to CSV"
+          onclick={handleExport}
+          variant="brand"
+          class="slds-m-around_medium">
+        </lightning-button>
+      </div>
+    </div>
+  </lightning-quick-action-panel>
+</template>

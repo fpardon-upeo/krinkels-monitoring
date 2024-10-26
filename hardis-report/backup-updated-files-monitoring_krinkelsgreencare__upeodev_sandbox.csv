@@ -1,44 +1,92 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-appMenus/AppSwitcher.appMenu-meta.xml," ",AppMenu AppSwitcher,M,,log,📰
-applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
-brandingSets/LEXTHEMINGKrinkelsTheme.brandingSet-meta.xml," ",BrandingSet LEXTHEMINGKrinkelsTheme,M,,log,📰
-briefcaseDefinitions/Operators_Briefcase.briefcaseDefinition-meta.xml,A,briefcaseDefinitions/Operators_Briefcase.briefcaseDefinition-meta.xml,,,log,📰
-classes/MachineRestResource.cls,A,ApexClass MachineRestResource,,,log,📰
-classes/MachineRestResource.cls-meta.xml,A,ApexClass MachineRestResource,,,log,📰
-classes/PersonnelRestResource.cls,A,ApexClass PersonnelRestResource,,,log,📰
-classes/PersonnelRestResource.cls-meta.xml,A,ApexClass PersonnelRestResource,,,log,📰
-classes/ProjectRestResource.cls,A,ApexClass ProjectRestResource,,,log,📰
-classes/ProjectRestResource.cls-meta.xml,A,ApexClass ProjectRestResource,,,log,📰
+classes/ContractLineItemTriggerHandler.cls,A,ApexClass ContractLineItemTriggerHandler,,,log,📰
+classes/ContractLineItemTriggerHandler.cls-meta.xml,A,ApexClass ContractLineItemTriggerHandler,,,log,📰
+classes/ExportRecordsController.cls,A,ApexClass ExportRecordsController,,,log,📰
+classes/ExportRecordsController.cls-meta.xml,A,ApexClass ExportRecordsController,,,log,📰
+classes/MapsGeoCodeService.cls,A,ApexClass MapsGeoCodeService,,,log,📰
+classes/MapsGeoCodeService.cls-meta.xml,A,ApexClass MapsGeoCodeService,,,log,📰
+classes/MapsGeoCodeWrapper.cls,A,ApexClass MapsGeoCodeWrapper,,,log,📰
+classes/MapsGeoCodeWrapper.cls-meta.xml,A,ApexClass MapsGeoCodeWrapper,,,log,📰
+classes/MapsGeoCodeWrapperTest.cls,A,ApexClass MapsGeoCodeWrapperTest,,,log,📰
+classes/MapsGeoCodeWrapperTest.cls-meta.xml,A,ApexClass MapsGeoCodeWrapperTest,,,log,📰
 classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-contentassets/Krinkels_logo2.asset,A,ContentAsset Krinkels_logo2,,,log,📰
-contentassets/Krinkels_logo2.asset-meta.xml,A,ContentAsset Krinkels_logo2,,,log,📰
-contentassets/Untitled.asset,A,ContentAsset Untitled,,,log,📰
-contentassets/Untitled.asset-meta.xml,A,ContentAsset Untitled,,,log,📰
-flexipages/Location_Record_Page.flexipage-meta.xml,A,FlexiPage Location_Record_Page,,,log,📰
-flexipages/Product_Item_Record_Page.flexipage-meta.xml,A,FlexiPage Product_Item_Record_Page,,,log,📰
+customMetadata/Export_Configuration.ServiceContract.md-meta.xml,A,CustomMetadata Export_Configuration.ServiceContract,,,log,📰
+duplicateRules/Contact.Contact_Mobile_Phone.duplicateRule-meta.xml,A,DuplicateRule Contact.Contact_Mobile_Phone,,,log,📰
+duplicateRules/Contact.Standard_Contact_Duplicate_Rule.duplicateRule-meta.xml," ",DuplicateRule Contact.Standard_Contact_Duplicate_Rule,M,,log,📰
+duplicateRules/Contact.Standard_Contact_to_Lead_Duplicate_Rule.duplicateRule-meta.xml," ",DuplicateRule Contact.Standard_Contact_to_Lead_Duplicate_Rule,M,,log,📰
+externalCredentials/GoogleMaps.externalCredential-meta.xml,A,ExternalCredential GoogleMaps,,,log,📰
+flexipages/Contact_Record_Page.flexipage-meta.xml," ",FlexiPage Contact_Record_Page,M,,log,📰
+flexipages/Contract_Line_Item_Record_Page.flexipage-meta.xml," ",FlexiPage Contract_Line_Item_Record_Page,M,,log,📰
 flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
-flexipages/Van_Crew_Member_Record_Page.flexipage-meta.xml,A,FlexiPage Van_Crew_Member_Record_Page,,,log,📰
-flowDefinitions/Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field.flowDefinition-meta.xml,A,FlowDefinition Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field,,,log,📰
-flows/Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field.flow-meta.xml,A,Flow Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field,,,log,📰
-groups/Operators.group-meta.xml,A,Group Operators,,,log,📰
-layouts/Location-Van Layout.layout-meta.xml,A,Layout Location-Van Layout,,,log,📰
-layouts/ProductItem-Material Item Layout.layout-meta.xml,A,Layout ProductItem-Material Item Layout,,,log,📰
+flowDefinitions/Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field.flowDefinition-meta.xml,A,FlowDefinition Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field,,,log,📰
+flowDefinitions/Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status.flowDefinition-meta.xml,A,FlowDefinition Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status,,,log,📰
+flowDefinitions/Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication.flowDefinition-meta.xml,A,FlowDefinition Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information,,,log,📰
+flowDefinitions/Work_Order_Scheduled_High_Prio_Work_Order_Overdue.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Scheduled_High_Prio_Work_Order_Overdue,,,log,📰
+flows/Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field.flow-meta.xml,A,Flow Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field,,,log,📰
+flows/Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status.flow-meta.xml,A,Flow Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status,,,log,📰
+flows/Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication.flow-meta.xml,A,Flow Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information,,,log,📰
+flows/Work_Order_Scheduled_High_Prio_Work_Order_Overdue.flow-meta.xml,A,Flow Work_Order_Scheduled_High_Prio_Work_Order_Overdue,,,log,📰
+globalValueSets/Language.globalValueSet-meta.xml,A,GlobalValueSet Language,,,log,📰
+globalValueSets/Priority.globalValueSet-meta.xml,A,GlobalValueSet Priority,,,log,📰
+layouts/Account-Financial Layout.layout-meta.xml,A,Layout Account-Financial Layout,,,log,📰
+layouts/Account-Operational Layout.layout-meta.xml,A,Layout Account-Operational Layout,,,log,📰
+layouts/Contact-Contact Layout.layout-meta.xml," ",Layout Contact-Contact Layout,M,,log,📰
+layouts/Contract-Contract Layout.layout-meta.xml," ",Layout Contract-Contract Layout,M,,log,📰
+layouts/ContractLineItem-Contract Line Item Layout.layout-meta.xml," ",Layout ContractLineItem-Contract Line Item Layout,M,,log,📰
+layouts/Contract_Line_Financial_Account__c-Contract Line Financial Account Layout.layout-meta.xml,A,Layout Contract_Line_Financial_Account__c-Contract Line Financial Account Layout,,,log,📰
+layouts/Export_Configuration__mdt-Export Configuration Layout.layout-meta.xml,A,Layout Export_Configuration__mdt-Export Configuration Layout,,,log,📰
 layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
 layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
-layouts/ServiceCrew-Van Crew Layout.layout-meta.xml,A,Layout ServiceCrew-Van Crew Layout,,,log,📰
-layouts/ServiceCrewMember-Van Crew Member Layout.layout-meta.xml,A,Layout ServiceCrewMember-Van Crew Member Layout,,,log,📰
-layouts/ServiceResource-Service Resource Layout.layout-meta.xml," ",Layout ServiceResource-Service Resource Layout,M,,log,📰
-layouts/ServiceTerritory-Service Territory Layout.layout-meta.xml," ",Layout ServiceTerritory-Service Territory Layout,M,,log,📰
 layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
+lwc/exportRecords/exportRecords.html,A,LightningComponentBundle exportRecords/exportRecords.html,,,log,📰
+lwc/exportRecords/exportRecords.js,A,LightningComponentBundle exportRecords/exportRecords.js,,,log,📰
+lwc/exportRecords/exportRecords.js-meta.xml,A,LightningComponentBundle exportRecords/exportRecords.js-meta.xml,,,log,📰
+lwc/prepareContractForNextYear/prepareContractForNextYear.html,A,LightningComponentBundle prepareContractForNextYear/prepareContractForNextYear.html,,,log,📰
+lwc/prepareContractForNextYear/prepareContractForNextYear.js,A,LightningComponentBundle prepareContractForNextYear/prepareContractForNextYear.js,,,log,📰
+lwc/prepareContractForNextYear/prepareContractForNextYear.js-meta.xml,A,LightningComponentBundle prepareContractForNextYear/prepareContractForNextYear.js-meta.xml,,,log,📰
+lwc/recurrencePattern/recurrencePattern.html," ",LightningComponentBundle recurrencePattern/recurrencePattern.html,M,,log,📰
 lwc/recurrencePattern/recurrencePattern.js," ",LightningComponentBundle recurrencePattern/recurrencePattern.js,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.css," ",LightningComponentBundle serviceBuilder/serviceBuilder.css,M,,log,📰
 lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
 lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
+matchingRules/Contact.matchingRule-meta.xml," ",MatchingRules Contact,M,,log,📰
+namedCredentials/GoogleMaps.namedCredential-meta.xml,A,NamedCredential GoogleMaps,,,log,📰
+namedCredentials/MapsEncoding.namedCredential-meta.xml,A,NamedCredential MapsEncoding,,,log,📰
 notificationTypeConfig/NotificationTypeConfig.config-meta.xml," ",NotificationTypeConfig NotificationTypeConfig,M,,log,📰
-objects/Location/fields/Van_Crew__c.field-meta.xml,A,CustomField Van_Crew__c,,,log,📰
-objects/ProductItem/ProductItem.object-meta.xml,A,CustomObject ProductItem/ProductItem,,,log,📰
-objects/ProductItem/fields/Van_Crew__c.field-meta.xml,A,CustomField Van_Crew__c,,,log,📰
+notificationtypes/Standard_Notification.notiftype-meta.xml,A,CustomNotificationType Standard_Notification,,,log,📰
+objects/Account/compactLayouts/Account_Compact_Layout.compactLayout-meta.xml," ",CompactLayout Account_Compact_Layout,M,,log,📰
+objects/Account/fields/Check_In_Work__c.field-meta.xml,A,CustomField Check_In_Work__c,,,log,📰
+objects/Account/fields/Priority__c.field-meta.xml,A,CustomField Priority__c,,,log,📰
+objects/Account/recordTypes/Financial_Customer.recordType-meta.xml," ",RecordType Financial_Customer,M,,log,📰
+objects/Account/recordTypes/Operational_Account.recordType-meta.xml," ",RecordType Operational_Account,M,,log,📰
+objects/Contact/compactLayouts/Contact.compactLayout-meta.xml,A,CompactLayout Contact,,,log,📰
+objects/Contact/fields/Language__c.field-meta.xml,A,CustomField Language__c,,,log,📰
+objects/Contact/fields/Type__c.field-meta.xml,A,CustomField Type__c,,,log,📰
+objects/Contract/Contract.object-meta.xml,A,CustomObject Contract/Contract,,,log,📰
+objects/Contract/fields/Check_in_Work__c.field-meta.xml,A,CustomField Check_in_Work__c,,,log,📰
+objects/ContractLineItem/fields/Geolocation__c.field-meta.xml,A,CustomField Geolocation__c,,,log,📰
+objects/ContractLineItem/fields/Parent_Customer__c.field-meta.xml,A,CustomField Parent_Customer__c,,,log,📰
+objects/Contract_Event__e/Contract_Event__e.object-meta.xml,A,CustomObject Contract_Event__e/Contract_Event__e,,,log,📰
+objects/Contract_Event__e/fields/Record_Id__c.field-meta.xml,A,CustomField Record_Id__c,,,log,📰
+objects/Contract_Line_Financial_Account__c/Contract_Line_Financial_Account__c.object-meta.xml,A,CustomObject Contract_Line_Financial_Account__c/Contract_Line_Financial_Account__c,,,log,📰
+objects/Contract_Line_Financial_Account__c/fields/Contract_Line_Item__c.field-meta.xml,A,CustomField Contract_Line_Item__c,,,log,📰
+objects/Contract_Line_Financial_Account__c/fields/Financial_Customer__c.field-meta.xml,A,CustomField Financial_Customer__c,,,log,📰
+objects/Export_Configuration__mdt/Export_Configuration__mdt.object-meta.xml,A,CustomObject Export_Configuration__mdt/Export_Configuration__mdt,,,log,📰
+objects/Export_Configuration__mdt/fields/Fields_to_Export__c.field-meta.xml,A,CustomField Fields_to_Export__c,,,log,📰
+objects/Export_Configuration__mdt/fields/Object_API_Name__c.field-meta.xml,A,CustomField Object_API_Name__c,,,log,📰
+objects/Export_Configuration__mdt/fields/Parent_Relationship_Field__c.field-meta.xml,A,CustomField Parent_Relationship_Field__c,,,log,📰
+objects/Export_Configuration__mdt/fields/Where_Clause__c.field-meta.xml,A,CustomField Where_Clause__c,,,log,📰
+objects/Google_Maps_API__c/Google_Maps_API__c.object-meta.xml,A,CustomObject Google_Maps_API__c/Google_Maps_API__c,,,log,📰
+objects/Google_Maps_API__c/fields/Key__c.field-meta.xml,A,CustomField Key__c,,,log,📰
+objects/ServiceContract/fields/Check_In_Work__c.field-meta.xml,A,CustomField Check_In_Work__c,,,log,📰
+objects/ServiceContract/fields/Priority__c.field-meta.xml,A,CustomField Priority__c,,,log,📰
+objects/WorkOrder/compactLayouts/Work_Order_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Work_Order_Compact_Layout,,,log,📰
+objects/WorkOrder/fields/Check_In_Work__c.field-meta.xml,A,CustomField Check_In_Work__c,,,log,📰
+objects/WorkOrder/fields/Collected_Items__c.field-meta.xml,A,CustomField Collected_Items__c,,,log,📰
+objects/WorkOrder/fields/Shop_Name__c.field-meta.xml,A,CustomField Shop_Name__c,,,log,📰
+objects/WorkOrder/fields/Work_Order_Type__c.field-meta.xml,A,CustomField Work_Order_Type__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -59,21 +107,15 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-settings/AgentforceForDevelopers.settings-meta.xml,A,Settings AgentforceForDevelopers,,,log,📰
-settings/Analytics.settings-meta.xml," ",Settings Analytics,M,,log,📰
-settings/Case.settings-meta.xml," ",Settings Case,M,,log,📰
-settings/Content.settings-meta.xml," ",Settings Content,M,,log,📰
-settings/ConversationalIntelligence.settings-meta.xml," ",Settings ConversationalIntelligence,M,,log,📰
-settings/EAC.settings-meta.xml," ",Settings EAC,M,,log,📰
-settings/FieldService.settings-meta.xml," ",Settings FieldService,M,,log,📰
-settings/Forecasting.settings-meta.xml," ",Settings Forecasting,M,,log,📰
-settings/Industries.settings-meta.xml," ",Settings Industries,M,,log,📰
-settings/LightningExperience.settings-meta.xml," ",Settings LightningExperience,M,,log,📰
-settings/MyDomain.settings-meta.xml," ",Settings MyDomain,M,,log,📰
-settings/ProductDiscovery.settings-meta.xml,A,Settings ProductDiscovery,,,log,📰
-settings/UserInterface.settings-meta.xml," ",Settings UserInterface,M,,log,📰
-settings/UserManagement.settings-meta.xml," ",Settings UserManagement,M,,log,📰
-topicsForObjects/DynamicDataCapture.topicsForObjects-meta.xml,A,TopicsForObjects DynamicDataCapture,,,log,📰
-installedPackages/Salesforce Field Service App Package.json,A,InstalledPackage Salesforce Field Service App Package.json,,,log,📰
+quickActions/ServiceContract.Export_Lines.quickAction-meta.xml,A,QuickAction ServiceContract.Export_Lines,,,log,📰
+quickActions/ServiceContract.Prepare_for_Next_Year.quickAction-meta.xml,A,QuickAction ServiceContract.Prepare_for_Next_Year,,,log,📰
+settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
+standardValueSets/Salutation.standardValueSet-meta.xml," ",StandardValueSet Salutation,M,,log,📰
+standardValueSets/ServiceAppointmentStatus.standardValueSet-meta.xml," ",StandardValueSet ServiceAppointmentStatus,M,,log,📰
+standardValueSets/WorkOrderPriority.standardValueSet-meta.xml," ",StandardValueSet WorkOrderPriority,M,,log,📰
+standardValueSets/WorkOrderStatus.standardValueSet-meta.xml," ",StandardValueSet WorkOrderStatus,M,,log,📰
+topicsForObjects/Contract_Line_Financial_Account__c.topicsForObjects-meta.xml,A,TopicsForObjects Contract_Line_Financial_Account__c,,,log,📰
+triggers/ContractLineItemTrigger.trigger,A,ApexTrigger ContractLineItemTrigger,,,log,📰
+triggers/ContractLineItemTrigger.trigger-meta.xml,A,ApexTrigger ContractLineItemTrigger,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

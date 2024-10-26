@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ContractLineItemTriggerHandler</members>
+        <members>ExportRecordsController</members>
         <members>FSL__ABCommonProcessor</members>
         <members>FSL__ABDataProcessor</members>
         <members>FSL__ABSlotsResponse</members>
@@ -659,6 +661,9 @@
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
+        <members>MapsGeoCodeService</members>
+        <members>MapsGeoCodeWrapper</members>
+        <members>MapsGeoCodeWrapperTest</members>
         <members>PersonnelRestResource</members>
         <members>ProjectRestResource</members>
         <members>RRuleAdjuster</members>
@@ -764,6 +769,7 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>ContractLineItemTrigger</members>
         <members>FSL__AbsenceCalculateTravelTime</members>
         <members>FSL__CalculateTravelTimeOnServiceChange</members>
         <members>FSL__CheckDuplicationOnWorkRulesPerPolicy</members>
@@ -925,10 +931,6 @@
         <name>BrandingSet</name>
     </types>
     <types>
-        <members>Operators_Briefcase</members>
-        <name>BriefcaseDefinition</name>
-    </types>
-    <types>
         <members>DataCloudCompanyMatch</members>
         <members>DataCloudGeoLocation</members>
         <members>DataCloudLeadAppend</members>
@@ -940,6 +942,7 @@
     </types>
     <types>
         <members>Account.Account_Compact_Layout</members>
+        <members>Contact.Contact</members>
         <members>FSL__Optimization_Request__c.FSL__Compact_Opt_Request</members>
         <members>FSL__Scheduling_Policy_Goal__c.FSL__Compact_Objective</members>
         <members>FSL__Scheduling_Policy_Work_Rule__c.FSL__Compact_Sched_Pol_Rule</members>
@@ -949,6 +952,7 @@
         <members>Lead.Leads_Custom_Compact_Layout</members>
         <members>Opportunity.New_Awesome_Companct_Layout</members>
         <members>User.User_Layout</members>
+        <members>WorkOrder.Work_Order_Compact_Layout</members>
         <name>CompactLayout</name>
     </types>
     <types>
@@ -994,8 +998,10 @@
     </types>
     <types>
         <members>Account.Address_Identifier__c</members>
+        <members>Account.Check_In_Work__c</members>
         <members>Account.Client_Code__c</members>
         <members>Account.Group__c</members>
+        <members>Account.Priority__c</members>
         <members>Account.Short_Name__c</members>
         <members>Activity.FSL__Count_of_Events__c</members>
         <members>Activity.FSL__Count_of_Tasks__c</members>
@@ -1011,12 +1017,24 @@
         <members>AssignedResource.FSL__Last_Updated_Epoch__c</members>
         <members>AssignedResource.FSL__UpdatedByOptimization__c</members>
         <members>AssignedResource.FSL__calculated_duration__c</members>
+        <members>Contact.Language__c</members>
+        <members>Contact.Type__c</members>
+        <members>Contract.Check_in_Work__c</members>
         <members>ContractLineItem.Cost_Center_Code__c</members>
+        <members>ContractLineItem.Geolocation__c</members>
         <members>ContractLineItem.Location__c</members>
+        <members>ContractLineItem.Parent_Customer__c</members>
         <members>ContractLineItem.Planning_Type__c</members>
         <members>ContractLineItem.Project_Code__c</members>
         <members>ContractLineItem.Recurrence_Pattern__c</members>
         <members>ContractLineItem.Scheduling_Interval__c</members>
+        <members>Contract_Event__e.Record_Id__c</members>
+        <members>Contract_Line_Financial_Account__c.Contract_Line_Item__c</members>
+        <members>Contract_Line_Financial_Account__c.Financial_Customer__c</members>
+        <members>Export_Configuration__mdt.Fields_to_Export__c</members>
+        <members>Export_Configuration__mdt.Object_API_Name__c</members>
+        <members>Export_Configuration__mdt.Parent_Relationship_Field__c</members>
+        <members>Export_Configuration__mdt.Where_Clause__c</members>
         <members>FSL__Apex_Limits__c.FSL__Value__c</members>
         <members>FSL__AppointmentBookingSettings__c.FSL__AutoTerritoryPicker__c</members>
         <members>FSL__AppointmentBookingSettings__c.FSL__CustomCSS__c</members>
@@ -1675,6 +1693,7 @@
         <members>ForecastingItem__hd.QuantityWithoutManagerAdjustment__c</members>
         <members>ForecastingItem__hd.RawOwnerOnly__c</members>
         <members>ForecastingItem__hd.RawRollup__c</members>
+        <members>Google_Maps_API__c.Key__c</members>
         <members>Knowledge__kav.Answer__c</members>
         <members>Knowledge__kav.Procedure_Audience__c</members>
         <members>Knowledge__kav.Procedure_Purpose__c</members>
@@ -1738,7 +1757,9 @@
         <members>ServiceAppointment.FSL__UpdatedByOptimization__c</members>
         <members>ServiceAppointment.FSL__Use_Async_Logic__c</members>
         <members>ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c</members>
+        <members>ServiceContract.Check_In_Work__c</members>
         <members>ServiceContract.Generate_Maintenance_Plan__c</members>
+        <members>ServiceContract.Priority__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
         <members>ServiceCrewMember.FSL__GanttLabel__c</members>
         <members>ServiceResource.FSL__Efficiency__c</members>
@@ -1764,10 +1785,14 @@
         <members>Service_Item__c.Service__c</members>
         <members>TimeSlot.FSL__Designated_Work_Boolean_Fields__c</members>
         <members>TimeSlot.FSL__Slot_Color__c</members>
+        <members>WorkOrder.Check_In_Work__c</members>
+        <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
+        <members>WorkOrder.Shop_Name__c</members>
+        <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
         <members>WorkType.FSL__Due_Date_Offset__c</members>
@@ -7040,6 +7065,14 @@
         <name>CustomLabel</name>
     </types>
     <types>
+        <members>Export_Configuration.ServiceContract</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>Standard_Notification</members>
+        <name>CustomNotificationType</name>
+    </types>
+    <types>
         <members>Account</members>
         <members>AccountContactRole</members>
         <members>AccountTeamMember</members>
@@ -7106,6 +7139,8 @@
         <members>ContractLineItem</members>
         <members>ContractLineOutcome</members>
         <members>ContractLineOutcomeData</members>
+        <members>Contract_Event__e</members>
+        <members>Contract_Line_Financial_Account__c</members>
         <members>Customer</members>
         <members>DataUseLegalBasis</members>
         <members>DataUsePurpose</members>
@@ -7124,6 +7159,7 @@
         <members>Expense</members>
         <members>ExpenseReport</members>
         <members>ExpenseReportEntry</members>
+        <members>Export_Configuration__mdt</members>
         <members>ExpressionFilter</members>
         <members>ExpressionFilterCriteria</members>
         <members>ExternalEventMapping</members>
@@ -7168,6 +7204,7 @@
         <members>ForecastingQuota</members>
         <members>ForecastingTypeToCategory</members>
         <members>GeolocationBasedAction</members>
+        <members>Google_Maps_API__c</members>
         <members>Idea</members>
         <members>Image</members>
         <members>Incident</members>
@@ -7387,6 +7424,9 @@
         <members>AssignedResource-vi</members>
         <members>AssignedResource-zh_CN</members>
         <members>AssignedResource-zh_TW</members>
+        <members>Contract_Event__e-en_US</members>
+        <members>Contract_Line_Financial_Account__c-en_US</members>
+        <members>Export_Configuration__mdt-en_US</members>
         <members>FSL__Bundle_Event__e-bg</members>
         <members>FSL__Bundle_Event__e-cs</members>
         <members>FSL__Bundle_Event__e-da</members>
@@ -8312,6 +8352,7 @@
         <members>FSL__vi</members>
         <members>FSL__zh_CN</members>
         <members>FSL__zh_TW</members>
+        <members>Google_Maps_API__c-en_US</members>
         <members>Knowledge__kav-en_US</members>
         <members>Location-en_US</members>
         <members>ProductItem-en_US</members>
@@ -8812,6 +8853,7 @@
     </types>
     <types>
         <members>Account.Standard_Account_Duplicate_Rule</members>
+        <members>Contact.Contact_Mobile_Phone</members>
         <members>Contact.Standard_Contact_Duplicate_Rule</members>
         <members>Contact.Standard_Contact_to_Lead_Duplicate_Rule</members>
         <members>Lead.Standard_Lead_Duplicate_Rule</members>
@@ -8860,6 +8902,10 @@
     <types>
         <members>Case</members>
         <name>EscalationRules</name>
+    </types>
+    <types>
+        <members>GoogleMaps</members>
+        <name>ExternalCredential</name>
     </types>
     <types>
         <members>FSL__CoreSendDirectHttp</members>
@@ -9024,13 +9070,21 @@
     <types>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
-        <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
+        <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <name>Flow</name>
     </types>
     <types>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
-        <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
+        <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <name>FlowDefinition</name>
     </types>
     <types>
@@ -9049,6 +9103,8 @@
         <name>ForecastingType</name>
     </types>
     <types>
+        <members>Language</members>
+        <members>Priority</members>
         <members>Work_Type</members>
         <name>GlobalValueSet</name>
     </types>
@@ -9077,8 +9133,8 @@
         <name>InstalledPackage</name>
     </types>
     <types>
-        <members>Account-Account Layout</members>
-        <members>Account-Financial</members>
+        <members>Account-Financial Layout</members>
+        <members>Account-Operational Layout</members>
         <members>AccountTeamMember-Account Team Member Layout</members>
         <members>Address-Address Layout</members>
         <members>ApptBundleConfig-Appointment Bundle Config Layout</members>
@@ -9110,6 +9166,7 @@
         <members>ContractLineItem-Contract Line Item Layout</members>
         <members>ContractLineOutcome-Contract Line Outcome Layout</members>
         <members>ContractLineOutcomeData-Contract Line Outcome Data Layout</members>
+        <members>Contract_Line_Financial_Account__c-Contract Line Financial Account Layout</members>
         <members>Customer-Customer Layout</members>
         <members>DataUseLegalBasis-Data Use Legal Basis Layout</members>
         <members>DataUsePurpose-Data Use Purpose Layout</members>
@@ -9124,6 +9181,7 @@
         <members>Expense-Expense Layout</members>
         <members>ExpenseReport-Expense Report Layout</members>
         <members>ExpenseReportEntry-Expense Report Entry Layout</members>
+        <members>Export_Configuration__mdt-Export Configuration Layout</members>
         <members>FSL__Crew_Management_User_Settings_Territory__c-Crew Management User Settings Territory Layout</members>
         <members>FSL__Crew_Management_User_Settings__c-Crew Management User Settings Layout</members>
         <members>FSL__Criteria__c-Criteria Layout</members>
@@ -9382,6 +9440,8 @@
         <members>FSL__title</members>
         <members>FSL__tooltip</members>
         <members>FSL__utils</members>
+        <members>exportRecords</members>
+        <members>prepareContractForNextYear</members>
         <members>recurrencePattern</members>
         <members>serviceBuilder</members>
         <name>LightningComponentBundle</name>
@@ -9453,8 +9513,6 @@
         <members>CommSubscriptionTiming.All_CommSubscriptionTimings</members>
         <members>Contact.AllContacts</members>
         <members>Contact.AllContacts</members>
-        <members>Contact.BulkMessageContacts</members>
-        <members>Contact.BulkMessageContacts</members>
         <members>Contact.MyContacts</members>
         <members>Contact.MyContacts</members>
         <members>ContactPointAddress.All_ContactPointAddresses</members>
@@ -9847,6 +9905,7 @@
     </types>
     <types>
         <members>Account.Standard_Account_Match_Rule_v1_0</members>
+        <members>Contact.Contact_Mobile_Phone</members>
         <members>Contact.Standard_Contact_Match_Rule_v1_1</members>
         <members>Lead.Standard_Lead_Match_Rule_v1_0</members>
         <name>MatchingRule</name>
@@ -9868,6 +9927,11 @@
         <members>sf_fieldservice__S8e_F3d_S5e_for_A5d_o3h_m4e_app_detail__S8e_F3d_S5e_for_A5d_o3h_m4e_app_detailMobileApplicationDetail</members>
         <members>sf_fieldservice__S8e_F3d_S5e_for_iOS_o3h_m4e_app_detail__S8e_F3d_S5e_for_iOS_o3h_m4e_app_detailMobileApplicationDetail</members>
         <name>MobileApplicationDetail</name>
+    </types>
+    <types>
+        <members>GoogleMaps</members>
+        <members>MapsEncoding</members>
+        <name>NamedCredential</name>
     </types>
     <types>
         <members>NotificationTypeConfig</members>
@@ -9973,6 +10037,8 @@
         <members>Quote.SendEmail</members>
         <members>ServiceAppointment.FSL__Change_Status</members>
         <members>ServiceAppointment.SendEmail</members>
+        <members>ServiceContract.Export_Lines</members>
+        <members>ServiceContract.Prepare_for_Next_Year</members>
         <members>Task.Defer</members>
         <members>Task.Defer_0</members>
         <members>Task.Defer_1</members>
@@ -11097,6 +11163,7 @@
         <members>ContentDocument</members>
         <members>Contract</members>
         <members>ContractLineOutcomeData</members>
+        <members>Contract_Line_Financial_Account__c</members>
         <members>DynamicDataCapture</members>
         <members>Event</members>
         <members>Expense</members>

@@ -8,8 +8,7 @@
 public without sharing class ServiceBuilderController {
   @AuraEnabled
   public static List<ContractLineItem> getContractLines(String recordId) {
-    List<ContractLineItem> contractLines = new List<ContractLineItem>();
-    contractLines = [
+    List<ContractLineItem> contractLines = [
       SELECT
         Id,
         LineItemNumber,
@@ -35,7 +34,15 @@ public without sharing class ServiceBuilderController {
         Location__PostalCode__s,
         Location__StateCode__s,
         Location__CountryCode__s,
-        Project_Code__c
+        Project_Code__c,
+        (
+          SELECT
+            Id,
+            Contract_Line_Item__c,
+            Financial_Customer__c,
+            Financial_Customer__r.Name
+          FROM Contract_Line_Financial_Accounts__r
+        )
       FROM ContractLineItem
       WHERE ServiceContractId = :recordId
     ];
@@ -121,5 +128,46 @@ public without sharing class ServiceBuilderController {
     }
 
     return contractLine;
+  }
+
+  @AuraEnabled
+  public static String getFinancialAccountName(String recordId) {
+    Account financialAccount = [
+      SELECT Name
+      FROM Account
+      WHERE Id = :recordId
+    ];
+
+    return financialAccount.Name;
+  }
+
+  @AuraEnabled
+  public static void insertOrRemoveContractLineFinancialAccount(
+    String name,
+    Id contractLineItemId,
+    Id financialCustomerId,
+    String action
+  ) {
+    // Query to check if a record with this combination already exists
+    List<Contract_Line_Financial_Account__c> existingRecords = [
+      SELECT Id
+      FROM Contract_Line_Financial_Account__c
+      WHERE
+        Contract_Line_Item__c = :contractLineItemId
+        AND Financial_Customer__c = :financialCustomerId
+    ];
+
+    // Check if the list is empty, meaning no existing record is found
+    if (existingRecords.isEmpty() && action == 'insert') {
+      // Create a new record if no existing record found
+      Contract_Line_Financial_Account__c contractLineFinancialAccount = new Contract_Line_Financial_Account__c();
+      contractLineFinancialAccount.Name = name;
+      contractLineFinancialAccount.Contract_Line_Item__c = contractLineItemId;
+      contractLineFinancialAccount.Financial_Customer__c = financialCustomerId;
+
+      insert contractLineFinancialAccount;
+    } else if (!existingRecords.isEmpty() && action == 'delete') {
+      delete existingRecords;
+    }
   }
 }

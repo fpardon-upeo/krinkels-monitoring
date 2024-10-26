@@ -16,9 +16,4 @@
         <default>false</default>
         <label>High</label>
     </standardValue>
-    <standardValue>
-        <fullName>Critical</fullName>
-        <default>false</default>
-        <label>Critical</label>
-    </standardValue>
 </StandardValueSet>

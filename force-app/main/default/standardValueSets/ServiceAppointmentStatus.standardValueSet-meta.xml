@@ -3,16 +3,10 @@
     <groupingStringEnum>SvcApptStatusCategory</groupingStringEnum>
     <sorted>false</sorted>
     <standardValue>
-        <fullName>None</fullName>
+        <fullName>Unscheduled</fullName>
         <default>true</default>
-        <label>None</label>
+        <label>Unscheduled</label>
         <groupingString>None</groupingString>
-    </standardValue>
-    <standardValue>
-        <fullName>Scheduled</fullName>
-        <default>false</default>
-        <label>Scheduled</label>
-        <groupingString>Scheduled</groupingString>
     </standardValue>
     <standardValue>
         <fullName>Dispatched</fullName>
@@ -21,22 +15,28 @@
         <groupingString>Dispatched</groupingString>
     </standardValue>
     <standardValue>
+        <fullName>Scheduled</fullName>
+        <default>false</default>
+        <label>Scheduled</label>
+        <groupingString>Scheduled</groupingString>
+    </standardValue>
+    <standardValue>
         <fullName>In Progress</fullName>
         <default>false</default>
         <label>In Progress</label>
         <groupingString>InProgress</groupingString>
     </standardValue>
     <standardValue>
-        <fullName>Cannot Complete</fullName>
-        <default>false</default>
-        <label>Cannot Complete</label>
-        <groupingString>CannotComplete</groupingString>
-    </standardValue>
-    <standardValue>
         <fullName>Completed</fullName>
         <default>false</default>
         <label>Completed</label>
         <groupingString>Completed</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Cannot Complete</fullName>
+        <default>false</default>
+        <label>Cannot Complete</label>
+        <groupingString>CannotComplete</groupingString>
     </standardValue>
     <standardValue>
         <fullName>Canceled</fullName>

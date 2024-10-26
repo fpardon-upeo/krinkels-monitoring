@@ -3,10 +3,22 @@
     <groupingStringEnum>WorkStatusCategory</groupingStringEnum>
     <sorted>false</sorted>
     <standardValue>
-        <fullName>New</fullName>
+        <fullName>Unscheduled</fullName>
         <default>true</default>
-        <label>New</label>
+        <label>Unscheduled</label>
         <groupingString>New</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Dispatched</fullName>
+        <default>false</default>
+        <label>Dispatched</label>
+        <groupingString>InProgress</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Scheduled</fullName>
+        <default>false</default>
+        <label>Scheduled</label>
+        <groupingString>InProgress</groupingString>
     </standardValue>
     <standardValue>
         <fullName>In Progress</fullName>
@@ -15,22 +27,10 @@
         <groupingString>InProgress</groupingString>
     </standardValue>
     <standardValue>
-        <fullName>On Hold</fullName>
-        <default>false</default>
-        <label>On Hold</label>
-        <groupingString>OnHold</groupingString>
-    </standardValue>
-    <standardValue>
         <fullName>Completed</fullName>
         <default>false</default>
         <label>Completed</label>
         <groupingString>Completed</groupingString>
-    </standardValue>
-    <standardValue>
-        <fullName>Closed</fullName>
-        <default>false</default>
-        <label>Closed</label>
-        <groupingString>Closed</groupingString>
     </standardValue>
     <standardValue>
         <fullName>Cannot Complete</fullName>

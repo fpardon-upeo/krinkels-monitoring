@@ -459,14 +459,30 @@
             <lightning-input-field
               field-name="Location__PostalCode__s"
             ></lightning-input-field>
+            <!-- Financial Customer Select and Pill Container, is separate from the onsubmit logic in the record form-->
+            <lightning-record-picker
+              label="Financial Customers"
+              placeholder="Add Financial Customer"
+              object-api-name="Account"
+              data-id={selectedLineItemId}
+              filter={finCustomerFilter}
+              onchange={handleFinCustomerSelect}
+              class="financial-customer-picker"
+            >
+            </lightning-record-picker>
+            <lightning-pill-container
+              items={finCustomersForLine}
+              data-id={selectedLineItemId}
+              onitemremove={handleFinCustomerRemove}
+            ></lightning-pill-container>
 
             <div class="editContract-buttons-container">
-              <lightning-button-icon
+              <!-- <lightning-button-icon
                 icon-name="utility:left"
                 alternative-text="Previous"
                 onclick={handlePrevious}
                 data-id={selectedLineItemId}
-              ></lightning-button-icon>
+              ></lightning-button-icon> -->
 
               <lightning-button
                 variant="neutral"
@@ -477,15 +493,17 @@
               <lightning-button
                 variant="brand"
                 type="submit"
+                data-id={selectedLineItemId}
                 name="save"
                 label="Save"
+                onclick={handleSaveRecord}
               ></lightning-button>
-              <lightning-button-icon
+              <!-- <lightning-button-icon
                 icon-name="utility:right"
                 alternative-text="Next"
                 onclick={handleNext}
                 data-id={selectedLineItemId}
-              ></lightning-button-icon>
+              ></lightning-button-icon> -->
             </div>
           </lightning-record-edit-form>
         </div>
