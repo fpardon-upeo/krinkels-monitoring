@@ -7145,6 +7145,7 @@
         <members>DataUseLegalBasis</members>
         <members>DataUsePurpose</members>
         <members>DigitalSignature</members>
+        <members>DocumentRecipient</members>
         <members>DuplicateRecordItem</members>
         <members>DuplicateRecordSet</members>
         <members>DynamicDataCapture</members>
@@ -10573,6 +10574,7 @@
         <members>Customer</members>
         <members>DataUseLegalBasis</members>
         <members>DataUsePurpose</members>
+        <members>DocumentRecipient</members>
         <members>EngagementChannelType</members>
         <members>ExchangeUserMapping</members>
         <members>Expense</members>
@@ -11164,6 +11166,7 @@
         <members>Contract</members>
         <members>ContractLineOutcomeData</members>
         <members>Contract_Line_Financial_Account__c</members>
+        <members>DocumentRecipient</members>
         <members>DynamicDataCapture</members>
         <members>Event</members>
         <members>Expense</members>

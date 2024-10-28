@@ -1,2 +1,13 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
+layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
+layouts/WorkOrderLineItem-Work Order Line Item Layout.layout-meta.xml," ",Layout WorkOrderLineItem-Work Order Line Item Layout,M,,log,📰
+layouts/WorkType-Work Type Layout.layout-meta.xml," ",Layout WorkType-Work Type Layout,M,,log,📰
+notificationTypeConfig/NotificationTypeConfig.config-meta.xml," ",NotificationTypeConfig NotificationTypeConfig,M,,log,📰
+settings/FieldService.settings-meta.xml," ",Settings FieldService,M,,log,📰
+settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
+sharingRules/DocumentRecipient.sharingRules-meta.xml,A,SharingRules DocumentRecipient,,,log,📰
+topicsForObjects/DocumentRecipient.topicsForObjects-meta.xml,A,TopicsForObjects DocumentRecipient,,,log,📰
+manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
+manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

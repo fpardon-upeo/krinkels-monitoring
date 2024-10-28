@@ -9,7 +9,7 @@
     <doesShareSaParentWoWithAr>true</doesShareSaParentWoWithAr>
     <doesShareSaWithAr>true</doesShareSaWithAr>
     <enableBatchWindow>false</enableBatchWindow>
-    <enableDocumentBuilder>false</enableDocumentBuilder>
+    <enableDocumentBuilder>true</enableDocumentBuilder>
     <enableFloatingWorkOrder>false</enableFloatingWorkOrder>
     <enableLsdkMode>false</enableLsdkMode>
     <enablePopulateWorkOrderAddress>true</enablePopulateWorkOrderAddress>

@@ -30,6 +30,18 @@
                 <behavior>Edit</behavior>
                 <field>ShouldAutoCreateSvcAppt</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>WoDocumentTemplate</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>WoliDocumentTemplate</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SaDocumentTemplate</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>

@@ -259,6 +259,8 @@
         <fields>Name</fields>
         <fields>CreatedBy</fields>
         <fields>CreatedDate</fields>
+        <fields>Label</fields>
+        <fields>Status</fields>
         <relatedList>ServiceReportRelatedList</relatedList>
     </relatedLists>
     <relatedLists>
