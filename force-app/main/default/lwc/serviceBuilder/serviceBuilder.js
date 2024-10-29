@@ -50,20 +50,15 @@ export default class ServiceBuilder extends LightningElement {
   endDateLabel = "End Date";
   actionsLabel = "Actions";
 
+  locationTypeOptions = [
+    { label: "Geo Location", value: "Geo Location" },
+    { label: "Address", value: "Address" }
+  ];
+
   // Product Matching Configuration
   productMatchingInfo = {
     primaryField: { fieldPath: "Name" },
     additionalFields: [{ fieldPath: "ProductCode" }]
-  };
-
-  finCustomerFilter = {
-    criteria: [
-      {
-        fieldPath: "RecordType.Name",
-        operator: "eq",
-        value: "Financial Customer"
-      }
-    ]
   };
 
   /**
@@ -71,24 +66,19 @@ export default class ServiceBuilder extends LightningElement {
    */
   connectedCallback() {
     this.loadContractLines();
+
     this.handleSubscribe();
   }
 
   handleSubscribe() {
     const self = this;
     const messageCallback = function (response) {
-      console.log("New message received 2: ", response);
       if (response.data.payload.Record_Id__c === self.recordId) {
-        console.log("Record Id matched");
         self.loadContractLines();
       }
     };
 
     subscribe(this.channelName, -1, messageCallback).then((response) => {
-      console.log(
-        "Subscription request sent to: ",
-        JSON.stringify(response.channel)
-      );
       this.subscription = response;
     });
   }
@@ -106,10 +96,6 @@ export default class ServiceBuilder extends LightningElement {
           line.Index = index;
           line.IsNew = false;
           line.IsSelected = false;
-          // line.StartDate =
-          //   line.StartDate !== undefined
-          //     ? line.StartDate
-          //     : line.ServiceContract.StartDate;
 
           index++;
         });
@@ -117,8 +103,6 @@ export default class ServiceBuilder extends LightningElement {
         this.contractLines = result;
         this.originalContractLines = [...this.contractLines];
         this.isLoading = false;
-
-        console.log(JSON.stringify(this.contractLines));
       })
       .catch((error) => {
         console.error("Error loading contract lines:", error);
@@ -206,6 +190,13 @@ export default class ServiceBuilder extends LightningElement {
   }
 
   /**
+   * @description Handles the saving of the lightning record edit form
+   */
+  handleSaveRecord() {
+    this.template.querySelector("lightning-record-edit-form").submit();
+  }
+
+  /**
    * @description Handles checkbox selection for a contract line
    * @param {Event} event - The event object
    */
@@ -249,6 +240,30 @@ export default class ServiceBuilder extends LightningElement {
   handleProjectCodeChange(event) {
     let index = event.target.dataset.index;
     this.contractLines[index].Project_Code__c = event.detail.value;
+  }
+
+  /**
+   * @description Handles changes to the latitude
+   * @param {Event} event - The event object
+   */
+  handleLatitudeChange(event) {
+    let index = event.target.dataset.index;
+    console.log("index", index);
+    console.log("event.detail.value", event.detail.value);
+    console.log("event.detail.value type", typeof event.detail.value);
+    //convert to decimal
+    let convertedValue = parseFloat(event.detail.value);
+    console.log("convertedValue", convertedValue);
+    this.contractLines[index].Geolocation__Latitude__s = convertedValue;
+  }
+
+  /**
+   * @description Handles changes to the longitude
+   * @param {Event} event - The event object
+   */
+  handleLongitudeChange(event) {
+    let index = event.target.dataset.index;
+    this.contractLines[index].Geolocation__Longitude__s = event.detail.value;
   }
 
   /**
@@ -333,7 +348,7 @@ export default class ServiceBuilder extends LightningElement {
 
               this.handleToast(
                 "Success",
-                "Financial customer added to the contract line.",
+                `Financial customer ${financialAccountName} added to the contract line.`,
                 "success"
               );
             })
@@ -403,7 +418,7 @@ export default class ServiceBuilder extends LightningElement {
 
         this.handleToast(
           "Success",
-          "Financial customer removed from the contract line.",
+          `Financial customer ${removedCustomer.label} removed from the contract line.`,
           "success"
         );
       })
@@ -465,7 +480,8 @@ export default class ServiceBuilder extends LightningElement {
   handleServiceChange(event) {
     let index = event.target.dataset.index;
     let value = event.detail.recordId;
-
+    console.log("value", value);
+    console.log("index", index);
     this.insertContractLine(index, value);
   }
 
@@ -481,22 +497,24 @@ export default class ServiceBuilder extends LightningElement {
         size: "small"
       })
       .then((result) => {
-        // Uncheck all selected records
-        this.template.querySelectorAll("lightning-input").forEach((input) => {
-          input.checked = false;
-        });
-        this.selectedRecords = [];
-        let records = JSON.parse(result);
-        records.forEach((record) => {
-          let index = record.Index;
-          this.contractLines[index] = record;
-          this.insertContractLine(index, record.Product2Id);
-        });
-        this.handleToast(
-          "Success",
-          "Recurrence pattern has been applied to selected records",
-          "success"
-        );
+        if (result) {
+          // Uncheck all selected records
+          this.template.querySelectorAll("lightning-input").forEach((input) => {
+            input.checked = false;
+          });
+          this.selectedRecords = [];
+          let records = JSON.parse(result);
+          records.forEach((record) => {
+            let index = record.Index;
+            this.contractLines[index] = record;
+            this.insertContractLine(index, record.Product2Id);
+          });
+          this.handleToast(
+            "Success",
+            "Recurrence pattern has been applied to selected records",
+            "success"
+          );
+        }
       })
       .catch((error) => {
         console.error("Error applying mass recurrence pattern:", error);
@@ -632,18 +650,8 @@ export default class ServiceBuilder extends LightningElement {
     const originalLine = this.contractLines[index];
 
     const newRow = {
+      ...originalLine,
       Id: null,
-      Product2Id: originalLine.Product2Id,
-      Frequency__c: originalLine.Frequency__c,
-      Planning_Type__c: originalLine.Planning_Type__c,
-      Quantity: originalLine.Quantity,
-      UnitPrice: originalLine.UnitPrice,
-      StartDate: originalLine.StartDate,
-      EndDate: originalLine.EndDate,
-      Location__Street__s: originalLine.Location__Street__s,
-      Location__City__s: originalLine.Location__City__s,
-      Location__PostalCode__s: originalLine.Location__PostalCode__s,
-      Project_Code__c: originalLine.Project_Code__c,
       IsNew: true,
       IsSelected: false,
       ServiceContractId: this.recordId,
@@ -705,6 +713,17 @@ export default class ServiceBuilder extends LightningElement {
     let contractLine = this.contractLines[index];
     contractLine.Product2Id = value;
     contractLine.Location__CountryCode__s = "BE";
+    //Check the geolocation fields and convert them to decimal
+    if (contractLine.Geolocation__Latitude__s) {
+        contractLine.Geolocation__Latitude__s = parseFloat(
+            contractLine.Geolocation__Latitude__s
+        );
+    }
+    if (contractLine.Geolocation__Longitude__s) {
+        contractLine.Geolocation__Longitude__s = parseFloat(
+            contractLine.Geolocation__Longitude__s
+        );
+    }
 
     saveContractLine({ contractLine: contractLine })
       .then((result) => {
@@ -780,6 +799,22 @@ export default class ServiceBuilder extends LightningElement {
    */
   closeModal() {
     this.isModalOpen = false;
+  }
+
+  /**
+   * @description Getter to determine the location columns to display
+   * @returns {Object} The location columns to display
+   */
+  get locationColumns() {
+    const defaultLocationType =
+      this.contractLines.length > 0
+        ? this.contractLines[0].ServiceContract.Location_Type__c
+        : "Address";
+
+    return {
+      isGeoLocation: defaultLocationType === "Geo Location",
+      isAddress: defaultLocationType === "Address"
+    };
   }
 
   // /**

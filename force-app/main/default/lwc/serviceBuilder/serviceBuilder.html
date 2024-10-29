@@ -18,7 +18,6 @@
             class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_striped slds-table_resizable-cols"
           >
             <thead>
-              <!--- the sorting logic was half-assed during the PoC phase, not fully working and more smoke and mirrors than anything else -->
               <tr>
                 <th
                   class="slds-text-align_center th-label"
@@ -55,45 +54,40 @@
                 >
                   {projectCodeLabel}
                 </th>
-                <th
-                  class="slds-text-align_center th-label"
-                  lwc:ref="streetRef"
-                  data-lwcref="streetRef"
-                  data-icon="utility:arrowdown"
-                  onclick={handleBasicSort}
-                  data-label={streetLabel}
-                  data-field="Location__Street__s"
-                  data-sort="none"
-                  style="width: 15%"
-                >
-                  {streetLabel}
-                </th>
-                <th
-                  class="slds-text-align_center th-label"
-                  lwc:ref="cityRef"
-                  data-lwcref="cityRef"
-                  data-icon="utility:arrowdown"
-                  onclick={handleBasicSort}
-                  data-label={cityLabel}
-                  data-field="Location__City__s"
-                  data-sort="none"
-                  style="width: 10%"
-                >
-                  {cityLabel}
-                </th>
-                <th
-                  class="slds-text-align_center th-label"
-                  lwc:ref="zipCodeRef"
-                  data-lwcref="zipCodeRef"
-                  data-icon="utility:arrowdown"
-                  onclick={handleBasicSort}
-                  data-label={zipCodeLabel}
-                  data-field="Location__PostalCode__s"
-                  data-sort="none"
-                  style="width: 10%"
-                >
-                  {zipCodeLabel}
-                </th>
+                <template if:true={locationColumns.isGeoLocation}>
+                  <th
+                    class="slds-text-align_center th-label"
+                    data-field="Location__Latitude__s"
+                  >
+                    Latitude
+                  </th>
+                  <th
+                    class="slds-text-align_center th-label"
+                    data-field="Location__Longitude__s"
+                  >
+                    Longitude
+                  </th>
+                </template>
+                <template if:true={locationColumns.isAddress}>
+                  <th
+                    class="slds-text-align_center th-label"
+                    data-field="Location__Street__s"
+                  >
+                    {streetLabel}
+                  </th>
+                  <th
+                    class="slds-text-align_center th-label"
+                    data-field="Location__City__s"
+                  >
+                    {cityLabel}
+                  </th>
+                  <th
+                    class="slds-text-align_center th-label"
+                    data-field="Location__PostalCode__s"
+                  >
+                    {zipCodeLabel}
+                  </th>
+                </template>
                 <th
                   class="slds-text-align_center th-label"
                   lwc:ref="startDateRef"
@@ -120,18 +114,7 @@
                 >
                   {endDateLabel}
                 </th>
-                <th
-                  if:true={showActions}
-                  class="slds-text-align_center th-label"
-                  style="width: 10%"
-                  lwc:ref="actionsRef"
-                  data-lwcref="actionsRef"
-                  data-icon="utility:arrowdown"
-                  data-label={actionsLabel}
-                  data-sort="none"
-                >
-                  Actions
-                </th>
+                <th>Actions</th>
               </tr>
               <!--- search boxes under each column header, not working for the lookup component -->
               <tr>
@@ -158,39 +141,65 @@
                     class="slds-p-around_x-small"
                   ></lightning-input>
                 </th>
-                <th>
-                  <lightning-input
-                    type="search"
-                    label="Search"
-                    onchange={handleSearch}
-                    data-field="Location__Street__s"
-                    data-type="text"
-                    variant="label-hidden"
-                    class="slds-p-around_x-small"
-                  ></lightning-input>
-                </th>
-                <th>
-                  <lightning-input
-                    type="search"
-                    label="Search"
-                    onchange={handleSearch}
-                    data-field="Location__City__s"
-                    data-type="text"
-                    variant="label-hidden"
-                    class="slds-p-around_x-small"
-                  ></lightning-input>
-                </th>
-                <th>
-                  <lightning-input
-                    type="search"
-                    label="Search"
-                    onchange={handleSearch}
-                    data-field="Location__PostalCode__s"
-                    data-type="text"
-                    variant="label-hidden"
-                    class="slds-p-around_x-small"
-                  ></lightning-input>
-                </th>
+                <template if:true={locationColumns.isGeoLocation}>
+                  <th>
+                    <lightning-input
+                      type="search"
+                      label="Search"
+                      onchange={handleSearch}
+                      data-field="Location__Latitude__s"
+                      data-type="number"
+                      variant="label-hidden"
+                      class="slds-p-around_x-small"
+                    ></lightning-input>
+                  </th>
+                  <th>
+                    <lightning-input
+                      type="search"
+                      label="Search"
+                      onchange={handleSearch}
+                      data-field="Location__Longitude__s"
+                      data-type="number"
+                      variant="label-hidden"
+                      class="slds-p-around_x-small"
+                    ></lightning-input>
+                  </th>
+                </template>
+                <template if:true={locationColumns.isAddress}>
+                  <th>
+                    <lightning-input
+                      type="search"
+                      label="Search"
+                      onchange={handleSearch}
+                      data-field="Location__Street__s"
+                      data-type="text"
+                      variant="label-hidden"
+                      class="slds-p-around_x-small"
+                    ></lightning-input>
+                  </th>
+                  <th>
+                    <lightning-input
+                      type="search"
+                      label="Search"
+                      onchange={handleSearch}
+                      data-field="Location__City__s"
+                      data-type="text"
+                      variant="label-hidden"
+                      class="slds-p-around_x-small"
+                    ></lightning-input>
+                  </th>
+                  <th>
+                    <lightning-input
+                      type="search"
+                      label="Search"
+                      onchange={handleSearch}
+                      data-field="Location__PostalCode__s"
+                      data-type="text"
+                      variant="label-hidden"
+                      class="slds-p-around_x-small"
+                    ></lightning-input>
+                  </th>
+                </template>
                 <th>
                   <lightning-input
                     type="search"
@@ -214,7 +223,6 @@
                   ></lightning-input>
                 </th>
                 <th lwc:if={showActions}>
-                  <!-- Empty cell for actions, clear all search terms and reset -->
                   <lightning-button-icon
                     icon-name="utility:clear"
                     alternative-text="Clear"
@@ -273,42 +281,78 @@
                       onchange={handleProjectCodeChange}
                     ></lightning-input>
                   </td>
-                  <td style="height: auto">
-                    <lightning-input
-                      type="text"
-                      name="street"
-                      label="Street"
-                      value={service.Location__Street__s}
-                      data-id={service.Id}
-                      data-index={service.Index}
-                      onchange={handleStreetChange}
-                      variant="label-hidden"
-                    ></lightning-input>
-                  </td>
-                  <td>
-                    <lightning-input
-                      type="text"
-                      name="city"
-                      label="City"
-                      value={service.Location__City__s}
-                      data-id={service.Id}
-                      data-index={service.Index}
-                      onchange={handleCityChange}
-                      variant="label-hidden"
-                    ></lightning-input>
-                  </td>
-                  <td>
-                    <lightning-input
-                      type="text"
-                      name="zip-code"
-                      label="Zip Code"
-                      value={service.Location__PostalCode__s}
-                      data-id={service.Id}
-                      data-index={service.Index}
-                      onchange={handleZipCodeChange}
-                      variant="label-hidden"
-                    ></lightning-input>
-                  </td>
+                  <template if:true={locationColumns.isGeoLocation}>
+                    <td>
+                      <lightning-input
+                        type="number"
+                        name="latitude"
+                        label="Latitude"
+                        value={service.Geolocation__Latitude__s}
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        formatter="decimal"
+                        onchange={handleLatitudeChange}
+                        variant="label-hidden"
+                        step="0.000001"
+                      >
+                      </lightning-input>
+                    </td>
+                    <td>
+                      <lightning-input
+                        type="number"
+                        name="longitude"
+                        label="Longitude"
+                        value={service.Geolocation__Longitude__s}
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        onchange={handleLongitudeChange}
+                        variant="label-hidden"
+                        step="0.000001"
+                      >
+                      </lightning-input>
+                    </td>
+                  </template>
+                  <template if:true={locationColumns.isAddress}>
+                    <td>
+                      <lightning-input
+                        type="text"
+                        name="street"
+                        label="Street"
+                        value={service.Location__Street__s}
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        onchange={handleStreetChange}
+                        variant="label-hidden"
+                      >
+                      </lightning-input>
+                    </td>
+                    <td>
+                      <lightning-input
+                        type="text"
+                        name="city"
+                        label="City"
+                        value={service.Location__City__s}
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        onchange={handleCityChange}
+                        variant="label-hidden"
+                      >
+                      </lightning-input>
+                    </td>
+                    <td>
+                      <lightning-input
+                        type="text"
+                        name="zip-code"
+                        label="Zip Code"
+                        value={service.Location__PostalCode__s}
+                        data-id={service.Id}
+                        data-index={service.Index}
+                        onchange={handleZipCodeChange}
+                        variant="label-hidden"
+                      >
+                      </lightning-input>
+                    </td>
+                  </template>
                   <td>
                     <lightning-input
                       type="date"
@@ -398,117 +442,12 @@
     </div>
   </lightning-card>
 
-  <!-- Rather than having a side panel, a modal would be a better solution for editing the contract -->
   <template if:true={isModalOpen}>
-    <section
-      role="dialog"
-      tabindex="-1"
-      aria-labelledby="modal-heading-01"
-      aria-modal="true"
-      aria-describedby="modal-content-id-1"
-      class="slds-modal slds-fade-in-open"
-    >
-      <div class="slds-modal__container">
-        <header class="slds-modal__header">
-          <button
-            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
-            title="Close"
-            onclick={closeModal}
-          >
-            <lightning-icon
-              icon-name="utility:close"
-              alternative-text="close"
-              variant="inverse"
-              size="small"
-            ></lightning-icon>
-            <span class="slds-assistive-text">Close</span>
-          </button>
-          <h2
-            id="modal-heading-01"
-            class="slds-text-heading_medium slds-hyphenate"
-          >
-            Edit Contract Line
-          </h2>
-        </header>
-        <div
-          class="slds-modal__content slds-p-around_medium"
-          id="modal-content-id-1"
-        >
-          <lightning-record-edit-form
-            record-id={selectedLineItemId}
-            object-api-name="ContractLineItem"
-            onsuccess={handleSuccess}
-          >
-            <lightning-messages></lightning-messages>
-            <lightning-input-field
-              field-name="Product2Id"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="StartDate"
-            ></lightning-input-field>
-            <lightning-input-field field-name="EndDate"></lightning-input-field>
-            <lightning-input-field
-              field-name="Planning_Type__c"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="Location__Street__s"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="Location__City__s"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="Location__PostalCode__s"
-            ></lightning-input-field>
-            <!-- Financial Customer Select and Pill Container, is separate from the onsubmit logic in the record form-->
-            <lightning-record-picker
-              label="Financial Customers"
-              placeholder="Add Financial Customer"
-              object-api-name="Account"
-              data-id={selectedLineItemId}
-              filter={finCustomerFilter}
-              onchange={handleFinCustomerSelect}
-              class="financial-customer-picker"
-            >
-            </lightning-record-picker>
-            <lightning-pill-container
-              items={finCustomersForLine}
-              data-id={selectedLineItemId}
-              onitemremove={handleFinCustomerRemove}
-            ></lightning-pill-container>
-
-            <div class="editContract-buttons-container">
-              <!-- <lightning-button-icon
-                icon-name="utility:left"
-                alternative-text="Previous"
-                onclick={handlePrevious}
-                data-id={selectedLineItemId}
-              ></lightning-button-icon> -->
-
-              <lightning-button
-                variant="neutral"
-                label="Cancel"
-                onclick={closeModal}
-                class="slds-m-right_x-small"
-              ></lightning-button>
-              <lightning-button
-                variant="brand"
-                type="submit"
-                data-id={selectedLineItemId}
-                name="save"
-                label="Save"
-                onclick={handleSaveRecord}
-              ></lightning-button>
-              <!-- <lightning-button-icon
-                icon-name="utility:right"
-                alternative-text="Next"
-                onclick={handleNext}
-                data-id={selectedLineItemId}
-              ></lightning-button-icon> -->
-            </div>
-          </lightning-record-edit-form>
-        </div>
-      </div>
-    </section>
-    <div class="slds-backdrop slds-backdrop_open"></div>
+    <c-contract-line-editor
+      selected-line-item-id={selectedLineItemId}
+      contract-lines={contractLines}
+      location-columns={locationColumns}
+      onclosemodal={closeModal}
+    ></c-contract-line-editor>
   </template>
 </template>

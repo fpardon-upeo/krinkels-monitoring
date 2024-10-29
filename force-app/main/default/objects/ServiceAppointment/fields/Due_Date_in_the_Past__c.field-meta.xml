@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_Date_in_the_Past__c</fullName>
+    <description>Field to indicate if the Due  date is in the past</description>
+    <formula>DATEVALUE( DueDate )  &gt; TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Due Date in the past</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

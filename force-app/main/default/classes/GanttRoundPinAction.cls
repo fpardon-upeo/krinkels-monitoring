@@ -11,7 +11,7 @@ global class GanttRoundPinAction implements FSL.CustomGanttServiceAppointmentAct
 
         List<ServiceAppointment> serviceAppointments = [
                 SELECT Id, SchedStartTime, SchedEndTime, AppointmentNumber,
-                (SELECT Id, ServiceResourceId, ServiceCrewId, ServiceAppointmentId from ServiceResources WHERE ServiceResource.ResourceType = 'C'),
+                (SELECT Id, ServiceResourceId, ServiceCrewId, ServiceAppointmentId from ServiceResources),
                 TYPEOF ParentRecord
                 WHEN WorkOrder THEN Asset.Recurrence_Pattern__c, Asset.Id
         END
@@ -37,6 +37,7 @@ global class GanttRoundPinAction implements FSL.CustomGanttServiceAppointmentAct
             for(ServiceAppointment saRescheduled: serviceAppointmentsRescheduled){
                 System.debug('saRescheduled: ' + saRescheduled.AppointmentNumber);
                 if(saRescheduled.Id == sa.Id){
+                    System.debug('Skipping the original service appointment');
                     continue;
                 }
                 for(AssignedResource sr: sa.ServiceResources){
@@ -46,6 +47,7 @@ global class GanttRoundPinAction implements FSL.CustomGanttServiceAppointmentAct
                         System.debug('Skipping resource: ' + sr.Id);
                         continue;
                     } else {
+                        System.debug('Adding resource: ' + uniqueKey);
                         assignedResourcesAdded.add(uniqueKey);
                     }
 

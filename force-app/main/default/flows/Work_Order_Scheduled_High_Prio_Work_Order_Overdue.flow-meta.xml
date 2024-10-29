@@ -104,7 +104,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.ServiceContract.OwnerId</elementReference>
+                <elementReference>$Record.ServiceTerritory.OwnerId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>

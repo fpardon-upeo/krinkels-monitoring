@@ -7,7 +7,7 @@
         <filterItems>
             <field>Account.RecordType.Name</field>
             <operation>equals</operation>
-            <value>Financial Customer</value>
+            <value>Financial Account</value>
         </filterItems>
         <isOptional>false</isOptional>
     </lookupFilter>

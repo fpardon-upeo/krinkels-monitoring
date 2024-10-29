@@ -4,144 +4,120 @@
 
 <!-- Recurrence Pattern -->
 <template>
-  <lightning-modal-header
-    label="Set Maintenance Recurrences"
-  ></lightning-modal-header>
-  <lightning-modal-body>
-    <div class="slds-grid slds-m-around_small">
-      <div class="slds-col slds-size_2-of-12 slds-m-right_small">
-        <lightning-combobox
-          name="recurrenceperiodtype"
-          label="Recurrence Period"
-          options={periodOptions}
-          value={selectedPeriod}
-          onchange={handlePeriodChange}
-        >
-        </lightning-combobox>
-      </div>
-      <div class="slds-col slds-size_2-of-12 slds-m-right_small">
-        <lightning-input
-          type="number"
-          name="interval"
-          label="Interval"
-          value={selectedInterval}
-          onchange={handleIntervalChange}
-        >
-        </lightning-input>
-      </div>
-      <div class="slds-col slds-size_8-of-12">
-        <lightning-input
-          disabled="true"
-          type="text"
-          name="pattern"
-          label="Pattern"
-          value={PatternText}
-        >
-        </lightning-input>
-        <lightning-input
-          class="slds-m-top_small"
-          disabled="true"
-          type="text"
-          name="rrule"
-          label="RRULE"
-          value={completePattern}
-        >
-        </lightning-input>
-      </div>
-    </div>
-    <div class="slds-m-around_small slds-grid">
-      <div class="slds-col slds-m-right_small">
-        <lightning-radio-group
-          name="end"
-          required
-          label="Recurrence Ends"
-          options={endTypeOptions}
-          value={selectedEndType}
-          onchange={handleEndTypeChange}
-        >
-        </lightning-radio-group>
-      </div>
-      <div class="slds-col slds-m-left_small">
-        <lightning-input
-          if:true={showOnDate}
-          type="date"
-          name="end"
-          label="Recurrence Ends On"
-          value={selectedEndDate}
-          onchange={handleEndDateChange}
-          required
-        >
-        </lightning-input>
-        <lightning-input
-          if:true={showAfterOccurrences}
-          type="number"
-          name="occurrences"
-          label="After Occurrences"
-          value={selectedOccurrences}
-          onchange={handleOccurrencesChange}
-        >
-        </lightning-input>
-      </div>
-    </div>
-    <div class="slds-m-around_small slds-grid">
-      <div class="slds-col slds-m-right_small">
-        <lightning-checkbox-group
-          if:true={showWeekDays}
-          name="weekDays"
-          required
-          label="Recurrence Days"
-          options={recurrenceDaysOptions}
-          value={selectedRecurrenceDays}
-          onchange={handleRecurrenceDaysChange}
-        >
-        </lightning-checkbox-group>
-        <lightning-combobox
-          if:true={showMonthRecurrence}
-          name="monthRecurrence"
-          required
-          label="Recurring On"
-          options={recurrenceMonthTypeOptions}
-          value={selectedMonthType}
-          onchange={handleRecurrenceMonthTypeChange}
-        >
-        </lightning-combobox>
-      </div>
-      <div class="slds-col slds-m-right_small">
-        <lightning-input
-          if:true={showMonthDayRecurrence}
-          type="number"
-          name="monthDayRecurrence"
-          label="Day of the Month"
-          value={selectedMonthRecurrence}
-          onchange={handleMonthRecurrenceChange}
-        >
-        </lightning-input>
-        <lightning-combobox
-          if:true={showMonthWeekRecurrence}
-          name="monthWeekRecurrence"
-          label="Week"
-          options={recurrenceMonthWeekOptions}
-          value={selectedMonthWeekRecurrence}
-          onchange={handleMonthWeekRecurrenceChange}
-        >
-        </lightning-combobox>
-      </div>
-      <div
-        class="slds-col slds-m-right_small"
-        if:true={showMonthWeekRecurrence}
-      >
-        <lightning-combobox
-          name="monthWeekRecurrenceDay"
-          label="Day"
-          options={recurrenceDaysOptions}
-          value={selectedRecurrenceDay}
-          onchange={handleMonthWeekRecurrenceDayChange}
-        >
-        </lightning-combobox>
-      </div>
-    </div>
-  </lightning-modal-body>
-  <lightning-modal-footer>
-    <lightning-button label="OK" onclick={handleSave}></lightning-button>
-  </lightning-modal-footer>
+    <lightning-modal-header label="Set Maintenance Recurrences"></lightning-modal-header>
+    <lightning-modal-body>
+        <div class="slds-grid slds-m-around_small">
+            <div class="slds-col slds-size_2-of-12 slds-m-right_small">
+                <lightning-combobox
+                        name="recurrenceperiodtype"
+                        label="Recurrence Period"
+                        options={periodOptions}
+                        value={selectedPeriod}
+                        onchange={handlePeriodChange}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_2-of-12 slds-m-right_small">
+                <lightning-input
+                        type="number"
+                        name="interval"
+                        label="Interval"
+                        value={selectedInterval}
+                        onchange={handleIntervalChange}>
+                </lightning-input>
+            </div>
+            <div class="slds-col slds-size_8-of-12">
+                <lightning-input
+                        disabled="true"
+                        type="text"
+                        name="pattern"
+                        label="Pattern"
+                        value={PatternText}>
+                </lightning-input>
+                <lightning-input
+                        class="slds-m-top_small"
+                        disabled="true"
+                        type="text"
+                        name="rrule"
+                        label="RRULE"
+                        value={completePattern}>
+                </lightning-input>
+            </div>
+        </div>
+        <div class="slds-m-around_small slds-grid">
+            <div class="slds-col slds-m-right_small">
+                <lightning-radio-group
+                        name="end"
+                        required
+                        label="Recurrence Ends"
+                        options={endTypeOptions}
+                        value={selectedEndType}
+                        onchange={handleEndTypeChange}>
+                </lightning-radio-group>
+            </div>
+            <div class="slds-col slds-m-left_small">
+                <lightning-input if:true={showOnDate}
+                        type="date"
+                        name="end"
+                        label="Recurrence Ends On"
+                        value={selectedEndDate}
+                        onchange={handleEndDateChange}>
+                </lightning-input>
+                <lightning-input if:true={showAfterOccurrences}
+                                 type="number"
+                                 name="occurrences"
+                                 label="After Occurrences"
+                                 value={selectedOccurrences}
+                                 onchange={handleOccurrencesChange}>
+                </lightning-input>
+            </div>
+        </div>
+        <div class="slds-m-around_small slds-grid">
+            <div class="slds-col slds-m-right_small">
+                <lightning-checkbox-group if:true={showWeekDays}
+                        name="weekDays"
+                        required
+                        label="Recurrence Days"
+                        options={recurrenceDaysOptions}
+                        value={selectedRecurrenceDays}
+                        onchange={handleRecurrenceDaysChange}>
+                </lightning-checkbox-group>
+                <lightning-combobox if:true={showMonthRecurrence}
+                                    name="monthRecurrence"
+                                    required
+                                    label="Recurring On"
+                                    options={recurrenceMonthTypeOptions}
+                                    value={selectedMonthType}
+                                    onchange={handleRecurrenceMonthTypeChange}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-m-right_small">
+                <lightning-input if:true={showMonthDayRecurrence}
+                        type="number"
+                        name="monthDayRecurrence"
+                        label="Day of the Month"
+                        value={selectedMonthRecurrence}
+                        onchange={handleMonthRecurrenceChange}>
+                </lightning-input>
+                <lightning-combobox if:true={showMonthWeekRecurrence}
+                        name="monthWeekRecurrence"
+                        label="Week"
+                        options={recurrenceMonthWeekOptions}
+                        value={selectedMonthWeekRecurrence}
+                        onchange={handleMonthWeekRecurrenceChange}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-m-right_small" if:true={showMonthWeekRecurrence}>
+                <lightning-combobox
+                        name="monthWeekRecurrenceDay"
+                        label="Day"
+                        options={recurrenceDaysOptions}
+                        value={selectedRecurrenceDay}
+                        onchange={handleMonthWeekRecurrenceDayChange}>
+                </lightning-combobox>
+            </div>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="OK" onclick={handleSave}></lightning-button>
+    </lightning-modal-footer>
 </template>

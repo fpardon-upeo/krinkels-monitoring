@@ -11,8 +11,8 @@ public with sharing class MaintenancePlanService {
             ServiceContract serviceContract = getServiceContract(serviceContractId);
             List<ContractLineItem> serviceLines = getContractLineItems(serviceContractId);
             List<ServiceTerritory> territories = getServiceTerritories();
-            Map<String, Id> territoryMap = mapServiceTerritories(territories);
             List<Account> uniqueLocations = getUniqueLocations(serviceContract, serviceLines);
+            Map<String, ATAK_Project__c> projectMap = getProjectMap(serviceLines);
 
             System.debug('Unique Locations: ' + uniqueLocations);
 
@@ -29,7 +29,7 @@ public with sharing class MaintenancePlanService {
             MaintenancePlan maintenancePlan = createMaintenancePlan(serviceContractId, serviceContract);
             insertMaintenancePlan(maintenancePlan);
 
-            List<MaintenanceAsset> maintenanceAssets = createMaintenanceAssets(maintenancePlan, assets, territoryMap);
+            List<MaintenanceAsset> maintenanceAssets = createMaintenanceAssets(maintenancePlan, assets, projectMap);
             insertMaintenanceAssets(maintenanceAssets);
 
             List<MaintenanceWorkRule> maintenanceWorkRules = createMaintenanceWorkRules(maintenancePlan.Id, maintenanceAssets);
@@ -147,11 +147,13 @@ public with sharing class MaintenancePlanService {
      */
     private static List<Asset> createAssets(ServiceContract serviceContract, List<ContractLineItem> serviceLines, List<Account> uniqueLocations) {
         List<Asset> assets = new List<Asset>();
+        Map<String, ATAK_Project__c> projectMap = getProjectMap(serviceLines);
+        System.debug('Project Map: ' + projectMap);
 
         for (ContractLineItem line : serviceLines) {
+            System.debug('Line: ' + line);
             // Generate locationKey based on street and city
             String locationKey = serviceContract.Account.Name + '-' + line.Location__Street__s + '-' + line.Location__City__s;
-
             Asset asset = new Asset();
             asset.Name = (line.Product2.Name + ' - ' + serviceContract.Account.Name + ' - ' + line.Location__City__s + ' ' + line.Location__Street__s).abbreviate(80);
             asset.Account = new Account(Address_Identifier__c = locationKey);  // Using locationKey instead of Account.Name
@@ -162,6 +164,18 @@ public with sharing class MaintenancePlanService {
             asset.UsageEndDate = line.EndDate != null ? line.EndDate : serviceContract.EndDate;
             asset.Unique_Id__c = generateUniqueAssetKey(line, locationKey);  // Using locationKey for asset uniqueness
             asset.Recurrence_Pattern__c = line.Recurrence_Pattern__c;
+            asset.Street = line.Location__Street__s;
+            asset.City = line.Location__City__s;
+            asset.PostalCode = line.Location__PostalCode__s;
+            asset.Country = line.Location__CountryCode__s;
+
+            if(projectMap.containsKey(line.Project_Code__c)){
+                asset.ATAK_Project__c = projectMap.get(line.Project_Code__c).Id;
+                if(projectMap.get(line.Project_Code__c).Service_Territory__c != null){
+                    asset.Service_Territory__c = projectMap.get(line.Project_Code__c).Service_Territory__c;
+                }
+            }
+
             assets.add(asset);
         }
 
@@ -262,17 +276,19 @@ public with sharing class MaintenancePlanService {
      * Create maintenance asset records for the plan.
      * @param maintenancePlan The maintenance plan.
      * @param assets The list of assets.
-     * @param territoryMap The map of service territories.
+     * @param projectMap The map of ATAK project codes and records.
      * @return List<MaintenanceAsset> The list of maintenance assets.
      */
-    private static List<MaintenanceAsset> createMaintenanceAssets(MaintenancePlan maintenancePlan, List<Asset> assets, Map<String, Id> territoryMap) {
+    private static List<MaintenanceAsset> createMaintenanceAssets(MaintenancePlan maintenancePlan, List<Asset> assets, Map<String, ATAK_Project__c> projectMap) {
         List<MaintenanceAsset> maintenanceAssets = new List<MaintenanceAsset>();
+        Map<String, String> assetMap = getAssetToProductWorkTypeMap(assets);
 
         for (Asset asset : assets) {
             MaintenanceAsset maintenanceAsset = new MaintenanceAsset();
             maintenanceAsset.MaintenancePlanId = maintenancePlan.Id;
             maintenanceAsset.AssetId = asset.Id;
             maintenanceAsset.NextSuggestedMaintenanceDate = asset.InstallDate;
+            maintenanceAsset.WorkTypeId = assetMap.get(asset.Id);
             maintenanceAssets.add(maintenanceAsset);
         }
         return maintenanceAssets;
@@ -345,12 +361,33 @@ public with sharing class MaintenancePlanService {
     }
 
     /**
-     * Get Work Type Id for a given service package (stubbed).
-     * @param servicePackage The service package.
-     * @return Id The Work Type Id.
+     * Gets a map of the ATAK project codes and their corresponding ATAK project records.
+     * @param contractLineItems The list of contract line items.
+     * @return Map<String, ATAK_Project__c> The map of ATAK project codes and records.
      */
-    private static Id getWorkTypeId(String servicePackage) {
-        // Stub for fetching WorkTypeId based on Service Package
-        return [SELECT Id FROM WorkType WHERE Name = :servicePackage LIMIT 1].Id;
+    private static Map<String, ATAK_Project__c> getProjectMap(List<ContractLineItem> contractLineItems){
+
+        List<String> uniqueCodes = new List<String>();
+        for(ContractLineItem line : contractLineItems){
+            if(line.Project_Code__c != null && !uniqueCodes.contains(line.Project_Code__c)){
+                uniqueCodes.add(line.Project_Code__c);
+            }
+        }
+
+        Map<String, ATAK_Project__c> projectMap = new Map<String, ATAK_Project__c>();
+
+        for(ATAK_Project__c project : [SELECT Id, Name, Subproject_Name__c, Service_Territory__c FROM ATAK_Project__c WHERE Subproject_Name__c IN :uniqueCodes]){
+            projectMap.put(project.Subproject_Name__c, project);
+        }
+        return projectMap;
+    }
+
+    private static Map<String, String> getAssetToProductWorkTypeMap(List<Asset> assets){
+        Map<String, String> assetToProductWorkTypeMap = new Map<String, String>();
+        List<Asset> assetFullData = [SELECT Id, Product2Id, Product2.Work_Type__c FROM Asset WHERE Id IN :assets];
+        for(Asset asset : assetFullData){
+            assetToProductWorkTypeMap.put(asset.Id, asset.Product2.Work_Type__c);
+        }
+        return assetToProductWorkTypeMap;
     }
 }

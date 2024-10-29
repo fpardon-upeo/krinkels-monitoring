@@ -67,6 +67,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ServiceAppointmentTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ServiceBuilderController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -75,6 +79,66 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Cost_centre_Atak_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Cost_centre_Atak_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Department_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Department_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Depot__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Dossier__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Parent_Subproject__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Service_Territory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Subproject_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Subproject_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Address_Identifier__c</field>
@@ -107,12 +171,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Asset.ATAK_Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Asset.Contract_Line_Item__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Asset.Recurrence_Pattern__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Asset.Service_Territory__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -401,6 +475,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.Due_Date_in_the_Past__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.FSL__Appointment_Grade__c</field>
         <readable>true</readable>
@@ -541,6 +620,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Overdue_Reminder_Send__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ServiceContract.Check_In_Work__c</field>
         <readable>true</readable>
@@ -548,6 +632,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceContract.Generate_Maintenance_Plan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceContract.Location_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -696,6 +785,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>User.ATAK_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.Check_In_Work__c</field>
         <readable>true</readable>
@@ -761,7 +855,15 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -776,11 +878,18 @@
         <flow>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</flow>
     </flowAccesses>
     <layoutAssignments>
-        <layout>Account-Financial Layout</layout>
-        <recordType>Account.Financial_Customer</recordType>
+        <layout>ATAK_Project__c-ATAK Project Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Operational Layout</layout>
+        <layout>Account-Commercial Layout</layout>
+        <recordType>Account.Commercial_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Financial Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Financial Layout</layout>
+        <recordType>Account.Financial_Account</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Account-Operational Layout</layout>
@@ -1283,6 +1392,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>ATAK_Project__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Contract_Line_Financial_Account__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -1300,8 +1418,13 @@
         <enabled>true</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Account.Commercial_Account</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>true</default>
-        <recordType>Account.Financial_Customer</recordType>
+        <recordType>Account.Financial_Account</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -1344,6 +1467,10 @@
         <recordType>ResourceAbsence.FSL__Non_Availability</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>ATAK_Project__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Knowledge__kav</tab>
         <visibility>DefaultOn</visibility>

@@ -8,7 +8,6 @@
 
 import { api, track } from "lwc";
 import LightningModal from "lightning/modal";
-import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class RecurrencePattern extends LightningModal {
   @api recordId; // The record Id of the ContractLineItem
@@ -28,6 +27,7 @@ export default class RecurrencePattern extends LightningModal {
   showOnDate = false;
 
   //Set the default date of onDate to next year on the same day
+  //selectedEndDate = new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate()).toDateString();
   selectedEndDate;
   selectedOccurrences = 1;
 
@@ -136,19 +136,6 @@ export default class RecurrencePattern extends LightningModal {
   }
 
   handleSave() {
-    if (this.selectedEndType === "On" && this.selectedEndDate === undefined) {
-      this.dispatchEvent(
-        new ShowToastEvent({
-          title: "Error",
-          message:
-            "Please select an end date or change Recurrence Ends option.",
-          variant: "error"
-        })
-      );
-
-      return;
-    }
-
     if (this.selectedRecords.length === 0 && this.recordId !== undefined) {
       //Add the recordId to the selectedRecords array
       this.selectedRecords.push(this.recordId);
@@ -158,9 +145,7 @@ export default class RecurrencePattern extends LightningModal {
 
     records.forEach((record) => {
       record.Recurrence_Pattern__c = this.completePattern;
-      record.EndDate = this.selectedEndDate
-        ? this.selectedEndDate
-        : record.EndDate;
+      record.EndDate = this.selectedEndDate;
       record.Frequency__c = this.selectedPeriod;
     });
 
@@ -189,9 +174,6 @@ export default class RecurrencePattern extends LightningModal {
 
   handleEndTypeChange(event) {
     this.selectedEndType = event.detail.value;
-
-    console.log(this.selectedEndType);
-
     this.handleEndTypeDependencies();
   }
 
@@ -225,13 +207,13 @@ export default class RecurrencePattern extends LightningModal {
     if (this.selectedEndType === "Never") {
       this.showOnDate = false;
       this.showAfterOccurrences = false;
-      // this.selectedEndDate = null;
+      this.selectedEndDate = null;
       this.selectedRruleEndDate = "";
       this.selectedOccurrences = 0;
     } else if (this.selectedEndType === "After") {
       this.showAfterOccurrences = true;
       this.showOnDate = false;
-      // this.selectedEndDate = null;
+      this.selectedEndDate = null;
       this.selectedRruleEndDate = "";
     } else {
       this.selectedOccurrences = 0;
