@@ -25,9 +25,9 @@
                 <label>Scholen / Ecoles</label>
             </value>
             <value>
-                <fullName>Semi-industriële gebouwen / Bâtiments semi-industriels</fullName>
+                <fullName>Semi-industriële gebouwen / Batiments semi-industriels</fullName>
                 <default>false</default>
-                <label>Semi-industriële gebouwen / Bâtiments semi-industriels</label>
+                <label>Semi-industriële gebouwen / Batiments semi-industriels</label>
             </value>
             <value>
                 <fullName>Verkoopspunten / Points de ventes</fullName>

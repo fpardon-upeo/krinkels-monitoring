@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>AddressSearchService</members>
         <members>ContractLineItemTriggerHandler</members>
         <members>ExportRecordsController</members>
         <members>FSL__ABCommonProcessor</members>
@@ -933,6 +934,10 @@
         <name>BrandingSet</name>
     </types>
     <types>
+        <members>sfdc</members>
+        <name>Certificate</name>
+    </types>
+    <types>
         <members>DataCloudCompanyMatch</members>
         <members>DataCloudGeoLocation</members>
         <members>DataCloudLeadAppend</members>
@@ -977,6 +982,10 @@
         <name>ContentAsset</name>
     </types>
     <types>
+        <members>bpost</members>
+        <name>CspTrustedSite</name>
+    </types>
+    <types>
         <members>FSL__FieldService</members>
         <members>FSL__FieldService_Admin</members>
         <members>Krinkels_Field_Service</members>
@@ -1007,14 +1016,15 @@
         <members>ATAK_Project__c.Depot__c</members>
         <members>ATAK_Project__c.Dossier__c</members>
         <members>ATAK_Project__c.End_Date__c</members>
+        <members>ATAK_Project__c.Financial_Account__c</members>
         <members>ATAK_Project__c.Parent_Subproject__c</members>
         <members>ATAK_Project__c.Service_Territory__c</members>
+        <members>ATAK_Project__c.Site_Manager_Code__c</members>
         <members>ATAK_Project__c.Start_Date__c</members>
         <members>ATAK_Project__c.SubProject_ATAK__c</members>
         <members>ATAK_Project__c.Subproject_Description__c</members>
         <members>ATAK_Project__c.Subproject_Name__c</members>
         <members>Account.Address_Identifier__c</members>
-        <members>Account.Check_In_Work__c</members>
         <members>Account.Client_Code__c</members>
         <members>Account.Group__c</members>
         <members>Account.Priority__c</members>
@@ -1037,7 +1047,6 @@
         <members>AssignedResource.FSL__calculated_duration__c</members>
         <members>Contact.Language__c</members>
         <members>Contact.Type__c</members>
-        <members>Contract.Check_in_Work__c</members>
         <members>ContractLineItem.Cost_Center_Code__c</members>
         <members>ContractLineItem.Geolocation__c</members>
         <members>ContractLineItem.Location__c</members>
@@ -1718,6 +1727,14 @@
         <members>Knowledge__kav.Procedure_Steps__c</members>
         <members>Knowledge__kav.Procedure_Warnings__c</members>
         <members>Knowledge__kav.Question__c</members>
+        <members>LMRA__c.Corrective_Measures__c</members>
+        <members>LMRA__c.Date__c</members>
+        <members>LMRA__c.EPC_EPI_CBM_PBM__c</members>
+        <members>LMRA__c.LMRA_Ok__c</members>
+        <members>LMRA__c.LMRA_Type__c</members>
+        <members>LMRA__c.Surrounding_Risks__c</members>
+        <members>LMRA__c.Tasks_of_the_Day__c</members>
+        <members>LMRA__c.Work_Order__c</members>
         <members>Location.Account__c</members>
         <members>Location.Van_Crew__c</members>
         <members>MaintenanceAsset.Service_Territory__c</members>
@@ -1747,6 +1764,7 @@
         <members>ResourceAbsence.FSL__InternalSLRGeolocation__c</members>
         <members>ResourceAbsence.FSL__Last_Updated_Epoch__c</members>
         <members>ResourceAbsence.FSL__Scheduling_Policy_Used__c</members>
+        <members>ServiceAppointment.Asset__c</members>
         <members>ServiceAppointment.Due_Date_in_the_Past__c</members>
         <members>ServiceAppointment.FSL__Appointment_Grade__c</members>
         <members>ServiceAppointment.FSL__Auto_Schedule__c</members>
@@ -1801,19 +1819,26 @@
         <members>ServiceTerritory.FSL__Service_Cluster_Proximity__c</members>
         <members>ServiceTerritory.FSL__System_Jobs__c</members>
         <members>ServiceTerritory.FSL__TerritoryLevel__c</members>
+        <members>ServiceTerritory.Main_Responsible__c</members>
         <members>ServiceTerritoryMember.FSL__Internal_SLR_HomeAddress_Geolocation__c</members>
+        <members>Service_Item__c.Service_Item_Key__c</members>
         <members>Service_Item__c.Service_Package__c</members>
         <members>Service_Item__c.Service__c</members>
         <members>TimeSlot.FSL__Designated_Work_Boolean_Fields__c</members>
         <members>TimeSlot.FSL__Slot_Color__c</members>
+        <members>User.ATAK_Code__c</members>
         <members>User.ATAK_Id__c</members>
-        <members>WorkOrder.Check_In_Work__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
         <members>WorkOrder.Shop_Name__c</members>
+        <members>WorkOrder.Shop_Visit_Date__c</members>
+        <members>WorkOrder.Shop_Visit_Duration__c</members>
+        <members>WorkOrder.Shop_Visit_End_Time__c</members>
+        <members>WorkOrder.Shop_Visit_Reviewed_Approved__c</members>
+        <members>WorkOrder.Shop_Visit_Start_Time__c</members>
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
@@ -7236,6 +7261,7 @@
         <members>Individual</members>
         <members>JobProfile</members>
         <members>Knowledge__kav</members>
+        <members>LMRA__c</members>
         <members>Lead</members>
         <members>Location</members>
         <members>LocationTrustMeasure</members>
@@ -8379,6 +8405,7 @@
         <members>FSL__zh_TW</members>
         <members>Google_Maps_API__c-en_US</members>
         <members>Knowledge__kav-en_US</members>
+        <members>LMRA__c-en_US</members>
         <members>Location-en_US</members>
         <members>ProductItem-en_US</members>
         <members>ProductItemTransaction-en_US</members>
@@ -8844,6 +8871,7 @@
         <members>FSL__User_Territory__c</members>
         <members>FSL__Work_Rule__c</members>
         <members>Knowledge__kav</members>
+        <members>LMRA__c</members>
         <members>MobileLanding</members>
         <members>mobileLanding__Mobile_Landing_vf</members>
         <members>mobileLanding__Non_Mobile_Landing</members>
@@ -9072,6 +9100,7 @@
         <members>Financial_Account_Record_Page</members>
         <members>FlowsApp_UtilityBar</members>
         <members>Krinkels_Field_Service_UtilityBar</members>
+        <members>LMRA_Record_Page</members>
         <members>Lead_Record_Page</members>
         <members>LightningSalesConsole_UtilityBar</members>
         <members>LightningSales_UtilityBar</members>
@@ -9093,10 +9122,12 @@
         <members>Service_Territory_Record_Page</members>
         <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Record_Page</members>
+        <members>Work_Plan_Template_Record_Page</members>
         <members>Work_Type_Record_Page</members>
         <name>FlexiPage</name>
     </types>
     <types>
+        <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
@@ -9104,11 +9135,14 @@
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <name>Flow</name>
     </types>
     <types>
+        <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
@@ -9116,7 +9150,9 @@
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <name>FlowDefinition</name>
     </types>
@@ -9140,19 +9176,6 @@
         <members>Priority</members>
         <members>Work_Type</members>
         <name>GlobalValueSet</name>
-    </types>
-    <types>
-        <members>Antwerpen</members>
-        <members>BURGGRAEVE_SIMON</members>
-        <members>FIELD_SERVICE_Default</members>
-        <members>HOMBROECKX_ARNE</members>
-        <members>Operators</members>
-        <members>PLETINCKX_YENTL</members>
-        <members>VANDEWALLE_JIMMY</members>
-        <members>VERDONCK_DAVY</members>
-        <members>VERSTRAETE_GAUTHIER</members>
-        <members>WANDELS_AURELIEN</members>
-        <name>Group</name>
     </types>
     <types>
         <members>Dashboard Home Page Default</members>
@@ -9209,6 +9232,7 @@
         <members>ContractLineOutcome-Contract Line Outcome Layout</members>
         <members>ContractLineOutcomeData-Contract Line Outcome Data Layout</members>
         <members>Contract_Line_Financial_Account__c-Contract Line Financial Account Layout</members>
+        <members>CspTrustedSite-Trusted URL Layout</members>
         <members>Customer-Customer Layout</members>
         <members>DataUseLegalBasis-Data Use Legal Basis Layout</members>
         <members>DataUsePurpose-Data Use Purpose Layout</members>
@@ -9278,6 +9302,7 @@
         <members>Knowledge__kav-FAQ - Reader</members>
         <members>Knowledge__kav-Procedure - Author</members>
         <members>Knowledge__kav-Procedure - Reader</members>
+        <members>LMRA__c-LMRA Layout</members>
         <members>Lead-Lead Layout</members>
         <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
         <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
@@ -9482,8 +9507,10 @@
         <members>FSL__title</members>
         <members>FSL__tooltip</members>
         <members>FSL__utils</members>
+        <members>addressSearch</members>
         <members>contractLineEditor</members>
         <members>exportRecords</members>
+        <members>generateMaintenancePlan</members>
         <members>prepareContractForNextYear</members>
         <members>recurrencePattern</members>
         <members>serviceBuilder</members>
@@ -9500,6 +9527,8 @@
         <members>Account.AllAccounts</members>
         <members>Account.All_Commercial_Accounts</members>
         <members>Account.All_Commercial_Accounts</members>
+        <members>Account.Financial_Accounts</members>
+        <members>Account.Financial_Accounts</members>
         <members>Account.MyAccounts</members>
         <members>Account.MyAccounts</members>
         <members>Activity.MyActivities</members>
@@ -9676,6 +9705,8 @@
         <members>Knowledge__kav.draft_articles</members>
         <members>Knowledge__kav.published_articles</members>
         <members>Knowledge__kav.published_articles</members>
+        <members>LMRA__c.All</members>
+        <members>LMRA__c.All</members>
         <members>Lead.AllOpenLeads</members>
         <members>Lead.AllOpenLeads</members>
         <members>Lead.MyUnreadLeads</members>
@@ -9978,6 +10009,8 @@
     </types>
     <types>
         <members>GoogleMaps</members>
+        <members>Google_Places</members>
+        <members>MapsAutocomplete</members>
         <members>MapsEncoding</members>
         <name>NamedCredential</name>
     </types>
@@ -10099,6 +10132,7 @@
         <members>ServiceAppointment.FSL__Change_Status</members>
         <members>ServiceAppointment.SendEmail</members>
         <members>ServiceContract.Export_Lines</members>
+        <members>ServiceContract.Generate_Maintenance_Plan</members>
         <members>ServiceContract.Prepare_for_Next_Year</members>
         <members>Task.Defer</members>
         <members>Task.Defer_0</members>
@@ -10293,6 +10327,7 @@
         <members>FSL__Optimization_as_a_service</members>
         <members>FSL__Salesforce_API</members>
         <members>FSL__ServiceExpert_OAAS_Staging</members>
+        <members>bpost</members>
         <members>sf_fieldservice__FSL_Google_Maps_API</members>
         <name>RemoteSiteSetting</name>
     </types>
@@ -10670,6 +10705,7 @@
         <members>Incident</members>
         <members>Individual</members>
         <members>JobProfile</members>
+        <members>LMRA__c</members>
         <members>Lead</members>
         <members>ListEmail</members>
         <members>Location</members>
@@ -11260,6 +11296,7 @@
         <members>FSL__Work_Rule__c</members>
         <members>Incident</members>
         <members>JobProfile</members>
+        <members>LMRA__c</members>
         <members>Lead</members>
         <members>MaintenanceAsset</members>
         <members>MaintenancePlan</members>
@@ -11321,6 +11358,7 @@
         <members>Contract_Line_Item_Record_Page</members>
         <members>FSL__CapacityManagement</members>
         <members>Financial_Account_Record_Page</members>
+        <members>LMRA_Record_Page</members>
         <members>Lead_Record_Page</members>
         <members>Location_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
@@ -11338,6 +11376,7 @@
         <members>Service_Territory_Record_Page</members>
         <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Record_Page</members>
+        <members>Work_Plan_Template_Record_Page</members>
         <members>Work_Type_Record_Page</members>
         <name>UiViewDefinition</name>
     </types>

@@ -1,0 +1,18 @@
+.search-results {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    width: 100%;
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+}
+
+.slds-listbox__option {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.slds-listbox__option:hover {
+    background-color: #f3f2f2;
+}

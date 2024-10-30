@@ -12,6 +12,7 @@ import saveContractLine from "@salesforce/apex/ServiceBuilderController.saveCont
 import deleteContractLine from "@salesforce/apex/ServiceBuilderController.deleteContractLine";
 import getFinancialAccountName from "@salesforce/apex/ServiceBuilderController.getFinancialAccountName";
 import insertOrRemoveContractLineFinancialAccount from "@salesforce/apex/ServiceBuilderController.insertOrRemoveContractLineFinancialAccount";
+import updateServiceContractLocationType from "@salesforce/apex/ServiceBuilderController.updateServiceContractLocationType";
 import recurrenceModal from "c/recurrencePattern";
 import { subscribe } from "lightning/empApi";
 
@@ -26,6 +27,8 @@ export default class ServiceBuilder extends LightningElement {
   @track originalContractLines = [];
   @track filterResults = [];
   @track appliedFilters = [];
+
+  @track locationType = "Address";
 
   // Component Properties
   frequencyOptions;
@@ -50,16 +53,54 @@ export default class ServiceBuilder extends LightningElement {
   endDateLabel = "End Date";
   actionsLabel = "Actions";
 
-  locationTypeOptions = [
-    { label: "Geo Location", value: "Geo Location" },
-    { label: "Address", value: "Address" }
-  ];
-
   // Product Matching Configuration
   productMatchingInfo = {
     primaryField: { fieldPath: "Name" },
     additionalFields: [{ fieldPath: "ProductCode" }]
   };
+
+  ///////////////////////////////Getters/////////////////////////////
+
+  /**
+   * @description Getter to retrieve the finCustomers for a line based on the selectedLineItemId. Returns an empty array if undefined or null.
+   * @returns {Array} The finCustomers for the selected line
+   */
+
+  get finCustomersForLine() {
+    if (!this.isLoading) {
+      let index = this.contractLines.findIndex(
+        (line) => line.Id === this.selectedLineItemId
+      );
+      return this.contractLines[index].FinCustomers;
+    } else {
+      return [];
+    }
+  }
+
+  /**
+   * @description Getter to determine the location columns to display
+   * @returns {Object} The location columns to display
+   */
+  get locationColumns() {
+    return {
+      isGeoLocation: this.locationType === "Geolocation",
+      isAddress: this.locationType === "Address"
+    };
+  }
+
+  /**
+   * @description Getter to determine which contract lines to display
+   * @returns {Array} The contract lines to display
+   */
+  get contractLinesToShow() {
+    if (!this.isLoading) {
+      return this.filterResults.length > 0
+        ? this.filterResults
+        : this.contractLines;
+    } else {
+      return [];
+    }
+  }
 
   /**
    * @description Lifecycle hook called when the component is inserted into the DOM
@@ -99,6 +140,12 @@ export default class ServiceBuilder extends LightningElement {
 
           index++;
         });
+
+        // Set initial locationType from the first contract line
+        if (result.length > 0) {
+          this.locationType =
+            result[0].ServiceContract.Location_Type__c || "Address";
+        }
 
         this.contractLines = result;
         this.originalContractLines = [...this.contractLines];
@@ -190,13 +237,6 @@ export default class ServiceBuilder extends LightningElement {
   }
 
   /**
-   * @description Handles the saving of the lightning record edit form
-   */
-  handleSaveRecord() {
-    this.template.querySelector("lightning-record-edit-form").submit();
-  }
-
-  /**
    * @description Handles checkbox selection for a contract line
    * @param {Event} event - The event object
    */
@@ -225,15 +265,6 @@ export default class ServiceBuilder extends LightningElement {
   }
 
   /**
-   * @description Handles successful save of a record
-   */
-  handleSuccess() {
-    this.handleToast("Success", "Record has been saved", "success");
-
-    window.location.reload();
-  }
-
-  /**
    * @description Handles changes to the project code
    * @param {Event} event - The event object
    */
@@ -248,12 +279,9 @@ export default class ServiceBuilder extends LightningElement {
    */
   handleLatitudeChange(event) {
     let index = event.target.dataset.index;
-    console.log("index", index);
-    console.log("event.detail.value", event.detail.value);
-    console.log("event.detail.value type", typeof event.detail.value);
+
     //convert to decimal
     let convertedValue = parseFloat(event.detail.value);
-    console.log("convertedValue", convertedValue);
     this.contractLines[index].Geolocation__Latitude__s = convertedValue;
   }
 
@@ -312,127 +340,6 @@ export default class ServiceBuilder extends LightningElement {
   }
 
   /**
-   * @description Handles the selection of a financial customer in the modal
-   * @param event - The event object, containing the selected recordId
-   */
-
-  handleFinCustomerSelect(event) {
-    const lineItemId = event.target.dataset.id;
-    const index = this.contractLines.findIndex(
-      (line) => line.Id === lineItemId
-    );
-    const selectedFinancialAccountId = event.detail.recordId;
-
-    getFinancialAccountName({ recordId: selectedFinancialAccountId })
-      .then((financialAccountName) => {
-        const customerExists = this.contractLines[index].FinCustomers.some(
-          (customer) => customer.recordId === selectedFinancialAccountId
-        );
-
-        if (!customerExists) {
-          insertOrRemoveContractLineFinancialAccount({
-            name: financialAccountName,
-            contractLineItemId: lineItemId,
-            financialCustomerId: selectedFinancialAccountId,
-            action: "insert"
-          })
-            .then(() => {
-              this.contractLines[index].FinCustomers.push({
-                type: "icon",
-                iconName: "standard:account",
-                label: financialAccountName,
-                recordId: selectedFinancialAccountId
-              });
-
-              this.contractLines = [...this.contractLines];
-
-              this.handleToast(
-                "Success",
-                `Financial customer ${financialAccountName} added to the contract line.`,
-                "success"
-              );
-            })
-            .catch((error) => {
-              console.error("Error inserting financial customer:", error);
-              this.handleToast(
-                "Error",
-                "An error occurred while adding the financial customer.",
-                "error"
-              );
-            });
-        } else {
-          this.handleToast(
-            "Error",
-            "Financial customer already part of the contract line.",
-            "error"
-          );
-        }
-
-        const recordPicker = this.template.querySelector(
-          "lightning-record-picker.financial-customer-picker"
-        );
-
-        if (recordPicker) {
-          recordPicker.clearSelection();
-        }
-      })
-      .catch((error) => {
-        console.error("Error getting financial account name:", error);
-        this.handleToast(
-          "Error",
-          "An error occurred while adding the financial customer.",
-          "error"
-        );
-      });
-  }
-
-  /**
-   * @description Handles the removal of a financial customer from the contract line
-   * @param {Event} event - The event object
-   */
-  handleFinCustomerRemove(event) {
-    const financialCustomerIndex = event.detail.index;
-    const lineItemId = event.target.dataset.id;
-    const contractLineIndex = this.contractLines.findIndex(
-      (line) => line.Id === lineItemId
-    );
-
-    const removedCustomer =
-      this.contractLines[contractLineIndex].FinCustomers[
-        financialCustomerIndex
-      ];
-
-    insertOrRemoveContractLineFinancialAccount({
-      name: removedCustomer.label,
-      contractLineItemId: lineItemId,
-      financialCustomerId: removedCustomer.recordId,
-      action: "delete"
-    })
-      .then(() => {
-        this.contractLines[contractLineIndex].FinCustomers.splice(
-          financialCustomerIndex,
-          1
-        );
-
-        this.contractLines = [...this.contractLines];
-
-        this.handleToast(
-          "Success",
-          `Financial customer ${removedCustomer.label} removed from the contract line.`,
-          "success"
-        );
-      })
-      .catch((error) => {
-        console.error("Error removing financial customer:", error);
-        this.handleToast(
-          "Error",
-          "An error occurred while removing the financial customer.",
-          "error"
-        );
-      });
-  }
-
-  /**
    * @description Handles setting the recurrence pattern
    * @param {Event} event - The event object
    */
@@ -480,8 +387,7 @@ export default class ServiceBuilder extends LightningElement {
   handleServiceChange(event) {
     let index = event.target.dataset.index;
     let value = event.detail.recordId;
-    console.log("value", value);
-    console.log("index", index);
+
     this.insertContractLine(index, value);
   }
 
@@ -576,33 +482,24 @@ export default class ServiceBuilder extends LightningElement {
   }
 
   /**
-   * @description Getter to retrieve the finCustomers for a line based on the selectedLineItemId. Returns an empty array if undefined or null.
-   * @returns {Array} The finCustomers for the selected line
+   * @description Handles the toggle of the location type
+   * @param {Event} event - The event object
    */
+  handleToggleLocationType(event) {
+    // Set the location type based on the checkbox state
+    this.locationType = event.target.checked ? "Address" : "Geolocation";
 
-  get finCustomersForLine() {
-    if (!this.isLoading) {
-      let index = this.contractLines.findIndex(
-        (line) => line.Id === this.selectedLineItemId
-      );
-      return this.contractLines[index].FinCustomers;
-    } else {
-      return [];
-    }
-  }
-
-  /**
-   * @description Getter to determine which contract lines to display
-   * @returns {Array} The contract lines to display
-   */
-  get contractLinesToShow() {
-    if (!this.isLoading) {
-      return this.filterResults.length > 0
-        ? this.filterResults
-        : this.contractLines;
-    } else {
-      return [];
-    }
+    // Update the Location Type field on the Service Contract record
+    updateServiceContractLocationType({
+      recordId: this.recordId,
+      locationType: this.locationType
+    })
+      .then(() => {
+        console.log("Location Type updated successfully");
+      })
+      .catch((error) => {
+        console.error("Error updating Location Type:", error);
+      });
   }
 
   /**
@@ -615,7 +512,7 @@ export default class ServiceBuilder extends LightningElement {
 
     const endDate = this.contractLines[0].ServiceContract.EndDate
       ? this.contractLines[0].ServiceContract.EndDate
-      : `${new Date().getFullYear()}/12/31`;
+      : `${new Date().getFullYear()}-12-31`;
 
     const newRow = {
       Id: null,
@@ -669,7 +566,9 @@ export default class ServiceBuilder extends LightningElement {
    */
   handleDeleteRow(event) {
     let index = event.target.dataset.index;
+
     let recordId = this.contractLines[index].Id;
+
     if (recordId !== null) {
       deleteContractLine({ contractLineId: recordId })
         .then(() => {
@@ -688,7 +587,8 @@ export default class ServiceBuilder extends LightningElement {
         });
     } else {
       this.contractLines.splice(index, 1);
-      this.contractLines = [...this.contractLines];
+      this.reIndex();
+      // this.contractLines = [...this.contractLines];
     }
   }
 
@@ -702,6 +602,23 @@ export default class ServiceBuilder extends LightningElement {
 
     this.handleToast("Success", "All records have been saved", "success");
     this.reIndex();
+
+    // this.contractLines.forEach((line, index) => {
+    //   this.insertContractLine(index, line.Product2Id);
+
+    //   if (line.IsNew && line.Contract_Line_Financial_Accounts__r) {
+    //     line.Contract_Line_Financial_Accounts__r.forEach((account) => {
+    //       insertOrRemoveContractLineFinancialAccount({
+    //         name: account.Financial_Customer__c.Name,
+    //         contractLineItemId: account.Contract_Line_Item__c,
+    //         financialCustomerId: account.Financial_Customer__c.Id,
+    //         action: "insert"
+    //       });
+    //     });
+    //   }
+    // });
+
+    // window.location.reload();
   }
 
   /**
@@ -713,16 +630,20 @@ export default class ServiceBuilder extends LightningElement {
     let contractLine = this.contractLines[index];
     contractLine.Product2Id = value;
     contractLine.Location__CountryCode__s = "BE";
+
+    // Store the FinCustomers before saving so we can preserve them and add them back after saving
+    const existingFinCustomers = contractLine.FinCustomers || [];
+
     //Check the geolocation fields and convert them to decimal
     if (contractLine.Geolocation__Latitude__s) {
-        contractLine.Geolocation__Latitude__s = parseFloat(
-            contractLine.Geolocation__Latitude__s
-        );
+      contractLine.Geolocation__Latitude__s = parseFloat(
+        contractLine.Geolocation__Latitude__s
+      );
     }
     if (contractLine.Geolocation__Longitude__s) {
-        contractLine.Geolocation__Longitude__s = parseFloat(
-            contractLine.Geolocation__Longitude__s
-        );
+      contractLine.Geolocation__Longitude__s = parseFloat(
+        contractLine.Geolocation__Longitude__s
+      );
     }
 
     saveContractLine({ contractLine: contractLine })
@@ -730,6 +651,8 @@ export default class ServiceBuilder extends LightningElement {
         result.IsSelected = false;
         result.IsNew = false;
         result.Index = index;
+        // Add the existing FinCustomers back to the result
+        result.FinCustomers = existingFinCustomers;
         this.contractLines[index] = result;
         this.contractLines = [...this.contractLines];
         this.reIndex();
@@ -797,24 +720,14 @@ export default class ServiceBuilder extends LightningElement {
   /**
    * @description Closes the edit modal
    */
-  closeModal() {
+  closeModal(event) {
     this.isModalOpen = false;
-  }
 
-  /**
-   * @description Getter to determine the location columns to display
-   * @returns {Object} The location columns to display
-   */
-  get locationColumns() {
-    const defaultLocationType =
-      this.contractLines.length > 0
-        ? this.contractLines[0].ServiceContract.Location_Type__c
-        : "Address";
+    if (event && event.detail) {
+      const deepClone = JSON.parse(JSON.stringify(event.detail));
 
-    return {
-      isGeoLocation: defaultLocationType === "Geo Location",
-      isAddress: defaultLocationType === "Address"
-    };
+      this.contractLines = Object.assign([], deepClone);
+    }
   }
 
   // /**

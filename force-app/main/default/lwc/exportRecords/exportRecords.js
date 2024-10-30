@@ -17,13 +17,15 @@ export default class ExportRecords extends LightningElement {
       this.loading = true;
       this.error = null;
 
-      const data = await getExportData({ parentId: this.recordId });
-      if (!data || !data.length) {
+      this.exportResponse = await getExportData({ parentId: this.recordId }); // Store response
+      if (!this.exportResponse.records || !this.exportResponse.records.length) {
         throw new Error('No records found to export');
       }
 
+      console.log('response', JSON.stringify(this.exportResponse));
+
       // Convert data to CSV with BOM for Excel
-      const csvString = '\ufeff' + this.convertToCSV(data);
+      const csvString = '\ufeff' + this.convertToCSV(this.exportResponse.records, this.exportResponse.fields);
       const encodedData = encodeURIComponent(csvString);
       const downloadUrl = `data:text/csv;charset=utf-8,${encodedData}`;
 
@@ -57,17 +59,45 @@ export default class ExportRecords extends LightningElement {
     }
   }
 
-  convertToCSV(data) {
+  convertToCSV(data, allFields) {
     if (!data || !data.length) return '';
 
-    // Get headers and create header row
-    const headers = Object.keys(data[0]);
-    const headerRow = headers.map(header => this.escapeCSVValue(header)).join(',');
+    // Create header row using allFields
+    const headerRow = allFields.map(header => this.escapeCSVValue(header)).join(',');
 
-    // Create data rows
+    // Create data rows ensuring all fields are included
     const rows = data.map(record => {
-      return headers.map(header => {
-        const value = record[header];
+      return allFields.map(field => {
+        const value = record[field] || ''; // Use empty string for null/undefined values
+
+        // Check if this is a date field
+        const fieldType = this.exportResponse.fieldTypes[field];
+        if ((fieldType === 'DATE' || fieldType === 'DATETIME') && value) {
+          // Parse the date parts - handle both "MM/DD/YYYY" and existing date formats
+          const dateParts = value.split(/[\/\-]/);
+          let year, month, day;
+
+          if (dateParts[2] && dateParts[2].length === 4) {
+            // If format is MM/DD/YYYY
+            month = dateParts[0].padStart(2, '0');
+            day = dateParts[1].padStart(2, '0');
+            year = dateParts[2];
+          } else {
+            // Try creating a date object and formatting it
+            const date = new Date(value);
+            if (!isNaN(date.getTime())) {
+              year = date.getFullYear();
+              month = String(date.getMonth() + 1).padStart(2, '0');
+              day = String(date.getDate()).padStart(2, '0');
+            }
+          }
+
+          if (year && month && day) {
+            // Force Excel to treat it as a string
+            return `="${year}-${month}-${day}"`;
+          }
+        }
+
         return this.escapeCSVValue(value);
       }).join(',');
     });

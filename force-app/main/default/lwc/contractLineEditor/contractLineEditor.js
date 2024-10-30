@@ -2,7 +2,7 @@
  * Created by fpardon on 28/10/2024.
  */
 
-import { LightningElement, api } from "lwc";
+import { LightningElement, api, track } from "lwc";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getFinancialAccountName from "@salesforce/apex/ServiceBuilderController.getFinancialAccountName";
 import insertOrRemoveContractLineFinancialAccount from "@salesforce/apex/ServiceBuilderController.insertOrRemoveContractLineFinancialAccount";
@@ -14,7 +14,11 @@ export default class ContractLineEditor extends LightningElement {
   @api contractLines;
   @api locationColumns;
 
+  financialAccountsToBeDeleted = [];
+
   isLoading = false;
+
+  @track contractLinesClone;
 
   finCustomerFilter = {
     criteria: [
@@ -26,13 +30,34 @@ export default class ContractLineEditor extends LightningElement {
     ]
   };
 
-  //--------------------------------------TRACK----------------------------------------//
+  connectedCallback() {
+    if (this.contractLines) {
+      this.contractLinesClone = structuredClone(this.contractLines);
+    }
+  }
 
-  //--------------------------------------WIRE-----------------------------------------//
+  //--------------------------------------GETTERS--------------------------------------//
 
-  //--------------------------------------LIFECYCLE------------------------------------//
+  get finCustomersForLine() {
+    if (!this.isLoading && this.contractLinesClone) {
+      let index = this.contractLinesClone.findIndex(
+        (line) => line.Id === this.selectedLineItemId
+      );
+      return this.contractLinesClone[index].FinCustomers;
+    }
+    return [];
+  }
 
-  //--------------------------------------HANDLERS-------------------------------------//
+  //--------------------------------------HELPERS--------------------------------------//
+
+  handleToast(title, message, variant) {
+    const event = new ShowToastEvent({
+      title: title,
+      message: message,
+      variant: variant
+    });
+    this.dispatchEvent(event);
+  }
 
   /**
    * @description Handles the selection of a financial customer in the modal
@@ -40,57 +65,31 @@ export default class ContractLineEditor extends LightningElement {
    */
   handleFinCustomerSelect(event) {
     const lineItemId = event.target.dataset.id;
-
-    const index = this.contractLines.findIndex(
+    const index = this.contractLinesClone.findIndex(
       (line) => line.Id === lineItemId
     );
-
     const selectedFinancialAccountId = event.detail.recordId;
 
     getFinancialAccountName({ recordId: selectedFinancialAccountId })
       .then((financialAccountName) => {
-        const customerExists = this.contractLines[index].FinCustomers.some(
+        const customerExists = this.contractLinesClone[index].FinCustomers.some(
           (customer) => customer.recordId === selectedFinancialAccountId
         );
 
-        const deepClone = JSON.parse(JSON.stringify(this.contractLines));
-
         if (!customerExists) {
-          insertOrRemoveContractLineFinancialAccount({
-            name: financialAccountName,
-            contractLineItemId: lineItemId,
-            financialCustomerId: selectedFinancialAccountId,
-            action: "insert"
-          })
-            .then(() => {
-              deepClone[index].FinCustomers.push({
-                type: "icon",
-                iconName: "standard:account",
-                label: financialAccountName,
-                recordId: selectedFinancialAccountId
-              });
+          this.contractLinesClone[index].FinCustomers.push({
+            type: "icon",
+            iconName: "standard:account",
+            label: financialAccountName,
+            recordId: selectedFinancialAccountId
+          });
 
-              this.contractLines = [...deepClone];
-
-              this.handleToast(
-                "Success",
-                `Financial customer ${financialAccountName} added to the contract line.`,
-                "success"
-              );
-            })
-            .catch((error) => {
-              console.log(error.message);
-
-              this.handleToast(
-                "Error",
-                "An error occurred while adding the financial customer.",
-                "error"
-              );
-            });
+          //This is necessary to trigger the watcher on the contractLines property and update the UI
+          this.contractLines = [...this.contractLinesClone];
         } else {
           this.handleToast(
             "Error",
-            "Financial customer already part of the contract line.",
+            "No duplicate financial customers allowed.",
             "error"
           );
         }
@@ -114,6 +113,40 @@ export default class ContractLineEditor extends LightningElement {
   }
 
   /**
+   * @description Handles the saving of the record
+   */
+  handleSaveRecord() {
+    try {
+      //Insert the financial accounts to be added
+      this.contractLinesClone.forEach((line) => {
+        line.FinCustomers.forEach((customer) => {
+          insertOrRemoveContractLineFinancialAccount({
+            name: customer.label,
+            contractLineItemId: line.Id,
+            financialCustomerId: customer.recordId,
+            action: "insert"
+          });
+        });
+      });
+
+      //Delete the financial accounts to be deleted
+      this.financialAccountsToBeDeleted.forEach((financialAccount) => {
+        insertOrRemoveContractLineFinancialAccount(financialAccount);
+      });
+
+      this.template.querySelector("lightning-record-edit-form").submit();
+    } catch (error) {
+      console.error("Error saving record:", error.message);
+
+      this.handleToast(
+        "Error",
+        "An error occurred while saving the record.",
+        "error"
+      );
+    }
+  }
+
+  /**
    * @description Handles the removal of a financial customer from the contract line
    * @param {Event} event - The event object
    */
@@ -121,80 +154,58 @@ export default class ContractLineEditor extends LightningElement {
     const financialCustomerIndex = event.detail.index;
     const lineItemId = event.target.dataset.id;
 
-    const deepClone = JSON.parse(JSON.stringify(this.contractLines));
-
-    const contractLineIndex = deepClone.findIndex(
+    const contractLineIndex = this.contractLinesClone.findIndex(
       (line) => line.Id === lineItemId
     );
 
     const removedCustomer =
-      deepClone[contractLineIndex].FinCustomers[financialCustomerIndex];
+      this.contractLinesClone[contractLineIndex].FinCustomers[
+        financialCustomerIndex
+      ];
 
-    insertOrRemoveContractLineFinancialAccount({
+    this.financialAccountsToBeDeleted.push({
       name: removedCustomer.label,
       contractLineItemId: lineItemId,
       financialCustomerId: removedCustomer.recordId,
       action: "delete"
-    })
-      .then(() => {
-        deepClone[contractLineIndex].FinCustomers.splice(
-          financialCustomerIndex,
-          1
-        );
-
-        this.contractLines = [...deepClone];
-
-        this.handleToast(
-          "Success",
-          `Financial customer ${removedCustomer.label} removed from the contract line.`,
-          "success"
-        );
-      })
-      .catch((error) => {
-        console.error("Error removing financial customer:", error);
-        this.handleToast(
-          "Error",
-          "An error occurred while removing the financial customer.",
-          "error"
-        );
-      });
-  }
-
-  handleSuccess() {
-    this.handleToast("Success", "Record has been saved", "success");
-    window.location.reload();
-  }
-
-  handleToast(title, message, variant) {
-    const event = new ShowToastEvent({
-      title: title,
-      message: message,
-      variant: variant
     });
-    this.dispatchEvent(event);
-  }
 
-  handleSaveRecord() {
-    this.template.querySelector("lightning-record-edit-form").submit();
-  }
+    this.contractLinesClone[contractLineIndex].FinCustomers.splice(
+      financialCustomerIndex,
+      1
+    );
 
-  //--------------------------------------GETTERS--------------------------------------//
-
-  get finCustomersForLine() {
-    if (!this.isLoading) {
-      let index = this.contractLines.findIndex(
-        (line) => line.Id === this.selectedLineItemId
+    if (
+      this.contractLinesClone[contractLineIndex]
+        .Contract_Line_Financial_Accounts__r
+    ) {
+      this.contractLinesClone[
+        contractLineIndex
+      ].Contract_Line_Financial_Accounts__r = this.contractLinesClone[
+        contractLineIndex
+      ].Contract_Line_Financial_Accounts__r.filter(
+        (account) => account.Financial_Customer__c !== removedCustomer.recordId
       );
-      return this.contractLines[index].FinCustomers;
-    } else {
-      return [];
     }
-  }
 
-  //--------------------------------------HELPERS--------------------------------------//
+    //This is necessary to trigger the watcher on the contractLines property and update the UI
+    this.contractLines = [...this.contractLinesClone];
+  }
 
   closeModal() {
     //dispatch event to parent
     this.dispatchEvent(new CustomEvent("closemodal"));
+  }
+
+  handleSuccess() {
+    const updatedContractLines = structuredClone(this.contractLines);
+
+    this.handleToast("Success", "Record has been saved", "success");
+
+    this.dispatchEvent(
+      new CustomEvent("closemodal", {
+        detail: updatedContractLines
+      })
+    );
   }
 }

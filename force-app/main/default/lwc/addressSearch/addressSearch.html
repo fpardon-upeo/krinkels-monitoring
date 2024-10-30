@@ -1,0 +1,40 @@
+<template>
+  <lightning-card title="Address Search - TBD if we do anything with this" icon-name="standard:search">
+    <div class="slds-p-around_medium">
+      <!-- Search Container with Relative Positioning -->
+      <div class="slds-form-element">
+        <div class="slds-form-element__control">
+          <lightning-input
+            type="text"
+            placeholder="Search Address..."
+            onchange={handleSearch}
+            label="Address"
+          ></lightning-input>
+        </div>
+
+        <!-- Dropdown Results -->
+        <div if:true={addresses} class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid search-results">
+          <ul class="slds-listbox slds-listbox_vertical" role="listbox">
+            <template for:each={addresses} for:item="adr">
+              <li key={adr.placeId} role="presentation" class="slds-listbox__item">
+                <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                     role="option"
+                     onclick={handleAddressSelection}
+                     data-place-id={adr.placeId}
+                     data-address={adr.name}>
+                                    <span class="slds-media__body">
+                                        <span class="slds-truncate">{adr.name}</span>
+                                    </span>
+                </div>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+      <!-- No Results Found -->
+      <div if:true={noResults} class="slds-p-top_small">
+        <p class="slds-text-color_weak">No addresses found.</p>
+      </div>
+    </div>
+  </lightning-card>
+</template>

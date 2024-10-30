@@ -13,10 +13,13 @@
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ServiceContract.Prepare_for_Next_Year</value>
+                            <value>ServiceContract.Generate_Maintenance_Plan</value>
                         </valueListItems>
                         <valueListItems>
                             <value>ServiceContract.Export_Lines</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ServiceContract.Prepare_for_Next_Year</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

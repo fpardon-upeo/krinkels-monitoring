@@ -15,9 +15,9 @@
                 <label>Address</label>
             </value>
             <value>
-                <fullName>Geo Location</fullName>
+                <fullName>Geolocation</fullName>
                 <default>false</default>
-                <label>Geo Location</label>
+                <label>Geolocation</label>
             </value>
         </valueSetDefinition>
     </valueSet>

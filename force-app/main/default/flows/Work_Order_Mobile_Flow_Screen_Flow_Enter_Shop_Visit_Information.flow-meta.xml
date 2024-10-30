@@ -48,7 +48,7 @@
         <name>Update_Work_Order_Information</name>
         <label>Update Work Order Information</label>
         <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -69,27 +69,37 @@
                 <elementReference>Shop_Name</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Shop_Visit_Date__c</field>
+            <value>
+                <elementReference>Shop_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Shop_Visit_End_Time__c</field>
+            <value>
+                <elementReference>Shop_Visit_End_Time</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Shop_Visit_Start_Time__c</field>
+            <value>
+                <elementReference>Shop_Visit_Start_Time</elementReference>
+            </value>
+        </inputAssignments>
         <object>WorkOrder</object>
     </recordUpdates>
     <screens>
-        <name>Shop_Visit_Information</name>
-        <label>Shop Visit Information</label>
+        <name>Collected_Items_Information</name>
+        <label>Collected Items Information</label>
         <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Update_Work_Order_Information</targetReference>
         </connector>
-        <fields>
-            <name>Shop_Name</name>
-            <dataType>String</dataType>
-            <fieldText>Shop Name</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-        </fields>
         <fields>
             <name>Collected_Items</name>
             <fieldText>Collected Items</fieldText>
@@ -119,6 +129,52 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>Shop_Visit_Information</name>
+        <label>Shop Visit Information</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Collected_Items_Information</targetReference>
+        </connector>
+        <fields>
+            <name>Shop_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Shop Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Shop_Name</name>
+            <dataType>String</dataType>
+            <fieldText>Shop Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Shop_Visit_Start_Time</name>
+            <dataType>DateTime</dataType>
+            <fieldText>Shop Visit Start Time</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Shop_Visit_End_Time</name>
+            <dataType>DateTime</dataType>
+            <fieldText>Shop Visit End Time</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
@@ -127,6 +183,16 @@
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>errorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>The end time must be greater than the start time.</stringValue>
+        </value>
+    </variables>
     <variables>
         <name>Id</name>
         <dataType>String</dataType>

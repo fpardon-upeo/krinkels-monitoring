@@ -113,73 +113,22 @@ public without sharing class ServiceBuilderController {
   public static ContractLineItem saveContractLine(
     ContractLineItem contractLine
   ) {
-    try {
-      if (contractLine.Product2Id != null) {
-        //Get the PricebookEntryId only if Product2Id exists
-        PricebookEntry pricebookEntry = [
-          SELECT Id, UnitPrice
-          FROM PricebookEntry
-          WHERE Product2Id = :contractLine.Product2Id
-          LIMIT 1
-        ];
-        contractLine.PricebookEntryId = pricebookEntry.Id;
+    //Get the PricebookEntryId
+    PricebookEntry pricebookEntry = [
+      SELECT Id
+      FROM PricebookEntry
+      WHERE Product2Id = :contractLine.Product2Id
+      LIMIT 1
+    ];
 
-        // Set default UnitPrice if it's null
-        if (contractLine.UnitPrice == null) {
-          contractLine.UnitPrice = pricebookEntry.UnitPrice;
-        }
-      }
-
-      // Set default values for required fields
-      if (contractLine.Quantity == null) {
-        contractLine.Quantity = 1;
-      }
-
-      if (contractLine.Id == null) {
-        insert contractLine;
-      } else {
-        update contractLine;
-      }
-
-      // Query and return the full record with all fields
-      return [
-        SELECT
-          Id,
-          LineItemNumber,
-          ServiceContract.StartDate,
-          ServiceContract.EndDate,
-          ServiceContract.Location_Type__c,
-          Recurrence_Pattern__c,
-          ServiceContractId,
-          Product2Id,
-          Product2.Name,
-          AssetId,
-          Asset.Name,
-          StartDate,
-          EndDate,
-          PricebookEntryId,
-          Quantity,
-          UnitPrice,
-          ListPrice,
-          TotalPrice,
-          Status,
-          Planning_Type__c,
-          Location__Street__s,
-          Location__City__s,
-          Location__PostalCode__s,
-          Location__StateCode__s,
-          Location__CountryCode__s,
-          Geolocation__Latitude__s,
-          Geolocation__Longitude__s,
-          Project_Code__c
-        FROM ContractLineItem
-        WHERE Id = :contractLine.Id
-      ];
-    } catch (Exception e) {
-      throw new AuraHandledException(
-        'Error saving contract line: ' + e.getMessage()
-      );
+    if (contractLine.Id == null) {
+      contractLine.PricebookEntryId = pricebookEntry.Id;
+      insert contractLine;
+    } else {
+      update contractLine;
     }
+
+    return contractLine;
   }
 
   @AuraEnabled
@@ -220,6 +169,26 @@ public without sharing class ServiceBuilderController {
       insert contractLineFinancialAccount;
     } else if (!existingRecords.isEmpty() && action == 'delete') {
       delete existingRecords;
+    }
+  }
+
+  @AuraEnabled
+  public static void updateServiceContractLocationType(
+    Id recordId,
+    String locationType
+  ) {
+    try {
+      ServiceContract serviceContract = [
+        SELECT Id, Location_Type__c
+        FROM ServiceContract
+        WHERE Id = :recordId
+      ];
+
+      serviceContract.Location_Type__c = locationType;
+
+      update serviceContract;
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
     }
   }
 }

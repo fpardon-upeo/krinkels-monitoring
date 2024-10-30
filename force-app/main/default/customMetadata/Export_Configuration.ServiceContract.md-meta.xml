@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Fields_to_Export__c</field>
-        <value xsi:type="xsd:string">Id, ServiceContractId, Product2Id, StartDate, EndDate, Description, PricebookEntryId, Planning_Type__c, Location__Street__s, Location__City__s, Location__PostalCode__s, Location__CountryCode__s, Project_Code__c, Recurrence_Pattern__c, Parent_Customer__c</value>
+        <value xsi:type="xsd:string">Id, ServiceContractId, StartDate, EndDate,  PricebookEntryId, Planning_Type__c, Location__Street__s, Location__City__s, Location__PostalCode__s, Location__CountryCode__s, Project_Code__c, Recurrence_Pattern__c, Quantity, UnitPrice</value>
     </values>
     <values>
         <field>Object_API_Name__c</field>

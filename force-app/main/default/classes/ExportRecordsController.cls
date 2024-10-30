@@ -1,19 +1,15 @@
-/**
-* Created by Frederik on 10/25/2024.
-* Description:
-* Change Log:
-* Dependencies:
-*/
-
 public with sharing class ExportRecordsController {
-    @AuraEnabled
-    public static List<SObject> getExportData(Id parentId) {
 
-        //Get the sObjectType from the parent Id
+    public class ExportWrapper {
+        @AuraEnabled public List<SObject> records;
+        @AuraEnabled public List<String> fields;
+        @AuraEnabled public Map<String, String> fieldTypes;  // Add this
+    }
+    @AuraEnabled
+    public static ExportWrapper getExportData(Id parentId) {
         System.debug('parentId: ' + parentId);
         String sObjectType = parentId.getSObjectType().getDescribe().getName();
         System.debug('sObjectType: ' + sObjectType);
-
 
         try {
             // Get the export configuration
@@ -27,25 +23,53 @@ public with sharing class ExportRecordsController {
 
             // Build the query
             String objectName = configRecord.Object_API_Name__c;
-            String fields = configRecord.Fields_to_Export__c;
+            List<String> fields = configRecord.Fields_to_Export__c.split(',');
+            // Trim whitespace from fields
+            for(Integer i = 0; i < fields.size(); i++) {
+                fields[i] = fields[i].trim();
+            }
+
             String parentField = configRecord.Parent_Relationship_Field__c;
             String whereClause = configRecord.Where_Clause__c;
 
-            System.debug('objectName: ' + objectName);
-            System.debug('fields: ' + fields);
-            System.debug('parentField: ' + parentField);
-
-            String query = 'SELECT ' + fields +
+            String query = 'SELECT ' + String.join(fields, ',') +
                     ' FROM ' + objectName +
                     ' WHERE ' + parentField + ' = :parentId';
-
-            System.debug('query: ' + query);
 
             if (String.isNotBlank(whereClause)) {
                 query += ' AND ' + whereClause;
             }
 
-            return Database.query(query);
+            List<SObject> results = Database.query(query);
+
+            System.debug('results before: ' + results);
+
+            // Ensure all fields are present, even if null
+            for(SObject record : results) {
+                Map<String, Object> populatedFields = record.getPopulatedFieldsAsMap();
+                for(String field : fields) {
+                    if(!populatedFields.containsKey(field)) {
+                        record.put(field, null);
+                    }
+                }
+            }
+
+            Schema.SObjectType objectType = Schema.getGlobalDescribe().get(objectName);
+            Map<String, Schema.SObjectField> fieldMap = objectType.getDescribe().fields.getMap();
+
+            Map<String, String> fieldTypes = new Map<String, String>();
+            for(String field : fields) {
+                if(fieldMap.containsKey(field)) {
+                    Schema.DisplayType fieldType = fieldMap.get(field).getDescribe().getType();
+                    fieldTypes.put(field, fieldType.name());
+                }
+            }
+
+            ExportWrapper wrapper = new ExportWrapper();
+            wrapper.records = results;
+            wrapper.fields = fields;
+            wrapper.fieldTypes = fieldTypes;
+            return wrapper;
         } catch (Exception e) {
             throw new AuraHandledException('Error retrieving export data: ' + e.getMessage());
         }

@@ -149,6 +149,14 @@
         <fields>TASK.LAST_UPDATE</fields>
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>ParentRecord</fields>
+        <fields>Status</fields>
+        <fields>LatestEndTime</fields>
+        <fields>SchedStartTime</fields>
+        <relatedList>ServiceAppointment.Asset__c</relatedList>
+    </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <relatedObjects>ContactId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

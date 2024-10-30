@@ -8,6 +8,31 @@
     icon-name="standard:contract_line_item"
   >
     <div class="">
+      <div class="toggle-container">
+        <div class="slds-form-element">
+          <label class="slds-checkbox_toggle slds-grid">
+            <span class="slds-form-element__label slds-m-bottom_none"
+              >Geolocation</span
+            >
+            <input
+              type="checkbox"
+              name="checkbox-toggle-15"
+              value="checkbox-toggle-15"
+              aria-describedby="checkbox-toggle-15"
+              checked={locationColumns.isAddress}
+              onchange={handleToggleLocationType}
+            />
+            <span id="checkbox-toggle-15" class="slds-checkbox_faux_container">
+              <span class="slds-checkbox_faux"></span>
+            </span>
+            <span
+              class="slds-form-element__label slds-m-bottom_none slds-p-left_x-small"
+              >Address</span
+            >
+          </label>
+        </div>
+      </div>
+
       <div class="slds-grid slds-grow">
         <lightning-spinner
           if:true={isLoading}
