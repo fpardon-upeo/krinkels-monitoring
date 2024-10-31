@@ -63,3 +63,21 @@ th input:hover,
   gap: 0.5rem;
   padding: 0 1rem 1rem 0;
 }
+
+.hidden {
+  display: none;
+}
+
+.display {
+  display: table-row;
+}
+
+.error-container {
+  color: rgb(194, 57, 52);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+/* 
+tr:hover {
+  opacity: 1.5;
+} */

@@ -1,0 +1,26 @@
+<template>
+  <lightning-card title="Services To Schedule" icon-name="custom:custom14">
+    <div class="slds-m-around_medium">
+      <ul class="slds-listbox slds-listbox_vertical alternating-list" role="listbox">
+        <template for:each={assetsToSchedule} for:item="assetItem">
+          <li key={assetItem.assetId} role="presentation" data-id={assetItem.assetId} class="slds-listbox__item" draggable=true ondragstart={handleDragStart}>
+            <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-p-around_small"
+                 role="option">
+              <div class="slds-media__body slds-grid slds-grid_vertical">
+                <div class="slds-text-heading_small slds-text-color_default">
+                  {assetItem.asset.Product2.Name} {assetItem.asset.Account.Parent.Short_Name__c} - Services to schedule: {assetItem.services}
+                </div>
+                <div class="slds-text-body_small slds-text-color_weak slds-p-top_xx-small">
+                  {assetItem.asset.Street} {assetItem.asset.City}
+                </div>
+                <div class="slds-text-body_small slds-text-color_weak slds-p-top_xx-small">
+                  {assetItem.asset.Recurrence_Text__c}
+                </div>
+              </div>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </lightning-card>
+</template>

@@ -128,7 +128,48 @@ public without sharing class ServiceBuilderController {
       update contractLine;
     }
 
-    return contractLine;
+    // Return the same fields as getContractLines using a single query
+    return [
+      SELECT
+        Id,
+        LineItemNumber,
+        ServiceContract.StartDate,
+        ServiceContract.EndDate,
+        ServiceContract.Location_Type__c,
+        Recurrence_Pattern__c,
+        ServiceContractId,
+        Product2Id,
+        Product2.Name,
+        AssetId,
+        Asset.Name,
+        StartDate,
+        EndDate,
+        PricebookEntryId,
+        Quantity,
+        UnitPrice,
+        ListPrice,
+        TotalPrice,
+        Status,
+        Planning_Type__c,
+        Location__Street__s,
+        Location__City__s,
+        Location__PostalCode__s,
+        Location__StateCode__s,
+        Location__CountryCode__s,
+        Geolocation__Latitude__s,
+        Geolocation__Longitude__s,
+        Project_Code__c,
+        (
+          SELECT
+            Id,
+            Contract_Line_Item__c,
+            Financial_Customer__c,
+            Financial_Customer__r.Name
+          FROM Contract_Line_Financial_Accounts__r
+        )
+      FROM ContractLineItem
+      WHERE Id = :contractLine.Id
+    ];
   }
 
   @AuraEnabled

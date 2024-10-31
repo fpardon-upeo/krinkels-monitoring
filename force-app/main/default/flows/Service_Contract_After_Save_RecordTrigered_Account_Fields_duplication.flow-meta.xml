@@ -25,6 +25,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <description>Updates the Prio field based on the account Prio if left empty</description>
         <name>Add_Priority</name>
         <label>Add Priority</label>
         <locationX>176</locationX>

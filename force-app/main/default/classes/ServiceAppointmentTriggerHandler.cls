@@ -31,7 +31,7 @@ public with sharing class ServiceAppointmentTriggerHandler {
                 if(wo != null && wo.AssetId != null){
                     ServiceAppointment appointment = new ServiceAppointment();
                     appointment.Id = sa.Id;
-                    appointment.ServiceTerritoryId = wo.Asset.Service_Territory__c;
+                    //appointment.ServiceTerritoryId = wo.Asset.Service_Territory__c;
                     appointment.Asset__c = wo.AssetId;
                     appointment.FSL__GanttLabel__c = wo.ServiceContract.Account.Short_Name__c + ' - ' + sa.Street;
                     appointments.add(appointment);

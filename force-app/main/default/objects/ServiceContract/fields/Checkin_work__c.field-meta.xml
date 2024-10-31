@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checkin_work__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Checkin@work</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

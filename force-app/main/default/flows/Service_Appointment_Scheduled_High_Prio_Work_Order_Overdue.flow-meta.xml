@@ -4,8 +4,8 @@
         <description>Sends the notification to the CM</description>
         <name>Send_Delay_Notification_to_Contract_Manager</name>
         <label>Send Delay Notification to Contract Manager</label>
-        <locationX>176</locationX>
-        <locationY>576</locationY>
+        <locationX>308</locationX>
+        <locationY>684</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -48,10 +48,11 @@
     </actionCalls>
     <apiVersion>62.0</apiVersion>
     <assignments>
+        <description>Assign the contract manager to the recipient list</description>
         <name>Assign_Recipient_ID</name>
         <label>Assign Recipient ID</label>
-        <locationX>176</locationX>
-        <locationY>360</locationY>
+        <locationX>308</locationX>
+        <locationY>468</locationY>
         <assignmentItems>
             <assignToReference>varRecipientIDs</assignToReference>
             <operator>Add</operator>
@@ -63,6 +64,28 @@
             <targetReference>Get_Custom_Notification</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <name>Contract_Manager_Found</name>
+        <label>Contract Manager Found</label>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Recipient_ID</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contract_Manager</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>No</label>
+        </rules>
+    </decisions>
     <description>sends notification to Contract Manager when a high prio work order is overdue</description>
     <environments>Default</environments>
     <interviewLabel>[Service Appointment] [Scheduled] High Prio Work Order Overdue {!$Flow.CurrentDateTime}</interviewLabel>
@@ -94,7 +117,7 @@
         <locationY>252</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Recipient_ID</targetReference>
+            <targetReference>Contract_Manager_Found</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -109,10 +132,11 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <description>Get the notification to be able to send it out</description>
         <name>Get_Custom_Notification</name>
         <label>Get Custom Notification</label>
-        <locationX>176</locationX>
-        <locationY>468</locationY>
+        <locationX>308</locationX>
+        <locationY>576</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Send_Delay_Notification_to_Contract_Manager</targetReference>
@@ -130,10 +154,11 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <description>Checkbox used to avoid duplicate notifications</description>
         <name>Set_Reminder_send_checkbox_to_True</name>
         <label>Set Reminder send checkbox to True</label>
-        <locationX>176</locationX>
-        <locationY>684</locationY>
+        <locationX>308</locationX>
+        <locationY>792</locationY>
         <inputAssignments>
             <field>Overdue_Reminder_Send__c</field>
             <value>

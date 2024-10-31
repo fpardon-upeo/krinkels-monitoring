@@ -1,0 +1,19 @@
+<!--
+ - Created by Frederik on 10/30/2024.
+ -->
+
+<!-- Round Dispatcher -->
+<template>
+  <div class="slds-grid">
+    <div class="slds-col slds-size_1-of-4">
+      <c-services-to-schedule
+        ondragdatachange={handleDragDataChange}>
+      </c-services-to-schedule>
+    </div>
+    <div class="slds-col slds-size_3-of-4">
+      <c-simple-dispatcher-console
+        dragged-asset-id={draggedAssetId} dragged-asset-details={draggedAssetDetails}>
+      </c-simple-dispatcher-console>
+    </div>
+  </div>
+</template>

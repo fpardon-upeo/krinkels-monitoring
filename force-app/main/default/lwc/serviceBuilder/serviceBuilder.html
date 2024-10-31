@@ -53,6 +53,21 @@
                   data-sort="none"
                   style="width: 5%; height: 25px"
                 ></th>
+
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="lineNumberRef"
+                  data-lwcref="lineNumberRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label="Line Number"
+                  data-field="LineItemNumber"
+                  data-sort="none"
+                  style="width: 10%"
+                >
+                  Line Number
+                </th>
+
                 <th
                   class="slds-text-align_center th-label"
                   lwc:ref="serviceTypeRef"
@@ -83,12 +98,14 @@
                   <th
                     class="slds-text-align_center th-label"
                     data-field="Location__Latitude__s"
+                    style="width: 10%"
                   >
                     Latitude
                   </th>
                   <th
                     class="slds-text-align_center th-label"
                     data-field="Location__Longitude__s"
+                    style="width: 10%"
                   >
                     Longitude
                   </th>
@@ -97,18 +114,21 @@
                   <th
                     class="slds-text-align_center th-label"
                     data-field="Location__Street__s"
+                    style="width: 10%"
                   >
                     {streetLabel}
                   </th>
                   <th
                     class="slds-text-align_center th-label"
                     data-field="Location__City__s"
+                    style="width: 10%"
                   >
                     {cityLabel}
                   </th>
                   <th
                     class="slds-text-align_center th-label"
                     data-field="Location__PostalCode__s"
+                    style="width: 10%"
                   >
                     {zipCodeLabel}
                   </th>
@@ -139,11 +159,22 @@
                 >
                   {endDateLabel}
                 </th>
-                <th>Actions</th>
+                <th class="slds-text-align_center">Actions</th>
               </tr>
               <!--- search boxes under each column header, not working for the lookup component -->
               <tr>
                 <th></th>
+                <th>
+                  <lightning-input
+                    type="search"
+                    label="Search"
+                    onchange={handleSearch}
+                    data-field="LineItemNumber"
+                    data-type="text"
+                    variant="label-hidden"
+                    class="slds-p-around_x-small"
+                  ></lightning-input>
+                </th>
                 <th>
                   <lightning-input
                     type="search"
@@ -279,6 +310,19 @@
                     >
                     </lightning-input>
                   </td>
+                  <td class="slds-text-align_center">
+                    <lightning-input
+                      type="text"
+                      variant="label-hidden"
+                      label="Line Number"
+                      data-index={service.Index}
+                      data-id={service.Id}
+                      disabled
+                      value={service.LineItemNumber}
+                      class="slds-cell-wrap"
+                    >
+                    </lightning-input>
+                  </td>
                   <td>
                     <lightning-record-picker
                       label="Service Type"
@@ -292,6 +336,7 @@
                       matching-info={productMatchingInfo}
                       onchange={handleServiceChange}
                       class="slds-cell-wrap"
+                      required
                     ></lightning-record-picker>
                   </td>
                   <td>
@@ -439,6 +484,23 @@
                       data-index={service.Index}
                       onclick={handleDeleteRow}
                     ></lightning-button-icon>
+                  </td>
+                </tr>
+                <tr class={service.Class} key={service.Id}>
+                  <td
+                    colspan="12"
+                    class="error-container slds-text-align_center"
+                  >
+                    <template if:true={service.Error}>
+                      <lightning-icon
+                        icon-name="utility:error"
+                        alternative-text="Error icon"
+                        variant="error"
+                        size="small"
+                        class="slds-m-right_xx-small"
+                      ></lightning-icon>
+                      {service.Error}
+                    </template>
                   </td>
                 </tr>
               </template>

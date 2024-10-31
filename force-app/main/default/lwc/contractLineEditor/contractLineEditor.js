@@ -115,7 +115,7 @@ export default class ContractLineEditor extends LightningElement {
   /**
    * @description Handles the saving of the record
    */
-  handleSaveRecord() {
+  handleSaveRecord(event) {
     try {
       //Insert the financial accounts to be added
       this.contractLinesClone.forEach((line) => {
@@ -197,8 +197,29 @@ export default class ContractLineEditor extends LightningElement {
     this.dispatchEvent(new CustomEvent("closemodal"));
   }
 
-  handleSuccess() {
+  handleSuccess(event) {
     const updatedContractLines = structuredClone(this.contractLines);
+
+    //find the line index that was updated
+    const index = updatedContractLines.findIndex(
+      (line) => line.Id === this.selectedLineItemId
+    );
+
+    //Update the contract line with the new values from the form fields
+    updatedContractLines[index].EndDate = event.detail.fields.EndDate.value;
+    updatedContractLines[index].StartDate = event.detail.fields.StartDate.value;
+    updatedContractLines[index].Location__City__s =
+      event.detail.fields.Location__City__s.value;
+    updatedContractLines[index].Location__Street__s =
+      event.detail.fields.Location__Street__s.value;
+    updatedContractLines[index].Location__PostalCode__s =
+      event.detail.fields.Location__PostalCode__s.value;
+    updatedContractLines[index].Location__City__s =
+      event.detail.fields.Location__City__s.value;
+    updatedContractLines[index].Geolocation__Latitude__s =
+      event.detail.fields.Geolocation__Latitude__s.value;
+    updatedContractLines[index].Geolocation__Longitude__s =
+      event.detail.fields.Geolocation__Longitude__s.value;
 
     this.handleToast("Success", "Record has been saved", "success");
 

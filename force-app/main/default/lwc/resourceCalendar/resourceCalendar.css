@@ -1,0 +1,106 @@
+/**
+ * Created by Frederik on 10/30/2024.
+ */
+/* resourceCalendar.css */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-header {
+    padding: 0.5rem;
+    background-color: #f3f3f3;
+}
+
+.calendar-day {
+    min-height: 5rem;
+    padding: 0.5rem;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.workload-indicator {
+    font-size: 0.75rem;
+    color: #444;
+}
+
+.workload-indicator .scheduled,
+.workload-indicator .hours,
+.workload-indicator .available {
+    padding: 0.25rem;
+    margin-top: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.25rem;
+}
+
+.calendar-day[data-workload="full"] {
+    background-color: #ffeded;
+}
+
+.calendar-day[data-workload="partial"] {
+    background-color: #fff5f5;
+}
+
+.legend-box {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    border: 1px solid #d8dde6;
+}
+
+.legend-box.available {
+    background-color: white;
+}
+
+.legend-box.partial {
+    background-color: rgb(255, 200, 200);
+}
+
+.legend-box.full {
+    background-color: rgb(255, 100, 100);
+}
+
+.inactive-day {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: #e8f4ff;
+}
+.drag-over {
+    border: 2px dashed #0070d2 !important;
+    background-color: rgba(0, 112, 210, 0.1) !important;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.valid-drop-target {
+    border: 2px dashed #04844b !important;
+    background-color: rgba(4, 132, 75, 0.1) !important;
+    transition: all 0.2s ease;
+}
+
+.invalid-drop-target {
+    border: 2px dashed #c23934 !important;
+    background-color: rgba(194, 57, 52, 0.1) !important;
+    transition: all 0.2s ease;
+}
+
+/* Optional tooltip styles if you implement them */
+.validation-tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #d8dde6;
+    border-radius: 4px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}

@@ -10,7 +10,6 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getContractLines from "@salesforce/apex/ServiceBuilderController.getContractLines";
 import saveContractLine from "@salesforce/apex/ServiceBuilderController.saveContractLine";
 import deleteContractLine from "@salesforce/apex/ServiceBuilderController.deleteContractLine";
-import getFinancialAccountName from "@salesforce/apex/ServiceBuilderController.getFinancialAccountName";
 import insertOrRemoveContractLineFinancialAccount from "@salesforce/apex/ServiceBuilderController.insertOrRemoveContractLineFinancialAccount";
 import updateServiceContractLocationType from "@salesforce/apex/ServiceBuilderController.updateServiceContractLocationType";
 import recurrenceModal from "c/recurrencePattern";
@@ -132,8 +131,27 @@ export default class ServiceBuilder extends LightningElement {
       .then((result) => {
         let index = 0;
 
+        // Sort the results by LineItemNumber first
+        result.sort((a, b) => {
+          return a.LineItemNumber - b.LineItemNumber;
+        });
+
         result.forEach((line) => {
+          // Initialize FinCustomers array
           line.FinCustomers = [];
+
+          // Convert Contract_Line_Financial_Accounts__r to FinCustomers format
+          if (line.Contract_Line_Financial_Accounts__r) {
+            line.Contract_Line_Financial_Accounts__r.forEach((account) => {
+              line.FinCustomers.push({
+                type: "icon",
+                iconName: "standard:account",
+                label: account.Financial_Customer__r.Name,
+                recordId: account.Financial_Customer__c
+              });
+            });
+          }
+
           line.Index = index;
           line.IsNew = false;
           line.IsSelected = false;
@@ -157,29 +175,29 @@ export default class ServiceBuilder extends LightningElement {
       });
   }
 
-  /**
-   * @description Sets opacity for rows other than the selected one
-   * @param {Event} event - The event object
-   */
-  setOtherRowOpacity(event) {
-    let index = parseInt(event.target.dataset.index) + 2;
-    this.template.querySelectorAll("tr").forEach((row, rowIndex) => {
-      if (parseInt(rowIndex) !== parseInt(index) && rowIndex !== 0) {
-        row.style.opacity = 0.6;
-      } else {
-        row.style.opacity = 1;
-      }
-    });
-  }
+  // /**
+  //  * @description Sets opacity for rows other than the selected one
+  //  * @param {Event} event - The event object
+  //  */
+  // setOtherRowOpacity(event) {
+  //   let index = parseInt(event.target.dataset.index) + 2;
+  //   this.template.querySelectorAll("tr").forEach((row, rowIndex) => {
+  //     if (parseInt(rowIndex) !== parseInt(index) && rowIndex !== 0) {
+  //       row.style.opacity = 0.6;
+  //     } else {
+  //       row.style.opacity = 1;
+  //     }
+  //   });
+  // }
 
-  /**
-   * @description Resets opacity for all rows
-   */
-  resetRowOpacity() {
-    this.template.querySelectorAll("tr").forEach((row) => {
-      row.style.opacity = 1;
-    });
-  }
+  // /**
+  //  * @description Resets opacity for all rows
+  //  */
+  // resetRowOpacity() {
+  //   this.template.querySelectorAll("tr").forEach((row) => {
+  //     row.style.opacity = 1;
+  //   });
+  // }
 
   /**
    * @description Reindexes the contract lines
@@ -388,7 +406,7 @@ export default class ServiceBuilder extends LightningElement {
     let index = event.target.dataset.index;
     let value = event.detail.recordId;
 
-    this.insertContractLine(index, value);
+    this.contractLines[index].Product2Id = value;
   }
 
   /**
@@ -551,9 +569,13 @@ export default class ServiceBuilder extends LightningElement {
       Id: null,
       IsNew: true,
       IsSelected: false,
+      LineItemNumber: null,
       ServiceContractId: this.recordId,
       Index: this.contractLines.length
     };
+
+    //Set the class to hidden so it doesn't show up in the table if the line copied had error
+    newRow.Class = "hidden";
 
     this.contractLines.push(newRow);
     this.contractLines = [...this.contractLines];
@@ -596,29 +618,65 @@ export default class ServiceBuilder extends LightningElement {
    * @description Handles saving all modified contract lines
    */
   handleSaveAll() {
+    let hasErrors = false;
+
+    // Clear all previous errors
+    this.contractLines = this.contractLines.map((line) => ({
+      ...line,
+      Error: null,
+      Class: "hidden"
+    }));
+
+    // Validate each line and set errors
+    this.contractLines = this.contractLines.map((line, index) => {
+      const errors = [];
+
+      if (!line.Product2Id) errors.push("Service Type");
+      if (!line.Project_Code__c) errors.push("Code");
+
+      // Location validation based on type
+      if (this.locationColumns.isGeoLocation) {
+        if (!line.Geolocation__Latitude__s || !line.Geolocation__Longitude__s) {
+          errors.push("Latitude and Longitude");
+        }
+      } else if (this.locationColumns.isAddress) {
+        if (
+          !line.Location__Street__s ||
+          !line.Location__City__s ||
+          !line.Location__PostalCode__s
+        ) {
+          errors.push("Street, City, and Zip Code");
+        }
+      }
+
+      if (!line.StartDate) errors.push("Start Date");
+      if (!line.EndDate) errors.push("End Date");
+      if (!line.Recurrence_Pattern__c) errors.push("Recurrence Pattern");
+
+      if (errors.length > 0) {
+        hasErrors = true;
+        return {
+          ...line,
+          Error: `Missing fields: ${errors.join(", ")}.`,
+          Class: "display"
+        };
+      }
+      return line;
+    });
+
+    if (hasErrors) {
+      // Force a refresh of the UI
+      this.contractLines = [...this.contractLines];
+      return;
+    }
+
+    // If validation passes, proceed with saving
     this.contractLines.forEach((line, index) => {
       this.insertContractLine(index, line.Product2Id);
     });
 
     this.handleToast("Success", "All records have been saved", "success");
     this.reIndex();
-
-    // this.contractLines.forEach((line, index) => {
-    //   this.insertContractLine(index, line.Product2Id);
-
-    //   if (line.IsNew && line.Contract_Line_Financial_Accounts__r) {
-    //     line.Contract_Line_Financial_Accounts__r.forEach((account) => {
-    //       insertOrRemoveContractLineFinancialAccount({
-    //         name: account.Financial_Customer__c.Name,
-    //         contractLineItemId: account.Contract_Line_Item__c,
-    //         financialCustomerId: account.Financial_Customer__c.Id,
-    //         action: "insert"
-    //       });
-    //     });
-    //   }
-    // });
-
-    // window.location.reload();
   }
 
   /**
@@ -628,6 +686,8 @@ export default class ServiceBuilder extends LightningElement {
    */
   insertContractLine(index, value) {
     let contractLine = this.contractLines[index];
+    console.log("Contract Line", JSON.stringify(contractLine));
+
     contractLine.Product2Id = value;
     contractLine.Location__CountryCode__s = "BE";
 
@@ -654,6 +714,20 @@ export default class ServiceBuilder extends LightningElement {
         // Add the existing FinCustomers back to the result
         result.FinCustomers = existingFinCustomers;
         this.contractLines[index] = result;
+        // If there are financial accounts in the FinCustomers array and no Contract_Line_Financial_Accounts__r, insert them
+        if (
+          this.contractLines[index].FinCustomers.length > 0 &&
+          !this.contractLines[index].Contract_Line_Financial_Accounts__r
+        ) {
+          this.contractLines[index].FinCustomers.forEach((customer) => {
+            insertOrRemoveContractLineFinancialAccount({
+              name: customer.label,
+              contractLineItemId: this.contractLines[index].Id,
+              financialCustomerId: customer.recordId,
+              action: "insert"
+            });
+          });
+        }
         this.contractLines = [...this.contractLines];
         this.reIndex();
       })
@@ -724,9 +798,9 @@ export default class ServiceBuilder extends LightningElement {
     this.isModalOpen = false;
 
     if (event && event.detail) {
-      const deepClone = JSON.parse(JSON.stringify(event.detail));
+      const deepClone = structuredClone(event.detail);
 
-      this.contractLines = Object.assign([], deepClone);
+      this.contractLines = [...deepClone];
     }
   }
 

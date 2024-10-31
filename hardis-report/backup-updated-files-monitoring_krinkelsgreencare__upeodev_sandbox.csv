@@ -1,93 +1,79 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
-classes/AddressSearchService.cls,A,ApexClass AddressSearchService,,,log,📰
-classes/AddressSearchService.cls-meta.xml,A,ApexClass AddressSearchService,,,log,📰
-classes/ExportRecordsController.cls," ",ApexClass ExportRecordsController,M,,log,📰
 classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
-classes/ServiceAppointmentRescheduler.cls," ",ApexClass ServiceAppointmentRescheduler,M,,log,📰
+classes/SchedulingController.cls,A,ApexClass SchedulingController,,,log,📰
+classes/SchedulingController.cls-meta.xml,A,ApexClass SchedulingController,,,log,📰
 classes/ServiceAppointmentTriggerHandler.cls," ",ApexClass ServiceAppointmentTriggerHandler,M,,log,📰
-classes/ServiceAppointmentTriggerHandler.cls-meta.xml," ",ApexClass ServiceAppointmentTriggerHandler,M,,log,📰
 classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
-classes/ServiceBuilderWrapper.cls," ",ApexClass ServiceBuilderWrapper,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-cspTrustedSites/bpost.cspTrustedSite-meta.xml,A,CspTrustedSite bpost,,,log,📰
-customMetadata/Export_Configuration.ServiceContract.md-meta.xml," ",CustomMetadata Export_Configuration.ServiceContract,M,,log,📰
-flexipages/Asset_Record_Page.flexipage-meta.xml," ",FlexiPage Asset_Record_Page,M,,log,📰
-flexipages/LMRA_Record_Page.flexipage-meta.xml,A,FlexiPage LMRA_Record_Page,,,log,📰
+flexipages/ATAK_Project_Record_Page.flexipage-meta.xml,A,FlexiPage ATAK_Project_Record_Page,,,log,📰
+flexipages/Asset_Scheduler.flexipage-meta.xml,A,FlexiPage Asset_Scheduler,,,log,📰
+flexipages/Commercial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Commercial_Account_Record_Page,M,,log,📰
+flexipages/Location_Visit_Record_Page.flexipage-meta.xml,A,FlexiPage Location_Visit_Record_Page,,,log,📰
+flexipages/Service_Appointment_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Appointment_Record_Page,M,,log,📰
 flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
-flexipages/Work_Plan_Template_Record_Page.flexipage-meta.xml,A,FlexiPage Work_Plan_Template_Record_Page,,,log,📰
-flowDefinitions/ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner.flowDefinition-meta.xml,A,FlowDefinition ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner,,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information,M,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,,,log,📰
-flows/ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner.flow-meta.xml,A,Flow ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner,,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flow-meta.xml,A,Flow Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information,M,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,,,log,📰
+flowDefinitions/ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention.flowDefinition-meta.xml,A,FlowDefinition ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention,,,log,📰
+flowDefinitions/Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue,M,,log,📰
+flowDefinitions/Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication.flowDefinition-meta.xml," ",FlowDefinition Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication,M,,log,📰
+flowDefinitions/Service_contract_Scheduled_Contract_Renewal_Reminder.flowDefinition-meta.xml,A,FlowDefinition Service_contract_Scheduled_Contract_Renewal_Reminder,,,log,📰
+flows/ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention.flow-meta.xml,A,Flow ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention,,,log,📰
+flows/Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue.flow-meta.xml," ",Flow Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue,M,,log,📰
+flows/Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication.flow-meta.xml," ",Flow Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication,M,,log,📰
+flows/Service_contract_Scheduled_Contract_Renewal_Reminder.flow-meta.xml,A,Flow Service_contract_Scheduled_Contract_Renewal_Reminder,,,log,📰
+groups/Charleroi.group-meta.xml,A,Group Charleroi,,,log,📰
+groups/Liege.group-meta.xml,A,Group Liege,,,log,📰
+groups/Phillippeville.group-meta.xml,A,Group Phillippeville,,,log,📰
 layouts/ATAK_Project__c-ATAK Project Layout.layout-meta.xml," ",Layout ATAK_Project__c-ATAK Project Layout,M,,log,📰
 layouts/Account-Commercial Layout.layout-meta.xml," ",Layout Account-Commercial Layout,M,,log,📰
-layouts/Account-Financial Layout.layout-meta.xml," ",Layout Account-Financial Layout,M,,log,📰
 layouts/Account-Operational Layout.layout-meta.xml," ",Layout Account-Operational Layout,M,,log,📰
-layouts/Asset-Asset Layout.layout-meta.xml," ",Layout Asset-Asset Layout,M,,log,📰
-layouts/Contract-Contract Layout.layout-meta.xml," ",Layout Contract-Contract Layout,M,,log,📰
-layouts/CspTrustedSite-Trusted URL Layout.layout-meta.xml,A,Layout CspTrustedSite-Trusted URL Layout,,,log,📰
-layouts/LMRA__c-LMRA Layout.layout-meta.xml,A,Layout LMRA__c-LMRA Layout,,,log,📰
+layouts/Location_Visit__c-Location Visit Layout.layout-meta.xml,A,Layout Location_Visit__c-Location Visit Layout,,,log,📰
+layouts/Opportunity-Opportunity Layout.layout-meta.xml," ",Layout Opportunity-Opportunity Layout,M,,log,📰
 layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
 layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
 layouts/ServiceResource-Service Resource Layout.layout-meta.xml," ",Layout ServiceResource-Service Resource Layout,M,,log,📰
 layouts/ServiceTerritory-Service Territory Layout.layout-meta.xml," ",Layout ServiceTerritory-Service Territory Layout,M,,log,📰
-layouts/Service_Item__c-Service Item Layout.layout-meta.xml," ",Layout Service_Item__c-Service Item Layout,M,,log,📰
-layouts/User-User Layout.layout-meta.xml," ",Layout User-User Layout,M,,log,📰
-layouts/UserAlt-User Profile Layout.layout-meta.xml," ",Layout UserAlt-User Profile Layout,M,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-layouts/WorkOrderLineItem-Work Order Line Item Layout.layout-meta.xml," ",Layout WorkOrderLineItem-Work Order Line Item Layout,M,,log,📰
-lwc/addressSearch/addressSearch.css,A,LightningComponentBundle addressSearch/addressSearch.css,,,log,📰
-lwc/addressSearch/addressSearch.html,A,LightningComponentBundle addressSearch/addressSearch.html,,,log,📰
-lwc/addressSearch/addressSearch.js,A,LightningComponentBundle addressSearch/addressSearch.js,,,log,📰
-lwc/addressSearch/addressSearch.js-meta.xml,A,LightningComponentBundle addressSearch/addressSearch.js-meta.xml,,,log,📰
-lwc/contractLineEditor/contractLineEditor.html," ",LightningComponentBundle contractLineEditor/contractLineEditor.html,M,,log,📰
 lwc/contractLineEditor/contractLineEditor.js," ",LightningComponentBundle contractLineEditor/contractLineEditor.js,M,,log,📰
-lwc/exportRecords/exportRecords.js," ",LightningComponentBundle exportRecords/exportRecords.js,M,,log,📰
-lwc/generateMaintenancePlan/generateMaintenancePlan.html,A,LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.html,,,log,📰
-lwc/generateMaintenancePlan/generateMaintenancePlan.js,A,LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.js,,,log,📰
-lwc/generateMaintenancePlan/generateMaintenancePlan.js-meta.xml,A,LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.js-meta.xml,,,log,📰
-lwc/recurrencePattern/recurrencePattern.html," ",LightningComponentBundle recurrencePattern/recurrencePattern.html,M,,log,📰
-lwc/recurrencePattern/recurrencePattern.js," ",LightningComponentBundle recurrencePattern/recurrencePattern.js,M,,log,📰
+lwc/resourceCalendar/resourceCalendar.css,A,LightningComponentBundle resourceCalendar/resourceCalendar.css,,,log,📰
+lwc/resourceCalendar/resourceCalendar.html,A,LightningComponentBundle resourceCalendar/resourceCalendar.html,,,log,📰
+lwc/resourceCalendar/resourceCalendar.js,A,LightningComponentBundle resourceCalendar/resourceCalendar.js,,,log,📰
+lwc/resourceCalendar/resourceCalendar.js-meta.xml,A,LightningComponentBundle resourceCalendar/resourceCalendar.js-meta.xml,,,log,📰
+lwc/roundDispatcher/roundDispatcher.html,A,LightningComponentBundle roundDispatcher/roundDispatcher.html,,,log,📰
+lwc/roundDispatcher/roundDispatcher.js,A,LightningComponentBundle roundDispatcher/roundDispatcher.js,,,log,📰
+lwc/roundDispatcher/roundDispatcher.js-meta.xml,A,LightningComponentBundle roundDispatcher/roundDispatcher.js-meta.xml,,,log,📰
 lwc/serviceBuilder/serviceBuilder.css," ",LightningComponentBundle serviceBuilder/serviceBuilder.css,M,,log,📰
 lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
 lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
-namedCredentials/Google_Places.namedCredential-meta.xml,A,NamedCredential Google_Places,,,log,📰
-namedCredentials/MapsAutocomplete.namedCredential-meta.xml,A,NamedCredential MapsAutocomplete,,,log,📰
-objects/ATAK_Project__c/fields/Financial_Account__c.field-meta.xml,A,CustomField Financial_Account__c,,,log,📰
-objects/ATAK_Project__c/fields/Site_Manager_Code__c.field-meta.xml,A,CustomField Site_Manager_Code__c,,,log,📰
-objects/ATAK_Project__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
-objects/Account/fields/Client_Code__c.field-meta.xml," ",CustomField Client_Code__c,M,,log,📰
-objects/Account/fields/Group__c.field-meta.xml," ",CustomField Group__c,M,,log,📰
-objects/Account/recordTypes/Commercial_Account.recordType-meta.xml," ",RecordType Commercial_Account,M,,log,📰
-objects/Account/recordTypes/Financial_Account.recordType-meta.xml," ",RecordType Financial_Account,M,,log,📰
-objects/Account/recordTypes/Operational_Account.recordType-meta.xml," ",RecordType Operational_Account,M,,log,📰
-objects/LMRA__c/LMRA__c.object-meta.xml,A,CustomObject LMRA__c/LMRA__c,,,log,📰
-objects/LMRA__c/fields/Corrective_Measures__c.field-meta.xml,A,CustomField Corrective_Measures__c,,,log,📰
-objects/LMRA__c/fields/Date__c.field-meta.xml,A,CustomField Date__c,,,log,📰
-objects/LMRA__c/fields/EPC_EPI_CBM_PBM__c.field-meta.xml,A,CustomField EPC_EPI_CBM_PBM__c,,,log,📰
-objects/LMRA__c/fields/LMRA_Ok__c.field-meta.xml,A,CustomField LMRA_Ok__c,,,log,📰
-objects/LMRA__c/fields/LMRA_Type__c.field-meta.xml,A,CustomField LMRA_Type__c,,,log,📰
-objects/LMRA__c/fields/Surrounding_Risks__c.field-meta.xml,A,CustomField Surrounding_Risks__c,,,log,📰
-objects/LMRA__c/fields/Tasks_of_the_Day__c.field-meta.xml,A,CustomField Tasks_of_the_Day__c,,,log,📰
-objects/LMRA__c/fields/Work_Order__c.field-meta.xml,A,CustomField Work_Order__c,,,log,📰
-objects/LMRA__c/listViews/All.listView-meta.xml,A,ListView All,,,log,📰
+lwc/servicesToSchedule/dragStateUtil.js,A,LightningComponentBundle servicesToSchedule/dragStateUtil.js,,,log,📰
+lwc/servicesToSchedule/servicesToSchedule.css,A,LightningComponentBundle servicesToSchedule/servicesToSchedule.css,,,log,📰
+lwc/servicesToSchedule/servicesToSchedule.html,A,LightningComponentBundle servicesToSchedule/servicesToSchedule.html,,,log,📰
+lwc/servicesToSchedule/servicesToSchedule.js,A,LightningComponentBundle servicesToSchedule/servicesToSchedule.js,,,log,📰
+lwc/servicesToSchedule/servicesToSchedule.js-meta.xml,A,LightningComponentBundle servicesToSchedule/servicesToSchedule.js-meta.xml,,,log,📰
+lwc/simpleDispatcherConsole/simpleDispatcherConsole.css,A,LightningComponentBundle simpleDispatcherConsole/simpleDispatcherConsole.css,,,log,📰
+lwc/simpleDispatcherConsole/simpleDispatcherConsole.html,A,LightningComponentBundle simpleDispatcherConsole/simpleDispatcherConsole.html,,,log,📰
+lwc/simpleDispatcherConsole/simpleDispatcherConsole.js,A,LightningComponentBundle simpleDispatcherConsole/simpleDispatcherConsole.js,,,log,📰
+lwc/simpleDispatcherConsole/simpleDispatcherConsole.js-meta.xml,A,LightningComponentBundle simpleDispatcherConsole/simpleDispatcherConsole.js-meta.xml,,,log,📰
+objects/ATAK_Project__c/ATAK_Project__c.object-meta.xml," ",CustomObject ATAK_Project__c/ATAK_Project__c,M,,log,📰
+objects/Location_Visit__c/Location_Visit__c.object-meta.xml,A,CustomObject Location_Visit__c/Location_Visit__c,,,log,📰
+objects/Location_Visit__c/compactLayouts/Location_Visit.compactLayout-meta.xml,A,CompactLayout Location_Visit,,,log,📰
+objects/Location_Visit__c/fields/Commercial_Account__c.field-meta.xml,A,CustomField Commercial_Account__c,,,log,📰
+objects/Location_Visit__c/fields/Operational_Account__c.field-meta.xml,A,CustomField Operational_Account__c,,,log,📰
+objects/Location_Visit__c/fields/Opportunity__c.field-meta.xml,A,CustomField Opportunity__c,,,log,📰
+objects/Location_Visit__c/fields/Service_Appointment__c.field-meta.xml,A,CustomField Service_Appointment__c,,,log,📰
+objects/Location_Visit__c/fields/Type__c.field-meta.xml,A,CustomField Type__c,,,log,📰
+objects/Location_Visit__c/fields/Visit_Date__c.field-meta.xml,A,CustomField Visit_Date__c,,,log,📰
+objects/Location_Visit__c/fields/Visit_Notes__c.field-meta.xml,A,CustomField Visit_Notes__c,,,log,📰
+objects/Location_Visit__c/listViews/All.listView-meta.xml,A,ListView All,,,log,📰
 objects/ServiceAppointment/fieldSets/FSL__Service_Appointment_List_Columns.fieldSet-meta.xml," ",FieldSet FSL__Service_Appointment_List_Columns,M,,log,📰
-objects/ServiceAppointment/fields/Asset__c.field-meta.xml,A,CustomField Asset__c,,,log,📰
-objects/ServiceContract/fields/Check_In_Work__c.field-meta.xml," ",CustomField Check_In_Work__c,M,,log,📰
-objects/ServiceContract/fields/Location_Type__c.field-meta.xml," ",CustomField Location_Type__c,M,,log,📰
-objects/ServiceTerritory/fields/Main_Responsible__c.field-meta.xml,A,CustomField Main_Responsible__c,,,log,📰
-objects/Service_Item__c/fields/Service_Item_Key__c.field-meta.xml,A,CustomField Service_Item_Key__c,,,log,📰
-objects/User/fields/ATAK_Code__c.field-meta.xml,A,CustomField ATAK_Code__c,,,log,📰
-objects/WorkOrder/fields/Shop_Visit_Date__c.field-meta.xml,A,CustomField Shop_Visit_Date__c,,,log,📰
-objects/WorkOrder/fields/Shop_Visit_Duration__c.field-meta.xml,A,CustomField Shop_Visit_Duration__c,,,log,📰
-objects/WorkOrder/fields/Shop_Visit_End_Time__c.field-meta.xml,A,CustomField Shop_Visit_End_Time__c,,,log,📰
-objects/WorkOrder/fields/Shop_Visit_Reviewed_Approved__c.field-meta.xml,A,CustomField Shop_Visit_Reviewed_Approved__c,,,log,📰
-objects/WorkOrder/fields/Shop_Visit_Start_Time__c.field-meta.xml,A,CustomField Shop_Visit_Start_Time__c,,,log,📰
+objects/ServiceContract/compactLayouts/Service_Contract.compactLayout-meta.xml,A,CompactLayout Service_Contract,,,log,📰
+objects/ServiceContract/fields/Accepted__c.field-meta.xml,A,CustomField Accepted__c,,,log,📰
+objects/ServiceContract/fields/Allocation_Key__c.field-meta.xml,A,CustomField Allocation_Key__c,,,log,📰
+objects/ServiceContract/fields/Checkin_work__c.field-meta.xml,A,CustomField Checkin_work__c,,,log,📰
+objects/ServiceContract/fields/Payment_Conditions__c.field-meta.xml,A,CustomField Payment_Conditions__c,,,log,📰
+objects/ServiceContract/fields/Renewal_Reminder_Needed__c.field-meta.xml,A,CustomField Renewal_Reminder_Needed__c,,,log,📰
+objects/ServiceContract/fields/Type__c.field-meta.xml,A,CustomField Type__c,,,log,📰
+platformEventChannelMembers/SchedulingEntitiesModifiedAttributesChannel_FSL_Optimization_Request_ChangeEvent.platformEventChannelMember-meta.xml,A,PlatformEventChannelMember SchedulingEntitiesModifiedAttributesChannel_FSL_Optimization_Request_ChangeEvent,,,log,📰
+platformEventChannelMembers/SchedulingEntitiesModifiedAttributesChannel_FSL_Time_Dependency_ChangeEvent.platformEventChannelMember-meta.xml,A,PlatformEventChannelMember SchedulingEntitiesModifiedAttributesChannel_FSL_Time_Dependency_ChangeEvent,,,log,📰
+profilePasswordPolicies/Contract_Manager_profilePasswordPolicy1730106625061.profilePasswordPolicy-meta.xml," ",ProfilePasswordPolicy Contract_Manager_profilePasswordPolicy1730106625061,M,,log,📰
+profileSessionSettings/null_profileSessionSetting1730106625079.profileSessionSetting-meta.xml," ",ProfileSessionSetting null_profileSessionSetting1730106625079,M,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -96,7 +82,7 @@ profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,
 profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
 profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
 profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
-profiles/Contract Manager.profile-meta.xml," ",Profile Contract Manager,M,,log,📰
+profiles/Contract Manager %28custom%29.profile-meta.xml,A,Profile Contract Manager %28custom%29,,,log,📰
 profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
 profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
 profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
@@ -113,12 +99,15 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/ServiceContract.Generate_Maintenance_Plan.quickAction-meta.xml,A,QuickAction ServiceContract.Generate_Maintenance_Plan,,,log,📰
-remoteSiteSettings/bpost.remoteSite-meta.xml,A,RemoteSiteSetting bpost,,,log,📰
+quickActions/Quote.SendEmail.quickAction-meta.xml," ",QuickAction Quote.SendEmail,M,,log,📰
+quickActions/ServiceAppointment.SendEmail.quickAction-meta.xml," ",QuickAction ServiceAppointment.SendEmail,M,,log,📰
+quickActions/WorkOrder.SendEmail.quickAction-meta.xml," ",QuickAction WorkOrder.SendEmail,M,,log,📰
+quickActions/WorkOrderLineItem.SendEmail.quickAction-meta.xml," ",QuickAction WorkOrderLineItem.SendEmail,M,,log,📰
+settings/EmailAdministration.settings-meta.xml," ",Settings EmailAdministration,M,,log,📰
 settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
-sharingRules/LMRA__c.sharingRules-meta.xml,A,SharingRules LMRA__c,,,log,📰
-tabs/LMRA__c.tab-meta.xml,A,CustomTab LMRA__c,,,log,📰
-topicsForObjects/LMRA__c.topicsForObjects-meta.xml,A,TopicsForObjects LMRA__c,,,log,📰
-triggers/ServiceAppointmentTrigger.trigger," ",ApexTrigger ServiceAppointmentTrigger,M,,log,📰
+sharingRules/Location_Visit__c.sharingRules-meta.xml,A,SharingRules Location_Visit__c,,,log,📰
+tabs/Asset_Scheduler.tab-meta.xml,A,CustomTab Asset_Scheduler,,,log,📰
+tabs/Location_Visit__c.tab-meta.xml,A,CustomTab Location_Visit__c,,,log,📰
+topicsForObjects/Location_Visit__c.topicsForObjects-meta.xml,A,TopicsForObjects Location_Visit__c,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

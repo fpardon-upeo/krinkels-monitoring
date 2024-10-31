@@ -2,11 +2,6 @@
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>FSL__Service_Appointment_List_Columns</fullName>
     <availableFields>
-        <field>AccountId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>ActualDuration</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -364,6 +359,11 @@
     </displayedFields>
     <displayedFields>
         <field>DueDate</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>AccountId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

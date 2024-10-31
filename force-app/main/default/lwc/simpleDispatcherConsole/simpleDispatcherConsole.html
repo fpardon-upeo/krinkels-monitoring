@@ -1,0 +1,40 @@
+<!--
+ - Created by Frederik on 10/30/2024.
+ -->
+
+<!-- Simple Dispatcher Console -->
+<template>
+  <lightning-card title="Dispatching" icon-name="custom:custom14">
+        <div class="slds-m-around_medium slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-combobox
+                    name="territory"
+                    label="Territory"
+                    variant="label-inline"
+                    value={selectedTerritory}
+                    options={territoryOptions}
+                    onchange={handleTerritoryChange}>
+                </lightning-combobox>
+            </div>
+          <div class="slds-col slds-size_1-of-2">
+            <lightning-combobox
+              name="resource"
+              label="Resource"
+              variant="label-inline"
+              value={selectedResource}
+              options={resourceOptions}
+              onchange={handleResourceChange}>
+            </lightning-combobox>
+          </div>
+        </div>
+        <div class="slds-m-around_medium slds-grid">
+          <div class="slds-col slds-size_12-of-12">
+            <c-resource-calendar
+              dragged-asset-id={draggedAssetId}
+              dragged-asset-details={draggedAssetDetails}
+              resource-id={selectedResource}>
+            </c-resource-calendar>
+          </div>
+        </div>
+  </lightning-card>
+</template>

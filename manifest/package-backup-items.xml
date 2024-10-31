@@ -15,6 +15,7 @@
         <members>ProjectRestResource</members>
         <members>RRuleAdjuster</members>
         <members>RRuleCriteria</members>
+        <members>SchedulingController</members>
         <members>ServiceAppointmentRescheduler</members>
         <members>ServiceAppointmentTriggerHandler</members>
         <members>ServiceBuilderController</members>
@@ -70,7 +71,9 @@
         <members>Contact.Contact</members>
         <members>Knowledge__kav.Recommended_Compact_Layout</members>
         <members>Lead.Leads_Custom_Compact_Layout</members>
+        <members>Location_Visit__c.Location_Visit</members>
         <members>Opportunity.New_Awesome_Companct_Layout</members>
+        <members>ServiceContract.Service_Contract</members>
         <members>User.User_Layout</members>
         <members>WorkOrder.Work_Order_Compact_Layout</members>
         <name>CompactLayout</name>
@@ -179,6 +182,13 @@
         <members>LMRA__c.Work_Order__c</members>
         <members>Location.Account__c</members>
         <members>Location.Van_Crew__c</members>
+        <members>Location_Visit__c.Commercial_Account__c</members>
+        <members>Location_Visit__c.Operational_Account__c</members>
+        <members>Location_Visit__c.Opportunity__c</members>
+        <members>Location_Visit__c.Service_Appointment__c</members>
+        <members>Location_Visit__c.Type__c</members>
+        <members>Location_Visit__c.Visit_Date__c</members>
+        <members>Location_Visit__c.Visit_Notes__c</members>
         <members>MaintenanceAsset.Service_Territory__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
@@ -237,10 +247,16 @@
         <members>ServiceAppointment.FSL__Use_Async_Logic__c</members>
         <members>ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c</members>
         <members>ServiceAppointment.Overdue_Reminder_Send__c</members>
+        <members>ServiceContract.Accepted__c</members>
+        <members>ServiceContract.Allocation_Key__c</members>
         <members>ServiceContract.Check_In_Work__c</members>
+        <members>ServiceContract.Checkin_work__c</members>
         <members>ServiceContract.Generate_Maintenance_Plan__c</members>
         <members>ServiceContract.Location_Type__c</members>
+        <members>ServiceContract.Payment_Conditions__c</members>
         <members>ServiceContract.Priority__c</members>
+        <members>ServiceContract.Renewal_Reminder_Needed__c</members>
+        <members>ServiceContract.Type__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
         <members>ServiceCrewMember.FSL__GanttLabel__c</members>
         <members>ServiceResource.FSL__Efficiency__c</members>
@@ -301,13 +317,16 @@
         <members>Contract_Line_Financial_Account__c</members>
         <members>Google_Maps_API__c</members>
         <members>LMRA__c</members>
+        <members>Location_Visit__c</members>
         <members>Service_Item__c</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>ATAK_Project__c</members>
+        <members>Asset_Scheduler</members>
         <members>Knowledge__kav</members>
         <members>LMRA__c</members>
+        <members>Location_Visit__c</members>
         <members>MobileLanding</members>
         <name>CustomTab</name>
     </types>
@@ -420,7 +439,9 @@
         <name>FieldSet</name>
     </types>
     <types>
+        <members>ATAK_Project_Record_Page</members>
         <members>Asset_Record_Page</members>
+        <members>Asset_Scheduler</members>
         <members>Case_Record_Page</members>
         <members>Case_Record_Page1</members>
         <members>Case_Record_Page2</members>
@@ -436,6 +457,7 @@
         <members>LightningSales_UtilityBar</members>
         <members>LightningService_UtilityBar</members>
         <members>Location_Record_Page</members>
+        <members>Location_Visit_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
         <members>Maintenance_Plan_Record_Page</members>
         <members>Operational_Account_Record_Page</members>
@@ -458,11 +480,13 @@
     </types>
     <types>
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
+        <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
@@ -471,11 +495,13 @@
     </types>
     <types>
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
+        <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
@@ -502,6 +528,21 @@
         <members>Priority</members>
         <members>Work_Type</members>
         <name>GlobalValueSet</name>
+    </types>
+    <types>
+        <members>BURGGRAEVE_SIMON</members>
+        <members>Charleroi</members>
+        <members>FIELD_SERVICE_Default</members>
+        <members>HOMBROECKX_ARNE</members>
+        <members>Liege</members>
+        <members>Operators</members>
+        <members>PLETINCKX_YENTL</members>
+        <members>Phillippeville</members>
+        <members>VANDEWALLE_JIMMY</members>
+        <members>VERDONCK_DAVY</members>
+        <members>VERSTRAETE_GAUTHIER</members>
+        <members>WANDELS_AURELIEN</members>
+        <name>Group</name>
     </types>
     <types>
         <members>Dashboard Home Page Default</members>
@@ -578,6 +619,7 @@
         <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
         <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
         <members>Location-Van Layout</members>
+        <members>Location_Visit__c-Location Visit Layout</members>
         <members>Macro-Macro Layout</members>
         <members>MaintenanceAsset-Maintenance Asset Layout</members>
         <members>MaintenancePlan-Maintenance Plan Layout</members>
@@ -697,7 +739,11 @@
         <members>generateMaintenancePlan</members>
         <members>prepareContractForNextYear</members>
         <members>recurrencePattern</members>
+        <members>resourceCalendar</members>
+        <members>roundDispatcher</members>
         <members>serviceBuilder</members>
+        <members>servicesToSchedule</members>
+        <members>simpleDispatcherConsole</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -754,6 +800,11 @@
         <name>PermissionSet</name>
     </types>
     <types>
+        <members>SchedulingEntitiesModifiedAttributesChannel_FSL_Optimization_Request_ChangeEvent</members>
+        <members>SchedulingEntitiesModifiedAttributesChannel_FSL_Time_Dependency_ChangeEvent</members>
+        <name>PlatformEventChannelMember</name>
+    </types>
+    <types>
         <members>Busy</members>
         <members>Misrouted</members>
         <name>PresenceDeclineReason</name>
@@ -772,7 +823,7 @@
         <members>Chatter External User</members>
         <members>Chatter Free User</members>
         <members>Chatter Moderator User</members>
-        <members>Contract Manager</members>
+        <members>Contract Manager %28custom%29</members>
         <members>ContractManager</members>
         <members>Customer Community Plus User</members>
         <members>External Operator</members>
@@ -1312,6 +1363,7 @@
         <members>ListEmail</members>
         <members>Location</members>
         <members>LocationTrustMeasure</members>
+        <members>Location_Visit__c</members>
         <members>Macro</members>
         <members>MacroUsage</members>
         <members>MaintenancePlan</members>
@@ -1498,6 +1550,7 @@
         <members>JobProfile</members>
         <members>LMRA__c</members>
         <members>Lead</members>
+        <members>Location_Visit__c</members>
         <members>MaintenanceAsset</members>
         <members>MaintenancePlan</members>
         <members>Opportunity</members>
