@@ -4,6 +4,7 @@
     <defaultValue>false</defaultValue>
     <description>Checkbox to make sure there is only 1 reminder send when an SA is overdue</description>
     <label>Overdue Reminder Send</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

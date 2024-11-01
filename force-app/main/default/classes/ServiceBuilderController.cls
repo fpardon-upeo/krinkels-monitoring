@@ -7,6 +7,19 @@
 
 public without sharing class ServiceBuilderController {
   @AuraEnabled
+  public static ServiceContract getServiceContract(Id recordId) {
+    // Query the ServiceContract record with the specified recordId
+    ServiceContract serviceContract = [
+      SELECT Product__c, Default_LMRA__c
+      FROM ServiceContract
+      WHERE Id = :recordId
+      LIMIT 1
+    ];
+
+    return serviceContract;
+  }
+
+  @AuraEnabled
   public static List<ContractLineItem> getContractLines(String recordId) {
     List<ContractLineItem> contractLines = [
       SELECT
@@ -15,6 +28,8 @@ public without sharing class ServiceBuilderController {
         ServiceContract.StartDate,
         ServiceContract.EndDate,
         ServiceContract.Location_Type__c,
+        ServiceContract.Product__c,
+        ServiceContract.Default_LMRA__c,
         Recurrence_Pattern__c,
         ServiceContractId,
         Product2Id,
@@ -29,6 +44,7 @@ public without sharing class ServiceBuilderController {
         ListPrice,
         TotalPrice,
         Status,
+        LMRA__c,
         Planning_Type__c,
         Location__Street__s,
         Location__City__s,

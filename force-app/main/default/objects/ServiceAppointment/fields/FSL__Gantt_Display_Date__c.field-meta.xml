@@ -4,6 +4,7 @@
     <deprecated>false</deprecated>
     <label>Gantt Display Date</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>DateTime</type>
 </CustomField>

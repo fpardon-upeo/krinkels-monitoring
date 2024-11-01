@@ -39,11 +39,11 @@ export default class ContractLineEditor extends LightningElement {
   //--------------------------------------GETTERS--------------------------------------//
 
   get finCustomersForLine() {
-    if (!this.isLoading && this.contractLinesClone) {
-      let index = this.contractLinesClone.findIndex(
+    if (!this.isLoading && this.contractLines) {
+      let index = this.contractLines.findIndex(
         (line) => line.Id === this.selectedLineItemId
       );
-      return this.contractLinesClone[index].FinCustomers;
+      return this.contractLines[index].FinCustomers;
     }
     return [];
   }

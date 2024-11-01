@@ -242,6 +242,7 @@
     </relatedLists>
     <relatedLists>
         <fields>CONTRACT.NAME</fields>
+        <fields>Type__c</fields>
         <fields>CONTRACT.STARTDATE</fields>
         <fields>CONTRACT.ENDDATE</fields>
         <fields>CONTRACT.STATUS</fields>
@@ -300,6 +301,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Location_Visit__c.Operational_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Location_Passport__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

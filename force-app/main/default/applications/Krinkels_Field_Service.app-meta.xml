@@ -1461,6 +1461,7 @@
     <tabs>standard-ServiceAppointment</tabs>
     <tabs>standard-ServiceCrew</tabs>
     <tabs>LMRA__c</tabs>
+    <tabs>standard-report</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Krinkels_Field_Service_UtilityBar</utilityBar>
 </CustomApplication>

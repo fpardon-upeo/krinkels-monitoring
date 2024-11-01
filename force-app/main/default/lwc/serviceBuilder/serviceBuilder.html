@@ -56,20 +56,6 @@
 
                 <th
                   class="slds-text-align_center th-label"
-                  lwc:ref="lineNumberRef"
-                  data-lwcref="lineNumberRef"
-                  data-icon="utility:arrowdown"
-                  onclick={handleBasicSort}
-                  data-label="Line Number"
-                  data-field="LineItemNumber"
-                  data-sort="none"
-                  style="width: 10%"
-                >
-                  Line Number
-                </th>
-
-                <th
-                  class="slds-text-align_center th-label"
                   lwc:ref="serviceTypeRef"
                   data-lwcref="serviceTypeRef"
                   data-icon="utility:arrowdown"
@@ -164,17 +150,7 @@
               <!--- search boxes under each column header, not working for the lookup component -->
               <tr>
                 <th></th>
-                <th>
-                  <lightning-input
-                    type="search"
-                    label="Search"
-                    onchange={handleSearch}
-                    data-field="LineItemNumber"
-                    data-type="text"
-                    variant="label-hidden"
-                    class="slds-p-around_x-small"
-                  ></lightning-input>
-                </th>
+
                 <th>
                   <lightning-input
                     type="search"
@@ -310,19 +286,7 @@
                     >
                     </lightning-input>
                   </td>
-                  <td class="slds-text-align_center">
-                    <lightning-input
-                      type="text"
-                      variant="label-hidden"
-                      label="Line Number"
-                      data-index={service.Index}
-                      data-id={service.Id}
-                      disabled
-                      value={service.LineItemNumber}
-                      class="slds-cell-wrap"
-                    >
-                    </lightning-input>
-                  </td>
+
                   <td>
                     <lightning-record-picker
                       label="Service Type"

@@ -86,6 +86,10 @@
         <apexClass>ServiceBuilderWrapper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>WorkOrderTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
@@ -249,6 +253,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>AssignedResource.Resource_Is_A_Person__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AssignedResource.Service_Territory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Language__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -265,6 +279,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ContractLineItem.Geolocation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContractLineItem.LMRA__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -384,12 +403,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>LMRA__c.LMRA_Ok__c</field>
+        <field>LMRA__c.LMRA_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>LMRA__c.LMRA_Type__c</field>
+        <field>LMRA__c.Project_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -415,6 +434,36 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Location.Van_Crew__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Passport__c.Access_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Passport__c.Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Passport__c.Attention_points_for_execution__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Passport__c.Closing_Days__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Passport__c.Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Passport__c.Opening_hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -734,6 +783,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceContract.Default_LMRA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceContract.Generate_Maintenance_Plan__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -750,6 +804,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceContract.Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceContract.Product__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -801,6 +860,11 @@
         <editable>false</editable>
         <field>ServiceResource.FSL__Travel_Speed__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceResource.Service_Resource_Is_Van__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -949,6 +1013,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkOrder.LMRA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkOrder.Shop_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1012,6 +1081,14 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</flow>
     </flowAccesses>
     <flowAccesses>
@@ -1029,6 +1106,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -1249,6 +1330,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location-Van Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Location_Passport__c-Location Passport Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location_Visit__c-Location Visit Layout</layout>
@@ -1646,6 +1730,10 @@
     <tabVisibilities>
         <tab>LMRA__c</tab>
         <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Location_Passport__c</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Location_Visit__c</tab>

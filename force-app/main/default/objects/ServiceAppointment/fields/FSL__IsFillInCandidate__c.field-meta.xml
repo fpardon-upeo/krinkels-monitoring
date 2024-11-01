@@ -4,6 +4,7 @@
     <defaultValue>true</defaultValue>
     <deprecated>false</deprecated>
     <label>Is Fill In Candidate</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

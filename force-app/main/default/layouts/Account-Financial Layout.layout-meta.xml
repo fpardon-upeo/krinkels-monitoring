@@ -206,6 +206,7 @@
     </relatedLists>
     <relatedLists>
         <fields>CONTRACT.NAME</fields>
+        <fields>Type__c</fields>
         <fields>CONTRACT.STARTDATE</fields>
         <fields>CONTRACT.ENDDATE</fields>
         <fields>CONTRACT.STATUS</fields>

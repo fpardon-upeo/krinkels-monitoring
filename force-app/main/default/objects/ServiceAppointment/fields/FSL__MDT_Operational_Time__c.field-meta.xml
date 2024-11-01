@@ -4,6 +4,7 @@
     <deprecated>false</deprecated>
     <label>Multiday Work Operational Time</label>
     <length>131072</length>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

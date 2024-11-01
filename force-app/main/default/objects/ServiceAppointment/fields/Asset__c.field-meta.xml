@@ -7,6 +7,7 @@
     <relationshipLabel>Service Appointments</relationshipLabel>
     <relationshipName>Service_Appointments</relationshipName>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Lookup</type>
 </CustomField>

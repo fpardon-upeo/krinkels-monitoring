@@ -114,6 +114,15 @@
         <fields>PRODUCT2.DESCRIPTION</fields>
         <relatedList>Product2.Service_Package_Product__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>CONTRACT.NAME</fields>
+        <fields>CONTRACT.STARTDATE</fields>
+        <fields>CONTRACT.ENDDATE</fields>
+        <fields>CONTRACT.APPROVALSTATUS</fields>
+        <fields>CONTRACT.STATUS</fields>
+        <fields>CONTRACT.STATUSINDICATOR</fields>
+        <relatedList>ServiceContract.Product__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

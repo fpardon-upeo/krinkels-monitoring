@@ -12,6 +12,7 @@ import saveContractLine from "@salesforce/apex/ServiceBuilderController.saveCont
 import deleteContractLine from "@salesforce/apex/ServiceBuilderController.deleteContractLine";
 import insertOrRemoveContractLineFinancialAccount from "@salesforce/apex/ServiceBuilderController.insertOrRemoveContractLineFinancialAccount";
 import updateServiceContractLocationType from "@salesforce/apex/ServiceBuilderController.updateServiceContractLocationType";
+import getServiceContract from "@salesforce/apex/ServiceBuilderController.getServiceContract";
 import recurrenceModal from "c/recurrencePattern";
 import { subscribe } from "lightning/empApi";
 
@@ -26,7 +27,7 @@ export default class ServiceBuilder extends LightningElement {
   @track originalContractLines = [];
   @track filterResults = [];
   @track appliedFilters = [];
-
+  @track serviceContract = {};
   @track locationType = "Address";
 
   // Component Properties
@@ -129,75 +130,64 @@ export default class ServiceBuilder extends LightningElement {
   loadContractLines() {
     getContractLines({ recordId: this.recordId })
       .then((result) => {
-        let index = 0;
+        this.serviceContract = result[0].ServiceContract;
 
-        // Sort the results by LineItemNumber first
-        result.sort((a, b) => {
-          return a.LineItemNumber - b.LineItemNumber;
-        });
+        if (result.length > 0) {
+          let index = 0;
 
-        result.forEach((line) => {
-          // Initialize FinCustomers array
-          line.FinCustomers = [];
+          // Sort the results by LineItemNumber first
+          result.sort((a, b) => {
+            return a.LineItemNumber - b.LineItemNumber;
+          });
 
-          // Convert Contract_Line_Financial_Accounts__r to FinCustomers format
-          if (line.Contract_Line_Financial_Accounts__r) {
-            line.Contract_Line_Financial_Accounts__r.forEach((account) => {
-              line.FinCustomers.push({
-                type: "icon",
-                iconName: "standard:account",
-                label: account.Financial_Customer__r.Name,
-                recordId: account.Financial_Customer__c
+          result.forEach((line) => {
+            // Initialize FinCustomers array
+            line.FinCustomers = [];
+
+            // Convert Contract_Line_Financial_Accounts__r to FinCustomers format
+            if (line.Contract_Line_Financial_Accounts__r) {
+              line.Contract_Line_Financial_Accounts__r.forEach((account) => {
+                line.FinCustomers.push({
+                  type: "icon",
+                  iconName: "standard:account",
+                  label: account.Financial_Customer__r.Name,
+                  recordId: account.Financial_Customer__c
+                });
               });
-            });
+            }
+
+            line.Index = index;
+            line.IsNew = false;
+            line.IsSelected = false;
+
+            index++;
+          });
+
+          // Set initial locationType from the first contract line
+          if (result.length > 0) {
+            this.locationType =
+              result[0].ServiceContract.Location_Type__c || "Address";
           }
 
-          line.Index = index;
-          line.IsNew = false;
-          line.IsSelected = false;
+          this.contractLines = result;
+          this.originalContractLines = [...this.contractLines];
+          this.isLoading = false;
+        } else {
+          getServiceContract({ recordId: this.recordId }).then((result) => {
+            this.serviceContract = result;
 
-          index++;
-        });
-
-        // Set initial locationType from the first contract line
-        if (result.length > 0) {
-          this.locationType =
-            result[0].ServiceContract.Location_Type__c || "Address";
+            console.log(
+              "Service Contract from getServiceContract:",
+              this.serviceContract
+            );
+          });
         }
-
-        this.contractLines = result;
-        this.originalContractLines = [...this.contractLines];
-        this.isLoading = false;
       })
       .catch((error) => {
         console.error("Error loading contract lines:", error);
         this.isLoading = false;
       });
   }
-
-  // /**
-  //  * @description Sets opacity for rows other than the selected one
-  //  * @param {Event} event - The event object
-  //  */
-  // setOtherRowOpacity(event) {
-  //   let index = parseInt(event.target.dataset.index) + 2;
-  //   this.template.querySelectorAll("tr").forEach((row, rowIndex) => {
-  //     if (parseInt(rowIndex) !== parseInt(index) && rowIndex !== 0) {
-  //       row.style.opacity = 0.6;
-  //     } else {
-  //       row.style.opacity = 1;
-  //     }
-  //   });
-  // }
-
-  // /**
-  //  * @description Resets opacity for all rows
-  //  */
-  // resetRowOpacity() {
-  //   this.template.querySelectorAll("tr").forEach((row) => {
-  //     row.style.opacity = 1;
-  //   });
-  // }
 
   /**
    * @description Reindexes the contract lines
@@ -524,25 +514,34 @@ export default class ServiceBuilder extends LightningElement {
    * @description Adds a new row to the contract lines
    */
   handleAddActionRow() {
-    const startDate = this.contractLines[0].ServiceContract.StartDate
-      ? this.contractLines[0].ServiceContract.StartDate
-      : this.contractLines[0].StartDate;
+    // Default dates
+    const today = new Date();
+    const defaultStartDate = today.toISOString().split("T")[0];
+    const defaultEndDate = `${today.getFullYear()}-12-31`;
 
-    const endDate = this.contractLines[0].ServiceContract.EndDate
+    // Get dates from existing contract lines if available
+    const startDate = this.contractLines[0]?.ServiceContract?.StartDate
+      ? this.contractLines[0].ServiceContract.StartDate
+      : (this.contractLines[0]?.StartDate ?? defaultStartDate);
+
+    const endDate = this.contractLines[0]?.ServiceContract?.EndDate
       ? this.contractLines[0].ServiceContract.EndDate
-      : `${new Date().getFullYear()}-12-31`;
+      : (this.contractLines[0]?.EndDate ?? defaultEndDate);
 
     const newRow = {
       Id: null,
-      Product2Id: null,
+      Product2Id: this.serviceContract.Product__c,
       Frequency__c: "",
       Planning_Type__c: "",
+      LMRA__c: this.serviceContract.Default_LMRA__c,
       Quantity: 1,
       UnitPrice: 0,
       StartDate: startDate,
       EndDate: endDate,
       IsNew: true,
-      ServiceContractId: this.recordId
+      ServiceContractId: this.recordId,
+      FinCustomers: [],
+      Index: this.contractLines.length
     };
 
     if (this.filterResults.length > 0) {
@@ -571,7 +570,18 @@ export default class ServiceBuilder extends LightningElement {
       IsSelected: false,
       LineItemNumber: null,
       ServiceContractId: this.recordId,
-      Index: this.contractLines.length
+      Index: this.contractLines.length,
+      // Deep clone the FinCustomers array
+      FinCustomers: originalLine.FinCustomers
+        ? JSON.parse(JSON.stringify(originalLine.FinCustomers))
+        : [],
+      // Also deep clone the Contract_Line_Financial_Accounts__r if it exists
+      Contract_Line_Financial_Accounts__r:
+        originalLine.Contract_Line_Financial_Accounts__r
+          ? JSON.parse(
+              JSON.stringify(originalLine.Contract_Line_Financial_Accounts__r)
+            )
+          : []
     };
 
     //Set the class to hidden so it doesn't show up in the table if the line copied had error
@@ -651,7 +661,8 @@ export default class ServiceBuilder extends LightningElement {
 
       if (!line.StartDate) errors.push("Start Date");
       if (!line.EndDate) errors.push("End Date");
-      if (!line.Recurrence_Pattern__c) errors.push("Recurrence Pattern");
+      //Fix later
+      // if (!line.Recurrence_Pattern__c) errors.push("Recurrence Pattern");
 
       if (errors.length > 0) {
         hasErrors = true;
@@ -686,9 +697,9 @@ export default class ServiceBuilder extends LightningElement {
    */
   insertContractLine(index, value) {
     let contractLine = this.contractLines[index];
-    console.log("Contract Line", JSON.stringify(contractLine));
 
     contractLine.Product2Id = value;
+    contractLine.LMRA__c = this.serviceContract.Default_LMRA__c;
     contractLine.Location__CountryCode__s = "BE";
 
     // Store the FinCustomers before saving so we can preserve them and add them back after saving

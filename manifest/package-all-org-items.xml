@@ -674,6 +674,7 @@
         <members>ServiceAppointmentTriggerHandler</members>
         <members>ServiceBuilderController</members>
         <members>ServiceBuilderWrapper</members>
+        <members>WorkOrderTriggerHandler</members>
         <members>sf_fieldservice__FSL_RESTController_GoogleApis_Directions</members>
         <members>sf_fieldservice__FSL_RESTController_GoogleApis_Geo</members>
         <members>sf_fieldservice__FSL_RESTController_GoogleApis_Requestor</members>
@@ -889,6 +890,7 @@
         <members>FSL__TR177_RecordsetFilterCriteria</members>
         <members>ServiceAppointmentTrigger</members>
         <members>ServiceContractMaintenancePlan</members>
+        <members>WorkOrderTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -1048,10 +1050,13 @@
         <members>AssignedResource.FSL__Last_Updated_Epoch__c</members>
         <members>AssignedResource.FSL__UpdatedByOptimization__c</members>
         <members>AssignedResource.FSL__calculated_duration__c</members>
+        <members>AssignedResource.Resource_Is_A_Person__c</members>
+        <members>AssignedResource.Service_Territory__c</members>
         <members>Contact.Language__c</members>
         <members>Contact.Type__c</members>
         <members>ContractLineItem.Cost_Center_Code__c</members>
         <members>ContractLineItem.Geolocation__c</members>
+        <members>ContractLineItem.LMRA__c</members>
         <members>ContractLineItem.Location__c</members>
         <members>ContractLineItem.Parent_Customer__c</members>
         <members>ContractLineItem.Planning_Type__c</members>
@@ -1733,13 +1738,19 @@
         <members>LMRA__c.Corrective_Measures__c</members>
         <members>LMRA__c.Date__c</members>
         <members>LMRA__c.EPC_EPI_CBM_PBM__c</members>
-        <members>LMRA__c.LMRA_Ok__c</members>
         <members>LMRA__c.LMRA_Type__c</members>
+        <members>LMRA__c.Project_Lead__c</members>
         <members>LMRA__c.Surrounding_Risks__c</members>
         <members>LMRA__c.Tasks_of_the_Day__c</members>
         <members>LMRA__c.Work_Order__c</members>
         <members>Location.Account__c</members>
         <members>Location.Van_Crew__c</members>
+        <members>Location_Passport__c.Access_Information__c</members>
+        <members>Location_Passport__c.Account__c</members>
+        <members>Location_Passport__c.Attention_points_for_execution__c</members>
+        <members>Location_Passport__c.Closing_Days__c</members>
+        <members>Location_Passport__c.Contact__c</members>
+        <members>Location_Passport__c.Opening_hours__c</members>
         <members>Location_Visit__c.Commercial_Account__c</members>
         <members>Location_Visit__c.Operational_Account__c</members>
         <members>Location_Visit__c.Opportunity__c</members>
@@ -1809,10 +1820,12 @@
         <members>ServiceContract.Allocation_Key__c</members>
         <members>ServiceContract.Check_In_Work__c</members>
         <members>ServiceContract.Checkin_work__c</members>
+        <members>ServiceContract.Default_LMRA__c</members>
         <members>ServiceContract.Generate_Maintenance_Plan__c</members>
         <members>ServiceContract.Location_Type__c</members>
         <members>ServiceContract.Payment_Conditions__c</members>
         <members>ServiceContract.Priority__c</members>
+        <members>ServiceContract.Product__c</members>
         <members>ServiceContract.Renewal_Reminder_Needed__c</members>
         <members>ServiceContract.Type__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
@@ -1823,6 +1836,7 @@
         <members>ServiceResource.FSL__Picture_Link__c</members>
         <members>ServiceResource.FSL__Priority__c</members>
         <members>ServiceResource.FSL__Travel_Speed__c</members>
+        <members>ServiceResource.Service_Resource_Is_Van__c</members>
         <members>ServiceResourceCapacity.FSL__HoursInUse__c</members>
         <members>ServiceResourceCapacity.FSL__Last_Updated_Epoch__c</members>
         <members>ServiceResourceCapacity.FSL__MinutesUsed__c</members>
@@ -1849,6 +1863,7 @@
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
+        <members>WorkOrder.LMRA__c</members>
         <members>WorkOrder.Shop_Name__c</members>
         <members>WorkOrder.Shop_Visit_Date__c</members>
         <members>WorkOrder.Shop_Visit_Duration__c</members>
@@ -7281,6 +7296,7 @@
         <members>Lead</members>
         <members>Location</members>
         <members>LocationTrustMeasure</members>
+        <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
         <members>MLModel</members>
         <members>MLModelFactor</members>
@@ -8424,6 +8440,7 @@
         <members>Knowledge__kav-en_US</members>
         <members>LMRA__c-en_US</members>
         <members>Location-en_US</members>
+        <members>Location_Passport__c-en_US</members>
         <members>Location_Visit__c-en_US</members>
         <members>ProductItem-en_US</members>
         <members>ProductItemTransaction-en_US</members>
@@ -8891,6 +8908,7 @@
         <members>FSL__Work_Rule__c</members>
         <members>Knowledge__kav</members>
         <members>LMRA__c</members>
+        <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
         <members>MobileLanding</members>
         <members>mobileLanding__Mobile_Landing_vf</members>
@@ -8913,6 +8931,16 @@
         <members>Service_Dashboards/Service_Exec_Overview</members>
         <members>Service_Dashboards/Service_KPIs</members>
         <name>Dashboard</name>
+    </types>
+    <types>
+        <members>experiencecontainer/FSL.experience__navigationMenu/menu</members>
+        <members>experiencecontainer/FSL.experience__sfsECDefinition/sfs</members>
+        <members>experiencecontainer/FSL.sfdc_cms__languageSettings/languages</members>
+        <name>DigitalExperience</name>
+    </types>
+    <types>
+        <members>experiencecontainer/FSL</members>
+        <name>DigitalExperienceBundle</name>
     </types>
     <types>
         <members>FSL__Field_Service_Documents</members>
@@ -9127,6 +9155,7 @@
         <members>LightningSalesConsole_UtilityBar</members>
         <members>LightningSales_UtilityBar</members>
         <members>LightningService_UtilityBar</members>
+        <members>Location_Passport_Record_Page</members>
         <members>Location_Record_Page</members>
         <members>Location_Visit_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
@@ -9152,13 +9181,16 @@
     <types>
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
+        <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
+        <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
@@ -9169,13 +9201,16 @@
     <types>
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
+        <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
+        <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
+        <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
@@ -9240,6 +9275,7 @@
     <types>
         <members>ATAK_Project__c-ATAK Project Layout</members>
         <members>Account-Commercial Layout</members>
+        <members>Account-FSL Operational Account Layout</members>
         <members>Account-Financial Layout</members>
         <members>Account-Operational Layout</members>
         <members>AccountTeamMember-Account Team Member Layout</members>
@@ -9349,6 +9385,8 @@
         <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
         <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
         <members>Location-Van Layout</members>
+        <members>Location_Passport__c-FSL Location Passport</members>
+        <members>Location_Passport__c-Location Passport Layout</members>
         <members>Location_Visit__c-Location Visit Layout</members>
         <members>Macro-Macro Layout</members>
         <members>MaintenanceAsset-Maintenance Asset Layout</members>
@@ -9766,6 +9804,8 @@
         <members>Location.My_Locations</members>
         <members>LocationTrustMeasure.AllLocationTrustMeasures</members>
         <members>LocationTrustMeasure.AllLocationTrustMeasures</members>
+        <members>Location_Passport__c.All</members>
+        <members>Location_Passport__c.All</members>
         <members>Location_Visit__c.All</members>
         <members>Location_Visit__c.All</members>
         <members>MaintenancePlan.All_MaintenancePlans</members>
@@ -10489,6 +10529,7 @@
         <members>Service_Dashboards_Reports/Trend_of_Cases_Closed</members>
         <members>Service_Dashboards_Reports/Trend_of_Cases_Created</members>
         <members>unfiled$public/</members>
+        <members>unfiled$public/Crew_Members_Planning_oXN</members>
         <members>unfiled$public/Opportunity_Amount_by_Stage_Sample</members>
         <members>unfiled$public/SampleReportActiveUsers</members>
         <members>unfiled$public/SampleReportCasesStatusbyRep</members>
@@ -10534,6 +10575,7 @@
         <members>FSL__Work_Capacity_Availability</members>
         <members>FSL__Work_Capacity_Usages</members>
         <members>Opportunities_with_Historical_Trending</members>
+        <members>Service_Appointments_with_Service_Resources</members>
         <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_run_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_stage_run_ootb_crt_two_four_eight</members>
@@ -10770,6 +10812,7 @@
         <members>ListEmail</members>
         <members>Location</members>
         <members>LocationTrustMeasure</members>
+        <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
         <members>Macro</members>
         <members>MacroUsage</members>
@@ -11359,6 +11402,7 @@
         <members>JobProfile</members>
         <members>LMRA__c</members>
         <members>Lead</members>
+        <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
         <members>MaintenanceAsset</members>
         <members>MaintenancePlan</members>
@@ -11424,6 +11468,7 @@
         <members>Financial_Account_Record_Page</members>
         <members>LMRA_Record_Page</members>
         <members>Lead_Record_Page</members>
+        <members>Location_Passport_Record_Page</members>
         <members>Location_Record_Page</members>
         <members>Location_Visit_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
