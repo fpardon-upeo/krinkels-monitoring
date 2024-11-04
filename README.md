@@ -6,3 +6,8 @@ Just use the command [sf hardis:org:configure:monitoring](https://sfdx-hardis.cl
 
 If you have any issue, question or remark, please notify us on [sfdx-hardis monitoring](https://github.com/hardisgroupcom/sfdx-hardis/issues)
 
+
+
+## Documentation
+
+[Read auto-generated documentation of the SFDX project](docs/index.md)
