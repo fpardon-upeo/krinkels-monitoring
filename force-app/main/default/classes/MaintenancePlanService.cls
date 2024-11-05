@@ -21,6 +21,10 @@ public with sharing class MaintenancePlanService {
             List<Asset> assets = createAssets(serviceContract, serviceLines, uniqueLocations);
             upsertAssets(assets);
 
+            List<Asset_Financial_Account__c> assetFinCustomers = createAssetFinCustomers(serviceContract, serviceLines);
+            insertAssetAccounts(assetFinCustomers);
+
+
             List<Service_Item__c> serviceItems = createServiceItems(assets);
             insertServiceItems(serviceItems);
 
@@ -176,6 +180,49 @@ public with sharing class MaintenancePlanService {
         }
 
         return assets;
+    }
+
+    /**
+     * Create asset records based on contract line items.
+     * @param serviceContract The service contract.
+     * @param serviceLines The list of contract line items.
+     * @return List<Asset_Financial_Account__c> The list of assets.
+     */
+    private static List<Asset_Financial_Account__c> createAssetFinCustomers(ServiceContract serviceContract, List<ContractLineItem> serviceLines) {
+
+        List<Asset_Financial_Account__c> assets = new List<Asset_Financial_Account__c>();
+        List<String> cliIds = new List<String>();
+
+        for (ContractLineItem line : serviceLines){
+            cliIds.add(line.Id);
+        }
+
+        List<Contract_Line_Financial_Account__c> clfas = [SELECT Id, Contract_Line_Item__c, Financial_Customer__c, Financial_Customer__r.Name FROM Contract_Line_Financial_Account__c WHERE Contract_Line_Item__c IN :cliIds];
+
+        for(ContractLineItem cli : serviceLines){
+            String locationKey = serviceContract.Account.Name + '-' + cli.Location__Street__s + '-' + cli.Location__City__s;
+            for(Contract_Line_Financial_Account__c clfa : clfas){
+                if(clfa.Contract_Line_Item__c == cli.Id){
+                    Asset_Financial_Account__c afa = new Asset_Financial_Account__c();
+                    afa.Asset__r = new Asset(Unique_Id__c = generateUniqueAssetKey(cli, locationKey));
+                    afa.Key__c = generateUniqueAssetKey(cli, locationKey) + '-' + clfa.Financial_Customer__c;
+                    afa.Account__c = clfa.Financial_Customer__c;
+                    afa.Name = clfa.Financial_Customer__r.Name;
+                    assets.add(afa);
+                }
+            }
+        }
+
+        return assets;
+
+    }
+
+    /**
+     * Insert asset account records into Salesforce.
+     * @param assetAccounts The list of asset accounts.
+     */
+    private static void insertAssetAccounts(List<Asset_Financial_Account__c> assetAccounts) {
+        upsert assetAccounts Key__c;
     }
 
 

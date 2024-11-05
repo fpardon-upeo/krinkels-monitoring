@@ -48,6 +48,31 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Client_sector__c</picklist>
+        <values>
+            <fullName>TBD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Default_LMRA__c</picklist>
+        <values>
+            <fullName>Full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Facility_Type__c</picklist>
+        <values>
+            <fullName>TBD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Group__c</picklist>
         <values>
             <fullName>Kantoorgebouwen %2F Immeubles de bureaux</fullName>
@@ -191,6 +216,92 @@
         </values>
         <values>
             <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>Antwerpen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antwerpen Centrum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antwerpen Noord %26 Oost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antwerpen Zuid %26 West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Hoofdstedelijk Gewest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Henegouwen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leuven-Mechelen-Willebroek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luik</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luxemburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Namen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Niet gevonden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oost-Vlaanderen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlaams-Brabant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waals-Brabant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West-Vlaanderen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
             <default>false</default>
         </values>
     </picklistValues>

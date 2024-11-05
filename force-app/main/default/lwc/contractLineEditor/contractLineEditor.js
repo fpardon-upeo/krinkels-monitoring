@@ -32,7 +32,7 @@ export default class ContractLineEditor extends LightningElement {
 
   connectedCallback() {
     if (this.contractLines) {
-      this.contractLinesClone = structuredClone(this.contractLines);
+      this.contractLinesClone = JSON.parse(JSON.stringify(this.contractLines));
     }
   }
 
@@ -198,7 +198,7 @@ export default class ContractLineEditor extends LightningElement {
   }
 
   handleSuccess(event) {
-    const updatedContractLines = structuredClone(this.contractLines);
+    const updatedContractLines = JSON.parse(JSON.stringify(this.contractLines));
 
     //find the line index that was updated
     const index = updatedContractLines.findIndex(

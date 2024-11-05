@@ -15,11 +15,13 @@
         <members>ProjectRestResource</members>
         <members>RRuleAdjuster</members>
         <members>RRuleCriteria</members>
+        <members>ReadyForValidation</members>
         <members>SchedulingController</members>
         <members>ServiceAppointmentRescheduler</members>
         <members>ServiceAppointmentTriggerHandler</members>
         <members>ServiceBuilderController</members>
         <members>ServiceBuilderWrapper</members>
+        <members>ServiceContractHandler</members>
         <members>WorkOrderTriggerHandler</members>
         <name>ApexClass</name>
     </types>
@@ -35,6 +37,7 @@
         <members>ContractLineItemTrigger</members>
         <members>ServiceAppointmentTrigger</members>
         <members>ServiceContractMaintenancePlan</members>
+        <members>ServiceContractTrigger</members>
         <members>WorkOrderTrigger</members>
         <name>ApexTrigger</name>
     </types>
@@ -74,6 +77,9 @@
     <types>
         <members>Account.Account_Compact_Layout</members>
         <members>Account.Commercial_Account</members>
+        <members>Account.Financial_Account</members>
+        <members>Account.Group_Account</members>
+        <members>Account.Operational_Account</members>
         <members>Contact.Contact</members>
         <members>Lead.Leads_Custom_Compact_Layout</members>
         <members>Location_Visit__c.Location_Visit</members>
@@ -120,12 +126,33 @@
         <members>ATAK_Project__c.SubProject_ATAK__c</members>
         <members>ATAK_Project__c.Subproject_Description__c</members>
         <members>ATAK_Project__c.Subproject_Name__c</members>
+        <members>Account.Access_Information__c</members>
         <members>Account.Address_Identifier__c</members>
+        <members>Account.Alias_commercial_customer_name__c</members>
+        <members>Account.Attention_points_for_execution__c</members>
         <members>Account.Check_In_Work__c</members>
         <members>Account.Client_Code__c</members>
+        <members>Account.Client_Region__c</members>
+        <members>Account.Client_sector__c</members>
+        <members>Account.Closing_Days__c</members>
+        <members>Account.Contactperson_commercial_customer_key__c</members>
+        <members>Account.Contactperson_operational_customer_key__c</members>
+        <members>Account.Default_LMRA__c</members>
+        <members>Account.Email__c</members>
+        <members>Account.Enterprise_Number__c</members>
+        <members>Account.Facility_Type__c</members>
+        <members>Account.Financial_client_ATAK_Code__c</members>
+        <members>Account.Financial_client_type_ATAK__c</members>
         <members>Account.Group__c</members>
+        <members>Account.Latitude__c</members>
+        <members>Account.Longitude__c</members>
+        <members>Account.Notes__c</members>
+        <members>Account.Opening_hours__c</members>
         <members>Account.Priority__c</members>
+        <members>Account.Region__c</members>
+        <members>Account.Related_account__c</members>
         <members>Account.Short_Name__c</members>
+        <members>Account.Status__c</members>
         <members>Activity.FSL__Count_of_Events__c</members>
         <members>Activity.FSL__Count_of_Tasks__c</members>
         <members>Activity.FSL__Event_Type__c</members>
@@ -134,6 +161,9 @@
         <members>Asset.Recurrence_Pattern__c</members>
         <members>Asset.Service_Territory__c</members>
         <members>Asset.Unique_Id__c</members>
+        <members>Asset_Financial_Account__c.Account__c</members>
+        <members>Asset_Financial_Account__c.Asset__c</members>
+        <members>Asset_Financial_Account__c.Key__c</members>
         <members>AssignedResource.FSL__EstimatedTravelDistanceFrom__c</members>
         <members>AssignedResource.FSL__EstimatedTravelDistanceTo__c</members>
         <members>AssignedResource.FSL__EstimatedTravelTimeFrom__c</members>
@@ -144,10 +174,20 @@
         <members>AssignedResource.FSL__calculated_duration__c</members>
         <members>AssignedResource.Resource_Is_A_Person__c</members>
         <members>AssignedResource.Service_Territory__c</members>
+        <members>Contact.Contract_Type__c</members>
+        <members>Contact.Decision_maker__c</members>
+        <members>Contact.Function_Type__c</members>
+        <members>Contact.Function__c</members>
+        <members>Contact.Functional_level__c</members>
         <members>Contact.Language__c</members>
+        <members>Contact.Linkedin__c</members>
+        <members>Contact.Notes__c</members>
+        <members>Contact.Type_Formula__c</members>
         <members>Contact.Type__c</members>
         <members>Contract.Check_in_Work__c</members>
+        <members>ContractLineItem.Calculated_Duration__c</members>
         <members>ContractLineItem.Cost_Center_Code__c</members>
+        <members>ContractLineItem.Estimated_Duration__c</members>
         <members>ContractLineItem.Geolocation__c</members>
         <members>ContractLineItem.LMRA__c</members>
         <members>ContractLineItem.Location__c</members>
@@ -247,16 +287,34 @@
         <members>ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c</members>
         <members>ServiceAppointment.Overdue_Reminder_Send__c</members>
         <members>ServiceContract.Accepted__c</members>
+        <members>ServiceContract.Additional_Work_in_scope_contract__c</members>
         <members>ServiceContract.Allocation_Key__c</members>
+        <members>ServiceContract.Allocation_key__c</members>
+        <members>ServiceContract.Cancellation_Date_Contract__c</members>
+        <members>ServiceContract.Check_In_At_Work_Reference__c</members>
+        <members>ServiceContract.Check_In_At_Work_Required__c</members>
         <members>ServiceContract.Check_In_Work__c</members>
         <members>ServiceContract.Checkin_work__c</members>
+        <members>ServiceContract.Contract_Type__c</members>
         <members>ServiceContract.Default_LMRA__c</members>
+        <members>ServiceContract.External_Contract_Reference__c</members>
         <members>ServiceContract.Generate_Maintenance_Plan__c</members>
+        <members>ServiceContract.Indexation_Date__c</members>
+        <members>ServiceContract.Indexation_Formula__c</members>
+        <members>ServiceContract.Indexation_Needed__c</members>
+        <members>ServiceContract.Link_contract__c</members>
         <members>ServiceContract.Location_Type__c</members>
+        <members>ServiceContract.Location_Visit__c</members>
         <members>ServiceContract.Payment_Conditions__c</members>
         <members>ServiceContract.Priority__c</members>
         <members>ServiceContract.Product__c</members>
         <members>ServiceContract.Renewal_Reminder_Needed__c</members>
+        <members>ServiceContract.Request_date_for_indexation__c</members>
+        <members>ServiceContract.SLA__c</members>
+        <members>ServiceContract.SPOC_Client__c</members>
+        <members>ServiceContract.SPOC_KGC__c</members>
+        <members>ServiceContract.Service_Package_Type__c</members>
+        <members>ServiceContract.Tender_Code__c</members>
         <members>ServiceContract.Type__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
         <members>ServiceCrewMember.FSL__GanttLabel__c</members>
@@ -313,11 +371,13 @@
         <name>CustomMetadata</name>
     </types>
     <types>
+        <members>Service_Contract_Approval_Notification</members>
         <members>Standard_Notification</members>
         <name>CustomNotificationType</name>
     </types>
     <types>
         <members>ATAK_Project__c</members>
+        <members>Asset_Financial_Account__c</members>
         <members>Contract_Line_Financial_Account__c</members>
         <members>Google_Maps_API__c</members>
         <members>LMRA__c</members>
@@ -466,6 +526,7 @@
         <members>Contract_Line_Item_Record_Page</members>
         <members>Financial_Account_Record_Page</members>
         <members>FlowsApp_UtilityBar</members>
+        <members>Group_Account_Record_Page</members>
         <members>Krinkels_Field_Service_UtilityBar</members>
         <members>LMRA_Record_Page</members>
         <members>Lead_Record_Page</members>
@@ -549,8 +610,10 @@
         <name>ForecastingType</name>
     </types>
     <types>
+        <members>Default_LMRA</members>
         <members>Language</members>
         <members>Priority</members>
+        <members>Region</members>
         <members>Work_Type</members>
         <name>GlobalValueSet</name>
     </types>
@@ -568,6 +631,7 @@
         <members>VERDONCK_DAVY</members>
         <members>VERSTRAETE_GAUTHIER</members>
         <members>WANDELS_AURELIEN</members>
+        <members>WERKGEBIED_1</members>
         <name>Group</name>
     </types>
     <types>
@@ -585,6 +649,7 @@
         <members>Account-FSL Operational Account Layout</members>
         <members>Account-Financial</members>
         <members>Account-Financial Layout</members>
+        <members>Account-Group Account Layout</members>
         <members>Account-Operational Layout</members>
         <members>AccountTeamMember-Account Team Member Layout</members>
         <members>Address-Address Layout</members>
@@ -592,6 +657,7 @@
         <members>ApptBundlePolicy-Appointment Bundle Policy Layout</members>
         <members>Asset-Asset Layout</members>
         <members>AssetRelationship-Asset Relationship Layout</members>
+        <members>Asset_Financial_Account__c-Asset Financial Account Layout</members>
         <members>AssignedResource-Assigned Resource Layout</members>
         <members>AssociatedLocation-Associated Location Layout</members>
         <members>AuthorizationForm-Authorization Form Layout</members>
@@ -764,6 +830,7 @@
         <members>exportRecords</members>
         <members>generateMaintenancePlan</members>
         <members>prepareContractForNextYear</members>
+        <members>readyForValidation</members>
         <members>recurrencePattern</members>
         <members>resourceCalendar</members>
         <members>roundDispatcher</members>
@@ -923,6 +990,7 @@
         <members>ServiceContract.Export_Lines</members>
         <members>ServiceContract.Generate_Maintenance_Plan</members>
         <members>ServiceContract.Prepare_for_Next_Year</members>
+        <members>ServiceContract.Ready_for_Validation</members>
         <members>Task.Defer</members>
         <members>Task.Defer_0</members>
         <members>Task.Defer_1</members>
@@ -1035,6 +1103,7 @@
         <members>Account.Commercial_Account</members>
         <members>Account.Financial_Account</members>
         <members>Account.Financial_Customer</members>
+        <members>Account.Group_Account</members>
         <members>Account.Operational_Account</members>
         <members>Knowledge__kav.FAQ</members>
         <members>Knowledge__kav.Procedure</members>
@@ -1562,6 +1631,7 @@
         <members>AssetContactParticipant</members>
         <members>AssetDowntimePeriod</members>
         <members>AssetWarranty</members>
+        <members>Asset_Financial_Account__c</members>
         <members>Campaign</members>
         <members>Case</members>
         <members>ChangeRequest</members>

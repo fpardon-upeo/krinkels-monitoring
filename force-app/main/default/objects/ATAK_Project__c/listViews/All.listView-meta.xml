@@ -5,6 +5,7 @@
     <columns>SubProject_ATAK__c</columns>
     <columns>Subproject_Name__c</columns>
     <columns>Site_Manager_Code__c</columns>
+    <columns>OWNER.ALIAS</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

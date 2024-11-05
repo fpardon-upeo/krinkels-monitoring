@@ -149,7 +149,7 @@
             </value>
         </filters>
         <filters>
-            <field>Type__c</field>
+            <field>Contract_Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Master Agreement</stringValue>

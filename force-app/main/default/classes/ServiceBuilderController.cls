@@ -45,6 +45,8 @@ public without sharing class ServiceBuilderController {
         TotalPrice,
         Status,
         LMRA__c,
+        Calculated_Duration__c,
+        Estimated_Duration__c,
         Planning_Type__c,
         Location__Street__s,
         Location__City__s,

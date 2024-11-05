@@ -7,18 +7,6 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>Full</fullName>
-                <default>false</default>
-                <label>Full</label>
-            </value>
-            <value>
-                <fullName>Limited</fullName>
-                <default>false</default>
-                <label>Limited</label>
-            </value>
-        </valueSetDefinition>
+        <valueSetName>Default_LMRA</valueSetName>
     </valueSet>
 </CustomField>

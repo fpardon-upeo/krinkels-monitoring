@@ -80,20 +80,42 @@
                 >
                   {projectCodeLabel}
                 </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="projectCodeRef"
+                  data-lwcref="projectCodeRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={estimatedDurationLabel}
+                  data-field="Project_Code__c"
+                >
+                  {estimatedDurationLabel}
+                </th>
+                <th
+                  class="slds-text-align_center th-label"
+                  lwc:ref="projectCodeRef"
+                  data-lwcref="projectCodeRef"
+                  data-icon="utility:arrowdown"
+                  onclick={handleBasicSort}
+                  data-label={calculatedDurationlabel}
+                  data-field="Project_Code__c"
+                >
+                  {calculatedDurationlabel}
+                </th>
                 <template if:true={locationColumns.isGeoLocation}>
                   <th
                     class="slds-text-align_center th-label"
                     data-field="Location__Latitude__s"
                     style="width: 10%"
                   >
-                    Latitude
+                    {latitudeLabel}
                   </th>
                   <th
                     class="slds-text-align_center th-label"
                     data-field="Location__Longitude__s"
                     style="width: 10%"
                   >
-                    Longitude
+                    {longitudeLabel}
                   </th>
                 </template>
                 <template if:true={locationColumns.isAddress}>

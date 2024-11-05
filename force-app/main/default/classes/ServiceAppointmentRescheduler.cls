@@ -43,11 +43,11 @@ public without sharing class ServiceAppointmentRescheduler {
                 for(Integer i = 0; i < futureAppointments.size(); i++){
                     ServiceAppointment futureAppointment = futureAppointments[i];
                     System.debug('Future Appointment: ' + futureAppointment.AppointmentNumber);
-                    System.debug('newDates at i: ' +i+1 + ' ' + result.newDates[i+1]);
+                    System.debug('newDates at i: ' +i + ' ' + result.newDates[i]);
 
                     // Since RRuleAdjuster is already giving us UTC times, use them directly
-                    futureAppointment.SchedStartTime = i == 0 ? result.newDates[i+1] : result.newDates[i+1].addHours(0);
-                    futureAppointment.SchedEndTime = i == 0 ? result.newDates[i+1].addMinutes(durationInMinutesInt) : result.newDates[i+1].addHours(0).addMinutes(durationInMinutesInt);
+                    futureAppointment.SchedStartTime = i == 0 ? result.newDates[i] : result.newDates[i].addHours(1);
+                    futureAppointment.SchedEndTime = i == 0 ? result.newDates[i].addMinutes(durationInMinutesInt) : result.newDates[i].addHours(1).addMinutes(durationInMinutesInt);
 
                     System.debug('New Start Time (UTC): ' + futureAppointment.SchedStartTime);
                     System.debug('New End Time (UTC): ' + futureAppointment.SchedEndTime);
@@ -81,8 +81,7 @@ public without sharing class ServiceAppointmentRescheduler {
                     FROM ServiceAppointment
                     WHERE ParentRecordId IN (SELECT Id FROM WorkOrder WHERE AssetId = :wo.Asset.Id)
                     AND DueDate >= :sa.SchedStartTime
-                    AND Id != :sa.Id
-                    ORDER BY DueDate ASC];
+                    ORDER BY AppointmentNumber ASC];
 
             System.debug('Future Appointments: ' + futureAppointments.size());
             return futureAppointments;

@@ -14,7 +14,7 @@ public without sharing class SchedulingController {
         // Query your service appointments
         List<ServiceAppointment> appointments = [
                 SELECT Id, Asset__c, Asset__r.Name, Asset__r.Street, Asset__r.City, Asset__r.PostalCode, DueDate,
-                Asset__r.Product2.Name, Asset__r.Account.Parent.Short_Name__c, Asset__r.Recurrence_Pattern__c, FSL__InternalSLRGeolocation__Latitude__s , FSL__InternalSLRGeolocation__Longitude__s
+                Asset__r.Product2.Name, Asset__r.Recurrence_Pattern__c, FSL__InternalSLRGeolocation__Latitude__s , FSL__InternalSLRGeolocation__Longitude__s
                 FROM ServiceAppointment
                 WHERE Status = 'Unscheduled'
                 ORDER BY DueDate ASC
@@ -103,7 +103,7 @@ public without sharing class SchedulingController {
         //Get the ServiceAppointments
         List<ServiceAppointment> appointments = [
                 SELECT Id, SchedStartTime, SchedEndTime, AppointmentNumber, Asset__c, Asset__r.Name, Asset__r.Street, Asset__r.City, Asset__r.PostalCode, FSL__InternalSLRGeolocation__Latitude__s , FSL__InternalSLRGeolocation__Longitude__s,
-                        Asset__r.Product2.Name, Asset__r.Account.Parent.Short_Name__c, Asset__r.Recurrence_Pattern__c
+                        Asset__r.Product2.Name, Asset__r.Recurrence_Pattern__c
                 FROM ServiceAppointment
                 WHERE Id IN :appointmentIds
         ];
@@ -111,7 +111,7 @@ public without sharing class SchedulingController {
         System.debug('appointments: ' + appointments.size());
 
         ServiceAppointment originalAppointment = [SELECT Id, AppointmentNumber, SchedStartTime, SchedEndTime, Asset__c, Asset__r.Name, Asset__r.Street, Asset__r.City, Asset__r.PostalCode, FSL__InternalSLRGeolocation__Latitude__s , FSL__InternalSLRGeolocation__Longitude__s,
-                        Asset__r.Product2.Name, Asset__r.Account.Parent.Short_Name__c, Asset__r.Recurrence_Pattern__c
+                        Asset__r.Product2.Name, Asset__r.Recurrence_Pattern__c
                 FROM ServiceAppointment
                 WHERE Id = :serviceAppointmentId];
 
@@ -167,7 +167,7 @@ public without sharing class SchedulingController {
         //Get the ServiceAppointments
         List<ServiceAppointment> newAppointments = [
                 SELECT Id, SchedStartTime, SchedEndTime, AppointmentNumber, Asset__c, Asset__r.Name, Asset__r.Street, Asset__r.City, Asset__r.PostalCode, FSL__InternalSLRGeolocation__Latitude__s , FSL__InternalSLRGeolocation__Longitude__s,
-                        Asset__r.Product2.Name, Asset__r.Account.Parent.Short_Name__c, Asset__r.Recurrence_Pattern__c
+                        Asset__r.Product2.Name, Asset__r.Recurrence_Pattern__c
                 FROM ServiceAppointment
                 WHERE Id IN :newAppointmentIds
         ];
@@ -239,7 +239,7 @@ public without sharing class SchedulingController {
         //Get the ServiceAppointments
         List<ServiceAppointment> appointments = [
                 SELECT Id, SchedStartTime, SchedEndTime, Asset__c, Asset__r.Name, Asset__r.Street, Asset__r.City, Asset__r.PostalCode, FSL__InternalSLRGeolocation__Latitude__s , FSL__InternalSLRGeolocation__Longitude__s,
-                        Asset__r.Product2.Name, Asset__r.Account.Parent.Short_Name__c, Asset__r.Recurrence_Pattern__c
+                        Asset__r.Product2.Name, Asset__r.Recurrence_Pattern__c
                 FROM ServiceAppointment
                 WHERE Id IN :appointmentIds
         ];

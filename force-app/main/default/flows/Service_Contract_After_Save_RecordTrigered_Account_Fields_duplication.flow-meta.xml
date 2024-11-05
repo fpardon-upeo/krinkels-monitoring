@@ -26,7 +26,7 @@
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
         <name>Add_Priority</name>
-        <label>Add Priority</label>
+        <label>Add Priority + LMRA</label>
         <locationX>176</locationX>
         <locationY>323</locationY>
         <inputAssignments>

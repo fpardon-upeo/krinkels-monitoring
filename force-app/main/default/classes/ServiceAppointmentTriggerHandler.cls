@@ -24,7 +24,7 @@ public with sharing class ServiceAppointmentTriggerHandler {
         }
 
         if(serviceAppointmentsToUpdate.size() > 0){
-            Map<Id, WorkOrder> workOrders = new Map<Id, WorkOrder>([SELECT Id, AssetId, ServiceTerritoryId, ServiceContract.Account.Short_Name__c, Asset.Service_Territory__c, Longitude, Latitude FROM WorkOrder WHERE Id IN :workOrderIds]);
+            Map<Id, WorkOrder> workOrders = new Map<Id, WorkOrder>([SELECT Id, AssetId, ServiceTerritoryId,  Asset.Service_Territory__c, Longitude, Latitude FROM WorkOrder WHERE Id IN :workOrderIds]);
             List<ServiceAppointment> appointments = new List<ServiceAppointment>();
             for(ServiceAppointment sa : serviceAppointmentsToUpdate){
                 WorkOrder wo = workOrders.get(sa.ParentRecordId);
@@ -32,7 +32,7 @@ public with sharing class ServiceAppointmentTriggerHandler {
                     ServiceAppointment appointment = new ServiceAppointment();
                     appointment.Id = sa.Id;
                     appointment.Asset__c = wo.AssetId;
-                    appointment.FSL__GanttLabel__c = wo.ServiceContract.Account.Short_Name__c + ' - ' + sa.Street;
+                    //appointment.FSL__GanttLabel__c = wo.ServiceContract.Account.Short_Name__c + ' - ' + sa.Street;
                     appointments.add(appointment);
                 }
             }

@@ -4,7 +4,7 @@
     <fields>Name</fields>
     <fields>ContractNumber</fields>
     <fields>AccountId</fields>
-    <fields>Type__c</fields>
+    <fields>Contract_Type__c</fields>
     <fields>OwnerId</fields>
     <fields>ParentServiceContractId</fields>
     <label>Service Contract</label>

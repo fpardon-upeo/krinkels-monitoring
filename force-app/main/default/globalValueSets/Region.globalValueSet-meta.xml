@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Antwerpen Centrum</fullName>
+        <default>false</default>
+        <label>Antwerpen Centrum</label>
+    </customValue>
+    <customValue>
+        <fullName>Antwerpen Noord &amp; Oost</fullName>
+        <default>false</default>
+        <label>Antwerpen Noord &amp; Oost</label>
+    </customValue>
+    <customValue>
+        <fullName>Antwerpen Zuid &amp; West</fullName>
+        <default>false</default>
+        <label>Antwerpen Zuid &amp; West</label>
+    </customValue>
+    <customValue>
+        <fullName>Henegouwen</fullName>
+        <default>false</default>
+        <label>Henegouwen</label>
+    </customValue>
+    <customValue>
+        <fullName>Leuven-Mechelen-Willebroek</fullName>
+        <default>false</default>
+        <label>Leuven-Mechelen-Willebroek</label>
+    </customValue>
+    <customValue>
+        <fullName>Limburg</fullName>
+        <default>false</default>
+        <label>Limburg</label>
+    </customValue>
+    <customValue>
+        <fullName>Oost-Vlaanderen</fullName>
+        <default>false</default>
+        <label>Oost-Vlaanderen</label>
+    </customValue>
+    <customValue>
+        <fullName>West-Vlaanderen</fullName>
+        <default>false</default>
+        <label>West-Vlaanderen</label>
+    </customValue>
+    <customValue>
+        <fullName>Brussels Hoofdstedelijk Gewest</fullName>
+        <default>false</default>
+        <label>Brussels Hoofdstedelijk Gewest</label>
+    </customValue>
+    <customValue>
+        <fullName>Namen</fullName>
+        <default>false</default>
+        <label>Namen</label>
+    </customValue>
+    <customValue>
+        <fullName>Niet gevonden</fullName>
+        <default>false</default>
+        <label>Niet gevonden</label>
+    </customValue>
+    <customValue>
+        <fullName>Vlaams-Brabant</fullName>
+        <default>false</default>
+        <label>Vlaams-Brabant</label>
+    </customValue>
+    <customValue>
+        <fullName>Luik</fullName>
+        <default>false</default>
+        <label>Luik</label>
+    </customValue>
+    <customValue>
+        <fullName>Waals-Brabant</fullName>
+        <default>false</default>
+        <label>Waals-Brabant</label>
+    </customValue>
+    <customValue>
+        <fullName>Antwerpen</fullName>
+        <default>false</default>
+        <label>Antwerpen</label>
+    </customValue>
+    <customValue>
+        <fullName>Luxemburg</fullName>
+        <default>false</default>
+        <label>Luxemburg</label>
+    </customValue>
+    <masterLabel>Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

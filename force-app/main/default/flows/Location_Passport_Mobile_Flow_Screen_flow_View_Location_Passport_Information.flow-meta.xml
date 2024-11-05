@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_Changes_to_chatter</name>
+        <label>Post Changes to chatter</label>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>templateChatterText</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>WorkOrderRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <environments>Default</environments>
     <interviewLabel>[Location Passport][Mobile Flow][Screen flow] Get Location Passport Information {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Location Passport][Mobile Flow][Screen flow] View Location Passport Information</label>
@@ -26,7 +50,7 @@
         <name>Get_Account_Information</name>
         <label>Get Account Information</label>
         <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Display_Location_Passport_Information</targetReference>
@@ -43,34 +67,53 @@
         <outputReference>AccountRecord</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Name</queriedFields>
+        <queriedFields>Access_Information__c</queriedFields>
+        <queriedFields>Attention_points_for_execution__c</queriedFields>
+        <queriedFields>Opening_hours__c</queriedFields>
+        <queriedFields>Closing_Days__c</queriedFields>
     </recordLookups>
     <recordLookups>
-        <name>Get_Location_Passport_Info</name>
-        <label>Get Location Passport Info</label>
+        <name>Get_Contract_Manager</name>
+        <label>Get Contract Manager</label>
         <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Account_Information</targetReference>
+            <targetReference>Post_Changes_to_chatter</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Account__c</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>WorkOrderRecord.AccountId</elementReference>
+                <elementReference>ServiceTerritoryRecord.OwnerId</elementReference>
             </value>
         </filters>
-        <object>Location_Passport__c</object>
-        <outputReference>LocationPassportRecord</outputReference>
+        <object>User</object>
+        <outputReference>UserRecord</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Access_Information__c</queriedFields>
-        <queriedFields>Attention_points_for_execution__c</queriedFields>
-        <queriedFields>Account__c</queriedFields>
-        <queriedFields>Opening_hours__c</queriedFields>
-        <queriedFields>Closing_Days__c</queriedFields>
-        <queriedFields>Contact__c</queriedFields>
-        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Service_Territory</name>
+        <label>Get Service Territory</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Contract_Manager</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkOrderRecord.ServiceTerritoryId</elementReference>
+            </value>
+        </filters>
+        <object>ServiceTerritory</object>
+        <outputReference>ServiceTerritoryRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>OwnerId</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Work_Order_Info</name>
@@ -79,7 +122,7 @@
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Location_Passport_Info</targetReference>
+            <targetReference>Get_Account_Information</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -93,15 +136,19 @@
         <outputReference>WorkOrderRecord</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>AccountId</queriedFields>
+        <queriedFields>ServiceTerritoryId</queriedFields>
     </recordLookups>
     <screens>
         <name>Display_Location_Passport_Information</name>
         <label>Display Location Passport Information</label>
         <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Service_Territory</targetReference>
+        </connector>
         <fields>
             <name>Account</name>
             <dataType>String</dataType>
@@ -122,7 +169,7 @@
         <fields>
             <name>Access_Information</name>
             <defaultValue>
-                <stringValue>{!LocationPassportRecord.Access_Information__c}</stringValue>
+                <stringValue>{!AccountRecord.Access_Information__c}</stringValue>
             </defaultValue>
             <fieldText>Access Information</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -138,7 +185,7 @@
         <fields>
             <name>Attention_Points_of_Execution</name>
             <defaultValue>
-                <stringValue>{!LocationPassportRecord.Attention_points_for_execution__c}</stringValue>
+                <stringValue>{!AccountRecord.Attention_points_for_execution__c}</stringValue>
             </defaultValue>
             <fieldText>Attention Points of Execution</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -154,7 +201,7 @@
         <fields>
             <name>Opening_Hours</name>
             <defaultValue>
-                <stringValue>{!LocationPassportRecord.Opening_hours__c}</stringValue>
+                <stringValue>{!AccountRecord.Opening_hours__c}</stringValue>
             </defaultValue>
             <fieldText>Opening Hours</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -170,7 +217,7 @@
         <fields>
             <name>Closing_Days</name>
             <defaultValue>
-                <stringValue>{!LocationPassportRecord.Closing_Days__c}</stringValue>
+                <stringValue>{!AccountRecord.Closing_Days__c}</stringValue>
             </defaultValue>
             <fieldText>Closing Days</fieldText>
             <fieldType>LargeTextArea</fieldType>
@@ -184,8 +231,15 @@
             <isRequired>false</isRequired>
         </fields>
         <fields>
+            <name>Changes_Needed</name>
+            <fieldText>If any, please indicate here what changes are needed for this Location Passport?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
             <name>LocationPassportAttachmentsInfo</name>
-            <fieldText>&lt;p&gt;&lt;em&gt;To view attachments, go to the location passport record linked to the operational account.&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;em&gt;To view attachments, go to the related files linked to the operational account.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
@@ -200,6 +254,11 @@
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>templateChatterText</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>@[{!UserRecord.Id}] - {!Changes_Needed}</text>
+    </textTemplates>
     <variables>
         <name>AccountRecord</name>
         <dataType>SObject</dataType>
@@ -213,6 +272,14 @@
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContentDocumentLink</objectType>
+    </variables>
+    <variables>
+        <name>ContentDocumentlinks</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>ContentDocumentLink</objectType>
     </variables>
@@ -238,6 +305,22 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Location_Passport__c</objectType>
+    </variables>
+    <variables>
+        <name>ServiceTerritoryRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceTerritory</objectType>
+    </variables>
+    <variables>
+        <name>UserRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
     </variables>
     <variables>
         <name>WorkOrderRecord</name>

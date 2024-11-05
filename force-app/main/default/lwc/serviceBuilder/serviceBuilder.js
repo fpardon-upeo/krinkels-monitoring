@@ -46,6 +46,11 @@ export default class ServiceBuilder extends LightningElement {
   serviceTypeLabel = "Service Type";
   selectLabel = "";
   projectCodeLabel = "Code";
+  estimatedDurationLabel = "Est. Dur.";
+  calculatedDurationLabel = "Calc. Dur.";
+  longitudeLabel = "Longitude";
+  latitudeLabel = "Latitude";
+  longitudeLabel = "Longitude";
   streetLabel = "Street";
   cityLabel = "City";
   zipCodeLabel = "Zip Code";
@@ -130,6 +135,8 @@ export default class ServiceBuilder extends LightningElement {
   loadContractLines() {
     getContractLines({ recordId: this.recordId })
       .then((result) => {
+        console.log(JSON.stringify(result));
+
         this.serviceContract = result[0].ServiceContract;
 
         if (result.length > 0) {
@@ -367,7 +374,9 @@ export default class ServiceBuilder extends LightningElement {
         records.forEach((record) => {
           record.Index = index;
           this.contractLines[index] = record;
-          this.insertContractLine(index, record.Product2Id);
+          if (!record.IsNew) {
+            this.insertContractLine(index, record.Product2Id);
+          }
         });
 
         this.handleToast(
@@ -571,21 +580,8 @@ export default class ServiceBuilder extends LightningElement {
       LineItemNumber: null,
       ServiceContractId: this.recordId,
       Index: this.contractLines.length,
-      // Deep clone the FinCustomers array
-      FinCustomers: originalLine.FinCustomers
-        ? JSON.parse(JSON.stringify(originalLine.FinCustomers))
-        : [],
-      // Also deep clone the Contract_Line_Financial_Accounts__r if it exists
-      Contract_Line_Financial_Accounts__r:
-        originalLine.Contract_Line_Financial_Accounts__r
-          ? JSON.parse(
-              JSON.stringify(originalLine.Contract_Line_Financial_Accounts__r)
-            )
-          : []
+      Class: "hidden"
     };
-
-    //Set the class to hidden so it doesn't show up in the table if the line copied had error
-    newRow.Class = "hidden";
 
     this.contractLines.push(newRow);
     this.contractLines = [...this.contractLines];
@@ -661,8 +657,8 @@ export default class ServiceBuilder extends LightningElement {
 
       if (!line.StartDate) errors.push("Start Date");
       if (!line.EndDate) errors.push("End Date");
-      //Fix later
-      // if (!line.Recurrence_Pattern__c) errors.push("Recurrence Pattern");
+
+      if (!line.Recurrence_Pattern__c) errors.push("Recurrence Pattern");
 
       if (errors.length > 0) {
         hasErrors = true;
@@ -809,7 +805,7 @@ export default class ServiceBuilder extends LightningElement {
     this.isModalOpen = false;
 
     if (event && event.detail) {
-      const deepClone = structuredClone(event.detail);
+      const deepClone = JSON.parse(JSON.stringify(event.detail));
 
       this.contractLines = [...deepClone];
     }

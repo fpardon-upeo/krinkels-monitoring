@@ -6,7 +6,7 @@
     <formulas>
         <name>formATAKProjectName</name>
         <dataType>String</dataType>
-        <expression>&apos;ContractType_Dienstenpakket_&apos;&amp;{!$Record.Financial_Account__r.Parent.Short_Name__c}&amp;&apos;_Locatie_FacilityType&apos;</expression>
+        <expression>&apos;ContractType_Dienstenpakket_&apos;&amp;{!$Record.Financial_Account__r.Alias_commercial_customer_name__c}&amp;&apos;_Locatie_FacilityType&apos;</expression>
     </formulas>
     <interviewLabel>[ATAK Project][Before-Save][Record-Triggered] Set Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[ATAK Project][Before-Save][Record-Triggered] Set Naming Convention</label>
