@@ -1,118 +1,86 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
-applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
-classes/GanttRoundPinAction.cls," ",ApexClass GanttRoundPinAction,M,,log,📰
+classes/ATAKProjectService.cls,A,ApexClass ATAKProjectService,,,log,📰
+classes/ATAKProjectService.cls-meta.xml,A,ApexClass ATAKProjectService,,,log,📰
+classes/ATAKProjectWrapper.cls,A,ApexClass ATAKProjectWrapper,,,log,📰
+classes/ATAKProjectWrapper.cls-meta.xml,A,ApexClass ATAKProjectWrapper,,,log,📰
+classes/ATAKProjectWrapperTest.cls,A,ApexClass ATAKProjectWrapperTest,,,log,📰
+classes/ATAKProjectWrapperTest.cls-meta.xml,A,ApexClass ATAKProjectWrapperTest,,,log,📰
+classes/FieldServiceTestData.cls,A,ApexClass FieldServiceTestData,,,log,📰
+classes/FieldServiceTestData.cls-meta.xml,A,ApexClass FieldServiceTestData,,,log,📰
 classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
-classes/ReadyForValidation.cls,A,ApexClass ReadyForValidation,,,log,📰
-classes/ReadyForValidation.cls-meta.xml,A,ApexClass ReadyForValidation,,,log,📰
-classes/SchedulingController.cls," ",ApexClass SchedulingController,M,,log,📰
-classes/ServiceAppointmentRescheduler.cls," ",ApexClass ServiceAppointmentRescheduler,M,,log,📰
-classes/ServiceAppointmentTriggerHandler.cls," ",ApexClass ServiceAppointmentTriggerHandler,M,,log,📰
-classes/ServiceAppointmentTriggerHandler.cls-meta.xml," ",ApexClass ServiceAppointmentTriggerHandler,M,,log,📰
+classes/MaintenancePlanServiceTest.cls,A,ApexClass MaintenancePlanServiceTest,,,log,📰
+classes/MaintenancePlanServiceTest.cls-meta.xml,A,ApexClass MaintenancePlanServiceTest,,,log,📰
+classes/ProjectRestResource.cls," ",ApexClass ProjectRestResource,M,,log,📰
+classes/RRuleAdjuster.cls," ",ApexClass RRuleAdjuster,M,,log,📰
+classes/ReadyForValidation.cls," ",ApexClass ReadyForValidation,M,,log,📰
 classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
-classes/ServiceBuilderWrapper.cls," ",ApexClass ServiceBuilderWrapper,M,,log,📰
-classes/ServiceContractHandler.cls,A,ApexClass ServiceContractHandler,,,log,📰
-classes/ServiceContractHandler.cls-meta.xml,A,ApexClass ServiceContractHandler,,,log,📰
+classes/ServiceContractHandler.cls," ",ApexClass ServiceContractHandler,M,,log,📰
+classes/ServiceResourceHandler.cls,A,ApexClass ServiceResourceHandler,,,log,📰
+classes/ServiceResourceHandler.cls-meta.xml,A,ApexClass ServiceResourceHandler,,,log,📰
+classes/WorkOrderLocationQueueable.cls,A,ApexClass WorkOrderLocationQueueable,,,log,📰
+classes/WorkOrderLocationQueueable.cls-meta.xml,A,ApexClass WorkOrderLocationQueueable,,,log,📰
+classes/WorkOrderScheduler.cls,A,ApexClass WorkOrderScheduler,,,log,📰
+classes/WorkOrderScheduler.cls-meta.xml,A,ApexClass WorkOrderScheduler,,,log,📰
+classes/WorkOrderSchedulerBatch.cls,A,ApexClass WorkOrderSchedulerBatch,,,log,📰
+classes/WorkOrderSchedulerBatch.cls-meta.xml,A,ApexClass WorkOrderSchedulerBatch,,,log,📰
+classes/WorkOrderSchedulerController.cls,A,ApexClass WorkOrderSchedulerController,,,log,📰
+classes/WorkOrderSchedulerController.cls-meta.xml,A,ApexClass WorkOrderSchedulerController,,,log,📰
+classes/WorkOrderTriggerHandler.cls," ",ApexClass WorkOrderTriggerHandler,M,,log,📰
+classes/WorkOrderTriggerHandler.cls-meta.xml," ",ApexClass WorkOrderTriggerHandler,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/Commercial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Commercial_Account_Record_Page,M,,log,📰
-flexipages/Contact_Record_Page.flexipage-meta.xml," ",FlexiPage Contact_Record_Page,M,,log,📰
-flexipages/Financial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Financial_Account_Record_Page,M,,log,📰
-flexipages/Group_Account_Record_Page.flexipage-meta.xml,A,FlexiPage Group_Account_Record_Page,,,log,📰
-flexipages/Operational_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Operational_Account_Record_Page,M,,log,📰
+customMetadata/Export_Configuration.ServiceContract.md-meta.xml," ",CustomMetadata Export_Configuration.ServiceContract,M,,log,📰
+flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
+flexipages/Maintenance_Plan_Record_Page.flexipage-meta.xml," ",FlexiPage Maintenance_Plan_Record_Page,M,,log,📰
 flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
-flowDefinitions/ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention.flowDefinition-meta.xml," ",FlowDefinition ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention,M,,log,📰
-flowDefinitions/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flowDefinition-meta.xml," ",FlowDefinition Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
-flowDefinitions/Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication.flowDefinition-meta.xml," ",FlowDefinition Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication,M,,log,📰
-flows/ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention.flow-meta.xml," ",Flow ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention,M,,log,📰
-flows/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flow-meta.xml," ",Flow Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
-flows/Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication.flow-meta.xml," ",Flow Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication,M,,log,📰
-flows/Service_contract_Scheduled_Contract_Renewal_Reminder.flow-meta.xml," ",Flow Service_contract_Scheduled_Contract_Renewal_Reminder,M,,log,📰
-globalValueSets/Default_LMRA.globalValueSet-meta.xml,A,GlobalValueSet Default_LMRA,,,log,📰
-globalValueSets/Region.globalValueSet-meta.xml,A,GlobalValueSet Region,,,log,📰
-groups/WERKGEBIED_1.group-meta.xml,A,Group WERKGEBIED_1,,,log,📰
-layouts/Account-Commercial Layout.layout-meta.xml," ",Layout Account-Commercial Layout,M,,log,📰
-layouts/Account-FSL Operational Account Layout.layout-meta.xml," ",Layout Account-FSL Operational Account Layout,M,,log,📰
-layouts/Account-Financial Layout.layout-meta.xml," ",Layout Account-Financial Layout,M,,log,📰
-layouts/Account-Group Account Layout.layout-meta.xml,A,Layout Account-Group Account Layout,,,log,📰
-layouts/Account-Operational Layout.layout-meta.xml," ",Layout Account-Operational Layout,M,,log,📰
+flowDefinitions/Operator_Created_Event_e_Create_Service_Resource.flowDefinition-meta.xml,A,FlowDefinition Operator_Created_Event_e_Create_Service_Resource,,,log,📰
+flowDefinitions/User_After_Create_RecordTrigered_Create_Service_Resource.flowDefinition-meta.xml,A,FlowDefinition User_After_Create_RecordTrigered_Create_Service_Resource,,,log,📰
+flowDefinitions/User_After_Update_RecordTrigered_Create_Service_Resource.flowDefinition-meta.xml,A,FlowDefinition User_After_Update_RecordTrigered_Create_Service_Resource,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Check_In.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Check_In,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Check_Out.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Check_Out,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+flows/Operator_Created_Event_e_Create_Service_Resource.flow-meta.xml,A,Flow Operator_Created_Event_e_Create_Service_Resource,,,log,📰
+flows/User_After_Create_RecordTrigered_Create_Service_Resource.flow-meta.xml,A,Flow User_After_Create_RecordTrigered_Create_Service_Resource,,,log,📰
+flows/User_After_Update_RecordTrigered_Create_Service_Resource.flow-meta.xml,A,Flow User_After_Update_RecordTrigered_Create_Service_Resource,,,log,📰
+flows/Work_Order_Mobile_Flow_Check_In.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Check_In,,,log,📰
+flows/Work_Order_Mobile_Flow_Check_Out.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Check_Out,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+layouts/ATAK_Project__c-ATAK Project Layout.layout-meta.xml," ",Layout ATAK_Project__c-ATAK Project Layout,M,,log,📰
 layouts/Asset-Asset Layout.layout-meta.xml," ",Layout Asset-Asset Layout,M,,log,📰
-layouts/Asset_Financial_Account__c-Asset Financial Account Layout.layout-meta.xml,A,Layout Asset_Financial_Account__c-Asset Financial Account Layout,,,log,📰
-layouts/Contact-Contact Layout.layout-meta.xml," ",Layout Contact-Contact Layout,M,,log,📰
-layouts/ContractLineItem-Contract Line Item Layout.layout-meta.xml," ",Layout ContractLineItem-Contract Line Item Layout,M,,log,📰
-layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
+layouts/LMRA__c-LMRA Layout.layout-meta.xml," ",Layout LMRA__c-LMRA Layout,M,,log,📰
+layouts/MaintenanceAsset-Maintenance Asset Layout.layout-meta.xml," ",Layout MaintenanceAsset-Maintenance Asset Layout,M,,log,📰
+layouts/ServiceTerritory-Service Territory Layout.layout-meta.xml," ",Layout ServiceTerritory-Service Territory Layout,M,,log,📰
+layouts/User-User Layout.layout-meta.xml," ",Layout User-User Layout,M,,log,📰
+layouts/UserAlt-User Profile Layout.layout-meta.xml," ",Layout UserAlt-User Profile Layout,M,,log,📰
+layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
+lwc/contractLineEditor/contractLineEditor.html," ",LightningComponentBundle contractLineEditor/contractLineEditor.html,M,,log,📰
 lwc/contractLineEditor/contractLineEditor.js," ",LightningComponentBundle contractLineEditor/contractLineEditor.js,M,,log,📰
-lwc/generateMaintenancePlan/generateMaintenancePlan.js," ",LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.js,M,,log,📰
-lwc/readyForValidation/readyForValidation.html,A,LightningComponentBundle readyForValidation/readyForValidation.html,,,log,📰
-lwc/readyForValidation/readyForValidation.js,A,LightningComponentBundle readyForValidation/readyForValidation.js,,,log,📰
-lwc/readyForValidation/readyForValidation.js-meta.xml,A,LightningComponentBundle readyForValidation/readyForValidation.js-meta.xml,,,log,📰
+lwc/prepareContractForNextYear/prepareContractForNextYear.js," ",LightningComponentBundle prepareContractForNextYear/prepareContractForNextYear.js,M,,log,📰
+lwc/recurrencePattern/recurrencePattern.html," ",LightningComponentBundle recurrencePattern/recurrencePattern.html,M,,log,📰
+lwc/scheduleWorkOrders/scheduleWorkOrders.html,A,LightningComponentBundle scheduleWorkOrders/scheduleWorkOrders.html,,,log,📰
+lwc/scheduleWorkOrders/scheduleWorkOrders.js,A,LightningComponentBundle scheduleWorkOrders/scheduleWorkOrders.js,,,log,📰
+lwc/scheduleWorkOrders/scheduleWorkOrders.js-meta.xml,A,LightningComponentBundle scheduleWorkOrders/scheduleWorkOrders.js-meta.xml,,,log,📰
 lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
 lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
-notificationTypeConfig/NotificationTypeConfig.config-meta.xml," ",NotificationTypeConfig NotificationTypeConfig,M,,log,📰
-notificationtypes/Service_Contract_Approval_Notification.notiftype-meta.xml,A,CustomNotificationType Service_Contract_Approval_Notification,,,log,📰
+objects/ATAK_Project__c/fields/ATAK_Creation_Date__c.field-meta.xml,A,CustomField ATAK_Creation_Date__c,,,log,📰
 objects/ATAK_Project__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
-objects/Account/compactLayouts/Financial_Account.compactLayout-meta.xml,A,CompactLayout Financial_Account,,,log,📰
-objects/Account/compactLayouts/Group_Account.compactLayout-meta.xml,A,CompactLayout Group_Account,,,log,📰
-objects/Account/compactLayouts/Operational_Account.compactLayout-meta.xml,A,CompactLayout Operational_Account,,,log,📰
-objects/Account/fields/Access_Information__c.field-meta.xml,A,CustomField Access_Information__c,,,log,📰
-objects/Account/fields/Alias_commercial_customer_name__c.field-meta.xml,A,CustomField Alias_commercial_customer_name__c,,,log,📰
-objects/Account/fields/Attention_points_for_execution__c.field-meta.xml,A,CustomField Attention_points_for_execution__c,,,log,📰
-objects/Account/fields/Client_Region__c.field-meta.xml,A,CustomField Client_Region__c,,,log,📰
-objects/Account/fields/Client_sector__c.field-meta.xml,A,CustomField Client_sector__c,,,log,📰
-objects/Account/fields/Closing_Days__c.field-meta.xml,A,CustomField Closing_Days__c,,,log,📰
-objects/Account/fields/Contactperson_commercial_customer_key__c.field-meta.xml,A,CustomField Contactperson_commercial_customer_key__c,,,log,📰
-objects/Account/fields/Contactperson_operational_customer_key__c.field-meta.xml,A,CustomField Contactperson_operational_customer_key__c,,,log,📰
-objects/Account/fields/Default_LMRA__c.field-meta.xml,A,CustomField Default_LMRA__c,,,log,📰
-objects/Account/fields/Email__c.field-meta.xml,A,CustomField Email__c,,,log,📰
-objects/Account/fields/Enterprise_Number__c.field-meta.xml,A,CustomField Enterprise_Number__c,,,log,📰
-objects/Account/fields/Facility_Type__c.field-meta.xml,A,CustomField Facility_Type__c,,,log,📰
-objects/Account/fields/Financial_client_ATAK_Code__c.field-meta.xml,A,CustomField Financial_client_ATAK_Code__c,,,log,📰
-objects/Account/fields/Financial_client_type_ATAK__c.field-meta.xml,A,CustomField Financial_client_type_ATAK__c,,,log,📰
-objects/Account/fields/Latitude__c.field-meta.xml,A,CustomField Latitude__c,,,log,📰
-objects/Account/fields/Longitude__c.field-meta.xml,A,CustomField Longitude__c,,,log,📰
-objects/Account/fields/Notes__c.field-meta.xml,A,CustomField Notes__c,,,log,📰
-objects/Account/fields/Opening_hours__c.field-meta.xml,A,CustomField Opening_hours__c,,,log,📰
-objects/Account/fields/Region__c.field-meta.xml,A,CustomField Region__c,,,log,📰
-objects/Account/fields/Related_account__c.field-meta.xml,A,CustomField Related_account__c,,,log,📰
-objects/Account/fields/Status__c.field-meta.xml,A,CustomField Status__c,,,log,📰
-objects/Account/recordTypes/Commercial_Account.recordType-meta.xml," ",RecordType Commercial_Account,M,,log,📰
-objects/Account/recordTypes/Financial_Account.recordType-meta.xml," ",RecordType Financial_Account,M,,log,📰
-objects/Account/recordTypes/Group_Account.recordType-meta.xml,A,RecordType Group_Account,,,log,📰
-objects/Account/recordTypes/Operational_Account.recordType-meta.xml," ",RecordType Operational_Account,M,,log,📰
-objects/Asset_Financial_Account__c/Asset_Financial_Account__c.object-meta.xml,A,CustomObject Asset_Financial_Account__c/Asset_Financial_Account__c,,,log,📰
-objects/Asset_Financial_Account__c/fields/Account__c.field-meta.xml,A,CustomField Account__c,,,log,📰
-objects/Asset_Financial_Account__c/fields/Asset__c.field-meta.xml,A,CustomField Asset__c,,,log,📰
-objects/Asset_Financial_Account__c/fields/Key__c.field-meta.xml,A,CustomField Key__c,,,log,📰
-objects/Contact/fields/Contract_Type__c.field-meta.xml,A,CustomField Contract_Type__c,,,log,📰
-objects/Contact/fields/Decision_maker__c.field-meta.xml,A,CustomField Decision_maker__c,,,log,📰
-objects/Contact/fields/Function_Type__c.field-meta.xml,A,CustomField Function_Type__c,,,log,📰
-objects/Contact/fields/Function__c.field-meta.xml,A,CustomField Function__c,,,log,📰
-objects/Contact/fields/Functional_level__c.field-meta.xml,A,CustomField Functional_level__c,,,log,📰
-objects/Contact/fields/Linkedin__c.field-meta.xml,A,CustomField Linkedin__c,,,log,📰
-objects/Contact/fields/Notes__c.field-meta.xml,A,CustomField Notes__c,,,log,📰
-objects/Contact/fields/Type_Formula__c.field-meta.xml,A,CustomField Type_Formula__c,,,log,📰
-objects/Contact/fields/Type__c.field-meta.xml," ",CustomField Type__c,M,,log,📰
-objects/ContractLineItem/fields/Calculated_Duration__c.field-meta.xml,A,CustomField Calculated_Duration__c,,,log,📰
-objects/ContractLineItem/fields/Estimated_Duration__c.field-meta.xml,A,CustomField Estimated_Duration__c,,,log,📰
-objects/ServiceContract/compactLayouts/Service_Contract.compactLayout-meta.xml," ",CompactLayout Service_Contract,M,,log,📰
-objects/ServiceContract/fields/Additional_Work_in_scope_contract__c.field-meta.xml,A,CustomField Additional_Work_in_scope_contract__c,,,log,📰
-objects/ServiceContract/fields/Allocation_key__c.field-meta.xml,A,CustomField Allocation_key__c,,,log,📰
-objects/ServiceContract/fields/Cancellation_Date_Contract__c.field-meta.xml,A,CustomField Cancellation_Date_Contract__c,,,log,📰
-objects/ServiceContract/fields/Check_In_At_Work_Reference__c.field-meta.xml,A,CustomField Check_In_At_Work_Reference__c,,,log,📰
-objects/ServiceContract/fields/Check_In_At_Work_Required__c.field-meta.xml,A,CustomField Check_In_At_Work_Required__c,,,log,📰
-objects/ServiceContract/fields/Contract_Type__c.field-meta.xml,A,CustomField Contract_Type__c,,,log,📰
-objects/ServiceContract/fields/Default_LMRA__c.field-meta.xml," ",CustomField Default_LMRA__c,M,,log,📰
-objects/ServiceContract/fields/External_Contract_Reference__c.field-meta.xml,A,CustomField External_Contract_Reference__c,,,log,📰
-objects/ServiceContract/fields/Indexation_Date__c.field-meta.xml,A,CustomField Indexation_Date__c,,,log,📰
-objects/ServiceContract/fields/Indexation_Formula__c.field-meta.xml,A,CustomField Indexation_Formula__c,,,log,📰
-objects/ServiceContract/fields/Indexation_Needed__c.field-meta.xml,A,CustomField Indexation_Needed__c,,,log,📰
-objects/ServiceContract/fields/Link_contract__c.field-meta.xml,A,CustomField Link_contract__c,,,log,📰
-objects/ServiceContract/fields/Location_Visit__c.field-meta.xml,A,CustomField Location_Visit__c,,,log,📰
-objects/ServiceContract/fields/Request_date_for_indexation__c.field-meta.xml,A,CustomField Request_date_for_indexation__c,,,log,📰
-objects/ServiceContract/fields/SLA__c.field-meta.xml,A,CustomField SLA__c,,,log,📰
-objects/ServiceContract/fields/SPOC_Client__c.field-meta.xml,A,CustomField SPOC_Client__c,,,log,📰
-objects/ServiceContract/fields/SPOC_KGC__c.field-meta.xml,A,CustomField SPOC_KGC__c,,,log,📰
-objects/ServiceContract/fields/Service_Package_Type__c.field-meta.xml,A,CustomField Service_Package_Type__c,,,log,📰
-objects/ServiceContract/fields/Tender_Code__c.field-meta.xml,A,CustomField Tender_Code__c,,,log,📰
+objects/Asset/fields/Default_Duration_in_Minutes__c.field-meta.xml,A,CustomField Default_Duration_in_Minutes__c,,,log,📰
+objects/Asset/fields/LMRA__c.field-meta.xml,A,CustomField LMRA__c,,,log,📰
+objects/Asset/fields/LastSuggestedMaintenanceDate__c.field-meta.xml,A,CustomField LastSuggestedMaintenanceDate__c,,,log,📰
+objects/LMRA__c/fields/Project_Lead__c.field-meta.xml," ",CustomField Project_Lead__c,M,,log,📰
+objects/MaintenanceAsset/fields/Default_Duration_in_Minutes__c.field-meta.xml,A,CustomField Default_Duration_in_Minutes__c,,,log,📰
+objects/MaintenanceAsset/fields/LastSuggestedMaintenanceDate__c.field-meta.xml,A,CustomField LastSuggestedMaintenanceDate__c,,,log,📰
+objects/Operator_Created_Event__e/Operator_Created_Event__e.object-meta.xml,A,CustomObject Operator_Created_Event__e/Operator_Created_Event__e,,,log,📰
+objects/Operator_Created_Event__e/fields/User_Id__c.field-meta.xml,A,CustomField User_Id__c,,,log,📰
+objects/ServiceTerritory/fields/Main_Responsible_Atak_Code__c.field-meta.xml,A,CustomField Main_Responsible_Atak_Code__c,,,log,📰
+objects/User/fields/ATAK_Code__c.field-meta.xml," ",CustomField ATAK_Code__c,M,,log,📰
+objects/User/fields/Create_Field_Service_Resource__c.field-meta.xml,A,CustomField Create_Field_Service_Resource__c,,,log,📰
+objects/User/fields/End_Date__c.field-meta.xml,A,CustomField End_Date__c,,,log,📰
+objects/User/fields/Interim_Office__c.field-meta.xml,A,CustomField Interim_Office__c,,,log,📰
+objects/User/fields/Start_Date__c.field-meta.xml,A,CustomField Start_Date__c,,,log,📰
+objects/WorkOrder/fields/LMRA_Done__c.field-meta.xml,A,CustomField LMRA_Done__c,,,log,📰
+objects/Work_Order_Creation_Event__e/Work_Order_Creation_Event__e.object-meta.xml,A,CustomObject Work_Order_Creation_Event__e/Work_Order_Creation_Event__e,,,log,📰
+objects/Work_Order_Creation_Event__e/fields/Maintenance_Plan_Id__c.field-meta.xml,A,CustomField Maintenance_Plan_Id__c,,,log,📰
+permissionsets/ATAK_Permissions.permissionset-meta.xml,A,PermissionSet ATAK_Permissions,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -138,10 +106,9 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/ServiceContract.Ready_for_Validation.quickAction-meta.xml,A,QuickAction ServiceContract.Ready_for_Validation,,,log,📰
-settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
-topicsForObjects/Asset_Financial_Account__c.topicsForObjects-meta.xml,A,TopicsForObjects Asset_Financial_Account__c,,,log,📰
-triggers/ServiceContractTrigger.trigger,A,ApexTrigger ServiceContractTrigger,,,log,📰
-triggers/ServiceContractTrigger.trigger-meta.xml,A,ApexTrigger ServiceContractTrigger,,,log,📰
+quickActions/MaintenancePlan.Create_Work_Orders.quickAction-meta.xml,A,QuickAction MaintenancePlan.Create_Work_Orders,,,log,📰
+settings/AgentforceForDevelopers.settings-meta.xml," ",Settings AgentforceForDevelopers,M,,log,📰
+triggers/ServiceResourceEvent.trigger,A,ApexTrigger ServiceResourceEvent,,,log,📰
+triggers/ServiceResourceEvent.trigger-meta.xml,A,ApexTrigger ServiceResourceEvent,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

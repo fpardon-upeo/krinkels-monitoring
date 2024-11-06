@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <feedLayout>
         <autocollapsePublisher>true</autocollapsePublisher>
@@ -225,8 +226,30 @@
     </relatedLists>
     <relatedLists>
         <fields>Name</fields>
+        <fields>Contact</fields>
+        <fields>Account</fields>
+        <fields>Status</fields>
+        <fields>SchedStartTime</fields>
+        <fields>SchedEndTime</fields>
+        <fields>EarliestStartTime</fields>
+        <relatedList>ServiceAppointments</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
         <fields>Description</fields>
         <relatedList>WorkOrderLineItems</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>ExecutionOrder</fields>
+        <fields>WorkOrderLineItem</fields>
+        <relatedList>WorkPlans</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>Status</fields>
+        <fields>ExecutionOrder</fields>
+        <relatedList>WorkSteps</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
@@ -262,22 +285,14 @@
         <relatedList>ChildWorkOrders</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>Name</fields>
-        <fields>Contact</fields>
-        <fields>Account</fields>
-        <fields>Status</fields>
-        <fields>SchedStartTime</fields>
-        <fields>SchedEndTime</fields>
-        <fields>EarliestStartTime</fields>
-        <relatedList>ServiceAppointments</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>Skill</fields>
         <fields>SkillLevel</fields>
         <relatedList>SkillRequirements</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>LMRA_Type__c</fields>
+        <fields>Date__c</fields>
         <relatedList>LMRA__c.Work_Order__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

@@ -42,6 +42,9 @@
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
+                        <valueListItems>
+                            <value>ServiceContract.Ready_for_Validation</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -271,46 +274,12 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Priority__c</fieldItem>
-                <identifier>RecordPriority_cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Service Contract</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Additional_Work_in_scope_contract__c</fieldItem>
                 <identifier>RecordAdditional_Work_in_scope_contract__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Contract_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Default_LMRA__c</fieldItem>
-                <identifier>RecordLMRA__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>NE</operator>
                         <rightValue>Master Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
@@ -358,6 +327,82 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-0f6f8eeb-5ccb-43d4-9973-ee09c256ed57</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Default_LMRA__c</fieldItem>
+                <identifier>RecordLMRA__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Priority__c</fieldItem>
+                <identifier>RecordPriority_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Service Contract</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-143f7232-5968-4d29-ba7f-a6fef833f506</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Product__c</fieldItem>
+                <identifier>RecordProduct_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-2b65359f-1c50-4ac4-bc5b-9ae5012d70b9</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-143f7232-5968-4d29-ba7f-a6fef833f506</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-2b65359f-1c50-4ac4-bc5b-9ae5012d70b9</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-6743856e-2b95-4929-b4f7-3555697695c2</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -725,6 +770,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-6743856e-2b95-4929-b4f7-3555697695c2</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Default Values for Line Items</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

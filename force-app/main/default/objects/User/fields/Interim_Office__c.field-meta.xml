@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interim_Office__c</fullName>
+    <label>Interim Office</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DAOUST INTERIM</fullName>
+                <default>false</default>
+                <label>DAOUST INTERIM</label>
+            </value>
+            <value>
+                <fullName>Krinkels Greencare NV</fullName>
+                <default>false</default>
+                <label>Krinkels Greencare NV</label>
+            </value>
+            <value>
+                <fullName>VERDILUX SARL</fullName>
+                <default>false</default>
+                <label>VERDILUX SARL</label>
+            </value>
+            <value>
+                <fullName>MARTENS DIETER</fullName>
+                <default>false</default>
+                <label>MARTENS DIETER</label>
+            </value>
+            <value>
+                <fullName>RPA SERVICE</fullName>
+                <default>false</default>
+                <label>RPA SERVICE</label>
+            </value>
+            <value>
+                <fullName>AGO JOBS &amp; HR</fullName>
+                <default>false</default>
+                <label>AGO JOBS &amp; HR</label>
+            </value>
+            <value>
+                <fullName>ITZU JOBS</fullName>
+                <default>false</default>
+                <label>ITZU JOBS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

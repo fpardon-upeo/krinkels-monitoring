@@ -135,8 +135,6 @@ export default class ServiceBuilder extends LightningElement {
   loadContractLines() {
     getContractLines({ recordId: this.recordId })
       .then((result) => {
-        console.log(JSON.stringify(result));
-
         this.serviceContract = result[0].ServiceContract;
 
         if (result.length > 0) {
@@ -182,11 +180,6 @@ export default class ServiceBuilder extends LightningElement {
         } else {
           getServiceContract({ recordId: this.recordId }).then((result) => {
             this.serviceContract = result;
-
-            console.log(
-              "Service Contract from getServiceContract:",
-              this.serviceContract
-            );
           });
         }
       })
@@ -286,6 +279,20 @@ export default class ServiceBuilder extends LightningElement {
   handleProjectCodeChange(event) {
     let index = event.target.dataset.index;
     this.contractLines[index].Project_Code__c = event.detail.value;
+  }
+
+  handleEstimatedDurationChange(event) {
+    let index = event.target.dataset.index;
+    this.contractLines[index].Estimated_Duration__c = Number(
+      event.detail.value
+    );
+  }
+
+  handleCalculatedDurationChange(event) {
+    let index = event.target.dataset.index;
+    this.contractLines[index].Calculated_Duration__c = Number(
+      event.detail.value
+    );
   }
 
   /**
@@ -414,6 +421,15 @@ export default class ServiceBuilder extends LightningElement {
   handleMassEditRecurrence() {
     this.selectedRecords = this.contractLines.filter((line) => line.IsSelected);
 
+    if (this.selectedRecords.length === 0) {
+      this.handleToast(
+        "Error",
+        "No records selected, please select at least one record by selecting the appropriate checkbox.",
+        "error"
+      );
+      return;
+    }
+
     recurrenceModal
       .open({
         selectedRecords: this.selectedRecords,
@@ -430,7 +446,10 @@ export default class ServiceBuilder extends LightningElement {
           records.forEach((record) => {
             let index = record.Index;
             this.contractLines[index] = record;
-            this.insertContractLine(index, record.Product2Id);
+
+            if (!record.IsNew) {
+              this.insertContractLine(index, record.Product2Id);
+            }
           });
           this.handleToast(
             "Success",
@@ -455,8 +474,8 @@ export default class ServiceBuilder extends LightningElement {
    */
   handleSearch(event) {
     let searchTerm = event.detail.value.toLowerCase();
-
     let field = event.target.dataset.field;
+    let type = event.target.dataset.type;
 
     // Remove previous filter for this field
     this.appliedFilters = this.appliedFilters.filter(
@@ -465,22 +484,34 @@ export default class ServiceBuilder extends LightningElement {
 
     // Add the new filter if there's a search term
     if (searchTerm !== "") {
-      this.appliedFilters.push({ field, searchTerm });
+      this.appliedFilters.push({ field, searchTerm, type });
     }
 
     // Apply all filters
-    this.filterResults = this.originalContractLines
-      .filter((line) => {
-        return this.appliedFilters.every(
-          (filter) =>
-            line[filter.field] &&
-            line[filter.field].toLowerCase().includes(filter.searchTerm)
-        );
-      })
-      .map((line, index) => {
-        line.Index = index;
-        return line;
+    this.filterResults = this.contractLines.filter((line) => {
+      return this.appliedFilters.every((filter) => {
+        // Handle nested fields (e.g., Product2.Name)
+        let value = filter.field.includes(".")
+          ? filter.field.split(".").reduce((obj, key) => obj?.[key], line)
+          : line[filter.field];
+
+        // Convert value to string for comparison
+        value = value ? value.toString().toLowerCase() : "";
+
+        // Handle different data types
+        switch (filter.type) {
+          case "date":
+            return value.includes(filter.searchTerm);
+          case "number":
+            return value.includes(filter.searchTerm);
+          default: // text
+            return value.includes(filter.searchTerm);
+        }
       });
+    });
+
+    // Force component to re-render
+    this.filterResults = [...this.filterResults];
   }
 
   /**
@@ -639,19 +670,25 @@ export default class ServiceBuilder extends LightningElement {
 
       if (!line.Product2Id) errors.push("Service Type");
       if (!line.Project_Code__c) errors.push("Code");
+      if (!line.Estimated_Duration__c && line.Estimated_Duration__c !== 0)
+        errors.push("Estimated Duration");
+      if (!line.Calculated_Duration__c && line.Calculated_Duration__c !== 0)
+        errors.push("Calculated Duration");
 
       // Location validation based on type
       if (this.locationColumns.isGeoLocation) {
-        if (!line.Geolocation__Latitude__s || !line.Geolocation__Longitude__s) {
-          errors.push("Latitude and Longitude");
+        if (!line.Geolocation__Latitude__s) {
+          errors.push("Latitude");
+        } else if (!line.Geolocation__Longitude__s) {
+          errors.push("Longitude");
         }
       } else if (this.locationColumns.isAddress) {
-        if (
-          !line.Location__Street__s ||
-          !line.Location__City__s ||
-          !line.Location__PostalCode__s
-        ) {
-          errors.push("Street, City, and Zip Code");
+        if (!line.Location__Street__s) {
+          errors.push("Street");
+        } else if (!line.Location__City__s) {
+          errors.push("City");
+        } else if (!line.Location__PostalCode__s) {
+          errors.push("Zip Code");
         }
       }
 
@@ -672,6 +709,11 @@ export default class ServiceBuilder extends LightningElement {
     });
 
     if (hasErrors) {
+      this.handleToast(
+        "Error",
+        "Please complete all required fields before saving the records.",
+        "error"
+      );
       // Force a refresh of the UI
       this.contractLines = [...this.contractLines];
       return;
@@ -701,6 +743,17 @@ export default class ServiceBuilder extends LightningElement {
     // Store the FinCustomers before saving so we can preserve them and add them back after saving
     const existingFinCustomers = contractLine.FinCustomers || [];
 
+    //Check the duration fields and convert them to numbers
+    if (contractLine.Estimated_Duration__c) {
+      contractLine.Estimated_Duration__c = Number(
+        contractLine.Estimated_Duration__c
+      );
+    }
+    if (contractLine.Calculated_Duration__c) {
+      contractLine.Calculated_Duration__c = Number(
+        contractLine.Calculated_Duration__c
+      );
+    }
     //Check the geolocation fields and convert them to decimal
     if (contractLine.Geolocation__Latitude__s) {
       contractLine.Geolocation__Latitude__s = parseFloat(
@@ -715,31 +768,34 @@ export default class ServiceBuilder extends LightningElement {
 
     saveContractLine({ contractLine: contractLine })
       .then((result) => {
-        result.IsSelected = false;
-        result.IsNew = false;
-        result.Index = index;
-        // Add the existing FinCustomers back to the result
-        result.FinCustomers = existingFinCustomers;
-        this.contractLines[index] = result;
-        // If there are financial accounts in the FinCustomers array and no Contract_Line_Financial_Accounts__r, insert them
-        if (
-          this.contractLines[index].FinCustomers.length > 0 &&
-          !this.contractLines[index].Contract_Line_Financial_Accounts__r
-        ) {
-          this.contractLines[index].FinCustomers.forEach((customer) => {
-            insertOrRemoveContractLineFinancialAccount({
-              name: customer.label,
-              contractLineItemId: this.contractLines[index].Id,
-              financialCustomerId: customer.recordId,
-              action: "insert"
+        if (result) {
+          console.log("Result:", JSON.stringify(result));
+          result.IsSelected = false;
+          result.IsNew = false;
+          result.Index = index;
+          // Add the existing FinCustomers back to the result
+          result.FinCustomers = existingFinCustomers;
+          this.contractLines[index] = result;
+          // If there are financial accounts in the FinCustomers array and no Contract_Line_Financial_Accounts__r, insert them
+          if (
+            this.contractLines[index].FinCustomers.length > 0 &&
+            !this.contractLines[index].Contract_Line_Financial_Accounts__r
+          ) {
+            this.contractLines[index].FinCustomers.forEach((customer) => {
+              insertOrRemoveContractLineFinancialAccount({
+                name: customer.label,
+                contractLineItemId: this.contractLines[index].Id,
+                financialCustomerId: customer.recordId,
+                action: "insert"
+              });
             });
-          });
+          }
+          this.contractLines = [...this.contractLines];
+          this.reIndex();
         }
-        this.contractLines = [...this.contractLines];
-        this.reIndex();
       })
       .catch((error) => {
-        console.error("Error saving contract line:", error);
+        console.error("Error saving contract line:", error.message);
         this.contractLines = [...this.contractLines];
       });
   }

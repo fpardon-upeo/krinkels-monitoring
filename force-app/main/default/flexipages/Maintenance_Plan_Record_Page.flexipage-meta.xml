@@ -7,13 +7,13 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>GenerateWorkOrders</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>MaintenancePlan.Create_Work_Orders</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

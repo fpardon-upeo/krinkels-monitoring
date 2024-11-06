@@ -39,6 +39,10 @@
                 <behavior>Edit</behavior>
                 <field>Depot__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ATAK_Creation_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

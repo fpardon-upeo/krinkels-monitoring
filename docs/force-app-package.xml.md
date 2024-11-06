@@ -2,16 +2,21 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 1522
+Metadatas: 1560
 
-<details><summary>ApexClass (22)</summary>
+<details><summary>ApexClass (32)</summary>
+  • ATAKProjectService<br/>
+  • ATAKProjectWrapper<br/>
+  • ATAKProjectWrapperTest<br/>
   • AddressSearchService<br/>
   • ContractLineItemTriggerHandler<br/>
   • ExportRecordsController<br/>
+  • FieldServiceTestData<br/>
   • GanttRoundPinAction<br/>
   • MachineRestResource<br/>
   • MaintenancePlanException<br/>
   • MaintenancePlanService<br/>
+  • MaintenancePlanServiceTest<br/>
   • MapsGeoCodeService<br/>
   • MapsGeoCodeWrapper<br/>
   • MapsGeoCodeWrapperTest<br/>
@@ -26,6 +31,11 @@ Metadatas: 1522
   • ServiceBuilderController<br/>
   • ServiceBuilderWrapper<br/>
   • ServiceContractHandler<br/>
+  • ServiceResourceHandler<br/>
+  • WorkOrderLocationQueueable<br/>
+  • WorkOrderScheduler<br/>
+  • WorkOrderSchedulerBatch<br/>
+  • WorkOrderSchedulerController<br/>
   • WorkOrderTriggerHandler<br/>
 </details>
 
@@ -40,11 +50,12 @@ Metadatas: 1522
 </details>
 
 <br/>
-<details><summary>ApexTrigger (5)</summary>
+<details><summary>ApexTrigger (6)</summary>
   • ContractLineItemTrigger<br/>
   • ServiceAppointmentTrigger<br/>
   • ServiceContractMaintenancePlan<br/>
   • ServiceContractTrigger<br/>
+  • ServiceResourceEvent<br/>
   • WorkOrderTrigger<br/>
 </details>
 
@@ -129,7 +140,8 @@ Metadatas: 1522
 </details>
 
 <br/>
-<details><summary>CustomField (253)</summary>
+<details><summary>CustomField (267)</summary>
+  • ATAK_Project__c.ATAK_Creation_Date__c<br/>
   • ATAK_Project__c.Cost_centre_Atak_Id__c<br/>
   • ATAK_Project__c.Cost_centre_Atak_Name__c<br/>
   • ATAK_Project__c.Department_Code__c<br/>
@@ -177,6 +189,9 @@ Metadatas: 1522
   • Activity.FSL__Event_Type__c<br/>
   • Asset.ATAK_Project__c<br/>
   • Asset.Contract_Line_Item__c<br/>
+  • Asset.Default_Duration_in_Minutes__c<br/>
+  • Asset.LMRA__c<br/>
+  • Asset.LastSuggestedMaintenanceDate__c<br/>
   • Asset.Recurrence_Pattern__c<br/>
   • Asset.Service_Territory__c<br/>
   • Asset.Unique_Id__c<br/>
@@ -253,7 +268,10 @@ Metadatas: 1522
   • Location_Visit__c.Type__c<br/>
   • Location_Visit__c.Visit_Date__c<br/>
   • Location_Visit__c.Visit_Notes__c<br/>
+  • MaintenanceAsset.Default_Duration_in_Minutes__c<br/>
+  • MaintenanceAsset.LastSuggestedMaintenanceDate__c<br/>
   • MaintenanceAsset.Service_Territory__c<br/>
+  • Operator_Created_Event__e.User_Id__c<br/>
   • Opportunity.Budget_Confirmed__c<br/>
   • Opportunity.Discovery_Completed__c<br/>
   • Opportunity.Loss_Reason__c<br/>
@@ -356,6 +374,7 @@ Metadatas: 1522
   • ServiceTerritory.FSL__Service_Cluster_Proximity__c<br/>
   • ServiceTerritory.FSL__System_Jobs__c<br/>
   • ServiceTerritory.FSL__TerritoryLevel__c<br/>
+  • ServiceTerritory.Main_Responsible_Atak_Code__c<br/>
   • ServiceTerritory.Main_Responsible__c<br/>
   • ServiceTerritoryMember.FSL__Internal_SLR_HomeAddress_Geolocation__c<br/>
   • Service_Item__c.Service_Item_Key__c<br/>
@@ -365,12 +384,17 @@ Metadatas: 1522
   • TimeSlot.FSL__Slot_Color__c<br/>
   • User.ATAK_Code__c<br/>
   • User.ATAK_Id__c<br/>
+  • User.Create_Field_Service_Resource__c<br/>
+  • User.End_Date__c<br/>
+  • User.Interim_Office__c<br/>
+  • User.Start_Date__c<br/>
   • WorkOrder.Check_In_Work__c<br/>
   • WorkOrder.Collected_Items__c<br/>
   • WorkOrder.FSL__IsFillInCandidate__c<br/>
   • WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c<br/>
   • WorkOrder.FSL__Scheduling_Priority__c<br/>
   • WorkOrder.FSL__VisitingHours__c<br/>
+  • WorkOrder.LMRA_Done__c<br/>
   • WorkOrder.LMRA__c<br/>
   • WorkOrder.Shop_Name__c<br/>
   • WorkOrder.Shop_Visit_Date__c<br/>
@@ -383,6 +407,7 @@ Metadatas: 1522
   • WorkOrderLineItem.FSL__VisitingHours__c<br/>
   • WorkType.FSL__Due_Date_Offset__c<br/>
   • WorkType.FSL__Exact_Appointments__c<br/>
+  • Work_Order_Creation_Event__e.Maintenance_Plan_Id__c<br/>
 </details>
 
 <br/>
@@ -591,40 +616,50 @@ Metadatas: 1522
 </details>
 
 <br/>
-<details><summary>Flow (16)</summary>
+<details><summary>Flow (21)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
+  • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory<br/>
   • Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status<br/>
   • Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • User_After_Create_RecordTrigered_Create_Service_Resource<br/>
+  • User_After_Update_RecordTrigered_Create_Service_Resource<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
+  • Work_Order_Mobile_Flow_Check_In<br/>
+  • Work_Order_Mobile_Flow_Check_Out<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
 </details>
 
 <br/>
-<details><summary>FlowDefinition (16)</summary>
+<details><summary>FlowDefinition (21)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
+  • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory<br/>
   • Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status<br/>
   • Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • User_After_Create_RecordTrigered_Create_Service_Resource<br/>
+  • User_After_Update_RecordTrigered_Create_Service_Resource<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
+  • Work_Order_Mobile_Flow_Check_In<br/>
+  • Work_Order_Mobile_Flow_Check_Out<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
@@ -867,7 +902,7 @@ Metadatas: 1522
 </details>
 
 <br/>
-<details><summary>LightningComponentBundle (12)</summary>
+<details><summary>LightningComponentBundle (13)</summary>
   • addressSearch<br/>
   • contractLineEditor<br/>
   • exportRecords<br/>
@@ -877,6 +912,7 @@ Metadatas: 1522
   • recurrencePattern<br/>
   • resourceCalendar<br/>
   • roundDispatcher<br/>
+  • scheduleWorkOrders<br/>
   • serviceBuilder<br/>
   • servicesToSchedule<br/>
   • simpleDispatcherConsole<br/>
@@ -943,7 +979,8 @@ Metadatas: 1522
 </details>
 
 <br/>
-<details><summary>PermissionSet (3)</summary>
+<details><summary>PermissionSet (4)</summary>
+  • ATAK_Permissions<br/>
   • cases_Permisssion_Set<br/>
   • sfdcInternalInt__sfdc_fieldservice<br/>
   • sfdcInternalInt__sfdc_scrt2<br/>
@@ -1025,7 +1062,7 @@ Metadatas: 1522
 </details>
 
 <br/>
-<details><summary>QuickAction (133)</summary>
+<details><summary>QuickAction (134)</summary>
   • Account.Child_Account<br/>
   • Campaign.Child_Campaign<br/>
   • Case.Change_Priority<br/>
@@ -1038,6 +1075,7 @@ Metadatas: 1522
   • FeedItem.NewTaskFromFeedItem<br/>
   • Follow_Up<br/>
   • LogACall<br/>
+  • MaintenancePlan.Create_Work_Orders<br/>
   • NewAccount<br/>
   • NewCase<br/>
   • NewContact<br/>

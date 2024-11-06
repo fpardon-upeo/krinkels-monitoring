@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ATAKProjectService</members>
+        <members>ATAKProjectWrapper</members>
+        <members>ATAKProjectWrapperTest</members>
         <members>AddressSearchService</members>
         <members>ContractLineItemTriggerHandler</members>
         <members>ExportRecordsController</members>
+        <members>FieldServiceTestData</members>
         <members>GanttRoundPinAction</members>
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
+        <members>MaintenancePlanServiceTest</members>
         <members>MapsGeoCodeService</members>
         <members>MapsGeoCodeWrapper</members>
         <members>MapsGeoCodeWrapperTest</members>
@@ -22,6 +27,11 @@
         <members>ServiceBuilderController</members>
         <members>ServiceBuilderWrapper</members>
         <members>ServiceContractHandler</members>
+        <members>ServiceResourceHandler</members>
+        <members>WorkOrderLocationQueueable</members>
+        <members>WorkOrderScheduler</members>
+        <members>WorkOrderSchedulerBatch</members>
+        <members>WorkOrderSchedulerController</members>
         <members>WorkOrderTriggerHandler</members>
         <name>ApexClass</name>
     </types>
@@ -38,6 +48,7 @@
         <members>ServiceAppointmentTrigger</members>
         <members>ServiceContractMaintenancePlan</members>
         <members>ServiceContractTrigger</members>
+        <members>ServiceResourceEvent</members>
         <members>WorkOrderTrigger</members>
         <name>ApexTrigger</name>
     </types>
@@ -108,6 +119,7 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>ATAK_Project__c.ATAK_Creation_Date__c</members>
         <members>ATAK_Project__c.Cost_centre_Atak_Id__c</members>
         <members>ATAK_Project__c.Cost_centre_Atak_Name__c</members>
         <members>ATAK_Project__c.Department_Code__c</members>
@@ -153,6 +165,9 @@
         <members>Activity.FSL__Event_Type__c</members>
         <members>Asset.ATAK_Project__c</members>
         <members>Asset.Contract_Line_Item__c</members>
+        <members>Asset.Default_Duration_in_Minutes__c</members>
+        <members>Asset.LMRA__c</members>
+        <members>Asset.LastSuggestedMaintenanceDate__c</members>
         <members>Asset.Recurrence_Pattern__c</members>
         <members>Asset.Service_Territory__c</members>
         <members>Asset.Unique_Id__c</members>
@@ -239,7 +254,10 @@
         <members>Location_Visit__c.Type__c</members>
         <members>Location_Visit__c.Visit_Date__c</members>
         <members>Location_Visit__c.Visit_Notes__c</members>
+        <members>MaintenanceAsset.Default_Duration_in_Minutes__c</members>
+        <members>MaintenanceAsset.LastSuggestedMaintenanceDate__c</members>
         <members>MaintenanceAsset.Service_Territory__c</members>
+        <members>Operator_Created_Event__e.User_Id__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
         <members>Opportunity.Loss_Reason__c</members>
@@ -344,6 +362,7 @@
         <members>ServiceTerritory.FSL__Service_Cluster_Proximity__c</members>
         <members>ServiceTerritory.FSL__System_Jobs__c</members>
         <members>ServiceTerritory.FSL__TerritoryLevel__c</members>
+        <members>ServiceTerritory.Main_Responsible_Atak_Code__c</members>
         <members>ServiceTerritory.Main_Responsible__c</members>
         <members>ServiceTerritoryMember.FSL__Internal_SLR_HomeAddress_Geolocation__c</members>
         <members>Service_Item__c.Service_Item_Key__c</members>
@@ -353,11 +372,16 @@
         <members>TimeSlot.FSL__Slot_Color__c</members>
         <members>User.ATAK_Code__c</members>
         <members>User.ATAK_Id__c</members>
+        <members>User.Create_Field_Service_Resource__c</members>
+        <members>User.End_Date__c</members>
+        <members>User.Interim_Office__c</members>
+        <members>User.Start_Date__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
+        <members>WorkOrder.LMRA_Done__c</members>
         <members>WorkOrder.LMRA__c</members>
         <members>WorkOrder.Shop_Name__c</members>
         <members>WorkOrder.Shop_Visit_Date__c</members>
@@ -370,6 +394,7 @@
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
         <members>WorkType.FSL__Due_Date_Offset__c</members>
         <members>WorkType.FSL__Exact_Appointments__c</members>
+        <members>Work_Order_Creation_Event__e.Maintenance_Plan_Id__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -568,13 +593,18 @@
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
+        <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
+        <members>Work_Order_Mobile_Flow_Check_In</members>
+        <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
@@ -586,13 +616,18 @@
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
+        <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
+        <members>Work_Order_Mobile_Flow_Check_In</members>
+        <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
@@ -839,6 +874,7 @@
         <members>recurrencePattern</members>
         <members>resourceCalendar</members>
         <members>roundDispatcher</members>
+        <members>scheduleWorkOrders</members>
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
         <members>simpleDispatcherConsole</members>
@@ -892,6 +928,7 @@
         <name>PathAssistant</name>
     </types>
     <types>
+        <members>ATAK_Permissions</members>
         <members>cases_Permisssion_Set</members>
         <members>sfdcInternalInt__sfdc_fieldservice</members>
         <members>sfdcInternalInt__sfdc_scrt2</members>
@@ -979,6 +1016,7 @@
         <members>FeedItem.NewTaskFromFeedItem</members>
         <members>Follow_Up</members>
         <members>LogACall</members>
+        <members>MaintenancePlan.Create_Work_Orders</members>
         <members>NewAccount</members>
         <members>NewCase</members>
         <members>NewContact</members>
@@ -1408,8 +1446,6 @@
         <members>ActivityRecurrence2</members>
         <members>ActivityRecurrence2Exception</members>
         <members>AgentWork</members>
-        <members>AiEvaluation</members>
-        <members>AiPromptBuilderGenResult</members>
         <members>ApptBundleConfig</members>
         <members>ApptBundlePolicy</members>
         <members>Asset</members>

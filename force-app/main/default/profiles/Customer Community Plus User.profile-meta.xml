@@ -11,6 +11,18 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>ATAKProjectService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKProjectWrapper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKProjectWrapperTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AddressSearchService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -20,6 +32,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ExportRecordsController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FieldServiceTestData</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -36,6 +52,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>MaintenancePlanService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MaintenancePlanServiceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -95,10 +115,35 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ServiceResourceHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WorkOrderLocationQueueable</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WorkOrderScheduler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WorkOrderSchedulerBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WorkOrderSchedulerController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>WorkOrderTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>false</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Project__c.ATAK_Creation_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>ATAK_Project__c.Cost_centre_Atak_Id__c</field>
@@ -302,6 +347,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Asset.Contract_Line_Item__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Default_Duration_in_Minutes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.LMRA__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.LastSuggestedMaintenanceDate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -671,7 +731,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>MaintenanceAsset.Default_Duration_in_Minutes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>MaintenanceAsset.LastSuggestedMaintenanceDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>MaintenanceAsset.Service_Territory__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Operator_Created_Event__e.User_Id__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1166,6 +1241,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ServiceTerritory.Main_Responsible_Atak_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ServiceTerritory.Main_Responsible__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1226,6 +1306,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>User.Create_Field_Service_Resource__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.End_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.Interim_Office__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.Start_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.Collected_Items__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1247,6 +1347,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.FSL__VisitingHours__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.LMRA_Done__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1309,6 +1414,11 @@
         <field>WorkType.FSL__Exact_Appointments__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Work_Order_Creation_Event__e.Maintenance_Plan_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <flowAccesses>
         <enabled>false</enabled>
         <flow>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</flow>
@@ -1328,6 +1438,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Operator_Created_Event_e_Create_Service_Resource</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -1355,7 +1469,23 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>User_After_Create_RecordTrigered_Create_Service_Resource</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>User_After_Update_RecordTrigered_Create_Service_Resource</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Check_In</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Check_Out</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

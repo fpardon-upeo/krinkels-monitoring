@@ -21,6 +21,119 @@ public class RRuleAdjuster {
         this.originalStartDate = startDate;
     }
 
+    /**
+    * Calculates the number of occurrences between start and end dates based on the RRULE
+    * @param startDate The start date to begin counting from
+    * @param endDate The end date to stop counting at (inclusive)
+    * @param rrule The recurrence rule in RRULE format
+    * @return The number of occurrences that fall within the date range
+    */
+    public Integer calculateInstanceCount(DateTime startDate, DateTime endDate, String rrule) {
+        // Validate inputs
+        if (startDate == null || endDate == null || String.isEmpty(rrule)) {
+            return 0;
+        }
+        if (startDate > endDate) {
+            return 0;
+        }
+
+        // Parse the RRULE
+        Map<String, String> ruleParams = parseRRule(rrule);
+        String freq = ruleParams.get('FREQ');
+        Integer interval = Integer.valueOf(ruleParams.get('INTERVAL'));
+
+        // Handle UNTIL constraint
+        if (ruleParams.containsKey('UNTIL')) {
+            try {
+                DateTime untilDate = parseUntilDate(ruleParams.get('UNTIL'));
+                if (untilDate < endDate) {
+                    endDate = untilDate;
+                }
+            } catch (Exception e) {
+                System.debug('Error parsing UNTIL date: ' + e.getMessage());
+            }
+        }
+
+        // Calculate instances based on frequency
+        Integer instances = 0;
+
+        // Get total milliseconds between dates
+        Long startMillis = startDate.getTime();
+        Long endMillis = endDate.getTime();
+        Long totalMillis = endMillis - startMillis;
+
+        if (freq == 'DAILY') {
+            // For daily frequency, calculate number of days and divide by interval
+            Long totalDays = totalMillis / (1000 * 60 * 60 * 24);
+            instances = ((Integer)totalDays / interval) + 1; // +1 to include start date
+        }
+        else if (freq == 'WEEKLY') {
+            // For weekly frequency
+            Long totalWeeks = totalMillis / (1000 * 60 * 60 * 24 * 7);
+            instances = ((Integer)totalWeeks / interval) + 1;
+
+            // If BYDAY is specified, adjust for specific days
+            if (ruleParams.containsKey('BYDAY')) {
+                String byday = ruleParams.get('BYDAY');
+                List<String> days = byday.split(',');
+                instances *= days.size(); // Multiply by number of days per week
+            }
+        }
+        else if (freq == 'MONTHLY') {
+            // Calculate full months between dates
+            Integer monthsDiff = (endDate.year() * 12 + endDate.month()) -
+                    (startDate.year() * 12 + startDate.month());
+            instances = (monthsDiff / interval) + 1;
+
+            // Adjust if we're past the day of month in the end date
+            if (endDate.day() < startDate.day()) {
+                instances--;
+            }
+        }
+        else if (freq == 'YEARLY') {
+            Integer yearsDiff = endDate.year() - startDate.year();
+            instances = (yearsDiff / interval) + 1;
+
+            // Adjust if we haven't reached the anniversary date yet
+            if (endDate.month() < startDate.month() ||
+                    (endDate.month() == startDate.month() && endDate.day() < startDate.day())) {
+                instances--;
+            }
+        }
+
+        // Apply COUNT constraint if it exists
+        if (ruleParams.containsKey('COUNT')) {
+            Integer maxCount = Integer.valueOf(ruleParams.get('COUNT'));
+            instances = Math.min(instances, maxCount);
+        }
+
+        // Ensure we don't return negative counts
+        return Math.max(0, instances);
+    }
+
+    /**
+ * Parses the UNTIL date from RRULE format to DateTime
+ * @param untilStr The UNTIL date string from RRULE (e.g., '20240531T235959Z')
+ * @return DateTime representation of the UNTIL date
+ */
+    private DateTime parseUntilDate(String untilStr) {
+        // Format: YYYYMMDD[T]HHMMSS[Z]
+        Integer year = Integer.valueOf(untilStr.substring(0, 4));
+        Integer month = Integer.valueOf(untilStr.substring(4, 6));
+        Integer day = Integer.valueOf(untilStr.substring(6, 8));
+
+        Integer hour = 0, minute = 0, second = 0;
+        if (untilStr.length() > 8) {
+            hour = Integer.valueOf(untilStr.substring(9, 11));
+            minute = Integer.valueOf(untilStr.substring(11, 13));
+            second = Integer.valueOf(untilStr.substring(13, 15));
+        }
+
+        return DateTime.newInstanceGmt(year, month, day, hour, minute, second);
+    }
+
+
+
     public RRuleResult calculateAdjustment(DateTime originalInstance, DateTime newDate) {
         System.debug('Original Instance: ' + originalInstance);
         System.debug('New Date: ' + newDate);
@@ -145,10 +258,50 @@ public class RRuleAdjuster {
         return dt;
     }
 
+    /**
+     *@description: Enhanced meetsCriteria method to properly check all RRULE constraints
+     * @param dt The date to check
+     * @param params The RRULE parameters
+     * @return True if the date meets all RRULE criteria, false otherwise
+    **/
     private Boolean meetsCriteria(DateTime dt, Map<String, String> params) {
-        // Implement criteria checking based on BYMONTHDAY, BYDAY, etc.
-        // This would need to check if the date matches all the rule criteria
-        return true; // Placeholder implementation
+        // Check BYMONTHDAY
+        if (params.containsKey('BYMONTHDAY')) {
+            Integer monthDay = Integer.valueOf(params.get('BYMONTHDAY'));
+            if (dt.day() != monthDay) {
+                return false;
+            }
+        }
+
+        // Check BYMONTH
+        if (params.containsKey('BYMONTH')) {
+            Integer month = Integer.valueOf(params.get('BYMONTH'));
+            if (dt.month() != month) {
+                return false;
+            }
+        }
+
+        // Check BYDAY
+        if (params.containsKey('BYDAY')) {
+            String byday = params.get('BYDAY');
+            String dayCode = getDayOfWeekCode(dt);
+
+            // Handle cases like '1MO' (first Monday) vs just 'MO'
+            if (byday.length() > 2) {
+                Integer weekNum = Integer.valueOf(byday.substring(0, 1));
+                String dayPart = byday.substring(1);
+
+                // Calculate which week of the month this date falls on
+                Integer currentWeek = ((dt.day() - 1) / 7) + 1;
+
+                return dayPart == dayCode && currentWeek == weekNum;
+            } else {
+                // Simple day of week match
+                return byday == dayCode;
+            }
+        }
+
+        return true;
     }
 
     private Integer getDayOfWeek(DateTime dt) {

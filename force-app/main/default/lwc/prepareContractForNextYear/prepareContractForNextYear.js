@@ -2,16 +2,35 @@
  * Created by Frederik on 10/25/2024.
  */
 
-import {LightningElement} from 'lwc';
+import {LightningElement, wire} from 'lwc';
 import LightningConfirm from 'lightning/confirm';
 import { CloseActionScreenEvent } from 'lightning/actions';
+import prepareForNextYear from "@salesforce/apex/ServiceBuilderController.prepareContractForNextYear";
+import {CurrentPageReference} from 'lightning/navigation';
+
+
 
 
 
 export default class PrepareContractForNextYear extends LightningElement {
+    recordId;
     connectedCallback() {
-        this.openConfirm();
     }
+
+    @wire(CurrentPageReference)
+    getStateParameters(currentPageReference) {
+        if (currentPageReference) {
+            this.recordId = currentPageReference.state.recordId;
+        }
+    }
+
+    renderedCallback() {
+        if(this.recordId) {
+            console.log('recordId', this.recordId);
+            this.openConfirm();
+        }
+    }
+
 
     async openConfirm() {
         const result = await LightningConfirm.open({
@@ -19,6 +38,13 @@ export default class PrepareContractForNextYear extends LightningElement {
             variant: 'headerless'
         }).then((result) => {
             console.log('result', result);
+            if(result === true) {
+                prepareForNextYear({contractId: this.recordId}).then((result) => {
+                    console.log('result', result);
+                }).catch((error) => {
+                    console.error('error', error);
+                });
+            }
             this.dispatchEvent(new CloseActionScreenEvent());
         }).catch((error) => {
             console.error('error', error);

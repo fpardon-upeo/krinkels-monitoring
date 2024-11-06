@@ -19,7 +19,7 @@ public with sharing class MaintenancePlanService {
             upsertLocations(uniqueLocations);
 
             List<Asset> assets = createAssets(serviceContract, serviceLines, uniqueLocations);
-            upsertAssets(assets);
+            assets = upsertAssets(assets);
 
             List<Asset_Financial_Account__c> assetFinCustomers = createAssetFinCustomers(serviceContract, serviceLines);
             insertAssetAccounts(assetFinCustomers);
@@ -62,7 +62,7 @@ public with sharing class MaintenancePlanService {
         return [SELECT Id, StartDate, EndDate, Recurrence_Pattern__c, Project_Code__c,
                 Product2.Name, Product2.Family, Product2Id, ServiceContract.Account.Name,
                 Location__City__s, Location__Street__s, Location__PostalCode__s, Location__CountryCode__s,
-                Planning_Type__c
+                Planning_Type__c, Estimated_Duration__c, LMRA__c, ServiceContract.Priority__c
         FROM ContractLineItem WHERE ServiceContractId = :serviceContractId];
     }
 
@@ -168,6 +168,9 @@ public with sharing class MaintenancePlanService {
             asset.City = line.Location__City__s;
             asset.PostalCode = line.Location__PostalCode__s;
             asset.Country = line.Location__CountryCode__s;
+            asset.LMRA__c = line.LMRA__c;
+            asset.Default_Duration_in_Minutes__c = line.Estimated_Duration__c;
+            asset.LastSuggestedMaintenanceDate__c = line.EndDate;
 
             if(projectMap.containsKey(line.Project_Code__c)){
                 asset.ATAK_Project__c = projectMap.get(line.Project_Code__c).Id;
@@ -230,17 +233,21 @@ public with sharing class MaintenancePlanService {
      * Upsert asset records into Salesforce.
      * @param assets The list of assets.
      */
-    private static void upsertAssets(List<Asset> assets) {
+    private static List<Asset> upsertAssets(List<Asset> assets) {
         Schema.SObjectField sId = Asset.Fields.Unique_Id__c;
         Database.UpsertResult[] assetUpsertResults = Database.upsert(assets, sId, false);
 
-        for (Database.UpsertResult result : assetUpsertResults) {
-            if (!result.isSuccess()) {
-                for (Database.Error error : result.getErrors()) {
+        // Loop throught the upsert results and update the assets with the Ids
+        for (Integer i = 0; i < assetUpsertResults.size(); i++) {
+            if (assetUpsertResults[i].isSuccess()) {
+                assets[i].Id = assetUpsertResults[i].getId();
+            } else {
+                for (Database.Error error : assetUpsertResults[i].getErrors()) {
                     System.debug('Error upserting assets: ' + error.getMessage());
                 }
             }
         }
+        return assets;
     }
 
     /**
@@ -262,7 +269,7 @@ public with sharing class MaintenancePlanService {
                     serviceItem.Service__c = asset.Id;
                     serviceItem.Service_Package__c = product.Id;
                     serviceItem.Name = product.Name;
-                    serviceItem.Service_Item_Key__c = product.Id + '-' + asset.Id;
+                    serviceItem.Service_Item_Key__c = product.Id + '-' + asset.Id + '-' + asset.Recurrence_Pattern__c;
                     serviceItems.add(serviceItem);
                 }
             }
@@ -351,6 +358,8 @@ public with sharing class MaintenancePlanService {
             maintenanceAsset.AssetId = asset.Id;
             maintenanceAsset.NextSuggestedMaintenanceDate = asset.InstallDate;
             maintenanceAsset.WorkTypeId = assetMap.get(asset.Id);
+            maintenanceAsset.LastSuggestedMaintenanceDate__c = asset.LastSuggestedMaintenanceDate__c;
+            maintenanceAsset.Default_Duration_in_Minutes__c = asset.Default_Duration_in_Minutes__c;
             maintenanceAssets.add(maintenanceAsset);
         }
         return maintenanceAssets;
@@ -438,8 +447,8 @@ public with sharing class MaintenancePlanService {
 
         Map<String, ATAK_Project__c> projectMap = new Map<String, ATAK_Project__c>();
 
-        for(ATAK_Project__c project : [SELECT Id, Name, Subproject_Name__c, Service_Territory__c FROM ATAK_Project__c WHERE Subproject_Name__c IN :uniqueCodes]){
-            projectMap.put(project.Subproject_Name__c, project);
+        for(ATAK_Project__c project : [SELECT Id, Name, Subproject_Name__c, SubProject_ATAK__c, Service_Territory__c FROM ATAK_Project__c WHERE SubProject_ATAK__c IN :uniqueCodes]){
+            projectMap.put(project.SubProject_ATAK__c, project);
         }
         return projectMap;
     }

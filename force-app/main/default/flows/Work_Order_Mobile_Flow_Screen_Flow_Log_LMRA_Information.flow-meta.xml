@@ -16,6 +16,56 @@
             <stringValue>Limited</stringValue>
         </value>
     </choices>
+    <decisions>
+        <name>Full_or_Limited_LMRA</name>
+        <label>Full or Limited LMRA ?</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Limited_LMRA_Information</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Limited</defaultConnectorLabel>
+        <rules>
+            <name>Full_Full_or_Limited_LMRA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>workOrderRecord.LMRA__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Full_LMRA_Information</targetReference>
+            </connector>
+            <label>Full</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>LMRA_Already_Done</name>
+        <label>LMRA Already Done ?</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>LMRA_Done_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>workOrderRecord.LMRA_Done__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Full_or_Limited_LMRA</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information</label>
@@ -38,14 +88,130 @@
         </value>
     </processMetadataValues>
     <processType>FieldServiceMobile</processType>
+    <recordCreates>
+        <name>Create_Full_LMRA</name>
+        <label>Create Full LMRA</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <connector>
+            <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Corrective_Measures__c</field>
+            <value>
+                <elementReference>Corrective_Measures</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date__c</field>
+            <value>
+                <elementReference>Date_Full</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EPC_EPI_CBM_PBM__c</field>
+            <value>
+                <elementReference>EPC_EPI_CBM_PBM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LMRA_Type__c</field>
+            <value>
+                <stringValue>Full</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Lead__c</field>
+            <value>
+                <elementReference>Project_Lead_Full</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Surrounding_Risks__c</field>
+            <value>
+                <elementReference>Surrounding_Risks</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Tasks_of_the_Day__c</field>
+            <value>
+                <elementReference>Tasks_of_the_Day</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Work_Order__c</field>
+            <value>
+                <elementReference>workOrderRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>LMRA__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Limited_LMRA</name>
+        <label>Create Limited LMRA</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Date__c</field>
+            <value>
+                <elementReference>Date_Lmited</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LMRA_Type__c</field>
+            <value>
+                <stringValue>Limited</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Lead__c</field>
+            <value>
+                <elementReference>Project_Lead</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Work_Order__c</field>
+            <value>
+                <elementReference>workOrderRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>LMRA__c</object>
+    </recordCreates>
     <recordLookups>
         <name>Get_Related_Work_Order</name>
         <label>Get Related Work Order</label>
-        <locationX>176</locationX>
+        <locationX>380</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LMRA_Already_Done</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkStepRecord.WorkOrderId</elementReference>
+            </value>
+        </filters>
+        <object>WorkOrder</object>
+        <outputReference>workOrderRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>WorkOrderNumber</queriedFields>
+        <queriedFields>LMRA__c</queriedFields>
+        <queriedFields>LMRA_Done__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Work_Step_Information</name>
+        <label>Get Work Step Information</label>
+        <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>LMRA_Information</targetReference>
+            <targetReference>Get_Related_Work_Order</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -55,19 +221,121 @@
                 <elementReference>Id</elementReference>
             </value>
         </filters>
-        <object>WorkOrder</object>
-        <outputReference>workOrderRecord</outputReference>
+        <object>WorkStep</object>
+        <outputReference>WorkStepRecord</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>WorkOrderNumber</queriedFields>
+        <queriedFields>WorkOrderId</queriedFields>
     </recordLookups>
+    <recordUpdates>
+        <name>Confirmed_LMRA_Done_at_WO_level</name>
+        <label>Confirmed LMRA Done at WO level</label>
+        <locationX>182</locationX>
+        <locationY>974</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>workOrderRecord.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>LMRA_Done__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordUpdates>
     <screens>
-        <name>Equipment_Information</name>
-        <label>Equipment Information</label>
-        <locationX>176</locationX>
+        <name>Full_LMRA_Information</name>
+        <label>Full LMRA Information</label>
+        <locationX>50</locationX>
         <locationY>566</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Full_LMRA_Information_Part_Two</targetReference>
+        </connector>
+        <fields>
+            <name>FullLMRATitle</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Full LMRA&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Work_Order_Full</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>workOrderRecord.WorkOrderNumber</elementReference>
+            </defaultValue>
+            <fieldText>Work Order</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isDisabled>
+                <booleanValue>true</booleanValue>
+            </isDisabled>
+            <isReadOnly>
+                <booleanValue>true</booleanValue>
+            </isReadOnly>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Date_Full</name>
+            <dataType>Date</dataType>
+            <fieldText>Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Project_Lead_Full</name>
+            <dataType>String</dataType>
+            <fieldText>Project Lead</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Full_LMRA_Information_Part_Two</name>
+        <label>Full LMRA Information - Part Two</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Full_LMRA</targetReference>
+        </connector>
+        <fields>
+            <name>FullLMRATitleTwo</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Full LMRA&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Tasks_of_the_Day</name>
+            <fieldText>Tasks of the Day</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Surrounding_Risks</name>
+            <fieldText>Surrounding Risks</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Corrective_Measures</name>
+            <fieldText>Corrective Measures</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
         <fields>
             <name>EPC_EPI_CBM_PBM</name>
             <fieldText>EPC - EPI/CBM - PBM</fieldText>
@@ -79,32 +347,45 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>LMRA_Information</name>
-        <label>LMRA Information</label>
-        <locationX>176</locationX>
-        <locationY>242</locationY>
+        <name>Limited_LMRA_Information</name>
+        <label>Limited LMRA Information</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Task_Information</targetReference>
+            <targetReference>Create_Limited_LMRA</targetReference>
         </connector>
         <fields>
-            <name>Work_Order_Number</name>
+            <name>LimitedLMRATitle</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Limited LMRA&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>LmitedLMRAMessage</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(231, 24, 24); font-size: 14px;&quot;&gt;Don&apos;t forget your LMRA, avoid accidents!&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Work_Order</name>
             <dataType>String</dataType>
             <defaultValue>
                 <elementReference>workOrderRecord.WorkOrderNumber</elementReference>
             </defaultValue>
-            <fieldText>Work Order Number</fieldText>
+            <fieldText>Work Order</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isDisabled>
                 <booleanValue>true</booleanValue>
             </isDisabled>
+            <isReadOnly>
+                <booleanValue>true</booleanValue>
+            </isReadOnly>
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>Date</name>
+            <name>Date_Lmited</name>
             <dataType>Date</dataType>
             <fieldText>Date</fieldText>
             <fieldType>InputField</fieldType>
@@ -112,12 +393,10 @@
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>LMRA_Type</name>
-            <choiceReferences>Limited</choiceReferences>
-            <choiceReferences>Full</choiceReferences>
+            <name>Project_Lead</name>
             <dataType>String</dataType>
-            <fieldText>LMRA Type</fieldText>
-            <fieldType>DropdownBox</fieldType>
+            <fieldText>Project Lead</fieldText>
+            <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
@@ -125,100 +404,30 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Risk_Information</name>
-        <label>Risk Information</label>
-        <locationX>176</locationX>
+        <name>LMRA_Done_Message</name>
+        <label>LMRA Done Message</label>
+        <locationX>578</locationX>
         <locationY>458</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Equipment_Information</targetReference>
-        </connector>
         <fields>
-            <name>Surrounding_Risks</name>
-            <fieldText>Surrounding Risks</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
+            <name>LMRADoneMessage</name>
+            <fieldText>&lt;p&gt;LMRA already done for this work order at this location. You can continue with your tasks.&amp;nbsp;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
-        <fields>
-            <name>SurroundRisksPhoto</name>
-            <extensionName>forceContent:fileUpload</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>recordId</name>
-                <value>
-                    <elementReference>workOrderRecord.Id</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Surrounding Risks Photo</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Corrective_Measures</name>
-            <fieldText>Corrective Measures</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>CorrectiveMeasuresPhoto</name>
-            <extensionName>forceContent:fileUpload</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Corrective Measures Photo</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>recordId</name>
-                <value>
-                    <elementReference>workOrderRecord.Id</elementReference>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>Task_Information</name>
-        <label>Task Information</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Risk_Information</targetReference>
-        </connector>
-        <fields>
-            <name>Tasks_of_the_Day</name>
-            <fieldText>Tasks of the Day</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Related_Work_Order</targetReference>
+            <targetReference>Get_Work_Step_Information</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>Id</name>
         <dataType>String</dataType>
@@ -233,5 +442,13 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>WorkOrder</objectType>
+    </variables>
+    <variables>
+        <name>WorkStepRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkStep</objectType>
     </variables>
 </Flow>

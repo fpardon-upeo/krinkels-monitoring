@@ -7,7 +7,7 @@ public with sharing class ReadyForValidation {
       WHERE Id = :recordId
     ];
 
-    //Should it be done only if status if = Draft or even if it in not?
+    //? Should it be done only if status if = Draft or even if it in not?
     if (sc.ApprovalStatus == 'Draft') {
       try {
         sc.ApprovalStatus = 'In Approval Process';

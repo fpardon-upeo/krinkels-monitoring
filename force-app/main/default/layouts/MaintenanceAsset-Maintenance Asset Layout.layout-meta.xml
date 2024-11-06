@@ -18,6 +18,14 @@
                 <behavior>Edit</behavior>
                 <field>ContractLineItemId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Default_Duration_in_Minutes__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LastSuggestedMaintenanceDate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

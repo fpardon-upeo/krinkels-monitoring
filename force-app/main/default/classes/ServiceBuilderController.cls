@@ -131,63 +131,74 @@ public without sharing class ServiceBuilderController {
   public static ContractLineItem saveContractLine(
     ContractLineItem contractLine
   ) {
-    //Get the PricebookEntryId
-    PricebookEntry pricebookEntry = [
-      SELECT Id
-      FROM PricebookEntry
-      WHERE Product2Id = :contractLine.Product2Id
-      LIMIT 1
-    ];
+    try {
+      // Query for active PricebookEntry
+      PricebookEntry pricebookEntry = [
+        SELECT Id
+        FROM PricebookEntry
+        WHERE Product2Id = :contractLine.Product2Id AND IsActive = TRUE
+        LIMIT 1
+      ];
 
-    if (contractLine.Id == null) {
+      // Update PricebookEntryId for both new and existing records
       contractLine.PricebookEntryId = pricebookEntry.Id;
-      insert contractLine;
-    } else {
-      update contractLine;
-    }
+      contractLine.UnitPrice = 0; // Set to 0 to recalculate based on PricebookEntry
 
-    // Return the same fields as getContractLines using a single query
-    return [
-      SELECT
-        Id,
-        LineItemNumber,
-        ServiceContract.StartDate,
-        ServiceContract.EndDate,
-        ServiceContract.Location_Type__c,
-        Recurrence_Pattern__c,
-        ServiceContractId,
-        Product2Id,
-        Product2.Name,
-        AssetId,
-        Asset.Name,
-        StartDate,
-        EndDate,
-        PricebookEntryId,
-        Quantity,
-        UnitPrice,
-        ListPrice,
-        TotalPrice,
-        Status,
-        Planning_Type__c,
-        Location__Street__s,
-        Location__City__s,
-        Location__PostalCode__s,
-        Location__StateCode__s,
-        Location__CountryCode__s,
-        Geolocation__Latitude__s,
-        Geolocation__Longitude__s,
-        Project_Code__c,
-        (
-          SELECT
-            Id,
-            Contract_Line_Item__c,
-            Financial_Customer__c,
-            Financial_Customer__r.Name
-          FROM Contract_Line_Financial_Accounts__r
-        )
-      FROM ContractLineItem
-      WHERE Id = :contractLine.Id
-    ];
+      if (contractLine.Id == null) {
+        insert contractLine;
+      } else {
+        update contractLine;
+      }
+
+      // Return the same fields as getContractLines using a single query
+      return [
+        SELECT
+          Id,
+          LineItemNumber,
+          ServiceContract.StartDate,
+          ServiceContract.EndDate,
+          ServiceContract.Location_Type__c,
+          Recurrence_Pattern__c,
+          ServiceContractId,
+          Product2Id,
+          Product2.Name,
+          AssetId,
+          Asset.Name,
+          StartDate,
+          EndDate,
+          PricebookEntryId,
+          Estimated_Duration__c,
+          Calculated_Duration__c,
+          Quantity,
+          UnitPrice,
+          ListPrice,
+          TotalPrice,
+          Status,
+          Planning_Type__c,
+          Location__Street__s,
+          Location__City__s,
+          Location__PostalCode__s,
+          Location__StateCode__s,
+          Location__CountryCode__s,
+          Geolocation__Latitude__s,
+          Geolocation__Longitude__s,
+          Project_Code__c,
+          (
+            SELECT
+              Id,
+              Contract_Line_Item__c,
+              Financial_Customer__c,
+              Financial_Customer__r.Name
+            FROM Contract_Line_Financial_Accounts__r
+          )
+        FROM ContractLineItem
+        WHERE Id = :contractLine.Id
+      ];
+    } catch (Exception e) {
+      throw new AuraHandledException(
+        'Error saving contract line: ' + e.getMessage()
+      );
+    }
   }
 
   @AuraEnabled
@@ -249,5 +260,49 @@ public without sharing class ServiceBuilderController {
     } catch (Exception e) {
       throw new AuraHandledException(e.getMessage());
     }
+  }
+
+  @AuraEnabled
+  public static Boolean prepareContractForNextYear(String contractId) {
+    List<ContractLineItem> contractLineItems = [
+      SELECT Id, StartDate, EndDate, Recurrence_Pattern__c
+      FROM ContractLineItem
+      WHERE ServiceContractId = :contractId
+    ];
+
+    for (ContractLineItem contractLineItem : contractLineItems) {
+      Date startDate = contractLineItem.StartDate.addYears(1);
+      Date endDate = contractLineItem.EndDate.addYears(1);
+      String recurrencePattern = contractLineItem.Recurrence_Pattern__c;
+
+      //For the recurrence pattern, we just need to check if it contains UNITL= and then we can just add 1 year to the date
+      //FREQ=WEEKLY;INTERVAL=1;BYDAY=MO;UNTIL=20241218T000000Z -> FREQ=WEEKLY;INTERVAL=1;BYDAY=MO;UNTIL=20251218T000000Z
+      //All we update is the first 4 characters of the date
+      System.debug('recurrencePattern: ' + recurrencePattern);
+      if (recurrencePattern != null && recurrencePattern.contains('UNTIL=')) {
+        recurrencePattern =
+          recurrencePattern.substring(0, 4) +
+          String.valueOf(startDate.year()) +
+          recurrencePattern.substring(8);
+        contractLineItem.Recurrence_Pattern__c = recurrencePattern;
+      }
+
+      contractLineItem.StartDate = startDate;
+      contractLineItem.EndDate = endDate;
+    }
+
+    try {
+      update contractLineItems;
+      firePlatformEvent(contractId);
+      return true;
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
+  public static void firePlatformEvent(String contractId) {
+    //Create a new Platform Event
+    Contract_Event__e event = new Contract_Event__e(Record_Id__c = contractId);
+    EventBus.publish(event);
   }
 }

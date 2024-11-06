@@ -47,7 +47,10 @@
 
           <lightning-input-field
             field-name="Product2Id"
+            value={product2Id}
+            disabled
           ></lightning-input-field>
+
           <lightning-input-field field-name="StartDate"></lightning-input-field>
           <lightning-input-field field-name="EndDate"></lightning-input-field>
           <lightning-input-field
@@ -55,6 +58,14 @@
           ></lightning-input-field>
 
           <lightning-input-field field-name="LMRA__c"></lightning-input-field>
+
+          <lightning-input-field
+            field-name="Estimated_Duration__c"
+          ></lightning-input-field>
+
+          <lightning-input-field
+            field-name="Calculated_Duration__c"
+          ></lightning-input-field>
 
           <template if:true={locationColumns.isAddress}>
             <lightning-input-field

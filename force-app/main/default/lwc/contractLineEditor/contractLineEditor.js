@@ -19,6 +19,7 @@ export default class ContractLineEditor extends LightningElement {
   isLoading = false;
 
   @track contractLinesClone;
+  @track product2Id;
 
   finCustomerFilter = {
     criteria: [
@@ -31,6 +32,13 @@ export default class ContractLineEditor extends LightningElement {
   };
 
   connectedCallback() {
+    this.contractLines.forEach((line) => {
+      if (line.Id === this.selectedLineItemId) {
+        this.product2Id = line.Product2Id;
+        console.log("Product Id:", this.product2Id);
+      }
+    });
+
     if (this.contractLines) {
       this.contractLinesClone = JSON.parse(JSON.stringify(this.contractLines));
     }
@@ -220,6 +228,10 @@ export default class ContractLineEditor extends LightningElement {
       event.detail.fields.Geolocation__Latitude__s.value;
     updatedContractLines[index].Geolocation__Longitude__s =
       event.detail.fields.Geolocation__Longitude__s.value;
+    updatedContractLines[index].Calculated_Duration__c =
+      event.detail.fields.Calculated_Duration__c.value;
+    updatedContractLines[index].Estimated_Duration__c =
+      event.detail.fields.Estimated_Duration__c.value;
 
     this.handleToast("Success", "Record has been saved", "success");
 
