@@ -1,86 +1,43 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-classes/ATAKProjectService.cls,A,ApexClass ATAKProjectService,,,log,📰
-classes/ATAKProjectService.cls-meta.xml,A,ApexClass ATAKProjectService,,,log,📰
-classes/ATAKProjectWrapper.cls,A,ApexClass ATAKProjectWrapper,,,log,📰
-classes/ATAKProjectWrapper.cls-meta.xml,A,ApexClass ATAKProjectWrapper,,,log,📰
-classes/ATAKProjectWrapperTest.cls,A,ApexClass ATAKProjectWrapperTest,,,log,📰
-classes/ATAKProjectWrapperTest.cls-meta.xml,A,ApexClass ATAKProjectWrapperTest,,,log,📰
-classes/FieldServiceTestData.cls,A,ApexClass FieldServiceTestData,,,log,📰
-classes/FieldServiceTestData.cls-meta.xml,A,ApexClass FieldServiceTestData,,,log,📰
+applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
+classes/GanttRoundPinAction.cls," ",ApexClass GanttRoundPinAction,M,,log,📰
 classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
-classes/MaintenancePlanServiceTest.cls,A,ApexClass MaintenancePlanServiceTest,,,log,📰
-classes/MaintenancePlanServiceTest.cls-meta.xml,A,ApexClass MaintenancePlanServiceTest,,,log,📰
-classes/ProjectRestResource.cls," ",ApexClass ProjectRestResource,M,,log,📰
 classes/RRuleAdjuster.cls," ",ApexClass RRuleAdjuster,M,,log,📰
-classes/ReadyForValidation.cls," ",ApexClass ReadyForValidation,M,,log,📰
+classes/RRuleDescriptionGenerator.cls,A,ApexClass RRuleDescriptionGenerator,,,log,📰
+classes/RRuleDescriptionGenerator.cls-meta.xml,A,ApexClass RRuleDescriptionGenerator,,,log,📰
+classes/ServiceAppointmentRescheduler.cls," ",ApexClass ServiceAppointmentRescheduler,M,,log,📰
 classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
-classes/ServiceContractHandler.cls," ",ApexClass ServiceContractHandler,M,,log,📰
-classes/ServiceResourceHandler.cls,A,ApexClass ServiceResourceHandler,,,log,📰
-classes/ServiceResourceHandler.cls-meta.xml,A,ApexClass ServiceResourceHandler,,,log,📰
-classes/WorkOrderLocationQueueable.cls,A,ApexClass WorkOrderLocationQueueable,,,log,📰
-classes/WorkOrderLocationQueueable.cls-meta.xml,A,ApexClass WorkOrderLocationQueueable,,,log,📰
-classes/WorkOrderScheduler.cls,A,ApexClass WorkOrderScheduler,,,log,📰
-classes/WorkOrderScheduler.cls-meta.xml,A,ApexClass WorkOrderScheduler,,,log,📰
-classes/WorkOrderSchedulerBatch.cls,A,ApexClass WorkOrderSchedulerBatch,,,log,📰
-classes/WorkOrderSchedulerBatch.cls-meta.xml,A,ApexClass WorkOrderSchedulerBatch,,,log,📰
-classes/WorkOrderSchedulerController.cls,A,ApexClass WorkOrderSchedulerController,,,log,📰
-classes/WorkOrderSchedulerController.cls-meta.xml,A,ApexClass WorkOrderSchedulerController,,,log,📰
+classes/WorkOrderLocationBatch.cls,A,ApexClass WorkOrderLocationBatch,,,log,📰
+classes/WorkOrderLocationBatch.cls-meta.xml,A,ApexClass WorkOrderLocationBatch,,,log,📰
+classes/WorkOrderSchedulerBatch.cls," ",ApexClass WorkOrderSchedulerBatch,M,,log,📰
+classes/WorkOrderSchedulerBatch.cls-meta.xml," ",ApexClass WorkOrderSchedulerBatch,M,,log,📰
 classes/WorkOrderTriggerHandler.cls," ",ApexClass WorkOrderTriggerHandler,M,,log,📰
 classes/WorkOrderTriggerHandler.cls-meta.xml," ",ApexClass WorkOrderTriggerHandler,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
 customMetadata/Export_Configuration.ServiceContract.md-meta.xml," ",CustomMetadata Export_Configuration.ServiceContract,M,,log,📰
-flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
+dashboards/Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn.dashboard-meta.xml,A,Dashboard Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn,,,log,📰
+flexipages/Home_Page_Default.flexipage-meta.xml,A,FlexiPage Home_Page_Default,,,log,📰
 flexipages/Maintenance_Plan_Record_Page.flexipage-meta.xml," ",FlexiPage Maintenance_Plan_Record_Page,M,,log,📰
 flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
-flowDefinitions/Operator_Created_Event_e_Create_Service_Resource.flowDefinition-meta.xml,A,FlowDefinition Operator_Created_Event_e_Create_Service_Resource,,,log,📰
-flowDefinitions/User_After_Create_RecordTrigered_Create_Service_Resource.flowDefinition-meta.xml,A,FlowDefinition User_After_Create_RecordTrigered_Create_Service_Resource,,,log,📰
-flowDefinitions/User_After_Update_RecordTrigered_Create_Service_Resource.flowDefinition-meta.xml,A,FlowDefinition User_After_Update_RecordTrigered_Create_Service_Resource,,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Check_In.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Check_In,,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Check_Out.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Check_Out,,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
-flows/Operator_Created_Event_e_Create_Service_Resource.flow-meta.xml,A,Flow Operator_Created_Event_e_Create_Service_Resource,,,log,📰
-flows/User_After_Create_RecordTrigered_Create_Service_Resource.flow-meta.xml,A,Flow User_After_Create_RecordTrigered_Create_Service_Resource,,,log,📰
-flows/User_After_Update_RecordTrigered_Create_Service_Resource.flow-meta.xml,A,Flow User_After_Update_RecordTrigered_Create_Service_Resource,,,log,📰
-flows/Work_Order_Mobile_Flow_Check_In.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Check_In,,,log,📰
-flows/Work_Order_Mobile_Flow_Check_Out.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Check_Out,,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
-layouts/ATAK_Project__c-ATAK Project Layout.layout-meta.xml," ",Layout ATAK_Project__c-ATAK Project Layout,M,,log,📰
+groups/Bastogne.group-meta.xml,A,Group Bastogne,,,log,📰
+groups/Mons.group-meta.xml,A,Group Mons,,,log,📰
+groups/Namur.group-meta.xml,A,Group Namur,,,log,📰
+layouts/ApptBundleAggrPolicy-Appointment Bundle Aggregation Policy Layout.layout-meta.xml,A,Layout ApptBundleAggrPolicy-Appointment Bundle Aggregation Policy Layout,,,log,📰
+layouts/ApptBundlePolicySvcTerr-Appointment Bundle Policy Service Territory Layout.layout-meta.xml,A,Layout ApptBundlePolicySvcTerr-Appointment Bundle Policy Service Territory Layout,,,log,📰
+layouts/ApptBundleRestrictPolicy-Appointment Bundle Restriction Policy Layout.layout-meta.xml,A,Layout ApptBundleRestrictPolicy-Appointment Bundle Restriction Policy Layout,,,log,📰
 layouts/Asset-Asset Layout.layout-meta.xml," ",Layout Asset-Asset Layout,M,,log,📰
-layouts/LMRA__c-LMRA Layout.layout-meta.xml," ",Layout LMRA__c-LMRA Layout,M,,log,📰
 layouts/MaintenanceAsset-Maintenance Asset Layout.layout-meta.xml," ",Layout MaintenanceAsset-Maintenance Asset Layout,M,,log,📰
-layouts/ServiceTerritory-Service Territory Layout.layout-meta.xml," ",Layout ServiceTerritory-Service Territory Layout,M,,log,📰
-layouts/User-User Layout.layout-meta.xml," ",Layout User-User Layout,M,,log,📰
-layouts/UserAlt-User Profile Layout.layout-meta.xml," ",Layout UserAlt-User Profile Layout,M,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-lwc/contractLineEditor/contractLineEditor.html," ",LightningComponentBundle contractLineEditor/contractLineEditor.html,M,,log,📰
-lwc/contractLineEditor/contractLineEditor.js," ",LightningComponentBundle contractLineEditor/contractLineEditor.js,M,,log,📰
-lwc/prepareContractForNextYear/prepareContractForNextYear.js," ",LightningComponentBundle prepareContractForNextYear/prepareContractForNextYear.js,M,,log,📰
-lwc/recurrencePattern/recurrencePattern.html," ",LightningComponentBundle recurrencePattern/recurrencePattern.html,M,,log,📰
-lwc/scheduleWorkOrders/scheduleWorkOrders.html,A,LightningComponentBundle scheduleWorkOrders/scheduleWorkOrders.html,,,log,📰
-lwc/scheduleWorkOrders/scheduleWorkOrders.js,A,LightningComponentBundle scheduleWorkOrders/scheduleWorkOrders.js,,,log,📰
-lwc/scheduleWorkOrders/scheduleWorkOrders.js-meta.xml,A,LightningComponentBundle scheduleWorkOrders/scheduleWorkOrders.js-meta.xml,,,log,📰
-lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
-objects/ATAK_Project__c/fields/ATAK_Creation_Date__c.field-meta.xml,A,CustomField ATAK_Creation_Date__c,,,log,📰
-objects/ATAK_Project__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
-objects/Asset/fields/Default_Duration_in_Minutes__c.field-meta.xml,A,CustomField Default_Duration_in_Minutes__c,,,log,📰
-objects/Asset/fields/LMRA__c.field-meta.xml,A,CustomField LMRA__c,,,log,📰
-objects/Asset/fields/LastSuggestedMaintenanceDate__c.field-meta.xml,A,CustomField LastSuggestedMaintenanceDate__c,,,log,📰
-objects/LMRA__c/fields/Project_Lead__c.field-meta.xml," ",CustomField Project_Lead__c,M,,log,📰
-objects/MaintenanceAsset/fields/Default_Duration_in_Minutes__c.field-meta.xml,A,CustomField Default_Duration_in_Minutes__c,,,log,📰
-objects/MaintenanceAsset/fields/LastSuggestedMaintenanceDate__c.field-meta.xml,A,CustomField LastSuggestedMaintenanceDate__c,,,log,📰
-objects/Operator_Created_Event__e/Operator_Created_Event__e.object-meta.xml,A,CustomObject Operator_Created_Event__e/Operator_Created_Event__e,,,log,📰
-objects/Operator_Created_Event__e/fields/User_Id__c.field-meta.xml,A,CustomField User_Id__c,,,log,📰
-objects/ServiceTerritory/fields/Main_Responsible_Atak_Code__c.field-meta.xml,A,CustomField Main_Responsible_Atak_Code__c,,,log,📰
-objects/User/fields/ATAK_Code__c.field-meta.xml," ",CustomField ATAK_Code__c,M,,log,📰
-objects/User/fields/Create_Field_Service_Resource__c.field-meta.xml,A,CustomField Create_Field_Service_Resource__c,,,log,📰
-objects/User/fields/End_Date__c.field-meta.xml,A,CustomField End_Date__c,,,log,📰
-objects/User/fields/Interim_Office__c.field-meta.xml,A,CustomField Interim_Office__c,,,log,📰
-objects/User/fields/Start_Date__c.field-meta.xml,A,CustomField Start_Date__c,,,log,📰
-objects/WorkOrder/fields/LMRA_Done__c.field-meta.xml,A,CustomField LMRA_Done__c,,,log,📰
-objects/Work_Order_Creation_Event__e/Work_Order_Creation_Event__e.object-meta.xml,A,CustomObject Work_Order_Creation_Event__e/Work_Order_Creation_Event__e,,,log,📰
-objects/Work_Order_Creation_Event__e/fields/Maintenance_Plan_Id__c.field-meta.xml,A,CustomField Maintenance_Plan_Id__c,,,log,📰
-permissionsets/ATAK_Permissions.permissionset-meta.xml,A,PermissionSet ATAK_Permissions,,,log,📰
+layouts/MaintenancePlan-Maintenance Plan Layout.layout-meta.xml," ",Layout MaintenancePlan-Maintenance Plan Layout,M,,log,📰
+layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
+lwc/generateMaintenancePlan/generateMaintenancePlan.html," ",LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.html,M,,log,📰
+lwc/generateMaintenancePlan/generateMaintenancePlan.js," ",LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.js,M,,log,📰
+objects/Asset/fields/Recurrence_Text__c.field-meta.xml,A,CustomField Recurrence_Text__c,,,log,📰
+objects/ContractLineItem/fields/Planning_Type__c.field-meta.xml," ",CustomField Planning_Type__c,M,,log,📰
+objects/MaintenanceAsset/fields/Contract_Manager__c.field-meta.xml,A,CustomField Contract_Manager__c,,,log,📰
+objects/MaintenanceAsset/fields/Number_of_Work_Orders__c.field-meta.xml,A,CustomField Number_of_Work_Orders__c,,,log,📰
+objects/MaintenanceAsset/fields/Total_Minutes_of_Work__c.field-meta.xml,A,CustomField Total_Minutes_of_Work__c,,,log,📰
+objects/ServiceAppointment/fieldSets/FSL__Service_Appointment_Expanded.fieldSet-meta.xml," ",FieldSet FSL__Service_Appointment_Expanded,M,,log,📰
+objects/ServiceAppointment/fields/Recurrence__c.field-meta.xml,A,CustomField Recurrence__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -106,9 +63,11 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/MaintenancePlan.Create_Work_Orders.quickAction-meta.xml,A,QuickAction MaintenancePlan.Create_Work_Orders,,,log,📰
-settings/AgentforceForDevelopers.settings-meta.xml," ",Settings AgentforceForDevelopers,M,,log,📰
-triggers/ServiceResourceEvent.trigger,A,ApexTrigger ServiceResourceEvent,,,log,📰
-triggers/ServiceResourceEvent.trigger-meta.xml,A,ApexTrigger ServiceResourceEvent,,,log,📰
+reportTypes/Maintenance_Plans_with_Maintenance_Assets.reportType-meta.xml,A,ReportType Maintenance_Plans_with_Maintenance_Assets,,,log,📰
+reportTypes/Service_Appointments.reportType-meta.xml,A,ReportType Service_Appointments,,,log,📰
+reportTypes/Service_Appointments_with_Service_Resources.reportType-meta.xml," ",ReportType Service_Appointments_with_Service_Resources,M,,log,📰
+settings/Security.settings-meta.xml," ",Settings Security,M,,log,📰
+timeSheetTemplates/Default_Timesheet_Daily.timeSheetTemplate-meta.xml,A,TimeSheetTemplate Default_Timesheet_Daily,,,log,📰
+triggers/ContractLineItemTrigger.trigger," ",ApexTrigger ContractLineItemTrigger,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

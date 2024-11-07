@@ -1,12 +1,4 @@
-/**
-* Created by Frederik on 11/5/2024.
-* Description:
-* Change Log:
-* Dependencies:
-*/
-
 public without sharing class WorkOrderSchedulerBatch implements Database.Batchable<SObject>, Database.Stateful {
-
     private String maintenancePlanId;
     private MaintenancePlan mp;
 
@@ -15,19 +7,18 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
     }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        // Query the MaintenancePlan once and store it in the stateful variable
         this.mp = [SELECT Id, AccountId, Account.Name, GenerationTimeframe,
                 ServiceContractId, ServiceContract.Priority__c, MaintenanceWindowStartDays
         FROM MaintenancePlan
         WHERE Id = :maintenancePlanId];
 
-        // Return MaintenanceAssets query as QueryLocator
         return Database.getQueryLocator([
                 SELECT Id, AssetId, WorkTypeId, Asset.LMRA__c, Asset.AccountId,
                         Asset.Name, Asset.Street, Asset.City, Asset.PostalCode,
                         Asset.Country, NextSuggestedMaintenanceDate,
                         LastSuggestedMaintenanceDate__c, Default_Duration_in_Minutes__c,
-                        MaintenancePlanId,
+                        MaintenancePlanId, Asset.Service_Territory__c,
+                        Asset.Account.ShippingLatitude, Asset.Account.ShippingLongitude,
                 (SELECT Id, NextSuggestedMaintenanceDate, RecurrencePattern
                 FROM MaintenanceWorkRules)
                 FROM MaintenanceAsset
@@ -37,6 +28,7 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
 
     public void execute(Database.BatchableContext bc, List<MaintenanceAsset> scope) {
         List<WorkOrder> workOrders = new List<WorkOrder>();
+        Map<String, Id> locationToTerritoryMap = new Map<String, Id>();
 
         for(MaintenanceAsset mA : scope) {
             DateTime maFirstDate = mA.NextSuggestedMaintenanceDate;
@@ -60,8 +52,24 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
                     recurrencePattern
             );
 
-            System.debug('instanceCount: ' + instanceCount);
-            System.debug('newDates: ' + result.newDates);
+            // Get territory ID for this location
+            Id serviceTerritoryId = mA.Asset.Service_Territory__c;
+            if(mA.Asset.Account.ShippingLatitude != null && mA.Asset.Account.ShippingLongitude != null) {
+                String locationKey = mA.Asset.Account.ShippingLongitude + ';' + mA.Asset.Account.ShippingLatitude;
+
+                if(!locationToTerritoryMap.containsKey(locationKey)) {
+                    Id territoryId = FSL.PolygonUtils.getTerritoryIdByPolygons(
+                            mA.Asset.Account.ShippingLongitude.doubleValue(),
+                            mA.Asset.Account.ShippingLatitude.doubleValue()
+                    );
+                    if(territoryId != null) {
+                        locationToTerritoryMap.put(locationKey, territoryId);
+                        serviceTerritoryId = territoryId;
+                    }
+                } else {
+                    serviceTerritoryId = locationToTerritoryMap.get(locationKey);
+                }
+            }
 
             for(Integer i = 0; i < instanceCount; i++) {
                 WorkOrder wo = new WorkOrder();
@@ -82,17 +90,22 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
                 wo.Country = mA.Asset.Country;
                 wo.LMRA__c = mA.Asset.LMRA__c;
                 wo.Priority = mp.ServiceContract.Priority__c;
+                wo.ServiceTerritoryId = serviceTerritoryId;
+                if(mA.Asset.Account.ShippingLatitude != null) wo.Latitude = mA.Asset.Account.ShippingLatitude;
+                if(mA.Asset.Account.ShippingLongitude != null) wo.Longitude = mA.Asset.Account.ShippingLongitude;
                 workOrders.add(wo);
             }
         }
 
-        insert workOrders;
+        if(!workOrders.isEmpty()) {
+            insert workOrders;
+        }
     }
 
     public void finish(Database.BatchableContext bc) {
-        System.debug('WorkOrderSchedulerBatch finished');
+        // Your existing finish logic
         Work_Order_Creation_Event__e event = new Work_Order_Creation_Event__e(
-        Maintenance_Plan_Id__c = maintenancePlanId
+                Maintenance_Plan_Id__c = maintenancePlanId
         );
         EventBus.publish(event);
 

@@ -300,6 +300,7 @@ public without sharing class ServiceBuilderController {
     }
   }
 
+  @AuraEnabled
   public static void firePlatformEvent(String contractId) {
     //Create a new Platform Event
     Contract_Event__e event = new Contract_Event__e(Record_Id__c = contractId);

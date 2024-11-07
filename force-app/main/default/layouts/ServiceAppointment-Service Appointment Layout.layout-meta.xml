@@ -26,6 +26,10 @@
                 <behavior>Edit</behavior>
                 <field>Asset__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Recurrence__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

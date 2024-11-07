@@ -29,6 +29,11 @@ public without sharing class ServiceAppointmentRescheduler {
                     newScheduledDateInUserTZ  // Use timezone-adjusted time
             );
 
+            //Update the recurrence on the original asset
+            Asset origAsset = new Asset(Id = wo.Asset.Id, Recurrence_Pattern__c = result.newRRule, Recurrence_Text__c = RRuleDescriptionGenerator.generateDescription(result.newRRule));
+            update origAsset;
+
+
             List<ServiceAppointment> futureAppointments = getRelatedFutureAppointments(sa.Id);
 
             TimeZone userTZ = UserInfo.getTimeZone();
@@ -46,8 +51,8 @@ public without sharing class ServiceAppointmentRescheduler {
                     System.debug('newDates at i: ' +i + ' ' + result.newDates[i]);
 
                     // Since RRuleAdjuster is already giving us UTC times, use them directly
-                    futureAppointment.SchedStartTime = i == 0 ? result.newDates[i] : result.newDates[i].addHours(1);
-                    futureAppointment.SchedEndTime = i == 0 ? result.newDates[i].addMinutes(durationInMinutesInt) : result.newDates[i].addHours(1).addMinutes(durationInMinutesInt);
+                    futureAppointment.SchedStartTime = i == 0 ? result.newDates[i+1] : result.newDates[i+1];
+                    futureAppointment.SchedEndTime = i == 0 ? result.newDates[i+1].addMinutes(durationInMinutesInt) : result.newDates[i+1].addMinutes(durationInMinutesInt);
 
                     System.debug('New Start Time (UTC): ' + futureAppointment.SchedStartTime);
                     System.debug('New End Time (UTC): ' + futureAppointment.SchedEndTime);
@@ -81,7 +86,7 @@ public without sharing class ServiceAppointmentRescheduler {
                     FROM ServiceAppointment
                     WHERE ParentRecordId IN (SELECT Id FROM WorkOrder WHERE AssetId = :wo.Asset.Id)
                     AND DueDate >= :sa.SchedStartTime
-                    ORDER BY AppointmentNumber ASC];
+                    ORDER BY DueDate];
 
             System.debug('Future Appointments: ' + futureAppointments.size());
             return futureAppointments;

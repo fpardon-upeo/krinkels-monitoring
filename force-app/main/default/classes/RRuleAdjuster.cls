@@ -168,8 +168,6 @@ public class RRuleAdjuster {
     }
 
     private static String getDayOfWeekCode(DateTime dt) {
-        System.debug('Getting day code for: ' + dt);
-        System.debug('Day of week from format: ' + dt.format('u'));
 
         List<String> days = new List<String>{'SU','MO','TU','WE','TH','FR','SA'};
         DateTime startOfWeek = DateTime.newInstance(1970, 1, 4); // This was a Sunday
@@ -236,7 +234,7 @@ public class RRuleAdjuster {
         DateTime currentDate = startDate;
 
         // Generate next X occurrences (limit this based on your needs)
-        for (Integer i = 0; i < 52; i++) { // Example: Generate one year of weekly occurrences
+        for (Integer i = 0; i < 104; i++) { // Example: Generate one year of weekly occurrences
             if (meetsCriteria(currentDate, params)) {
                 dates.add(currentDate);
             }

@@ -31,6 +31,9 @@ trigger ContractLineItemTrigger on ContractLineItem (after insert, after update)
                     contractLineItems.add(contractLineItem);
                 }
             }
+            if (!contractLineItems.isEmpty()) {
+                ContractLineItemTriggerHandler.reverseGeoCodeAddresses(contractLineItems);
+            }
         }
     }
 

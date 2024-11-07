@@ -1,5 +1,28 @@
 public with sharing class MaintenancePlanService {
 
+
+    @AuraEnabled
+    public static List<ContractLineItem> getLinesWithInvalidATAKProject(String serviceContractId){
+        Set<String> existingProjectCodes = new Set<String>();
+        for(ATAK_Project__c proj : [SELECT SubProject_ATAK__c FROM ATAK_Project__c]) {
+            existingProjectCodes.add(proj.SubProject_ATAK__c);
+        }
+
+        System.debug('Existing Project Codes: ' + existingProjectCodes);
+
+        List<ContractLineItem> items = [
+                SELECT Id, Project_Code__c, LineItemNumber
+                FROM ContractLineItem
+                WHERE ServiceContractId = :serviceContractId
+                AND Project_Code__c NOT IN :existingProjectCodes
+        ];
+
+        System.debug('Items: ' + items);
+
+        return items;
+
+    }
+
     /**
      * Main method to create a maintenance plan from a service contract.
      * It splits tasks into smaller methods for querying, upserting, and DML handling.
@@ -171,6 +194,7 @@ public with sharing class MaintenancePlanService {
             asset.LMRA__c = line.LMRA__c;
             asset.Default_Duration_in_Minutes__c = line.Estimated_Duration__c;
             asset.LastSuggestedMaintenanceDate__c = line.EndDate;
+            asset.Recurrence_Text__c = RRuleDescriptionGenerator.generateDescription(asset.Recurrence_Pattern__c);
 
             if(projectMap.containsKey(line.Project_Code__c)){
                 asset.ATAK_Project__c = projectMap.get(line.Project_Code__c).Id;
@@ -353,6 +377,18 @@ public with sharing class MaintenancePlanService {
         Map<String, String> assetMap = getAssetToProductWorkTypeMap(assets);
 
         for (Asset asset : assets) {
+
+            RRuleAdjuster adjuster = new RRuleAdjuster(
+                    asset.Recurrence_Pattern__c,
+                    asset.InstallDate
+            );
+
+            Integer numberOfWorkOrders = adjuster.calculateInstanceCount(
+                    asset.InstallDate,
+                    asset.LastSuggestedMaintenanceDate__c,
+                    asset.Recurrence_Pattern__c
+            );
+
             MaintenanceAsset maintenanceAsset = new MaintenanceAsset();
             maintenanceAsset.MaintenancePlanId = maintenancePlan.Id;
             maintenanceAsset.AssetId = asset.Id;
@@ -360,6 +396,7 @@ public with sharing class MaintenancePlanService {
             maintenanceAsset.WorkTypeId = assetMap.get(asset.Id);
             maintenanceAsset.LastSuggestedMaintenanceDate__c = asset.LastSuggestedMaintenanceDate__c;
             maintenanceAsset.Default_Duration_in_Minutes__c = asset.Default_Duration_in_Minutes__c;
+            maintenanceAsset.Number_Of_Work_Orders__c = numberOfWorkOrders;
             maintenanceAssets.add(maintenanceAsset);
         }
         return maintenanceAssets;
@@ -492,6 +529,8 @@ public with sharing class MaintenancePlanService {
         System.debug('Asset to Product Map: ' + assetToProductMap);
         return assetToProductMap;
     }
+
+
 
 
 }

@@ -4,4 +4,16 @@
 
 <!-- Generate Maintenance Plan -->
 <template>
+  <lightning-card if:true={showTable} title="Lines with incorrect ATAK Project" icon-name="custom:custom14">
+    <div class="slds-m-around_medium">
+      <lightning-datatable
+        draft-values={draftValues}
+        data={tableData}
+        columns={tableColumns}
+        key-field="Id"
+        hide-checkbox-column="true"
+        onsave={handleSave}
+      ></lightning-datatable>
+    </div>
+  </lightning-card>
 </template>

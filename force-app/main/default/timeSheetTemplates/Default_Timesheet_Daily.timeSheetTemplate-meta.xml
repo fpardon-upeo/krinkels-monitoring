@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeSheetTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <frequency>Daily</frequency>
+    <masterLabel>Default Timesheet (Daily)</masterLabel>
+    <startDate>2024-11-01</startDate>
+    <timeSheetTemplateAssignments>
+        <assignedTo>External Operator</assignedTo>
+    </timeSheetTemplateAssignments>
+    <timeSheetTemplateAssignments>
+        <assignedTo>Operator</assignedTo>
+    </timeSheetTemplateAssignments>
+    <workWeekEndDay>Sunday</workWeekEndDay>
+    <workWeekStartDay>Monday</workWeekStartDay>
+</TimeSheetTemplate>

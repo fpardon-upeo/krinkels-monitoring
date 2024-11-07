@@ -24,6 +24,10 @@
                 <behavior>Edit</behavior>
                 <field>LMRA__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Recurrence_Text__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -2,9 +2,9 @@
 
 Contains the entire list of metadatas that are present in the monitored orgs (not all of them are in the git backup)
 
-Metadatas: 11386
+Metadatas: 11406
 
-<details><summary>ApexClass (691)</summary>
+<details><summary>ApexClass (693)</summary>
   • ATAKProjectService<br/>
   • ATAKProjectWrapper<br/>
   • ATAKProjectWrapperTest<br/>
@@ -678,6 +678,7 @@ Metadatas: 11386
   • ProjectRestResource<br/>
   • RRuleAdjuster<br/>
   • RRuleCriteria<br/>
+  • RRuleDescriptionGenerator<br/>
   • ReadyForValidation<br/>
   • SchedulingController<br/>
   • ServiceAppointmentRescheduler<br/>
@@ -686,6 +687,7 @@ Metadatas: 11386
   • ServiceBuilderWrapper<br/>
   • ServiceContractHandler<br/>
   • ServiceResourceHandler<br/>
+  • WorkOrderLocationBatch<br/>
   • WorkOrderLocationQueueable<br/>
   • WorkOrderScheduler<br/>
   • WorkOrderSchedulerBatch<br/>
@@ -1052,7 +1054,7 @@ Metadatas: 11386
 </details>
 
 <br/>
-<details><summary>CustomField (922)</summary>
+<details><summary>CustomField (927)</summary>
   • ATAK_Project__c.ATAK_Creation_Date__c<br/>
   • ATAK_Project__c.Cost_centre_Atak_Id__c<br/>
   • ATAK_Project__c.Cost_centre_Atak_Name__c<br/>
@@ -1103,6 +1105,7 @@ Metadatas: 11386
   • Asset.LMRA__c<br/>
   • Asset.LastSuggestedMaintenanceDate__c<br/>
   • Asset.Recurrence_Pattern__c<br/>
+  • Asset.Recurrence_Text__c<br/>
   • Asset.Service_Territory__c<br/>
   • Asset.Unique_Id__c<br/>
   • Asset_Financial_Account__c.Account__c<br/>
@@ -1834,9 +1837,12 @@ Metadatas: 11386
   • Location_Visit__c.Type__c<br/>
   • Location_Visit__c.Visit_Date__c<br/>
   • Location_Visit__c.Visit_Notes__c<br/>
+  • MaintenanceAsset.Contract_Manager__c<br/>
   • MaintenanceAsset.Default_Duration_in_Minutes__c<br/>
   • MaintenanceAsset.LastSuggestedMaintenanceDate__c<br/>
+  • MaintenanceAsset.Number_of_Work_Orders__c<br/>
   • MaintenanceAsset.Service_Territory__c<br/>
+  • MaintenanceAsset.Total_Minutes_of_Work__c<br/>
   • Operator_Created_Event__e.User_Id__c<br/>
   • Opportunity.Budget_Confirmed__c<br/>
   • Opportunity.Discovery_Completed__c<br/>
@@ -1895,6 +1901,7 @@ Metadatas: 11386
   • ServiceAppointment.FSL__Use_Async_Logic__c<br/>
   • ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c<br/>
   • ServiceAppointment.Overdue_Reminder_Send__c<br/>
+  • ServiceAppointment.Recurrence__c<br/>
   • ServiceContract.Accepted__c<br/>
   • ServiceContract.Additional_Work_in_scope_contract__c<br/>
   • ServiceContract.Allocation_key__c<br/>
@@ -9027,7 +9034,7 @@ Metadatas: 11386
 </details>
 
 <br/>
-<details><summary>Dashboard (14)</summary>
+<details><summary>Dashboard (15)</summary>
   • FSL__FieldServiceCopilotDashboards/<br/>
   • FSL__FieldServiceCopilotDashboards/FSL__CopilotSummaryOfSchedulingIssues<br/>
   • FSL__FieldServiceWorkCapacityDashboards/<br/>
@@ -9040,6 +9047,7 @@ Metadatas: 11386
   • Sales_and_Marketing_Dashboards/Best_Practices_Dashboard6<br/>
   • Service_Dashboards/<br/>
   • Service_Dashboards/Agent_Supervisor_Overview<br/>
+  • Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn<br/>
   • Service_Dashboards/Service_Exec_Overview<br/>
   • Service_Dashboards/Service_KPIs<br/>
 </details>
@@ -9262,7 +9270,7 @@ Metadatas: 11386
 </details>
 
 <br/>
-<details><summary>FlexiPage (40)</summary>
+<details><summary>FlexiPage (41)</summary>
   • ATAK_Project_Record_Page<br/>
   • Asset_Record_Page<br/>
   • Asset_Scheduler<br/>
@@ -9276,6 +9284,7 @@ Metadatas: 11386
   • Financial_Account_Record_Page<br/>
   • FlowsApp_UtilityBar<br/>
   • Group_Account_Record_Page<br/>
+  • Home_Page_Default<br/>
   • Krinkels_Field_Service_UtilityBar<br/>
   • LMRA_Record_Page<br/>
   • Lead_Record_Page<br/>
@@ -9383,12 +9392,15 @@ Metadatas: 11386
 </details>
 
 <br/>
-<details><summary>Group (12)</summary>
+<details><summary>Group (15)</summary>
   • BURGGRAEVE_SIMON<br/>
+  • Bastogne<br/>
   • Charleroi<br/>
   • FIELD_SERVICE_Default<br/>
   • HOMBROECKX_ARNE<br/>
   • Liege<br/>
+  • Mons<br/>
+  • Namur<br/>
   • Operators<br/>
   • PLETINCKX_YENTL<br/>
   • Phillippeville<br/>
@@ -9420,7 +9432,7 @@ Metadatas: 11386
 </details>
 
 <br/>
-<details><summary>Layout (227)</summary>
+<details><summary>Layout (230)</summary>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Commercial Layout<br/>
   • Account-FSL Operational Account Layout<br/>
@@ -9429,8 +9441,11 @@ Metadatas: 11386
   • Account-Operational Layout<br/>
   • AccountTeamMember-Account Team Member Layout<br/>
   • Address-Address Layout<br/>
+  • ApptBundleAggrPolicy-Appointment Bundle Aggregation Policy Layout<br/>
   • ApptBundleConfig-Appointment Bundle Config Layout<br/>
   • ApptBundlePolicy-Appointment Bundle Policy Layout<br/>
+  • ApptBundlePolicySvcTerr-Appointment Bundle Policy Service Territory Layout<br/>
+  • ApptBundleRestrictPolicy-Appointment Bundle Restriction Policy Layout<br/>
   • Asset-Asset Layout<br/>
   • AssetRelationship-Asset Relationship Layout<br/>
   • Asset_Financial_Account__c-Asset Financial Account Layout<br/>
@@ -10611,7 +10626,7 @@ Metadatas: 11386
 </details>
 
 <br/>
-<details><summary>Report (136)</summary>
+<details><summary>Report (138)</summary>
   • DashboardReportsAdoption/<br/>
   • DashboardReportsAdoption/UsageActivitiesCompleted<br/>
   • EBotR_v3/<br/>
@@ -10630,6 +10645,8 @@ Metadatas: 11386
   • FSL__FieldServiceWorkCapacityReports/FSL__WorkStream_vs_Overall_Availability_V1<br/>
   • FSL__FieldServiceWorkCapacityReports/FSL__Work_Capacity_Availability<br/>
   • FSL__FieldServiceWorkCapacityReports/FSL__Work_Capacity_Availability_by_Territory<br/>
+  • FSL__FieldServiceWorkCapacityReports/Maintenance_Plan_Work_Breakdown_XMG<br/>
+  • FSL__FieldServiceWorkCapacityReports/Service_Appointment_Scheduling_Status_NL3<br/>
   • FSL__Field_Service_Reports/<br/>
   • Sales_Marketing_Reports/<br/>
   • Sales_Marketing_Reports/Closed_Lost_by_Reason<br/>
@@ -10751,11 +10768,13 @@ Metadatas: 11386
 </details>
 
 <br/>
-<details><summary>ReportType (11)</summary>
+<details><summary>ReportType (13)</summary>
   • FSL__Service_Appointments_with_Scheduling_Issues<br/>
   • FSL__Work_Capacity_Availability<br/>
   • FSL__Work_Capacity_Usages<br/>
+  • Maintenance_Plans_with_Maintenance_Assets<br/>
   • Opportunities_with_Historical_Trending<br/>
+  • Service_Appointments<br/>
   • Service_Appointments_with_Service_Resources<br/>
   • flow_orchestration_log_ootb_crt_two_four_eight<br/>
   • flow_orchestration_run_ootb_crt_two_four_eight<br/>
@@ -11530,6 +11549,11 @@ Metadatas: 11386
   • FSL__wo_red<br/>
   • mobileLandingImage<br/>
   • mobileLanding__mobileLandingImage<br/>
+</details>
+
+<br/>
+<details><summary>TimeSheetTemplate (1)</summary>
+  • Default_Timesheet_Daily<br/>
 </details>
 
 <br/>

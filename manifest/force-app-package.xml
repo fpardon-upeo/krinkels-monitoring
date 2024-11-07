@@ -20,6 +20,7 @@
         <members>ProjectRestResource</members>
         <members>RRuleAdjuster</members>
         <members>RRuleCriteria</members>
+        <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
         <members>SchedulingController</members>
         <members>ServiceAppointmentRescheduler</members>
@@ -28,6 +29,7 @@
         <members>ServiceBuilderWrapper</members>
         <members>ServiceContractHandler</members>
         <members>ServiceResourceHandler</members>
+        <members>WorkOrderLocationBatch</members>
         <members>WorkOrderLocationQueueable</members>
         <members>WorkOrderScheduler</members>
         <members>WorkOrderSchedulerBatch</members>
@@ -174,6 +176,7 @@
         <members>Asset.LMRA__c</members>
         <members>Asset.LastSuggestedMaintenanceDate__c</members>
         <members>Asset.Recurrence_Pattern__c</members>
+        <members>Asset.Recurrence_Text__c</members>
         <members>Asset.Service_Territory__c</members>
         <members>Asset.Unique_Id__c</members>
         <members>Asset_Financial_Account__c.Account__c</members>
@@ -249,9 +252,12 @@
         <members>Location_Visit__c.Type__c</members>
         <members>Location_Visit__c.Visit_Date__c</members>
         <members>Location_Visit__c.Visit_Notes__c</members>
+        <members>MaintenanceAsset.Contract_Manager__c</members>
         <members>MaintenanceAsset.Default_Duration_in_Minutes__c</members>
         <members>MaintenanceAsset.LastSuggestedMaintenanceDate__c</members>
+        <members>MaintenanceAsset.Number_of_Work_Orders__c</members>
         <members>MaintenanceAsset.Service_Territory__c</members>
+        <members>MaintenanceAsset.Total_Minutes_of_Work__c</members>
         <members>Operator_Created_Event__e.User_Id__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
@@ -304,6 +310,7 @@
         <members>ServiceAppointment.FSL__Use_Async_Logic__c</members>
         <members>ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c</members>
         <members>ServiceAppointment.Overdue_Reminder_Send__c</members>
+        <members>ServiceAppointment.Recurrence__c</members>
         <members>ServiceContract.Accepted__c</members>
         <members>ServiceContract.Additional_Work_in_scope_contract__c</members>
         <members>ServiceContract.Allocation_Key__c</members>
@@ -428,6 +435,7 @@
         <members>Sales_and_Marketing_Dashboards/Best_Practices_Dashboard6</members>
         <members>Service_Dashboards/</members>
         <members>Service_Dashboards/Agent_Supervisor_Overview</members>
+        <members>Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn</members>
         <members>Service_Dashboards/Service_Exec_Overview</members>
         <members>Service_Dashboards/Service_KPIs</members>
         <name>Dashboard</name>
@@ -552,6 +560,7 @@
         <members>Financial_Account_Record_Page</members>
         <members>FlowsApp_UtilityBar</members>
         <members>Group_Account_Record_Page</members>
+        <members>Home_Page_Default</members>
         <members>Krinkels_Field_Service_UtilityBar</members>
         <members>LMRA_Record_Page</members>
         <members>Lead_Record_Page</members>
@@ -655,10 +664,13 @@
     <types>
         <members>Antwerpen</members>
         <members>BURGGRAEVE_SIMON</members>
+        <members>Bastogne</members>
         <members>Charleroi</members>
         <members>FIELD_SERVICE_Default</members>
         <members>HOMBROECKX_ARNE</members>
         <members>Liege</members>
+        <members>Mons</members>
+        <members>Namur</members>
         <members>Operators</members>
         <members>PLETINCKX_YENTL</members>
         <members>Phillippeville</members>
@@ -688,8 +700,11 @@
         <members>Account-Operational Layout</members>
         <members>AccountTeamMember-Account Team Member Layout</members>
         <members>Address-Address Layout</members>
+        <members>ApptBundleAggrPolicy-Appointment Bundle Aggregation Policy Layout</members>
         <members>ApptBundleConfig-Appointment Bundle Config Layout</members>
         <members>ApptBundlePolicy-Appointment Bundle Policy Layout</members>
+        <members>ApptBundlePolicySvcTerr-Appointment Bundle Policy Service Territory Layout</members>
+        <members>ApptBundleRestrictPolicy-Appointment Bundle Restriction Policy Layout</members>
         <members>Asset-Asset Layout</members>
         <members>AssetRelationship-Asset Relationship Layout</members>
         <members>Asset_Financial_Account__c-Asset Financial Account Layout</members>
@@ -1283,7 +1298,9 @@
         <name>Report</name>
     </types>
     <types>
+        <members>Maintenance_Plans_with_Maintenance_Assets</members>
         <members>Opportunities_with_Historical_Trending</members>
+        <members>Service_Appointments</members>
         <members>Service_Appointments_with_Service_Resources</members>
         <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_run_ootb_crt_two_four_eight</members>
@@ -1652,6 +1669,10 @@
         <members>WorkOrderPriority</members>
         <members>WorkOrderStatus</members>
         <name>StandardValueSet</name>
+    </types>
+    <types>
+        <members>Default_Timesheet_Daily</members>
+        <name>TimeSheetTemplate</name>
     </types>
     <types>
         <members>ATAK_Project__c</members>

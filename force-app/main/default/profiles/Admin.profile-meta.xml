@@ -87,6 +87,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>RRuleDescriptionGenerator</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ReadyForValidation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -116,6 +120,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ServiceResourceHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WorkOrderLocationBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -367,6 +375,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Asset.Recurrence_Pattern__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Asset.Recurrence_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -730,6 +743,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>MaintenanceAsset.Contract_Manager__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>MaintenanceAsset.Default_Duration_in_Minutes__c</field>
         <readable>true</readable>
@@ -741,7 +759,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MaintenanceAsset.Number_of_Work_Orders__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MaintenanceAsset.Service_Territory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>MaintenanceAsset.Total_Minutes_of_Work__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1002,6 +1030,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Overdue_Reminder_Send__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.Recurrence__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1528,10 +1561,19 @@
         <layout>Address-Address Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ApptBundleAggrPolicy-Appointment Bundle Aggregation Policy Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ApptBundleConfig-Appointment Bundle Config Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ApptBundlePolicy-Appointment Bundle Policy Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ApptBundlePolicySvcTerr-Appointment Bundle Policy Service Territory Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ApptBundleRestrictPolicy-Appointment Bundle Restriction Policy Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Asset-Asset Layout</layout>
