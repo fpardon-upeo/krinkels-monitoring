@@ -115,7 +115,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ServiceContractHandler</apexClass>
+        <apexClass>ServiceContractTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -154,12 +154,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ATAK_Project__c.Cost_centre_Atak_Id__c</field>
+        <field>ATAK_Project__c.Branche__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ATAK_Project__c.Cost_centre_Atak_Name__c</field>
+        <field>ATAK_Project__c.Client_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Cost_Centre_Atak_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Cost_centre_Atak_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -194,6 +204,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ATAK_Project__c.Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ATAK_Project__c.Parent_Subproject__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -220,6 +235,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ATAK_Project__c.Subproject_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ATAK_Project__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -254,11 +274,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Client_sector__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Account.Closing_Days__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -274,7 +289,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Default_LMRA__c</field>
+        <field>Account.ContractType__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -308,6 +323,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.LMRA_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.Latitude__c</field>
         <readable>true</readable>
@@ -315,11 +335,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Longitude__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -453,8 +468,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.Contract_Type__c</field>
+        <editable>false</editable>
+        <field>Contact.ContractType__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -709,7 +724,67 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Location_Visit__c.Asset_Evaluation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Assets_Additional__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Assets__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Location_Visit__c.Commercial_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Demand_type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Estimation_Intervention_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Execution_Deadline_Request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Frequency_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Frequency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Location_Passport_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Location_Passport__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Location_Visit_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Machines_Required__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -724,22 +799,62 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Location_Visit__c.Service_Appointment__c</field>
+        <field>Location_Visit__c.Overall_Evaluation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Location_Visit__c.Type__c</field>
+        <field>Location_Visit__c.Priority_Request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Quantity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Remarks_Demand_type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Remarks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Safety_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Safety_Instruction_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Scoring__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Service_Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Service_Package_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Unit__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Location_Visit__c.Visit_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Location_Visit__c.Visit_Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1069,7 +1184,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ServiceContract.Contract_Type__c</field>
+        <field>ServiceContract.Contract_type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1100,6 +1215,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceContract.Indexation_Needed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceContract.Is_New__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1165,6 +1285,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceContract.Tender_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceContract.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1536,14 +1661,14 @@
         <layout>ATAK_Project__c-ATAK Project Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Commercial Layout</layout>
+        <layout>Account-Commercial Account Layout</layout>
         <recordType>Account.Commercial_Account</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Financial Layout</layout>
+        <layout>Account-Financial Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Financial Layout</layout>
+        <layout>Account-Financial Account Layout</layout>
         <recordType>Account.Financial_Account</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -1551,8 +1676,11 @@
         <recordType>Account.Group_Account</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Operational Layout</layout>
+        <layout>Account-Operational Account Layout</layout>
         <recordType>Account.Operational_Account</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>AccountContactRelation-Account Contact Relationship Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>AccountTeamMember-Account Team Member Layout</layout>
@@ -2076,12 +2204,12 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Commercial_Account</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Financial_Account</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -2144,10 +2272,6 @@
     <tabVisibilities>
         <tab>LMRA__c</tab>
         <visibility>DefaultOff</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Location_Passport__c</tab>
-        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Location_Visit__c</tab>

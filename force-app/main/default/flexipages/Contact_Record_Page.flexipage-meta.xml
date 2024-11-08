@@ -111,19 +111,19 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Contract_Type__c</fieldItem>
-                <identifier>RecordContract_Type__cField</identifier>
+                <fieldItem>Record.ContractType__c</fieldItem>
+                <identifier>RecordContractType__cField</identifier>
                 <visibilityRule>
                     <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Type_Formula__c}</leftValue>
                         <operator>CONTAINS</operator>
-                        <rightValue>Operational</rightValue>
+                        <rightValue>Commercial</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Type_Formula__c}</leftValue>
                         <operator>CONTAINS</operator>
-                        <rightValue>Commercial</rightValue>
+                        <rightValue>Operational</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -358,56 +358,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-638cf511-048a-4f0b-902b-a3684f698a67</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <name>Facet-402b87cc-9e64-4258-b251-15e712cbba86</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-638cf511-048a-4f0b-902b-a3684f698a67</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-402b87cc-9e64-4258-b251-15e712cbba86</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column7</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-ae451605-9b0b-4022-ab58-0851d3e5c475</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <name>Facet-48054f2f-f970-45bd-a559-7ca8df5449b8</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-48054f2f-f970-45bd-a559-7ca8df5449b8</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column8</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-1da7b245-ee74-40c3-9c0e-3932c7587390</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -530,42 +480,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-ae451605-9b0b-4022-ab58-0851d3e5c475</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>@@@SFDCAdditional_InformationSFDC@@@</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection4</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-1da7b245-ee74-40c3-9c0e-3932c7587390</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>@@@SFDCDescription_InformationSFDC@@@</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

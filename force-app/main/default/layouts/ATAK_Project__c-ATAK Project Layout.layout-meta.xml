@@ -43,6 +43,18 @@
                 <behavior>Edit</behavior>
                 <field>ATAK_Creation_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Client_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Branche__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Group__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -51,7 +63,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Cost_centre_Atak_Name__c</field>
+                <field>Cost_Centre_Atak_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

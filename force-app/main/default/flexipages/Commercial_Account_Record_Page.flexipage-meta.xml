@@ -78,16 +78,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Client_sector__c</fieldItem>
-                <identifier>RecordClient_sector__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Enterprise_Number__c</fieldItem>
                 <identifier>RecordEnterprise_Number__cField</identifier>
             </fieldInstance>
@@ -132,6 +122,16 @@
                 <identifier>RecordWebsiteField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Description</fieldItem>
+                <identifier>RecordDescriptionField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-1f8fd4a4-f9e7-4f44-a1f7-d737cf04e740</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -154,26 +154,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.ParentId</fieldItem>
                 <identifier>RecordParentIdField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Related_account__c</fieldItem>
-                <identifier>RecordRelated_account__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Contactperson_commercial_customer_key__c</fieldItem>
-                <identifier>RecordContact_person_commercial_customer_key__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -212,8 +192,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Description</fieldItem>
-                <identifier>RecordDescriptionField</identifier>
+                <fieldItem>Record.ContractType__c</fieldItem>
+                <identifier>RecordContractType_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ab075c5f-10a6-4319-8d97-e938734ac31a</name>
@@ -254,6 +234,10 @@
                 <identifier>RecordShippingAddressField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-5eb51c40-3b49-45fe-829e-9fb04225186d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -264,7 +248,7 @@
                 <identifier>RecordBillingAddressField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-5eb51c40-3b49-45fe-829e-9fb04225186d</name>
+        <name>Facet-a393cb8c-1363-4555-a55f-99ee91c7370e</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -276,6 +260,16 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-a393cb8c-1363-4555-a55f-99ee91c7370e</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-438e0465-76b4-4191-901f-0204910e8c33</name>
@@ -519,6 +513,78 @@
                 </componentInstanceProperties>
                 <componentName>runtime_sales_merge:mergeCandidatesPreviewCard</componentName>
                 <identifier>runtime_sales_merge_mergeCandidatesPreviewCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NewContact</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>AccountContactRelations</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>CONTACT.FULL_NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CONTACT.ACCOUNT_NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CONTACT.TITLE</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CONTACT.EMAIL</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CONTACT.PHONE1</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ACCCONRELATION.ROLES</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Related Contacts</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

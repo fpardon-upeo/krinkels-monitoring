@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Financial_client_type_ATAK__c</fullName>
     <externalId>false</externalId>
-    <label>Financial client type ATAK</label>
+    <label>Financial Client Type ATAK</label>
     <length>100</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

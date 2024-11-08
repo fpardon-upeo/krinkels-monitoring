@@ -13,10 +13,20 @@
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>ServiceContract.Create_Service_Contract</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Type__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Master Agreement</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>ServiceContract.Generate_Maintenance_Plan</value>
                             <visibilityRule>
                                 <criteria>
-                                    <leftValue>{!Record.Contract_Type__c}</leftValue>
+                                    <leftValue>{!Record.Type__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Service Contract</rightValue>
                                 </criteria>
@@ -26,7 +36,7 @@
                             <value>ServiceContract.Export_Lines</value>
                             <visibilityRule>
                                 <criteria>
-                                    <leftValue>{!Record.Contract_Type__c}</leftValue>
+                                    <leftValue>{!Record.Type__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Service Contract</rightValue>
                                 </criteria>
@@ -36,7 +46,7 @@
                             <value>ServiceContract.Prepare_for_Next_Year</value>
                             <visibilityRule>
                                 <criteria>
-                                    <leftValue>{!Record.Contract_Type__c}</leftValue>
+                                    <leftValue>{!Record.Type__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Service Contract</rightValue>
                                 </criteria>
@@ -89,19 +99,9 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.ContractNumber</fieldItem>
-                <identifier>RecordContractNumberField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Contract_Type__c</fieldItem>
+                <fieldItem>Record.Type__c</fieldItem>
                 <identifier>RecordType_cField</identifier>
             </fieldInstance>
         </itemInstances>
@@ -111,66 +111,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ParentServiceContractId</fieldItem>
-                <identifier>RecordParentServiceContractIdField2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.ParentServiceContractId</fieldItem>
-                <identifier>RecordParentServiceContractIdField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Service Contract</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Link_contract__c</fieldItem>
-                <identifier>RecordLink_contract__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.External_Contract_Reference__c</fieldItem>
-                <identifier>RecordExternal_Contract_Reference__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <fieldItem>Record.StartDate</fieldItem>
+                <identifier>RecordStartDateField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -183,24 +125,7 @@
                 <identifier>RecordStatusField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Service_Package_Type__c</fieldItem>
-                <identifier>RecordService_Package_Type__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-6b5c8ff9-b535-4b0a-9b91-bf5a1a575641</name>
+        <name>Facet-dd481e51-48d0-4c90-a635-63bd25b51d48</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -210,8 +135,15 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.OwnerId</fieldItem>
-                <identifier>RecordOwnerIdField</identifier>
+                <fieldItem>Record.ParentServiceContractId</fieldItem>
+                <identifier>RecordParentServiceContractIdField2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -224,7 +156,7 @@
                 <identifier>RecordSPOC_KGC__cField</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
                     </criteria>
@@ -237,9 +169,29 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.StartDate</fieldItem>
-                <identifier>RecordStartDateField</identifier>
+                <fieldItem>Record.Contract_type__c</fieldItem>
+                <identifier>RecordContract_type2__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Service Contract</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:blankSpace</componentName>
+                <identifier>flexipage_blankSpace</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
@@ -261,7 +213,199 @@
                 <identifier>RecordCancellation_Date_Contract__cField</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-151fc78e-d1c2-47f4-b615-9925d3fb673a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-dd481e51-48d0-4c90-a635-63bd25b51d48</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column14</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-151fc78e-d1c2-47f4-b615-9925d3fb673a</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-ef1e054d-32f7-4ece-ab6f-077e1a49b2b2</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.AccountId</fieldItem>
+                <identifier>RecordAccountIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tender_Code__c</fieldItem>
+                <identifier>RecordTender_Code__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Conditions__c</fieldItem>
+                <identifier>RecordPayment_Conditions_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-2ef217c7-c789-44d1-8403-6eae98c867e4</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SPOC_Client__c</fieldItem>
+                <identifier>RecordSPOC_Client_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_Contract_Reference__c</fieldItem>
+                <identifier>RecordExternal_Contract_Reference__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Allocation_key__c</fieldItem>
+                <identifier>RecordAllocation_key_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Service Contract</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b417bbf4-e921-40ad-a2ad-28c92e3527cc</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-2ef217c7-c789-44d1-8403-6eae98c867e4</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b417bbf4-e921-40ad-a2ad-28c92e3527cc</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-d4d382b7-4310-49de-a31e-6fe79f6b2215</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Default_LMRA__c</fieldItem>
+                <identifier>RecordLMRA__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Priority__c</fieldItem>
+                <identifier>RecordPriority_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Check_In_At_Work_Required__c</fieldItem>
+                <identifier>RecordCheck_In_At_Work_Required_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
                     </criteria>
@@ -278,88 +422,9 @@
                 <identifier>RecordAdditional_Work_in_scope_contract__cField</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Tender_Code__c</fieldItem>
-                <identifier>RecordTender_Code__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-305a91aa-d62d-41e9-b98b-7d0c0f0b5ea7</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-6b5c8ff9-b535-4b0a-9b91-bf5a1a575641</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-305a91aa-d62d-41e9-b98b-7d0c0f0b5ea7</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-0f6f8eeb-5ccb-43d4-9973-ee09c256ed57</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Default_LMRA__c</fieldItem>
-                <identifier>RecordLMRA__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Priority__c</fieldItem>
-                <identifier>RecordPriority_cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Service Contract</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -386,6 +451,23 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Location_Type__c</fieldItem>
                 <identifier>RecordLocation_Type_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Check_In_At_Work_Reference__c</fieldItem>
+                <identifier>RecordCheck_In_At_Work_Reference_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-2b65359f-1c50-4ac4-bc5b-9ae5012d70b9</name>
@@ -420,76 +502,10 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.AccountId</fieldItem>
-                <identifier>RecordAccountIdField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-150e0b2d-118a-481b-a5f0-61e807baa9cd</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.SPOC_Client__c</fieldItem>
-                <identifier>RecordSPOC_Client_cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-72531b39-4951-49a3-b470-fbbf7e13316f</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-150e0b2d-118a-481b-a5f0-61e807baa9cd</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-72531b39-4951-49a3-b470-fbbf7e13316f</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column4</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-43aabeb5-228f-4c5a-934e-81944535270a</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Description</fieldItem>
                 <identifier>RecordDescriptionField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -500,23 +516,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.SpecialTerms</fieldItem>
                 <identifier>RecordSpecialTermsField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Payment_Conditions__c</fieldItem>
-                <identifier>RecordPayment_Conditions_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -527,47 +526,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.SLA__c</fieldItem>
                 <identifier>RecordSLA__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Allocation_key__c</fieldItem>
-                <identifier>RecordAllocation_key__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Location_Visit__c</fieldItem>
-                <identifier>RecordLocation_Visit__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
-                    </criteria>
-                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ef5788a7-c3e9-46e3-ad04-82d90ff52a5e</name>
@@ -585,58 +543,6 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-8bffb9e8-17a2-4ad1-acc0-bd4474a4140b</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Check_In_At_Work_Required__c</fieldItem>
-                <identifier>RecordCheck_In_Work_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-915d0041-245b-4e20-908d-24ce3afcc460</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Check_In_At_Work_Reference__c</fieldItem>
-                <identifier>RecordCheck_In_At_Work_Reference__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-ad813d2e-35d8-4447-a7ca-e1d9c24e7a94</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-915d0041-245b-4e20-908d-24ce3afcc460</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column10</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-ad813d2e-35d8-4447-a7ca-e1d9c24e7a94</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column11</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-c4f105e7-c6e3-4ce9-9ac0-18fb76f7dbfb</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -768,18 +674,36 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-0f6f8eeb-5ccb-43d4-9973-ee09c256ed57</value>
+                    <value>Facet-ef1e054d-32f7-4ece-ab6f-077e1a49b2b2</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>@@@SFDCService_Contract_InformationSFDC@@@</value>
+                    <value>Main Contract Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection</identifier>
+                <identifier>flexipage_fieldSection8</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-d4d382b7-4310-49de-a31e-6fe79f6b2215</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Customer Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -790,32 +714,14 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Default Values for Line Items</value>
+                    <value>Work Orders Settings</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection7</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-43aabeb5-228f-4c5a-934e-81944535270a</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Customer Information</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -834,27 +740,9 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-c4f105e7-c6e3-4ce9-9ac0-18fb76f7dbfb</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Check-in-at-work</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection6</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
                     </criteria>
@@ -879,7 +767,7 @@
                 <identifier>flexipage_fieldSection4</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
                     </criteria>
@@ -958,22 +846,19 @@
                             <value>PRODUCT.NAME</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Location__Street__s</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Location__City__s</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>LINEITEM.STARTDATE</value>
                         </valueListItems>
                         <valueListItems>
                             <value>LINEITEM.ENDDATE</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>LINEITEM.STATUS</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>ASSET.NAME</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>LINEITEM.QUANTITY</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>LINEITEM.UNIT_PRICE</value>
+                            <value>Recurrence_Pattern__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -1204,7 +1089,7 @@
                 <identifier>flexipage_tab</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Service Contract</rightValue>
                     </criteria>
@@ -1225,7 +1110,7 @@
                 <identifier>flexipage_tab3</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Service Contract</rightValue>
                     </criteria>
@@ -1246,7 +1131,7 @@
                 <identifier>flexipage_tab2</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
                     </criteria>
@@ -1267,7 +1152,7 @@
                 <identifier>flexipage_tab4</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Contract_Type__c}</leftValue>
+                        <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
                     </criteria>

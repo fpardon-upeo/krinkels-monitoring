@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Alias_commercial_customer_name__c</fullName>
     <externalId>false</externalId>
-    <label>Alias commercial customer name</label>
+    <label>Alias Commercial Customer Name</label>
     <length>100</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

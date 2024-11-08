@@ -19,7 +19,7 @@ private class MaintenancePlanServiceTest {
         serviceContract.Pricebook2Id = pricebookId;
         serviceContract.Name = 'Test Service Contract';
         serviceContract.StartDate = Date.newInstance(Date.today().year(), 01, 01);
-        serviceContract.Contract_Type__c = 'Service Contract';
+        serviceContract.Type__c = 'Service Contract';
 
         insert serviceContract;
         System.assertEquals(1, [SELECT COUNT() FROM ServiceContract]);

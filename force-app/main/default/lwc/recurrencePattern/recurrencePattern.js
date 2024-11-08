@@ -23,6 +23,10 @@ export default class RecurrencePattern extends LightningModal {
   selectedMonthWeekRecurrence;
   selectedRecurrenceDay;
   selectedRruleEndDate;
+  selectedRecurrenceYearType;
+  selectedRecurrenceYearMonth;
+  selectedRecurrenceYearMonthDay;
+  selectedYearlyRecurrenceDay;
 
   showAfterOccurrences = false;
   showOnDate = false;
@@ -58,6 +62,109 @@ export default class RecurrencePattern extends LightningModal {
     { label: "Day of the Month", value: "DayOfMonth" },
     { label: "Week of the Month", value: "WeekOfMonth" }
   ];
+
+  recurrenceYearTypeOptions = [
+    { label: "Specific Date", value: "specificDate" },
+    { label: "Day of a Given Month", value: "dayOfGivenMonth" }
+  ];
+
+  recurrenceYearMonthTypeOptions = [
+    {
+      label: "January",
+      value: "1"
+    },
+    {
+      label: "February",
+      value: "2"
+    },
+    {
+      label: "March",
+      value: "3"
+    },
+    {
+      label: "April",
+      value: "4"
+    },
+    {
+      label: "May",
+      value: "5"
+    },
+    {
+      label: "June",
+      value: "6"
+    },
+    {
+      label: "July",
+      value: "7"
+    },
+    {
+      label: "August",
+      value: "8"
+    },
+    {
+      label: "September",
+      value: "9"
+    },
+    {
+      label: "October",
+      value: "10"
+    },
+    {
+      label: "November",
+      value: "11"
+    },
+    {
+      label: "December",
+      value: "12"
+    }];
+
+  recurrenceYearMonthDayOptions = [
+    { label: "1" , value: "1" },
+    { label: "2" , value: "2" },
+    { label: "3" , value: "3" },
+    { label: "4" , value: "4" },
+    { label: "5" , value: "5" },
+    { label: "6" , value: "6" },
+    { label: "7" , value: "7" },
+    { label: "8" , value: "8" },
+    { label: "9" , value: "9" },
+    { label: "10" , value: "10" },
+    { label: "11" , value: "11" },
+    { label: "12" , value: "12" },
+    { label: "13" , value: "13" },
+    { label: "14" , value: "14" },
+    { label: "15" , value: "15" },
+    { label: "16" , value: "16" },
+    { label: "17" , value: "17" },
+    { label: "18" , value: "18" },
+    { label: "19" , value: "19" },
+    { label: "20" , value: "20" },
+    { label: "21" , value: "21" },
+    { label: "22" , value: "22" },
+    { label: "23" , value: "23" },
+    { label: "24" , value: "24" },
+    { label: "25" , value: "25" },
+    { label: "26" , value: "26" },
+    { label: "27" , value: "27" },
+    { label: "28" , value: "28" },
+    { label: "29" , value: "29" },
+    { label: "30" , value: "30" },
+    { label: "31" , value: "31" }
+  ];
+
+  recurrenceYearDayOptions = [
+    { label: "Monday", value: "MO" },
+    { label: "Tuesday", value: "TU" },
+    { label: "Wednesday", value: "WE" },
+    { label: "Thursday", value: "TH" },
+    { label: "Friday", value: "FR" },
+    { label: "Saturday", value: "SA" },
+    { label: "Sunday", value: "SU" },
+    { label: "Weekday", value: "MO,TU,WE,TH,FR" },
+    { label: "Weekend Day", value: "SA,SU" },
+    { label: "Day", value: "MO,TU,WE,TH,FR,SA,SU"}
+  ];
+
 
   recurrenceMonthWeekOptions = [
     { label: "First", value: "1" },
@@ -258,6 +365,15 @@ export default class RecurrencePattern extends LightningModal {
     }
   }
 
+  handleRecurrenceYearTypeChange(event) {
+    this.selectedRecurrenceYearType = event.detail.value;
+    if(this.selectedRecurrenceYearType === "specificDate") {
+      this.selectedMonthType = "specificDate";
+    } else {
+      this.selectedMonthType = "dayOfGivenMonth";
+    }
+  }
+
   handleMonthRecurrenceChange(event) {
     this.selectedMonthRecurrence = event.detail.value;
   }
@@ -267,7 +383,15 @@ export default class RecurrencePattern extends LightningModal {
   }
 
   handleMonthWeekRecurrenceDayChange(event) {
-    this.selectedRecurrenceDay = event.detail.value;
+    this.selectedYearlyRecurrenceDay = event.detail.value;
+  }
+
+  handleYearDayRecurrenceMonthChange(event) {
+    this.selectedRecurrenceYearMonth = event.detail.value;
+  }
+
+  handleYearDayRecurrenceDayChange(event) {
+    this.selectedRecurrenceYearMonthDay = event.detail.value;
   }
 
   get pattern() {
@@ -345,10 +469,28 @@ export default class RecurrencePattern extends LightningModal {
     return this.selectedPeriod === "MONTHLY";
   }
 
+  get showYearRecurrence() {
+    return this.selectedPeriod === "YEARLY";
+  }
+
   get showMonthDayRecurrence() {
     return (
       this.selectedMonthType === "DayOfMonth" &&
       this.selectedPeriod === "MONTHLY"
+    );
+  }
+
+  get showYearDayRecurrence() {
+    return (
+      this.selectedMonthType === "specificDate" &&
+      this.selectedPeriod === "YEARLY"
+    );
+  }
+
+  get showYearMonthDayRecurrence() {
+    return (
+      this.selectedMonthType === "dayOfGivenMonth" &&
+      this.selectedPeriod === "YEARLY"
     );
   }
 

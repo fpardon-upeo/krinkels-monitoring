@@ -34,8 +34,9 @@ public with sharing class MaintenancePlanService {
             ServiceContract serviceContract = getServiceContract(serviceContractId);
             List<ContractLineItem> serviceLines = getContractLineItems(serviceContractId);
             List<ServiceTerritory> territories = getServiceTerritories();
-            List<Account> uniqueLocations = getUniqueLocations(serviceContract, serviceLines);
             Map<String, ATAK_Project__c> projectMap = getProjectMap(serviceLines);
+            List<Account> uniqueLocations = getUniqueLocations(serviceContract, serviceLines, projectMap);
+
 
             System.debug('Unique Locations: ' + uniqueLocations);
 
@@ -72,7 +73,7 @@ public with sharing class MaintenancePlanService {
      * @return ServiceContract The Service Contract.
      */
     private static ServiceContract getServiceContract(String serviceContractId) {
-        return [SELECT Id, AccountId, Account.Name, Status, StartDate, EndDate
+        return [SELECT Id, AccountId, Account.Name, Status, StartDate, EndDate, Priority__c, Default_LMRA__c
         FROM ServiceContract WHERE Id = :serviceContractId LIMIT 1];
     }
 
@@ -117,7 +118,7 @@ public with sharing class MaintenancePlanService {
      * @param serviceLines The list of contract line items.
      * @return List<Account> The list of unique locations.
      */
-    private static List<Account> getUniqueLocations(ServiceContract serviceContract, List<ContractLineItem> serviceLines) {
+    private static List<Account> getUniqueLocations(ServiceContract serviceContract, List<ContractLineItem> serviceLines, Map<String, ATAK_Project__c> projectMap) {
         List<Account> uniqueLocations = new List<Account>();
         List<String> locationKeys = new List<String>();
 
@@ -135,6 +136,14 @@ public with sharing class MaintenancePlanService {
                 location.ShippingCountry = line.Location__CountryCode__s;
                 location.ParentId = serviceContract.AccountId;
                 location.Address_Identifier__c = locationKey;
+                location.ATAK_Project__r = new ATAK_Project__c(SubProject_ATAK__c = line.Project_Code__c);
+                location.Group__c = projectMap.get(line.Project_Code__c).Group__c;
+                location.Industry = projectMap.get(line.Project_Code__c).Branche__c;
+                location.Type = projectMap.get(line.Project_Code__c).Client_Type__c;
+                location.Client_Code__c = line.Project_Code__c;
+                location.Priority__c = serviceContract.Priority__c;
+                location.LMRA_Type__c = serviceContract.Default_LMRA__c;
+                location.Status__c = 'Customer';
                 uniqueLocations.add(location);
                 locationKeys.add(locationKey);
             }
@@ -484,7 +493,7 @@ public with sharing class MaintenancePlanService {
 
         Map<String, ATAK_Project__c> projectMap = new Map<String, ATAK_Project__c>();
 
-        for(ATAK_Project__c project : [SELECT Id, Name, Subproject_Name__c, SubProject_ATAK__c, Service_Territory__c FROM ATAK_Project__c WHERE SubProject_ATAK__c IN :uniqueCodes]){
+        for(ATAK_Project__c project : [SELECT Id, Name, Subproject_Name__c, SubProject_ATAK__c, Service_Territory__c, Branche__c, Client_Type__c, Group__c FROM ATAK_Project__c WHERE SubProject_ATAK__c IN :uniqueCodes]){
             projectMap.put(project.SubProject_ATAK__c, project);
         }
         return projectMap;

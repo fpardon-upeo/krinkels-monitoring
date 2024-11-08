@@ -670,24 +670,25 @@ export default class ServiceBuilder extends LightningElement {
 
       if (!line.Product2Id) errors.push("Service Type");
       if (!line.Project_Code__c) errors.push("Code");
-      if (!line.Estimated_Duration__c && line.Estimated_Duration__c !== 0)
-        errors.push("Estimated Duration");
-      if (!line.Calculated_Duration__c && line.Calculated_Duration__c !== 0)
-        errors.push("Calculated Duration");
+
+      if (!line.Estimated_Duration__c) errors.push("Estimated Duration");
 
       // Location validation based on type
       if (this.locationColumns.isGeoLocation) {
         if (!line.Geolocation__Latitude__s) {
           errors.push("Latitude");
-        } else if (!line.Geolocation__Longitude__s) {
+        }
+        if (!line.Geolocation__Longitude__s) {
           errors.push("Longitude");
         }
       } else if (this.locationColumns.isAddress) {
         if (!line.Location__Street__s) {
           errors.push("Street");
-        } else if (!line.Location__City__s) {
+        }
+        if (!line.Location__City__s) {
           errors.push("City");
-        } else if (!line.Location__PostalCode__s) {
+        }
+        if (!line.Location__PostalCode__s) {
           errors.push("Zip Code");
         }
       }
@@ -711,7 +712,7 @@ export default class ServiceBuilder extends LightningElement {
     if (hasErrors) {
       this.handleToast(
         "Error",
-        "Please complete all required fields before saving the records.",
+        "Please complete all required fields before saving.",
         "error"
       );
       // Force a refresh of the UI
@@ -720,12 +721,27 @@ export default class ServiceBuilder extends LightningElement {
     }
 
     // If validation passes, proceed with saving
-    this.contractLines.forEach((line, index) => {
-      this.insertContractLine(index, line.Product2Id);
-    });
+    // Create an Array that contains the results of the insertContractLine function for each line
+    const promises = this.contractLines.map((line, index) =>
+      this.insertContractLine(index, line.Product2Id)
+    );
 
-    this.handleToast("Success", "All records have been saved", "success");
-    this.reIndex();
+    Promise.all(promises)
+      .then(() => {
+        this.reIndex();
+        this.handleToast("Success", "All records have been saved", "success");
+      })
+      .catch((error) => {
+        const ERROR_MESSAGE = error.body?.message || error;
+
+        console.log("ERROR MESSAGE: ", ERROR_MESSAGE);
+
+        this.handleToast(
+          "Error",
+          `An error occurred while saving records: ${ERROR_MESSAGE}`,
+          "error"
+        );
+      });
   }
 
   /**
@@ -766,17 +782,19 @@ export default class ServiceBuilder extends LightningElement {
       );
     }
 
-    saveContractLine({ contractLine: contractLine })
-      .then((result) => {
-        if (result) {
-          console.log("Result:", JSON.stringify(result));
+    // Return a promise to handle the result of the save on the handleSaveAll function
+    return new Promise((resolve, reject) => {
+      saveContractLine({ contractLine: contractLine })
+        .then((result) => {
           result.IsSelected = false;
           result.IsNew = false;
           result.Index = index;
+
           // Add the existing FinCustomers back to the result
           result.FinCustomers = existingFinCustomers;
           this.contractLines[index] = result;
-          // If there are financial accounts in the FinCustomers array and no Contract_Line_Financial_Accounts__r, insert them
+
+          // Handle financial accounts
           if (
             this.contractLines[index].FinCustomers.length > 0 &&
             !this.contractLines[index].Contract_Line_Financial_Accounts__r
@@ -791,13 +809,14 @@ export default class ServiceBuilder extends LightningElement {
             });
           }
           this.contractLines = [...this.contractLines];
-          this.reIndex();
-        }
-      })
-      .catch((error) => {
-        console.error("Error saving contract line:", error.message);
-        this.contractLines = [...this.contractLines];
-      });
+          resolve(result);
+        })
+        .catch((error) => {
+          // Refresh the UI to show original state
+          this.contractLines = [...this.contractLines];
+          reject(error);
+        });
+    });
   }
 
   /**

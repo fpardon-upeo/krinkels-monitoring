@@ -7,12 +7,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ATAK_Project__c.Cost_centre_Atak_Id__c</field>
+        <field>ATAK_Project__c.Cost_Centre_Atak_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ATAK_Project__c.Cost_centre_Atak_Name__c</field>
+        <field>ATAK_Project__c.Cost_centre_Atak_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

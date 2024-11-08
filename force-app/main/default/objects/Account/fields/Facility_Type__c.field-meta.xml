@@ -10,9 +10,39 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>TBD</fullName>
+                <fullName>Kantoorgebouwen / Immeubles de bureaux</fullName>
                 <default>false</default>
-                <label>TBD</label>
+                <label>Office Building</label>
+            </value>
+            <value>
+                <fullName>RVT &amp; Ziekenhuizen / Maisons de retraite &amp; hôpitaux</fullName>
+                <default>false</default>
+                <label>RVT &amp; Hospitals</label>
+            </value>
+            <value>
+                <fullName>Scholen / Ecoles</fullName>
+                <default>false</default>
+                <label>Schools</label>
+            </value>
+            <value>
+                <fullName>Semi-industriële gebouwen / Bâtiments semi-industriels</fullName>
+                <default>false</default>
+                <label>Semi-industrial buildings</label>
+            </value>
+            <value>
+                <fullName>Verkoopspunten / Points de ventes</fullName>
+                <default>false</default>
+                <label>Sales points</label>
+            </value>
+            <value>
+                <fullName>Woningen / Habitations</fullName>
+                <default>false</default>
+                <label>Residential buildings</label>
+            </value>
+            <value>
+                <fullName>Technische gebouwen / Bâtiments techniques</fullName>
+                <default>false</default>
+                <label>Technical buildings</label>
             </value>
         </valueSetDefinition>
     </valueSet>

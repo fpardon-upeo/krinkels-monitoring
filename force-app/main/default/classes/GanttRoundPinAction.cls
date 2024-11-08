@@ -11,7 +11,7 @@ global class GanttRoundPinAction implements FSL.CustomGanttServiceAppointmentAct
 
         List<ServiceAppointment> serviceAppointments = [
                 SELECT Id, SchedStartTime, SchedEndTime, AppointmentNumber,
-                (SELECT Id, ServiceResourceId, ServiceCrewId, ServiceAppointmentId from ServiceResources WHERE ServiceResource.ResourceType = 'C' OR ServiceResource.ResourceType = 'T'),
+                (SELECT Id, ServiceResourceId, ServiceCrewId, ServiceAppointmentId from ServiceResources WHERE ServiceResource.ResourceType = 'C' OR ServiceResource.ResourceType = 'T' ORDER BY ServiceResource.ResourceType DESC LIMIT 1),
                 TYPEOF ParentRecord
                 WHEN WorkOrder THEN Asset.Recurrence_Pattern__c, Asset.Id
         END

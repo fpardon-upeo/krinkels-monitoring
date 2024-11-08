@@ -225,6 +225,7 @@
         <outputReference>WorkStepRecord</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>WorkOrderId</queriedFields>
+        <queriedFields>Status</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Confirmed_LMRA_Done_at_WO_level</name>
@@ -246,6 +247,27 @@
             </value>
         </inputAssignments>
         <object>WorkOrder</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Work_Step_Status_to_Complete</name>
+        <label>Update Work Step Status to Complete</label>
+        <locationX>578</locationX>
+        <locationY>566</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkStepRecord.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkStep</object>
     </recordUpdates>
     <screens>
         <name>Full_LMRA_Information</name>
@@ -411,6 +433,9 @@
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_Work_Step_Status_to_Complete</targetReference>
+        </connector>
         <fields>
             <name>LMRADoneMessage</name>
             <fieldText>&lt;p&gt;LMRA already done for this work order at this location. You can continue with your tasks.&amp;nbsp;&lt;/p&gt;</fieldText>

@@ -130,8 +130,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Notes__c</fieldItem>
-                <identifier>RecordNotes__cField</identifier>
+                <fieldItem>Record.Description</fieldItem>
+                <identifier>RecordDescriptionField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-71acad4e-99fc-40e0-8da4-f05c2b38a04c</name>
@@ -459,6 +459,32 @@
                 </componentInstanceProperties>
                 <componentName>runtime_sales_merge:mergeCandidatesPreviewCard</componentName>
                 <identifier>runtime_sales_merge_mergeCandidatesPreviewCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Contacts</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

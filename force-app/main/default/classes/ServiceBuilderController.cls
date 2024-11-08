@@ -131,18 +131,24 @@ public without sharing class ServiceBuilderController {
   public static ContractLineItem saveContractLine(
     ContractLineItem contractLine
   ) {
-    try {
-      // Query for active PricebookEntry
-      PricebookEntry pricebookEntry = [
-        SELECT Id
-        FROM PricebookEntry
-        WHERE Product2Id = :contractLine.Product2Id AND IsActive = TRUE
-        LIMIT 1
-      ];
+    // Query for active PricebookEntry with better error handling
+    List<PricebookEntry> pricebookEntries = [
+      SELECT Id
+      FROM PricebookEntry
+      WHERE Product2Id = :contractLine.Product2Id AND IsActive = TRUE
+      LIMIT 1
+    ];
 
+    if (pricebookEntries.isEmpty()) {
+      throw new AuraHandledException(
+        'No active price book entry found for the selected product.'
+      );
+    }
+
+    try {
       // Update PricebookEntryId for both new and existing records
-      contractLine.PricebookEntryId = pricebookEntry.Id;
-      contractLine.UnitPrice = 0; // Set to 0 to recalculate based on PricebookEntry
+      contractLine.PricebookEntryId = pricebookEntries[0].Id;
+      contractLine.UnitPrice = 0;
 
       if (contractLine.Id == null) {
         insert contractLine;
@@ -150,6 +156,7 @@ public without sharing class ServiceBuilderController {
         update contractLine;
       }
 
+      // Return the updated record
       // Return the same fields as getContractLines using a single query
       return [
         SELECT
@@ -195,9 +202,7 @@ public without sharing class ServiceBuilderController {
         WHERE Id = :contractLine.Id
       ];
     } catch (Exception e) {
-      throw new AuraHandledException(
-        'Error saving contract line: ' + e.getMessage()
-      );
+      throw new AuraHandledException(e.getMessage());
     }
   }
 
@@ -300,7 +305,6 @@ public without sharing class ServiceBuilderController {
     }
   }
 
-  @AuraEnabled
   public static void firePlatformEvent(String contractId) {
     //Create a new Platform Event
     Contract_Event__e event = new Contract_Event__e(Record_Id__c = contractId);

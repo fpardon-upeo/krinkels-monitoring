@@ -48,27 +48,44 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Client_sector__c</picklist>
+        <picklist>ContractType__c</picklist>
         <values>
-            <fullName>TBD</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Default_LMRA__c</picklist>
-        <values>
-            <fullName>Full</fullName>
+            <fullName>Indoor</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Limited</fullName>
+            <fullName>Outdoor</fullName>
             <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
         <picklist>Facility_Type__c</picklist>
         <values>
-            <fullName>TBD</fullName>
+            <fullName>Kantoorgebouwen %2F Immeubles de bureaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RVT %26 Ziekenhuizen %2F Maisons de retraite %26 hôpitaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scholen %2F Ecoles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-industriële gebouwen %2F Bâtiments semi-industriels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technische gebouwen %2F Bâtiments techniques</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoopspunten %2F Points de ventes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Woningen %2F Habitations</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -167,6 +184,17 @@
         </values>
         <values>
             <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LMRA_Type__c</picklist>
+        <values>
+            <fullName>Full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -307,10 +335,6 @@
     </picklistValues>
     <picklistValues>
         <picklist>Type</picklist>
-        <values>
-            <fullName>Other</fullName>
-            <default>false</default>
-        </values>
         <values>
             <fullName>Private Sector</fullName>
             <default>false</default>

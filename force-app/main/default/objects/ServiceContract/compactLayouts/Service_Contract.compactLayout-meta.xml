@@ -2,10 +2,10 @@
 <CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Service_Contract</fullName>
     <fields>Name</fields>
-    <fields>ContractNumber</fields>
     <fields>AccountId</fields>
-    <fields>Contract_Type__c</fields>
-    <fields>OwnerId</fields>
+    <fields>Type__c</fields>
     <fields>ParentServiceContractId</fields>
+    <fields>StatusIndicator</fields>
+    <fields>Status</fields>
     <label>Service Contract</label>
 </CompactLayout>

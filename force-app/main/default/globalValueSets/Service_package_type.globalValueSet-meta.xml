@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>BuildingsMaintenance (Building chores and maintenance)</fullName>
+        <default>false</default>
+        <label>BuildingsMaintenance (Building chores and maintenance)</label>
+    </customValue>
+    <customValue>
+        <fullName>GreenCare (Maintenance of organic material)</fullName>
+        <default>false</default>
+        <label>GreenCare (Maintenance of organic material)</label>
+    </customValue>
+    <customValue>
+        <fullName>Maintenance of cleanliness (Dirt cleaning)</fullName>
+        <default>false</default>
+        <label>Maintenance of cleanliness (Dirt cleaning)</label>
+    </customValue>
+    <customValue>
+        <fullName>Environmental works (Chores and maintenance around the building)</fullName>
+        <default>false</default>
+        <label>Environmental works (Chores and maintenance around the building)</label>
+    </customValue>
+    <customValue>
+        <fullName>Winter Maintenance</fullName>
+        <default>false</default>
+        <label>Winter Maintenance</label>
+    </customValue>
+    <customValue>
+        <fullName>Interior planting</fullName>
+        <default>false</default>
+        <label>Interior planting</label>
+    </customValue>
+    <customValue>
+        <fullName>Treecare</fullName>
+        <default>false</default>
+        <label>Treecare</label>
+    </customValue>
+    <masterLabel>Service package type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

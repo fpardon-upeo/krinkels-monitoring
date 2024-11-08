@@ -15,7 +15,7 @@
     <enablePopulateWorkOrderAddress>true</enablePopulateWorkOrderAddress>
     <enableStandbyMode>false</enableStandbyMode>
     <enableWorkOrders>false</enableWorkOrders>
-    <enableWorkPlansAutoGeneration>false</enableWorkPlansAutoGeneration>
+    <enableWorkPlansAutoGeneration>true</enableWorkPlansAutoGeneration>
     <enableWorkStepManualStatusUpdate>false</enableWorkStepManualStatusUpdate>
     <fieldServiceNotificationsOrgPref>true</fieldServiceNotificationsOrgPref>
     <fieldServiceOrgPref>true</fieldServiceOrgPref>

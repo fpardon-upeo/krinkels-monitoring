@@ -105,6 +105,16 @@
           onchange={handleRecurrenceMonthTypeChange}
         >
         </lightning-combobox>
+        <lightning-combobox
+          if:true={showYearRecurrence}
+          name="yearRecurrence"
+          required
+          label="Recurring On"
+          options={recurrenceYearTypeOptions}
+          value={selectedRecurrenceYearType}
+          onchange={handleRecurrenceYearTypeChange}
+        >
+        </lightning-combobox>
       </div>
       <div class="slds-col slds-m-right_small">
         <lightning-input
@@ -125,19 +135,60 @@
           onchange={handleMonthWeekRecurrenceChange}
         >
         </lightning-combobox>
-      </div>
-      <div
-        class="slds-col slds-m-right_small"
-        if:true={showMonthWeekRecurrence}
-      >
         <lightning-combobox
-          name="monthWeekRecurrenceDay"
-          label="Day"
-          options={recurrenceDaysOptions}
-          value={selectedRecurrenceDay}
-          onchange={handleMonthWeekRecurrenceDayChange}
+          if:true={showYearDayRecurrence}
+          name="yearDayRecurrenceMonth"
+          label="Month"
+          options={recurrenceYearMonthTypeOptions}
+          value={selectedRecurrenceYearMonth}
+          onchange={handleYearDayRecurrenceMonthChange}
         >
         </lightning-combobox>
+        <lightning-combobox
+          if:true={showYearMonthDayRecurrence}
+          name="weekOfMonth"
+          label="Week of Month"
+          options={recurrenceMonthWeekOptions}
+          value={selectedMonthWeekRecurrence}
+          onchange={handleMonthWeekRecurrenceChange}
+        >
+        </lightning-combobox>
+      </div>
+      <div class="slds-col slds-m-right_small"
+      >
+        <lightning-combobox if:true={showMonthWeekRecurrence}
+                            name="monthWeekRecurrenceDay"
+                            label="Day"
+                            options={recurrenceDaysOptions}
+                            value={selectedRecurrenceDay}
+                            onchange={handleMonthWeekRecurrenceDayChange}
+        >
+        </lightning-combobox>
+        <lightning-combobox if:true={showYearDayRecurrence}
+                            name="yearDayRecurrenceDay"
+                            label="Day"
+                            options={recurrenceYearMonthDayOptions}
+                            value={selectedRecurrenceYearMonthDay}
+                            onchange={handleYearDayRecurrenceDayChange}
+        >
+        </lightning-combobox>
+        <lightning-combobox if:true={showYearMonthDayRecurrence}
+                            name="monthWeekRecurrenceDay"
+                            label="Day of the Week"
+                            options={recurrenceYearDayOptions}
+                            value={selectedRecurrenceDay}
+                            onchange={handleMonthWeekRecurrenceDayChange}
+        >
+        </lightning-combobox>
+      </div>
+      <div class="slds-col slds-m-right_small" if:true={showYearMonthDayRecurrence}>
+        <lightning-combobox
+          name="yearDayRecurrenceMonth"
+          label="Month"
+          options={recurrenceYearMonthTypeOptions}
+          value={selectedRecurrenceYearMonth}
+          onchange={handleYearDayRecurrenceMonthChange}
+        ></lightning-combobox>
       </div>
     </div>
   </lightning-modal-body>

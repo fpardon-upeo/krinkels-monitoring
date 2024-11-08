@@ -2,11 +2,6 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Other</fullName>
-        <default>false</default>
-        <label>Other</label>
-    </standardValue>
-    <standardValue>
         <fullName>Private Sector</fullName>
         <default>false</default>
         <label>Private Sector</label>

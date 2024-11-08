@@ -10,6 +10,9 @@
         <field>ServiceAppointment$SchedEndTime</field>
     </columns>
     <columns>
+        <field>ServiceAppointment$Account</field>
+    </columns>
+    <columns>
         <field>ServiceAppointment$ServiceTerritory</field>
     </columns>
     <filter>

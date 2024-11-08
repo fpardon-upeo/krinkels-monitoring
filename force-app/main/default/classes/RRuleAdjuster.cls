@@ -5,6 +5,8 @@ public class RRuleAdjuster {
     private static final String FREQ_WEEKLY = 'WEEKLY';
     private static final String FREQ_MONTHLY = 'MONTHLY';
     private static final String FREQ_YEARLY = 'YEARLY';
+    private static final String FREQ_DAILY = 'DAILY';  // Add this with other constants
+
 
     public class RRuleResult {
         public String newRRule;
@@ -234,7 +236,7 @@ public class RRuleAdjuster {
         DateTime currentDate = startDate;
 
         // Generate next X occurrences (limit this based on your needs)
-        for (Integer i = 0; i < 104; i++) { // Example: Generate one year of weekly occurrences
+        for (Integer i = 0; i < 104; i++) { // Example: Generate two years of bi-weekly occurrences
             if (meetsCriteria(currentDate, params)) {
                 dates.add(currentDate);
             }
@@ -246,7 +248,9 @@ public class RRuleAdjuster {
     }
 
     private DateTime advanceDate(DateTime dt, String freq, Integer interval) {
-        if (freq == FREQ_WEEKLY) {
+        if (freq == FREQ_DAILY) {
+            return dt.addDays(interval);
+        } else if (freq == FREQ_WEEKLY) {
             return dt.addDays(7 * interval);
         } else if (freq == FREQ_MONTHLY) {
             return dt.addMonths(interval);

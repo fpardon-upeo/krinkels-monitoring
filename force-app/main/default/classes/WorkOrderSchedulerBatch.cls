@@ -71,6 +71,8 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
                 }
             }
 
+            System.debug('instanceCount: ' + instanceCount);
+
             for(Integer i = 0; i < instanceCount; i++) {
                 WorkOrder wo = new WorkOrder();
                 wo.AccountId = mA.Asset.AccountId;

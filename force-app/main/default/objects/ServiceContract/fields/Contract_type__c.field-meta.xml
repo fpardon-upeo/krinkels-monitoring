@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_type__c</fullName>
+    <label>Contract type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+                <label>Subscription</label>
+            </value>
+            <value>
+                <fullName>Smartscape</fullName>
+                <default>false</default>
+                <label>Smartscape</label>
+            </value>
+            <value>
+                <fullName>Progress Statements</fullName>
+                <default>false</default>
+                <label>Progress Statements</label>
+            </value>
+            <value>
+                <fullName>Additional works</fullName>
+                <default>false</default>
+                <label>Additional works</label>
+            </value>
+            <value>
+                <fullName>Small works</fullName>
+                <default>false</default>
+                <label>Small works</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

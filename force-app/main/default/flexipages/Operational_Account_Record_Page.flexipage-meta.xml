@@ -88,16 +88,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Facility_Type__c</fieldItem>
-                <identifier>RecordFacility_Type__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Status__c</fieldItem>
                 <identifier>RecordStatus__cField</identifier>
             </fieldInstance>
@@ -108,7 +98,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Default_LMRA__c</fieldItem>
+                <fieldItem>Record.LMRA_Type__c</fieldItem>
                 <identifier>RecordDefault_LMRA__cField</identifier>
             </fieldInstance>
         </itemInstances>
@@ -142,8 +132,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Contactperson_operational_customer_key__c</fieldItem>
-                <identifier>RecordContactperson_operational_customer_key__cField</identifier>
+                <fieldItem>Record.ATAK_Project__c</fieldItem>
+                <identifier>RecordATAK_Project_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -164,6 +154,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Priority__c</fieldItem>
                 <identifier>RecordPriority_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ContractType__c</fieldItem>
+                <identifier>RecordContractType_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -294,6 +294,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Opening_hours__c</fieldItem>
                 <identifier>RecordOpening_hours__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.OperatingHoursId</fieldItem>
+                <identifier>RecordOperatingHoursIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -484,6 +494,48 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>daysToShow</name>
+                    <value>120</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>earliestRange</name>
+                    <value>3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>latestRange</name>
+                    <value>0.5</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>preferredHeight</name>
+                    <value>3 - Default</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showToday</name>
+                    <value>Pink</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>timelineParent</name>
+                    <value>Default_Picklist_Value</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>timelineTitle</name>
+                    <value>Timeline</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>zoomTo</name>
+                    <value>Current Date</value>
+                </componentInstanceProperties>
+                <componentName>bmpyrckt:timeline</componentName>
+                <identifier>bmpyrckt_timeline</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-6cf64633-1d4c-4ac9-913f-c200fb6f6aa8</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
                 </componentInstanceProperties>
@@ -511,6 +563,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-6cf64633-1d4c-4ac9-913f-c200fb6f6aa8</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Planning</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -543,24 +609,6 @@
                 <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListContainer</componentName>
-                <identifier>force_relatedListContainer</identifier>
-            </componentInstance>
-        </itemInstances>
         <mode>Replace</mode>
         <name>activityTabContent</name>
         <type>Facet</type>
@@ -589,6 +637,101 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Contacts</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.OperatingHoursId</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>TimeSlots</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>DayOfWeek</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>StartTime</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>EndTime</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Type</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>RecordsetFilterCriteria</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Servicing Hours</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

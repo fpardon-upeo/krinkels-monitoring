@@ -4,25 +4,25 @@
         <name>LMRA_Done</name>
         <label>LMRA Done ?</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <defaultConnector>
-            <targetReference>LMRA_Not_Done_Message</targetReference>
+            <targetReference>Update_Status_of_Work_Order</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
-            <name>Yes</name>
+            <name>No</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>WorkOrderRecord.LMRA_Done__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>LMRAWorkStepRecord.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Completed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Status_of_Work_Order</targetReference>
+                <targetReference>Complete_LMRA_Message</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>No</label>
         </rules>
     </decisions>
     <description>This flow updates the status of the work order and the related service appointment to ‘In Progress’.</description>
@@ -49,13 +49,42 @@
     </processMetadataValues>
     <processType>FieldServiceMobile</processType>
     <recordLookups>
+        <name>Get_LMRA_Work_Step_Information</name>
+        <label>Get LMRA Work Step Information</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LMRA_Done</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>LMRA</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>WorkOrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkOrderRecord.Id</elementReference>
+            </value>
+        </filters>
+        <object>WorkStep</object>
+        <outputReference>LMRAWorkStepRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>Get_WO_Order_Information</name>
         <label>Get WO Order Information</label>
         <locationX>182</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>LMRA_Done</targetReference>
+            <targetReference>Get_LMRA_Work_Step_Information</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -90,18 +119,19 @@
         <object>WorkStep</object>
         <outputReference>WorkStepRecord</outputReference>
         <queriedFields>Id</queriedFields>
+        <queriedFields>WorkOrderId</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Status_of_Service_Appointment</name>
         <label>Update Status of Service Appointment</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ParentRecordId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Id</elementReference>
+                <elementReference>WorkOrderRecord.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -115,8 +145,8 @@
     <recordUpdates>
         <name>Update_Status_of_Work_Order</name>
         <label>Update Status of Work Order</label>
-        <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
         <connector>
             <targetReference>Update_Status_of_Service_Appointment</targetReference>
         </connector>
@@ -125,7 +155,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Id</elementReference>
+                <elementReference>WorkOrderRecord.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -136,20 +166,50 @@
         </inputAssignments>
         <object>WorkOrder</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Work_Step_to_New</name>
+        <label>Update Work Step to New</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WorkOrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkOrderRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Check Out</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkStep</object>
+    </recordUpdates>
     <screens>
-        <name>LMRA_Not_Done_Message</name>
-        <label>LMRA Not Done Message</label>
-        <locationX>314</locationX>
-        <locationY>458</locationY>
+        <name>Complete_LMRA_Message</name>
+        <label>Complete LMRA Message</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_Work_Step_to_New</targetReference>
+        </connector>
         <fields>
-            <name>LMRANotDoneMessage</name>
-            <fieldText>&lt;p&gt;The LMRA has not been done. Please do this before closing this work order.&lt;/p&gt;</fieldText>
+            <name>MessageToCompleteLMRA</name>
+            <fieldText>&lt;p&gt;Please complete the LMRA step before closing your work order.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
-        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -167,6 +227,14 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>LMRAWorkStepRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkStep</objectType>
     </variables>
     <variables>
         <name>WorkOrderRecord</name>
