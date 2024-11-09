@@ -2,9 +2,9 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 1629
+Metadatas: 1816
 
-<details><summary>ApexClass (34)</summary>
+<details><summary>ApexClass (44)</summary>
   • ATAKProjectService<br/>
   • ATAKProjectWrapper<br/>
   • ATAKProjectWrapperTest<br/>
@@ -27,6 +27,16 @@ Metadatas: 1629
   • RRuleDescriptionGenerator<br/>
   • ReadyForValidation<br/>
   • SchedulingController<br/>
+  • SendBetterEmail<br/>
+  • SendBetterEmailAddAttachmentToEmail<br/>
+  • SendBetterEmailAddTasksToEmail<br/>
+  • SendBetterEmailBulk<br/>
+  • SendBetterEmailBulkRequestSetup<br/>
+  • SendBetterEmailConstant<br/>
+  • SendBetterEmailRequest<br/>
+  • SendBetterEmailResponse<br/>
+  • SendBetterEmailTest<br/>
+  • SendBetterEmailUtil<br/>
   • ServiceAppointmentRescheduler<br/>
   • ServiceAppointmentTriggerHandler<br/>
   • ServiceBuilderController<br/>
@@ -47,8 +57,9 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>ApexPage (1)</summary>
+<details><summary>ApexPage (2)</summary>
   • NonEssentialsMobileLanding<br/>
+  • fsc_screenFlow<br/>
 </details>
 
 <br/>
@@ -71,6 +82,12 @@ Metadatas: 1629
 <details><summary>AssignmentRules (2)</summary>
   • Case<br/>
   • Lead<br/>
+</details>
+
+<br/>
+<details><summary>AuraDefinitionBundle (2)</summary>
+  • fsc_openUrl<br/>
+  • fsc_screenFlowApp<br/>
 </details>
 
 <br/>
@@ -138,7 +155,7 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>CustomField (306)</summary>
+<details><summary>CustomField (344)</summary>
   • ATAK_Project__c.ATAK_Creation_Date__c<br/>
   • ATAK_Project__c.Branche__c<br/>
   • ATAK_Project__c.Client_Type__c<br/>
@@ -183,6 +200,8 @@ Metadatas: 1629
   • Account.Region__c<br/>
   • Account.Related_account__c<br/>
   • Account.Status__c<br/>
+  • AccountContactRelation.Commercial_SPOC__c<br/>
+  • AccountContactRelation.Operational_SPOC__c<br/>
   • Activity.FSL__Count_of_Events__c<br/>
   • Activity.FSL__Count_of_Tasks__c<br/>
   • Activity.FSL__Event_Type__c<br/>
@@ -236,6 +255,42 @@ Metadatas: 1629
   • Export_Configuration__mdt.Object_API_Name__c<br/>
   • Export_Configuration__mdt.Parent_Relationship_Field__c<br/>
   • Export_Configuration__mdt.Where_Clause__c<br/>
+  • FlowPersonalConfiguration__c.ActorId__c<br/>
+  • FlowPersonalConfiguration__c.Config1Name__c<br/>
+  • FlowPersonalConfiguration__c.Config1Value__c<br/>
+  • FlowPersonalConfiguration__c.Config2Name__c<br/>
+  • FlowPersonalConfiguration__c.Config2Value__c<br/>
+  • FlowPersonalConfiguration__c.Config3Name__c<br/>
+  • FlowPersonalConfiguration__c.Config3Value__c<br/>
+  • FlowPersonalConfiguration__c.Config4Name__c<br/>
+  • FlowPersonalConfiguration__c.Config4Value__c<br/>
+  • FlowPersonalConfiguration__c.Config5Name__c<br/>
+  • FlowPersonalConfiguration__c.Config5Value__c<br/>
+  • FlowPersonalConfiguration__c.Config6Name__c<br/>
+  • FlowPersonalConfiguration__c.Config6Value__c<br/>
+  • FlowPersonalConfiguration__c.Config7Name__c<br/>
+  • FlowPersonalConfiguration__c.Config7Value__c<br/>
+  • FlowPersonalConfiguration__c.Config8Name__c<br/>
+  • FlowPersonalConfiguration__c.Config8Value__c<br/>
+  • FlowPersonalConfiguration__c.Config9Name__c<br/>
+  • FlowPersonalConfiguration__c.Config9Value__c<br/>
+  • FlowPersonalConfiguration__c.LocationId__c<br/>
+  • FlowTableViewDefinition__c.Active__c<br/>
+  • FlowTableViewDefinition__c.Alignments__c<br/>
+  • FlowTableViewDefinition__c.Cell_Attributes__c<br/>
+  • FlowTableViewDefinition__c.Edits__c<br/>
+  • FlowTableViewDefinition__c.Field_API_Names__c<br/>
+  • FlowTableViewDefinition__c.Field_Sorting__c<br/>
+  • FlowTableViewDefinition__c.Filters__c<br/>
+  • FlowTableViewDefinition__c.Icons__c<br/>
+  • FlowTableViewDefinition__c.Labels__c<br/>
+  • FlowTableViewDefinition__c.Object_API_Name__c<br/>
+  • FlowTableViewDefinition__c.Other_Attributes__c<br/>
+  • FlowTableViewDefinition__c.Selection_Method__c<br/>
+  • FlowTableViewDefinition__c.Type_Attributes__c<br/>
+  • FlowTableViewDefinition__c.View_Name__c<br/>
+  • FlowTableViewDefinition__c.Widths__c<br/>
+  • FlowTableViewDefinition__c.Wraps__c<br/>
   • ForecastingItem__hd.AmountWithoutAdjustments__c<br/>
   • ForecastingItem__hd.AmountWithoutManagerAdjustment__c<br/>
   • ForecastingItem__hd.ForecastAmount__c<br/>
@@ -448,6 +503,82 @@ Metadatas: 1629
 </details>
 
 <br/>
+<details><summary>CustomLabel (72)</summary>
+  • fsc_AccessLevel<br/>
+  • fsc_AccessLevel<br/>
+  • fsc_Back<br/>
+  • fsc_Back<br/>
+  • fsc_ButtonIsNotSupportedMessage<br/>
+  • fsc_ButtonIsNotSupportedMessage<br/>
+  • fsc_ConditionLogicHelpText<br/>
+  • fsc_ConditionLogicHelpText<br/>
+  • fsc_Delete<br/>
+  • fsc_Delete<br/>
+  • fsc_FieldIsNotSupportedMessage<br/>
+  • fsc_FieldIsNotSupportedMessage<br/>
+  • fsc_FieldTypeNotSuportedMessage<br/>
+  • fsc_FieldTypeNotSuportedMessage<br/>
+  • fsc_For<br/>
+  • fsc_For<br/>
+  • fsc_Key_Label<br/>
+  • fsc_Key_Label<br/>
+  • fsc_LackingPermissions<br/>
+  • fsc_LackingPermissions<br/>
+  • fsc_ManagerEmptyMessage<br/>
+  • fsc_ManagerEmptyMessage<br/>
+  • fsc_MultipleGroupsForRole<br/>
+  • fsc_MultipleGroupsForRole<br/>
+  • fsc_Name<br/>
+  • fsc_Name<br/>
+  • fsc_NonePicklistValueLabel<br/>
+  • fsc_NonePicklistValueLabel<br/>
+  • fsc_OWDReadWrite<br/>
+  • fsc_OWDReadWrite<br/>
+  • fsc_OwnerAdminModify<br/>
+  • fsc_OwnerAdminModify<br/>
+  • fsc_PublicGroups<br/>
+  • fsc_PublicGroups<br/>
+  • fsc_Queues<br/>
+  • fsc_Queues<br/>
+  • fsc_Read<br/>
+  • fsc_Read<br/>
+  • fsc_ReadWrite<br/>
+  • fsc_ReadWrite<br/>
+  • fsc_Reason<br/>
+  • fsc_Reason<br/>
+  • fsc_RelatedUsers<br/>
+  • fsc_RelatedUsers<br/>
+  • fsc_Roles<br/>
+  • fsc_Roles<br/>
+  • fsc_Search<br/>
+  • fsc_Search<br/>
+  • fsc_SearchFor<br/>
+  • fsc_SearchFor<br/>
+  • fsc_SetAccessLevel<br/>
+  • fsc_SetAccessLevel<br/>
+  • fsc_SupportedAddCapabilitiesEmptyMessage<br/>
+  • fsc_SupportedAddCapabilitiesEmptyMessage<br/>
+  • fsc_SupportedButtonsEmptyMessage<br/>
+  • fsc_SupportedButtonsEmptyMessage<br/>
+  • fsc_SupportedEditCapabilitiesEmptyMessage<br/>
+  • fsc_SupportedEditCapabilitiesEmptyMessage<br/>
+  • fsc_TooManyResultsMessage<br/>
+  • fsc_TooManyResultsMessage<br/>
+  • fsc_Type<br/>
+  • fsc_Type<br/>
+  • fsc_UserOrGroup<br/>
+  • fsc_UserOrGroup<br/>
+  • fsc_Users<br/>
+  • fsc_Users<br/>
+  • fsc_Value_Label<br/>
+  • fsc_Value_Label<br/>
+  • sremailNoSearchResultsMessage<br/>
+  • sremailNoSearchResultsMessage<br/>
+  • sremailSearchMembers<br/>
+  • sremailSearchMembers<br/>
+</details>
+
+<br/>
 <details><summary>CustomMetadata (3)</summary>
   • Export_Configuration.ServiceContract<br/>
   • bmpyrckt__Timeline_Configuration.Account_ServiceAppointments<br/>
@@ -461,10 +592,12 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>CustomObject (8)</summary>
+<details><summary>CustomObject (10)</summary>
   • ATAK_Project__c<br/>
   • Asset_Financial_Account__c<br/>
   • Contract_Line_Financial_Account__c<br/>
+  • FlowPersonalConfiguration__c<br/>
+  • FlowTableViewDefinition__c<br/>
   • Google_Maps_API__c<br/>
   • LMRA__c<br/>
   • Location_Passport__c<br/>
@@ -525,7 +658,7 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>EmailTemplate (27)</summary>
+<details><summary>EmailTemplate (28)</summary>
   • unfiled$public<br/>
   • unfiled$public/ContactFollowUpSAMPLE<br/>
   • unfiled$public/Email_First_Response<br/>
@@ -553,6 +686,7 @@ Metadatas: 1629
   • unfiled$public/Sample_Promotion<br/>
   • unfiled$public/Sample_Reconnecting<br/>
   • unfiled$public/Sample_ScheduleMeeting<br/>
+  • unfiled$public/Service_Report_Email_1731064851557<br/>
 </details>
 
 <br/>
@@ -657,15 +791,17 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>Flow (20)</summary>
+<details><summary>Flow (23)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
+  • Send_Better_Email_Testflow<br/>
   • Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory<br/>
   • Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status<br/>
+  • Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer<br/>
   • Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
@@ -678,18 +814,21 @@ Metadatas: 1629
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
+  • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
 <br/>
-<details><summary>FlowDefinition (20)</summary>
+<details><summary>FlowDefinition (23)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
+  • Send_Better_Email_Testflow<br/>
   • Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory<br/>
   • Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status<br/>
+  • Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer<br/>
   • Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
@@ -702,6 +841,7 @@ Metadatas: 1629
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
+  • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
 <br/>
@@ -760,7 +900,7 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>Layout (196)</summary>
+<details><summary>Layout (199)</summary>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Commercial Account Layout<br/>
   • Account-FSL Commercial Account Layout<br/>
@@ -813,6 +953,7 @@ Metadatas: 1629
   • Customer-Customer Layout<br/>
   • DataUseLegalBasis-Data Use Legal Basis Layout<br/>
   • DataUsePurpose-Data Use Purpose Layout<br/>
+  • DocumentRecipient-Document Recipient Layout<br/>
   • DuplicateRecordSet-Duplicate Record Set Layout<br/>
   • DynamicDataCapture-Dynamic Data Capture Layout<br/>
   • EmailMessage-Email Message Layout<br/>
@@ -826,6 +967,8 @@ Metadatas: 1629
   • ExpenseReportEntry-Expense Report Entry Layout<br/>
   • Export_Configuration__mdt-Export Configuration Layout<br/>
   • FeedItem-Feed Item Layout<br/>
+  • FlowPersonalConfiguration__c-Flow Personal Configuration Layout<br/>
+  • FlowTableViewDefinition__c-FlowTableViewDefinition Layout<br/>
   • Global-FSL Global Actions<br/>
   • Global-Global Layout<br/>
   • Idea-Idea Layout<br/>
@@ -960,10 +1103,53 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>LightningComponentBundle (13)</summary>
+<details><summary>LightningComponentBundle (59)</summary>
   • addressSearch<br/>
   • contractLineEditor<br/>
   • exportRecords<br/>
+  • fsc_actionList3<br/>
+  • fsc_displayError<br/>
+  • fsc_drawLine<br/>
+  • fsc_drawLineCPE<br/>
+  • fsc_dualListBox3<br/>
+  • fsc_dualListBoxCPE<br/>
+  • fsc_dualListBoxUtils<br/>
+  • fsc_expressionBuilder3<br/>
+  • fsc_expressionLine<br/>
+  • fsc_extendedBaseDualListBox<br/>
+  • fsc_fieldSelector3<br/>
+  • fsc_fieldViewer<br/>
+  • fsc_flexcardCPE<br/>
+  • fsc_flexcardFlow<br/>
+  • fsc_flexcardHeader<br/>
+  • fsc_flowBanner<br/>
+  • fsc_flowButtonBar<br/>
+  • fsc_flowButtonBarCPE<br/>
+  • fsc_flowCheckbox<br/>
+  • fsc_flowCombobox<br/>
+  • fsc_flowComboboxUtils<br/>
+  • fsc_flowPicker3<br/>
+  • fsc_formulaBuilder3<br/>
+  • fsc_keyValuePairBuilderContainer<br/>
+  • fsc_keyValuePairBuilderRow<br/>
+  • fsc_lookup_quickRecord<br/>
+  • fsc_lwcLogger<br/>
+  • fsc_lwcModal<br/>
+  • fsc_lwcModalUtil<br/>
+  • fsc_modalFlow<br/>
+  • fsc_pickIcon<br/>
+  • fsc_pickIconCpe<br/>
+  • fsc_pickObjectAndField3<br/>
+  • fsc_pickObjectAndFieldUtils<br/>
+  • fsc_quickChoiceCpe<br/>
+  • fsc_quickChoiceFSC<br/>
+  • fsc_reactiveConditionalVisibility<br/>
+  • fsc_screenFlow<br/>
+  • fsc_searchableDataTable<br/>
+  • fsc_sortingConfiguration3<br/>
+  • fsc_sortingConfigurationLine<br/>
+  • fsc_toastMessage<br/>
+  • fsc_transferMetadata3<br/>
   • generateMaintenancePlan<br/>
   • prepareContractForNextYear<br/>
   • readyForValidation<br/>
@@ -971,6 +1157,9 @@ Metadatas: 1629
   • resourceCalendar<br/>
   • roundDispatcher<br/>
   • scheduleWorkOrders<br/>
+  • sendBetterEmailAddNewMembers<br/>
+  • sendBetterEmailCPE<br/>
+  • sendBetterEmailUcModal<br/>
   • serviceBuilder<br/>
   • servicesToSchedule<br/>
   • simpleDispatcherConsole<br/>
@@ -1032,8 +1221,9 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>PermissionSet (4)</summary>
+<details><summary>PermissionSet (5)</summary>
   • ATAK_Permissions<br/>
+  • USF_Flow_Screen_Component_Custom_Objects<br/>
   • cases_Permisssion_Set<br/>
   • sfdcInternalInt__sfdc_fieldservice<br/>
   • sfdcInternalInt__sfdc_scrt2<br/>
@@ -1566,7 +1756,7 @@ Metadatas: 1629
 </details>
 
 <br/>
-<details><summary>SharingRules (145)</summary>
+<details><summary>SharingRules (147)</summary>
   • ATAK_Project__c<br/>
   • Account<br/>
   • ActivityRecurrence2<br/>
@@ -1615,7 +1805,9 @@ Metadatas: 1629
   • FlowOrchestrationStageInstance<br/>
   • FlowOrchestrationStepInstance<br/>
   • FlowOrchestrationWorkItem<br/>
+  • FlowPersonalConfiguration__c<br/>
   • FlowRecord<br/>
+  • FlowTableViewDefinition__c<br/>
   • FlowTestResult<br/>
   • GeolocationBasedAction<br/>
   • Image<br/>
@@ -1785,12 +1977,17 @@ Metadatas: 1629
 </details>
 
 <br/>
+<details><summary>StaticResource (1)</summary>
+  • fsc_Quickchoice_Images<br/>
+</details>
+
+<br/>
 <details><summary>TimeSheetTemplate (1)</summary>
   • Default_Timesheet_Daily<br/>
 </details>
 
 <br/>
-<details><summary>TopicsForObjects (84)</summary>
+<details><summary>TopicsForObjects (86)</summary>
   • ATAK_Project__c<br/>
   • Account<br/>
   • ApptBundleAggrDurDnscale<br/>
@@ -1821,6 +2018,8 @@ Metadatas: 1629
   • Expense<br/>
   • ExpenseReport<br/>
   • ExpenseReportEntry<br/>
+  • FlowPersonalConfiguration__c<br/>
+  • FlowTableViewDefinition__c<br/>
   • Incident<br/>
   • JobProfile<br/>
   • LMRA__c<br/>

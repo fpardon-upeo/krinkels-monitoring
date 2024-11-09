@@ -23,6 +23,16 @@
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
         <members>SchedulingController</members>
+        <members>SendBetterEmail</members>
+        <members>SendBetterEmailAddAttachmentToEmail</members>
+        <members>SendBetterEmailAddTasksToEmail</members>
+        <members>SendBetterEmailBulk</members>
+        <members>SendBetterEmailBulkRequestSetup</members>
+        <members>SendBetterEmailConstant</members>
+        <members>SendBetterEmailRequest</members>
+        <members>SendBetterEmailResponse</members>
+        <members>SendBetterEmailTest</members>
+        <members>SendBetterEmailUtil</members>
         <members>ServiceAppointmentRescheduler</members>
         <members>ServiceAppointmentTriggerHandler</members>
         <members>ServiceBuilderController</members>
@@ -44,6 +54,7 @@
     </types>
     <types>
         <members>NonEssentialsMobileLanding</members>
+        <members>fsc_screenFlow</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -64,6 +75,11 @@
         <members>Case</members>
         <members>Lead</members>
         <name>AssignmentRules</name>
+    </types>
+    <types>
+        <members>fsc_openUrl</members>
+        <members>fsc_screenFlowApp</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>Case</members>
@@ -175,6 +191,8 @@
         <members>Account.Related_account__c</members>
         <members>Account.Short_Name__c</members>
         <members>Account.Status__c</members>
+        <members>AccountContactRelation.Commercial_SPOC__c</members>
+        <members>AccountContactRelation.Operational_SPOC__c</members>
         <members>Activity.FSL__Count_of_Events__c</members>
         <members>Activity.FSL__Count_of_Tasks__c</members>
         <members>Activity.FSL__Event_Type__c</members>
@@ -230,6 +248,42 @@
         <members>Export_Configuration__mdt.Object_API_Name__c</members>
         <members>Export_Configuration__mdt.Parent_Relationship_Field__c</members>
         <members>Export_Configuration__mdt.Where_Clause__c</members>
+        <members>FlowPersonalConfiguration__c.ActorId__c</members>
+        <members>FlowPersonalConfiguration__c.Config1Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config1Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config2Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config2Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config3Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config3Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config4Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config4Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config5Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config5Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config6Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config6Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config7Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config7Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config8Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config8Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config9Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config9Value__c</members>
+        <members>FlowPersonalConfiguration__c.LocationId__c</members>
+        <members>FlowTableViewDefinition__c.Active__c</members>
+        <members>FlowTableViewDefinition__c.Alignments__c</members>
+        <members>FlowTableViewDefinition__c.Cell_Attributes__c</members>
+        <members>FlowTableViewDefinition__c.Edits__c</members>
+        <members>FlowTableViewDefinition__c.Field_API_Names__c</members>
+        <members>FlowTableViewDefinition__c.Field_Sorting__c</members>
+        <members>FlowTableViewDefinition__c.Filters__c</members>
+        <members>FlowTableViewDefinition__c.Icons__c</members>
+        <members>FlowTableViewDefinition__c.Labels__c</members>
+        <members>FlowTableViewDefinition__c.Object_API_Name__c</members>
+        <members>FlowTableViewDefinition__c.Other_Attributes__c</members>
+        <members>FlowTableViewDefinition__c.Selection_Method__c</members>
+        <members>FlowTableViewDefinition__c.Type_Attributes__c</members>
+        <members>FlowTableViewDefinition__c.View_Name__c</members>
+        <members>FlowTableViewDefinition__c.Widths__c</members>
+        <members>FlowTableViewDefinition__c.Wraps__c</members>
         <members>Google_Maps_API__c.Key__c</members>
         <members>Knowledge__kav.Answer__c</members>
         <members>Knowledge__kav.Procedure_Audience__c</members>
@@ -433,6 +487,49 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>fsc_AccessLevel</members>
+        <members>fsc_Back</members>
+        <members>fsc_ButtonIsNotSupportedMessage</members>
+        <members>fsc_ConditionLogicHelpText</members>
+        <members>fsc_Delete</members>
+        <members>fsc_FieldIsNotSupportedMessage</members>
+        <members>fsc_FieldTypeNotSuportedMessage</members>
+        <members>fsc_For</members>
+        <members>fsc_Key_Label</members>
+        <members>fsc_LackingPermissions</members>
+        <members>fsc_ManagerEmptyMessage</members>
+        <members>fsc_MultipleGroupsForRole</members>
+        <members>fsc_Name</members>
+        <members>fsc_NonePicklistValueLabel</members>
+        <members>fsc_OWDReadWrite</members>
+        <members>fsc_OwnerAdminModify</members>
+        <members>fsc_PublicGroups</members>
+        <members>fsc_Queues</members>
+        <members>fsc_Read</members>
+        <members>fsc_ReadWrite</members>
+        <members>fsc_Reason</members>
+        <members>fsc_RelatedUsers</members>
+        <members>fsc_Roles</members>
+        <members>fsc_Search</members>
+        <members>fsc_SearchFor</members>
+        <members>fsc_SetAccessLevel</members>
+        <members>fsc_SupportedAddCapabilitiesEmptyMessage</members>
+        <members>fsc_SupportedButtonsEmptyMessage</members>
+        <members>fsc_SupportedEditCapabilitiesEmptyMessage</members>
+        <members>fsc_TooManyResultsMessage</members>
+        <members>fsc_Type</members>
+        <members>fsc_UserOrGroup</members>
+        <members>fsc_Users</members>
+        <members>fsc_Value_Label</members>
+        <members>sremailNoSearchResultsMessage</members>
+        <members>sremailSearchMembers</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
         <members>Export_Configuration.ServiceContract</members>
         <members>bmpyrckt__Timeline_Configuration.Account_ServiceAppointments</members>
         <members>bmpyrckt__Timeline_Configuration.Asset_ServiceAppointments</members>
@@ -447,6 +544,8 @@
         <members>ATAK_Project__c</members>
         <members>Asset_Financial_Account__c</members>
         <members>Contract_Line_Financial_Account__c</members>
+        <members>FlowPersonalConfiguration__c</members>
+        <members>FlowTableViewDefinition__c</members>
         <members>Google_Maps_API__c</members>
         <members>LMRA__c</members>
         <members>Location_Passport__c</members>
@@ -528,6 +627,7 @@
         <members>unfiled$public/Sample_Promotion</members>
         <members>unfiled$public/Sample_Reconnecting</members>
         <members>unfiled$public/Sample_ScheduleMeeting</members>
+        <members>unfiled$public/Service_Report_Email_1731064851557</members>
         <name>EmailTemplate</name>
     </types>
     <types>
@@ -635,8 +735,10 @@
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
@@ -649,6 +751,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
+        <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>Flow</name>
     </types>
     <types>
@@ -659,8 +762,10 @@
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
@@ -673,6 +778,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
+        <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>FlowDefinition</name>
     </types>
     <types>
@@ -786,6 +892,7 @@
         <members>Customer-Customer Layout</members>
         <members>DataUseLegalBasis-Data Use Legal Basis Layout</members>
         <members>DataUsePurpose-Data Use Purpose Layout</members>
+        <members>DocumentRecipient-Document Recipient Layout</members>
         <members>DuplicateRecordSet-Duplicate Record Set Layout</members>
         <members>DynamicDataCapture-Dynamic Data Capture Layout</members>
         <members>EmailMessage-Email Message Layout</members>
@@ -799,6 +906,8 @@
         <members>ExpenseReportEntry-Expense Report Entry Layout</members>
         <members>Export_Configuration__mdt-Export Configuration Layout</members>
         <members>FeedItem-Feed Item Layout</members>
+        <members>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</members>
+        <members>FlowTableViewDefinition__c-FlowTableViewDefinition Layout</members>
         <members>Global-FSL Global Actions</members>
         <members>Global-Global Layout</members>
         <members>Idea-Idea Layout</members>
@@ -931,6 +1040,49 @@
         <members>addressSearch</members>
         <members>contractLineEditor</members>
         <members>exportRecords</members>
+        <members>fsc_actionList3</members>
+        <members>fsc_displayError</members>
+        <members>fsc_drawLine</members>
+        <members>fsc_drawLineCPE</members>
+        <members>fsc_dualListBox3</members>
+        <members>fsc_dualListBoxCPE</members>
+        <members>fsc_dualListBoxUtils</members>
+        <members>fsc_expressionBuilder3</members>
+        <members>fsc_expressionLine</members>
+        <members>fsc_extendedBaseDualListBox</members>
+        <members>fsc_fieldSelector3</members>
+        <members>fsc_fieldViewer</members>
+        <members>fsc_flexcardCPE</members>
+        <members>fsc_flexcardFlow</members>
+        <members>fsc_flexcardHeader</members>
+        <members>fsc_flowBanner</members>
+        <members>fsc_flowButtonBar</members>
+        <members>fsc_flowButtonBarCPE</members>
+        <members>fsc_flowCheckbox</members>
+        <members>fsc_flowCombobox</members>
+        <members>fsc_flowComboboxUtils</members>
+        <members>fsc_flowPicker3</members>
+        <members>fsc_formulaBuilder3</members>
+        <members>fsc_keyValuePairBuilderContainer</members>
+        <members>fsc_keyValuePairBuilderRow</members>
+        <members>fsc_lookup_quickRecord</members>
+        <members>fsc_lwcLogger</members>
+        <members>fsc_lwcModal</members>
+        <members>fsc_lwcModalUtil</members>
+        <members>fsc_modalFlow</members>
+        <members>fsc_pickIcon</members>
+        <members>fsc_pickIconCpe</members>
+        <members>fsc_pickObjectAndField3</members>
+        <members>fsc_pickObjectAndFieldUtils</members>
+        <members>fsc_quickChoiceCpe</members>
+        <members>fsc_quickChoiceFSC</members>
+        <members>fsc_reactiveConditionalVisibility</members>
+        <members>fsc_screenFlow</members>
+        <members>fsc_searchableDataTable</members>
+        <members>fsc_sortingConfiguration3</members>
+        <members>fsc_sortingConfigurationLine</members>
+        <members>fsc_toastMessage</members>
+        <members>fsc_transferMetadata3</members>
         <members>generateMaintenancePlan</members>
         <members>prepareContractForNextYear</members>
         <members>readyForValidation</members>
@@ -938,6 +1090,9 @@
         <members>resourceCalendar</members>
         <members>roundDispatcher</members>
         <members>scheduleWorkOrders</members>
+        <members>sendBetterEmailAddNewMembers</members>
+        <members>sendBetterEmailCPE</members>
+        <members>sendBetterEmailUcModal</members>
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
         <members>simpleDispatcherConsole</members>
@@ -949,6 +1104,7 @@
     </types>
     <types>
         <members>ATAK_Project__c.All</members>
+        <members>FlowTableViewDefinition__c.All</members>
         <members>LMRA__c.All</members>
         <members>Location_Passport__c.All</members>
         <members>Location_Visit__c.All</members>
@@ -996,6 +1152,7 @@
     </types>
     <types>
         <members>ATAK_Permissions</members>
+        <members>USF_Flow_Screen_Component_Custom_Objects</members>
         <members>cases_Permisssion_Set</members>
         <members>sfdcInternalInt__sfdc_fieldservice</members>
         <members>sfdcInternalInt__sfdc_scrt2</members>
@@ -1559,7 +1716,9 @@
         <members>FlowOrchestrationStageInstance</members>
         <members>FlowOrchestrationStepInstance</members>
         <members>FlowOrchestrationWorkItem</members>
+        <members>FlowPersonalConfiguration__c</members>
         <members>FlowRecord</members>
+        <members>FlowTableViewDefinition__c</members>
         <members>FlowTestResult</members>
         <members>GeolocationBasedAction</members>
         <members>Image</members>
@@ -1727,6 +1886,10 @@
         <name>StandardValueSet</name>
     </types>
     <types>
+        <members>fsc_Quickchoice_Images</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
         <members>Default_Timesheet_Daily</members>
         <name>TimeSheetTemplate</name>
     </types>
@@ -1761,6 +1924,8 @@
         <members>Expense</members>
         <members>ExpenseReport</members>
         <members>ExpenseReportEntry</members>
+        <members>FlowPersonalConfiguration__c</members>
+        <members>FlowTableViewDefinition__c</members>
         <members>Incident</members>
         <members>JobProfile</members>
         <members>LMRA__c</members>

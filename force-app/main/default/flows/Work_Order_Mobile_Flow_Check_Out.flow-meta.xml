@@ -27,6 +27,11 @@
     </decisions>
     <description>This flow updates the status of the work order and the related service appointment to ‘In Progress’.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Now</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
     <interviewLabel>[Work Order][Mobile Flow] Check Out {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Work Order][Mobile Flow] Check Out</label>
     <processMetadataValues>
@@ -135,6 +140,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>ActualEndTime</field>
+            <value>
+                <elementReference>Now</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Status</field>
             <value>
                 <stringValue>Completed</stringValue>
@@ -173,17 +184,10 @@
         <locationY>674</locationY>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>WorkOrderId</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>WorkOrderRecord.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Check Out</stringValue>
+                <elementReference>Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -207,7 +211,7 @@
         </connector>
         <fields>
             <name>MessageToCompleteLMRA</name>
-            <fieldText>&lt;p&gt;Please complete the LMRA step before closing your work order.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Please complete the &lt;strong&gt;&lt;em&gt;LMRA&lt;/em&gt;&lt;/strong&gt; step before closing your work order.&lt;/p&gt;&lt;p&gt;Once completed, click &lt;strong&gt;&lt;em&gt;Check Out&lt;/em&gt;&lt;/strong&gt; again to close your work order.&amp;nbsp;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

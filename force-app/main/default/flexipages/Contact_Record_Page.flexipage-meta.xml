@@ -111,19 +111,19 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ContractType__c</fieldItem>
-                <identifier>RecordContractType__cField</identifier>
+                <fieldItem>Record.Functional_level__c</fieldItem>
+                <identifier>RecordFunctional_level__cField</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Type_Formula__c}</leftValue>
                         <operator>CONTAINS</operator>
-                        <rightValue>Commercial</rightValue>
+                        <rightValue>Group</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Type_Formula__c}</leftValue>
                         <operator>CONTAINS</operator>
-                        <rightValue>Operational</rightValue>
+                        <rightValue>Commercial</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -185,19 +185,19 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Functional_level__c</fieldItem>
-                <identifier>RecordFunctional_level__cField</identifier>
+                <fieldItem>Record.ContractType__c</fieldItem>
+                <identifier>RecordContractType__cField</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Type_Formula__c}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>Group</rightValue>
-                    </criteria>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Type_Formula__c}</leftValue>
                         <operator>CONTAINS</operator>
                         <rightValue>Commercial</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Type_Formula__c}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Operational</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>

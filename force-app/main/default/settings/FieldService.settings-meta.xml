@@ -16,7 +16,7 @@
     <enableStandbyMode>false</enableStandbyMode>
     <enableWorkOrders>false</enableWorkOrders>
     <enableWorkPlansAutoGeneration>true</enableWorkPlansAutoGeneration>
-    <enableWorkStepManualStatusUpdate>false</enableWorkStepManualStatusUpdate>
+    <enableWorkStepManualStatusUpdate>true</enableWorkStepManualStatusUpdate>
     <fieldServiceNotificationsOrgPref>true</fieldServiceNotificationsOrgPref>
     <fieldServiceOrgPref>true</fieldServiceOrgPref>
     <isGeoCodeSyncEnabled>false</isGeoCodeSyncEnabled>

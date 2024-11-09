@@ -677,6 +677,16 @@
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
         <members>SchedulingController</members>
+        <members>SendBetterEmail</members>
+        <members>SendBetterEmailAddAttachmentToEmail</members>
+        <members>SendBetterEmailAddTasksToEmail</members>
+        <members>SendBetterEmailBulk</members>
+        <members>SendBetterEmailBulkRequestSetup</members>
+        <members>SendBetterEmailConstant</members>
+        <members>SendBetterEmailRequest</members>
+        <members>SendBetterEmailResponse</members>
+        <members>SendBetterEmailTest</members>
+        <members>SendBetterEmailUtil</members>
         <members>ServiceAppointmentRescheduler</members>
         <members>ServiceAppointmentTriggerHandler</members>
         <members>ServiceBuilderController</members>
@@ -698,6 +708,37 @@
         <members>sf_fieldservice__FSL_RESTController_GoogleApis_Requestor</members>
         <members>sf_fieldservice__FSL_RESTController_GoogleApis_Tests</members>
         <members>sf_fieldservice__PendingUploadErrorFixAndroid</members>
+        <members>usf3__ConvertRecordsToCSVQueueable</members>
+        <members>usf3__ConvertRecordsToCSVQueueableTest</members>
+        <members>usf3__DeployMetadata</members>
+        <members>usf3__ExpressionBuilder</members>
+        <members>usf3__ExpressionBuilderTest</members>
+        <members>usf3__FieldDescriptor</members>
+        <members>usf3__FieldPickerController</members>
+        <members>usf3__FieldPickerControllerTest</members>
+        <members>usf3__FieldSelectorController</members>
+        <members>usf3__FieldSelectorControllerTest</members>
+        <members>usf3__FlexCardController</members>
+        <members>usf3__FlexCardControllerTest</members>
+        <members>usf3__Flow</members>
+        <members>usf3__FlowListController</members>
+        <members>usf3__FlowListControllerTest</members>
+        <members>usf3__FormulaEvaluator</members>
+        <members>usf3__FormulaEvaluatorTest</members>
+        <members>usf3__GetFieldInformation</members>
+        <members>usf3__HexUtil</members>
+        <members>usf3__LaunchFlowDynamically</members>
+        <members>usf3__MetadataService</members>
+        <members>usf3__MetadataServiceTest</members>
+        <members>usf3__MetadataUtils</members>
+        <members>usf3__Puff</members>
+        <members>usf3__RegExps</members>
+        <members>usf3__RetrieveMetadata</members>
+        <members>usf3__SearchUtils</members>
+        <members>usf3__SearchUtilsTest</members>
+        <members>usf3__XmlUtils</members>
+        <members>usf3__Zippex</members>
+        <members>usf3__ZippexTests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -786,8 +827,10 @@
         <members>FSL__vf739_ComplexWork</members>
         <members>FSL__vf_EnhancedMatchRule</members>
         <members>NonEssentialsMobileLanding</members>
+        <members>fsc_screenFlow</members>
         <members>mobileLanding__EssentialsMobileLanding</members>
         <members>mobileLanding__NonEssentialsMobileLanding</members>
+        <members>usf3__GenerateSessionIdForLWC</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -943,6 +986,8 @@
         <members>FSL__Integrity_Checker_TimephasedCmp</members>
         <members>FSL__Integrity_Checker_getSessionId</members>
         <members>FSL__WorkCapacityTabTemplate</members>
+        <members>fsc_openUrl</members>
+        <members>fsc_screenFlowApp</members>
         <members>mobileLanding__defaultTokens</members>
         <members>mobileLanding__essMobilLanding</members>
         <name>AuraDefinitionBundle</name>
@@ -1081,6 +1126,8 @@
         <members>Account.Region__c</members>
         <members>Account.Related_account__c</members>
         <members>Account.Status__c</members>
+        <members>AccountContactRelation.Commercial_SPOC__c</members>
+        <members>AccountContactRelation.Operational_SPOC__c</members>
         <members>Activity.FSL__Count_of_Events__c</members>
         <members>Activity.FSL__Count_of_Tasks__c</members>
         <members>Activity.FSL__Event_Type__c</members>
@@ -1780,6 +1827,42 @@
         <members>FSL__Work_Rule__c.FSL__WorkRule_Start_DateTime_Field__c</members>
         <members>FSL__Work_Rule__c.FSL__Working_Location_Enable_Primary__c</members>
         <members>FSL__Work_Rule__c.FSL__isTimephased__c</members>
+        <members>FlowPersonalConfiguration__c.ActorId__c</members>
+        <members>FlowPersonalConfiguration__c.Config1Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config1Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config2Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config2Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config3Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config3Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config4Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config4Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config5Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config5Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config6Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config6Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config7Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config7Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config8Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config8Value__c</members>
+        <members>FlowPersonalConfiguration__c.Config9Name__c</members>
+        <members>FlowPersonalConfiguration__c.Config9Value__c</members>
+        <members>FlowPersonalConfiguration__c.LocationId__c</members>
+        <members>FlowTableViewDefinition__c.Active__c</members>
+        <members>FlowTableViewDefinition__c.Alignments__c</members>
+        <members>FlowTableViewDefinition__c.Cell_Attributes__c</members>
+        <members>FlowTableViewDefinition__c.Edits__c</members>
+        <members>FlowTableViewDefinition__c.Field_API_Names__c</members>
+        <members>FlowTableViewDefinition__c.Field_Sorting__c</members>
+        <members>FlowTableViewDefinition__c.Filters__c</members>
+        <members>FlowTableViewDefinition__c.Icons__c</members>
+        <members>FlowTableViewDefinition__c.Labels__c</members>
+        <members>FlowTableViewDefinition__c.Object_API_Name__c</members>
+        <members>FlowTableViewDefinition__c.Other_Attributes__c</members>
+        <members>FlowTableViewDefinition__c.Selection_Method__c</members>
+        <members>FlowTableViewDefinition__c.Type_Attributes__c</members>
+        <members>FlowTableViewDefinition__c.View_Name__c</members>
+        <members>FlowTableViewDefinition__c.Widths__c</members>
+        <members>FlowTableViewDefinition__c.Wraps__c</members>
         <members>ForecastingItem__hd.AmountWithoutAdjustments__c</members>
         <members>ForecastingItem__hd.AmountWithoutManagerAdjustment__c</members>
         <members>ForecastingItem__hd.ForecastAmount__c</members>
@@ -7312,6 +7395,78 @@
         <members>bmpyrckt__Timeline_Navigation_Toast_Body</members>
         <members>bmpyrckt__Timeline_Navigation_Toast_Header</members>
         <members>bmpyrckt__Timeline_Navigation_Toast_Header</members>
+        <members>fsc_AccessLevel</members>
+        <members>fsc_AccessLevel</members>
+        <members>fsc_Back</members>
+        <members>fsc_Back</members>
+        <members>fsc_ButtonIsNotSupportedMessage</members>
+        <members>fsc_ButtonIsNotSupportedMessage</members>
+        <members>fsc_ConditionLogicHelpText</members>
+        <members>fsc_ConditionLogicHelpText</members>
+        <members>fsc_Delete</members>
+        <members>fsc_Delete</members>
+        <members>fsc_FieldIsNotSupportedMessage</members>
+        <members>fsc_FieldIsNotSupportedMessage</members>
+        <members>fsc_FieldTypeNotSuportedMessage</members>
+        <members>fsc_FieldTypeNotSuportedMessage</members>
+        <members>fsc_For</members>
+        <members>fsc_For</members>
+        <members>fsc_Key_Label</members>
+        <members>fsc_Key_Label</members>
+        <members>fsc_LackingPermissions</members>
+        <members>fsc_LackingPermissions</members>
+        <members>fsc_ManagerEmptyMessage</members>
+        <members>fsc_ManagerEmptyMessage</members>
+        <members>fsc_MultipleGroupsForRole</members>
+        <members>fsc_MultipleGroupsForRole</members>
+        <members>fsc_Name</members>
+        <members>fsc_Name</members>
+        <members>fsc_NonePicklistValueLabel</members>
+        <members>fsc_NonePicklistValueLabel</members>
+        <members>fsc_OWDReadWrite</members>
+        <members>fsc_OWDReadWrite</members>
+        <members>fsc_OwnerAdminModify</members>
+        <members>fsc_OwnerAdminModify</members>
+        <members>fsc_PublicGroups</members>
+        <members>fsc_PublicGroups</members>
+        <members>fsc_Queues</members>
+        <members>fsc_Queues</members>
+        <members>fsc_Read</members>
+        <members>fsc_Read</members>
+        <members>fsc_ReadWrite</members>
+        <members>fsc_ReadWrite</members>
+        <members>fsc_Reason</members>
+        <members>fsc_Reason</members>
+        <members>fsc_RelatedUsers</members>
+        <members>fsc_RelatedUsers</members>
+        <members>fsc_Roles</members>
+        <members>fsc_Roles</members>
+        <members>fsc_Search</members>
+        <members>fsc_Search</members>
+        <members>fsc_SearchFor</members>
+        <members>fsc_SearchFor</members>
+        <members>fsc_SetAccessLevel</members>
+        <members>fsc_SetAccessLevel</members>
+        <members>fsc_SupportedAddCapabilitiesEmptyMessage</members>
+        <members>fsc_SupportedAddCapabilitiesEmptyMessage</members>
+        <members>fsc_SupportedButtonsEmptyMessage</members>
+        <members>fsc_SupportedButtonsEmptyMessage</members>
+        <members>fsc_SupportedEditCapabilitiesEmptyMessage</members>
+        <members>fsc_SupportedEditCapabilitiesEmptyMessage</members>
+        <members>fsc_TooManyResultsMessage</members>
+        <members>fsc_TooManyResultsMessage</members>
+        <members>fsc_Type</members>
+        <members>fsc_Type</members>
+        <members>fsc_UserOrGroup</members>
+        <members>fsc_UserOrGroup</members>
+        <members>fsc_Users</members>
+        <members>fsc_Users</members>
+        <members>fsc_Value_Label</members>
+        <members>fsc_Value_Label</members>
+        <members>sremailNoSearchResultsMessage</members>
+        <members>sremailNoSearchResultsMessage</members>
+        <members>sremailSearchMembers</members>
+        <members>sremailSearchMembers</members>
         <name>CustomLabel</name>
     </types>
     <types>
@@ -7561,6 +7716,8 @@
         <members>FlowOrchestrationStageInstance</members>
         <members>FlowOrchestrationStepInstance</members>
         <members>FlowOrchestrationWorkItem</members>
+        <members>FlowPersonalConfiguration__c</members>
+        <members>FlowTableViewDefinition__c</members>
         <members>ForecastingAdjustment</members>
         <members>ForecastingCategoryMapping</members>
         <members>ForecastingCustomData</members>
@@ -8725,6 +8882,8 @@
         <members>FSL__vi</members>
         <members>FSL__zh_CN</members>
         <members>FSL__zh_TW</members>
+        <members>FlowPersonalConfiguration__c-en_US</members>
+        <members>FlowTableViewDefinition__c-en_US</members>
         <members>Google_Maps_API__c-en_US</members>
         <members>Knowledge__kav-en_US</members>
         <members>LMRA__c-en_US</members>
@@ -9289,6 +9448,7 @@
         <members>unfiled$public/Sample_Promotion</members>
         <members>unfiled$public/Sample_Reconnecting</members>
         <members>unfiled$public/Sample_ScheduleMeeting</members>
+        <members>unfiled$public/Service_Report_Email_1731064851557</members>
         <name>EmailTemplate</name>
     </types>
     <types>
@@ -9483,8 +9643,10 @@
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
@@ -9497,6 +9659,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
+        <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>Flow</name>
     </types>
     <types>
@@ -9508,8 +9671,10 @@
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
@@ -9522,6 +9687,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
+        <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>FlowDefinition</name>
     </types>
     <types>
@@ -9583,6 +9749,7 @@
         <members>sf_chttr_apps</members>
         <members>sf_com_apps</members>
         <members>sf_fieldservice</members>
+        <members>usf3</members>
         <name>InstalledPackage</name>
     </types>
     <types>
@@ -9638,6 +9805,7 @@
         <members>Customer-Customer Layout</members>
         <members>DataUseLegalBasis-Data Use Legal Basis Layout</members>
         <members>DataUsePurpose-Data Use Purpose Layout</members>
+        <members>DocumentRecipient-Document Recipient Layout</members>
         <members>DuplicateRecordSet-Duplicate Record Set Layout</members>
         <members>DynamicDataCapture-Dynamic Data Capture Layout</members>
         <members>EmailMessage-Email Message Layout</members>
@@ -9696,6 +9864,8 @@
         <members>FSL__Work_Rule__c-Work Rules %28Service%29 Layout</members>
         <members>FSL__Work_Rule__c-Working Territories</members>
         <members>FeedItem-Feed Item Layout</members>
+        <members>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</members>
+        <members>FlowTableViewDefinition__c-FlowTableViewDefinition Layout</members>
         <members>Global-FSL Global Actions</members>
         <members>Global-Global Layout</members>
         <members>Idea-Idea Layout</members>
@@ -9923,6 +10093,49 @@
         <members>bmpyrckt__timeline</members>
         <members>contractLineEditor</members>
         <members>exportRecords</members>
+        <members>fsc_actionList3</members>
+        <members>fsc_displayError</members>
+        <members>fsc_drawLine</members>
+        <members>fsc_drawLineCPE</members>
+        <members>fsc_dualListBox3</members>
+        <members>fsc_dualListBoxCPE</members>
+        <members>fsc_dualListBoxUtils</members>
+        <members>fsc_expressionBuilder3</members>
+        <members>fsc_expressionLine</members>
+        <members>fsc_extendedBaseDualListBox</members>
+        <members>fsc_fieldSelector3</members>
+        <members>fsc_fieldViewer</members>
+        <members>fsc_flexcardCPE</members>
+        <members>fsc_flexcardFlow</members>
+        <members>fsc_flexcardHeader</members>
+        <members>fsc_flowBanner</members>
+        <members>fsc_flowButtonBar</members>
+        <members>fsc_flowButtonBarCPE</members>
+        <members>fsc_flowCheckbox</members>
+        <members>fsc_flowCombobox</members>
+        <members>fsc_flowComboboxUtils</members>
+        <members>fsc_flowPicker3</members>
+        <members>fsc_formulaBuilder3</members>
+        <members>fsc_keyValuePairBuilderContainer</members>
+        <members>fsc_keyValuePairBuilderRow</members>
+        <members>fsc_lookup_quickRecord</members>
+        <members>fsc_lwcLogger</members>
+        <members>fsc_lwcModal</members>
+        <members>fsc_lwcModalUtil</members>
+        <members>fsc_modalFlow</members>
+        <members>fsc_pickIcon</members>
+        <members>fsc_pickIconCpe</members>
+        <members>fsc_pickObjectAndField3</members>
+        <members>fsc_pickObjectAndFieldUtils</members>
+        <members>fsc_quickChoiceCpe</members>
+        <members>fsc_quickChoiceFSC</members>
+        <members>fsc_reactiveConditionalVisibility</members>
+        <members>fsc_screenFlow</members>
+        <members>fsc_searchableDataTable</members>
+        <members>fsc_sortingConfiguration3</members>
+        <members>fsc_sortingConfigurationLine</members>
+        <members>fsc_toastMessage</members>
+        <members>fsc_transferMetadata3</members>
         <members>generateMaintenancePlan</members>
         <members>prepareContractForNextYear</members>
         <members>readyForValidation</members>
@@ -9930,6 +10143,9 @@
         <members>resourceCalendar</members>
         <members>roundDispatcher</members>
         <members>scheduleWorkOrders</members>
+        <members>sendBetterEmailAddNewMembers</members>
+        <members>sendBetterEmailCPE</members>
+        <members>sendBetterEmailUcModal</members>
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
         <members>simpleDispatcherConsole</members>
@@ -10104,6 +10320,8 @@
         <members>FlowOrchestrationWorkItem.ALL_Open_Work_Items</members>
         <members>FlowOrchestrationWorkItem.All_Work_Items</members>
         <members>FlowOrchestrationWorkItem.All_Work_Items</members>
+        <members>FlowTableViewDefinition__c.All</members>
+        <members>FlowTableViewDefinition__c.All</members>
         <members>Idea.Ideas_Last_7_Days</members>
         <members>Idea.Ideas_Last_7_Days</members>
         <members>Incident.AllIncidentsDefault</members>
@@ -10469,6 +10687,7 @@
         <members>FSL_Mobile_License</members>
         <members>FSL_Resource_License</members>
         <members>FSL_Resource_Permissions</members>
+        <members>USF_Flow_Screen_Component_Custom_Objects</members>
         <members>bmpyrckt__Timeline_User</members>
         <members>cases_Permisssion_Set</members>
         <members>sfdcInternalInt__sfdc_fieldservice</members>
@@ -11145,7 +11364,9 @@
         <members>FlowOrchestrationStageInstance</members>
         <members>FlowOrchestrationStepInstance</members>
         <members>FlowOrchestrationWorkItem</members>
+        <members>FlowPersonalConfiguration__c</members>
         <members>FlowRecord</members>
+        <members>FlowTableViewDefinition__c</members>
         <members>FlowTestResult</members>
         <members>GeolocationBasedAction</members>
         <members>Image</members>
@@ -11690,6 +11911,7 @@
         <members>bmpyrckt__d3minified</members>
         <members>bmpyrckt__images</members>
         <members>bmpyrckt__momentminified</members>
+        <members>fsc_Quickchoice_Images</members>
         <members>mobileLandingImage</members>
         <members>mobileLanding__mobileLandingImage</members>
         <name>StaticResource</name>
@@ -11752,6 +11974,8 @@
         <members>FSL__User_Territory__c</members>
         <members>FSL__Work_Rule_Entry__c</members>
         <members>FSL__Work_Rule__c</members>
+        <members>FlowPersonalConfiguration__c</members>
+        <members>FlowTableViewDefinition__c</members>
         <members>Incident</members>
         <members>JobProfile</members>
         <members>LMRA__c</members>

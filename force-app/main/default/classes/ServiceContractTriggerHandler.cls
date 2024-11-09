@@ -1,18 +1,13 @@
 public class ServiceContractTriggerHandler {
   public static void handleApprovalStatusChange(
-    List<ServiceContract> newContracts,
-    Map<Id, ServiceContract> oldMap
+    List<ServiceContract> newContracts
   ) {
     Set<String> projectCodes = new Set<String>();
     Set<Id> contractsInApproval = new Set<Id>();
 
     // Collect relevant ServiceContracts
     for (ServiceContract sc : newContracts) {
-      ServiceContract oldSc = oldMap.get(sc.Id);
-      if (
-        sc.ApprovalStatus == 'In Approval Process' &&
-        oldSc.ApprovalStatus != 'In Approval Process'
-      ) {
+      if (sc.ApprovalStatus == 'In Approval Process') {
         contractsInApproval.add(sc.Id);
       }
     }

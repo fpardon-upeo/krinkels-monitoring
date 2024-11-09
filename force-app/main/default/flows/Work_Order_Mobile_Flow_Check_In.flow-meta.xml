@@ -2,6 +2,11 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>This flow updates the status of the work order and the related service appointment to ‘In Progress’.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Now</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
     <interviewLabel>[Work Order][Mobile Flow][Screen-Flow] Check In {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Work Order][Mobile Flow] Check In</label>
     <processMetadataValues>
@@ -58,6 +63,12 @@
                 <elementReference>WorkStepRecord.WorkOrderId</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>ActualStartTime</field>
+            <value>
+                <elementReference>Now</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Status</field>
             <value>

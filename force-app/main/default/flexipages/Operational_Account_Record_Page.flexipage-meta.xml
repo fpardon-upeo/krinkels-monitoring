@@ -58,8 +58,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Type</fieldItem>
-                <identifier>RecordTypeField</identifier>
+                <fieldItem>Record.ATAK_Project__c</fieldItem>
+                <identifier>RecordATAK_Project_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -68,8 +68,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Group__c</fieldItem>
-                <identifier>RecordGroup_cField</identifier>
+                <fieldItem>Record.Type</fieldItem>
+                <identifier>RecordTypeField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -88,8 +88,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Status__c</fieldItem>
-                <identifier>RecordStatus__cField</identifier>
+                <fieldItem>Record.Facility_Type__c</fieldItem>
+                <identifier>RecordFacility_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -98,8 +98,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.LMRA_Type__c</fieldItem>
-                <identifier>RecordDefault_LMRA__cField</identifier>
+                <fieldItem>Record.ContractType__c</fieldItem>
+                <identifier>RecordContractType_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-1f8fd4a4-f9e7-4f44-a1f7-d737cf04e740</name>
@@ -132,16 +132,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ATAK_Project__c</fieldItem>
-                <identifier>RecordATAK_Project_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Client_Code__c</fieldItem>
                 <identifier>RecordClient_Code_cField</identifier>
             </fieldInstance>
@@ -162,18 +152,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ContractType__c</fieldItem>
-                <identifier>RecordContractType_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Description</fieldItem>
-                <identifier>RecordDescriptionField</identifier>
+                <fieldItem>Record.LMRA_Type__c</fieldItem>
+                <identifier>RecordDefault_LMRA__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ab075c5f-10a6-4319-8d97-e938734ac31a</name>
@@ -210,14 +190,38 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Description</fieldItem>
+                <identifier>RecordDescriptionField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b34aa747-655c-45d7-be06-b6f758ca3aca</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b34aa747-655c-45d7-be06-b6f758ca3aca</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-354e0318-b3f2-47b1-836b-8b3b92320f74</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.ShippingAddress</fieldItem>
                 <identifier>RecordShippingAddressField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-5eb51c40-3b49-45fe-829e-9fb04225186d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -238,7 +242,7 @@
                 <identifier>RecordLongitude__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-aed7c095-036c-488d-b6be-aacdf5ad7173</name>
+        <name>Facet-5eb51c40-3b49-45fe-829e-9fb04225186d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -250,16 +254,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-aed7c095-036c-488d-b6be-aacdf5ad7173</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-438e0465-76b4-4191-901f-0204910e8c33</name>
@@ -402,6 +396,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-354e0318-b3f2-47b1-836b-8b3b92320f74</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Description</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection5</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

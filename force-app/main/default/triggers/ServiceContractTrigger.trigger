@@ -1,8 +1,5 @@
 trigger ServiceContractTrigger on ServiceContract(after update) {
   if (Trigger.isAfter && Trigger.isUpdate) {
-    ServiceContractTriggerHandler.handleApprovalStatusChange(
-      Trigger.new,
-      Trigger.oldMap
-    );
+    ServiceContractTriggerHandler.handleApprovalStatusChange(Trigger.new);
   }
 }
