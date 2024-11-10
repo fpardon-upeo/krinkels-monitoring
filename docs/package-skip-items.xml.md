@@ -8,46 +8,37 @@ Metadatas: 9
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>Certificate (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>ConnectedApp (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>CustomObjectTranslation (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>Document (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>LightningMessageChannel (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>ListView (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>SamlSsoConfig (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 <details><summary>UiViewDefinition (*)</summary>
   • ALL (wildcard *)<br/>
 </details>
 
-<br/>
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

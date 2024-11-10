@@ -1,6 +1,6 @@
 ## Content of package-all-org-items.xml
 
-Contains the entire list of metadatas that are present in the monitored orgs (not all of them are in the git backup)
+Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
 Metadatas: 11863
 
@@ -745,7 +745,6 @@ Metadatas: 11863
   • usf3__ZippexTests<br/>
 </details>
 
-<br/>
 <details><summary>ApexComponent (22)</summary>
   • FSL__AppointmentBooking<br/>
   • FSL__ChatterAction<br/>
@@ -771,12 +770,10 @@ Metadatas: 11863
   • FSL__vf037_Skill_Selector_V2<br/>
 </details>
 
-<br/>
 <details><summary>ApexEmailNotifications (1)</summary>
   • apexEmailNotifications<br/>
 </details>
 
-<br/>
 <details><summary>ApexPage (60)</summary>
   • FSL__AppointmentBookingCommunitiesVf<br/>
   • FSL__AppointmentBookingVf<br/>
@@ -840,7 +837,6 @@ Metadatas: 11863
   • usf3__GenerateSessionIdForLWC<br/>
 </details>
 
-<br/>
 <details><summary>ApexTrigger (120)</summary>
   • ContractLineItemTrigger<br/>
   • FSL__AbsenceCalculateTravelTime<br/>
@@ -964,19 +960,16 @@ Metadatas: 11863
   • WorkOrderTrigger<br/>
 </details>
 
-<br/>
 <details><summary>AppMenu (2)</summary>
   • AppSwitcher<br/>
   • Salesforce1<br/>
 </details>
 
-<br/>
 <details><summary>AssignmentRules (2)</summary>
   • Case<br/>
   • Lead<br/>
 </details>
 
-<br/>
 <details><summary>AuraDefinitionBundle (23)</summary>
   • FSL__AppointmentBooking<br/>
   • FSL__CrewsManagement<br/>
@@ -1003,35 +996,29 @@ Metadatas: 11863
   • mobileLanding__essMobilLanding<br/>
 </details>
 
-<br/>
 <details><summary>AutoResponseRules (2)</summary>
   • Case<br/>
   • Lead<br/>
 </details>
 
-<br/>
 <details><summary>BrandingSet (1)</summary>
   • LEXTHEMINGKrinkelsTheme<br/>
 </details>
 
-<br/>
 <details><summary>Certificate (1)</summary>
   • sfdc<br/>
 </details>
 
-<br/>
 <details><summary>CleanDataService (3)</summary>
   • DataCloudCompanyMatch<br/>
   • DataCloudGeoLocation<br/>
   • DataCloudLeadAppend<br/>
 </details>
 
-<br/>
 <details><summary>Community (1)</summary>
   • Internal Community<br/>
 </details>
 
-<br/>
 <details><summary>CompactLayout (18)</summary>
   • Account.Account_Compact_Layout<br/>
   • Account.Commercial_Account<br/>
@@ -1053,14 +1040,12 @@ Metadatas: 11863
   • WorkOrder.Work_Order_Compact_Layout<br/>
 </details>
 
-<br/>
 <details><summary>ConnectedApp (3)</summary>
   • ATAK<br/>
   • CPQIntegrationUserApp<br/>
   • sfdxhardis<br/>
 </details>
 
-<br/>
 <details><summary>ContentAsset (9)</summary>
   • Krinkels_Banner<br/>
   • Krinkels_Banner1<br/>
@@ -1073,12 +1058,10 @@ Metadatas: 11863
   • krinkels_logo<br/>
 </details>
 
-<br/>
 <details><summary>CspTrustedSite (1)</summary>
   • bpost<br/>
 </details>
 
-<br/>
 <details><summary>CustomApplication (20)</summary>
   • FSL__FieldService<br/>
   • FSL__FieldService_Admin<br/>
@@ -1102,7 +1085,6 @@ Metadatas: 11863
   • standard__ServiceConsole<br/>
 </details>
 
-<br/>
 <details><summary>CustomField (1008)</summary>
   • ATAK_Project__c.ATAK_Creation_Date__c<br/>
   • ATAK_Project__c.Branche__c<br/>
@@ -2114,7 +2096,6 @@ Metadatas: 11863
   • bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Type_Field__c<br/>
 </details>
 
-<br/>
 <details><summary>CustomLabel (5374)</summary>
   • FSL__ABNotificationIsComplexWorkO2<br/>
   • FSL__ABNotificationIsComplexWorkO2<br/>
@@ -7492,7 +7473,6 @@ Metadatas: 11863
   • sremailSearchMembers<br/>
 </details>
 
-<br/>
 <details><summary>CustomMetadata (115)</summary>
   • Export_Configuration.ServiceContract<br/>
   • bmpyrckt__Timeline_Configuration.Account_ServiceAppointments<br/>
@@ -7611,13 +7591,11 @@ Metadatas: 11863
   • bmpyrckt__Timeline_Configuration.bmpyrckt__WorkOrder_WorkOrderLineItems<br/>
 </details>
 
-<br/>
 <details><summary>CustomNotificationType (2)</summary>
   • Service_Contract_Approval_Notification<br/>
   • Standard_Notification<br/>
 </details>
 
-<br/>
 <details><summary>CustomObject (291)</summary>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -7912,7 +7890,6 @@ Metadatas: 11863
   • bmpyrckt__Timeline_Configuration__mdt<br/>
 </details>
 
-<br/>
 <details><summary>CustomObjectTranslation (1396)</summary>
   • ATAK_Project__c-en_US<br/>
   • Account-en_US<br/>
@@ -9312,7 +9289,6 @@ Metadatas: 11863
   • bmpyrckt__Timeline_Configuration__mdt-en_US<br/>
 </details>
 
-<br/>
 <details><summary>CustomPermission (59)</summary>
   • FSL__Abort_Optimization_Request<br/>
   • FSL__Bulk_Bundle<br/>
@@ -9375,7 +9351,6 @@ Metadatas: 11863
   • FSL__View_resource_on_secondary_STM<br/>
 </details>
 
-<br/>
 <details><summary>CustomTab (16)</summary>
   • ATAK_Project__c<br/>
   • Asset_Scheduler<br/>
@@ -9395,7 +9370,6 @@ Metadatas: 11863
   • mobileLanding__Non_Mobile_Landing<br/>
 </details>
 
-<br/>
 <details><summary>Dashboard (15)</summary>
   • FSL__FieldServiceCopilotDashboards/<br/>
   • FSL__FieldServiceCopilotDashboards/FSL__CopilotSummaryOfSchedulingIssues<br/>
@@ -9414,19 +9388,16 @@ Metadatas: 11863
   • Service_Dashboards/Service_KPIs<br/>
 </details>
 
-<br/>
 <details><summary>DigitalExperience (3)</summary>
   • experiencecontainer/FSL.experience__navigationMenu/menu<br/>
   • experiencecontainer/FSL.experience__sfsECDefinition/sfs<br/>
   • experiencecontainer/FSL.sfdc_cms__languageSettings/languages<br/>
 </details>
 
-<br/>
 <details><summary>DigitalExperienceBundle (1)</summary>
   • experiencecontainer/FSL<br/>
 </details>
 
-<br/>
 <details><summary>Document (8)</summary>
   • FSL__Field_Service_Documents<br/>
   • FSL__Field_Service_Documents/FSL__App_Field_Service_Admin_Logo.png<br/>
@@ -9438,7 +9409,6 @@ Metadatas: 11863
   • SocialService__Social_Customer_Service<br/>
 </details>
 
-<br/>
 <details><summary>DuplicateRule (7)</summary>
   • Account.Commercial_Account_Duplicate_Rule<br/>
   • Account.Standard_Account_Duplicate_Rule<br/>
@@ -9449,13 +9419,11 @@ Metadatas: 11863
   • Lead.Standard_Lead_to_Contact_Duplicate_Rule<br/>
 </details>
 
-<br/>
 <details><summary>EmailServicesFunction (2)</summary>
   • EmailToCase<br/>
   • EmailToSalesforce<br/>
 </details>
 
-<br/>
 <details><summary>EmailTemplate (28)</summary>
   • unfiled$public<br/>
   • unfiled$public/ContactFollowUpSAMPLE<br/>
@@ -9487,22 +9455,18 @@ Metadatas: 11863
   • unfiled$public/Service_Report_Email_1731064851557<br/>
 </details>
 
-<br/>
 <details><summary>EntitlementProcess (1)</summary>
   • standard case<br/>
 </details>
 
-<br/>
 <details><summary>EscalationRules (1)</summary>
   • Case<br/>
 </details>
 
-<br/>
 <details><summary>ExternalCredential (1)</summary>
   • GoogleMaps<br/>
 </details>
 
-<br/>
 <details><summary>FeatureParameterBoolean (29)</summary>
   • FSL__CoreSendDirectHttp<br/>
   • FSL__ESOCoreSettingValue<br/>
@@ -9535,12 +9499,10 @@ Metadatas: 11863
   • FSL__slrEnabled<br/>
 </details>
 
-<br/>
 <details><summary>FeatureParameterDate (1)</summary>
   • FSL__lastModifiedSADate<br/>
 </details>
 
-<br/>
 <details><summary>FeatureParameterInteger (47)</summary>
   • FSL__CurrentPackageVersion<br/>
   • FSL__DailyOptimizedSAsLimit<br/>
@@ -9591,7 +9553,6 @@ Metadatas: 11863
   • FSL__totalTimesCrewsVFWasOpened<br/>
 </details>
 
-<br/>
 <details><summary>FieldSet (37)</summary>
   • Account.FSL__Emergency_Account_Fields<br/>
   • Account.FSL__Gantt_Lightbox<br/>
@@ -9632,7 +9593,6 @@ Metadatas: 11863
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<br/>
 <details><summary>FlexiPage (42)</summary>
   • ATAK_Project_Record_Page<br/>
   • Asset_Record_Page<br/>
@@ -9678,7 +9638,6 @@ Metadatas: 11863
   • Work_Type_Record_Page<br/>
 </details>
 
-<br/>
 <details><summary>Flow (25)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
@@ -9707,7 +9666,6 @@ Metadatas: 11863
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<br/>
 <details><summary>FlowDefinition (25)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
@@ -9736,7 +9694,6 @@ Metadatas: 11863
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<br/>
 <details><summary>ForecastingType (12)</summary>
   • LineItemQuantityProductDate<br/>
   • LineItemQuantityScheduleDate<br/>
@@ -9752,7 +9709,6 @@ Metadatas: 11863
   • OpportunityRevenueScheduleDate<br/>
 </details>
 
-<br/>
 <details><summary>GlobalValueSet (6)</summary>
   • LMRA_Type<br/>
   • Language<br/>
@@ -9762,7 +9718,6 @@ Metadatas: 11863
   • Work_Type<br/>
 </details>
 
-<br/>
 <details><summary>Group (15)</summary>
   • BURGGRAEVE_SIMON<br/>
   • Bastogne<br/>
@@ -9781,17 +9736,14 @@ Metadatas: 11863
   • WERKGEBIED_1<br/>
 </details>
 
-<br/>
 <details><summary>HomePageLayout (1)</summary>
   • Dashboard Home Page Default<br/>
 </details>
 
-<br/>
 <details><summary>IframeWhiteListUrlSettings (1)</summary>
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<br/>
 <details><summary>InstalledPackage (9)</summary>
   • FSL<br/>
   • OIQ<br/>
@@ -9804,7 +9756,6 @@ Metadatas: 11863
   • usf3<br/>
 </details>
 
-<br/>
 <details><summary>Layout (245)</summary>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Commercial Account Layout<br/>
@@ -10053,7 +10004,6 @@ Metadatas: 11863
   • bmpyrckt__Timeline_Configuration__mdt-Timeline Configuration Layout<br/>
 </details>
 
-<br/>
 <details><summary>LightningComponentBundle (148)</summary>
   • FSL__animation<br/>
   • FSL__baseAttribute<br/>
@@ -10205,12 +10155,10 @@ Metadatas: 11863
   • simpleDispatcherConsole<br/>
 </details>
 
-<br/>
 <details><summary>LightningExperienceTheme (1)</summary>
   • KrinkelsTheme<br/>
 </details>
 
-<br/>
 <details><summary>ListView (466)</summary>
   • ATAK_Project__c.All<br/>
   • ATAK_Project__c.All<br/>
@@ -10680,14 +10628,12 @@ Metadatas: 11863
   • bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Test_Configurations<br/>
 </details>
 
-<br/>
 <details><summary>ManagedContentType (3)</summary>
   • cms_document<br/>
   • cms_image<br/>
   • news<br/>
 </details>
 
-<br/>
 <details><summary>MatchingRule (5)</summary>
   • Account.Commercial_Account<br/>
   • Account.Standard_Account_Match_Rule_v1_0<br/>
@@ -10696,7 +10642,6 @@ Metadatas: 11863
   • Lead.Standard_Lead_Match_Rule_v1_0<br/>
 </details>
 
-<br/>
 <details><summary>MatchingRules (4)</summary>
   • Account<br/>
   • Contact<br/>
@@ -10704,20 +10649,17 @@ Metadatas: 11863
   • Lead<br/>
 </details>
 
-<br/>
 <details><summary>MilestoneType (3)</summary>
   • Close Case<br/>
   • Escalate Case<br/>
   • First Response to Customer<br/>
 </details>
 
-<br/>
 <details><summary>MobileApplicationDetail (2)</summary>
   • sf_fieldservice__S8e_F3d_S5e_for_A5d_o3h_m4e_app_detail__S8e_F3d_S5e_for_A5d_o3h_m4e_app_detailMobileApplicationDetail<br/>
   • sf_fieldservice__S8e_F3d_S5e_for_iOS_o3h_m4e_app_detail__S8e_F3d_S5e_for_iOS_o3h_m4e_app_detailMobileApplicationDetail<br/>
 </details>
 
-<br/>
 <details><summary>NamedCredential (4)</summary>
   • GoogleMaps<br/>
   • Google_Places<br/>
@@ -10725,18 +10667,15 @@ Metadatas: 11863
   • MapsEncoding<br/>
 </details>
 
-<br/>
 <details><summary>NotificationTypeConfig (1)</summary>
   • NotificationTypeConfig<br/>
 </details>
 
-<br/>
 <details><summary>PathAssistant (2)</summary>
   • Default<br/>
   • Default_Opportunity<br/>
 </details>
 
-<br/>
 <details><summary>PermissionSet (19)</summary>
   • ATAK_Permissions<br/>
   • FSL_Admin_License<br/>
@@ -10759,25 +10698,21 @@ Metadatas: 11863
   • sfdcInternalInt__sfdc_scrt2<br/>
 </details>
 
-<br/>
 <details><summary>PlatformEventChannelMember (2)</summary>
   • SchedulingEntitiesModifiedAttributesChannel_FSL_Optimization_Request_ChangeEvent<br/>
   • SchedulingEntitiesModifiedAttributesChannel_FSL_Time_Dependency_ChangeEvent<br/>
 </details>
 
-<br/>
 <details><summary>PresenceDeclineReason (2)</summary>
   • Busy<br/>
   • Misrouted<br/>
 </details>
 
-<br/>
 <details><summary>PresenceUserConfig (2)</summary>
   • cases_configuration<br/>
   • default_presence_config<br/>
 </details>
 
-<br/>
 <details><summary>Profile (25)</summary>
   • Admin<br/>
   • Analytics Cloud Integration User<br/>
@@ -10806,7 +10741,6 @@ Metadatas: 11863
   • Standard<br/>
 </details>
 
-<br/>
 <details><summary>ProfilePasswordPolicy (4)</summary>
   • Contract_Manager_profilePasswordPolicy1730106625061<br/>
   • PT1_profilePasswordPolicy1481671771802<br/>
@@ -10814,7 +10748,6 @@ Metadatas: 11863
   • PT3_profilePasswordPolicy1568660558444<br/>
 </details>
 
-<br/>
 <details><summary>ProfileSessionSetting (4)</summary>
   • PT1_profileSessionSetting1481671771629<br/>
   • PT2_profileSessionSetting1568660541553<br/>
@@ -10822,18 +10755,15 @@ Metadatas: 11863
   • null_profileSessionSetting1730106625079<br/>
 </details>
 
-<br/>
 <details><summary>Queue (1)</summary>
   • Q1<br/>
 </details>
 
-<br/>
 <details><summary>QueueRoutingConfig (2)</summary>
   • cases_Routing_config<br/>
   • rout_name<br/>
 </details>
 
-<br/>
 <details><summary>QuickAction (140)</summary>
   • Account.Child_Account<br/>
   • Book_Appointment<br/>
@@ -10977,7 +10907,6 @@ Metadatas: 11863
   • WorkOrderLineItem.SendEmail<br/>
 </details>
 
-<br/>
 <details><summary>RecordType (37)</summary>
   • Account.Commercial_Account<br/>
   • Account.Financial_Account<br/>
@@ -11018,7 +10947,6 @@ Metadatas: 11863
   • ResourceAbsence.FSL__Non_Availability<br/>
 </details>
 
-<br/>
 <details><summary>RemoteSiteSetting (47)</summary>
   • FSL__ApexDevNet<br/>
   • FSL__FSL_Bundler_CA_PR<br/>
@@ -11069,7 +10997,6 @@ Metadatas: 11863
   • sf_fieldservice__FSL_Google_Maps_API<br/>
 </details>
 
-<br/>
 <details><summary>Report (138)</summary>
   • DashboardReportsAdoption/<br/>
   • DashboardReportsAdoption/UsageActivitiesCompleted<br/>
@@ -11211,7 +11138,6 @@ Metadatas: 11863
   • unfiled$public/flow_screen_prebuilt_report<br/>
 </details>
 
-<br/>
 <details><summary>ReportType (13)</summary>
   • FSL__Service_Appointments_with_Scheduling_Issues<br/>
   • FSL__Work_Capacity_Availability<br/>
@@ -11228,14 +11154,12 @@ Metadatas: 11863
   • screen_flows_prebuilt_crt<br/>
 </details>
 
-<br/>
 <details><summary>ServiceChannel (3)</summary>
   • caseChannel<br/>
   • sfdc_liveagent<br/>
   • sfdc_livemessage<br/>
 </details>
 
-<br/>
 <details><summary>ServicePresenceStatus (6)</summary>
   • Available_Email_and_Web<br/>
   • Available_Phone<br/>
@@ -11245,7 +11169,6 @@ Metadatas: 11863
   • Busy_Meeting<br/>
 </details>
 
-<br/>
 <details><summary>Settings (125)</summary>
   • Account<br/>
   • AccountIntelligence<br/>
@@ -11374,7 +11297,6 @@ Metadatas: 11863
   • WorkDotCom<br/>
 </details>
 
-<br/>
 <details><summary>SharingReason (4)</summary>
   • FSL__GanttPalette__c.FSL__FSL_Public_Gantt_Palette__c<br/>
   • FSL__Gantt_Filter__c.FSL__FSL_Public_Custom_Filter__c<br/>
@@ -11382,7 +11304,6 @@ Metadatas: 11863
   • FSL__Optimization_Request__c.FSL__Related_Service_Territory__c<br/>
 </details>
 
-<br/>
 <details><summary>SharingRules (162)</summary>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -11548,12 +11469,10 @@ Metadatas: 11863
   • WorkTypeGroup<br/>
 </details>
 
-<br/>
 <details><summary>Skill (1)</summary>
   • Test<br/>
 </details>
 
-<br/>
 <details><summary>StandardValueSet (61)</summary>
   • AccountContactMultiRoles<br/>
   • AccountContactRole<br/>
@@ -11618,7 +11537,6 @@ Metadatas: 11863
   • WorkOrderStatus<br/>
 </details>
 
-<br/>
 <details><summary>StaticResource (380)</summary>
   • FSL__ANAppointmentBookingStyles<br/>
   • FSL__ANEmergencyBundleJs<br/>
@@ -12002,12 +11920,10 @@ Metadatas: 11863
   • mobileLanding__mobileLandingImage<br/>
 </details>
 
-<br/>
 <details><summary>TimeSheetTemplate (1)</summary>
   • Default_Timesheet_Daily<br/>
 </details>
 
-<br/>
 <details><summary>TopicsForObjects (109)</summary>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -12120,12 +12036,10 @@ Metadatas: 11863
   • WorkStepTemplate<br/>
 </details>
 
-<br/>
 <details><summary>UiFormatSpecificationSet (1)</summary>
   • Type<br/>
 </details>
 
-<br/>
 <details><summary>UiViewDefinition (35)</summary>
   • ATAK_Project_Record_Page<br/>
   • Asset_Record_Page<br/>
@@ -12164,7 +12078,6 @@ Metadatas: 11863
   • Work_Type_Record_Page<br/>
 </details>
 
-<br/>
 <details><summary>ValidationRule (36)</summary>
   • FSL__GanttPalette__c.FSL__Color_Level_validation<br/>
   • FSL__Polygon__c.FSL__Polygon_Color_HEX_Format<br/>
@@ -12204,7 +12117,6 @@ Metadatas: 11863
   • bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__No_External_Objects_Allowed<br/>
 </details>
 
-<br/>
 <details><summary>WebLink (12)</summary>
   • Account.GoogleMaps<br/>
   • Account.GoogleNews<br/>
@@ -12220,16 +12132,13 @@ Metadatas: 11863
   • Lead.GoogleSearch<br/>
 </details>
 
-<br/>
 <details><summary>Workflow (1)</summary>
   • Case<br/>
 </details>
 
-<br/>
 <details><summary>WorkflowFieldUpdate (1)</summary>
   • Case.ChangePriorityToHigh<br/>
 </details>
 
-<br/>
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_
