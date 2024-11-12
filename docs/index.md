@@ -15,7 +15,7 @@ ___
 
 | Name  | Namespace | Version | Version Name |
 | :---- | :-------- | :------ | :----------: | 
-| FSL | FSL | [252.0.98.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKX000000PxtGYAS) | Winter 2025 |
+| FSL | FSL | [252.0.107.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKX000000Q4u1YAC) | Winter 2025 |
 | Sales Insights | OIQ | [1.0.0.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t58000000SGw3AAG) | 1.0 |
 | SocialCustomerService | SocialService | [1.0.0.2](https://test.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000QzQyAAK) | Winter 2013 |
 | Time Warp | bmpyrckt | [1.14.0.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t2w000009gtDFAAY) | Ross |
