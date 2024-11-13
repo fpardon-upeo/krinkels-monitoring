@@ -7,43 +7,39 @@
     <picklistValues>
         <picklist>AccountSource</picklist>
         <values>
-            <fullName>Advertisement</fullName>
+            <fullName>Campaign</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Customer Event</fullName>
+            <fullName>Chat bot</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Employee Referral</fullName>
+            <fullName>Lead suggestion</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Google AdWords</fullName>
+            <fullName>Live Chat</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Other</fullName>
+            <fullName>Marketplace</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Partner</fullName>
+            <fullName>Messaging</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Purchased List</fullName>
+            <fullName>Prospector</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Trade Show</fullName>
+            <fullName>Web forms</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Webinar</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Website</fullName>
+            <fullName>Web visitor</fullName>
             <default>false</default>
         </values>
     </picklistValues>

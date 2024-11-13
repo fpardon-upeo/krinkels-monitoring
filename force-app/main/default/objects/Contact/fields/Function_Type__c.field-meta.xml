@@ -10,9 +10,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>TBD</fullName>
+                <fullName>C-Level</fullName>
                 <default>false</default>
-                <label>TBD</label>
+                <label>C-Level</label>
+            </value>
+            <value>
+                <fullName>Management</fullName>
+                <default>false</default>
+                <label>Management</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Functional_level__c</fullName>
-    <label>Functional level</label>
+    <label>Functional Level</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Picklist</type>
@@ -13,6 +13,21 @@
                 <fullName>TBD</fullName>
                 <default>false</default>
                 <label>TBD</label>
+            </value>
+            <value>
+                <fullName>Executive</fullName>
+                <default>false</default>
+                <label>Executive</label>
+            </value>
+            <value>
+                <fullName>Limited Decision Mandate</fullName>
+                <default>false</default>
+                <label>Limited Decision Mandate</label>
+            </value>
+            <value>
+                <fullName>Extended Decision Mandate</fullName>
+                <default>false</default>
+                <label>Extended Decision Mandate</label>
             </value>
         </valueSetDefinition>
     </valueSet>

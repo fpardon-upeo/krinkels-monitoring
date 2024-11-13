@@ -17,7 +17,7 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
                         Asset.Name, Asset.Street, Asset.City, Asset.PostalCode,
                         Asset.Country, NextSuggestedMaintenanceDate,
                         LastSuggestedMaintenanceDate__c, Default_Duration_in_Minutes__c,
-                        MaintenancePlanId, Asset.Service_Territory__c,
+                        MaintenancePlanId, Asset.Service_Territory__c, Number_of_Work_Orders__c,
                         Asset.Account.ShippingLatitude, Asset.Account.ShippingLongitude,
                 (SELECT Id, NextSuggestedMaintenanceDate, RecurrencePattern
                 FROM MaintenanceWorkRules)
@@ -46,11 +46,17 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
                     maFirstDate
             );
 
+            /*
+
             Integer instanceCount = adjuster.calculateInstanceCount(
                     mA.NextSuggestedMaintenanceDate,
                     mA.LastSuggestedMaintenanceDate__c,
                     recurrencePattern
             );
+
+             */
+
+            Integer instanceCount = mA.Number_of_Work_Orders__c != null ? Integer.valueOf(mA.Number_of_Work_Orders__c) : 1;
 
             // Get territory ID for this location
             Id serviceTerritoryId = mA.Asset.Service_Territory__c;

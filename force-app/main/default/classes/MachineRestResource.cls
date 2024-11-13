@@ -9,7 +9,28 @@ global with sharing class MachineRestResource {
     global static String handlePost() {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
-        return 'success';
+        String returnMessage = '';
+
+        //Every body we get contains a type element and a data element
+        //We need to check the type element to know what to do with the data element
+        //We need to extract the type element from the body
+
+        String fullBody = req.requestBody.toString();
+        String typeOfData = fullBody.substringBetween('"Type": "', '",');
+
+        System.debug('Type: ' + typeOfData);
+
+        if(typeOfData == 'voertuig'){
+            returnMessage = ATAKVehicleService.createATAKVehicle(ATAKVehicleWrapper.parse(fullBody));
+        } else if(typeOfData == 'materiaal'){
+            returnMessage = ATAKMaterialService.createATAKMaterial(ATAKMaterialWrapper.parse(fullBody));
+        } else {
+            return 'Error: Type not recognized';
+        }
+
+        res.statusCode = 200;
+        return returnMessage;
+
     }
 
 }

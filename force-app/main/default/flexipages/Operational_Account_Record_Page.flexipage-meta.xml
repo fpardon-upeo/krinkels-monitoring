@@ -78,6 +78,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Region__c</fieldItem>
+                <identifier>RecordRegion_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Client_Region__c</fieldItem>
                 <identifier>RecordClient_Region__cField</identifier>
             </fieldInstance>
@@ -90,16 +100,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Facility_Type__c</fieldItem>
                 <identifier>RecordFacility_Type_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.ContractType__c</fieldItem>
-                <identifier>RecordContractType_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-1f8fd4a4-f9e7-4f44-a1f7-d737cf04e740</name>
@@ -154,6 +154,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.LMRA_Type__c</fieldItem>
                 <identifier>RecordDefault_LMRA__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ContractType__c</fieldItem>
+                <identifier>RecordContractType_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ab075c5f-10a6-4319-8d97-e938734ac31a</name>

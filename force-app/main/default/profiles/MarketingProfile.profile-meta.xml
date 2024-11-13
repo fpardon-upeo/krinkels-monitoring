@@ -11,6 +11,30 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>ATAKMaterialService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKMaterialWrapper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKMaterialWrapperTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKPersonnelService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKPersonnelWrapper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKPersonnelWrapperTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ATAKProjectService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -20,6 +44,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ATAKProjectWrapperTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKVehicleService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKVehicleWrapper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ATAKVehicleWrapperTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -36,6 +72,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>FieldServiceTestData</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FileUploadImprovedHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FileUploadImproved_Test</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -187,6 +231,81 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>false</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Department_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Department_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Depot_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Depot_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Dossier__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Email__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Enddate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Mobile__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Phone__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Sitemanager_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Sitemanager_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Startdate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Personnel__c.Statute__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>ATAK_Project__c.ATAK_Creation_Date__c</field>
@@ -566,6 +685,11 @@
         <editable>true</editable>
         <field>Contact.Type__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentVersion.Guest_Record_fileupload__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1053,6 +1177,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Location_Visit__c.Service_Contract_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Location_Visit__c.Service_Contract__c</field>
         <readable>true</readable>
@@ -1125,6 +1254,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.ROI_Analysis_Completed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Product2.ATAK_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1499,6 +1633,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceContract.Status_custom__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceContract.Tender_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1699,6 +1838,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkOrder.After_Work_Comments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Before_Work_Comments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkOrder.Collected_Items__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1830,10 +1979,6 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
         <flow>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</flow>
     </flowAccesses>
     <flowAccesses>
@@ -1862,6 +2007,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_Mobile_Flow_Check_In</flow>
     </flowAccesses>
     <flowAccesses>
@@ -1878,12 +2027,23 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
         <flow>sendBetterEmail_Test_Create_Test_Templates_if_needed</flow>
     </flowAccesses>
+    <layoutAssignments>
+        <layout>ATAK_Personnel__c-ATAK Personnel Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>ATAK_Project__c-ATAK Project Layout</layout>
     </layoutAssignments>
@@ -2067,6 +2227,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>FeedItem-Feed Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FlowInterview-Flow Interview Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</layout>
@@ -2496,6 +2659,10 @@
         <recordType>ResourceAbsence.FSL__Non_Availability</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>ATAK_Personnel__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>ATAK_Project__c</tab>
         <visibility>Hidden</visibility>

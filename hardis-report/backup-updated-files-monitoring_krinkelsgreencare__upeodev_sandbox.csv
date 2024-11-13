@@ -1,4 +1,145 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+appMenus/AppSwitcher.appMenu-meta.xml," ",AppMenu AppSwitcher,M,,log,📰
 applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
+classes/ATAKMaterialService.cls,A,ApexClass ATAKMaterialService,,,log,📰
+classes/ATAKMaterialService.cls-meta.xml,A,ApexClass ATAKMaterialService,,,log,📰
+classes/ATAKMaterialWrapper.cls,A,ApexClass ATAKMaterialWrapper,,,log,📰
+classes/ATAKMaterialWrapper.cls-meta.xml,A,ApexClass ATAKMaterialWrapper,,,log,📰
+classes/ATAKMaterialWrapperTest.cls,A,ApexClass ATAKMaterialWrapperTest,,,log,📰
+classes/ATAKMaterialWrapperTest.cls-meta.xml,A,ApexClass ATAKMaterialWrapperTest,,,log,📰
+classes/ATAKPersonnelService.cls,A,ApexClass ATAKPersonnelService,,,log,📰
+classes/ATAKPersonnelService.cls-meta.xml,A,ApexClass ATAKPersonnelService,,,log,📰
+classes/ATAKPersonnelWrapper.cls,A,ApexClass ATAKPersonnelWrapper,,,log,📰
+classes/ATAKPersonnelWrapper.cls-meta.xml,A,ApexClass ATAKPersonnelWrapper,,,log,📰
+classes/ATAKPersonnelWrapperTest.cls,A,ApexClass ATAKPersonnelWrapperTest,,,log,📰
+classes/ATAKPersonnelWrapperTest.cls-meta.xml,A,ApexClass ATAKPersonnelWrapperTest,,,log,📰
+classes/ATAKVehicleService.cls,A,ApexClass ATAKVehicleService,,,log,📰
+classes/ATAKVehicleService.cls-meta.xml,A,ApexClass ATAKVehicleService,,,log,📰
+classes/ATAKVehicleWrapper.cls,A,ApexClass ATAKVehicleWrapper,,,log,📰
+classes/ATAKVehicleWrapper.cls-meta.xml,A,ApexClass ATAKVehicleWrapper,,,log,📰
+classes/ATAKVehicleWrapperTest.cls,A,ApexClass ATAKVehicleWrapperTest,,,log,📰
+classes/ATAKVehicleWrapperTest.cls-meta.xml,A,ApexClass ATAKVehicleWrapperTest,,,log,📰
+classes/FileUploadImprovedHelper.cls,A,ApexClass FileUploadImprovedHelper,,,log,📰
+classes/FileUploadImprovedHelper.cls-meta.xml,A,ApexClass FileUploadImprovedHelper,,,log,📰
+classes/FileUploadImproved_Test.cls,A,ApexClass FileUploadImproved_Test,,,log,📰
+classes/FileUploadImproved_Test.cls-meta.xml,A,ApexClass FileUploadImproved_Test,,,log,📰
+classes/MachineRestResource.cls," ",ApexClass MachineRestResource,M,,log,📰
+classes/PersonnelRestResource.cls," ",ApexClass PersonnelRestResource,M,,log,📰
+classes/WorkOrderSchedulerBatch.cls," ",ApexClass WorkOrderSchedulerBatch,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-installedPackages/FSL.json," ",InstalledPackage FSL.json,M,,log,📰
+flexipages/Commercial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Commercial_Account_Record_Page,M,,log,📰
+flexipages/Location_Visit_Record_Page.flexipage-meta.xml," ",FlexiPage Location_Visit_Record_Page,M,,log,📰
+flexipages/Operational_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Operational_Account_Record_Page,M,,log,📰
+flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
+flowDefinitions/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flowDefinition-meta.xml," ",FlowDefinition Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
+flowDefinitions/Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status,M,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos,,,log,📰
+flows/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flow-meta.xml," ",Flow Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
+flows/Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status.flow-meta.xml," ",Flow Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status,M,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flow-meta.xml,A,Flow Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos,,,log,📰
+layouts/ATAK_Personnel__c-ATAK Personnel Layout.layout-meta.xml,A,Layout ATAK_Personnel__c-ATAK Personnel Layout,,,log,📰
+layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
+layouts/FlowInterview-Flow Interview Layout.layout-meta.xml,A,Layout FlowInterview-Flow Interview Layout,,,log,📰
+layouts/Location_Visit__c-Location Visit Layout.layout-meta.xml," ",Layout Location_Visit__c-Location Visit Layout,M,,log,📰
+layouts/Product2-Product Layout.layout-meta.xml," ",Layout Product2-Product Layout,M,,log,📰
+layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
+layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
+lwc/fileUploadImproved/fileUploadImproved.html,A,LightningComponentBundle fileUploadImproved/fileUploadImproved.html,,,log,📰
+lwc/fileUploadImproved/fileUploadImproved.js,A,LightningComponentBundle fileUploadImproved/fileUploadImproved.js,,,log,📰
+lwc/fileUploadImproved/fileUploadImproved.js-meta.xml,A,LightningComponentBundle fileUploadImproved/fileUploadImproved.js-meta.xml,,,log,📰
+lwc/fileUploadImprovedCPE/fileUploadImprovedCPE.html,A,LightningComponentBundle fileUploadImprovedCPE/fileUploadImprovedCPE.html,,,log,📰
+lwc/fileUploadImprovedCPE/fileUploadImprovedCPE.js,A,LightningComponentBundle fileUploadImprovedCPE/fileUploadImprovedCPE.js,,,log,📰
+lwc/fileUploadImprovedCPE/fileUploadImprovedCPE.js-meta.xml,A,LightningComponentBundle fileUploadImprovedCPE/fileUploadImprovedCPE.js-meta.xml,,,log,📰
+notificationTypeConfig/NotificationTypeConfig.config-meta.xml," ",NotificationTypeConfig NotificationTypeConfig,M,,log,📰
+objects/ATAK_Personnel__c/ATAK_Personnel__c.object-meta.xml,A,CustomObject ATAK_Personnel__c/ATAK_Personnel__c,,,log,📰
+objects/ATAK_Personnel__c/compactLayouts/Custom_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Custom_Compact_Layout,,,log,📰
+objects/ATAK_Personnel__c/fields/Code__c.field-meta.xml,A,CustomField Code__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Department_Code__c.field-meta.xml,A,CustomField Department_Code__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Department_Name__c.field-meta.xml,A,CustomField Department_Name__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Depot_Code__c.field-meta.xml,A,CustomField Depot_Code__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Depot_Name__c.field-meta.xml,A,CustomField Depot_Name__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Dossier__c.field-meta.xml,A,CustomField Dossier__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Email__c.field-meta.xml,A,CustomField Email__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Enddate__c.field-meta.xml,A,CustomField Enddate__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Mobile__c.field-meta.xml,A,CustomField Mobile__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Name__c.field-meta.xml,A,CustomField Name__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Phone__c.field-meta.xml,A,CustomField Phone__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Sitemanager_Code__c.field-meta.xml,A,CustomField Sitemanager_Code__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Sitemanager_Name__c.field-meta.xml,A,CustomField Sitemanager_Name__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Startdate__c.field-meta.xml,A,CustomField Startdate__c,,,log,📰
+objects/ATAK_Personnel__c/fields/Statute__c.field-meta.xml,A,CustomField Statute__c,,,log,📰
+objects/ATAK_Personnel__c/listViews/All.listView-meta.xml,A,ListView All,,,log,📰
+objects/Account/recordTypes/Commercial_Account.recordType-meta.xml," ",RecordType Commercial_Account,M,,log,📰
+objects/Account/recordTypes/Financial_Account.recordType-meta.xml," ",RecordType Financial_Account,M,,log,📰
+objects/Account/recordTypes/Group_Account.recordType-meta.xml," ",RecordType Group_Account,M,,log,📰
+objects/Account/recordTypes/Operational_Account.recordType-meta.xml," ",RecordType Operational_Account,M,,log,📰
+objects/Contact/fields/Function_Type__c.field-meta.xml," ",CustomField Function_Type__c,M,,log,📰
+objects/Contact/fields/Functional_level__c.field-meta.xml," ",CustomField Functional_level__c,M,,log,📰
+objects/ContentVersion/ContentVersion.object-meta.xml,A,CustomObject ContentVersion/ContentVersion,,,log,📰
+objects/ContentVersion/fields/Guest_Record_fileupload__c.field-meta.xml,A,CustomField Guest_Record_fileupload__c,,,log,📰
+objects/Location_Visit__c/fields/Asset_Evaluation__c.field-meta.xml," ",CustomField Asset_Evaluation__c,M,,log,📰
+objects/Location_Visit__c/fields/Location_Passport_Status__c.field-meta.xml," ",CustomField Location_Passport_Status__c,M,,log,📰
+objects/Location_Visit__c/fields/Overall_Evaluation__c.field-meta.xml," ",CustomField Overall_Evaluation__c,M,,log,📰
+objects/Location_Visit__c/fields/Safety_Instruction_Status__c.field-meta.xml," ",CustomField Safety_Instruction_Status__c,M,,log,📰
+objects/Location_Visit__c/fields/Service_Contract_Status__c.field-meta.xml,A,CustomField Service_Contract_Status__c,,,log,📰
+objects/Product2/fields/ATAK_Code__c.field-meta.xml,A,CustomField ATAK_Code__c,,,log,📰
+objects/ServiceContract/compactLayouts/Service_Contract.compactLayout-meta.xml," ",CompactLayout Service_Contract,M,,log,📰
+objects/ServiceContract/fields/Status_custom__c.field-meta.xml,A,CustomField Status_custom__c,,,log,📰
+objects/WorkOrder/fields/After_Work_Comments__c.field-meta.xml,A,CustomField After_Work_Comments__c,,,log,📰
+objects/WorkOrder/fields/Before_Work_Comments__c.field-meta.xml,A,CustomField Before_Work_Comments__c,,,log,📰
+permissionsetgroups/Admin_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Admin_Permission_Set_Group,,,log,📰
+permissionsetgroups/Business_Support_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Business_Support_Permission_Set_Group,,,log,📰
+permissionsetgroups/Contract_Manager_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Contract_Manager_Permission_Set_Group,,,log,📰
+permissionsetgroups/Operator_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Operator_Permission_Set_Group,,,log,📰
+permissionsets/ATAK_Permissions.permissionset-meta.xml," ",PermissionSet ATAK_Permissions,M,,log,📰
+permissionsets/fileUploadImproved.permissionset-meta.xml,A,PermissionSet fileUploadImproved,,,log,📰
+profileSessionSettings/Salesforce_API_Only_System_Integrations_profileSessionSetting1731425383850.profileSessionSetting-meta.xml,A,ProfileSessionSetting Salesforce_API_Only_System_Integrations_profileSessionSetting1731425383850,,,log,📰
+profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
+profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
+profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
+profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
+profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
+profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
+profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
+profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
+profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
+profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
+profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
+profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
+profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
+profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
+profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
+profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
+profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
+profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
+profiles/Operator.profile-meta.xml," ",Profile Operator,M,,log,📰
+profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
+profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
+profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
+profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
+profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
+profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
+remoteSiteSettings/BOFCRMSEnvironment1731427604238.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSEnvironment1731427604238,,,log,📰
+remoteSiteSettings/BOFCRMSEnvironment1731427604935.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSEnvironment1731427604935,,,log,📰
+remoteSiteSettings/BOFCRMSLoad1.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSLoad1,,,log,📰
+remoteSiteSettings/BOFCRMSLoad2.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSLoad2,,,log,📰
+remoteSiteSettings/BOFCRMSLoad3.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSLoad3,,,log,📰
+remoteSiteSettings/BOFCRMSLoad4.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSLoad4,,,log,📰
+remoteSiteSettings/BOFCRMSLoad5.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSLoad5,,,log,📰
+remoteSiteSettings/BOFCRMSLoad6.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSLoad6,,,log,📰
+remoteSiteSettings/BOFCRMSLoad7.remoteSite-meta.xml,A,RemoteSiteSetting BOFCRMSLoad7,,,log,📰
+settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
+sharingRules/ATAK_Personnel__c.sharingRules-meta.xml,A,SharingRules ATAK_Personnel__c,,,log,📰
+standardValueSets/AccountContactMultiRoles.standardValueSet-meta.xml," ",StandardValueSet AccountContactMultiRoles,M,,log,📰
+standardValueSets/LeadSource.standardValueSet-meta.xml," ",StandardValueSet LeadSource,M,,log,📰
+standardValueSets/Salutation.standardValueSet-meta.xml," ",StandardValueSet Salutation,M,,log,📰
+tabs/ATAK_Personnel__c.tab-meta.xml,A,CustomTab ATAK_Personnel__c,,,log,📰
+topicsForObjects/ATAK_Personnel__c.topicsForObjects-meta.xml,A,TopicsForObjects ATAK_Personnel__c,,,log,📰
+installedPackages/Salesforce Mobile Apps.json," ",InstalledPackage Salesforce Mobile Apps.json,M,,log,📰
+installedPackages/fileUploadImproved.json,A,InstalledPackage fileUploadImproved.json,,,log,📰
+manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
+manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

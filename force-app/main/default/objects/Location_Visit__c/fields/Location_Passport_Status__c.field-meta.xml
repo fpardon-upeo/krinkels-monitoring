@@ -11,9 +11,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>TBD</fullName>
+                <fullName>Checked</fullName>
                 <default>false</default>
-                <label>TBD</label>
+                <label>Checked</label>
+            </value>
+            <value>
+                <fullName>Not Checked</fullName>
+                <default>false</default>
+                <label>Not Checked</label>
             </value>
         </valueSetDefinition>
     </valueSet>

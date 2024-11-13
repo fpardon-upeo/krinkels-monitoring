@@ -121,8 +121,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Status</fieldItem>
-                <identifier>RecordStatusField</identifier>
+                <fieldItem>Record.Status_custom__c</fieldItem>
+                <identifier>RecordStatus_custom_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-dd481e51-48d0-4c90-a635-63bd25b51d48</name>

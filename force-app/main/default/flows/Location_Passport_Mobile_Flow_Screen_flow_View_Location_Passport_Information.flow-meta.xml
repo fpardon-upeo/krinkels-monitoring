@@ -361,14 +361,6 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>LocationPassportRecord</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Location_Passport__c</objectType>
-    </variables>
-    <variables>
         <name>ServiceTerritoryRecord</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>

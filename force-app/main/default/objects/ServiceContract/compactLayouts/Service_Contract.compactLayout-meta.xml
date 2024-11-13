@@ -5,7 +5,6 @@
     <fields>AccountId</fields>
     <fields>Type__c</fields>
     <fields>ParentServiceContractId</fields>
-    <fields>StatusIndicator</fields>
-    <fields>Status</fields>
+    <fields>Status_custom__c</fields>
     <label>Service Contract</label>
 </CompactLayout>

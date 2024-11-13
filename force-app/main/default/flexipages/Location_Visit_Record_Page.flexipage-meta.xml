@@ -57,6 +57,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Service_Contract__c</fieldItem>
+                <identifier>RecordService_Contract__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Commercial_Account__c</fieldItem>
                 <identifier>RecordCommercial_Account_cField</identifier>
                 <visibilityRule>
@@ -108,16 +118,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Service_Contract__c</fieldItem>
-                <identifier>RecordService_Contract__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Operational_Account__c</fieldItem>
                 <identifier>RecordOperational_Account_cField</identifier>
             </fieldInstance>
@@ -144,6 +144,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Visit_Date__c</fieldItem>
                 <identifier>RecordVisit_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Service_Contract_Status__c</fieldItem>
+                <identifier>RecordService_Contract_Status__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-422d9b34-5667-4a9a-a8de-dcc923074c2a</name>

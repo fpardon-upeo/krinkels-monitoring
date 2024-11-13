@@ -12,11 +12,6 @@
         <label>Ms.</label>
     </standardValue>
     <standardValue>
-        <fullName>Mrs.</fullName>
-        <default>false</default>
-        <label>Mrs.</label>
-    </standardValue>
-    <standardValue>
         <fullName>Mx.</fullName>
         <default>false</default>
         <label>Mx.</label>

@@ -152,6 +152,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Related_account__c</fieldItem>
+                <identifier>RecordRelated_account_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Email__c</fieldItem>
                 <identifier>RecordEmail__cField</identifier>
             </fieldInstance>

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ATAKMaterialService</members>
+        <members>ATAKMaterialWrapper</members>
+        <members>ATAKMaterialWrapperTest</members>
+        <members>ATAKPersonnelService</members>
+        <members>ATAKPersonnelWrapper</members>
+        <members>ATAKPersonnelWrapperTest</members>
         <members>ATAKProjectService</members>
         <members>ATAKProjectWrapper</members>
         <members>ATAKProjectWrapperTest</members>
+        <members>ATAKVehicleService</members>
+        <members>ATAKVehicleWrapper</members>
+        <members>ATAKVehicleWrapperTest</members>
         <members>AddressSearchService</members>
         <members>ContractLineItemTriggerHandler</members>
         <members>ExportRecordsController</members>
@@ -662,6 +671,8 @@
         <members>FSL__ut_retrieveDataActivityLog</members>
         <members>FSL__ut_servicesListService</members>
         <members>FieldServiceTestData</members>
+        <members>FileUploadImprovedHelper</members>
+        <members>FileUploadImproved_Test</members>
         <members>GanttRoundPinAction</members>
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
@@ -1016,6 +1027,7 @@
         <name>Community</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c.Custom_Compact_Layout</members>
         <members>Account.Account_Compact_Layout</members>
         <members>Account.Commercial_Account</members>
         <members>Account.Financial_Account</members>
@@ -1082,6 +1094,21 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c.Code__c</members>
+        <members>ATAK_Personnel__c.Department_Code__c</members>
+        <members>ATAK_Personnel__c.Department_Name__c</members>
+        <members>ATAK_Personnel__c.Depot_Code__c</members>
+        <members>ATAK_Personnel__c.Depot_Name__c</members>
+        <members>ATAK_Personnel__c.Dossier__c</members>
+        <members>ATAK_Personnel__c.Email__c</members>
+        <members>ATAK_Personnel__c.Enddate__c</members>
+        <members>ATAK_Personnel__c.Mobile__c</members>
+        <members>ATAK_Personnel__c.Name__c</members>
+        <members>ATAK_Personnel__c.Phone__c</members>
+        <members>ATAK_Personnel__c.Sitemanager_Code__c</members>
+        <members>ATAK_Personnel__c.Sitemanager_Name__c</members>
+        <members>ATAK_Personnel__c.Startdate__c</members>
+        <members>ATAK_Personnel__c.Statute__c</members>
         <members>ATAK_Project__c.ATAK_Creation_Date__c</members>
         <members>ATAK_Project__c.Branche__c</members>
         <members>ATAK_Project__c.Client_Type__c</members>
@@ -1163,6 +1190,7 @@
         <members>Contact.Notes__c</members>
         <members>Contact.Type_Formula__c</members>
         <members>Contact.Type__c</members>
+        <members>ContentVersion.Guest_Record_fileupload__c</members>
         <members>ContractLineItem.Calculated_Duration__c</members>
         <members>ContractLineItem.Cost_Center_Code__c</members>
         <members>ContractLineItem.Estimated_Duration__c</members>
@@ -1921,6 +1949,7 @@
         <members>Location_Visit__c.Safety_Information__c</members>
         <members>Location_Visit__c.Safety_Instruction_Status__c</members>
         <members>Location_Visit__c.Scoring__c</members>
+        <members>Location_Visit__c.Service_Contract_Status__c</members>
         <members>Location_Visit__c.Service_Contract__c</members>
         <members>Location_Visit__c.Service_Package_Name__c</members>
         <members>Location_Visit__c.Unit__c</members>
@@ -1942,6 +1971,7 @@
         <members>Opportunity__hd.NextStep__c</members>
         <members>Opportunity__hd.Probability__c</members>
         <members>Opportunity__hd.StageName__c</members>
+        <members>Product2.ATAK_Code__c</members>
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
         <members>ProductItem.Van_Crew__c</members>
@@ -2016,6 +2046,7 @@
         <members>ServiceContract.SPOC_Client__c</members>
         <members>ServiceContract.SPOC_KGC__c</members>
         <members>ServiceContract.Service_Package_Type__c</members>
+        <members>ServiceContract.Status_custom__c</members>
         <members>ServiceContract.Tender_Code__c</members>
         <members>ServiceContract.Type__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
@@ -2053,6 +2084,8 @@
         <members>User.End_Date__c</members>
         <members>User.Interim_Office__c</members>
         <members>User.Start_Date__c</members>
+        <members>WorkOrder.After_Work_Comments__c</members>
+        <members>WorkOrder.Before_Work_Comments__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
@@ -7593,6 +7626,7 @@
         <name>CustomNotificationType</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c</members>
         <members>ATAK_Project__c</members>
         <members>Account</members>
         <members>AccountContactRelation</members>
@@ -7887,6 +7921,7 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c-en_US</members>
         <members>ATAK_Project__c-en_US</members>
         <members>Account-en_US</members>
         <members>Activity-bg</members>
@@ -9348,6 +9383,7 @@
         <name>CustomPermission</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c</members>
         <members>ATAK_Project__c</members>
         <members>Asset_Scheduler</members>
         <members>FSL__CapacityManagement</members>
@@ -9646,7 +9682,6 @@
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
-        <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
@@ -9654,10 +9689,13 @@
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
+        <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>Flow</name>
@@ -9674,7 +9712,6 @@
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
-        <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
@@ -9682,10 +9719,13 @@
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
+        <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>FlowDefinition</name>
@@ -9753,6 +9793,7 @@
         <name>InstalledPackage</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c-ATAK Personnel Layout</members>
         <members>ATAK_Project__c-ATAK Project Layout</members>
         <members>Account-Commercial Account Layout</members>
         <members>Account-FSL Commercial Account Layout</members>
@@ -9864,6 +9905,7 @@
         <members>FSL__Work_Rule__c-Work Rules %28Service%29 Layout</members>
         <members>FSL__Work_Rule__c-Working Territories</members>
         <members>FeedItem-Feed Item Layout</members>
+        <members>FlowInterview-Flow Interview Layout</members>
         <members>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</members>
         <members>FlowTableViewDefinition__c-FlowTableViewDefinition Layout</members>
         <members>Global-FSL Global Actions</members>
@@ -10093,6 +10135,8 @@
         <members>bmpyrckt__timeline</members>
         <members>contractLineEditor</members>
         <members>exportRecords</members>
+        <members>fileUploadImproved</members>
+        <members>fileUploadImprovedCPE</members>
         <members>fsc_actionList3</members>
         <members>fsc_displayError</members>
         <members>fsc_drawLine</members>
@@ -10156,6 +10200,8 @@
         <name>LightningExperienceTheme</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c.All</members>
+        <members>ATAK_Personnel__c.All</members>
         <members>ATAK_Project__c.All</members>
         <members>ATAK_Project__c.All</members>
         <members>Account.AllAccounts</members>
@@ -10690,9 +10736,17 @@
         <members>USF_Flow_Screen_Component_Custom_Objects</members>
         <members>bmpyrckt__Timeline_User</members>
         <members>cases_Permisssion_Set</members>
+        <members>fileUploadImproved</members>
         <members>sfdcInternalInt__sfdc_fieldservice</members>
         <members>sfdcInternalInt__sfdc_scrt2</members>
         <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Admin_Permission_Set_Group</members>
+        <members>Business_Support_Permission_Set_Group</members>
+        <members>Contract_Manager_Permission_Set_Group</members>
+        <members>Operator_Permission_Set_Group</members>
+        <name>PermissionSetGroup</name>
     </types>
     <types>
         <members>SchedulingEntitiesModifiedAttributesChannel_FSL_Optimization_Request_ChangeEvent</members>
@@ -10748,6 +10802,7 @@
         <members>PT1_profileSessionSetting1481671771629</members>
         <members>PT2_profileSessionSetting1568660541553</members>
         <members>PT3_profileSessionSetting1568660558507</members>
+        <members>Salesforce_API_Only_System_Integrations_profileSessionSetting1731425383850</members>
         <members>null_profileSessionSetting1730106625079</members>
         <name>ProfileSessionSetting</name>
     </types>
@@ -10944,6 +10999,15 @@
         <name>RecordType</name>
     </types>
     <types>
+        <members>BOFCRMSEnvironment1731427604238</members>
+        <members>BOFCRMSEnvironment1731427604935</members>
+        <members>BOFCRMSLoad1</members>
+        <members>BOFCRMSLoad2</members>
+        <members>BOFCRMSLoad3</members>
+        <members>BOFCRMSLoad4</members>
+        <members>BOFCRMSLoad5</members>
+        <members>BOFCRMSLoad6</members>
+        <members>BOFCRMSLoad7</members>
         <members>FSL__ApexDevNet</members>
         <members>FSL__FSL_Bundler_CA_PR</members>
         <members>FSL__FSL_Bundler_CA_SB</members>
@@ -11301,6 +11365,7 @@
         <name>SharingReason</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c</members>
         <members>ATAK_Project__c</members>
         <members>Account</members>
         <members>ActivityRecurrence2</members>
@@ -11921,6 +11986,7 @@
         <name>TimeSheetTemplate</name>
     </types>
     <types>
+        <members>ATAK_Personnel__c</members>
         <members>ATAK_Project__c</members>
         <members>Account</members>
         <members>ApptBundleAggrDurDnscale</members>
