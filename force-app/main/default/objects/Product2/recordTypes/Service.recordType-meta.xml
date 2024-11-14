@@ -11,6 +11,13 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Group_Description__c</picklist>
+        <values>
+            <fullName>PERSONENWAGEN DIESEL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>QuantityUnitOfMeasure</picklist>
         <values>
             <fullName>Each</fullName>

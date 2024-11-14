@@ -40,6 +40,8 @@ public with sharing class ATAKProjectService {
         atakProject.Cost_centre_Atak_Name__c = projectData.costcenter_name;
         atakProject.Department_Code__c = projectData.department_code;
         atakProject.Department_Name__c = projectData.department_name;
+        atakProject.Discipline__c = projectData.dim_discipline;
+        //atakProject.Region__c = projectData.dim_region; --> To be added once available in the JSON
         atakProject.Dossier__c = projectData.dossier;
         atakProject.Depot__c = projectData.depot_code;
         atakProject.Start_Date__c = projectData.project_startdate != '' ? Date.valueOf(projectData.project_startdate) : null;

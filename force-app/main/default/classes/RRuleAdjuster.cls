@@ -5,7 +5,7 @@ public class RRuleAdjuster {
     private static final String FREQ_WEEKLY = 'WEEKLY';
     private static final String FREQ_MONTHLY = 'MONTHLY';
     private static final String FREQ_YEARLY = 'YEARLY';
-    private static final String FREQ_DAILY = 'DAILY';  // Add this with other constants
+    private static final String FREQ_DAILY = 'DAILY'; 
 
 
     public class RRuleResult {

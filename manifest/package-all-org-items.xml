@@ -674,6 +674,7 @@
         <members>FileUploadImprovedHelper</members>
         <members>FileUploadImproved_Test</members>
         <members>GanttRoundPinAction</members>
+        <members>InboundLoggerService</members>
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
@@ -687,6 +688,7 @@
         <members>RRuleCriteria</members>
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
+        <members>SDWorxToResourceAbsenceService</members>
         <members>SchedulingController</members>
         <members>SendBetterEmail</members>
         <members>SendBetterEmailAddAttachmentToEmail</members>
@@ -1043,6 +1045,7 @@
         <members>Lead.Leads_Custom_Compact_Layout</members>
         <members>Location_Visit__c.Location_Visit</members>
         <members>Opportunity.New_Awesome_Companct_Layout</members>
+        <members>SD_Import__c.Custom_Compact_Layout</members>
         <members>ServiceContract.Service_Contract</members>
         <members>User.User_Layout</members>
         <members>WorkOrder.Work_Order_Compact_Layout</members>
@@ -1117,11 +1120,13 @@
         <members>ATAK_Project__c.Department_Code__c</members>
         <members>ATAK_Project__c.Department_Name__c</members>
         <members>ATAK_Project__c.Depot__c</members>
+        <members>ATAK_Project__c.Discipline__c</members>
         <members>ATAK_Project__c.Dossier__c</members>
         <members>ATAK_Project__c.End_Date__c</members>
         <members>ATAK_Project__c.Financial_Account__c</members>
         <members>ATAK_Project__c.Group__c</members>
         <members>ATAK_Project__c.Parent_Subproject__c</members>
+        <members>ATAK_Project__c.Region__c</members>
         <members>ATAK_Project__c.Service_Territory__c</members>
         <members>ATAK_Project__c.Site_Manager_Code__c</members>
         <members>ATAK_Project__c.Start_Date__c</members>
@@ -1904,6 +1909,8 @@
         <members>ForecastingItem__hd.RawOwnerOnly__c</members>
         <members>ForecastingItem__hd.RawRollup__c</members>
         <members>Google_Maps_API__c.Key__c</members>
+        <members>Inbound_Log__c.JSON_Body__c</members>
+        <members>Inbound_Log__c.Type__c</members>
         <members>Knowledge__kav.Answer__c</members>
         <members>Knowledge__kav.Procedure_Audience__c</members>
         <members>Knowledge__kav.Procedure_Purpose__c</members>
@@ -1919,6 +1926,9 @@
         <members>LMRA__c.Tasks_of_the_Day__c</members>
         <members>LMRA__c.Work_Order__c</members>
         <members>Location.Account__c</members>
+        <members>Location.Code__c</members>
+        <members>Location.Driver_Code__c</members>
+        <members>Location.License_Plate__c</members>
         <members>Location.Van_Crew__c</members>
         <members>Location_Passport__c.Access_Information__c</members>
         <members>Location_Passport__c.Account__c</members>
@@ -1954,6 +1964,7 @@
         <members>Location_Visit__c.Service_Package_Name__c</members>
         <members>Location_Visit__c.Unit__c</members>
         <members>Location_Visit__c.Visit_Date__c</members>
+        <members>Logger_Settings__c.Enable_Inbound_Logs__c</members>
         <members>MaintenanceAsset.Contract_Manager__c</members>
         <members>MaintenanceAsset.Default_Duration_in_Minutes__c</members>
         <members>MaintenanceAsset.LastSuggestedMaintenanceDate__c</members>
@@ -1972,6 +1983,22 @@
         <members>Opportunity__hd.Probability__c</members>
         <members>Opportunity__hd.StageName__c</members>
         <members>Product2.ATAK_Code__c</members>
+        <members>Product2.Code__c</members>
+        <members>Product2.Date_Out_of_Service__c</members>
+        <members>Product2.Date_Use_End__c</members>
+        <members>Product2.Department_Code__c</members>
+        <members>Product2.Department_Name__c</members>
+        <members>Product2.Depot_Code__c</members>
+        <members>Product2.Depot_Name__c</members>
+        <members>Product2.Driver_Code__c</members>
+        <members>Product2.Driver_Name__c</members>
+        <members>Product2.Group_Code__c</members>
+        <members>Product2.Group_Description__c</members>
+        <members>Product2.License_Plate__c</members>
+        <members>Product2.Means_Category__c</members>
+        <members>Product2.Means_Code__c</members>
+        <members>Product2.Means_Description__c</members>
+        <members>Product2.Rate__c</members>
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
         <members>ProductItem.Van_Crew__c</members>
@@ -1988,6 +2015,26 @@
         <members>ResourceAbsence.FSL__InternalSLRGeolocation__c</members>
         <members>ResourceAbsence.FSL__Last_Updated_Epoch__c</members>
         <members>ResourceAbsence.FSL__Scheduling_Policy_Used__c</members>
+        <members>ResourceAbsence.Unique_Key__c</members>
+        <members>SD_Import__c.AfdelingLabel__c</members>
+        <members>SD_Import__c.AfwezigheidDagdeelKode__c</members>
+        <members>SD_Import__c.AfwezigheidPresturen__c</members>
+        <members>SD_Import__c.AfwezigheidStatusKode__c</members>
+        <members>SD_Import__c.AfwezigheidsCodeNilosCode__c</members>
+        <members>SD_Import__c.AfwezigheidscodelabelCode__c</members>
+        <members>SD_Import__c.AfwezigheidscodelabelLabel__c</members>
+        <members>SD_Import__c.ArbeidsContractWerknemer__c</members>
+        <members>SD_Import__c.FirmaNaam__c</members>
+        <members>SD_Import__c.FirmaWerkgeversNr__c</members>
+        <members>SD_Import__c.KalenderdagDat__c</members>
+        <members>SD_Import__c.KalenderdagInactiviteitsKode__c</members>
+        <members>SD_Import__c.KalenderdagPloegKode__c</members>
+        <members>SD_Import__c.KalenderdagPrestDag__c</members>
+        <members>SD_Import__c.KalenderdagPrestUren__c</members>
+        <members>SD_Import__c.KalenderdagPresturenVM__c</members>
+        <members>SD_Import__c.PersoonId__c</members>
+        <members>SD_Import__c.PersoonRoepAchternaam__c</members>
+        <members>SD_Import__c.PersoonRoepVoornaam__c</members>
         <members>ServiceAppointment.Asset__c</members>
         <members>ServiceAppointment.Due_Date_in_the_Past__c</members>
         <members>ServiceAppointment.FSL__Appointment_Grade__c</members>
@@ -2049,6 +2096,7 @@
         <members>ServiceContract.Status_custom__c</members>
         <members>ServiceContract.Tender_Code__c</members>
         <members>ServiceContract.Type__c</members>
+        <members>ServiceCrew.Driver_Code__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
         <members>ServiceCrewMember.FSL__GanttLabel__c</members>
         <members>ServiceResource.FSL__Efficiency__c</members>
@@ -7762,6 +7810,7 @@
         <members>Google_Maps_API__c</members>
         <members>Idea</members>
         <members>Image</members>
+        <members>Inbound_Log__c</members>
         <members>Incident</members>
         <members>IncidentRelatedItem</members>
         <members>Individual</members>
@@ -7773,6 +7822,7 @@
         <members>LocationTrustMeasure</members>
         <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
+        <members>Logger_Settings__c</members>
         <members>MLModel</members>
         <members>MLModelFactor</members>
         <members>MLModelFactorComponent</members>
@@ -7783,6 +7833,7 @@
         <members>MaintenanceAsset</members>
         <members>MaintenancePlan</members>
         <members>MaintenanceWorkRule</members>
+        <members>Mileage_Entry__c</members>
         <members>OperatingHours</members>
         <members>OperatingHoursHoliday</members>
         <members>Operator_Created_Event__e</members>
@@ -7836,6 +7887,7 @@
         <members>ResourcePreference</members>
         <members>ReturnOrder</members>
         <members>ReturnOrderLineItem</members>
+        <members>SD_Import__c</members>
         <members>SchedulingConstraint</members>
         <members>SchedulingWorkspace</members>
         <members>SchedulingWorkspaceTerritory</members>
@@ -8920,11 +8972,14 @@
         <members>FlowPersonalConfiguration__c-en_US</members>
         <members>FlowTableViewDefinition__c-en_US</members>
         <members>Google_Maps_API__c-en_US</members>
+        <members>Inbound_Log__c-en_US</members>
         <members>Knowledge__kav-en_US</members>
         <members>LMRA__c-en_US</members>
         <members>Location-en_US</members>
         <members>Location_Passport__c-en_US</members>
         <members>Location_Visit__c-en_US</members>
+        <members>Logger_Settings__c-en_US</members>
+        <members>Mileage_Entry__c-en_US</members>
         <members>Operator_Created_Event__e-en_US</members>
         <members>ProductItem-en_US</members>
         <members>ProductItemTransaction-en_US</members>
@@ -8960,6 +9015,7 @@
         <members>ResourceAbsence-vi</members>
         <members>ResourceAbsence-zh_CN</members>
         <members>ResourceAbsence-zh_TW</members>
+        <members>SD_Import__c-en_US</members>
         <members>ServiceAppointment-bg</members>
         <members>ServiceAppointment-cs</members>
         <members>ServiceAppointment-da</members>
@@ -9394,10 +9450,13 @@
         <members>FSL__Service_Goal__c</members>
         <members>FSL__User_Territory__c</members>
         <members>FSL__Work_Rule__c</members>
+        <members>Inbound_Log__c</members>
         <members>Knowledge__kav</members>
         <members>LMRA__c</members>
         <members>Location_Visit__c</members>
+        <members>Mileage_Entry__c</members>
         <members>MobileLanding</members>
+        <members>SD_Import__c</members>
         <members>mobileLanding__Mobile_Landing_vf</members>
         <members>mobileLanding__Non_Mobile_Landing</members>
         <name>CustomTab</name>
@@ -9911,6 +9970,7 @@
         <members>Global-FSL Global Actions</members>
         <members>Global-Global Layout</members>
         <members>Idea-Idea Layout</members>
+        <members>Inbound_Log__c-Inbound Log Layout</members>
         <members>Individual-Individual Layout</members>
         <members>JobProfile-Job Profile Layout</members>
         <members>Knowledge__kav-FAQ - Author</members>
@@ -9930,6 +9990,7 @@
         <members>MaintenanceAsset-Maintenance Asset Layout</members>
         <members>MaintenancePlan-Maintenance Plan Layout</members>
         <members>MaintenanceWorkRule-Maintenance Work Rule Layout</members>
+        <members>Mileage_Entry__c-Mileage Entry Layout</members>
         <members>OperatingHours-FSL Operating Hours Layout</members>
         <members>OperatingHours-Operating Hours Layout</members>
         <members>OperatingHoursHoliday-Operating Hours Holiday Layout</members>
@@ -9965,6 +10026,7 @@
         <members>ResourcePreference-Resource Preference Layout</members>
         <members>ReturnOrder-Return Order Layout</members>
         <members>ReturnOrderLineItem-Return Order Line Item Layout</members>
+        <members>SD_Import__c-SD Import Layout</members>
         <members>SalesforceContract-Salesforce Contract Layout</members>
         <members>SalesforceInvoice-Salesforce Invoice Layout</members>
         <members>SchedulingConstraint-Scheduling Constraint Layout</members>
@@ -10370,6 +10432,8 @@
         <members>FlowTableViewDefinition__c.All</members>
         <members>Idea.Ideas_Last_7_Days</members>
         <members>Idea.Ideas_Last_7_Days</members>
+        <members>Inbound_Log__c.All</members>
+        <members>Inbound_Log__c.All</members>
         <members>Incident.AllIncidentsDefault</members>
         <members>Incident.AllIncidentsDefault</members>
         <members>Individual.All_Individuals</members>
@@ -10406,6 +10470,8 @@
         <members>MaintenancePlan.All_MaintenancePlans</members>
         <members>MaintenancePlan.My_MaintenancePlans</members>
         <members>MaintenancePlan.My_MaintenancePlans</members>
+        <members>Mileage_Entry__c.All</members>
+        <members>Mileage_Entry__c.All</members>
         <members>OperatingHours.All_OperatingHours</members>
         <members>OperatingHours.All_OperatingHours</members>
         <members>OperatingHours.My_OperatingHours</members>
@@ -10488,6 +10554,8 @@
         <members>ReturnOrder.All_ReturnOrders</members>
         <members>ReturnOrder.My_ReturnOrders</members>
         <members>ReturnOrder.My_ReturnOrders</members>
+        <members>SD_Import__c.All</members>
+        <members>SD_Import__c.All</members>
         <members>SchedulingConstraint.All_SchedulingConstraints</members>
         <members>SchedulingConstraint.All_SchedulingConstraints</members>
         <members>SchedulingConstraint.My_SchedulingConstraints</members>
@@ -10994,6 +11062,7 @@
         <members>Product2.Material</members>
         <members>Product2.Service</members>
         <members>Product2.Service_Package</members>
+        <members>Product2.Vehicle</members>
         <members>ResourceAbsence.FSL__Break</members>
         <members>ResourceAbsence.FSL__Non_Availability</members>
         <name>RecordType</name>
@@ -11435,6 +11504,7 @@
         <members>FlowTestResult</members>
         <members>GeolocationBasedAction</members>
         <members>Image</members>
+        <members>Inbound_Log__c</members>
         <members>Incident</members>
         <members>Individual</members>
         <members>JobProfile</members>
@@ -11449,6 +11519,7 @@
         <members>MacroUsage</members>
         <members>MaintenancePlan</members>
         <members>MaintenanceWorkRule</members>
+        <members>Mileage_Entry__c</members>
         <members>NotifDeliveryUserPref</members>
         <members>ObjectDataImport</members>
         <members>OperatingHours</members>
@@ -11472,6 +11543,7 @@
         <members>RecordsetFilterCriteria</members>
         <members>ReportResultBlob</members>
         <members>ReturnOrder</members>
+        <members>SD_Import__c</members>
         <members>SchedulingConstraint</members>
         <members>SchedulingWorkspace</members>
         <members>Scorecard</members>
@@ -12042,6 +12114,7 @@
         <members>FSL__Work_Rule__c</members>
         <members>FlowPersonalConfiguration__c</members>
         <members>FlowTableViewDefinition__c</members>
+        <members>Inbound_Log__c</members>
         <members>Incident</members>
         <members>JobProfile</members>
         <members>LMRA__c</members>
@@ -12050,6 +12123,7 @@
         <members>Location_Visit__c</members>
         <members>MaintenanceAsset</members>
         <members>MaintenancePlan</members>
+        <members>Mileage_Entry__c</members>
         <members>Opportunity</members>
         <members>Order</members>
         <members>Problem</members>
@@ -12066,6 +12140,7 @@
         <members>ResourcePreference</members>
         <members>ReturnOrder</members>
         <members>ReturnOrderLineItem</members>
+        <members>SD_Import__c</members>
         <members>SchedulingWorkspace</members>
         <members>SchedulingWorkspaceTerritory</members>
         <members>ServiceAppointment</members>

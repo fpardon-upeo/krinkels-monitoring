@@ -10,6 +10,7 @@ global with sharing class ProjectRestResource {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
         String returnMessage = '';
+        InboundLoggerService.createInboundLog(req.requestBody.toString(), 'Project');
         try {
             ATAKProjectWrapper project = parseBody(req.requestBody.toString());
             returnMessage = ATAKProjectService.createATAKProjects(project);

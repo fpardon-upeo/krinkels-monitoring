@@ -21,4 +21,9 @@
         <default>false</default>
         <label>Medical</label>
     </standardValue>
+    <standardValue>
+        <fullName>Eblox</fullName>
+        <default>false</default>
+        <label>Eblox</label>
+    </standardValue>
 </StandardValueSet>

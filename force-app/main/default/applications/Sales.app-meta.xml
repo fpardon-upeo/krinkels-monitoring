@@ -953,5 +953,6 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Product2</tabs>
     <tabs>MobileLanding</tabs>
+    <tabs>Mileage_Entry__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

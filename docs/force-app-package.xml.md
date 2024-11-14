@@ -2,9 +2,9 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 1851
+Metadatas: 1919
 
-<details><summary>ApexClass (56)</summary>
+<details><summary>ApexClass (58)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -24,6 +24,7 @@ Metadatas: 1851
   • FileUploadImprovedHelper<br/>
   • FileUploadImproved_Test<br/>
   • GanttRoundPinAction<br/>
+  • InboundLoggerService<br/>
   • MachineRestResource<br/>
   • MaintenancePlanException<br/>
   • MaintenancePlanService<br/>
@@ -37,6 +38,7 @@ Metadatas: 1851
   • RRuleCriteria<br/>
   • RRuleDescriptionGenerator<br/>
   • ReadyForValidation<br/>
+  • SDWorxToResourceAbsenceService<br/>
   • SchedulingController<br/>
   • SendBetterEmail<br/>
   • SendBetterEmailAddAttachmentToEmail<br/>
@@ -119,7 +121,7 @@ Metadatas: 1851
   • Internal Community<br/>
 </details>
 
-<details><summary>CompactLayout (13)</summary>
+<details><summary>CompactLayout (14)</summary>
   • ATAK_Personnel__c.Custom_Compact_Layout<br/>
   • Account.Account_Compact_Layout<br/>
   • Account.Commercial_Account<br/>
@@ -130,6 +132,7 @@ Metadatas: 1851
   • Lead.Leads_Custom_Compact_Layout<br/>
   • Location_Visit__c.Location_Visit<br/>
   • Opportunity.New_Awesome_Companct_Layout<br/>
+  • SD_Import__c.Custom_Compact_Layout<br/>
   • ServiceContract.Service_Contract<br/>
   • User.User_Layout<br/>
   • WorkOrder.Work_Order_Compact_Layout<br/>
@@ -156,7 +159,7 @@ Metadatas: 1851
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (364)</summary>
+<details><summary>CustomField (409)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
   • ATAK_Personnel__c.Department_Name__c<br/>
@@ -181,11 +184,13 @@ Metadatas: 1851
   • ATAK_Project__c.Department_Code__c<br/>
   • ATAK_Project__c.Department_Name__c<br/>
   • ATAK_Project__c.Depot__c<br/>
+  • ATAK_Project__c.Discipline__c<br/>
   • ATAK_Project__c.Dossier__c<br/>
   • ATAK_Project__c.End_Date__c<br/>
   • ATAK_Project__c.Financial_Account__c<br/>
   • ATAK_Project__c.Group__c<br/>
   • ATAK_Project__c.Parent_Subproject__c<br/>
+  • ATAK_Project__c.Region__c<br/>
   • ATAK_Project__c.Service_Territory__c<br/>
   • ATAK_Project__c.Site_Manager_Code__c<br/>
   • ATAK_Project__c.Start_Date__c<br/>
@@ -317,6 +322,8 @@ Metadatas: 1851
   • FlowTableViewDefinition__c.Widths__c<br/>
   • FlowTableViewDefinition__c.Wraps__c<br/>
   • Google_Maps_API__c.Key__c<br/>
+  • Inbound_Log__c.JSON_Body__c<br/>
+  • Inbound_Log__c.Type__c<br/>
   • Knowledge__kav.Answer__c<br/>
   • Knowledge__kav.Procedure_Audience__c<br/>
   • Knowledge__kav.Procedure_Purpose__c<br/>
@@ -333,6 +340,9 @@ Metadatas: 1851
   • LMRA__c.Tasks_of_the_Day__c<br/>
   • LMRA__c.Work_Order__c<br/>
   • Location.Account__c<br/>
+  • Location.Code__c<br/>
+  • Location.Driver_Code__c<br/>
+  • Location.License_Plate__c<br/>
   • Location.Van_Crew__c<br/>
   • Location_Passport__c.Access_Information__c<br/>
   • Location_Passport__c.Account__c<br/>
@@ -371,6 +381,7 @@ Metadatas: 1851
   • Location_Visit__c.Unit__c<br/>
   • Location_Visit__c.Visit_Date__c<br/>
   • Location_Visit__c.Visit_Notes__c<br/>
+  • Logger_Settings__c.Enable_Inbound_Logs__c<br/>
   • MaintenanceAsset.Contract_Manager__c<br/>
   • MaintenanceAsset.Default_Duration_in_Minutes__c<br/>
   • MaintenanceAsset.LastSuggestedMaintenanceDate__c<br/>
@@ -383,6 +394,22 @@ Metadatas: 1851
   • Opportunity.Loss_Reason__c<br/>
   • Opportunity.ROI_Analysis_Completed__c<br/>
   • Product2.ATAK_Code__c<br/>
+  • Product2.Code__c<br/>
+  • Product2.Date_Out_of_Service__c<br/>
+  • Product2.Date_Use_End__c<br/>
+  • Product2.Department_Code__c<br/>
+  • Product2.Department_Name__c<br/>
+  • Product2.Depot_Code__c<br/>
+  • Product2.Depot_Name__c<br/>
+  • Product2.Driver_Code__c<br/>
+  • Product2.Driver_Name__c<br/>
+  • Product2.Group_Code__c<br/>
+  • Product2.Group_Description__c<br/>
+  • Product2.License_Plate__c<br/>
+  • Product2.Means_Category__c<br/>
+  • Product2.Means_Code__c<br/>
+  • Product2.Means_Description__c<br/>
+  • Product2.Rate__c<br/>
   • Product2.Service_Package_Product__c<br/>
   • Product2.Work_Type__c<br/>
   • ProductItem.Van_Crew__c<br/>
@@ -399,6 +426,26 @@ Metadatas: 1851
   • ResourceAbsence.FSL__InternalSLRGeolocation__c<br/>
   • ResourceAbsence.FSL__Last_Updated_Epoch__c<br/>
   • ResourceAbsence.FSL__Scheduling_Policy_Used__c<br/>
+  • ResourceAbsence.Unique_Key__c<br/>
+  • SD_Import__c.AfdelingLabel__c<br/>
+  • SD_Import__c.AfwezigheidDagdeelKode__c<br/>
+  • SD_Import__c.AfwezigheidPresturen__c<br/>
+  • SD_Import__c.AfwezigheidStatusKode__c<br/>
+  • SD_Import__c.AfwezigheidsCodeNilosCode__c<br/>
+  • SD_Import__c.AfwezigheidscodelabelCode__c<br/>
+  • SD_Import__c.AfwezigheidscodelabelLabel__c<br/>
+  • SD_Import__c.ArbeidsContractWerknemer__c<br/>
+  • SD_Import__c.FirmaNaam__c<br/>
+  • SD_Import__c.FirmaWerkgeversNr__c<br/>
+  • SD_Import__c.KalenderdagDat__c<br/>
+  • SD_Import__c.KalenderdagInactiviteitsKode__c<br/>
+  • SD_Import__c.KalenderdagPloegKode__c<br/>
+  • SD_Import__c.KalenderdagPrestDag__c<br/>
+  • SD_Import__c.KalenderdagPrestUren__c<br/>
+  • SD_Import__c.KalenderdagPresturenVM__c<br/>
+  • SD_Import__c.PersoonId__c<br/>
+  • SD_Import__c.PersoonRoepAchternaam__c<br/>
+  • SD_Import__c.PersoonRoepVoornaam__c<br/>
   • ServiceAppointment.Asset__c<br/>
   • ServiceAppointment.Due_Date_in_the_Past__c<br/>
   • ServiceAppointment.FSL__Appointment_Grade__c<br/>
@@ -464,6 +511,7 @@ Metadatas: 1851
   • ServiceContract.Status_custom__c<br/>
   • ServiceContract.Tender_Code__c<br/>
   • ServiceContract.Type__c<br/>
+  • ServiceCrew.Driver_Code__c<br/>
   • ServiceCrew.FSL__GanttColor__c<br/>
   • ServiceCrewMember.FSL__GanttLabel__c<br/>
   • ServiceResource.FSL__Efficiency__c<br/>
@@ -577,7 +625,7 @@ Metadatas: 1851
   • Standard_Notification<br/>
 </details>
 
-<details><summary>CustomObject (11)</summary>
+<details><summary>CustomObject (15)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Asset_Financial_Account__c<br/>
@@ -585,21 +633,28 @@ Metadatas: 1851
   • FlowPersonalConfiguration__c<br/>
   • FlowTableViewDefinition__c<br/>
   • Google_Maps_API__c<br/>
+  • Inbound_Log__c<br/>
   • LMRA__c<br/>
   • Location_Passport__c<br/>
   • Location_Visit__c<br/>
+  • Logger_Settings__c<br/>
+  • Mileage_Entry__c<br/>
+  • SD_Import__c<br/>
   • Service_Item__c<br/>
 </details>
 
-<details><summary>CustomTab (8)</summary>
+<details><summary>CustomTab (11)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Asset_Scheduler<br/>
+  • Inbound_Log__c<br/>
   • Knowledge__kav<br/>
   • LMRA__c<br/>
   • Location_Passport__c<br/>
   • Location_Visit__c<br/>
+  • Mileage_Entry__c<br/>
   • MobileLanding<br/>
+  • SD_Import__c<br/>
 </details>
 
 <details><summary>Dashboard (9)</summary>
@@ -879,7 +934,7 @@ Metadatas: 1851
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<details><summary>Layout (201)</summary>
+<details><summary>Layout (204)</summary>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Account Layout<br/>
@@ -958,6 +1013,7 @@ Metadatas: 1851
   • Global-FSL Global Actions<br/>
   • Global-Global Layout<br/>
   • Idea-Idea Layout<br/>
+  • Inbound_Log__c-Inbound Log Layout<br/>
   • Individual-Individual Layout<br/>
   • JobProfile-Job Profile Layout<br/>
   • Knowledge__kav-FAQ - Author<br/>
@@ -976,6 +1032,7 @@ Metadatas: 1851
   • MaintenanceAsset-Maintenance Asset Layout<br/>
   • MaintenancePlan-Maintenance Plan Layout<br/>
   • MaintenanceWorkRule-Maintenance Work Rule Layout<br/>
+  • Mileage_Entry__c-Mileage Entry Layout<br/>
   • OperatingHours-Operating Hours Layout<br/>
   • OperatingHoursHoliday-Operating Hours Holiday Layout<br/>
   • Opportunity-Opportunity Layout<br/>
@@ -1010,6 +1067,7 @@ Metadatas: 1851
   • ResourcePreference-Resource Preference Layout<br/>
   • ReturnOrder-Return Order Layout<br/>
   • ReturnOrderLineItem-Return Order Line Item Layout<br/>
+  • SD_Import__c-SD Import Layout<br/>
   • SalesforceContract-Salesforce Contract Layout<br/>
   • SalesforceInvoice-Salesforce Invoice Layout<br/>
   • SchedulingConstraint-Scheduling Constraint Layout<br/>
@@ -1151,13 +1209,16 @@ Metadatas: 1851
   • KrinkelsTheme<br/>
 </details>
 
-<details><summary>ListView (6)</summary>
+<details><summary>ListView (9)</summary>
   • ATAK_Personnel__c.All<br/>
   • ATAK_Project__c.All<br/>
   • FlowTableViewDefinition__c.All<br/>
+  • Inbound_Log__c.All<br/>
   • LMRA__c.All<br/>
   • Location_Passport__c.All<br/>
   • Location_Visit__c.All<br/>
+  • Mileage_Entry__c.All<br/>
+  • SD_Import__c.All<br/>
 </details>
 
 <details><summary>ManagedContentType (3)</summary>
@@ -1423,7 +1484,7 @@ Metadatas: 1851
   • WorkOrderLineItem.SendEmail<br/>
 </details>
 
-<details><summary>RecordType (12)</summary>
+<details><summary>RecordType (13)</summary>
   • Account.Commercial_Account<br/>
   • Account.Financial_Account<br/>
   • Account.Financial_Customer<br/>
@@ -1434,6 +1495,7 @@ Metadatas: 1851
   • Product2.Material<br/>
   • Product2.Service<br/>
   • Product2.Service_Package<br/>
+  • Product2.Vehicle<br/>
   • ResourceAbsence.FSL__Break<br/>
   • ResourceAbsence.FSL__Non_Availability<br/>
 </details>
@@ -1733,7 +1795,7 @@ Metadatas: 1851
   • WorkDotCom<br/>
 </details>
 
-<details><summary>SharingRules (150)</summary>
+<details><summary>SharingRules (153)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -1791,6 +1853,7 @@ Metadatas: 1851
   • FlowTestResult<br/>
   • GeolocationBasedAction<br/>
   • Image<br/>
+  • Inbound_Log__c<br/>
   • Incident<br/>
   • Individual<br/>
   • JobProfile<br/>
@@ -1805,6 +1868,7 @@ Metadatas: 1851
   • MacroUsage<br/>
   • MaintenancePlan<br/>
   • MaintenanceWorkRule<br/>
+  • Mileage_Entry__c<br/>
   • NotifDeliveryUserPref<br/>
   • ObjectDataImport<br/>
   • OperatingHours<br/>
@@ -1828,6 +1892,7 @@ Metadatas: 1851
   • RecordsetFilterCriteria<br/>
   • ReportResultBlob<br/>
   • ReturnOrder<br/>
+  • SD_Import__c<br/>
   • SchedulingConstraint<br/>
   • SchedulingWorkspace<br/>
   • Scorecard<br/>
@@ -1962,7 +2027,7 @@ Metadatas: 1851
   • Default_Timesheet_Daily<br/>
 </details>
 
-<details><summary>TopicsForObjects (87)</summary>
+<details><summary>TopicsForObjects (90)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -1996,6 +2061,7 @@ Metadatas: 1851
   • ExpenseReportEntry<br/>
   • FlowPersonalConfiguration__c<br/>
   • FlowTableViewDefinition__c<br/>
+  • Inbound_Log__c<br/>
   • Incident<br/>
   • JobProfile<br/>
   • LMRA__c<br/>
@@ -2004,6 +2070,7 @@ Metadatas: 1851
   • Location_Visit__c<br/>
   • MaintenanceAsset<br/>
   • MaintenancePlan<br/>
+  • Mileage_Entry__c<br/>
   • Opportunity<br/>
   • Order<br/>
   • Problem<br/>
@@ -2020,6 +2087,7 @@ Metadatas: 1851
   • ResourcePreference<br/>
   • ReturnOrder<br/>
   • ReturnOrderLineItem<br/>
+  • SD_Import__c<br/>
   • SchedulingWorkspace<br/>
   • SchedulingWorkspaceTerritory<br/>
   • ServiceAppointment<br/>
