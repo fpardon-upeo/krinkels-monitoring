@@ -2,24 +2,39 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Vacation</fullName>
-        <default>true</default>
-        <label>Vacation</label>
+        <fullName>Frost Delay</fullName>
+        <default>false</default>
+        <label>Frost Delay</label>
     </standardValue>
     <standardValue>
-        <fullName>Meeting</fullName>
+        <fullName>Industrial Accident</fullName>
         <default>false</default>
-        <label>Meeting</label>
+        <label>Industrial Accident</label>
     </standardValue>
     <standardValue>
-        <fullName>Training</fullName>
+        <fullName>Illness</fullName>
         <default>false</default>
-        <label>Training</label>
+        <label>Illness</label>
     </standardValue>
     <standardValue>
-        <fullName>Medical</fullName>
+        <fullName>Recup Overtime</fullName>
         <default>false</default>
-        <label>Medical</label>
+        <label>Recup Overtime</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Absent Hours</fullName>
+        <default>false</default>
+        <label>Absent Hours</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Small Leave</fullName>
+        <default>false</default>
+        <label>Small Leave</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Break</fullName>
+        <default>false</default>
+        <label>Break</label>
     </standardValue>
     <standardValue>
         <fullName>Eblox</fullName>

@@ -40,14 +40,14 @@ public without sharing class SDWorxToResourceAbsenceService {
             //If AfwezigheidDagdeelKode__c is 'Volledige dag', the start date is 08:00 and the end date is 16:00
 
             if(sdworxAbsence.AfwezigheidDagdeelKode__c == 'Volledige dag'){
-                resourceAbsence.Start = DateTime.newInstance(startDate.year(), startDate.month(), startDate.day(), 9, 0, 0);
-                resourceAbsence.End = DateTime.newInstance(startDate.year(), startDate.month(), startDate.day(), 17, 0, 0);
+                resourceAbsence.Start = Datetime.newInstance(startDate.year(), startDate.month(), startDate.day(), 9, 0, 0);
+                resourceAbsence.End = Datetime.newInstance(startDate.year(), startDate.month(), startDate.day(), 17, 0, 0);
             } else if(sdworxAbsence.AfwezigheidDagdeelKode__c == 'Voormiddag'){
-                resourceAbsence.Start = DateTime.newInstance(startDate.year(), startDate.month(), startDate.day(), 9, 0, 0);
-                resourceAbsence.End = ResourceAbsence.Start.addHours(Integer.valueOf(sdworxAbsence.AfwezigheidPresturen__c));
+                resourceAbsence.Start = Datetime.newInstance(startDate.year(), startDate.month(), startDate.day(), 9, 0, 0);
+                resourceAbsence.End = resourceAbsence.Start.addHours(Integer.valueOf(sdworxAbsence.AfwezigheidPresturen__c));
             } else if(sdworxAbsence.AfwezigheidDagdeelKode__c == 'Namiddag'){
-                resourceAbsence.Start = DateTime.newInstance(startDate.year(), startDate.month(), startDate.day(), 13, 0, 0);
-                resourceAbsence.End = ResourceAbsence.Start.addHours(Integer.valueOf(sdworxAbsence.AfwezigheidPresturen__c));
+                resourceAbsence.Start = Datetime.newInstance(startDate.year(), startDate.month(), startDate.day(), 13, 0, 0);
+                resourceAbsence.End = resourceAbsence.Start.addHours(Integer.valueOf(sdworxAbsence.AfwezigheidPresturen__c));
             }
             //Set the absence typeq
             resourceAbsence.Type = 'Eblox';

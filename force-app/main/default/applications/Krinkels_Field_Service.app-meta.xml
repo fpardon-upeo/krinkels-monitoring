@@ -1922,6 +1922,7 @@
     <tabs>standard-report</tabs>
     <tabs>Inbound_Log__c</tabs>
     <tabs>Mileage_Entry__c</tabs>
+    <tabs>Error_Log__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Krinkels_Field_Service_UtilityBar</utilityBar>
 </CustomApplication>

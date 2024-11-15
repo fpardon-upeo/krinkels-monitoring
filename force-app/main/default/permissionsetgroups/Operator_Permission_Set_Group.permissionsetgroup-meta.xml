@@ -5,6 +5,7 @@
     <permissionSets>FSL_Mobile_License</permissionSets>
     <permissionSets>FSL_Resource_License</permissionSets>
     <permissionSets>FSL_Resource_Permissions</permissionSets>
+    <permissionSets>Field_Service_Mobile_Custom_Permission_Set</permissionSets>
     <permissionSets>force__FieldServiceDocumentBuilderMobile</permissionSets>
     <permissionSets>force__FieldServiceDocumentBuilderStandard</permissionSets>
     <permissionSets>force__FieldServiceMobileStandardPermSet</permissionSets>

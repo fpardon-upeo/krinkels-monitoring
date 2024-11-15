@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Set_Van_Naming_Convention</name>
+        <label>Set Van Naming Convention</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VanNaming</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.IsInventoryLocation</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>This flow sets the naming convention for a Van and flagged the record as an inventory location. We can link material items only to inventory locations.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>VanNaming</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Van_Crew__r.Name} + &quot; (&quot; + {!$Record.License_Plate__c}+ &quot;)&quot;</expression>
+    </formulas>
+    <interviewLabel>[Van][Before-Save][Record-Triggered] Set Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[Van][Before-Save][Record-Triggered] Set Naming Convention &amp; Inventory Location</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Van_Naming_Convention</targetReference>
+        </connector>
+        <object>Location</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

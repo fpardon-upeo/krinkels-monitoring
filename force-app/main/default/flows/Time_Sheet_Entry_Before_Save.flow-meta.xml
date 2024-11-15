@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Code_ATAK</name>
+        <label>Code ATAK</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Empty_or_Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Code_ATAK_Limbus__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Starting_Allowance_Winter_Service__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Urgent_Intervention__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_ATAK_Code</targetReference>
+            </connector>
+            <label>Is Empty or Changed</label>
+        </rules>
+    </decisions>
+    <description>This flow is configured to update and fill in some data automatically on Time Sheet Entries</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CalculateATAKCode</name>
+        <dataType>String</dataType>
+        <expression>IF($Record.Urgent_Intervention__c, &quot;URG&quot;, 
+  CASE($Record.Type, 
+    &quot;Normal Hours&quot;, &quot;HR&quot;, 
+    &quot;Travel Time&quot;, &quot;HR&quot;,
+    &quot;Night Work&quot;, 
+      IF($Record.Starting_Allowance_Winter_Service__c, &quot;P&quot;, &quot;NW&quot;),
+    &quot;Machines&quot;, &quot;MU&quot;,
+    &quot;&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CalculatedSoccode</name>
+        <dataType>String</dataType>
+        <expression>IF($Record.Urgent_Intervention__c, &quot;&quot;, 
+  CASE($Record.Type, 
+    &quot;Normal Hours&quot;, &quot;1010&quot;, 
+    &quot;Travel Time&quot;, &quot;1010&quot;,
+    &quot;Night Work&quot;, 
+      IF($Record.Starting_Allowance_Winter_Service__c, &quot;1710&quot;, &quot;1706&quot;),
+    &quot;Machines&quot;, &quot;&quot;,
+    &quot;&quot;
+  )
+)</expression>
+    </formulas>
+    <interviewLabel>Time Sheet Entry - Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Time Sheet Entry - Before Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_ATAK_Code</name>
+        <label>Update ATAK Code</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Code_ATAK_Limbus__c</field>
+            <value>
+                <elementReference>CalculateATAKCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Soccode__c</field>
+            <value>
+                <elementReference>CalculatedSoccode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Code_ATAK</targetReference>
+        </connector>
+        <object>TimeSheetEntry</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

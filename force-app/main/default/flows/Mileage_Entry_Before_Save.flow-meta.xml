@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Code_ATAK</name>
+        <label>Code ATAK</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Needs_Update</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Codes_ATAK_Limbus__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Starting_Mileage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Ending_Mileage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Starting_Location_Type__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Ending_Location_Type__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_ATAK_Codes</targetReference>
+            </connector>
+            <label>Needs Update</label>
+        </rules>
+    </decisions>
+    <description>This flow is to update and automatically fill in specific fields</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CalculatedATAKCode</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT($Record.Allowance_Type__c) = &quot;Own Vehicle&quot;, &quot;KMEV&quot;,
+  IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+          TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+          TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;KMAD&quot;,
+    IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+            TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+            TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;KMBD&quot;,
+      IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+              TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+              TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;KMAD&quot;,
+        IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;KMBD&quot;,
+          IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+                  TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+                  TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;KMAP&quot;,
+            IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                    TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                    TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;KMBP&quot;,
+              &quot;&quot;
+            )
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CalculatedSoccode</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT($Record.Allowance_Type__c) = &quot;Own Vehicle&quot;, &quot;3301&quot;,
+  IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+          TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+          TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;3210&quot;,
+    IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+            TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+            TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;3210&quot;,
+      IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+              TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+              TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;3210&quot;,
+        IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;3210&quot;,
+          IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+                  TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+                  TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;3210&quot;,
+            IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                    TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                    TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;3210&quot;,
+              &quot;&quot;
+            )
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <interviewLabel>Mileage Entry - Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Mileage Entry - Before Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_ATAK_Codes</name>
+        <label>Update ATAK Codes</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Codes_ATAK_Limbus__c</field>
+            <value>
+                <elementReference>CalculatedATAKCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Soccode__c</field>
+            <value>
+                <elementReference>CalculatedSoccode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Code_ATAK</targetReference>
+        </connector>
+        <object>Mileage_Entry__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

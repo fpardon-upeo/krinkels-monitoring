@@ -4,6 +4,57 @@
     <active>true</active>
     <label>Break</label>
     <picklistValues>
+        <picklist>Code_ATAK_Limbus__c</picklist>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KMAD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KMAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KMBD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KMBP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nieuwe code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nieuwe code of KMEV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>FSL__Estimated_Travel_Time_From_Source__c</picklist>
         <values>
             <fullName>Aerial</fullName>
@@ -44,19 +95,7 @@
     <picklistValues>
         <picklist>Type</picklist>
         <values>
-            <fullName>Medical</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Meeting</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Training</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Vacation</fullName>
+            <fullName>Break</fullName>
             <default>true</default>
         </values>
     </picklistValues>

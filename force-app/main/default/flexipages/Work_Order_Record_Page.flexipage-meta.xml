@@ -112,6 +112,23 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>headerTitleName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentObjectApiName</name>
+                    <value>WorkOrder</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>WorkPlans</value>
+                </componentInstanceProperties>
+                <componentName>runtime_service_fieldservice:workPlan</componentName>
+                <identifier>runtime_service_fieldservice_workPlan</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
                 </componentInstanceProperties>

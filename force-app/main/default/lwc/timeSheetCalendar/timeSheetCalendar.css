@@ -1,0 +1,40 @@
+/* .calendar-container {
+    height: auto;  
+    width: 100%;    
+    overflow: auto; 
+}
+
+.calendar-container .fullcalendar {
+    max-width: 800px;  
+    margin: 0 auto;    
+} */
+
+/* Mobile-specific styles */
+
+/* @media (max-width: 768px) {
+    .mobile-calendar {
+        font-size: 14px;
+    }
+    
+    .mobile-calendar .fc-toolbar-title {
+        font-size: 1.2em;
+    }
+    
+    .mobile-calendar .fc-button {
+        padding: 0.2em 0.4em;
+    }
+}
+
+.calendar-container {
+    padding: 0.5rem;
+} */
+
+.slds-modal__footer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-fields {
+  padding: 1rem;
+}
