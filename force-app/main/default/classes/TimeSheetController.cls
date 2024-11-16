@@ -10,7 +10,7 @@ public with sharing class TimeSheetController {
   public static TimeSheetWrapper getTimeSheet(Id recordId) {
     TimeSheetWrapper wrapper = new TimeSheetWrapper();
 
-    // Get TimeSheet and its entries
+    // Get TimeSheet and its entries ordered by StartTime
     wrapper.timeSheet = [
       SELECT
         Id,
@@ -18,7 +18,11 @@ public with sharing class TimeSheetController {
         ServiceResourceId,
         StartDate,
         EndDate,
-        (SELECT Id, StartTime, EndTime, Subject, Type FROM TimeSheetEntries)
+        (
+          SELECT Id, StartTime, EndTime, Subject, Type
+          FROM TimeSheetEntries
+          ORDER BY StartTime ASC
+        )
       FROM TimeSheet
       WHERE Id = :recordId
     ];
@@ -65,7 +69,7 @@ public with sharing class TimeSheetController {
     Id absenceId,
     DateTime startTime,
     DateTime endTime,
-    Id recordId
+    Id timeSheetId
   ) {
     ResourceAbsence absence = [
       SELECT Id, Start, End
@@ -78,6 +82,6 @@ public with sharing class TimeSheetController {
 
     update absence;
 
-    return getTimeSheet(recordId);
+    return getTimeSheet(timeSheetId);
   }
 }

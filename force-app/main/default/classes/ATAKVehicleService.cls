@@ -100,7 +100,4 @@ public with sharing class ATAKVehicleService {
         atakVehLoc.Van_Crew__r = new ServiceCrew(Driver_Code__c = vehicleData.driver_code);
         return atakVehLoc;
     }
-
-
-
 }

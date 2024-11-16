@@ -10,6 +10,8 @@ global with sharing class MachineRestResource {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
         String returnMessage = '';
+        InboundLoggerService.createInboundLog(req.requestBody.toString(), 'Machine');
+
 
         //Every body we get contains a type element and a data element
         //We need to check the type element to know what to do with the data element
@@ -22,7 +24,7 @@ global with sharing class MachineRestResource {
 
         if(typeOfData == 'voertuig'){
             returnMessage = ATAKVehicleService.createATAKVehicle(ATAKVehicleWrapper.parse(fullBody));
-        } else if(typeOfData == 'materiaal'){
+        } else if(typeOfData == 'materieel'){
             returnMessage = ATAKMaterialService.createATAKMaterial(ATAKMaterialWrapper.parse(fullBody));
         } else {
             return 'Error: Type not recognized';

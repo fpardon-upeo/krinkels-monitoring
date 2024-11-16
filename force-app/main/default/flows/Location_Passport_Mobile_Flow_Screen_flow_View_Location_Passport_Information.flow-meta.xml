@@ -247,7 +247,8 @@
         <fields>
             <name>Opening_Hours</name>
             <defaultValue>
-                <stringValue>{!AccountRecord.Opening_hours__c}</stringValue>
+                <stringValue>{!AccountRecord.Opening_hours__c}
+</stringValue>
             </defaultValue>
             <fieldText>Opening Hours</fieldText>
             <fieldType>LargeTextArea</fieldType>

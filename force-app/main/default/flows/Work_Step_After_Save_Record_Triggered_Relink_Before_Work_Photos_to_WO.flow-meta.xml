@@ -267,24 +267,24 @@
             </value>
         </filters>
         <filters>
-            <field>Status</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Completed</stringValue>
-            </value>
-        </filters>
-        <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Take Before Work Photos</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
         <object>WorkStep</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>ContentDocumentCollection</name>
         <dataType>SObject</dataType>

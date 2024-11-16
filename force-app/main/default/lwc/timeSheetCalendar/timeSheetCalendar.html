@@ -24,7 +24,7 @@
       <div class="fullcalendar"></div>
     </div>
 
-    <div class="slds-modal__footer slds-docked-form-footer">
+    <div class="slds-modal__footer">
       <lightning-button
         label="Submit for Approval"
         variant="brand"
@@ -159,7 +159,7 @@
               <!-- Add fields -->
               <lightning-input-field
                 field-name="ResourceId"
-                value={timeSheet.timeSheet.ServiceResourceId}
+                value={timeSheetResourceId}
                 disabled
               ></lightning-input-field>
               <lightning-input-field field-name="Start"></lightning-input-field>
@@ -211,6 +211,7 @@
             object-api-name="TimeSheetEntry"
             onsuccess={handleSuccess}
             record-id={recordIdBeingHandled}
+            key={recordIdBeingHandled}
           >
             <lightning-messages></lightning-messages>
 
@@ -281,7 +282,7 @@
               <!-- Add fields -->
               <lightning-input-field
                 field-name="ResourceId"
-                value={timeSheet.timeSheet.ServiceResourceId}
+                value={timeSheetResourceId}
                 disabled
               ></lightning-input-field>
               <lightning-input-field field-name="Start"></lightning-input-field>

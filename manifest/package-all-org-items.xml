@@ -15,7 +15,6 @@
         <members>ATAKVehicleWrapperTest</members>
         <members>AddressSearchService</members>
         <members>ContractLineItemTriggerHandler</members>
-        <members>DMLService</members>
         <members>ExportRecordsController</members>
         <members>FSL__ABCommonProcessor</members>
         <members>FSL__ABDataProcessor</members>
@@ -676,7 +675,6 @@
         <members>FileUploadImproved_Test</members>
         <members>GanttRoundPinAction</members>
         <members>InboundLoggerService</members>
-        <members>LoggerService</members>
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
@@ -685,11 +683,14 @@
         <members>MapsGeoCodeWrapper</members>
         <members>MapsGeoCodeWrapperTest</members>
         <members>PersonnelRestResource</members>
+        <members>PersonnelRestResourceTest</members>
         <members>ProjectRestResource</members>
+        <members>ProjectRestResourceTest</members>
         <members>RRuleAdjuster</members>
         <members>RRuleCriteria</members>
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
+        <members>SDWorxAbsenceBatch</members>
         <members>SDWorxToResourceAbsenceService</members>
         <members>SchedulingController</members>
         <members>SendBetterEmail</members>
@@ -848,6 +849,10 @@
         <members>mobileLanding__NonEssentialsMobileLanding</members>
         <members>usf3__GenerateSessionIdForLWC</members>
         <name>ApexPage</name>
+    </types>
+    <types>
+        <members>FSLTests</members>
+        <name>ApexTestSuite</name>
     </types>
     <types>
         <members>ATAKPersonnelTrigger</members>
@@ -1936,6 +1941,7 @@
         <members>LMRA__c.Date__c</members>
         <members>LMRA__c.EPC_EPI_CBM_PBM__c</members>
         <members>LMRA__c.LMRA_Type__c</members>
+        <members>LMRA__c.Limited_LMRA_Done__c</members>
         <members>LMRA__c.Project_Lead__c</members>
         <members>LMRA__c.Surrounding_Risks__c</members>
         <members>LMRA__c.Tasks_of_the_Day__c</members>
@@ -2152,6 +2158,11 @@
         <members>Service_Item__c.Service_Item_Key__c</members>
         <members>Service_Item__c.Service_Package__c</members>
         <members>Service_Item__c.Service__c</members>
+        <members>Service_Status_Time_Log__c.End_Status__c</members>
+        <members>Service_Status_Time_Log__c.End_Time__c</members>
+        <members>Service_Status_Time_Log__c.Service_Appointment__c</members>
+        <members>Service_Status_Time_Log__c.Start_Status__c</members>
+        <members>Service_Status_Time_Log__c.Start_Time__c</members>
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
         <members>TimeSheetEntry.Resource_Absence__c</members>
         <members>TimeSheetEntry.Soccode__c</members>
@@ -2182,6 +2193,7 @@
         <members>WorkOrder.Shop_Visit_End_Time__c</members>
         <members>WorkOrder.Shop_Visit_Reviewed_Approved__c</members>
         <members>WorkOrder.Shop_Visit_Start_Time__c</members>
+        <members>WorkOrder.Special_Equipment__c</members>
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
@@ -7947,6 +7959,7 @@
         <members>ServiceTerritoryLocation</members>
         <members>ServiceTerritoryMember</members>
         <members>Service_Item__c</members>
+        <members>Service_Status_Time_Log__c</members>
         <members>SharingRecordCollection</members>
         <members>SharingRecordCollectionItem</members>
         <members>SharingRecordCollectionMember</members>
@@ -9281,6 +9294,7 @@
         <members>ServiceTerritoryMember-zh_CN</members>
         <members>ServiceTerritoryMember-zh_TW</members>
         <members>Service_Item__c-en_US</members>
+        <members>Service_Status_Time_Log__c-en_US</members>
         <members>TimeSlot-bg</members>
         <members>TimeSlot-cs</members>
         <members>TimeSlot-da</members>
@@ -10105,6 +10119,7 @@
         <members>ServiceTerritory-Service Territory Layout</members>
         <members>ServiceTerritoryMember-Service Territory Member Layout</members>
         <members>Service_Item__c-Service Item Layout</members>
+        <members>Service_Status_Time_Log__c-Service Status Time Log Layout</members>
         <members>Shift-Shift Layout</members>
         <members>ShiftPattern-Shift Pattern Layout</members>
         <members>ShiftPatternEntry-Shift Pattern Entry Layout</members>
@@ -10309,6 +10324,7 @@
         <members>imageTextEditor</members>
         <members>infoEditorPrompt</members>
         <members>loadingSpinner</members>
+        <members>nextAppointmentPicker</members>
         <members>prepareContractForNextYear</members>
         <members>readyForValidation</members>
         <members>recurrencePattern</members>
@@ -10321,6 +10337,7 @@
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
         <members>simpleDispatcherConsole</members>
+        <members>startStopTimer</members>
         <members>timeSheetCalendar</members>
         <members>toastMessage</members>
         <members>utilsImageCapture</members>
@@ -10985,6 +11002,7 @@
         <members>Quote.SendEmail</members>
         <members>ServiceAppointment.FSL__Change_Status</members>
         <members>ServiceAppointment.SendEmail</members>
+        <members>ServiceAppointment.Start_Stop</members>
         <members>ServiceContract.Create_Service_Contract</members>
         <members>ServiceContract.Export_Lines</members>
         <members>ServiceContract.Generate_Maintenance_Plan</members>
@@ -11096,6 +11114,7 @@
         <members>Task.UpdateStatus_9</members>
         <members>TimeSheet.Time_Sheet_Review</members>
         <members>WorkOrder.SendEmail</members>
+        <members>WorkOrder.Start_Stop</members>
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
         <members>WorkStep.Take_After_Work_Photos</members>
@@ -11636,6 +11655,7 @@
         <members>ServiceResourcePreference</members>
         <members>ServiceTerritory</members>
         <members>Service_Item__c</members>
+        <members>Service_Status_Time_Log__c</members>
         <members>SharingRecordCollection</members>
         <members>Shift</members>
         <members>ShiftPattern</members>
@@ -12234,6 +12254,7 @@
         <members>ServiceTerritory</members>
         <members>ServiceTerritoryMember</members>
         <members>Service_Item__c</members>
+        <members>Service_Status_Time_Log__c</members>
         <members>Shift</members>
         <members>Shipment</members>
         <members>Solution</members>

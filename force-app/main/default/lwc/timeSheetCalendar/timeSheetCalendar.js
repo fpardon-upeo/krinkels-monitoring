@@ -4,12 +4,10 @@ import FullCalendarJS from "@salesforce/resourceUrl/FullCalendar";
 import getTimeSheet from "@salesforce/apex/TimeSheetController.getTimeSheet";
 import updateTimeSheetEntry from "@salesforce/apex/TimeSheetController.updateTimeSheetEntry";
 import updateAbsence from "@salesforce/apex/TimeSheetController.updateAbsence";
-import { NavigationMixin } from "lightning/navigation";
+import { getRecordNotifyChange } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
-export default class TimeSheetCalendar extends NavigationMixin(
-  LightningElement
-) {
+export default class TimeSheetCalendar extends LightningElement {
   @api recordId;
 
   // Record ID being handled (TimeSheetEntry or ResourceAbsence)
@@ -17,22 +15,21 @@ export default class TimeSheetCalendar extends NavigationMixin(
 
   @track calendar;
 
-  @track timeSheet;
   @track timeSheetEntries = [];
   @track resourceAbsences = [];
+
+  // TimeSheet's ServiceResourceId/User
+  @track timeSheetResourceId;
 
   @track startDate;
   @track endDate;
 
+  @track isLoading = true;
   @track showModal = false;
   @track showTimeSheetEntryNewForm = false;
   @track showTimeSheetEntryEditForm = false;
   @track showResourceAbsenceNewForm = false;
   @track showResourceAbsenceEditForm = false;
-
-  @track selectedDate;
-
-  @track isLoading = true;
 
   connectedCallback() {
     // Wait for DOM to be ready
@@ -44,7 +41,7 @@ export default class TimeSheetCalendar extends NavigationMixin(
         return getTimeSheet({ recordId: this.recordId });
       })
       .then((result) => {
-        this.timeSheet = result;
+        this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
 
         if (result.timeSheet.StartDate) {
           this.startDate = result.timeSheet.StartDate;
@@ -118,6 +115,9 @@ export default class TimeSheetCalendar extends NavigationMixin(
     this.calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: "timeGridDay",
       allDaySlot: false,
+      slotMinTime: "06:00:00",
+      slotMaxTime: "20:00:00",
+      height: "auto",
       //Set initial date and Range as well
       initialDate: this.startDate,
       validRange: {
@@ -134,16 +134,24 @@ export default class TimeSheetCalendar extends NavigationMixin(
         minute: "2-digit",
         hour12: false
       },
-      snapDuration: "00:15:00",
+      snapDuration: "00:30:00",
       events: allEvents,
+      // Event styling
+      eventDidMount: (info) => {
+        // This will be called for each event when it's rendered
+        const eventEl = info.el.querySelector(".fc-event-main");
+        if (eventEl) {
+          eventEl.style.color = "white";
+          eventEl.style.fontSize = "15px";
+          eventEl.style.fontWeight = "600";
+        }
+      },
       // Click event
       eventClick: (info) => {
         this.handleEventClick(info);
       },
       // Drag and drop event
       eventDrop: (info) => {
-        console.log("Event Drop:", JSON.stringify(info));
-
         // Format dates for Salesforce
         const startTime = info.event.start.toISOString();
         const endTime = info.event.end.toISOString();
@@ -156,9 +164,18 @@ export default class TimeSheetCalendar extends NavigationMixin(
           })
             .then((result) => {
               // Update the local data with the server response
-              this.timeSheet = result;
-              this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              this.resourceAbsences = [...result.resourceAbsences];
+              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+
+              if (result.timeSheet.TimeSheetEntries) {
+                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
+              }
+
+              if (result.resourceAbsences) {
+                this.resourceAbsences = [...result.resourceAbsences];
+              }
+
+              // Notify LDS of the updated record
+              getRecordNotifyChange([{ recordId: info.event.id }]);
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -168,23 +185,32 @@ export default class TimeSheetCalendar extends NavigationMixin(
             absenceId: info.event.id,
             startTime: startTime,
             endTime: endTime,
-            recordId: this.recordId
+            timeSheetId: this.recordId
           })
             .then((result) => {
               // Update the local data with the server response
-              this.timeSheet = result;
-              this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              this.resourceAbsences = [...result.resourceAbsences];
+              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+              if (result.timeSheet.TimeSheetEntries) {
+                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
+              }
+
+              if (result.resourceAbsences) {
+                this.resourceAbsences = [...result.resourceAbsences];
+              }
+
+              // Notify LDS of the updated record
+              getRecordNotifyChange([{ recordId: info.event.id }]);
             })
             .catch((error) => {
               console.error("Error:", error);
             });
         }
       },
+      // Resize event
       eventResize: (info) => {
         // Format dates for Salesforce
-        const startTime = info.event.start.toISOString();
-        const endTime = info.event.end.toISOString();
+        const startTime = info.event.start;
+        const endTime = info.event.end;
 
         if (info.event.extendedProps.recordType === "TimeSheetEntry") {
           updateTimeSheetEntry({
@@ -194,9 +220,17 @@ export default class TimeSheetCalendar extends NavigationMixin(
           })
             .then((result) => {
               // Update the local data with the server response
-              this.timeSheet = result;
-              this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              this.resourceAbsences = [...result.resourceAbsences];
+              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+              if (result.timeSheet.TimeSheetEntries) {
+                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
+              }
+
+              if (result.resourceAbsences) {
+                this.resourceAbsences = [...result.resourceAbsences];
+              }
+
+              // Notify LDS of the updated record
+              getRecordNotifyChange([{ recordId: info.event.id }]);
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -206,13 +240,21 @@ export default class TimeSheetCalendar extends NavigationMixin(
             absenceId: info.event.id,
             startTime: startTime,
             endTime: endTime,
-            recordId: this.recordId
+            timeSheetId: this.recordId
           })
             .then((result) => {
               // Update the local data with the server response
-              this.timeSheet = result;
-              this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              this.resourceAbsences = [...result.resourceAbsences];
+              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+              if (result.timeSheet.TimeSheetEntries) {
+                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
+              }
+
+              if (result.resourceAbsences) {
+                this.resourceAbsences = [...result.resourceAbsences];
+              }
+
+              // Notify LDS of the updated record
+              getRecordNotifyChange([{ recordId: info.event.id }]);
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -220,10 +262,12 @@ export default class TimeSheetCalendar extends NavigationMixin(
         }
       },
       selectable: true,
+      // When an empty row or cell is clicked
       dateClick: (info) => {
         this.handleDateClick(info);
       }
     });
+
     this.calendar.render();
   }
 
@@ -280,8 +324,6 @@ export default class TimeSheetCalendar extends NavigationMixin(
    * Opens the new ResourceAbsence page
    */
   createResourceAbsence() {
-    console.log(JSON.stringify(this.timeSheet));
-
     this.showModal = false;
     this.showTimeSheetEntryNewForm = false;
     this.showResourceAbsenceNewForm = true;
@@ -297,9 +339,15 @@ export default class TimeSheetCalendar extends NavigationMixin(
     // Fetch again all the time sheet entries and resource absences
     getTimeSheet({ recordId: this.recordId })
       .then((result) => {
-        this.timeSheet = result;
-        this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-        this.resourceAbsences = [...result.resourceAbsences];
+        // Update the local data with the server response
+        this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+        if (result.timeSheet.TimeSheetEntries) {
+          this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
+        }
+
+        if (result.resourceAbsences) {
+          this.resourceAbsences = [...result.resourceAbsences];
+        }
 
         // Create new events
         const timeSheetEvents = this.timeSheetEntries.map((entry) => ({

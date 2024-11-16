@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+        <field>Location.ProductItems.ProductItemTransactions$CreatedDate</field>
+    </columns>
+    <columns>
         <field>Location.ProductItems$Product2</field>
     </columns>
     <columns>
@@ -9,9 +12,6 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Location.ProductItems.ProductItemTransactions$Quantity</field>
-    </columns>
-    <columns>
-        <field>Location.ProductItems.ProductItemTransactions$CreatedDate</field>
     </columns>
     <format>Summary</format>
     <groupingsDown>

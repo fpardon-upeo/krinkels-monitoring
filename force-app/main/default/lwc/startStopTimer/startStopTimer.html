@@ -1,0 +1,42 @@
+<!--
+ - Created by Frederik on 11/15/2024.
+ -->
+
+<!-- Start Stop Timer -->
+<template>
+  <lightning-card title="Start Stop Timer" icon-name="utility:timer">
+    <div class="slds-grid_vertical">
+      <div class="slds-col">
+        <div class="slds-grid">
+          <!-- Show the elapsed time -->
+          <div class="slds-col">
+            <p class="slds-align_absolute-center bigFont">{formattedTime}</p>
+          </div>
+        </div>
+      </div>
+      <div class="slds-col">
+        <div class="slds-grid slds-align_absolute-center slds-p-top_medium">
+          <lightning-button
+            class="slds-m-right_small"
+            label="Start"
+            onclick={startHandler}
+          ></lightning-button>
+          <lightning-button
+            class="slds-m-right_small"
+            label="Pause"
+            onclick={pauseHandler}
+          ></lightning-button>
+          <lightning-button
+            class="slds-m-right_small"
+            label="Resume"
+            onclick={resumeHandler}
+          ></lightning-button>
+          <lightning-button
+            label="Stop"
+            onclick={stopHandler}
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+</template>

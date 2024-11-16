@@ -135,6 +135,8 @@ export default class ServiceBuilder extends LightningElement {
   loadContractLines() {
     getContractLines({ recordId: this.recordId })
       .then((result) => {
+        console.log("Service Contract", result);
+
         this.serviceContract = result[0].ServiceContract;
 
         if (result.length > 0) {
@@ -568,12 +570,15 @@ export default class ServiceBuilder extends LightningElement {
       ? this.contractLines[0].ServiceContract.EndDate
       : (this.contractLines[0]?.EndDate ?? defaultEndDate);
 
+    // Set default LMRA value
+    const defaultLMRA = this.serviceContract?.Default_LMRA__c || "Limited";
+
     const newRow = {
       Id: null,
       Product2Id: this.serviceContract.Product__c,
       Frequency__c: "",
       Planning_Type__c: "",
-      LMRA__c: this.serviceContract.Default_LMRA__c,
+      LMRA__c: defaultLMRA,
       Quantity: 1,
       UnitPrice: 0,
       StartDate: startDate,
@@ -753,7 +758,6 @@ export default class ServiceBuilder extends LightningElement {
     let contractLine = this.contractLines[index];
 
     contractLine.Product2Id = value;
-    contractLine.LMRA__c = this.serviceContract.Default_LMRA__c;
     contractLine.Location__CountryCode__s = "BE";
 
     // Store the FinCustomers before saving so we can preserve them and add them back after saving

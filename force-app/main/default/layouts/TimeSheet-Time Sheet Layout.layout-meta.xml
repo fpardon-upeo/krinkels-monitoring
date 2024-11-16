@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -142,6 +143,11 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Service_Resource__c</fields>
+        <fields>Allowance_Type__c</fields>
+        <fields>Starting_Location_Type__c</fields>
+        <fields>Ending_Location_Type__c</fields>
+        <fields>Calculated_Mileage__c</fields>
         <relatedList>Mileage_Entry__c.Time_Sheet__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

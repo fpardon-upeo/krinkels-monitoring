@@ -64,12 +64,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Discipline__c</fieldItem>
                 <identifier>RecordDiscipline__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Region__c</fieldItem>
                 <identifier>RecordRegion__cField</identifier>
             </fieldInstance>
@@ -555,6 +563,12 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
                 <identifier>force_relatedListContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>nextAppointmentPicker</componentName>
+                <identifier>c_nextAppointmentPicker</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

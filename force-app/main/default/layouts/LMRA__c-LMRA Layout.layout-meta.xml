@@ -19,6 +19,10 @@
                 <behavior>Edit</behavior>
                 <field>Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Limited_LMRA_Done__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -124,9 +128,6 @@
             <sortOrder>1</sortOrder>
         </platformActionListItems>
     </platformActionList>
-    <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>

@@ -3,8 +3,8 @@
     <decisions>
         <name>LMRA_Done</name>
         <label>LMRA Done ?</label>
-        <locationX>182</locationX>
-        <locationY>458</locationY>
+        <locationX>446</locationX>
+        <locationY>674</locationY>
         <defaultConnector>
             <targetReference>Update_Status_of_Work_Order</targetReference>
         </defaultConnector>
@@ -21,6 +21,38 @@
             </conditions>
             <connector>
                 <targetReference>Complete_LMRA_Message</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Work_Order_Tasks_Completed</name>
+        <label>Work Order Tasks Completed ?</label>
+        <locationX>248</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Get_LMRA_Work_Step_Information</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No_Work_Order_Tasks_Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>WOTaskStepRecord.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>WOTaskStepRecord.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Applicable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>WO_Tasks_to_Complete_Message</targetReference>
             </connector>
             <label>No</label>
         </rules>
@@ -56,8 +88,8 @@
     <recordLookups>
         <name>Get_LMRA_Work_Step_Information</name>
         <label>Get LMRA Work Step Information</label>
-        <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationX>446</locationX>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>LMRA_Done</targetReference>
@@ -85,11 +117,11 @@
     <recordLookups>
         <name>Get_WO_Order_Information</name>
         <label>Get WO Order Information</label>
-        <locationX>182</locationX>
+        <locationX>248</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_LMRA_Work_Step_Information</targetReference>
+            <targetReference>Get_Work_Order_Tasks_Completed_Step_Information</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -105,9 +137,37 @@
         <queriedFields>LMRA_Done__c</queriedFields>
     </recordLookups>
     <recordLookups>
+        <name>Get_Work_Order_Tasks_Completed_Step_Information</name>
+        <label>Get Work Order Tasks Completed Step Information</label>
+        <locationX>248</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Work_Order_Tasks_Completed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Work Order Tasks Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>WorkOrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkOrderRecord.Id</elementReference>
+            </value>
+        </filters>
+        <object>WorkStep</object>
+        <outputReference>WOTaskStepRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Work_Step_Information</name>
         <label>Get Work Step Information</label>
-        <locationX>182</locationX>
+        <locationX>248</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -129,8 +189,8 @@
     <recordUpdates>
         <name>Update_Status_of_Service_Appointment</name>
         <label>Update Status of Service Appointment</label>
-        <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationX>578</locationX>
+        <locationY>890</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ParentRecordId</field>
@@ -156,8 +216,8 @@
     <recordUpdates>
         <name>Update_Status_of_Work_Order</name>
         <label>Update Status of Work Order</label>
-        <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationX>578</locationX>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Update_Status_of_Service_Appointment</targetReference>
         </connector>
@@ -180,8 +240,8 @@
     <recordUpdates>
         <name>Update_Work_Step_to_New</name>
         <label>Update Work Step to New</label>
-        <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationX>314</locationX>
+        <locationY>890</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -201,8 +261,8 @@
     <screens>
         <name>Complete_LMRA_Message</name>
         <label>Complete LMRA Message</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -217,8 +277,24 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>WO_Tasks_to_Complete_Message</name>
+        <label>WO Tasks to Complete Message</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>TaskToCompleteMessage</name>
+            <fieldText>&lt;p&gt;Make sure to complete all your tasks for this work order and tick the related work step.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>122</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Work_Step_Information</targetReference>
@@ -250,6 +326,14 @@
     </variables>
     <variables>
         <name>WorkStepRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkStep</objectType>
+    </variables>
+    <variables>
+        <name>WOTaskStepRecord</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>

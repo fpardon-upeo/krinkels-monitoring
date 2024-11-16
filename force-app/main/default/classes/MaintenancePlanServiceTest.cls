@@ -59,7 +59,7 @@ private class MaintenancePlanServiceTest {
         MaintenancePlan maintenancePlan = [SELECT Id, ServiceContractId, AccountId, StartDate, EndDate FROM MaintenancePlan WHERE ServiceContractId = :serviceContractId];
         System.assertEquals(serviceContractId, maintenancePlan.ServiceContractId);
         System.assertEquals(serviceContract.AccountId, maintenancePlan.AccountId);
-        System.assertEquals(Date.today(), maintenancePlan.StartDate);
+        System.assertEquals(Date.newInstance(Date.today().year(), 01, 01), maintenancePlan.StartDate);
         //The end date should be the end of the current year
         System.assertEquals(Date.newInstance(Date.today().year(), 12, 31), maintenancePlan.EndDate);
 

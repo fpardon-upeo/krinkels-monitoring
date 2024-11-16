@@ -280,6 +280,22 @@ export default class ImageCapture extends LightningElement {
       // Remove photo from this.allImagesData, so we won't upload it again in case of a failure
       this.deleteImageById(item.id);
     }
+    await this.updateWorkStepRecord();
+  }
+
+  async updateWorkStepRecord() {
+    const fields = {};
+    fields.Id = this.recordId;
+    fields.Status = "Completed";
+    const recordInput = { fields };
+
+    updateRecord(recordInput)
+      .then(() => {
+        log("Record is updated successfully.");
+      })
+      .catch((error) => {
+        log("Error updating record: " + JSON.stringify(error));
+      });
   }
 
 

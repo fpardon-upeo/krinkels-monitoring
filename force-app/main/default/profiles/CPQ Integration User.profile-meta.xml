@@ -67,10 +67,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>DMLService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ExportRecordsController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -92,10 +88,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>InboundLoggerService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LoggerService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -131,7 +123,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PersonnelRestResourceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProjectRestResource</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProjectRestResourceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -148,6 +148,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ReadyForValidation</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SDWorxAbsenceBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1084,6 +1088,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>LMRA__c.LMRA_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LMRA__c.Limited_LMRA_Done__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2132,6 +2141,31 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.End_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.End_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.Service_Appointment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.Start_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.Start_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Task.FSL__Count_of_Events__c</field>
         <readable>false</readable>
@@ -2294,6 +2328,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.Shop_Visit_Start_Time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Special_Equipment__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2889,6 +2928,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Service_Item__c-Service Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Service_Status_Time_Log__c-Service Status Time Log Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Shift-Shift Layout</layout>

@@ -21,6 +21,12 @@
         <groupingString>InProgress</groupingString>
     </standardValue>
     <standardValue>
+        <fullName>Travelling</fullName>
+        <default>false</default>
+        <label>Travelling</label>
+        <groupingString>InProgress</groupingString>
+    </standardValue>
+    <standardValue>
         <fullName>In Progress</fullName>
         <default>false</default>
         <label>In Progress</label>

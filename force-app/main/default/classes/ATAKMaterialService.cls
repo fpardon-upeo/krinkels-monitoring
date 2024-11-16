@@ -33,6 +33,7 @@ public with sharing class ATAKMaterialService {
     public static Product2 createSingleATAKMaterial(ATAKMaterialWrapper.Data materialData) {
         System.debug('ATAKMaterialService.createATAKMaterial');
         System.debug('materialData: ' + materialData.code);
+        Id materialRecordTypeId = Schema.SObjectType.Product2.getRecordTypeInfosByName().get('Material').getRecordTypeId();
         Product2 atakMat = new Product2();
         atakMat.ExternalId = materialData.code;
         atakMat.Name = materialData.description;
@@ -40,6 +41,20 @@ public with sharing class ATAKMaterialService {
         atakMat.IsActive = true;
         atakMat.Description = materialData.description;
         atakMat.Family = 'Material';
+        atakMat.ATAK_Code__c = materialData.code;
+        atakMat.Group_Code__c = materialData.group_code;
+        atakMat.Group_Description__c = materialData.group_description;
+        atakMat.Means_Category__c = materialData.means_categorie;
+        atakMat.Means_Code__c = materialData.means_code;
+        atakMat.Means_Description__c = materialData.means_description;
+        atakMat.Department_Code__c = materialData.department_code;
+        atakMat.Department_Name__c = materialData.department_name;
+        atakMat.Depot_Code__c = materialData.depot_code;
+        atakMat.Depot_Name__c = materialData.depot_name;
+        atakMat.Rate__c = materialData.rate;
+        atakMat.Date_Use_End__c = materialData.date_use_end != null ? Date.valueOf(materialData.date_use_end) : null;
+        atakMat.Date_Out_of_Service__c = materialData.date_out_of_service != null ? Date.valueOf(materialData.date_out_of_service) : null;
+        atakMat.RecordTypeId = materialRecordTypeId;
         return atakMat;
     }
 

@@ -26,6 +26,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Limited_LMRA_Done__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Project_Lead__c</field>
             </layoutItems>
             <layoutItems>

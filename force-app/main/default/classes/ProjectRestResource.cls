@@ -9,6 +9,7 @@ global with sharing class ProjectRestResource {
     global static String handlePost() {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
+        System.debug('Request Body: ' + req.requestBody.toString());
         String returnMessage = '';
         InboundLoggerService.createInboundLog(req.requestBody.toString(), 'Project');
         try {

@@ -10,6 +10,8 @@ global with sharing class PersonnelRestResource {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
         String returnMessage = '';
+        InboundLoggerService.createInboundLog(req.requestBody.toString(), 'Personnel');
+
         try {
             ATAKPersonnelWrapper personnel = parseBody(req.requestBody.toString());
             returnMessage = ATAKPersonnelService.createATAKPersonnel(personnel);

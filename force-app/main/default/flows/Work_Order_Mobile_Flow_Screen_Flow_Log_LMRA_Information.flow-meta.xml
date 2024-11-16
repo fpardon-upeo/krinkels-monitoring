@@ -19,7 +19,7 @@
     <decisions>
         <name>Full_or_Limited_LMRA</name>
         <label>Full or Limited LMRA ?</label>
-        <locationX>182</locationX>
+        <locationX>248</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Limited_LMRA_Information</targetReference>
@@ -42,9 +42,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Limited_LMRA_Confirmed</name>
+        <label>Limited LMRA Confirmed ?</label>
+        <locationX>446</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Limited_LMRA_Information</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Limited_LMRA_Done</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Limited_LMRA</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>LMRA_Already_Done</name>
         <label>LMRA Already Done ?</label>
-        <locationX>380</locationX>
+        <locationX>545</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>LMRA_Done_Message</targetReference>
@@ -92,26 +118,20 @@
         <name>Create_Full_LMRA</name>
         <label>Create Full LMRA</label>
         <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
         </connector>
         <inputAssignments>
             <field>Corrective_Measures__c</field>
             <value>
-                <elementReference>Corrective_Measures</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Date__c</field>
-            <value>
-                <elementReference>Date_Full</elementReference>
+                <elementReference>Corrective_Measures_1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>EPC_EPI_CBM_PBM__c</field>
             <value>
-                <elementReference>EPC_EPI_CBM_PBM</elementReference>
+                <elementReference>EPC_EPI_CBM_PBM_1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -129,13 +149,13 @@
         <inputAssignments>
             <field>Surrounding_Risks__c</field>
             <value>
-                <elementReference>Surrounding_Risks</elementReference>
+                <elementReference>Surrounding_Risks_1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Tasks_of_the_Day__c</field>
             <value>
-                <elementReference>Tasks_of_the_Day</elementReference>
+                <elementReference>Tasks_of_the_Day_1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -150,16 +170,10 @@
         <name>Create_Limited_LMRA</name>
         <label>Create Limited LMRA</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
         </connector>
-        <inputAssignments>
-            <field>Date__c</field>
-            <value>
-                <elementReference>Date_Lmited</elementReference>
-            </value>
-        </inputAssignments>
         <inputAssignments>
             <field>LMRA_Type__c</field>
             <value>
@@ -167,9 +181,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Project_Lead__c</field>
+            <field>Limited_LMRA_Done__c</field>
             <value>
-                <elementReference>Project_Lead</elementReference>
+                <elementReference>Limited_LMRA_Done</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -183,7 +197,7 @@
     <recordLookups>
         <name>Get_Related_Work_Order</name>
         <label>Get Related Work Order</label>
-        <locationX>380</locationX>
+        <locationX>545</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -207,7 +221,7 @@
     <recordLookups>
         <name>Get_Work_Step_Information</name>
         <label>Get Work Step Information</label>
-        <locationX>380</locationX>
+        <locationX>545</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -230,8 +244,8 @@
     <recordUpdates>
         <name>Confirmed_LMRA_Done_at_WO_level</name>
         <label>Confirmed LMRA Done at WO level</label>
-        <locationX>182</locationX>
-        <locationY>974</locationY>
+        <locationX>248</locationX>
+        <locationY>1058</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -251,7 +265,7 @@
     <recordUpdates>
         <name>Update_Work_Step_Status_to_Complete</name>
         <label>Update Work Step Status to Complete</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>566</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -278,13 +292,8 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Full_LMRA_Information_Part_Two</targetReference>
+            <targetReference>Create_Full_LMRA</targetReference>
         </connector>
-        <fields>
-            <name>FullLMRATitle</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Full LMRA&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>Work_Order_Full</name>
             <dataType>String</dataType>
@@ -303,14 +312,6 @@
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>Date_Full</name>
-            <dataType>Date</dataType>
-            <fieldText>Date</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
             <name>Project_Lead_Full</name>
             <dataType>String</dataType>
             <fieldText>Project Lead</fieldText>
@@ -318,52 +319,58 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>Full_LMRA_Information_Part_Two</name>
-        <label>Full LMRA Information - Part Two</label>
-        <locationX>50</locationX>
-        <locationY>674</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Create_Full_LMRA</targetReference>
-        </connector>
         <fields>
-            <name>FullLMRATitleTwo</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Full LMRA&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Tasks_of_the_Day</name>
+            <name>Tasks_of_the_Day_1</name>
             <fieldText>Tasks of the Day</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>Surrounding_Risks</name>
+            <name>Surrounding_Risks_1</name>
             <fieldText>Surrounding Risks</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>Corrective_Measures</name>
+            <name>Corrective_Measures_1</name>
             <fieldText>Corrective Measures</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>EPC_EPI_CBM_PBM</name>
+            <name>EPC_EPI_CBM_PBM_1</name>
             <fieldText>EPC - EPI/CBM - PBM</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>FileUpload</name>
+            <extensionName>forceContent:fileUpload</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Attach Photos</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>multiple</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>WorkStepRecord.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -371,56 +378,31 @@
     <screens>
         <name>Limited_LMRA_Information</name>
         <label>Limited LMRA Information</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Limited_LMRA</targetReference>
+            <targetReference>Limited_LMRA_Confirmed</targetReference>
         </connector>
         <fields>
-            <name>LimitedLMRATitle</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Limited LMRA&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>LmitedLMRAMessage</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(231, 24, 24); font-size: 14px;&quot;&gt;Don&apos;t forget your LMRA, avoid accidents!&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(11, 11, 11);&quot;&gt;Don&apos;t forget your LMRA, avoid accidents!&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Work_Order</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>workOrderRecord.WorkOrderNumber</elementReference>
-            </defaultValue>
-            <fieldText>Work Order</fieldText>
+            <name>Limited_LMRA_Done</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Limited LMRA Done</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isDisabled>
-                <booleanValue>true</booleanValue>
-            </isDisabled>
-            <isReadOnly>
-                <booleanValue>true</booleanValue>
-            </isReadOnly>
-            <isRequired>false</isRequired>
+            <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Date_Lmited</name>
-            <dataType>Date</dataType>
-            <fieldText>Date</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Project_Lead</name>
-            <dataType>String</dataType>
-            <fieldText>Project Lead</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
+            <name>confirmedLMRA</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;To confirm that a limited LMRA has been done, please tick the box.&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -428,7 +410,7 @@
     <screens>
         <name>LMRA_Done_Message</name>
         <label>LMRA Done Message</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -446,7 +428,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>254</locationX>
+        <locationX>419</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Work_Step_Information</targetReference>

@@ -12,6 +12,9 @@
                         <valueListItems>
                             <value>CancelServiceAppointment</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>ServiceAppointment.Start_Stop</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>

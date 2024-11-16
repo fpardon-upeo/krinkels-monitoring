@@ -67,10 +67,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>DMLService</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ExportRecordsController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -92,10 +88,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>InboundLoggerService</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>LoggerService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -131,7 +123,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PersonnelRestResourceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProjectRestResource</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProjectRestResourceTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -148,6 +148,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ReadyForValidation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SDWorxAbsenceBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1084,6 +1088,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>LMRA__c.LMRA_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LMRA__c.Limited_LMRA_Done__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2133,6 +2142,31 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Service_Status_Time_Log__c.End_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.End_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.Service_Appointment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.Start_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Service_Status_Time_Log__c.Start_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Task.FSL__Count_of_Events__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2294,6 +2328,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Shop_Visit_Start_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Special_Equipment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2891,6 +2930,9 @@
         <layout>Service_Item__c-Service Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Service_Status_Time_Log__c-Service Status Time Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Shift-Shift Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -3139,6 +3181,15 @@
         <object>Service_Item__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Service_Status_Time_Log__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <pageAccesses>
         <apexPage>NonEssentialsMobileLanding</apexPage>
         <enabled>true</enabled>
@@ -3198,14 +3249,15 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
+        <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
         <recordType>ResourceAbsence.FSL__Break</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>ResourceAbsence.FSL__Non_Availability</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>ATAK_Personnel__c</tab>

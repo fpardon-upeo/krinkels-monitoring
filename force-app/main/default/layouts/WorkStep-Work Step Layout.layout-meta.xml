@@ -24,10 +24,6 @@
                 <behavior>Edit</behavior>
                 <field>Status</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>ParentRecordId</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -35,16 +31,8 @@
                 <field>WorkPlanId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>WorkOrderLineItemId</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>ExecutionOrder</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>ParentRecordType</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
