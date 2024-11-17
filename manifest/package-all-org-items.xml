@@ -1060,6 +1060,8 @@
         <members>ServiceContract.Service_Contract</members>
         <members>User.User_Layout</members>
         <members>WorkOrder.Work_Order_Compact_Layout</members>
+        <members>WorkOrderLineItem.Work_Order_Line_Item_Compact_Layout</members>
+        <members>WorkStep.Work_Step_Compact_Layout</members>
         <name>CompactLayout</name>
     </types>
     <types>
@@ -2034,6 +2036,8 @@
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
         <members>ProductItem.Van_Crew__c</members>
+        <members>Reorder_Work_Step__e.Next_Number__c</members>
+        <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
         <members>ResourceAbsence.Code_ATAK_Limbus__c</members>
         <members>ResourceAbsence.FSL__Approved__c</members>
         <members>ResourceAbsence.FSL__Duration_In_Minutes__c</members>
@@ -2197,6 +2201,7 @@
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
+        <members>WorkStep.Work_Order_Line_Item__c</members>
         <members>WorkType.FSL__Due_Date_Offset__c</members>
         <members>WorkType.FSL__Exact_Appointments__c</members>
         <members>Work_Order_Creation_Event__e.Maintenance_Plan_Id__c</members>
@@ -2221,6 +2226,30 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>AppointmentPicker_Appointments_Header</members>
+        <members>AppointmentPicker_Appointments_Header</members>
+        <members>AppointmentPicker_Day_Ended_Toast</members>
+        <members>AppointmentPicker_Day_Ended_Toast</members>
+        <members>AppointmentPicker_End_Day_Button</members>
+        <members>AppointmentPicker_End_Day_Button</members>
+        <members>AppointmentPicker_End_Day_Button_Sub_Text</members>
+        <members>AppointmentPicker_End_Day_Button_Sub_Text</members>
+        <members>AppointmentPicker_Incomplete_Work_Steps_Message</members>
+        <members>AppointmentPicker_Incomplete_Work_Steps_Message</members>
+        <members>AppointmentPicker_Next_Action_Sub_Text</members>
+        <members>AppointmentPicker_Next_Action_Sub_Text</members>
+        <members>AppointmentPicker_Next_Action_Text</members>
+        <members>AppointmentPicker_Next_Action_Text</members>
+        <members>AppointmentPicker_Next_Button</members>
+        <members>AppointmentPicker_Next_Button</members>
+        <members>AppointmentPicker_No_Results</members>
+        <members>AppointmentPicker_No_Results</members>
+        <members>AppointmentPicker_Select_Next_Appointment_Button</members>
+        <members>AppointmentPicker_Select_Next_Appointment_Button</members>
+        <members>AppointmentPicker_Spinner</members>
+        <members>AppointmentPicker_Spinner</members>
+        <members>AppointmentPicker_Travel_Started_Toast</members>
+        <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>FSL__ABNotificationIsComplexWorkO2</members>
         <members>FSL__ABNotificationIsComplexWorkO2</members>
         <members>FSL__AB_Explanation_Header</members>
@@ -7931,6 +7960,7 @@
         <members>RecordsetFilterCriteria</members>
         <members>RecordsetFilterCriteriaRule</members>
         <members>RecordsetFltrCritMonitor</members>
+        <members>Reorder_Work_Step__e</members>
         <members>ResourceAbsence</members>
         <members>ResourcePreference</members>
         <members>ReturnOrder</members>
@@ -9033,6 +9063,7 @@
         <members>Operator_Created_Event__e-en_US</members>
         <members>ProductItem-en_US</members>
         <members>ProductItemTransaction-en_US</members>
+        <members>Reorder_Work_Step__e-en_US</members>
         <members>ResourceAbsence-bg</members>
         <members>ResourceAbsence-cs</members>
         <members>ResourceAbsence-da</members>
@@ -9780,6 +9811,7 @@
         <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Line_Item_Record_Page</members>
         <members>Work_Order_Record_Page</members>
+        <members>Work_Plan_Template_Entry_Record_Page</members>
         <members>Work_Plan_Template_Record_Page</members>
         <members>Work_Step_Record_Page</members>
         <members>Work_Type_Record_Page</members>
@@ -9795,6 +9827,7 @@
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
@@ -9807,6 +9840,7 @@
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Van_Before_Save_Record_Triggered_Set_Naming_Convention</members>
+        <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
@@ -9816,6 +9850,7 @@
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
+        <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>Flow</name>
     </types>
@@ -9829,6 +9864,7 @@
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
@@ -9841,6 +9877,7 @@
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Van_Before_Save_Record_Triggered_Set_Naming_Convention</members>
+        <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
@@ -9850,6 +9887,7 @@
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
+        <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
         <name>FlowDefinition</name>
     </types>
@@ -11000,6 +11038,7 @@
         <members>NewOpportunity</members>
         <members>NewTask</members>
         <members>Quote.SendEmail</members>
+        <members>ServiceAppointment.Check_Out</members>
         <members>ServiceAppointment.FSL__Change_Status</members>
         <members>ServiceAppointment.SendEmail</members>
         <members>ServiceAppointment.Start_Stop</members>
@@ -11117,6 +11156,7 @@
         <members>WorkOrder.Start_Stop</members>
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
+        <members>WorkStep.Checkout</members>
         <members>WorkStep.Take_After_Work_Photos</members>
         <members>WorkStep.Take_Before_Work_Photos</members>
         <name>QuickAction</name>
@@ -12315,6 +12355,7 @@
         <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Line_Item_Record_Page</members>
         <members>Work_Order_Record_Page</members>
+        <members>Work_Plan_Template_Entry_Record_Page</members>
         <members>Work_Plan_Template_Record_Page</members>
         <members>Work_Step_Record_Page</members>
         <members>Work_Type_Record_Page</members>

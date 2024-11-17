@@ -34,6 +34,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>nextAppointmentPicker</componentName>
+                <identifier>c_nextAppointmentPicker</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>force:detailPanel</componentName>
                 <identifier>force_detailPanel</identifier>
             </componentInstance>

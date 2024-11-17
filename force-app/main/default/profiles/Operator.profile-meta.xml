@@ -1521,6 +1521,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Reorder_Work_Step__e.Next_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Reorder_Work_Step__e.Work_Order_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ResourceAbsence.Code_ATAK_Limbus__c</field>
         <readable>true</readable>
@@ -2136,9 +2146,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Service_Item__c.Service__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2351,6 +2361,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkStep.Work_Order_Line_Item__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>WorkType.FSL__Due_Date_Offset__c</field>
         <readable>false</readable>
@@ -2392,6 +2407,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Operator_Created_Event_e_Create_Service_Resource</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Platform_Event_Reorder_Work_Steps</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -2443,6 +2462,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</flow>
     </flowAccesses>
     <flowAccesses>
@@ -2476,6 +2499,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -2582,7 +2609,7 @@
         <layout>CollaborationGroup-Group Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Contact-Contact Layout</layout>
+        <layout>Contact-FSL Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ContactPointAddress-Contact Point Address Layout</layout>

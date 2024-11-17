@@ -1,3 +1,115 @@
 /**
  * Created by fpardon on 15/11/2024.
  */
+
+/* Remove both selection and click highlights */
+lightning-datatable .slds-table td.slds-has-focus,
+lightning-datatable .slds-table th.slds-has-focus {
+    box-shadow: none !important;
+}
+
+lightning-datatable .slds-table td:focus,
+lightning-datatable .slds-table th:focus {
+    outline: none !important;
+}
+
+lightning-datatable .slds-table td.slds-has-focus:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove the blue border around the row */
+lightning-datatable .slds-table tbody tr:focus {
+    outline: none !important;
+}
+
+lightning-datatable .slds-table tbody tr:focus-visible {
+    outline: none !important;
+}
+
+/* Remove any residual focus styles */
+lightning-datatable *:focus {
+    outline: none !important;
+}
+
+.spinnerHolder {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    align-content: center;
+}
+
+.warningText {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.action-box {
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+    will-change: transform, opacity; /* Optimize for animation */
+}
+
+.action-box.touch-active {
+    transform: scale(0.95); /* More pronounced scale effect */
+    opacity: 0.85; /* More pronounced opacity change */
+}
+
+.action-box.brand {
+    background-color: rgb(75, 107, 47);
+    color: white;
+}
+
+.action-box.neutral {
+    background-color: rgb(243, 243, 243);
+    color: rgb(75, 107, 47);
+    border: 1px solid rgb(75, 107, 47);
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Or a specific height like 500px */
+    max-height: 80vh; /* Prevent it from being too tall */
+    position: relative;
+}
+
+.datatable-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 200px; /* Minimum height for the table */
+    max-height: calc(100% - 60px); /* Leave space for button */
+}
+
+.button-wrapper {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds shadow above button */
+}
+
+@media screen and (max-width: 768px) {
+    .slds-size_1-of-2 {
+        width: 100%;
+        padding: 0 0.75rem;
+    }
+
+    .action-box {
+        min-height: 140px;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,62 +1,33 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-classes/ATAKMaterialService.cls," ",ApexClass ATAKMaterialService,M,,log,📰
-classes/ATAKVehicleService.cls," ",ApexClass ATAKVehicleService,M,,log,📰
-classes/MachineRestResource.cls," ",ApexClass MachineRestResource,M,,log,📰
-classes/MaintenancePlanServiceTest.cls," ",ApexClass MaintenancePlanServiceTest,M,,log,📰
-classes/PersonnelRestResource.cls," ",ApexClass PersonnelRestResource,M,,log,📰
-classes/PersonnelRestResourceTest.cls,A,ApexClass PersonnelRestResourceTest,,,log,📰
-classes/PersonnelRestResourceTest.cls-meta.xml,A,ApexClass PersonnelRestResourceTest,,,log,📰
-classes/ProjectRestResource.cls," ",ApexClass ProjectRestResource,M,,log,📰
-classes/ProjectRestResourceTest.cls,A,ApexClass ProjectRestResourceTest,,,log,📰
-classes/ProjectRestResourceTest.cls-meta.xml,A,ApexClass ProjectRestResourceTest,,,log,📰
-classes/SDWorxAbsenceBatch.cls,A,ApexClass SDWorxAbsenceBatch,,,log,📰
-classes/SDWorxAbsenceBatch.cls-meta.xml,A,ApexClass SDWorxAbsenceBatch,,,log,📰
-classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+digitalExperiences/experiencecontainer/FSL/experience__navigationMenu/menu/content.json," ",DigitalExperienceBundle experiencecontainer/FSL/experience__navigationMenu/menu/content.json,M,,log,📰
 flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
-flexipages/LMRA_Record_Page.flexipage-meta.xml," ",FlexiPage LMRA_Record_Page,M,,log,📰
-flexipages/Service_Appointment_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Appointment_Record_Page,M,,log,📰
-flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
-flowDefinitions/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flowDefinition-meta.xml," ",FlowDefinition Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Check_Out.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Check_Out,M,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
-flowDefinitions/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO.flowDefinition-meta.xml," ",FlowDefinition Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO,M,,log,📰
-flows/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flow-meta.xml," ",Flow Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
-flows/Work_Order_Mobile_Flow_Check_Out.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Check_Out,M,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
-flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO.flow-meta.xml," ",Flow Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO,M,,log,📰
-layouts/LMRA__c-FSL LMRA Layout.layout-meta.xml," ",Layout LMRA__c-FSL LMRA Layout,M,,log,📰
-layouts/LMRA__c-LMRA Layout.layout-meta.xml," ",Layout LMRA__c-LMRA Layout,M,,log,📰
-layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
-layouts/Service_Status_Time_Log__c-Service Status Time Log Layout.layout-meta.xml,A,Layout Service_Status_Time_Log__c-Service Status Time Log Layout,,,log,📰
-layouts/TimeSheet-FSL Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-FSL Time Sheet Layout,M,,log,📰
-layouts/TimeSheet-Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-Time Sheet Layout,M,,log,📰
+flexipages/Work_Order_Line_Item_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Line_Item_Record_Page,M,,log,📰
+flexipages/Work_Plan_Template_Entry_Record_Page.flexipage-meta.xml,A,FlexiPage Work_Plan_Template_Entry_Record_Page,,,log,📰
+flexipages/Work_Step_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Step_Record_Page,M,,log,📰
+flowDefinitions/Platform_Event_Reorder_Work_Steps.flowDefinition-meta.xml,A,FlowDefinition Platform_Event_Reorder_Work_Steps,,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,,,log,📰
+flowDefinitions/Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status.flowDefinition-meta.xml,A,FlowDefinition Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status,,,log,📰
+flows/Platform_Event_Reorder_Work_Steps.flow-meta.xml,A,Flow Platform_Event_Reorder_Work_Steps,,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flow-meta.xml,A,Flow Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,,,log,📰
+flows/Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status.flow-meta.xml,A,Flow Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status,,,log,📰
+labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
 layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
+layouts/WorkPlanTemplate-Work Plan Template Layout.layout-meta.xml," ",Layout WorkPlanTemplate-Work Plan Template Layout,M,,log,📰
+layouts/WorkStep-FSL Work Step Layout.layout-meta.xml," ",Layout WorkStep-FSL Work Step Layout,M,,log,📰
 layouts/WorkStep-Work Step Layout.layout-meta.xml," ",Layout WorkStep-Work Step Layout,M,,log,📰
-lwc/imageCapture/imageCapture.js," ",LightningComponentBundle imageCapture/imageCapture.js,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.css,A,LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.css,,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.html,A,LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js,A,LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js-meta.xml,A,LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js-meta.xml,,,log,📰
-lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
-lwc/startStopTimer/startStopTimer.css,A,LightningComponentBundle startStopTimer/startStopTimer.css,,,log,📰
-lwc/startStopTimer/startStopTimer.html,A,LightningComponentBundle startStopTimer/startStopTimer.html,,,log,📰
-lwc/startStopTimer/startStopTimer.js,A,LightningComponentBundle startStopTimer/startStopTimer.js,,,log,📰
-lwc/startStopTimer/startStopTimer.js-meta.xml,A,LightningComponentBundle startStopTimer/startStopTimer.js-meta.xml,,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-objects/ATAK_Personnel__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
-objects/LMRA__c/fields/Date__c.field-meta.xml," ",CustomField Date__c,M,,log,📰
-objects/LMRA__c/fields/Limited_LMRA_Done__c.field-meta.xml,A,CustomField Limited_LMRA_Done__c,,,log,📰
-objects/ServiceContract/fields/Product__c.field-meta.xml," ",CustomField Product__c,M,,log,📰
-objects/Service_Status_Time_Log__c/Service_Status_Time_Log__c.object-meta.xml,A,CustomObject Service_Status_Time_Log__c/Service_Status_Time_Log__c,,,log,📰
-objects/Service_Status_Time_Log__c/fields/End_Status__c.field-meta.xml,A,CustomField End_Status__c,,,log,📰
-objects/Service_Status_Time_Log__c/fields/End_Time__c.field-meta.xml,A,CustomField End_Time__c,,,log,📰
-objects/Service_Status_Time_Log__c/fields/Service_Appointment__c.field-meta.xml,A,CustomField Service_Appointment__c,,,log,📰
-objects/Service_Status_Time_Log__c/fields/Start_Status__c.field-meta.xml,A,CustomField Start_Status__c,,,log,📰
-objects/Service_Status_Time_Log__c/fields/Start_Time__c.field-meta.xml,A,CustomField Start_Time__c,,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.css," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.css,M,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.js-meta.xml," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js-meta.xml,M,,log,📰
+objects/Reorder_Work_Step__e/Reorder_Work_Step__e.object-meta.xml,A,CustomObject Reorder_Work_Step__e/Reorder_Work_Step__e,,,log,📰
+objects/Reorder_Work_Step__e/fields/Next_Number__c.field-meta.xml,A,CustomField Next_Number__c,,,log,📰
+objects/Reorder_Work_Step__e/fields/Work_Order_Id__c.field-meta.xml,A,CustomField Work_Order_Id__c,,,log,📰
 objects/WorkOrder/compactLayouts/Work_Order_Compact_Layout.compactLayout-meta.xml," ",CompactLayout Work_Order_Compact_Layout,M,,log,📰
-objects/WorkOrder/fields/Special_Equipment__c.field-meta.xml,A,CustomField Special_Equipment__c,,,log,📰
+objects/WorkOrderLineItem/compactLayouts/Work_Order_Line_Item_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Work_Order_Line_Item_Compact_Layout,,,log,📰
+objects/WorkStep/WorkStep.object-meta.xml,A,CustomObject WorkStep/WorkStep,,,log,📰
+objects/WorkStep/compactLayouts/Work_Step_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Work_Step_Compact_Layout,,,log,📰
+objects/WorkStep/fields/Work_Order_Line_Item__c.field-meta.xml,A,CustomField Work_Order_Line_Item__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -82,14 +53,10 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/ServiceAppointment.Start_Stop.quickAction-meta.xml,A,QuickAction ServiceAppointment.Start_Stop,,,log,📰
-quickActions/WorkOrder.Start_Stop.quickAction-meta.xml,A,QuickAction WorkOrder.Start_Stop,,,log,📰
-reports/unfiled$public/Van_Material_Transactions_bWg.report-meta.xml," ",Report unfiled$public/Van_Material_Transactions_bWg,M,,log,📰
-settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
-sharingRules/Service_Status_Time_Log__c.sharingRules-meta.xml,A,SharingRules Service_Status_Time_Log__c,,,log,📰
+quickActions/ServiceAppointment.Check_Out.quickAction-meta.xml,A,QuickAction ServiceAppointment.Check_Out,,,log,📰
+quickActions/WorkStep.Checkout.quickAction-meta.xml,A,QuickAction WorkStep.Checkout,,,log,📰
 standardValueSets/ServiceAppointmentStatus.standardValueSet-meta.xml," ",StandardValueSet ServiceAppointmentStatus,M,,log,📰
+standardValueSets/WorkOrderLineItemStatus.standardValueSet-meta.xml," ",StandardValueSet WorkOrderLineItemStatus,M,,log,📰
 standardValueSets/WorkOrderStatus.standardValueSet-meta.xml," ",StandardValueSet WorkOrderStatus,M,,log,📰
-topicsForObjects/Service_Status_Time_Log__c.topicsForObjects-meta.xml,A,TopicsForObjects Service_Status_Time_Log__c,,,log,📰
-triggers/ContentDocumentTrigger.trigger-meta.xml," ",ApexTrigger ContentDocumentTrigger,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

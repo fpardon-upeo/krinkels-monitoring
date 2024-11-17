@@ -9,16 +9,16 @@
         <groupingString>None</groupingString>
     </standardValue>
     <standardValue>
-        <fullName>Dispatched</fullName>
-        <default>false</default>
-        <label>Dispatched</label>
-        <groupingString>Dispatched</groupingString>
-    </standardValue>
-    <standardValue>
         <fullName>Scheduled</fullName>
         <default>false</default>
         <label>Scheduled</label>
         <groupingString>Scheduled</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Dispatched</fullName>
+        <default>false</default>
+        <label>Dispatched</label>
+        <groupingString>Dispatched</groupingString>
     </standardValue>
     <standardValue>
         <fullName>Travelling</fullName>

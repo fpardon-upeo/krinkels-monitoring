@@ -286,4 +286,100 @@
         <shortDescription>Search existing Flow resources</shortDescription>
         <value>Search existing Flow resources</value>
     </labels>
+    <labels>
+        <fullName>AppointmentPicker_Appointments_Header</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Appointments_Header</shortDescription>
+        <value>Appointments</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Day_Ended_Toast</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Day_Ended_Toast</shortDescription>
+        <value>Enjoy the rest of your day!</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_End_Day_Button</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_End_Day_Button</shortDescription>
+        <value>End Day</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_End_Day_Button_Sub_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_End_Day_Button_Sub_Text</shortDescription>
+        <value>Complete your work for today</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Incomplete_Work_Steps_Message</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Incomplete_Work_Steps_Message</shortDescription>
+        <value>Not all worksteps have been completed. Please execute all steps before trying again.</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Next_Action_Sub_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Next_Action_Sub_Text</shortDescription>
+        <value>Continue to your next scheduled appointment</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Next_Action_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Next_Action_Text</shortDescription>
+        <value>Please select what you want to do next:</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Next_Button</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Next_Button</shortDescription>
+        <value>Start Travel Time</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_No_Results</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_No_Results</shortDescription>
+        <value>No more appointments found. Contact your Contract Manager if needed.</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Select_Next_Appointment_Button</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Select_Next_Appointment_Button</shortDescription>
+        <value>Select Next Appointment</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Spinner</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Spinner</shortDescription>
+        <value>Checking Work Order...</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Travel_Started_Toast</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Travel_Started_Toast</shortDescription>
+        <value>Travel time has started and the current appointment was closed.</value>
+    </labels>
 </CustomLabels>

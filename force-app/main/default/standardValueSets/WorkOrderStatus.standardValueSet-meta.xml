@@ -9,15 +9,15 @@
         <groupingString>New</groupingString>
     </standardValue>
     <standardValue>
-        <fullName>Dispatched</fullName>
-        <default>false</default>
-        <label>Dispatched</label>
-        <groupingString>InProgress</groupingString>
-    </standardValue>
-    <standardValue>
         <fullName>Scheduled</fullName>
         <default>false</default>
         <label>Scheduled</label>
+        <groupingString>InProgress</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Dispatched</fullName>
+        <default>false</default>
+        <label>Dispatched</label>
         <groupingString>InProgress</groupingString>
     </standardValue>
     <standardValue>

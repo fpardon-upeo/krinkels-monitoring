@@ -25,40 +25,19 @@
       }, {
         "attributes" : {
           "icon" : {
-            "name" : "listView",
+            "name" : "Inventory",
             "source" : {
               "type" : "SLDS",
-              "value" : "utility:list"
+              "value" : "utility:products"
             }
           },
-          "label" : "SA Planning"
+          "label" : "Inventory"
         },
         "target" : {
           "attributes" : {
-            "objectApiName" : "ServiceAppointment",
-            "filterName" : "My_ServiceAppointments",
-            "createNewRecord" : false
+            "pageName" : "Inventory"
           },
-          "definition" : "experience/objectPage"
-        },
-        "definition" : "experience/navigationMenuItem"
-      }, {
-        "attributes" : {
-          "icon" : {
-            "name" : "timesheet",
-            "source" : {
-              "type" : "SLDS",
-              "value" : "utility:clock"
-            }
-          },
-          "label" : "Time Sheet"
-        },
-        "target" : {
-          "attributes" : {
-            "objectApiName" : "TimeSheet",
-            "filterApiNames" : [ "My_TimeSheets" ]
-          },
-          "definition" : "experience/primeableObjectPage"
+          "definition" : "experience/namedPage"
         },
         "definition" : "experience/navigationMenuItem"
       }, {
