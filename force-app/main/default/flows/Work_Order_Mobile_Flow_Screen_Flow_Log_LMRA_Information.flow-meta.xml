@@ -120,7 +120,7 @@
         <locationX>50</locationX>
         <locationY>674</locationY>
         <connector>
-            <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
+            <targetReference>Update_Work_Step_Status_to_Complete_After</targetReference>
         </connector>
         <inputAssignments>
             <field>Corrective_Measures__c</field>
@@ -172,7 +172,7 @@
         <locationX>314</locationX>
         <locationY>782</locationY>
         <connector>
-            <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
+            <targetReference>Update_Work_Step_Status_to_Complete_After</targetReference>
         </connector>
         <inputAssignments>
             <field>LMRA_Type__c</field>
@@ -245,7 +245,7 @@
         <name>Confirmed_LMRA_Done_at_WO_level</name>
         <label>Confirmed LMRA Done at WO level</label>
         <locationX>248</locationX>
-        <locationY>1058</locationY>
+        <locationY>1166</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -267,6 +267,30 @@
         <label>Update Work Step Status to Complete</label>
         <locationX>842</locationX>
         <locationY>566</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkStepRecord.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkStep</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Work_Step_Status_to_Complete_After</name>
+        <label>Update Work Step Status to Complete After</label>
+        <locationX>248</locationX>
+        <locationY>1058</locationY>
+        <connector>
+            <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>

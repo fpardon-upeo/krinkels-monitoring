@@ -382,4 +382,84 @@
         <shortDescription>AppointmentPicker_Travel_Started_Toast</shortDescription>
         <value>Travel time has started and the current appointment was closed.</value>
     </labels>
+    <labels>
+        <fullName>StartDay_KM_Back_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_KM_Back_Button_Text</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_KM_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_KM_Button_Sub_Text</shortDescription>
+        <value>Don&apos;t set a first appointment, just log your KM.</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_KM_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_KM_Button_Text</shortDescription>
+        <value>Log your KM</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_KM_Card_Title</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_KM_Card_Title</shortDescription>
+        <value>Enter your kilometers</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_KM_Save_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_KM_Save_Button_Text</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_KM_Save_Success_Result</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_KM_Save_Success_Result</shortDescription>
+        <value>Your mileage has been saved!</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Loading_Message</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Loading_Message</shortDescription>
+        <value>Loading</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Next_Action_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Next_Action_Text</shortDescription>
+        <value>Select what you want to do:</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Start_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Start_Button_Sub_Text</shortDescription>
+        <value>Pick your first appointment and log your KM.</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Start_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Start_Button_Text</shortDescription>
+        <value>Start Your Day</value>
+    </labels>
 </CustomLabels>

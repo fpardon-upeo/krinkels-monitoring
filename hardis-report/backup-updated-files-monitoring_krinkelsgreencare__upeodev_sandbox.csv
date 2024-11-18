@@ -2,61 +2,19 @@ File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
 digitalExperiences/experiencecontainer/FSL/experience__navigationMenu/menu/content.json," ",DigitalExperienceBundle experiencecontainer/FSL/experience__navigationMenu/menu/content.json,M,,log,📰
 flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
-flexipages/Work_Order_Line_Item_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Line_Item_Record_Page,M,,log,📰
-flexipages/Work_Plan_Template_Entry_Record_Page.flexipage-meta.xml,A,FlexiPage Work_Plan_Template_Entry_Record_Page,,,log,📰
-flexipages/Work_Step_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Step_Record_Page,M,,log,📰
-flowDefinitions/Platform_Event_Reorder_Work_Steps.flowDefinition-meta.xml,A,FlowDefinition Platform_Event_Reorder_Work_Steps,,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,,,log,📰
-flowDefinitions/Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status.flowDefinition-meta.xml,A,FlowDefinition Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status,,,log,📰
-flows/Platform_Event_Reorder_Work_Steps.flow-meta.xml,A,Flow Platform_Event_Reorder_Work_Steps,,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flow-meta.xml,A,Flow Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,,,log,📰
-flows/Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status.flow-meta.xml,A,Flow Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Check_In.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Check_In,M,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+flows/Work_Order_Mobile_Flow_Check_In.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Check_In,M,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
 labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-layouts/WorkPlanTemplate-Work Plan Template Layout.layout-meta.xml," ",Layout WorkPlanTemplate-Work Plan Template Layout,M,,log,📰
-layouts/WorkStep-FSL Work Step Layout.layout-meta.xml," ",Layout WorkStep-FSL Work Step Layout,M,,log,📰
-layouts/WorkStep-Work Step Layout.layout-meta.xml," ",Layout WorkStep-Work Step Layout,M,,log,📰
+layouts/Global-Global Layout.layout-meta.xml," ",Layout Global-Global Layout,M,,log,📰
 lwc/nextAppointmentPicker/nextAppointmentPicker.css," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.css,M,,log,📰
 lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
 lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js-meta.xml," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js-meta.xml,M,,log,📰
-objects/Reorder_Work_Step__e/Reorder_Work_Step__e.object-meta.xml,A,CustomObject Reorder_Work_Step__e/Reorder_Work_Step__e,,,log,📰
-objects/Reorder_Work_Step__e/fields/Next_Number__c.field-meta.xml,A,CustomField Next_Number__c,,,log,📰
-objects/Reorder_Work_Step__e/fields/Work_Order_Id__c.field-meta.xml,A,CustomField Work_Order_Id__c,,,log,📰
-objects/WorkOrder/compactLayouts/Work_Order_Compact_Layout.compactLayout-meta.xml," ",CompactLayout Work_Order_Compact_Layout,M,,log,📰
-objects/WorkOrderLineItem/compactLayouts/Work_Order_Line_Item_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Work_Order_Line_Item_Compact_Layout,,,log,📰
-objects/WorkStep/WorkStep.object-meta.xml,A,CustomObject WorkStep/WorkStep,,,log,📰
-objects/WorkStep/compactLayouts/Work_Step_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Work_Step_Compact_Layout,,,log,📰
-objects/WorkStep/fields/Work_Order_Line_Item__c.field-meta.xml,A,CustomField Work_Order_Line_Item__c,,,log,📰
-profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
-profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
-profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
-profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
-profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
-profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
-profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
-profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
-profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
-profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
-profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
-profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
-profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
-profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
-profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
-profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
-profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
-profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
-profiles/Operator.profile-meta.xml," ",Profile Operator,M,,log,📰
-profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
-profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
-profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
-profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
-profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
-profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/ServiceAppointment.Check_Out.quickAction-meta.xml,A,QuickAction ServiceAppointment.Check_Out,,,log,📰
-quickActions/WorkStep.Checkout.quickAction-meta.xml,A,QuickAction WorkStep.Checkout,,,log,📰
-standardValueSets/ServiceAppointmentStatus.standardValueSet-meta.xml," ",StandardValueSet ServiceAppointmentStatus,M,,log,📰
-standardValueSets/WorkOrderLineItemStatus.standardValueSet-meta.xml," ",StandardValueSet WorkOrderLineItemStatus,M,,log,📰
-standardValueSets/WorkOrderStatus.standardValueSet-meta.xml," ",StandardValueSet WorkOrderStatus,M,,log,📰
+lwc/startOperatorDay/startOperatorDay.css,A,LightningComponentBundle startOperatorDay/startOperatorDay.css,,,log,📰
+lwc/startOperatorDay/startOperatorDay.html,A,LightningComponentBundle startOperatorDay/startOperatorDay.html,,,log,📰
+lwc/startOperatorDay/startOperatorDay.js,A,LightningComponentBundle startOperatorDay/startOperatorDay.js,,,log,📰
+lwc/startOperatorDay/startOperatorDay.js-meta.xml,A,LightningComponentBundle startOperatorDay/startOperatorDay.js-meta.xml,,,log,📰
+quickActions/Start_Day.quickAction-meta.xml,A,QuickAction Start_Day,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

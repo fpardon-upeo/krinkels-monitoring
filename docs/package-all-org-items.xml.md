@@ -2,7 +2,7 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 12144
+Metadatas: 12149
 
 <details><summary>ApexClass (755)</summary>
   • ATAKMaterialService<br/>
@@ -2229,7 +2229,7 @@ Metadatas: 12144
   • bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Type_Field__c<br/>
 </details>
 
-<details><summary>CustomLabel (5398)</summary>
+<details><summary>CustomLabel (5418)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
@@ -7516,6 +7516,26 @@ Metadatas: 12144
   • FSL__x_was_dispatched_successfully<br/>
   • FSL__x_was_scheduled_to_y_on_z<br/>
   • FSL__x_was_scheduled_to_y_on_z<br/>
+  • StartDay_KM_Back_Button_Text<br/>
+  • StartDay_KM_Back_Button_Text<br/>
+  • StartDay_KM_Button_Sub_Text<br/>
+  • StartDay_KM_Button_Sub_Text<br/>
+  • StartDay_KM_Button_Text<br/>
+  • StartDay_KM_Button_Text<br/>
+  • StartDay_KM_Card_Title<br/>
+  • StartDay_KM_Card_Title<br/>
+  • StartDay_KM_Save_Button_Text<br/>
+  • StartDay_KM_Save_Button_Text<br/>
+  • StartDay_KM_Save_Success_Result<br/>
+  • StartDay_KM_Save_Success_Result<br/>
+  • StartDay_Loading_Message<br/>
+  • StartDay_Loading_Message<br/>
+  • StartDay_Next_Action_Text<br/>
+  • StartDay_Next_Action_Text<br/>
+  • StartDay_Start_Button_Sub_Text<br/>
+  • StartDay_Start_Button_Sub_Text<br/>
+  • StartDay_Start_Button_Text<br/>
+  • StartDay_Start_Button_Text<br/>
   • bmpyrckt__Timeline_Error_Apex<br/>
   • bmpyrckt__Timeline_Error_Apex<br/>
   • bmpyrckt__Timeline_Error_ConsoleTab<br/>
@@ -9548,26 +9568,6 @@ Metadatas: 12144
   • mobileLanding__Non_Mobile_Landing<br/>
 </details>
 
-<details><summary>Dashboard (17)</summary>
-  • FSL__FieldServiceCopilotDashboards/<br/>
-  • FSL__FieldServiceCopilotDashboards/FSL__CopilotSummaryOfSchedulingIssues<br/>
-  • FSL__FieldServiceWorkCapacityDashboards/<br/>
-  • FSL__FieldServiceWorkCapacityDashboards/FSL__FieldServiceWorkCapacityDashboards<br/>
-  • FSL__FieldServiceWorkCapacityDashboards/FSL__RRYSGLHrmcRLDBGKUxngyrueoGIwXW1<br/>
-  • FSL__FieldServiceWorkCapacityDashboards/FSL__vwfpkAEnvconLBZYbbJkPTWzLlVfrb<br/>
-  • Sales_and_Marketing_Dashboards/<br/>
-  • Sales_and_Marketing_Dashboards/AdoptionDashboard<br/>
-  • Sales_and_Marketing_Dashboards/Best_Practice_Leads_Dashboard<br/>
-  • Sales_and_Marketing_Dashboards/Best_Practices_Dashboard6<br/>
-  • Service_Dashboards/<br/>
-  • Service_Dashboards/Agent_Supervisor_Overview<br/>
-  • Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn<br/>
-  • Service_Dashboards/Service_Exec_Overview<br/>
-  • Service_Dashboards/Service_KPIs<br/>
-  • VanInventory/<br/>
-  • VanInventory/HcaOXDkPIDdAkjoIuxtNxFWGBNNyWL<br/>
-</details>
-
 <details><summary>DigitalExperience (3)</summary>
   • experiencecontainer/FSL.experience__navigationMenu/menu<br/>
   • experiencecontainer/FSL.experience__sfsECDefinition/sfs<br/>
@@ -10215,7 +10215,7 @@ Metadatas: 12144
   • bmpyrckt__Timeline_Configuration__mdt-Timeline Configuration Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (167)</summary>
+<details><summary>LightningComponentBundle (168)</summary>
   • FSL__animation<br/>
   • FSL__baseAttribute<br/>
   • FSL__baseAxis<br/>
@@ -10379,6 +10379,7 @@ Metadatas: 12144
   • serviceBuilder<br/>
   • servicesToSchedule<br/>
   • simpleDispatcherConsole<br/>
+  • startOperatorDay<br/>
   • startStopTimer<br/>
   • timeSheetCalendar<br/>
   • toastMessage<br/>
@@ -11014,7 +11015,7 @@ Metadatas: 12144
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (148)</summary>
+<details><summary>QuickAction (149)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Child_Account<br/>
   • Book_Appointment<br/>
@@ -11051,6 +11052,7 @@ Metadatas: 12144
   • ServiceContract.Generate_Maintenance_Plan<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
+  • Start_Day<br/>
   • Task.Defer<br/>
   • Task.Defer_0<br/>
   • Task.Defer_1<br/>

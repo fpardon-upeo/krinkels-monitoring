@@ -2,7 +2,7 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 2074
+Metadatas: 2085
 
 <details><summary>ApexClass (61)</summary>
   • ATAKMaterialService<br/>
@@ -616,7 +616,7 @@ Metadatas: 2074
   • Work_Order_Creation_Event__e.Maintenance_Plan_Id__c<br/>
 </details>
 
-<details><summary>CustomLabel (96)</summary>
+<details><summary>CustomLabel (116)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
@@ -641,6 +641,26 @@ Metadatas: 2074
   • AppointmentPicker_Spinner<br/>
   • AppointmentPicker_Travel_Started_Toast<br/>
   • AppointmentPicker_Travel_Started_Toast<br/>
+  • StartDay_KM_Back_Button_Text<br/>
+  • StartDay_KM_Back_Button_Text<br/>
+  • StartDay_KM_Button_Sub_Text<br/>
+  • StartDay_KM_Button_Sub_Text<br/>
+  • StartDay_KM_Button_Text<br/>
+  • StartDay_KM_Button_Text<br/>
+  • StartDay_KM_Card_Title<br/>
+  • StartDay_KM_Card_Title<br/>
+  • StartDay_KM_Save_Button_Text<br/>
+  • StartDay_KM_Save_Button_Text<br/>
+  • StartDay_KM_Save_Success_Result<br/>
+  • StartDay_KM_Save_Success_Result<br/>
+  • StartDay_Loading_Message<br/>
+  • StartDay_Loading_Message<br/>
+  • StartDay_Next_Action_Text<br/>
+  • StartDay_Next_Action_Text<br/>
+  • StartDay_Start_Button_Sub_Text<br/>
+  • StartDay_Start_Button_Sub_Text<br/>
+  • StartDay_Start_Button_Text<br/>
+  • StartDay_Start_Button_Text<br/>
   • fsc_AccessLevel<br/>
   • fsc_AccessLevel<br/>
   • fsc_Back<br/>
@@ -758,20 +778,6 @@ Metadatas: 2074
   • Mileage_Entry__c<br/>
   • MobileLanding<br/>
   • SD_Import__c<br/>
-</details>
-
-<details><summary>Dashboard (11)</summary>
-  • Sales_and_Marketing_Dashboards/<br/>
-  • Sales_and_Marketing_Dashboards/AdoptionDashboard<br/>
-  • Sales_and_Marketing_Dashboards/Best_Practice_Leads_Dashboard<br/>
-  • Sales_and_Marketing_Dashboards/Best_Practices_Dashboard6<br/>
-  • Service_Dashboards/<br/>
-  • Service_Dashboards/Agent_Supervisor_Overview<br/>
-  • Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn<br/>
-  • Service_Dashboards/Service_Exec_Overview<br/>
-  • Service_Dashboards/Service_KPIs<br/>
-  • VanInventory/<br/>
-  • VanInventory/HcaOXDkPIDdAkjoIuxtNxFWGBNNyWL<br/>
 </details>
 
 <details><summary>DigitalExperience (3)</summary>
@@ -1261,7 +1267,7 @@ Metadatas: 2074
   • WorkTypeGroup-Work Type Group Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (78)</summary>
+<details><summary>LightningComponentBundle (79)</summary>
   • addressSearch<br/>
   • colorsPicker<br/>
   • contractLineEditor<br/>
@@ -1336,6 +1342,7 @@ Metadatas: 2074
   • serviceBuilder<br/>
   • servicesToSchedule<br/>
   • simpleDispatcherConsole<br/>
+  • startOperatorDay<br/>
   • startStopTimer<br/>
   • timeSheetCalendar<br/>
   • toastMessage<br/>
@@ -1473,7 +1480,7 @@ Metadatas: 2074
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (148)</summary>
+<details><summary>QuickAction (149)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Child_Account<br/>
   • Book_Appointment<br/>
@@ -1510,6 +1517,7 @@ Metadatas: 2074
   • ServiceContract.Generate_Maintenance_Plan<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
+  • Start_Day<br/>
   • Task.Defer<br/>
   • Task.Defer_0<br/>
   • Task.Defer_1<br/>

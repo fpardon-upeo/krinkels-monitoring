@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2047
+Metadatas: 2059
 
 <details><summary>ApexClass (64)</summary>
   • ATAKMaterialService<br/>
@@ -621,7 +621,7 @@ Metadatas: 2047
   • Work_Order_Creation_Event__e.Maintenance_Plan_Id__c<br/>
 </details>
 
-<details><summary>CustomLabel (48)</summary>
+<details><summary>CustomLabel (58)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
   • AppointmentPicker_End_Day_Button<br/>
@@ -634,6 +634,16 @@ Metadatas: 2047
   • AppointmentPicker_Select_Next_Appointment_Button<br/>
   • AppointmentPicker_Spinner<br/>
   • AppointmentPicker_Travel_Started_Toast<br/>
+  • StartDay_KM_Back_Button_Text<br/>
+  • StartDay_KM_Button_Sub_Text<br/>
+  • StartDay_KM_Button_Text<br/>
+  • StartDay_KM_Card_Title<br/>
+  • StartDay_KM_Save_Button_Text<br/>
+  • StartDay_KM_Save_Success_Result<br/>
+  • StartDay_Loading_Message<br/>
+  • StartDay_Next_Action_Text<br/>
+  • StartDay_Start_Button_Sub_Text<br/>
+  • StartDay_Start_Button_Text<br/>
   • fsc_AccessLevel<br/>
   • fsc_Back<br/>
   • fsc_ButtonIsNotSupportedMessage<br/>
@@ -1234,7 +1244,7 @@ Metadatas: 2047
   • WorkTypeGroup-Work Type Group Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (78)</summary>
+<details><summary>LightningComponentBundle (79)</summary>
   • addressSearch<br/>
   • colorsPicker<br/>
   • contractLineEditor<br/>
@@ -1309,6 +1319,7 @@ Metadatas: 2047
   • serviceBuilder<br/>
   • servicesToSchedule<br/>
   • simpleDispatcherConsole<br/>
+  • startOperatorDay<br/>
   • startStopTimer<br/>
   • timeSheetCalendar<br/>
   • toastMessage<br/>
@@ -1457,7 +1468,7 @@ Metadatas: 2047
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (144)</summary>
+<details><summary>QuickAction (145)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Child_Account<br/>
   • Campaign.Child_Campaign<br/>
@@ -1490,6 +1501,7 @@ Metadatas: 2047
   • ServiceContract.Generate_Maintenance_Plan<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
+  • Start_Day<br/>
   • Task.Defer<br/>
   • Task.Defer_0<br/>
   • Task.Defer_1<br/>

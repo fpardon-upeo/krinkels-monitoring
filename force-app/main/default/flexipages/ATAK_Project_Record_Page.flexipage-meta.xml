@@ -410,6 +410,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>startOperatorDay</componentName>
+                <identifier>c_startOperatorDay</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-a5155372-4240-4631-97f6-f5424791044e</value>

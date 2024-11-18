@@ -637,6 +637,26 @@
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
+        <members>StartDay_KM_Back_Button_Text</members>
+        <members>StartDay_KM_Back_Button_Text</members>
+        <members>StartDay_KM_Button_Sub_Text</members>
+        <members>StartDay_KM_Button_Sub_Text</members>
+        <members>StartDay_KM_Button_Text</members>
+        <members>StartDay_KM_Button_Text</members>
+        <members>StartDay_KM_Card_Title</members>
+        <members>StartDay_KM_Card_Title</members>
+        <members>StartDay_KM_Save_Button_Text</members>
+        <members>StartDay_KM_Save_Button_Text</members>
+        <members>StartDay_KM_Save_Success_Result</members>
+        <members>StartDay_KM_Save_Success_Result</members>
+        <members>StartDay_Loading_Message</members>
+        <members>StartDay_Loading_Message</members>
+        <members>StartDay_Next_Action_Text</members>
+        <members>StartDay_Next_Action_Text</members>
+        <members>StartDay_Start_Button_Sub_Text</members>
+        <members>StartDay_Start_Button_Sub_Text</members>
+        <members>StartDay_Start_Button_Text</members>
+        <members>StartDay_Start_Button_Text</members>
         <members>fsc_AccessLevel</members>
         <members>fsc_AccessLevel</members>
         <members>fsc_Back</members>
@@ -755,20 +775,6 @@
         <members>MobileLanding</members>
         <members>SD_Import__c</members>
         <name>CustomTab</name>
-    </types>
-    <types>
-        <members>Sales_and_Marketing_Dashboards/</members>
-        <members>Sales_and_Marketing_Dashboards/AdoptionDashboard</members>
-        <members>Sales_and_Marketing_Dashboards/Best_Practice_Leads_Dashboard</members>
-        <members>Sales_and_Marketing_Dashboards/Best_Practices_Dashboard6</members>
-        <members>Service_Dashboards/</members>
-        <members>Service_Dashboards/Agent_Supervisor_Overview</members>
-        <members>Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn</members>
-        <members>Service_Dashboards/Service_Exec_Overview</members>
-        <members>Service_Dashboards/Service_KPIs</members>
-        <members>VanInventory/</members>
-        <members>VanInventory/HcaOXDkPIDdAkjoIuxtNxFWGBNNyWL</members>
-        <name>Dashboard</name>
     </types>
     <types>
         <members>experiencecontainer/FSL.experience__navigationMenu/menu</members>
@@ -1332,6 +1338,7 @@
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
         <members>simpleDispatcherConsole</members>
+        <members>startOperatorDay</members>
         <members>startStopTimer</members>
         <members>timeSheetCalendar</members>
         <members>toastMessage</members>
@@ -1506,6 +1513,7 @@
         <members>ServiceContract.Generate_Maintenance_Plan</members>
         <members>ServiceContract.Prepare_for_Next_Year</members>
         <members>ServiceContract.Ready_for_Validation</members>
+        <members>Start_Day</members>
         <members>Task.Defer</members>
         <members>Task.Defer_0</members>
         <members>Task.Defer_1</members>

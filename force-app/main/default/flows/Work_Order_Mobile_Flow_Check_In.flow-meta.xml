@@ -55,6 +55,9 @@
         <label>Update Status of Service Appointment</label>
         <locationX>176</locationX>
         <locationY>350</locationY>
+        <connector>
+            <targetReference>Update_Work_Step</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ParentRecordId</field>
@@ -100,6 +103,27 @@
             </value>
         </inputAssignments>
         <object>WorkOrder</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Work_Step</name>
+        <label>Update Work Step</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>WorkStepRecord.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkStep</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>

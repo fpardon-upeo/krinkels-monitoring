@@ -1,25 +1,17 @@
 <!--
- - Created by fpardon on 15/11/2024.
+ - Created by fpardon on 17/11/2024.
  -->
 
-<!-- Next Appointment Picker -->
+<!-- Start Operator Day -->
 <template>
     <template if:true={showSpinner}>
-        <c-loading-spinner loading-message={labels.AppointmentPicker_Loading_Message}></c-loading-spinner>
-    </template>
-    <template if:true={showHasIncompleteWorkSteps}>
-        <div class="warning-container">
-            <div class="warning-box">
-                <lightning-icon icon-name="utility:warning" size="small" alternative-text="Warning" class="slds-m-right_small"></lightning-icon>
-                <span class="warning-text">{labels.AppointmentPicker_Incomplete_Work_Steps_Message}</span>
-            </div>
-        </div>
+        <c-loading-spinner loading-message={labels.StartDay_Loading_Message}></c-loading-spinner>
     </template>
     <template if:true={showInitialScreen}>
         <lightning-card>
             <div class="slds-grid slds-grid_vertical slds-p-around_small">
                 <div class="slds-text-heading_medium slds-align_absolute-center slds-p-horizontal_medium slds-p-bottom_medium">
-                    {labels.AppointmentPicker_Next_Action_Text}
+                    {labels.StartDay_Next_Action_Text}
                 </div>
 
                 <div class="slds-grid slds-grid_align-center slds-wrap slds-gutters_medium">
@@ -29,10 +21,10 @@
                              ontouchend={handleTouchEnd}
                              onclick={handleSetAppointmentClicked}>
                             <div class="slds-text-heading_medium slds-p-bottom_small">
-                                {labels.AppointmentPicker_Select_Next_Appointment_Button}
+                                {labels.StartDay_Start_Button_Text}
                             </div>
                             <div class="slds-text-body_regular">
-                                {labels.AppointmentPicker_Next_Action_Sub_Text}
+                                {labels.StartDay_Start_Button_Sub_Text}
                             </div>
                         </div>
                     </div>
@@ -40,17 +32,39 @@
                         <div class="action-box neutral"
                              ontouchstart={handleTouchStart}
                              ontouchend={handleTouchEnd}
-                             onclick={handleEndDayClicked}>
+                             onclick={handleSetKMClicked}>
                             <div class="slds-text-heading_medium slds-p-bottom_small">
-                                {labels.AppointmentPicker_End_Day_Button}
+                                {labels.StartDay_KM_Button_Text}
                             </div>
                             <div class="slds-text-body_regular">
-                                {labels.AppointmentPicker_End_Day_Button_Sub_Text}
+                                {labels.StartDay_KM_Button_Sub_Text}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </lightning-card>
+    </template>
+    <template if:true={showMilageEntryScreen}>
+        <lightning-card title={labels.StartDay_KM_Card_Title} icon-name="utility:transport_heavy_truck">
+            <lightning-record-edit-form
+                    onsuccess={handleMileageSuccess}
+                    object-api-name="Mileage_Entry__c">
+                <div class="slds-grid slds-grid_vertical slds-p-around_small">
+                    <div class="slds-col">
+                        <lightning-input-field field-name="Allowance_Type__c"></lightning-input-field>
+                        <lightning-input-field field-name="Service_Resource__c" value={serviceResourceId}></lightning-input-field>
+                        <lightning-input-field field-name="Starting_Location_Type__c"></lightning-input-field>
+                        <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
+                        <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
+                        <lightning-input-field field-name="Ending_Mileage__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-align_absolute-center">
+                        <lightning-button class="slds-m-right_medium" label={labels.StartDay_KM_Back_Button_Text} onclick={handleBack}></lightning-button>
+                        <lightning-button label={labels.StartDay_KM_Save_Button_Text} type="submit"></lightning-button>
+                    </div>
+                </div>
+            </lightning-record-edit-form>
         </lightning-card>
     </template>
     <template if:true={showAppointmentScreen}>
@@ -67,6 +81,12 @@
                 ></lightning-datatable>
             </div>
             <div class="button-wrapper">
+                <lightning-button
+                        label={labels.StartDay_KM_Back_Button_Text}
+                        class="slds-m-right_medium"
+                        onclick={handleBack}
+                        variant="neutral"
+                ></lightning-button>
                 <lightning-button
                         label={labels.AppointmentPicker_Next_Button}
                         onclick={handleSelect}

@@ -1,40 +1,44 @@
 /**
- * Created by fpardon on 15/11/2024.
+ * Created by fpardon on 17/11/2024.
  */
 
 import {LightningElement, api, wire, track} from 'lwc';
 import { gql, graphql } from "lightning/uiGraphQLApi";
 import { getRecord, updateRecord}  from "lightning/uiRecordApi";
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { CloseActionScreenEvent } from 'lightning/actions';
 import ID from '@salesforce/user/Id';
 //LABELS
+import StartDay_Start_Button_Text from '@salesforce/label/c.StartDay_Start_Button_Text';
+import StartDay_Start_Button_Sub_Text from '@salesforce/label/c.StartDay_Start_Button_Sub_Text';
+import StartDay_KM_Button_Text from '@salesforce/label/c.StartDay_KM_Button_Text';
+import StartDay_KM_Button_Sub_Text from '@salesforce/label/c.StartDay_KM_Button_Sub_Text';
+import StartDay_Next_Action_Text from '@salesforce/label/c.StartDay_Next_Action_Text';
+import StartDay_Loading_Message from '@salesforce/label/c.StartDay_Loading_Message';
 import AppointmentPicker_Next_Button from '@salesforce/label/c.AppointmentPicker_Next_Button';
-import AppointmentPicker_No_Results from '@salesforce/label/c.AppointmentPicker_No_Results';
-import AppointmentPicker_End_Day_Button from '@salesforce/label/c.AppointmentPicker_End_Day_Button';
-import AppointmentPicker_Select_Next_Appointment_Button from '@salesforce/label/c.AppointmentPicker_Select_Next_Appointment_Button';
 import AppointmentPicker_Appointments_Header from '@salesforce/label/c.AppointmentPicker_Appointments_Header';
+import StartDay_KM_Card_Title from '@salesforce/label/c.StartDay_KM_Card_Title';
+import StartDay_KM_Save_Button_Text from '@salesforce/label/c.StartDay_KM_Save_Button_Text';
+import StartDay_KM_Save_Success_Result from '@salesforce/label/c.StartDay_KM_Save_Success_Result';
 import AppointmentPicker_Travel_Started_Toast from '@salesforce/label/c.AppointmentPicker_Travel_Started_Toast';
-import AppointmentPicker_Day_Ended_Toast from '@salesforce/label/c.AppointmentPicker_Day_Ended_Toast';
-import AppointmentPicker_Spinner from '@salesforce/label/c.AppointmentPicker_Spinner';
-import AppointmentPicker_Incomplete_Work_Steps_Message from '@salesforce/label/c.AppointmentPicker_Incomplete_Work_Steps_Message';
-import AppointmentPicker_Next_Action_Text from '@salesforce/label/c.AppointmentPicker_Next_Action_Text';
-import AppointmentPicker_Next_Action_Sub_Text from '@salesforce/label/c.AppointmentPicker_Next_Action_Sub_Text';
-import AppointmentPicker_End_Day_Button_Sub_Text from '@salesforce/label/c.AppointmentPicker_End_Day_Button_Sub_Text';
+import StartDay_KM_Back_Button_Text from '@salesforce/label/c.StartDay_KM_Back_Button_Text';
 import {NavigationMixin} from "lightning/navigation";
 import {
     ToastTypes,
 } from "c/utilsImageCapture";
 
+//OBJECTS AND FIELDS
+import Allowance_Type__c from '@salesforce/schema/Mileage_Entry__c.Allowance_Type__c';
+import Starting_Location_Type__c from '@salesforce/schema/Mileage_Entry__c.Starting_Location_Type__c';
+import Ending_Location_Type__c from '@salesforce/schema/Mileage_Entry__c.Ending_Location_Type__c';
+import Service_Resource__c from '@salesforce/schema/Mileage_Entry__c.Service_Resource__c';
+import Starting_Mileage__c from '@salesforce/schema/Mileage_Entry__c.Starting_Mileage__c';
+import Ending_Mileage__c from '@salesforce/schema/Mileage_Entry__c.Ending_Mileage__c';
 
-
-
-export default class NextAppointmentPicker extends NavigationMixin(LightningElement) {
+export default class StartOperatorDay extends LightningElement {
 
 //--------------------------------------API------------------------------------------//
 
     @api recordId
-    showSpinner = true;
+    showSpinner = false;
     ID = ID;
     serviceResourceId;
     serviceAppointments;
@@ -42,30 +46,40 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     nextWorkOrderId;
     serviceAppointmentId;
     data = [];
-    otherWorkSteps;
     toastType = null;
     toastMessage = '';
 
 //--------------------------------------VISIBILITY----------------------------------------//
     disableNextButton = true;
-    showInitialScreen = false;
+    showInitialScreen = true;
     showAppointmentScreen = false;
-    showHasIncompleteWorkSteps = false;
+    showMilageEntryScreen = false;
     selectedRows = [];
     labels = {
-        AppointmentPicker_Next_Button,
-        AppointmentPicker_No_Results,
-        AppointmentPicker_End_Day_Button,
-        AppointmentPicker_Select_Next_Appointment_Button,
+        StartDay_Start_Button_Text,
+        StartDay_Start_Button_Sub_Text,
+        StartDay_KM_Button_Text,
+        StartDay_KM_Button_Sub_Text,
         AppointmentPicker_Appointments_Header,
+        AppointmentPicker_Next_Button,
         AppointmentPicker_Travel_Started_Toast,
-        AppointmentPicker_Day_Ended_Toast,
-        AppointmentPicker_Spinner,
-        AppointmentPicker_Incomplete_Work_Steps_Message,
-        AppointmentPicker_Next_Action_Text,
-        AppointmentPicker_Next_Action_Sub_Text,
-        AppointmentPicker_End_Day_Button_Sub_Text
+        StartDay_Next_Action_Text,
+        StartDay_Loading_Message,
+        StartDay_KM_Card_Title,
+        StartDay_KM_Save_Button_Text,
+        StartDay_KM_Save_Success_Result,
+        StartDay_KM_Back_Button_Text
     }
+
+    milesEntryFields = [
+        Allowance_Type__c,
+        Starting_Location_Type__c,
+        Ending_Location_Type__c,
+        Service_Resource__c,
+        Starting_Mileage__c,
+        Ending_Mileage__c
+    ];
+
     columns = [
         { label: this.labels.AppointmentPicker_Appointments_Header, fieldName: 'Appointment', type: 'text', wrapText: true },
     ];
@@ -78,110 +92,6 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     }
 
 //--------------------------------------WIRE-----------------------------------------//
-
-    @wire(getRecord, { recordId: "$recordId", fields: ['WorkStep.WorkOrderId'] })
-    wiredWorkOrder({ error, data }) {
-        if (data) {
-            console.log(data);
-            console.log(data.fields.WorkOrderId.value);
-            this.workOrderId = data.fields.WorkOrderId.value;
-        } else if (error) {
-            console.log(error);
-        }
-    }
-
-    @wire(graphql, {
-        query: gql`
-    query OtherWorkSteps($workOrderId: ID, $currentStepId: ID) {
-      uiapi {
-        query {
-          WorkStep(where: {
-          and: [
-            { ParentRecordId: { eq: $workOrderId } },
-            { Id: { ne: $currentStepId } }
-           ]
-           })
-           {
-            edges {
-              node {
-                Id,
-                Status {
-                    value
-                    displayValue
-                },
-              }
-            }
-          }
-        }
-      }
-    }`,
-        variables: "$workStepVariables",
-    })
-    workStepQueryResult ({error, data}) {
-        if (data) {
-            this.otherWorkSteps = data.uiapi.query.WorkStep.edges;
-            console.log('other worksteps',this.otherWorkSteps);
-            //Check if all other work steps are completed
-            let allCompleted = true;
-            console.log('recordId', this.recordId);
-            this.otherWorkSteps.forEach(step => {
-                const status = step.node.Status.value;
-                if (status !== 'Completed' && status !== 'Not Applicable' && step.node.Id !== this.recordId) {
-                    allCompleted = false;
-                }
-            });
-            console.log('allCompleted', allCompleted);
-            if (allCompleted) {
-                //Wait 1 second before showing the initial screen
-                setTimeout(() => {
-                    this.showSpinner = false;
-                    this.showInitialScreen = true;
-                    this.showHasIncompleteWorkSteps = false;
-                }, 500);
-
-            } else {
-                this.showSpinner = false;
-                this.showInitialScreen = false;
-                this.showHasIncompleteWorkSteps = true;
-            }
-        } else if (error) {
-            console.log(error);
-            this.showSpinner = false;
-        }
-    }
-
-    @wire(graphql, {
-        query: gql`
-    query ServiceAppointment($workOrderId: ID) {
-      uiapi {
-        query {
-          ServiceAppointment(where: 
-            { ParentRecordId: { eq: $workOrderId } })
-            {
-            edges {
-              node {
-                Id,
-                Status {
-                    value
-                    displayValue
-                },
-              }
-            }
-          }
-        }
-      }
-    }`,
-        variables: "$workOrderVariables",
-    })
-    serviceAppointmentQueryResult ({error, data}) {
-        if (data) {
-            this.serviceAppointmentId = data.uiapi.query.ServiceAppointment.edges[0].node.Id;
-            console.log('service appointment id',this.serviceAppointmentId);
-        } else if (error) {
-            console.log(error);
-        }
-    }
-
 
 
     @wire(graphql, {
@@ -212,14 +122,13 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
 
     @wire(graphql, {
         query: gql`
-    query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput, $saId: ID) {
+    query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput) {
       uiapi {
         query {
           AssignedResource(
             where: { 
               and: [
                 { ServiceResourceId: { eq: $serviceResourceId } },
-                { ServiceAppointment: { Id: { ne: $saId } } },
                 { ServiceAppointment: { Status: { ne: "Completed" } } },
                 { ServiceAppointment: { Status: { ne: "Unscheduled" } } },
                 { ServiceAppointment: { Status: { ne: "Cannot Complete" } } },
@@ -294,6 +203,23 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         this.disableNextButton = selectedRows.length === 0;
     }
 
+    handleMileageSuccess() {
+        console.log('Mileage entry success');
+        this.showMilageEntryScreen = false;
+        this.showInitialScreen = true;
+        this.toastType = ToastTypes.Success;
+        this.toastMessage = this.labels.StartDay_KM_Save_Success_Result;
+
+        setTimeout(() => {
+            this[NavigationMixin.Navigate]({
+                "type": "standard__webPage",
+                "attributes": {
+                    "url": `com.salesforce.fieldservice://v1`
+                }
+            });
+        }, 2000);
+    }
+
     handleSetAppointmentClicked() {
         console.log('Set appointment clicked');
         this.showInitialScreen = false;
@@ -303,40 +229,21 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     handleSelect() {
         console.log('selectedRows', JSON.stringify(this.selectedRows));
         console.log('selectedRows Id', this.selectedRows[0].Id);
-        this.setWorkStepStatus();
-        this.setCurrentServiceAppointStatus();
-        this.setParentWorkOrderStatus();
         this.setNextServiceAppointStatus();
         this.setNextWorkOrderStatus();
         this.toastType = ToastTypes.Success;
         this.toastMessage = this.labels.AppointmentPicker_Travel_Started_Toast;
-
-        setTimeout(() => {
-            this[NavigationMixin.Navigate]({
-                "type": "standard__webPage",
-                "attributes": {
-                    "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
-                }
-            });
-        }, 2000);
+        this.showAppointmentScreen = false;
+        this.showMilageEntryScreen = true;
     }
 
-    handleEndDayClicked() {
-        console.log('End day clicked');
-        this.setWorkStepStatus();
-        this.setCurrentServiceAppointStatus();
-        this.setParentWorkOrderStatus();
+    handleSetKMClicked() {
+        console.log('Set KM clicked');
         //Show the toast
         this.toastType = ToastTypes.Success;
         this.toastMessage = this.labels.AppointmentPicker_Day_Ended_Toast;
-        setTimeout(() => {
-            this[NavigationMixin.Navigate]({
-                "type": "standard__webPage",
-                "attributes": {
-                    "url": `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
-                }
-            });
-        }, 2000);
+        this.showMilageEntryScreen = true;
+        this.showInitialScreen = false;
     }
 
     handleTouchStart(event) {
@@ -353,29 +260,21 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         }, 150); // 150ms delay
     }
 
+    handleBack() {
+        this.showAppointmentScreen = false;
+        this.showMilageEntryScreen = false;
+        this.showInitialScreen = true;
+    }
+
 //--------------------------------------HELPERS--------------------------------------//
 
-    setCurrentServiceAppointStatus() {
-        const fields = {};
-        fields['Id'] = this.serviceAppointmentId;
-        fields['Status'] = 'Completed';
-        const recordInput = { fields };
-        console.log('recordInput', JSON.stringify(recordInput));
-        updateRecord(recordInput)
-            .then(() => {
-                console.log('Service Appointment status updated');
-            })
-            .catch(error => {
-                console.log('Error updating service appointment status', error);
-            });
-    }
 
     setNextServiceAppointStatus() {
         const fields = {};
         fields['Id'] = this.selectedRows[0].Id;
         fields['Status'] = 'Travelling';
         const recordInput = { fields };
-        console.log('recordInput', JSON.stringify(recordInput));
+        console.log('recordInput sa', JSON.stringify(recordInput));
         updateRecord(recordInput)
             .then(() => {
                 console.log('Service Appointment status updated');
@@ -388,10 +287,10 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
 
     setNextWorkOrderStatus() {
         const fields = {};
-        fields['Id'] = this.workOrderId;
+        fields['Id'] = this.selectedRows[0].ParentRecordId;
         fields['Status'] = 'Travelling';
         const recordInput = { fields };
-        console.log('recordInput', JSON.stringify(recordInput));
+        console.log('recordInput wo', JSON.stringify(recordInput));
         updateRecord(recordInput)
             .then(() => {
                 console.log('Work Order status updated');
@@ -400,36 +299,6 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
                 console.log('Error updating work order status', error);
             });
 
-    }
-
-    setParentWorkOrderStatus() {
-        const fields = {};
-        fields['Id'] = this.workOrderId;
-        fields['Status'] = 'Completed';
-        const recordInput = { fields };
-        console.log('recordInput', JSON.stringify(recordInput));
-        updateRecord(recordInput)
-            .then(() => {
-                console.log('Work Order status updated');
-            })
-            .catch(error => {
-                console.log('Error updating work order status', error);
-            });
-    }
-
-    setWorkStepStatus() {
-        const fields = {};
-        fields['Id'] = this.recordId;
-        fields['Status'] = 'Completed';
-        const recordInput = { fields };
-        console.log('recordInput', JSON.stringify(recordInput));
-        updateRecord(recordInput)
-            .then(() => {
-                console.log('Work Step status updated');
-            })
-            .catch(error => {
-                console.log('Error updating work step status', error);
-            });
     }
 
     hideToast() {
@@ -449,21 +318,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         return {
             serviceResourceId: this.serviceResourceId,
             startDate: { value: lastWeekStart.toISOString() },
-            endDate: { value: nextWeekEnd.toISOString() },
-            saId: this.serviceAppointmentId,
-        };
-    }
-
-    get workOrderVariables() {
-        return {
-            workOrderId: this.workOrderId,
-        };
-    }
-
-    get workStepVariables() {
-        return {
-            workOrderId: this.workOrderId,
-            currentStepId: this.recordId,
+            endDate: { value: nextWeekEnd.toISOString() }
         };
     }
 

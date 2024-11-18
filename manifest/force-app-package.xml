@@ -630,6 +630,16 @@
         <members>AppointmentPicker_Select_Next_Appointment_Button</members>
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
+        <members>StartDay_KM_Back_Button_Text</members>
+        <members>StartDay_KM_Button_Sub_Text</members>
+        <members>StartDay_KM_Button_Text</members>
+        <members>StartDay_KM_Card_Title</members>
+        <members>StartDay_KM_Save_Button_Text</members>
+        <members>StartDay_KM_Save_Success_Result</members>
+        <members>StartDay_Loading_Message</members>
+        <members>StartDay_Next_Action_Text</members>
+        <members>StartDay_Start_Button_Sub_Text</members>
+        <members>StartDay_Start_Button_Text</members>
         <members>fsc_AccessLevel</members>
         <members>fsc_Back</members>
         <members>fsc_ButtonIsNotSupportedMessage</members>
@@ -1305,6 +1315,7 @@
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
         <members>simpleDispatcherConsole</members>
+        <members>startOperatorDay</members>
         <members>startStopTimer</members>
         <members>timeSheetCalendar</members>
         <members>toastMessage</members>
@@ -1486,6 +1497,7 @@
         <members>ServiceContract.Generate_Maintenance_Plan</members>
         <members>ServiceContract.Prepare_for_Next_Year</members>
         <members>ServiceContract.Ready_for_Validation</members>
+        <members>Start_Day</members>
         <members>Task.Defer</members>
         <members>Task.Defer_0</members>
         <members>Task.Defer_1</members>

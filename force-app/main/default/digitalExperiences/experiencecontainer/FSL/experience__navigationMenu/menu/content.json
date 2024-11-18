@@ -7,6 +7,24 @@
       "children" : [ {
         "attributes" : {
           "icon" : {
+            "name" : "lwc",
+            "source" : {
+              "type" : "SLDS",
+              "value" : "utility:automate"
+            }
+          },
+          "label" : "Start Day"
+        },
+        "target" : {
+          "attributes" : {
+            "actionName" : "Global.Start_Day"
+          },
+          "definition" : "experience/quickAction"
+        },
+        "definition" : "experience/navigationMenuItem"
+      }, {
+        "attributes" : {
+          "icon" : {
             "name" : "Schedule",
             "source" : {
               "type" : "SLDS",
