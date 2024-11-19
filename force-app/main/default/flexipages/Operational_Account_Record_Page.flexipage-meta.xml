@@ -296,28 +296,62 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Opening_hours__c</fieldItem>
-                <identifier>RecordOpening_hours__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.OperatingHoursId</fieldItem>
-                <identifier>RecordOperatingHoursIdField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Closing_Days__c</fieldItem>
                 <identifier>RecordClosing_Days__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Intervention_registration__c</fieldItem>
+                <identifier>RecordIntervention_registration__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Intervention_Registration_Announcement__c</fieldItem>
+                <identifier>RecordIntervention_Registration_Announcement__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Intervention_registration__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Intervention_Registration_Announcement__c</fieldItem>
+                <identifier>RecordIntervention_Registration_Announcement_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Intervention_registration__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>No</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Intervention_Registration_Method__c</fieldItem>
+                <identifier>RecordIntervention_Registration_Method_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-c1ef430c-35f5-4430-810f-ae451237ef9f</name>
@@ -712,7 +746,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
-                    <value>ADVGRID</value>
+                    <value>CARD</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListFieldAliases</name>
@@ -726,12 +760,6 @@
                         <valueListItems>
                             <value>EndTime</value>
                         </valueListItems>
-                        <valueListItems>
-                            <value>Type</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>RecordsetFilterCriteria</value>
-                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -740,7 +768,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldAlias</name>

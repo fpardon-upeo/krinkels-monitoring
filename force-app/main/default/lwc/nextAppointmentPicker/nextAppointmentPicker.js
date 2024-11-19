@@ -21,6 +21,10 @@ import AppointmentPicker_Incomplete_Work_Steps_Message from '@salesforce/label/c
 import AppointmentPicker_Next_Action_Text from '@salesforce/label/c.AppointmentPicker_Next_Action_Text';
 import AppointmentPicker_Next_Action_Sub_Text from '@salesforce/label/c.AppointmentPicker_Next_Action_Sub_Text';
 import AppointmentPicker_End_Day_Button_Sub_Text from '@salesforce/label/c.AppointmentPicker_End_Day_Button_Sub_Text';
+import StartDay_KM_Card_Title from '@salesforce/label/c.StartDay_KM_Card_Title';
+import StartDay_KM_Back_Button_Text from '@salesforce/label/c.StartDay_KM_Back_Button_Text';
+import StartDay_KM_Save_Button_Text from '@salesforce/label/c.StartDay_KM_Save_Button_Text';
+
 import {NavigationMixin} from "lightning/navigation";
 import {
     ToastTypes,
@@ -38,6 +42,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     ID = ID;
     serviceResourceId;
     serviceAppointments;
+    timesheetId;
     workOrderId;
     nextWorkOrderId;
     serviceAppointmentId;
@@ -51,6 +56,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     showInitialScreen = false;
     showAppointmentScreen = false;
     showHasIncompleteWorkSteps = false;
+    showMilageEntryScreen = false;
     selectedRows = [];
     labels = {
         AppointmentPicker_Next_Button,
@@ -64,7 +70,10 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         AppointmentPicker_Incomplete_Work_Steps_Message,
         AppointmentPicker_Next_Action_Text,
         AppointmentPicker_Next_Action_Sub_Text,
-        AppointmentPicker_End_Day_Button_Sub_Text
+        AppointmentPicker_End_Day_Button_Sub_Text,
+        StartDay_KM_Card_Title,
+        StartDay_KM_Back_Button_Text,
+        StartDay_KM_Save_Button_Text
     }
     columns = [
         { label: this.labels.AppointmentPicker_Appointments_Header, fieldName: 'Appointment', type: 'text', wrapText: true },
@@ -282,6 +291,42 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         }
     }
 
+    @wire(graphql, {
+        query: gql`
+        query TimeSheet($resourceId: ID, $today: DateInput) {
+            uiapi {
+                query {
+                    TimeSheet(where: { and: [
+                        { ServiceResourceId: { eq: $resourceId } }, 
+                        { StartDate: { eq: $today } }, 
+                        { EndDate: { eq: $today } } 
+                    ]}) {
+                        edges {
+                            node {
+                                Id
+                            }
+                        }
+                    }
+                }
+            }
+        }`,
+        variables: "$timeSheetVariables",
+    })
+    timeSheetQueryResult ({error, data}) {
+        if (data) {
+            console.log('timesheet data', data);
+            //check first if the edges is not empty
+            if(data.uiapi.query.TimeSheet.edges.length === 0){
+                console.log('timesheet is empty');
+            } else {
+                this.timeSheetId = data.uiapi.query.TimeSheet.edges[0].node.Id;
+                console.log('timesheet id', this.timeSheetId);
+            }
+        } else if (error) {
+            console.log(error);
+        }
+    }
+
 //--------------------------------------LIFECYCLE------------------------------------//
 
 //--------------------------------------HANDLERS-------------------------------------//
@@ -326,17 +371,8 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         this.setWorkStepStatus();
         this.setCurrentServiceAppointStatus();
         this.setParentWorkOrderStatus();
-        //Show the toast
-        this.toastType = ToastTypes.Success;
-        this.toastMessage = this.labels.AppointmentPicker_Day_Ended_Toast;
-        setTimeout(() => {
-            this[NavigationMixin.Navigate]({
-                "type": "standard__webPage",
-                "attributes": {
-                    "url": `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
-                }
-            });
-        }, 2000);
+        this.showInitialScreen = false;
+        this.showMilageEntryScreen = true;
     }
 
     handleTouchStart(event) {
@@ -351,6 +387,19 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         setTimeout(() => {
             element.classList.remove('touch-active');
         }, 150); // 150ms delay
+    }
+
+    handleMileageSuccess(event) {
+        this.toastType = ToastTypes.Success;
+        this.toastMessage = this.labels.AppointmentPicker_Day_Ended_Toast;
+        setTimeout(() => {
+            this[NavigationMixin.Navigate]({
+                "type": "standard__webPage",
+                "attributes": {
+                    "url": `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
+                }
+            });
+        }, 2000);
     }
 
 //--------------------------------------HELPERS--------------------------------------//
@@ -470,6 +519,18 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     get variables() {
         return {
             userId: ID,
+        };
+    }
+
+    get timeSheetVariables() {
+
+        let todayAsDate = new Date();
+        let today = todayAsDate.toISOString();
+        today = today.split('T')[0];
+        console.log('today', today);
+        return {
+            resourceId: this.serviceResourceId,
+            today: { value: today }
         };
     }
 

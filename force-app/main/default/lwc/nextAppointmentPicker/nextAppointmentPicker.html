@@ -76,6 +76,30 @@
             </div>
         </div>
     </template>
+    <template if:true={showMilageEntryScreen}>
+        <lightning-card title={labels.StartDay_KM_Card_Title} icon-name="utility:transport_heavy_truck">
+            <lightning-record-edit-form
+                    onsuccess={handleMileageSuccess}
+                    object-api-name="Mileage_Entry__c">
+                <div class="slds-grid slds-grid_vertical slds-p-around_small">
+                    <div class="slds-col">
+                        <lightning-input-field field-name="Allowance_Type__c"></lightning-input-field>
+                        <lightning-input-field class="slds-hide"  field-name="Service_Resource__c" value={serviceResourceId}></lightning-input-field>
+                        <lightning-input-field field-name="Starting_Location_Type__c"></lightning-input-field>
+                        <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
+                        <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
+                        <lightning-input-field field-name="Ending_Mileage__c"></lightning-input-field>
+                        <lightning-input-field class="slds-hide"  field-name="Work_Order__c" value={workOrderId}></lightning-input-field>
+                        <lightning-input-field class="slds-hide" field-name="Time_Sheet__c" value={timeSheetId}></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-align_absolute-center">
+                        <lightning-button class="slds-m-right_medium" label={labels.StartDay_KM_Back_Button_Text} onclick={handleBack}></lightning-button>
+                        <lightning-button label={labels.StartDay_KM_Save_Button_Text} type="submit"></lightning-button>
+                    </div>
+                </div>
+            </lightning-record-edit-form>
+        </lightning-card>
+    </template>
     <c-toast-message
             if:true={shouldShowToast}
             message={toastMessage}

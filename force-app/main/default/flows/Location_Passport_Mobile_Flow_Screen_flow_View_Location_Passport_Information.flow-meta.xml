@@ -4,7 +4,7 @@
         <name>Post_Changes_to_chatter</name>
         <label>Post Changes to chatter</label>
         <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationY>1190</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -24,11 +24,27 @@
         <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
+    <assignments>
+        <name>Add_to_Details_list</name>
+        <label>Add to Details list</label>
+        <locationX>270</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>OperatingHoursDetails</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>formTimeSlotDetail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Operating_Hours</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Information_on_Location_Passport_Present</name>
         <label>Information on Location Passport Present ?</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>758</locationY>
         <defaultConnector>
             <targetReference>Display_Location_Passport_Information</targetReference>
         </defaultConnector>
@@ -51,7 +67,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>AccountRecord.Opening_hours__c</leftValueReference>
+                <leftValueReference>AccountRecord.OperatingHoursId</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -71,8 +87,28 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>formTimeSlotDetail</name>
+        <dataType>String</dataType>
+        <expression>{!TimeSlots.Timeslot_Details__c}&amp;BR()</expression>
+    </formulas>
     <interviewLabel>[Location Passport][Mobile Flow][Screen flow] Get Location Passport Information {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Location Passport][Mobile Flow][Screen flow] View Location Passport Information</label>
+    <loops>
+        <name>Loop_Through_Operating_Hours</name>
+        <label>Loop Through Operating Hours</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <assignNextValueToReference>TimeSlots</assignNextValueToReference>
+        <collectionReference>OperatingHours_TimeSlots</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_to_Details_list</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Information_on_Location_Passport_Present</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -99,7 +135,7 @@
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Information_on_Location_Passport_Present</targetReference>
+            <targetReference>Get_Operating_Hours</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -115,14 +151,14 @@
         <queriedFields>Name</queriedFields>
         <queriedFields>Access_Information__c</queriedFields>
         <queriedFields>Attention_points_for_execution__c</queriedFields>
-        <queriedFields>Opening_hours__c</queriedFields>
         <queriedFields>Closing_Days__c</queriedFields>
+        <queriedFields>OperatingHoursId</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Contract_Manager</name>
         <label>Get Contract Manager</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>1082</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Post_Changes_to_chatter</targetReference>
@@ -140,10 +176,35 @@
         <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordLookups>
+        <name>Get_Operating_Hours</name>
+        <label>Get Operating Hours</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Through_Operating_Hours</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OperatingHoursId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AccountRecord.OperatingHoursId</elementReference>
+            </value>
+        </filters>
+        <object>TimeSlot</object>
+        <outputReference>OperatingHours_TimeSlots</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>StartTime</queriedFields>
+        <queriedFields>EndTime</queriedFields>
+        <queriedFields>DayOfWeek</queriedFields>
+        <queriedFields>Timeslot_Details__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Service_Territory</name>
         <label>Get Service Territory</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>974</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Contract_Manager</targetReference>
@@ -188,7 +249,7 @@
         <name>Display_Location_Passport_Information</name>
         <label>Display Location Passport Information</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>866</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -247,7 +308,7 @@
         <fields>
             <name>Opening_Hours</name>
             <defaultValue>
-                <stringValue>{!AccountRecord.Opening_hours__c}
+                <stringValue>{!OperatingHoursDetails}
 </stringValue>
             </defaultValue>
             <fieldText>Opening Hours</fieldText>
@@ -297,7 +358,7 @@
         <name>No_Location_Passport_Information</name>
         <label>No Location Passport Information</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>866</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -362,12 +423,35 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>OperatingHours_TimeSlots</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSlot</objectType>
+    </variables>
+    <variables>
+        <name>OperatingHoursDetails</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>ServiceTerritoryRecord</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>ServiceTerritory</objectType>
+    </variables>
+    <variables>
+        <name>TimeSlots</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSlot</objectType>
     </variables>
     <variables>
         <name>UserRecord</name>

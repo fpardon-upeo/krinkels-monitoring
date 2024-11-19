@@ -93,33 +93,23 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>TBD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Training_Type__c</picklist>
+        <values>
+            <fullName>TBD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Type</picklist>
         <values>
-            <fullName>Absent Hours</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Eblox</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Frost Delay</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Illness</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Industrial Accident</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Recup Overtime</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Small Leave</fullName>
+            <fullName>Standard</fullName>
             <default>false</default>
         </values>
     </picklistValues>

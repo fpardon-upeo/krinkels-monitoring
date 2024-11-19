@@ -60,6 +60,10 @@
                 <behavior>Edit</behavior>
                 <field>Urgent_Intervention__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Pause_Duration__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

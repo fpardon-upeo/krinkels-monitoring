@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduling_Notification_Send__c</fullName>
+    <description>Technical field. use din the flow to send out the notification to the customer that a WO was (re)scheduled</description>
+    <label>Scheduling Notification Send</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Send</fullName>
+                <default>false</default>
+                <label>Not Send</label>
+            </value>
+            <value>
+                <fullName>Send</fullName>
+                <default>false</default>
+                <label>Send</label>
+            </value>
+            <value>
+                <fullName>Resend Needed</fullName>
+                <default>false</default>
+                <label>Resend Needed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

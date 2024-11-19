@@ -123,6 +123,12 @@
                 <identifier>RecordUser_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Interim_Agency__c</fieldItem>
+                <identifier>RecordInterim_Agency__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-7c24562c-2e3f-4de3-8854-43052e16b4ea</name>
         <type>Facet</type>
     </flexiPageRegions>

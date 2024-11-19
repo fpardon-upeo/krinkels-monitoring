@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Prepare_Time_Sheet_Entry_Completed</name>
+        <label>Prepare Time Sheet Entry Completed</label>
+        <locationX>3614</locationX>
+        <locationY>1656</locationY>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.StartTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Completed_Start_Time.Status_Change_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.EndTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Completed_End_Time.Status_Change_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal Hours</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.TimeSheetId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Current_User_Time_Sheet_Completed.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Production Time</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.WorkOrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ParentRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Pause_Duration__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CalculatedPauseTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetEntryCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CompletedTimesheetCurrent</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_Time_Sheet_Entry_Completed_Full_Night</name>
+        <label>Prepare Time Sheet Entry Completed Full Night</label>
+        <locationX>3086</locationX>
+        <locationY>1656</locationY>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.StartTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Completed_Start_Time.Status_Change_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.EndTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Completed_End_Time.Status_Change_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Night Work</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.TimeSheetId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Current_User_Time_Sheet_Completed.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Production Time</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.WorkOrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ParentRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Pause_Duration__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CalculatedPauseTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetEntryCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CompletedTimesheetCurrent</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_Time_Sheet_Entry_Completed_Partial_Day</name>
+        <label>Prepare Time Sheet Entry Completed Partial Day</label>
+        <locationX>3350</locationX>
+        <locationY>1656</locationY>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.StartTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PartialNonNightWorkStart</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.EndTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PartialNonNightWorkEnd</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal Hours</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.TimeSheetId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Current_User_Time_Sheet_Completed.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Production Time</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.WorkOrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ParentRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimesheetCurrent.Pause_Duration__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NonNightPauseTimeMinutes</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetEntryCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CompletedTimesheetCurrent</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Prepare_Time_Sheet_Entry_Completed_Partial_Night</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_Time_Sheet_Entry_Completed_Partial_Night</name>
+        <label>Prepare Time Sheet Entry Completed Partial Night</label>
+        <locationX>3350</locationX>
+        <locationY>1764</locationY>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetCurrentNight.StartTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PartialNightWorkStart</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetCurrentNight.EndTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PartialNightWorkEnd</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetCurrentNight.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Night Work</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetCurrentNight.TimeSheetId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Current_User_Time_Sheet_Completed.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetCurrentNight.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Production Time</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetCurrentNight.WorkOrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ParentRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetCurrentNight.Pause_Duration__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NightPauseTimeMinutes</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CompletedTimeSheetEntryCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CompletedTimeSheetCurrentNight</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_Time_Sheet_Entry_Travel</name>
+        <label>Prepare Time Sheet Entry Travel</label>
+        <locationX>1194</locationX>
+        <locationY>1032</locationY>
+        <assignmentItems>
+            <assignToReference>TravelTimeSheetCurrent.StartTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Travel_Start_Time.Status_Change_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TravelTimeSheetCurrent.EndTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Travel_End_Time.Status_Change_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TravelTimeSheetCurrent.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Travel Time</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TravelTimeSheetCurrent.TimeSheetId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Current_User_Time_Sheet_Travel.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TravelTimeSheetCurrent.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Travel Time</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TravelTimeSheetCurrent.WorkOrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ParentRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TravelTimeSheetEntryCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>TravelTimeSheetCurrent</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Assigned_Resources</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Assigned_Resource_Type_Completed</name>
+        <label>Assigned Resource Type Completed</label>
+        <locationX>3856</locationX>
+        <locationY>1332</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PersonC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Assigned_Resources_Completed.ServiceResource.ResourceType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>T</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Current_User_Time_Sheet_Completed</targetReference>
+            </connector>
+            <label>Person</label>
+        </rules>
+        <rules>
+            <name>CrewC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Assigned_Resources_Completed.ServiceResource.ResourceType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>C</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+            </connector>
+            <label>Crew</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assigned_Resource_Type_Travel</name>
+        <label>Assigned Resource Type Travel</label>
+        <locationX>1414</locationX>
+        <locationY>816</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Assigned_Resources</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PersonT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Assigned_Resources.ServiceResource.ResourceType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>T</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Current_User_Time_Sheet_Travel</targetReference>
+            </connector>
+            <label>Person</label>
+        </rules>
+        <rules>
+            <name>CrewT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Assigned_Resources.ServiceResource.ResourceType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>C</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Assigned_Resources</targetReference>
+            </connector>
+            <label>Crew</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Night_Hour</name>
+        <label>Is Night Hour</label>
+        <locationX>3482</locationX>
+        <locationY>1548</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Full</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNightHourFull</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Prepare_Time_Sheet_Entry_Completed_Full_Night</targetReference>
+            </connector>
+            <label>Yes Full</label>
+        </rules>
+        <rules>
+            <name>Yes_Partial</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNightHourPartial</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isNightHourFull</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PartialNightWorkStart</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PartialNightWorkEnd</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PartialNonNightWorkStart</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PartialNonNightWorkEnd</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Prepare_Time_Sheet_Entry_Completed_Partial_Day</targetReference>
+            </connector>
+            <label>Yes Partial</label>
+        </rules>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNightHourFull</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isNightHourPartial</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Prepare_Time_Sheet_Entry_Completed</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Status_is_changed</name>
+        <label>Status is changed</label>
+        <locationX>2074</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Travel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Travelling</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Travel</label>
+        </rules>
+        <rules>
+            <name>In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Travel_is_Done__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Travel_Start_Time</targetReference>
+            </connector>
+            <label>In Progress</label>
+        </rules>
+        <rules>
+            <name>Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Completed_Start_Time</targetReference>
+            </connector>
+            <label>Completed</label>
+        </rules>
+        <rules>
+            <name>Cancelled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Canceled</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Cancelled</label>
+        </rules>
+        <rules>
+            <name>Cannot_Complete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cannot Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Cannot Complete</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_there_a_Pause</name>
+        <label>Was there a Pause?</label>
+        <locationX>2998</locationX>
+        <locationY>816</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesPause</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Pause_Check</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Pause_Start_Time</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>This flows creates the automatic time sheet entries based on the evolving status of the service appointment</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CalculatedPauseTime</name>
+        <dataType>Number</dataType>
+        <expression>({!Get_Pause_End_Time.Status_Change_Date__c}-{!Get_Pause_Start_Time.Status_Change_Date__c})*1440</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>DebugFlow</name>
+        <dataType>String</dataType>
+        <expression>RIGHT(LEFT(TEXT(DATETIMEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c})), 13), 2)</expression>
+    </formulas>
+    <formulas>
+        <name>isNightHourFull</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    OR(
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 4
+    ),
+    OR(
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 4,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>isNightHourPartial</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+    OR(
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 4
+    ),
+    OR(
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 4,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>NightPauseTimeMinutes</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    AND(
+        {!Get_Pause_End_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+        ),
+        {!Get_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+        )
+    ),
+    (
+        (
+            IF(
+                {!Get_Pause_End_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                ),
+                {!Get_Pause_End_Time.Status_Change_Date__c},
+                DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                )
+            )
+        ) - (
+            IF(
+                {!Get_Pause_Start_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                ),
+                {!Get_Pause_Start_Time.Status_Change_Date__c},
+                DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                )
+            )
+        )
+    ) * 1440,
+    0
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>NonNightPauseTimeMinutes</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    AND(
+        {!Get_Pause_End_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+        ),
+        {!Get_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+        )
+    ),
+    (
+        (
+            IF(
+                {!Get_Pause_End_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                ),
+                {!Get_Pause_End_Time.Status_Change_Date__c},
+                DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                )
+            )
+        ) - (
+            IF(
+                {!Get_Pause_Start_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                ),
+                {!Get_Pause_Start_Time.Status_Change_Date__c},
+                DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                )
+            )
+        )
+    ) * 1440,
+    0
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>PartialNightWorkEnd</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(
+    OR(
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 4
+    ),
+    {!Get_Completed_End_Time.Status_Change_Date__c},
+    DATETIMEVALUE(
+        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;05:00:00&quot;
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>PartialNightWorkStart</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(
+    OR(
+        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) &gt;= 18,
+        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) &lt; 4
+    ),
+    {!Get_Completed_Start_Time.Status_Change_Date__c},
+    DATETIMEVALUE(
+        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot; 19:00:00&quot;
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>PartialNonNightWorkEnd</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(
+    AND(
+        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) &gt;= 4,
+        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) &lt; 18
+    ),
+    {!Get_Completed_End_Time.Status_Change_Date__c},
+    DATETIMEVALUE(
+        TEXT(YEAR(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(MONTH(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(DAY(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) &amp; &quot; 19:00:00&quot;
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>PartialNonNightWorkStart</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(
+    AND(
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 4,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 18
+    ),
+    {!Get_Completed_Start_Time.Status_Change_Date__c},
+    DATETIMEVALUE(
+        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) &amp; &quot;05:00:00&quot;
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Service Appointment - Time Sheet Automations {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[Service Appointment] - [After-Save] - [Record-Triggered] - Time Sheet Automations</label>
+    <loops>
+        <name>Loop_Assigned_Resources</name>
+        <label>Loop Assigned Resources</label>
+        <locationX>1106</locationX>
+        <locationY>708</locationY>
+        <collectionReference>Get_Assigned_Resources_Travel</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assigned_Resource_Type_Travel</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Timesheet_Entries_Travel</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Assigned_Resources_Completed</name>
+        <label>Loop Assigned Resources Completed</label>
+        <locationX>2998</locationX>
+        <locationY>1224</locationY>
+        <collectionReference>Get_Assigned_Resources_Completed</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assigned_Resource_Type_Completed</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Timesheet_Entries_Completed</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Status_Change_Log</name>
+        <label>Create Status Change Log</label>
+        <locationX>50</locationX>
+        <locationY>276</locationY>
+        <inputAssignments>
+            <field>New_Status__c</field>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Previous_Status__c</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Service_Appointment__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Change_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Service_Appointment_Status__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Timesheet_Entries_Completed</name>
+        <label>Create Timesheet Entries Completed</label>
+        <locationX>2998</locationX>
+        <locationY>2124</locationY>
+        <inputReference>CompletedTimeSheetEntryCollection</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Timesheet_Entries_Travel</name>
+        <label>Create Timesheet Entries Travel</label>
+        <locationX>1106</locationX>
+        <locationY>1308</locationY>
+        <connector>
+            <targetReference>Flag_Travel_is_Done</targetReference>
+        </connector>
+        <inputReference>TravelTimeSheetEntryCollection</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Assigned_Resources_Completed</name>
+        <label>Get Assigned Resources Completed</label>
+        <locationX>2998</locationX>
+        <locationY>600</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Pause_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ServiceAppointmentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>AssignedResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Assigned_Resources_Travel</name>
+        <label>Get Assigned Resources Travel</label>
+        <locationX>1106</locationX>
+        <locationY>600</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Assigned_Resources</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ServiceAppointmentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>AssignedResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Completed_End_Time</name>
+        <label>Get Completed End Time</label>
+        <locationX>2998</locationX>
+        <locationY>492</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Assigned_Resources_Completed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Previous_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>New_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Appointment_Status__c</object>
+        <sortField>Status_Change_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Completed_Start_Time</name>
+        <label>Get Completed Start Time</label>
+        <locationX>2998</locationX>
+        <locationY>384</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Completed_End_Time</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Previous_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Travelling</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>New_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Appointment_Status__c</object>
+        <sortField>Status_Change_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Current_User_Time_Sheet_Completed</name>
+        <label>Get Current User Time Sheet Completed</label>
+        <locationX>3482</locationX>
+        <locationY>1440</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Night_Hour</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ServiceResourceId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Loop_Assigned_Resources_Completed.ServiceResourceId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StartDate</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>TimeSheet</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Current_User_Time_Sheet_Travel</name>
+        <label>Get Current User Time Sheet Travel</label>
+        <locationX>1194</locationX>
+        <locationY>924</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Prepare_Time_Sheet_Entry_Travel</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ServiceResourceId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Loop_Assigned_Resources.ServiceResourceId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StartDate</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>TimeSheet</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Pause_Check</name>
+        <label>Get Pause Check</label>
+        <locationX>2998</locationX>
+        <locationY>708</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Was_there_a_Pause</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Previous_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Paused</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>New_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Paused</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Service_Appointment_Status__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Pause_End_Time</name>
+        <label>Get Pause End Time</label>
+        <locationX>2866</locationX>
+        <locationY>1032</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Previous_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Paused</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Appointment_Status__c</object>
+        <sortField>Status_Change_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Pause_Start_Time</name>
+        <label>Get Pause Start Time</label>
+        <locationX>2866</locationX>
+        <locationY>924</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Pause_End_Time</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>New_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Paused</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Appointment_Status__c</object>
+        <sortField>Status_Change_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Travel_End_Time</name>
+        <label>Get Travel End Time</label>
+        <locationX>1106</locationX>
+        <locationY>492</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Assigned_Resources_Travel</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Previous_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Travelling</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>New_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Appointment_Status__c</object>
+        <sortField>Status_Change_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Travel_Start_Time</name>
+        <label>Get Travel Start Time</label>
+        <locationX>1106</locationX>
+        <locationY>384</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Travel_End_Time</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>New_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Travelling</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Appointment_Status__c</object>
+        <sortField>Status_Change_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Flag_Travel_is_Done</name>
+        <label>Flag Travel is Done</label>
+        <locationX>1106</locationX>
+        <locationY>1416</locationY>
+        <inputAssignments>
+            <field>Travel_is_Done__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>936</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Status_Change_Log</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Status_is_changed</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>CompletedTimesheetCurrent</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSheetEntry</objectType>
+    </variables>
+    <variables>
+        <name>CompletedTimeSheetCurrentNight</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSheetEntry</objectType>
+    </variables>
+    <variables>
+        <name>CompletedTimeSheetEntryCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSheetEntry</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Get_Travel_Start_Time_Test</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceAppointmentHistory</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Travel_Time_End</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceAppointmentHistory</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Travel_Time_Start</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceAppointmentHistory</objectType>
+    </variables>
+    <variables>
+        <name>TravelTimeSheetCurrent</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSheetEntry</objectType>
+    </variables>
+    <variables>
+        <name>TravelTimeSheetEntryCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSheetEntry</objectType>
+    </variables>
+</Flow>

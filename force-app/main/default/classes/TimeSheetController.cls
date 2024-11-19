@@ -22,6 +22,17 @@ public with sharing class TimeSheetController {
           SELECT Id, StartTime, EndTime, Subject, Type
           FROM TimeSheetEntries
           ORDER BY StartTime ASC
+        ),
+        (
+          SELECT
+            Id,
+            Allowance_Type__c,
+            Starting_Mileage__c,
+            Ending_Mileage__c,
+            Starting_Location_Type__c,
+            Ending_Location_Type__c,
+            Calculated_Mileage__c
+          FROM Mileage_Entries__r
         )
       FROM TimeSheet
       WHERE Id = :recordId
@@ -29,12 +40,16 @@ public with sharing class TimeSheetController {
 
     // Get ResourceAbsence records for the same ServiceResource
     wrapper.resourceAbsences = [
-      SELECT Id, Start, End, Type, ResourceId
+      SELECT Id, Start, End, Type, ResourceId, RecordTypeId
       FROM ResourceAbsence
       WHERE
         ResourceId = :wrapper.timeSheet.ServiceResourceId
         AND Start <= :wrapper.timeSheet.EndDate.addDays(1)
         AND End >= :wrapper.timeSheet.StartDate
+        // Query only ResourceAbsence records with the Break record type
+        AND RecordTypeId = :Schema.SObjectType.ResourceAbsence.getRecordTypeInfosByDeveloperName()
+          .get('Break')
+          .getRecordTypeId()
     ];
 
     return wrapper;
@@ -83,5 +98,33 @@ public with sharing class TimeSheetController {
     update absence;
 
     return getTimeSheet(timeSheetId);
+  }
+
+  @AuraEnabled
+  //Fetch the Time Sheet and set the field Status to "Submitted"
+  public static void submitTimeSheet(String timeSheetId) {
+    try {
+      TimeSheet timeSheet = [
+        SELECT Id, Status
+        FROM TimeSheet
+        WHERE Id = :timeSheetId
+      ];
+
+      timeSheet.Status = 'Submitted';
+      update timeSheet;
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+
+  @AuraEnabled(cacheable=true)
+  public static Id getBreakRecordTypeId() {
+    try {
+      return Schema.SObjectType.ResourceAbsence.getRecordTypeInfosByDeveloperName()
+        .get('Break')
+        .getRecordTypeId();
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
   }
 }

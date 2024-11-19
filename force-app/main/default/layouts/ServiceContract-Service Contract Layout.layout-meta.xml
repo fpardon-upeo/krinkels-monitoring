@@ -51,10 +51,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SPOC_KGC__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>StartDate</field>
             </layoutItems>
             <layoutItems>
@@ -128,10 +124,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Allocation_key__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Location_Visit__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

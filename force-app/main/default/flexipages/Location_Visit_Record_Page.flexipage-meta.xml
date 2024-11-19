@@ -122,6 +122,16 @@
                 <identifier>RecordOperational_Account_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Service_Contract_Status__c</fieldItem>
+                <identifier>RecordService_Contract_Status__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-ac27e172-1249-4ce9-b4f4-3070c37d8a0b</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -144,16 +154,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Visit_Date__c</fieldItem>
                 <identifier>RecordVisit_Date_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Service_Contract_Status__c</fieldItem>
-                <identifier>RecordService_Contract_Status__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-422d9b34-5667-4a9a-a8de-dcc923074c2a</name>
@@ -190,13 +190,115 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Scoring__c</fieldItem>
-                <identifier>RecordScoring__cField</identifier>
+                <fieldItem>Record.Location_Name__c</fieldItem>
+                <identifier>RecordLocation_Name__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Quality inspection</rightValue>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Visit_Address__c</fieldItem>
+                <identifier>RecordVisit_Address__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Geolocation__c</fieldItem>
+                <identifier>RecordGeolocation__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Contact_Visit__c</fieldItem>
+                <identifier>RecordContact_Visit__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Phone_Contact_Visit__c</fieldItem>
+                <identifier>RecordPhone_Contact_Visit__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Email_Contact_Visit__c</fieldItem>
+                <identifier>RecordEmail_Contact_Visit__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Overall_Evaluation__c</fieldItem>
+                <identifier>RecordOverall_Evaluation__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Baseline measurement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -227,16 +329,10 @@
                 <fieldItem>Record.Priority_Request__c</fieldItem>
                 <identifier>Recordpriority_request__cField</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Additional work opportunity visit</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -247,17 +343,118 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Asset_Evaluation__c</fieldItem>
-                <identifier>RecordAsset_evaluation__cField</identifier>
+                <fieldItem>Record.Scoring__c</fieldItem>
+                <identifier>RecordScoring__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Baseline measurement</rightValue>
+                        <rightValue>Quality inspection</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Execution_Deadline_Request__c</fieldItem>
+                <identifier>RecordExecution_deadline_request__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Additional work opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Location_Passport__c</fieldItem>
+                <identifier>RecordLocation_Passport_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Kick-off</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Location_Passport_Status__c</fieldItem>
+                <identifier>RecordLocation_Passport_Status_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Kick-off</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Service_Contract_Status__c</fieldItem>
+                <identifier>RecordService_Contract_Status_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Kick-off</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Estimation_Intervention_Time__c</fieldItem>
+                <identifier>RecordEstimation_intervention_time__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Additional work opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-75a71d09-6935-4497-be18-33f680befb5c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -330,107 +527,17 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Execution_Deadline_Request__c</fieldItem>
-                <identifier>RecordExecution_deadline_request__cField</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Demand_type__c</fieldItem>
-                <identifier>RecordDemand_type__cField</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Estimation_Intervention_Time__c</fieldItem>
-                <identifier>RecordEstimation_intervention_time__cField</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Location_Passport__c</fieldItem>
-                <identifier>RecordLocation_Passport_cField</identifier>
+                <fieldItem>Record.Asset_Evaluation__c</fieldItem>
+                <identifier>RecordAsset_evaluation__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Kick-off</rightValue>
+                        <rightValue>Baseline measurement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Location_Passport_Status__c</fieldItem>
-                <identifier>RecordLocation_Passport_Status_cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Kick-off</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-75a71d09-6935-4497-be18-33f680befb5c</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -461,23 +568,6 @@
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Kick-off</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Overall_Evaluation__c</fieldItem>
-                <identifier>RecordOverall_Evaluation__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Baseline measurement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -580,6 +670,29 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Demand_type__c</fieldItem>
+                <identifier>RecordDemand_type__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Additional work opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Remarks_Demand_type__c</fieldItem>
                 <identifier>RecordRemarks_Demand_type__cField</identifier>
                 <visibilityRule>
@@ -644,6 +757,63 @@
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Additional work opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Access_Information__c</fieldItem>
+                <identifier>RecordAccess_Information__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Site_Boundaries_Info__c</fieldItem>
+                <identifier>RecordSite_Boundaries_Info__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Additional work opportunity visit</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Extra_Opportunity_Information__c</fieldItem>
+                <identifier>RecordExtra_Opportunity_Information__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity visit</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -908,6 +1078,76 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>MassChangeOwner</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Location_Visit__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Linked_Operators__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Operator__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Linked Operators</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Kick-off</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Quality inspection</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>

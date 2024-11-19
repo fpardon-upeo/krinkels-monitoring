@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Retrigger_notification</name>
+        <label>Retrigger notification</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Start_Date_Work_Order</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Scheduling_Notification_Send__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Retrigger_Notification_Send</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Flow that sents field to retrigger the notification to the customer if a SA is rescheduled</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ScheduledDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.SchedStartTime})</expression>
+    </formulas>
+    <interviewLabel>[Service Appointment][After-Save][Record-Triggered] Add Start Date and Retrigger Notification Send {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[Service Appointment][After-Save][Record-Triggered] Add Start Date and Retrigger Notification Send</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Work_Order</name>
+        <label>Get Work Order</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Retrigger_notification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ParentRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkOrder</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Retrigger_Notification_Send</name>
+        <label>Retrigger Notification Send</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Update_Start_Date_Work_Order</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Scheduling_Notification_Send__c</field>
+            <value>
+                <stringValue>Resend Needed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Start_Date_Work_Order</name>
+        <label>Update Start Date Work Order</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ParentRecordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Scheduled_Date__c</field>
+            <value>
+                <elementReference>ScheduledDate</elementReference>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Work_Order</targetReference>
+        </connector>
+        <filterFormula>
+(TEXT({!$Record.Status} )= &quot;Scheduled&quot;
+&amp;&amp;
+ISCHANGED({!$Record.SchedStartTime}))</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

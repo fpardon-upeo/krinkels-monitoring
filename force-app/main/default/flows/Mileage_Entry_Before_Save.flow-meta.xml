@@ -116,7 +116,7 @@
 )</expression>
     </formulas>
     <interviewLabel>Mileage Entry - Before Save {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Mileage Entry - Before Save</label>
+    <label>[Mileage Entry] - [Before-Save] - [Record-Triggered]</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -165,5 +165,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

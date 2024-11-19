@@ -38,3 +38,102 @@
 .form-fields {
   padding: 1rem;
 }
+
+.MileageEntries-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.MileageEntryContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MileageEntry {
+  width: 100%;
+}
+
+.slds-form-element input {
+  padding-left: 0.25rem;
+  border: 1px solid black;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.secondaryHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.newEntryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.newEntryButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.button {
+  width: 80%;
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.newEntryButton {
+  background-color: #6da240;
+}
+
+.cancelButton {
+  background-color: #d74b4b;
+}
+
+/* Make Modal take the entire screen */
+.slds-modal__container {
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  max-width: 100% !important;
+  margin: 0;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.slds-modal__content {
+  height: 100%;
+}
+
+/* ------------------------------------------------------------ */

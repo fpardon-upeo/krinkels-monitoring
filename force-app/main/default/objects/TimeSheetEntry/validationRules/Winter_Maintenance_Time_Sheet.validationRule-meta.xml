@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Winter_Maintenance_Time_Sheet</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    Starting_Allowance_Winter_Service__c,
+    WorkOrder.Asset.Product2.Name &lt;&gt; &quot;Winter Maintenance&quot;
+)</errorConditionFormula>
+    <errorMessage>You can only flag a Starting Allowance for Winter Service if the Work Order Asset is Winter Maintenance.</errorMessage>
+</ValidationRule>

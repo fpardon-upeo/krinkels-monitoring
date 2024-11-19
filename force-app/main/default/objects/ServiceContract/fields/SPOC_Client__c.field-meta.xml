@@ -5,7 +5,7 @@
     <label>SPOC Client</label>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>Service Contracts</relationshipLabel>
-    <relationshipName>Service_Contracts_del</relationshipName>
+    <relationshipName>Service_Contracts_del1</relationshipName>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <type>Lookup</type>

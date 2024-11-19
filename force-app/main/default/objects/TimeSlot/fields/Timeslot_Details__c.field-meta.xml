@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timeslot_Details__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT( DayOfWeek )&amp;&quot;: &quot;&amp; 
+ LEFT(TEXT(StartTime), 5)  &amp;&quot; - &quot;&amp; 
+ LEFT(TEXT(EndTime), 5)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Timeslot Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

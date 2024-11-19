@@ -19,6 +19,22 @@
                 <behavior>Readonly</behavior>
                 <field>TimeSheetEntryCount</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Normal_Hours__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Hours__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Travel_Time__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_KM__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -109,6 +125,7 @@
     </relatedLists>
     <relatedLists>
         <fields>Name</fields>
+        <fields>Type</fields>
         <fields>Subject</fields>
         <fields>StartTime</fields>
         <fields>EndTime</fields>

@@ -462,4 +462,12 @@
         <shortDescription>StartDay_Start_Button_Text</shortDescription>
         <value>Start Your Day</value>
     </labels>
+    <labels>
+        <fullName>TimeSheet_Header_Title</fullName>
+        <categories>TimeSheet</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheet_Header_Title</shortDescription>
+        <value>Timesheet for</value>
+    </labels>
 </CustomLabels>

@@ -206,6 +206,8 @@
     <relatedLists>
         <fields>CONTACT.FULL_NAME</fields>
         <fields>CONTACT.ACCOUNT_NAME</fields>
+        <fields>Intervention_Registration_Contact__c</fields>
+        <fields>Operational_SPOC__c</fields>
         <fields>ACCCONRELATION.ROLES</fields>
         <fields>CONTACT.TITLE</fields>
         <fields>CONTACT.EMAIL</fields>

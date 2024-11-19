@@ -21,6 +21,7 @@ public class ATAKPersonnelWrapper {
         public String department_name;
         public String sitemanager_code;
         public String sitemanager_name;
+        public String employment_agency;
         public String actie;
     }
 

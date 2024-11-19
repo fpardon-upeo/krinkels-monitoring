@@ -20,7 +20,7 @@
     <enableLEXExtensionTrailhead>false</enableLEXExtensionTrailhead>
     <enableLEXOnIpadEnabled>false</enableLEXOnIpadEnabled>
     <enableLexEndUsersNoSwitching>false</enableLexEndUsersNoSwitching>
-    <enableLightningPreviewPref>false</enableLightningPreviewPref>
+    <enableLightningPreviewPref>true</enableLightningPreviewPref>
     <enableNavPersonalizationOptOut>false</enableNavPersonalizationOptOut>
     <enableNoBackgroundNavigations>false</enableNoBackgroundNavigations>
     <enableQuip>false</enableQuip>

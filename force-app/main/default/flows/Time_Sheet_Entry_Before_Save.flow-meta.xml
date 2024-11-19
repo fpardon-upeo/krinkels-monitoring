@@ -56,6 +56,11 @@
     &quot;Night Work&quot;, 
       IF($Record.Starting_Allowance_Winter_Service__c, &quot;P&quot;, &quot;NW&quot;),
     &quot;Machines&quot;, &quot;MU&quot;,
+    &quot;Frost Delay&quot;, &quot;VV&quot;, 
+    &quot;Industrial Accident&quot;, &quot;HR&quot;,
+    &quot;Illness&quot;,  &quot;HR&quot;,
+    &quot;Recup Overtime&quot;, &quot;SP&quot;,
+    &quot;Absent Hours&quot;, &quot;HR&quot;,
     &quot;&quot;
   )
 )</expression>
@@ -70,12 +75,17 @@
     &quot;Night Work&quot;, 
       IF($Record.Starting_Allowance_Winter_Service__c, &quot;1710&quot;, &quot;1706&quot;),
     &quot;Machines&quot;, &quot;&quot;,
+    &quot;Frost Delay&quot;, &quot;9720&quot;, 
+    &quot;Industrial Accident&quot;, &quot;&quot;,
+    &quot;Illness&quot;,  &quot;&quot;,
+    &quot;Recup Overtime&quot;, &quot;4025&quot;,
+    &quot;Absent Hours&quot;, &quot;&quot;,
     &quot;&quot;
   )
 )</expression>
     </formulas>
     <interviewLabel>Time Sheet Entry - Before Save {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Time Sheet Entry - Before Save</label>
+    <label>[Time Sheet Entry] - [Before-Save] - [Record-Triggered]</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -124,5 +134,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

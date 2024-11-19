@@ -48,6 +48,7 @@ public with sharing class ATAKPersonnelService {
         atakPerson.Department_Name__c = personnelData.department_name;
         atakPerson.Sitemanager_Code__c = personnelData.sitemanager_code;
         atakPerson.Sitemanager_Code__c = personnelData.sitemanager_name;
+        atakPerson.Interim_Agency__c = personnelData.employment_agency;
         return atakPerson;
     }
 

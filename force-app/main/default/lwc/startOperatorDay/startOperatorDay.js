@@ -41,10 +41,9 @@ export default class StartOperatorDay extends LightningElement {
     showSpinner = false;
     ID = ID;
     serviceResourceId;
+    timeSheetId;
     serviceAppointments;
-    workOrderId;
     nextWorkOrderId;
-    serviceAppointmentId;
     data = [];
     toastType = null;
     toastMessage = '';
@@ -92,6 +91,42 @@ export default class StartOperatorDay extends LightningElement {
     }
 
 //--------------------------------------WIRE-----------------------------------------//
+
+    @wire(graphql, {
+        query: gql`
+        query TimeSheet($resourceId: ID, $today: DateInput) {
+            uiapi {
+                query {
+                    TimeSheet(where: { and: [
+                        { ServiceResourceId: { eq: $resourceId } }, 
+                        { StartDate: { eq: $today } }, 
+                        { EndDate: { eq: $today } } 
+                    ]}) {
+                        edges {
+                            node {
+                                Id
+                            }
+                        }
+                    }
+                }
+            }
+        }`,
+        variables: "$timeSheetVariables",
+    })
+    timeSheetQueryResult ({error, data}) {
+        if (data) {
+            console.log('timesheet data', data);
+            //check first if the edges is not empty
+            if(data.uiapi.query.TimeSheet.edges.length === 0){
+                console.log('timesheet is empty');
+            } else {
+                this.timeSheetId = data.uiapi.query.TimeSheet.edges[0].node.Id;
+                console.log('timesheet id', this.timeSheetId);
+            }
+        } else if (error) {
+            console.log(error);
+        }
+    }
 
 
     @wire(graphql, {
@@ -239,9 +274,6 @@ export default class StartOperatorDay extends LightningElement {
 
     handleSetKMClicked() {
         console.log('Set KM clicked');
-        //Show the toast
-        this.toastType = ToastTypes.Success;
-        this.toastMessage = this.labels.AppointmentPicker_Day_Ended_Toast;
         this.showMilageEntryScreen = true;
         this.showInitialScreen = false;
     }
@@ -261,6 +293,8 @@ export default class StartOperatorDay extends LightningElement {
     }
 
     handleBack() {
+        this.nextWorkOrderId = null;
+        this.selectedRows = [];
         this.showAppointmentScreen = false;
         this.showMilageEntryScreen = false;
         this.showInitialScreen = true;
@@ -325,6 +359,18 @@ export default class StartOperatorDay extends LightningElement {
     get variables() {
         return {
             userId: ID,
+        };
+    }
+
+    get timeSheetVariables() {
+
+        let todayAsDate = new Date();
+        let today = todayAsDate.toISOString();
+        today = today.split('T')[0];
+        console.log('today', today);
+        return {
+            resourceId: this.serviceResourceId,
+            today: { value: today }
         };
     }
 

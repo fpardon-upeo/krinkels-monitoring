@@ -1,0 +1,727 @@
+<!--
+ - Created by fpardon on 18/11/2024.
+ -->
+
+<!-- Time Sheet Calendar Custom -->
+<template>
+    <div class="calendar-container">
+        <template if:true={isLoading}>
+            <lightning-spinner
+                    alternative-text="Loading"
+                    size="medium"
+            ></lightning-spinner>
+        </template>
+        <div class="slds-modal__content slds-p-around_medium"
+                id="modal-content-id-1">
+            <div class="fullcalendar"></div>
+        </div>
+
+        <div class="slds-modal__footer">
+            <lightning-button
+                    label="Submit for Approval"
+                    variant="brand"
+                    onclick={handleSave}
+            ></lightning-button>
+        </div>
+    </div>
+
+    <!-- New TimeSheet or Absence Entry Modal -->
+    <template if:true={showNewTimeSheetOrAbsenceModal}>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Create New Entry</h2>
+                </header>
+                <div
+                        class="slds-modal__content slds-p-around_medium slds-text-align_center"
+                >
+                    <div class="slds-button-group" role="group">
+                        <lightning-button
+                                label="Time Sheet Entry"
+                                onclick={createTimeSheetEntry}
+                        >
+                        </lightning-button>
+                        <lightning-button
+                                label="Add Break"
+                                onclick={createResourceAbsence}
+                                class="slds-m-left_x-small"
+                        >
+                        </lightning-button>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                            variant="neutral"
+                            label="Cancel"
+                            onclick={handleCloseForm}
+                    >
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- Mileage Entry Modal -->
+    <template if:true={showMileageEntries}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Mileage Entries</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseForm}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <div class="MileageEntries-container">
+                        <template for:each={mileageEntries} for:item="entry">
+                            <div class="MileageEntryContainer" key={entry.Id}>
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47"
+                                    >Starting Location</label
+                                    >
+                                    <div class="slds-form-element__control">
+                                        <input
+                                                type="text"
+                                                readonly=""
+                                                placeholder=""
+                                                class="slds-input"
+                                                value={entry.Starting_Location_Type__c}
+                                        />
+                                    </div>
+                                </div>
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47"
+                                    >Ending Location</label
+                                    >
+                                    <div class="slds-form-element__control">
+                                        <input
+                                                type="text"
+                                                readonly=""
+                                                placeholder=""
+                                                class="slds-input"
+                                                value={entry.Ending_Location_Type__c}
+                                        />
+                                    </div>
+                                </div>
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47"
+                                    >Allowance</label
+                                    >
+                                    <div class="slds-form-element__control">
+                                        <input
+                                                type="text"
+                                                readonly=""
+                                                placeholder=""
+                                                class="slds-input"
+                                                value={entry.Allowance_Type__c}
+                                        />
+                                    </div>
+                                </div>
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47"
+                                    >Starting Mileage</label
+                                    >
+                                    <div class="slds-form-element__control">
+                                        <input
+                                                type="text"
+                                                readonly=""
+                                                placeholder=""
+                                                class="slds-input"
+                                                value={entry.Starting_Mileage__c}
+                                        />
+                                    </div>
+                                </div>
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-47"
+                                    >Ending Mileage</label
+                                    >
+                                    <div class="slds-form-element__control">
+                                        <input
+                                                type="text"
+                                                readonly=""
+                                                placeholder=""
+                                                class="slds-input"
+                                                value={entry.Ending_Mileage__c}
+                                        />
+                                    </div>
+                                </div>
+                                <div class="button-container">
+                                    <lightning-button
+                                            data-id={entry.Id}
+                                            onclick={handleMileageEntryEdit}
+                                            label="Edit Mileage"
+                                            variant="brand"
+                                    >
+                                    </lightning-button>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <footer class="slds-modal__footer">
+                        <lightning-button
+                                variant="neutral"
+                                label="Cancel"
+                                onclick={handleCloseForm}
+                        >
+                        </lightning-button>
+                    </footer>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={showInMileageMessage}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">No In Mileage Entries Found</h2>
+                </header>
+                <div
+                        class="slds-modal__content slds-p-around_medium slds-text-align_center"
+                >
+                    <div class="slds-button-group" role="group">
+                        <lightning-button
+                                label="Cancel"
+                                variant="neutral"
+                                onclick={handleCloseForm}
+                        >
+                        </lightning-button>
+                        <lightning-button
+                                label="Add In Mileage Entry"
+                                variant="brand"
+                                class="slds-m-left_x-small"
+                                onclick={handleNewInMileageEntry}
+                        >
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={showOutMileageMessage}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">No Out Mileage Entries Found</h2>
+                </header>
+                <div
+                        class="slds-modal__content slds-p-around_medium slds-text-align_center"
+                >
+                    <div class="slds-button-group" role="group">
+                        <lightning-button
+                                label="Cancel"
+                                variant="neutral"
+                                onclick={handleCloseForm}
+                        >
+                        </lightning-button>
+                        <lightning-button
+                                label="Add Out Mileage Entry"
+                                variant="brand"
+                                class="slds-m-left_x-small"
+                                onclick={handleNewOutMileageEntry}
+                        >
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- New Mileage In and Out Entry Form -->
+    <template if:true={showOutMileageEntryNewForm}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">New Mileage Entry</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseNewOutMileageEntry}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <lightning-record-edit-form
+                            object-api-name="Mileage_Entry__c"
+                            onsuccess={handleSuccessMileageEntryNew}
+                    >
+                        <lightning-messages></lightning-messages>
+
+                        <div class="form-fields">
+                            <lightning-input-field
+                                    field-name="Time_Sheet__c"
+                                    value={recordId}
+                                    disabled
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Service_Resource__c"
+                                    value={timeSheetResourceId}
+                                    disabled
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Starting_Location_Type__c"
+                                    required
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Ending_Location_Type__c"
+                                    value="Home"
+                                    disabled
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Allowance_Type__c"
+                                    required
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Starting_Mileage__c"
+                                    required
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Ending_Mileage__c"
+                                    required
+                            ></lightning-input-field>
+                        </div>
+                        <!-- Submit and Cancel buttons -->
+                        <div class="slds-modal__footer slds-text-align_center">
+                            <lightning-button
+                                    label="Cancel"
+                                    variant="neutral"
+                                    onclick={handleCloseNewOutMileageEntry}
+                            >
+                            </lightning-button>
+                            <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    label="Save"
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={showInMileageEntryNewForm}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">New Mileage Entry</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseNewInMileageEntry}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <lightning-record-edit-form
+                            object-api-name="Mileage_Entry__c"
+                            onsuccess={handleSuccessMileageEntryNew}
+                    >
+                        <lightning-messages></lightning-messages>
+
+                        <div class="form-fields">
+                            <lightning-input-field
+                                    field-name="Time_Sheet__c"
+                                    value={recordId}
+                                    disabled
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Service_Resource__c"
+                                    value={timeSheetResourceId}
+                                    disabled
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Starting_Location_Type__c"
+                                    value="Home"
+                                    disabled
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Ending_Location_Type__c"
+                                    required
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Allowance_Type__c"
+                                    required
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Starting_Mileage__c"
+                                    required
+                            ></lightning-input-field>
+
+                            <lightning-input-field
+                                    field-name="Ending_Mileage__c"
+                                    required
+                            ></lightning-input-field>
+                        </div>
+                        <!-- Submit and Cancel buttons -->
+                        <div class="slds-modal__footer slds-text-align_center">
+                            <lightning-button
+                                    label="Cancel"
+                                    variant="neutral"
+                                    onclick={handleCloseNewInMileageEntry}
+                            >
+                            </lightning-button>
+                            <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    label="Save"
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- New TimeSheetEntry Form -->
+    <template if:true={showTimeSheetEntryNewForm}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">New Time Sheet Entry</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseNewTimeSheetOrAbsenceEntry}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <lightning-record-edit-form
+                            object-api-name="TimeSheetEntry"
+                            onsuccess={handleSuccessTimeSheetOrAbsenceEntry}
+                    >
+                        <lightning-messages></lightning-messages>
+
+                        <div class="form-fields">
+                            <!-- Add fields -->
+                            <lightning-input-field
+                                    field-name="TimeSheetId"
+                                    value={recordId}
+                                    disabled
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="StartTime"
+                                    value={startDate}
+                                    required
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="EndTime"
+                                    value={endDate}
+                                    required
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Type"
+                                    required
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Subject"
+                            ></lightning-input-field>
+                        </div>
+                        <!-- Submit and Cancel buttons -->
+                        <div class="slds-modal__footer slds-text-align_center">
+                            <lightning-button
+                                    label="Cancel"
+                                    variant="neutral"
+                                    onclick={handleCloseNewTimeSheetOrAbsenceEntry}
+                            >
+                            </lightning-button>
+                            <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    label="Save"
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- New Break Form -->
+    <template if:true={showResourceAbsenceNewForm}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">New Break Entry</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseNewTimeSheetOrAbsenceEntry}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <lightning-record-edit-form
+                            object-api-name="ResourceAbsence"
+                            record-type-id={breakRecordTypeId}
+                            onsuccess={handleSuccessTimeSheetOrAbsenceEntry}
+                    >
+                        <lightning-messages></lightning-messages>
+
+                        <div class="form-fields">
+                            <!-- Add fields -->
+                            <lightning-input-field
+                                    field-name="ResourceId"
+                                    value={timeSheetResourceId}
+                                    disabled
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Start"
+                                    value={startDate}
+                                    required
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="End"
+                                    value={endDate}
+                                    required
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Type"
+                                    required
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Description"
+                            ></lightning-input-field>
+                        </div>
+                        <!-- Submit and Cancel buttons -->
+                        <div class="slds-modal__footer slds-text-align_center">
+                            <lightning-button
+                                    label="Cancel"
+                                    variant="neutral"
+                                    onclick={handleCloseNewTimeSheetOrAbsenceEntry}
+                            >
+                            </lightning-button>
+                            <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    label="Save"
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- Mileage Entry Edit Form -->
+    <template if:true={showMileageEntryEditForm}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Edit Mileage Entry</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseMileageEntryEditForm}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <lightning-record-edit-form
+                            object-api-name="Mileage_Entry__c"
+                            onsuccess={handleSuccessMileageEntryEdit}
+                            record-id={mileageEntryIdBeingHandled}
+                            key={mileageEntryIdBeingHandled}
+                    >
+                        <lightning-messages></lightning-messages>
+
+                        <div class="form-fields">
+                            <lightning-input-field
+                                    field-name="Starting_Mileage__c"
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Ending_Mileage__c"
+                            ></lightning-input-field>
+                        </div>
+                        <!-- Submit and Cancel buttons -->
+                        <div class="slds-modal__footer slds-text-align_center">
+                            <lightning-button
+                                    label="Cancel"
+                                    variant="neutral"
+                                    onclick={handleCloseMileageEntryEditForm}
+                            >
+                            </lightning-button>
+                            <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    label="Save"
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- Edit TimeSheetEntry Form -->
+    <template if:true={showTimeSheetEntryEditForm}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Edit Time Sheet Entry</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseForm}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <lightning-record-edit-form
+                            object-api-name="TimeSheetEntry"
+                            onsuccess={handleSuccessTimeSheetOrAbsenceEntry}
+                            record-id={recordIdBeingHandled}
+                            key={recordIdBeingHandled}
+                    >
+                        <lightning-messages></lightning-messages>
+
+                        <div class="form-fields">
+                            <!-- Add fields -->
+                            <lightning-input-field
+                                    field-name="TimeSheetId"
+                                    value={recordId}
+                                    disabled
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="StartTime"
+                            ></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="EndTime"
+                            ></lightning-input-field>
+                            <lightning-input-field field-name="Type"></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Subject"
+                            ></lightning-input-field>
+                        </div>
+                        <!-- Submit and Cancel buttons -->
+                        <div class="slds-modal__footer slds-text-align_center">
+                            <lightning-button
+                                    label="Cancel"
+                                    variant="neutral"
+                                    onclick={handleCloseForm}
+                            >
+                            </lightning-button>
+                            <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    label="Save"
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- Edit ResourceAbsence Form -->
+    <template if:true={showResourceAbsenceEditForm}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Edit Absence Entry</h2>
+                    <button
+                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            onclick={handleCloseForm}
+                    >
+                        <lightning-icon
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                        ></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content">
+                    <lightning-record-edit-form
+                            object-api-name="ResourceAbsence"
+                            onsuccess={handleSuccessTimeSheetOrAbsenceEntry}
+                            record-id={recordIdBeingHandled}
+                    >
+                        <lightning-messages></lightning-messages>
+
+                        <div class="form-fields">
+                            <!-- Add fields -->
+                            <lightning-input-field
+                                    field-name="ResourceId"
+                                    value={timeSheetResourceId}
+                                    disabled
+                            ></lightning-input-field>
+                            <lightning-input-field field-name="Start"></lightning-input-field>
+                            <lightning-input-field field-name="End"></lightning-input-field>
+                            <lightning-input-field field-name="Type"></lightning-input-field>
+                            <lightning-input-field
+                                    field-name="Description"
+                            ></lightning-input-field>
+                        </div>
+
+                        <!-- Submit and Cancel buttons -->
+                        <div class="slds-modal__footer slds-text-align_center">
+                            <lightning-button
+                                    label="Cancel"
+                                    variant="neutral"
+                                    onclick={handleCloseForm}
+                            >
+                            </lightning-button>
+                            <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    label="Save"
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+</template>

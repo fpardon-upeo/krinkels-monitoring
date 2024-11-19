@@ -1,0 +1,81 @@
+/* .calendar-container {
+    height: auto;
+    width: 100%;
+    overflow: auto;
+}
+
+.calendar-container .fullcalendar {
+    max-width: 800px;
+    margin: 0 auto;
+} */
+
+/* Mobile-specific styles */
+
+/* @media (max-width: 768px) {
+    .mobile-calendar {
+        font-size: 14px;
+    }
+
+    .mobile-calendar .fc-toolbar-title {
+        font-size: 1.2em;
+    }
+
+    .mobile-calendar .fc-button {
+        padding: 0.2em 0.4em;
+    }
+}
+
+.calendar-container {
+    padding: 0.5rem;
+} */
+
+.slds-modal__footer {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.form-fields {
+    padding: 1rem;
+}
+
+.MileageEntries-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.MileageEntryContainer {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MileageEntry {
+    width: 100%;
+}
+
+.slds-form-element input {
+    padding-left: 0.25rem;
+    border: 1px solid black;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.secondaryHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}

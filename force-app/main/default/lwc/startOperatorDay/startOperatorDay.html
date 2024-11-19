@@ -28,6 +28,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Took this out for now
                     <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
                         <div class="action-box neutral"
                              ontouchstart={handleTouchStart}
@@ -41,6 +42,7 @@
                             </div>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </lightning-card>
@@ -58,6 +60,8 @@
                         <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
                         <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
                         <lightning-input-field field-name="Ending_Mileage__c"></lightning-input-field>
+                        <lightning-input-field field-name="Work_Order__c" value={nextWorkOrderId}></lightning-input-field>
+                        <lightning-input-field class="slds-hide" field-name="Time_Sheet__c" value={timeSheetId}></lightning-input-field>
                     </div>
                     <div class="slds-col slds-align_absolute-center">
                         <lightning-button class="slds-m-right_medium" label={labels.StartDay_KM_Back_Button_Text} onclick={handleBack}></lightning-button>

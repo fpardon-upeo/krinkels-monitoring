@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Intervention_Registration_Contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>used in the send out of the announcement of a scheduled visit to the correct contact</description>
+    <label>Intervention Registration Contact</label>
+    <type>Checkbox</type>
+</CustomField>
