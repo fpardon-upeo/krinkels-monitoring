@@ -66,6 +66,7 @@
         <members>ServiceContractTriggerHandler</members>
         <members>ServiceResourceHandler</members>
         <members>TimeSheetController</members>
+        <members>WeatherService</members>
         <members>WorkOrderLocationBatch</members>
         <members>WorkOrderLocationQueueable</members>
         <members>WorkOrderScheduler</members>
@@ -98,6 +99,10 @@
         <members>AppSwitcher</members>
         <members>Salesforce1</members>
         <name>AppMenu</name>
+    </types>
+    <types>
+        <members>TimeSheet.Time_Sheet_Approval_Process</members>
+        <name>ApprovalProcess</name>
     </types>
     <types>
         <members>Case</members>
@@ -144,7 +149,9 @@
         <members>Location.Van_Compact_Layout</members>
         <members>Location_Visit__c.Location_Visit</members>
         <members>Opportunity.New_Awesome_Companct_Layout</members>
+        <members>ProductConsumed.Product_Consumed_Compact_Layout</members>
         <members>SD_Import__c.Custom_Compact_Layout</members>
+        <members>ServiceAppointment.Service_Appointment_Compact_Layout</members>
         <members>ServiceContract.Service_Contract</members>
         <members>User.User_Layout</members>
         <members>WorkOrder.Work_Order_Compact_Layout</members>
@@ -168,6 +175,7 @@
     </types>
     <types>
         <members>bpost</members>
+        <members>weatherAPI</members>
         <name>CspTrustedSite</name>
     </types>
     <types>
@@ -259,6 +267,7 @@
         <members>Account.Sub_Type__c</members>
         <members>AccountContactRelation.Commercial_SPOC__c</members>
         <members>AccountContactRelation.Intervention_Registration_Contact__c</members>
+        <members>AccountContactRelation.OLDIntervention_Registration_Contact__c</members>
         <members>AccountContactRelation.Operational_SPOC__c</members>
         <members>Activity.FSL__Count_of_Events__c</members>
         <members>Activity.FSL__Count_of_Tasks__c</members>
@@ -474,6 +483,7 @@
         <members>Product2.Rate__c</members>
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
+        <members>ProductConsumed.Van_Crew__c</members>
         <members>ProductItem.Van_Crew__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
         <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
@@ -518,7 +528,9 @@
         <members>SD_Import__c.PersoonId__c</members>
         <members>SD_Import__c.PersoonRoepAchternaam__c</members>
         <members>SD_Import__c.PersoonRoepVoornaam__c</members>
+        <members>ServiceAppointment.ATAK_Code__c</members>
         <members>ServiceAppointment.Asset__c</members>
+        <members>ServiceAppointment.Day_Pause_Duration__c</members>
         <members>ServiceAppointment.Due_Date_in_the_Past__c</members>
         <members>ServiceAppointment.FSL__Appointment_Grade__c</members>
         <members>ServiceAppointment.FSL__Auto_Schedule__c</members>
@@ -549,8 +561,10 @@
         <members>ServiceAppointment.FSL__Use_Async_Logic__c</members>
         <members>ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c</members>
         <members>ServiceAppointment.Intervention_Registration__c</members>
+        <members>ServiceAppointment.Night_Pause_Duration__c</members>
         <members>ServiceAppointment.Notification_Day__c</members>
         <members>ServiceAppointment.Overdue_Reminder_Send__c</members>
+        <members>ServiceAppointment.Previous_Status__c</members>
         <members>ServiceAppointment.Recurrence__c</members>
         <members>ServiceAppointment.Scheduling_Notification_Send__c</members>
         <members>ServiceAppointment.Travel_is_Done__c</members>
@@ -601,6 +615,7 @@
         <members>ServiceResourceCapacity.FSL__Last_Updated_Epoch__c</members>
         <members>ServiceResourceCapacity.FSL__MinutesUsed__c</members>
         <members>ServiceResourceCapacity.FSL__Work_Items_Allocated__c</members>
+        <members>ServiceResourceSkill.Skill_Level__c</members>
         <members>ServiceTerritory.FSL__Hide_Emergency_Map__c</members>
         <members>ServiceTerritory.FSL__Internal_SLR_Geolocation__c</members>
         <members>ServiceTerritory.FSL__NumberOfServicesToDripFeed__c</members>
@@ -624,16 +639,20 @@
         <members>Service_Status_Time_Log__c.Service_Appointment__c</members>
         <members>Service_Status_Time_Log__c.Start_Status__c</members>
         <members>Service_Status_Time_Log__c.Start_Time__c</members>
+        <members>TimeSheet.Send_to_ATAK__c</members>
         <members>TimeSheet.Total_Hours__c</members>
         <members>TimeSheet.Total_KM__c</members>
         <members>TimeSheet.Total_Normal_Hours__c</members>
         <members>TimeSheet.Total_Travel_Time__c</members>
+        <members>TimeSheetEntry.Break_Duration_in_Minutes__c</members>
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
         <members>TimeSheetEntry.Pause_Duration__c</members>
         <members>TimeSheetEntry.Resource_Absence__c</members>
         <members>TimeSheetEntry.Soccode__c</members>
         <members>TimeSheetEntry.Starting_Allowance_Winter_Service__c</members>
         <members>TimeSheetEntry.Total_Hours_Minus_Breaks__c</members>
+        <members>TimeSheetEntry.Total_Hours_Minus_Breaks_and_Pauses__c</members>
+        <members>TimeSheetEntry.Total_Hours_Minus_Pauses__c</members>
         <members>TimeSheetEntry.Total_Hours__c</members>
         <members>TimeSheetEntry.Urgent_Intervention__c</members>
         <members>TimeSlot.FSL__Designated_Work_Boolean_Fields__c</members>
@@ -698,8 +717,12 @@
         <members>StartDay_KM_Save_Success_Result</members>
         <members>StartDay_Loading_Message</members>
         <members>StartDay_Next_Action_Text</members>
+        <members>StartDay_Next_Appointment_Button_Sub_Text</members>
+        <members>StartDay_Next_Appointment_Button_Text</members>
         <members>StartDay_Start_Button_Sub_Text</members>
         <members>StartDay_Start_Button_Text</members>
+        <members>StartDay_Timesheet_Button_Sub_Text</members>
+        <members>StartDay_Timesheet_Button_Text</members>
         <members>TimeSheet_Header_Title</members>
         <members>fsc_AccessLevel</members>
         <members>fsc_Back</members>
@@ -835,7 +858,14 @@
     </types>
     <types>
         <members>CustomerNotifications</members>
+        <members>CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179</members>
+        <members>CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215</members>
         <members>CustomerNotifications/Notification_Planned_WO_NL_1731941363446</members>
+        <members>CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597</members>
+        <members>CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863</members>
+        <members>CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106</members>
+        <members>CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513</members>
+        <members>CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709</members>
         <members>unfiled$public/ContactFollowUpSAMPLE</members>
         <members>unfiled$public/Email_First_Response</members>
         <members>unfiled$public/LeadsNewassignmentnotificationSAMPLE</members>
@@ -949,6 +979,7 @@
         <members>Opportunity_Record_Page</members>
         <members>Other_Record_Page</members>
         <members>Price_Book_Record_Page</members>
+        <members>Product_Consumed_Record_Page</members>
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
@@ -979,7 +1010,9 @@
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Start_Date_and_Retrigger_Not</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
@@ -989,9 +1022,11 @@
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>Time_Sheet_After_Save_Send_to_ATAK</members>
         <members>Time_Sheet_Entry_Before_Save</members>
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
+        <members>Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member</members>
         <members>Van_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
@@ -1021,7 +1056,9 @@
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Start_Date_and_Retrigger_Not</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer</members>
@@ -1031,9 +1068,11 @@
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>Time_Sheet_After_Save_Send_to_ATAK</members>
         <members>Time_Sheet_Entry_Before_Save</members>
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
+        <members>Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member</members>
         <members>Van_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
@@ -1270,6 +1309,7 @@
         <members>ServiceResourcePreference-Service Resource Preference Layout</members>
         <members>ServiceResourceSkill-Service Resource Skill Layout</members>
         <members>ServiceTerritory-Service Territory Layout</members>
+        <members>ServiceTerritoryLocation-Service Territory Location Layout</members>
         <members>ServiceTerritoryMember-Service Territory Member Layout</members>
         <members>Service_Appointment_Status__c-Service Appointment Status Layout</members>
         <members>Service_Item__c-Service Item Layout</members>
@@ -1290,6 +1330,7 @@
         <members>Task-Task Layout</members>
         <members>TimeSheet-FSL Time Sheet Layout</members>
         <members>TimeSheet-Time Sheet Layout</members>
+        <members>TimeSheetEntry-FLS Time Sheet Entry Layout</members>
         <members>TimeSheetEntry-Time Sheet Entry Layout</members>
         <members>TimeSlot-Time Slot Layout</members>
         <members>TravelMode-Travel Mode Layout</members>
@@ -1399,10 +1440,12 @@
         <members>servicesToSchedule</members>
         <members>simpleDispatcherConsole</members>
         <members>startOperatorDay</members>
+        <members>startOperatorDayMetrics</members>
         <members>startStopTimer</members>
         <members>timeSheetCalendar</members>
         <members>timeSheetCalendarCustom</members>
         <members>timeSheetHeader</members>
+        <members>timesheetEntryForm</members>
         <members>toastMessage</members>
         <members>utilsImageCapture</members>
         <name>LightningComponentBundle</name>
@@ -1691,6 +1734,7 @@
         <members>Task.UpdateStatus_7</members>
         <members>Task.UpdateStatus_8</members>
         <members>Task.UpdateStatus_9</members>
+        <members>TimeSheet.Send_to_ATAK</members>
         <members>TimeSheet.Time_Sheet_Review</members>
         <members>Timesheet</members>
         <members>WorkOrder.SendEmail</members>
@@ -1732,6 +1776,7 @@
         <members>BOFCRMSLoad5</members>
         <members>BOFCRMSLoad6</members>
         <members>BOFCRMSLoad7</members>
+        <members>WeatherAPI</members>
         <members>bpost</members>
         <name>RemoteSiteSetting</name>
     </types>
@@ -2181,8 +2226,42 @@
         <name>SharingRules</name>
     </types>
     <types>
+        <members>Machtiging_Autolaadkraan_Autorisation_Grue_sur_camion</members>
+        <members>Machtiging_Betonslijper_Disqueuse</members>
+        <members>Machtiging_Draaibank_Tour</members>
+        <members>Machtiging_Dumper_Dumper</members>
+        <members>Machtiging_Hakselaar_aanhanger_Broyeur_de_branches_sur_remorque</members>
+        <members>Machtiging_Kolkenzuiger_Hydrocureuse</members>
+        <members>Machtiging_Laspost_Poste_soudage</members>
+        <members>Machtiging_Motoculteur_Motoculteur</members>
+        <members>Machtiging_Pneumatisch_gereedschap_Outil_pneumatique</members>
+        <members>Machtiging_Pneumatische_hamer_Marteau_pneumatique</members>
+        <members>Machtiging_Rolbrug_Pont_roulant</members>
+        <members>Machtiging_Rootwave_Elektrische_onkruidbestrijding</members>
+        <members>Machtiging_Signalisatiewagen_botser_Camion_absorbeur_de_choc</members>
+        <members>Machtiging_Slijpschijf_Meule</members>
+        <members>Machtiging_Spoorwegkraan_Infrabel</members>
+        <members>Machtiging_Toelating_personenvervoer_Amission_transport_de_passagers</members>
+        <members>Machtiging_Tractor_klein_tot_50_pk_met_accessoires</members>
+        <members>Machtiging_Tractor_met_arm_en_trekkerTracteur_avec_bras_et_cuve_de_ramassage</members>
+        <members>Machtiging_Tractor_met_hakselaar_Tracteur_avec_broyeur</members>
+        <members>Machtiging_Tractor_met_trekker_zuigwagen_citerne_Tracteur_avec_remorque</members>
+        <members>Machtiging_Transmobile_plaatsen_boordstenen_Transmobile_pose_de_bordure</members>
+        <members>Machtiging_Trilplaat_Plaque_vibrante</members>
+        <members>Machtiging_Veegwagen_vrachtwagen_Balayeuse_camion</members>
+        <members>Machtiging_Wals_Rouleau_compacteur</members>
+        <members>Machtiging_Wortelfrees_op_rupsen_Rogneuse_de_souche_sur_chenilles</members>
+        <members>Machtiging_Zelfrijdende_hoogwerker_Nacelle_automotrice</members>
+        <members>Machtiging_roterende_verreiker_met_hijsfunctie</members>
+        <members>Machtiging_veegwagen_klein_Balayeuse_petite</members>
         <members>Test</members>
         <name>Skill</name>
+    </types>
+    <types>
+        <members>Expertise</members>
+        <members>Machine_Authorisations</members>
+        <members>Machine_authorisations_Intern</members>
+        <name>SkillType</name>
     </types>
     <types>
         <members>AccountContactMultiRoles</members>
@@ -2397,10 +2476,13 @@
     </types>
     <types>
         <members>Case</members>
+        <members>TimeSheet</members>
         <name>Workflow</name>
     </types>
     <types>
         <members>Case.ChangePriorityToHigh</members>
+        <members>TimeSheet.Update_to_Approved</members>
+        <members>TimeSheet.Update_to_Needs_Review</members>
         <name>WorkflowFieldUpdate</name>
     </types>
     <version>61.0</version>

@@ -470,4 +470,36 @@
         <shortDescription>TimeSheet_Header_Title</shortDescription>
         <value>Timesheet for</value>
     </labels>
+    <labels>
+        <fullName>StartDay_Next_Appointment_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Next_Appointment_Button_Sub_Text</shortDescription>
+        <value>Start travel time to your next appointment.</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Next_Appointment_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Next_Appointment_Button_Text</shortDescription>
+        <value>Travel To Next Appointment</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Timesheet_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Timesheet_Button_Sub_Text</shortDescription>
+        <value>Review your logged time.</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Timesheet_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Timesheet_Button_Text</shortDescription>
+        <value>Timesheet</value>
+    </labels>
 </CustomLabels>

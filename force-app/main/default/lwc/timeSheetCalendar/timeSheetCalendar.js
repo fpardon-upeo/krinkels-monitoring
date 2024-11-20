@@ -17,8 +17,12 @@ export default class TimeSheetCalendar extends LightningElement {
 
   // Record ID being handled (MileageEntry)
   @track mileageEntryIdBeingHandled;
+
   // Break record type ID
   @track breakRecordTypeId;
+
+  // TimeSheet's ServiceResourceId/User
+  @track timeSheetResourceId;
 
   @track calendar;
 
@@ -30,13 +34,15 @@ export default class TimeSheetCalendar extends LightningElement {
   @track outMileageEntries = [];
   @track otherMileageEntries = [];
 
-  // TimeSheet's ServiceResourceId/User
-  @track timeSheetResourceId;
-
   @track startDate;
   @track endDate;
   @track startHoursLimit;
   @track endHoursLimit;
+
+  @track workHours = 0;
+  @track breakHours = 0;
+  @track kmAmount = 0;
+  @track travelHours = 0;
 
   @track isLoading = true;
   @track showNewTimeSheetOrAbsenceModal = false;
@@ -48,6 +54,7 @@ export default class TimeSheetCalendar extends LightningElement {
   @track showMileageEntryEditForm = false;
   @track showInMileageMessage = false;
   @track showOutMileageMessage = false;
+  @track showMileageInfoModal = false;
 
   connectedCallback() {
     // Wait for DOM to be ready
@@ -59,7 +66,13 @@ export default class TimeSheetCalendar extends LightningElement {
         return getTimeSheet({ recordId: this.recordId });
       })
       .then((result) => {
-        console.log("result", JSON.stringify(result));
+        if (result.timeSheet) {
+          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
+          this.kmAmount = result.timeSheet.Total_KM__c || 0;
+          this.totalHours = result.timeSheet.Total_Hours__c || 0;
+        }
+
         // Get the Break record type ID
         if (result.resourceAbsences[0]?.RecordTypeId) {
           this.breakRecordTypeId = result.resourceAbsences[0].RecordTypeId;
@@ -452,30 +465,51 @@ export default class TimeSheetCalendar extends LightningElement {
    * Closes multiple modals
    */
   handleCloseForm() {
+    this.isLoading = false;
     this.showNewTimeSheetOrAbsenceModal = false;
+    this.showTimeSheetEntryNewForm = false;
     this.showTimeSheetEntryEditForm = false;
+    this.showResourceAbsenceNewForm = false;
     this.showResourceAbsenceEditForm = false;
     this.showMileageEntries = false;
+    this.showMileageEntryEditForm = false;
     this.showInMileageMessage = false;
     this.showOutMileageMessage = false;
+    this.showMileageInfoModal = false;
   }
 
-  /**
-   * Closes the mileage entry edit form
-   */
-  handleCloseMileageEntryEditForm() {
-    this.showMileageEntryEditForm = false;
-    this.showMileageEntries = true;
-  }
+  // /**
+  //  * Closes the mileage entry edit form
+  //  */
+  // handleCloseMileageEntryEditForm() {
+  //   this.showMileageEntryEditForm = false;
+  //   this.showMileageEntries = true;
+  // }
 
-  /**
-   * Closes the new TimeSheetEntry or ResourceAbsence modal
-   */
-  handleCloseNewTimeSheetOrAbsenceEntry() {
-    this.showTimeSheetEntryNewForm = false;
-    this.showResourceAbsenceNewForm = false;
-    this.showNewTimeSheetOrAbsenceModal = true;
-  }
+  // /**
+  //  * Closes the new TimeSheetEntry or ResourceAbsence modal
+  //  */
+  // handleCloseNewTimeSheetOrAbsenceEntry() {
+  //   this.showTimeSheetEntryNewForm = false;
+  //   this.showResourceAbsenceNewForm = false;
+  //   this.showNewTimeSheetOrAbsenceModal = true;
+  // }
+
+  // /**
+  //  * Closes the new Out Mileage entry form
+  //  */
+  // handleCloseNewOutMileageEntry() {
+  //   this.showOutMileageEntryNewForm = false;
+  //   this.showOutMileageMessage = true;
+  // }
+
+  // /**
+  //  * Closes the new In Mileage entry form
+  //  */
+  // handleCloseNewInMileageEntry() {
+  //   this.showInMileageEntryNewForm = false;
+  //   this.showInMileageMessage = true;
+  // }
 
   /**
    * Opens the In Mileage entries modal
@@ -537,30 +571,30 @@ export default class TimeSheetCalendar extends LightningElement {
     this.showInMileageEntryNewForm = true;
   }
 
-  handleCloseNewOutMileageEntry() {
-    this.showOutMileageEntryNewForm = false;
-    this.showOutMileageMessage = true;
-  }
-
-  handleCloseNewInMileageEntry() {
-    this.showInMileageEntryNewForm = false;
-    this.showInMileageMessage = true;
-  }
-
   ////////////////////////////////////////////////////////////////
 
   handleSuccessTimeSheetOrAbsenceEntry() {
-    // Remove all events from the calendar
+    // First, close everything
+    this.handleCloseForm();
+
+    // Remove all events from the calendar first
     const removeEvents = this.calendar.getEventSources();
     removeEvents.forEach((event) => {
       event.remove();
     });
 
-    // Fetch again all the time sheet entries and resource absences
     getTimeSheet({ recordId: this.recordId })
       .then((result) => {
+        if (result.timeSheet) {
+          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
+          this.kmAmount = result.timeSheet.Total_KM__c || 0;
+          this.totalHours = result.timeSheet.Total_Hours__c || 0;
+        }
+
         // Update the local data with the server response
         this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+
         if (result.timeSheet.TimeSheetEntries) {
           this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
         }
@@ -574,19 +608,23 @@ export default class TimeSheetCalendar extends LightningElement {
           id: entry.Id,
           start: entry.StartTime,
           end: entry.EndTime,
-          title: `TimeSheet Entry - ${entry.Subject}`,
+          title: `${entry.Type} - ${entry.Subject}` || `${entry.Type}`,
           backgroundColor:
             entry.Type === "Normal Hours"
               ? "#6DA241"
               : entry.Type === "Travel Time"
                 ? "#009FBD"
-                : "#DAA520",
+                : entry.Type === "Night Work" || entry.Type === "Machine"
+                  ? "#DAA520"
+                  : "#c23934",
           borderColor:
             entry.Type === "Normal Hours"
               ? "#6DA241"
               : entry.Type === "Travel Time"
                 ? "#009FBD"
-                : "#DAA520",
+                : entry.Type === "Night Work" || entry.Type === "Machine"
+                  ? "#DAA520"
+                  : "#c23934",
           editable: true,
           extendedProps: {
             recordType: "TimeSheetEntry"
@@ -597,7 +635,7 @@ export default class TimeSheetCalendar extends LightningElement {
           id: absence.Id,
           start: absence.Start,
           end: absence.End,
-          title: `Absence: ${absence.Type}`,
+          title: `Break - ${absence.Type}` || "Break",
           backgroundColor: "#c23934",
           borderColor: "#c23934",
           editable: true,
@@ -611,14 +649,18 @@ export default class TimeSheetCalendar extends LightningElement {
         // Add new events to calendar
         this.calendar.addEventSource(allEvents);
 
-        this.showResourceAbsenceNewForm = false;
-        this.showTimeSheetEntryNewForm = false;
-        this.showResourceAbsenceEditForm = false;
-        this.showTimeSheetEntryEditForm = false;
-        this.showNewTimeSheetOrAbsenceModal = false;
+        // Force a calendar refresh
+        this.calendar.render();
       })
       .catch((error) => {
         console.error("Error:", error);
+        // Show error toast
+        const toastEvent = new ShowToastEvent({
+          title: "Error",
+          message: "Error refreshing calendar data",
+          variant: "error"
+        });
+        this.dispatchEvent(toastEvent);
       });
   }
 
@@ -630,6 +672,13 @@ export default class TimeSheetCalendar extends LightningElement {
 
     getTimeSheet({ recordId: this.recordId })
       .then((result) => {
+        if (result.timeSheet) {
+          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
+          this.kmAmount = result.timeSheet.Total_KM__c || 0;
+          this.totalHours = result.timeSheet.Total_Hours__c || 0;
+        }
+
         if (result.timeSheet.Mileage_Entries__r) {
           this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
 
@@ -697,5 +746,13 @@ export default class TimeSheetCalendar extends LightningElement {
 
         console.error("Error:", error);
       });
+  }
+
+  handleShowMileageInfo() {
+    this.showMileageInfoModal = true;
+  }
+
+  handleCloseMileageInfo() {
+    this.showMileageInfoModal = false;
   }
 }

@@ -18,6 +18,10 @@ public with sharing class TimeSheetController {
         ServiceResourceId,
         StartDate,
         EndDate,
+        Total_Hours__c,
+        Total_Km__c,
+        Total_Normal_Hours__c,
+        Total_Travel_Time__c,
         (
           SELECT Id, StartTime, EndTime, Subject, Type
           FROM TimeSheetEntries

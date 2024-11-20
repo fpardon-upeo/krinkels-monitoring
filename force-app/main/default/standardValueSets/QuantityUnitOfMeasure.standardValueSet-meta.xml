@@ -6,4 +6,9 @@
         <default>false</default>
         <label>Each</label>
     </standardValue>
+    <standardValue>
+        <fullName>Minutes</fullName>
+        <default>false</default>
+        <label>Minutes</label>
+    </standardValue>
 </StandardValueSet>

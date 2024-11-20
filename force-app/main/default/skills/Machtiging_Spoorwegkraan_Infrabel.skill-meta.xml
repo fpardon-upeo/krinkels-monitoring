@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skill xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Spoorwegkraan (Infrabel) / Grue ferroviaire (Infrabel)</description>
+    <label>Machtiging Spoorwegkraan (Infrabel)</label>
+    <skillType>Machine_Authorisations</skillType>
+</Skill>

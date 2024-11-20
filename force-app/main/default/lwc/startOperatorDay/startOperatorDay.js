@@ -20,6 +20,10 @@ import StartDay_KM_Save_Button_Text from '@salesforce/label/c.StartDay_KM_Save_B
 import StartDay_KM_Save_Success_Result from '@salesforce/label/c.StartDay_KM_Save_Success_Result';
 import AppointmentPicker_Travel_Started_Toast from '@salesforce/label/c.AppointmentPicker_Travel_Started_Toast';
 import StartDay_KM_Back_Button_Text from '@salesforce/label/c.StartDay_KM_Back_Button_Text';
+import StartDay_Timesheet_Button_Text from '@salesforce/label/c.StartDay_Timesheet_Button_Text';
+import StartDay_Timesheet_Button_Sub_Text from '@salesforce/label/c.StartDay_Timesheet_Button_Sub_Text';
+import StartDay_Next_Appointment_Button_Text from '@salesforce/label/c.StartDay_Next_Appointment_Button_Text';
+import StartDay_Next_Appointment_Button_Sub_Text from '@salesforce/label/c.StartDay_Next_Appointment_Button_Sub_Text';
 import {NavigationMixin} from "lightning/navigation";
 import {
     ToastTypes,
@@ -44,6 +48,7 @@ export default class StartOperatorDay extends LightningElement {
     timeSheetId;
     serviceAppointments;
     nextWorkOrderId;
+    travelTimeOnly = false;
     data = [];
     toastType = null;
     toastMessage = '';
@@ -53,6 +58,7 @@ export default class StartOperatorDay extends LightningElement {
     showInitialScreen = true;
     showAppointmentScreen = false;
     showMilageEntryScreen = false;
+    showTimesheetScreen = false;
     selectedRows = [];
     labels = {
         StartDay_Start_Button_Text,
@@ -67,7 +73,11 @@ export default class StartOperatorDay extends LightningElement {
         StartDay_KM_Card_Title,
         StartDay_KM_Save_Button_Text,
         StartDay_KM_Save_Success_Result,
-        StartDay_KM_Back_Button_Text
+        StartDay_KM_Back_Button_Text,
+        StartDay_Timesheet_Button_Text,
+        StartDay_Timesheet_Button_Sub_Text,
+        StartDay_Next_Appointment_Button_Text,
+        StartDay_Next_Appointment_Button_Sub_Text
     }
 
     milesEntryFields = [
@@ -83,11 +93,54 @@ export default class StartOperatorDay extends LightningElement {
         { label: this.labels.AppointmentPicker_Appointments_Header, fieldName: 'Appointment', type: 'text', wrapText: true },
     ];
 
+    matchingInfo = {
+        primaryField: { fieldPath: 'Subject', mode: 'contains' },
+        additionalFields: [{ fieldPath: 'ATAK_Code__c' }]
+    }
+
+    displayInfo = {
+        primaryField: 'Account.Name',
+        additionalFields: ['SchedStartTime', 'ATAK_Code__c'],
+    };
+
+    filterInfo = {
+        criteria: [
+            {
+                fieldPath: 'Status',
+                operator: 'ne',
+                value: 'Scheduled'
+            },
+            {
+                fieldPath: 'Status',
+                operator: 'ne',
+                value: 'Cancelled'
+            },
+            {
+                fieldPath: 'Status',
+                operator: 'ne',
+                value: 'Unscheduled'
+            },
+            {
+                fieldPath: 'SchedStartTime',
+                operator: 'lte',
+                value: { literal: 'NEXT_WEEK' }
+            },
+            {
+                fieldPath: 'SchedStartTime',
+                operator: 'gte',
+                value: { literal: 'LAST_WEEK' }
+            }
+        ],
+        logic: '(1 AND 2 AND 3) AND (4 OR 5)'
+    };
+
+
 //--------------------------------------LIFECYCLE----------------------------------------//
 
     connectedCallback() {
         console.log('connectedCallback');
         console.log(this.recordId);
+
     }
 
 //--------------------------------------WIRE-----------------------------------------//
@@ -261,6 +314,23 @@ export default class StartOperatorDay extends LightningElement {
         this.showAppointmentScreen = true;
     }
 
+    handleSetAppointmentClickedNoKM() {
+        console.log('Set appointment clicked');
+        this.showInitialScreen = false;
+        this.showAppointmentScreen = true;
+        this.travelTimeOnly = true;
+
+        setTimeout(() => {
+            this[NavigationMixin.Navigate]({
+                "type": "standard__webPage",
+                "attributes": {
+                    "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
+                }
+            });
+        }, 2000);
+
+    }
+
     handleSelect() {
         console.log('selectedRows', JSON.stringify(this.selectedRows));
         console.log('selectedRows Id', this.selectedRows[0].Id);
@@ -269,13 +339,18 @@ export default class StartOperatorDay extends LightningElement {
         this.toastType = ToastTypes.Success;
         this.toastMessage = this.labels.AppointmentPicker_Travel_Started_Toast;
         this.showAppointmentScreen = false;
-        this.showMilageEntryScreen = true;
+        this.showMilageEntryScreen = this.travelTimeOnly !== true;
     }
 
     handleSetKMClicked() {
         console.log('Set KM clicked');
         this.showMilageEntryScreen = true;
         this.showInitialScreen = false;
+    }
+
+    handleTimeSheetClicked() {
+        this.showInitialScreen = false;
+        this.showTimesheetScreen = true;
     }
 
     handleTouchStart(event) {
@@ -297,7 +372,9 @@ export default class StartOperatorDay extends LightningElement {
         this.selectedRows = [];
         this.showAppointmentScreen = false;
         this.showMilageEntryScreen = false;
+        this.showTimesheetScreen = false;
         this.showInitialScreen = true;
+        this.travelTimeOnly = false;
     }
 
 //--------------------------------------HELPERS--------------------------------------//
@@ -376,6 +453,11 @@ export default class StartOperatorDay extends LightningElement {
 
     get shouldShowToast() {
         return this.toastType == null ? false : true;
+    }
+
+    get showBottomFooter() {
+        //Return true if showInitialScreen and showTimesheetScreen are false
+        return !this.showInitialScreen && !this.showTimesheetScreen;
     }
 
 }

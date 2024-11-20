@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skill xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Signalisatiewagen (botser) / Camion absorbeur de choc</description>
+    <label>Machtiging Signalisatiewagen (botser) / Camion absorbeur de choc</label>
+    <skillType>Machine_authorisations_Intern</skillType>
+</Skill>

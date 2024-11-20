@@ -2,9 +2,9 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2160
+Metadatas: 2236
 
-<details><summary>ApexClass (71)</summary>
+<details><summary>ApexClass (72)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -70,6 +70,7 @@ Metadatas: 2160
   • ServiceContractTriggerHandler<br/>
   • ServiceResourceHandler<br/>
   • TimeSheetController<br/>
+  • WeatherService<br/>
   • WorkOrderLocationBatch<br/>
   • WorkOrderLocationQueueable<br/>
   • WorkOrderScheduler<br/>
@@ -101,6 +102,10 @@ Metadatas: 2160
 <details><summary>AppMenu (2)</summary>
   • AppSwitcher<br/>
   • Salesforce1<br/>
+</details>
+
+<details><summary>ApprovalProcess (1)</summary>
+  • TimeSheet.Time_Sheet_Approval_Process<br/>
 </details>
 
 <details><summary>AssignmentRules (2)</summary>
@@ -136,7 +141,7 @@ Metadatas: 2160
   • Internal Community<br/>
 </details>
 
-<details><summary>CompactLayout (17)</summary>
+<details><summary>CompactLayout (19)</summary>
   • ATAK_Personnel__c.Custom_Compact_Layout<br/>
   • Account.Account_Compact_Layout<br/>
   • Account.Commercial_Account<br/>
@@ -148,7 +153,9 @@ Metadatas: 2160
   • Location.Van_Compact_Layout<br/>
   • Location_Visit__c.Location_Visit<br/>
   • Opportunity.New_Awesome_Companct_Layout<br/>
+  • ProductConsumed.Product_Consumed_Compact_Layout<br/>
   • SD_Import__c.Custom_Compact_Layout<br/>
+  • ServiceAppointment.Service_Appointment_Compact_Layout<br/>
   • ServiceContract.Service_Contract<br/>
   • User.User_Layout<br/>
   • WorkOrder.Work_Order_Compact_Layout<br/>
@@ -170,8 +177,9 @@ Metadatas: 2160
   • logo_krinkelsbelgie_balk_kort_1<br/>
 </details>
 
-<details><summary>CspTrustedSite (1)</summary>
+<details><summary>CspTrustedSite (2)</summary>
   • bpost<br/>
+  • weatherAPI<br/>
 </details>
 
 <details><summary>CustomApplication (2)</summary>
@@ -179,7 +187,7 @@ Metadatas: 2160
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (499)</summary>
+<details><summary>CustomField (510)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -263,6 +271,7 @@ Metadatas: 2160
   • Account.Sub_Type__c<br/>
   • AccountContactRelation.Commercial_SPOC__c<br/>
   • AccountContactRelation.Intervention_Registration_Contact__c<br/>
+  • AccountContactRelation.OLDIntervention_Registration_Contact__c<br/>
   • AccountContactRelation.Operational_SPOC__c<br/>
   • Activity.FSL__Count_of_Events__c<br/>
   • Activity.FSL__Count_of_Tasks__c<br/>
@@ -478,6 +487,7 @@ Metadatas: 2160
   • Product2.Rate__c<br/>
   • Product2.Service_Package_Product__c<br/>
   • Product2.Work_Type__c<br/>
+  • ProductConsumed.Van_Crew__c<br/>
   • ProductItem.Van_Crew__c<br/>
   • Reorder_Work_Step__e.Next_Number__c<br/>
   • Reorder_Work_Step__e.Work_Order_Id__c<br/>
@@ -522,7 +532,9 @@ Metadatas: 2160
   • SD_Import__c.PersoonId__c<br/>
   • SD_Import__c.PersoonRoepAchternaam__c<br/>
   • SD_Import__c.PersoonRoepVoornaam__c<br/>
+  • ServiceAppointment.ATAK_Code__c<br/>
   • ServiceAppointment.Asset__c<br/>
+  • ServiceAppointment.Day_Pause_Duration__c<br/>
   • ServiceAppointment.Due_Date_in_the_Past__c<br/>
   • ServiceAppointment.FSL__Appointment_Grade__c<br/>
   • ServiceAppointment.FSL__Auto_Schedule__c<br/>
@@ -553,8 +565,10 @@ Metadatas: 2160
   • ServiceAppointment.FSL__Use_Async_Logic__c<br/>
   • ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c<br/>
   • ServiceAppointment.Intervention_Registration__c<br/>
+  • ServiceAppointment.Night_Pause_Duration__c<br/>
   • ServiceAppointment.Notification_Day__c<br/>
   • ServiceAppointment.Overdue_Reminder_Send__c<br/>
+  • ServiceAppointment.Previous_Status__c<br/>
   • ServiceAppointment.Recurrence__c<br/>
   • ServiceAppointment.Scheduling_Notification_Send__c<br/>
   • ServiceAppointment.Travel_is_Done__c<br/>
@@ -605,6 +619,7 @@ Metadatas: 2160
   • ServiceResourceCapacity.FSL__Last_Updated_Epoch__c<br/>
   • ServiceResourceCapacity.FSL__MinutesUsed__c<br/>
   • ServiceResourceCapacity.FSL__Work_Items_Allocated__c<br/>
+  • ServiceResourceSkill.Skill_Level__c<br/>
   • ServiceTerritory.FSL__Hide_Emergency_Map__c<br/>
   • ServiceTerritory.FSL__Internal_SLR_Geolocation__c<br/>
   • ServiceTerritory.FSL__NumberOfServicesToDripFeed__c<br/>
@@ -628,16 +643,20 @@ Metadatas: 2160
   • Service_Status_Time_Log__c.Service_Appointment__c<br/>
   • Service_Status_Time_Log__c.Start_Status__c<br/>
   • Service_Status_Time_Log__c.Start_Time__c<br/>
+  • TimeSheet.Send_to_ATAK__c<br/>
   • TimeSheet.Total_Hours__c<br/>
   • TimeSheet.Total_KM__c<br/>
   • TimeSheet.Total_Normal_Hours__c<br/>
   • TimeSheet.Total_Travel_Time__c<br/>
+  • TimeSheetEntry.Break_Duration_in_Minutes__c<br/>
   • TimeSheetEntry.Code_ATAK_Limbus__c<br/>
   • TimeSheetEntry.Pause_Duration__c<br/>
   • TimeSheetEntry.Resource_Absence__c<br/>
   • TimeSheetEntry.Soccode__c<br/>
   • TimeSheetEntry.Starting_Allowance_Winter_Service__c<br/>
   • TimeSheetEntry.Total_Hours_Minus_Breaks__c<br/>
+  • TimeSheetEntry.Total_Hours_Minus_Breaks_and_Pauses__c<br/>
+  • TimeSheetEntry.Total_Hours_Minus_Pauses__c<br/>
   • TimeSheetEntry.Total_Hours__c<br/>
   • TimeSheetEntry.Urgent_Intervention__c<br/>
   • TimeSlot.FSL__Designated_Work_Boolean_Fields__c<br/>
@@ -681,7 +700,7 @@ Metadatas: 2160
   • Work_Order_Creation_Event__e.Maintenance_Plan_Id__c<br/>
 </details>
 
-<details><summary>CustomLabel (59)</summary>
+<details><summary>CustomLabel (63)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
   • AppointmentPicker_End_Day_Button<br/>
@@ -702,8 +721,12 @@ Metadatas: 2160
   • StartDay_KM_Save_Success_Result<br/>
   • StartDay_Loading_Message<br/>
   • StartDay_Next_Action_Text<br/>
+  • StartDay_Next_Appointment_Button_Sub_Text<br/>
+  • StartDay_Next_Appointment_Button_Text<br/>
   • StartDay_Start_Button_Sub_Text<br/>
   • StartDay_Start_Button_Text<br/>
+  • StartDay_Timesheet_Button_Sub_Text<br/>
+  • StartDay_Timesheet_Button_Text<br/>
   • TimeSheet_Header_Title<br/>
   • fsc_AccessLevel<br/>
   • fsc_Back<br/>
@@ -837,9 +860,16 @@ Metadatas: 2160
   • EmailToSalesforce<br/>
 </details>
 
-<details><summary>EmailTemplate (29)</summary>
+<details><summary>EmailTemplate (36)</summary>
   • CustomerNotifications<br/>
+  • CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179<br/>
+  • CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215<br/>
   • CustomerNotifications/Notification_Planned_WO_NL_1731941363446<br/>
+  • CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597<br/>
+  • CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863<br/>
+  • CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106<br/>
+  • CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513<br/>
+  • CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709<br/>
   • unfiled$public/ContactFollowUpSAMPLE<br/>
   • unfiled$public/Email_First_Response<br/>
   • unfiled$public/LeadsNewassignmentnotificationSAMPLE<br/>
@@ -921,7 +951,7 @@ Metadatas: 2160
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (47)</summary>
+<details><summary>FlexiPage (48)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
   • Account_Record_Page<br/>
@@ -953,6 +983,7 @@ Metadatas: 2160
   • Opportunity_Record_Page<br/>
   • Other_Record_Page<br/>
   • Price_Book_Record_Page<br/>
+  • Product_Consumed_Record_Page<br/>
   • Product_Item_Record_Page<br/>
   • Product_Record_Page<br/>
   • SalesCloudMobile_UtilityBar<br/>
@@ -971,7 +1002,7 @@ Metadatas: 2160
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (39)</summary>
+<details><summary>Flow (43)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
@@ -983,7 +1014,9 @@ Metadatas: 2160
   • Platform_Event_Reorder_Work_Steps<br/>
   • Resource_Absence_Before_Save<br/>
   • Send_Better_Email_Testflow<br/>
+  • Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data<br/>
   • Service_Appointment_After_Save_Record_Triggered_Add_Start_Date_and_Retrigger_Not<br/>
+  • Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO<br/>
   • Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory<br/>
   • Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status<br/>
   • Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer<br/>
@@ -993,9 +1026,11 @@ Metadatas: 2160
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • Time_Sheet_After_Save_Send_to_ATAK<br/>
   • Time_Sheet_Entry_Before_Save<br/>
   • User_After_Create_RecordTrigered_Create_Service_Resource<br/>
   • User_After_Update_RecordTrigered_Create_Service_Resource<br/>
+  • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
   • Van_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
@@ -1013,7 +1048,7 @@ Metadatas: 2160
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (39)</summary>
+<details><summary>FlowDefinition (43)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
@@ -1025,7 +1060,9 @@ Metadatas: 2160
   • Platform_Event_Reorder_Work_Steps<br/>
   • Resource_Absence_Before_Save<br/>
   • Send_Better_Email_Testflow<br/>
+  • Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data<br/>
   • Service_Appointment_After_Save_Record_Triggered_Add_Start_Date_and_Retrigger_Not<br/>
+  • Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO<br/>
   • Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory<br/>
   • Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status<br/>
   • Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer<br/>
@@ -1035,9 +1072,11 @@ Metadatas: 2160
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • Time_Sheet_After_Save_Send_to_ATAK<br/>
   • Time_Sheet_Entry_Before_Save<br/>
   • User_After_Create_RecordTrigered_Create_Service_Resource<br/>
   • User_After_Update_RecordTrigered_Create_Service_Resource<br/>
+  • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
   • Van_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
@@ -1110,7 +1149,7 @@ Metadatas: 2160
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<details><summary>Layout (214)</summary>
+<details><summary>Layout (216)</summary>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Account Layout<br/>
@@ -1274,6 +1313,7 @@ Metadatas: 2160
   • ServiceResourcePreference-Service Resource Preference Layout<br/>
   • ServiceResourceSkill-Service Resource Skill Layout<br/>
   • ServiceTerritory-Service Territory Layout<br/>
+  • ServiceTerritoryLocation-Service Territory Location Layout<br/>
   • ServiceTerritoryMember-Service Territory Member Layout<br/>
   • Service_Appointment_Status__c-Service Appointment Status Layout<br/>
   • Service_Item__c-Service Item Layout<br/>
@@ -1294,6 +1334,7 @@ Metadatas: 2160
   • Task-Task Layout<br/>
   • TimeSheet-FSL Time Sheet Layout<br/>
   • TimeSheet-Time Sheet Layout<br/>
+  • TimeSheetEntry-FLS Time Sheet Entry Layout<br/>
   • TimeSheetEntry-Time Sheet Entry Layout<br/>
   • TimeSlot-Time Slot Layout<br/>
   • TravelMode-Travel Mode Layout<br/>
@@ -1327,7 +1368,7 @@ Metadatas: 2160
   • WorkTypeGroup-Work Type Group Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (81)</summary>
+<details><summary>LightningComponentBundle (83)</summary>
   • addressSearch<br/>
   • colorsPicker<br/>
   • contractLineEditor<br/>
@@ -1403,10 +1444,12 @@ Metadatas: 2160
   • servicesToSchedule<br/>
   • simpleDispatcherConsole<br/>
   • startOperatorDay<br/>
+  • startOperatorDayMetrics<br/>
   • startStopTimer<br/>
   • timeSheetCalendar<br/>
   • timeSheetCalendarCustom<br/>
   • timeSheetHeader<br/>
+  • timesheetEntryForm<br/>
   • toastMessage<br/>
   • utilsImageCapture<br/>
 </details>
@@ -1557,7 +1600,7 @@ Metadatas: 2160
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (146)</summary>
+<details><summary>QuickAction (147)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Child_Account<br/>
   • Campaign.Child_Campaign<br/>
@@ -1695,6 +1738,7 @@ Metadatas: 2160
   • Task.UpdateStatus_7<br/>
   • Task.UpdateStatus_8<br/>
   • Task.UpdateStatus_9<br/>
+  • TimeSheet.Send_to_ATAK<br/>
   • TimeSheet.Time_Sheet_Review<br/>
   • Timesheet<br/>
   • WorkOrder.SendEmail<br/>
@@ -1726,7 +1770,7 @@ Metadatas: 2160
   • ResourceAbsence.Training<br/>
 </details>
 
-<details><summary>RemoteSiteSetting (10)</summary>
+<details><summary>RemoteSiteSetting (11)</summary>
   • BOFCRMSEnvironment1731427604238<br/>
   • BOFCRMSEnvironment1731427604935<br/>
   • BOFCRMSLoad1<br/>
@@ -1736,6 +1780,7 @@ Metadatas: 2160
   • BOFCRMSLoad5<br/>
   • BOFCRMSLoad6<br/>
   • BOFCRMSLoad7<br/>
+  • WeatherAPI<br/>
   • bpost<br/>
 </details>
 
@@ -2184,8 +2229,42 @@ Metadatas: 2160
   • WorkTypeGroup<br/>
 </details>
 
-<details><summary>Skill (1)</summary>
+<details><summary>Skill (29)</summary>
+  • Machtiging_Autolaadkraan_Autorisation_Grue_sur_camion<br/>
+  • Machtiging_Betonslijper_Disqueuse<br/>
+  • Machtiging_Draaibank_Tour<br/>
+  • Machtiging_Dumper_Dumper<br/>
+  • Machtiging_Hakselaar_aanhanger_Broyeur_de_branches_sur_remorque<br/>
+  • Machtiging_Kolkenzuiger_Hydrocureuse<br/>
+  • Machtiging_Laspost_Poste_soudage<br/>
+  • Machtiging_Motoculteur_Motoculteur<br/>
+  • Machtiging_Pneumatisch_gereedschap_Outil_pneumatique<br/>
+  • Machtiging_Pneumatische_hamer_Marteau_pneumatique<br/>
+  • Machtiging_Rolbrug_Pont_roulant<br/>
+  • Machtiging_Rootwave_Elektrische_onkruidbestrijding<br/>
+  • Machtiging_Signalisatiewagen_botser_Camion_absorbeur_de_choc<br/>
+  • Machtiging_Slijpschijf_Meule<br/>
+  • Machtiging_Spoorwegkraan_Infrabel<br/>
+  • Machtiging_Toelating_personenvervoer_Amission_transport_de_passagers<br/>
+  • Machtiging_Tractor_klein_tot_50_pk_met_accessoires<br/>
+  • Machtiging_Tractor_met_arm_en_trekkerTracteur_avec_bras_et_cuve_de_ramassage<br/>
+  • Machtiging_Tractor_met_hakselaar_Tracteur_avec_broyeur<br/>
+  • Machtiging_Tractor_met_trekker_zuigwagen_citerne_Tracteur_avec_remorque<br/>
+  • Machtiging_Transmobile_plaatsen_boordstenen_Transmobile_pose_de_bordure<br/>
+  • Machtiging_Trilplaat_Plaque_vibrante<br/>
+  • Machtiging_Veegwagen_vrachtwagen_Balayeuse_camion<br/>
+  • Machtiging_Wals_Rouleau_compacteur<br/>
+  • Machtiging_Wortelfrees_op_rupsen_Rogneuse_de_souche_sur_chenilles<br/>
+  • Machtiging_Zelfrijdende_hoogwerker_Nacelle_automotrice<br/>
+  • Machtiging_roterende_verreiker_met_hijsfunctie<br/>
+  • Machtiging_veegwagen_klein_Balayeuse_petite<br/>
   • Test<br/>
+</details>
+
+<details><summary>SkillType (3)</summary>
+  • Expertise<br/>
+  • Machine_Authorisations<br/>
+  • Machine_authorisations_Intern<br/>
 </details>
 
 <details><summary>StandardValueSet (61)</summary>
@@ -2399,12 +2478,15 @@ Metadatas: 2160
   • Lead.GoogleSearch<br/>
 </details>
 
-<details><summary>Workflow (1)</summary>
+<details><summary>Workflow (2)</summary>
   • Case<br/>
+  • TimeSheet<br/>
 </details>
 
-<details><summary>WorkflowFieldUpdate (1)</summary>
+<details><summary>WorkflowFieldUpdate (3)</summary>
   • Case.ChangePriorityToHigh<br/>
+  • TimeSheet.Update_to_Approved<br/>
+  • TimeSheet.Update_to_Needs_Review<br/>
 </details>
 
 

@@ -48,6 +48,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>timesheetEntryForm</componentName>
+                <identifier>c_timesheetEntryForm</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>force:detailPanel</componentName>
                 <identifier>force_detailPanel</identifier>
             </componentInstance>

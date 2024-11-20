@@ -25,7 +25,7 @@ public with sharing class ATAKPerformanceService {
         ];
 
         List<TimeSheetEntry> tsEntries = [
-                SELECT Id, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
+                SELECT Id, WorkOrderId, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c
                 FROM TimeSheetEntry WHERE TimesheetId = :tsId
         ];
@@ -41,11 +41,12 @@ public with sharing class ATAKPerformanceService {
         wrapper.personnelcode_writer = ts.ServiceResource.RelatedRecord.ATAK_Code__c; //The one who writes the timesheet, can log for other users
 
         List<ATAKPerformanceWrapper.Data> dataList = new List<ATAKPerformanceWrapper.Data>();
+        List<String> workOrderIds = new List<String>();
 
-        /** TODO: Add logic to determine if the timesheet is for personnel or material **/
         for(TimeSheetEntry timeSheetEntry : tsEntries){
             ATAKPerformanceWrapper.Data data = personnelTimesheetToATAKPerformance(timeSheetEntry);
             dataList.add(data);
+            workOrderIds.add(timeSheetEntry.WorkOrderId);
         }
 
         for(Mileage_Entry__c mileage : mileageEntries){
@@ -53,7 +54,15 @@ public with sharing class ATAKPerformanceService {
             dataList.add(data);
         }
 
-        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - wrapper: ' + wrapper);
+        List<ProductConsumed> materials = [
+                SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
+                FROM ProductConsumed WHERE WorkOrderId IN :workOrderIds
+        ];
+
+        for(ProductConsumed material : materials){
+            ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
+            dataList.add(data);
+        }
 
         wrapper.data = dataList;
         return wrapper;
@@ -62,6 +71,7 @@ public with sharing class ATAKPerformanceService {
 
     /**
     * @description: This method converts a TimeSheetEntry object to an ATAKPerformanceWrapper.Data object for personnel timesheets
+     * TODO: Split out the P from the HR hours and send them as a separate element
     * @remarks:
     *           - Dates need to be sent as strings in the format 20241008 ("YYYYMMDD")
     *           - Times need to be sent as strings in the format 20240908070000 ("YYYYMMDDHHMMSS")
@@ -127,16 +137,26 @@ public with sharing class ATAKPerformanceService {
     * @remarks:
     *           - Dates need to be sent as strings in the format 20241008 ("YYYYMMDD")
     *           - Times need to be sent as strings in the format 20240908070000 ("YYYYMMDDHHMMSS")
-    *           - If quantity_registration_unit is "HR", then quantity is the number of hours worked
+    *           - quantity_registration_unit is "MU", then quantity is the number of hours worked
      *          - performance_resource_code is the atak id of the material used
      *          - performance_resource_type is "M" for material
-    * @param: tsEntryID - TimeSheetEntry record Id
+    * @param: material - ProductConsumed record
     * @return: ATAKPerformanceWrapper.Data object
     **/
-    public static ATAKPerformanceWrapper.Data materialTimesheetToATAKPerformance(String tsEntryId){
+    public static ATAKPerformanceWrapper.Data materialTimesheetToATAKPerformance(ProductConsumed material){
 
-        return new ATAKPerformanceWrapper.Data();
-
+        ATAKPerformanceWrapper.Data data = new ATAKPerformanceWrapper.Data();
+        data.registration_timestamp = material.CreatedDate.format('YYYYMMddHHmmss');
+        data.dossier = 'KGC';
+        data.performance_date = material.CreatedDate.format('YYYYMMdd');
+        data.start_timestamp = material.CreatedDate.format('YYYYMMddHHmmss');
+        data.end_timestamp = material.CreatedDate.format('YYYYMMddHHmmss');
+        data.performance_resource_code = material.Product2.ATAK_Code__c;
+        data.performance_resource_type = 'E'; //M for material
+        data.projectcode = material.WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c;
+        data.quantity_registration_unit = 'MU';
+        data.quantity = material.QuantityConsumed == null ? '0' : String.valueOf(material.QuantityConsumed);
+        return data;
     }
 
     /**
@@ -158,6 +178,7 @@ public with sharing class ATAKPerformanceService {
 
         if(response.getStatusCode() == 200) {
             System.debug('ATAKPerformanceService.sendATAKPerformanceData - Success');
+            OutboundLoggerService.createOutboundLog(jsonATAKPerformanceData, response.getBody());
             return response.getStatusCode();
         } else {
             System.debug('ATAKPerformanceService.sendATAKPerformanceData - Error');

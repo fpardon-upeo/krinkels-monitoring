@@ -23,5 +23,9 @@
             <fullName>Each</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Minutes</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
 </RecordType>

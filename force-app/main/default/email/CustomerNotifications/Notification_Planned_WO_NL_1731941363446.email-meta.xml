@@ -2,7 +2,7 @@
 <EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
     <available>true</available>
     <encodingKey>UTF-8</encodingKey>
-    <name>Notification - Planned WO (NL)</name>
+    <name>Notification - Scheduled WO (NL)</name>
     <pageDevName>Notification_Planned_WO_NL</pageDevName>
     <relatedEntityType>WorkOrder</relatedEntityType>
     <style>none</style>
@@ -16,7 +16,8 @@ Hieronder vindt u de belangrijkste details:
  - Contractomschrijving: {{{WorkOrder.Name_Commercial_Contract__c}}}
  - {{{WorkOrder.Product__c}}}
 
- - Locatie: {{{WorkOrder.Address}}}
+ - Locatie: 
+ - {{{WorkOrder.Address}}}
 
 De interventie vindt plaats op {{{WorkOrder.Scheduled_Date__c}}}.
 

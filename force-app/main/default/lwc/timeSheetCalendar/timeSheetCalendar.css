@@ -1,34 +1,3 @@
-/* .calendar-container {
-    height: auto;  
-    width: 100%;    
-    overflow: auto; 
-}
-
-.calendar-container .fullcalendar {
-    max-width: 800px;  
-    margin: 0 auto;    
-} */
-
-/* Mobile-specific styles */
-
-/* @media (max-width: 768px) {
-    .mobile-calendar {
-        font-size: 14px;
-    }
-    
-    .mobile-calendar .fc-toolbar-title {
-        font-size: 1.2em;
-    }
-    
-    .mobile-calendar .fc-button {
-        padding: 0.2em 0.4em;
-    }
-}
-
-.calendar-container {
-    padding: 0.5rem;
-} */
-
 .slds-modal__footer {
   display: flex;
   justify-content: center;
@@ -75,9 +44,9 @@
 .secondaryHeader {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .newEntryContainer {
@@ -85,6 +54,13 @@
   flex-direction: column;
   justify-content: center;
   padding: 3rem 0;
+}
+
+.containerNew {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+  gap: 1rem;
 }
 
 .newEntryButtonsContainer {
@@ -137,3 +113,549 @@
 }
 
 /* ------------------------------------------------------------ */
+
+/* Create New Entry Modal */
+
+/* Backdrop */
+.mobile-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Bottom Sheet */
+.mobile-bottom-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  border-radius: 12px 12px 0 0;
+  z-index: 9001;
+  animation: slideUp 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.bottom-sheet-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #dddbda;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+
+.drag-indicator {
+  width: 36px;
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 2px;
+  margin: 0 auto 0.5rem;
+}
+
+.sheet-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2b2826;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Content */
+.bottom-sheet-content {
+  padding: 1.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.action-button:active {
+  background-color: #e7e8e9;
+}
+
+.button-icon {
+  margin-right: 16px;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1b1f23;
+  margin-bottom: 4px;
+}
+
+.button-description {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.cancel-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #e7e8e9;
+  color: #dc3545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cancel-button:hover,
+.cancel-button:focus,
+.submit-button:hover,
+.submit-button:focus,
+.info-button:hover,
+.info-button:focus,
+.submit-buttonSecond:hover,
+.submit-buttonSecond:focus {
+  cursor: pointer;
+  opacity: 0.775;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Safe area spacing for modern mobile devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .mobile-bottom-sheet {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+/* Stats Container Styles */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f3f3f3;
+}
+
+/* Individual Stat Card */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-iconAndInfo-container {
+  display: flex;
+}
+
+/* Icon Container */
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 0.75rem;
+}
+
+/* Icon Colors */
+.work-icon {
+  --sds-c-icon-color-foreground-default: #449f03;
+}
+
+.travel-icon {
+  --sds-c-icon-color-foreground-default: #449f03;
+}
+
+.km-icon {
+  --sds-c-icon-color-foreground-default: #449f03;
+}
+
+.total-icon {
+  --sds-c-icon-color-foreground-default: #449f03;
+}
+
+/* Stat Info Container */
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stat Label */
+.stat-label {
+  font-size: 0.875rem;
+  color: #706e6b;
+  margin-bottom: 0.25rem;
+}
+
+/* Stat Value */
+.stat-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2b2826;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.25rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+}
+
+/* ------------------------------------------------------------ */
+
+/* Create New Time Sheet and Break Modal */
+
+/* ------------------------------------------------------------ */
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 1rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.secondaryHeader {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.secondaryHeader lightning-button {
+  flex: 1;
+  max-width: 200px;
+}
+
+/* Make the calendar centered */
+.fullcalendar {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+/* Mobile-friendly button styles */
+@media (max-width: 768px) {
+  .secondaryHeader {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .secondaryHeader lightning-button {
+    max-width: none;
+  }
+}
+
+/* Stats and Mileage Section */
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background: #f3f3f3;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.mileage-buttons {
+  display: none;
+}
+
+.mileage-button {
+  height: 3rem;
+  width: 100%;
+  --sds-c-button-brand-color-background: #449f03;
+  --sds-c-button-brand-color-border: #449f03;
+}
+
+.mileageButton {
+  background-color: #449f03;
+  border: 1px solid #449f03;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .top-section {
+    grid-template-columns: 1fr;
+  }
+
+  .mileage-buttons {
+    flex-direction: row;
+  }
+
+  .mileage-button {
+    flex: 1;
+  }
+}
+
+/* Footer styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.footer lightning-button {
+  width: auto;
+  max-width: 300px;
+  --sds-c-button-brand-color-background: #449f03;
+  --sds-c-button-brand-color-border: #449f03;
+}
+
+/* Ensure the button stretches full width */
+.footer .slds-button {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Update existing styles for mobile */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding-bottom: 4rem;
+  }
+
+  .footer {
+    padding: 0.75rem;
+  }
+}
+
+/* Add styles for the info button */
+.info-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #449f03;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.info-button:active {
+  background: #3d8c03;
+}
+
+/* Mobile form styling */
+@media (max-width: 768px) {
+  .mobile-form-container {
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .mobile-form-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+    padding: 1rem;
+    border-bottom: 1px solid #dddbda;
+  }
+
+  .mobile-form-fields {
+    padding: 1rem;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .form-element {
+    margin-bottom: 1rem;
+  }
+
+  .mobile-form-footer {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem;
+    border-top: 1px solid #dddbda;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  /* Make inputs more touch-friendly */
+  .slds-input,
+  .slds-select,
+  .slds-combobox__input {
+    height: 44px;
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+
+  /* Hide labels but keep them accessible */
+  .slds-form-element__label {
+    font-size: 0.875rem !important;
+    color: #706e6b !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Hide unnecessary elements */
+  .slds-hide {
+    display: none !important;
+  }
+
+  /* Adjust modal content */
+  .slds-modal__content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 120px); /* Account for header/footer */
+  }
+
+  /* Make buttons more touch-friendly */
+  .slds-button {
+    min-height: 44px;
+    padding: 0 1rem;
+  }
+
+  /* testing out styles */
+
+  /* Target the input wrapper */
+  .slds-form-element {
+    margin-bottom: 1rem !important;
+  }
+
+  /* Target the input itself */
+  .slds-input,
+  .slds-select,
+  .slds-combobox__input {
+    height: 44px !important;
+    font-size: 16px !important;
+    padding: 0 0.75rem !important;
+  }
+}
+
+.button-mileage-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* TESTING OUT */
+
+/* Target all form labels */
+:host {
+  --lwc-formLabelFontSize: 16px;
+}
+
+/* Larger bottom sheet for forms */
+.large-sheet {
+  max-height: 750px;
+}
+
+.large-sheet .bottom-sheet-content {
+  padding: 1.5rem;
+}
+
+.large-sheet .form-fields {
+  margin-bottom: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(75vh - 180px); /* Account for header and buttons */
+}
+
+.form-element {
+  margin-bottom: 1rem;
+}
+
+/* Button group for form actions */
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid #dddbda;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #449f03;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit-buttonSecond {
+  width: 65%;
+  font-size: 17px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #449f03;
+  color: white;
+  font-weight: 600;
+}

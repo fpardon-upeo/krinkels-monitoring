@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initialscale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <style type="text/css">@media screen and (max-width: 480px) {slot[style] {margin-right: 0 !important;}.columnDiv {margin-right: 0 !important;}}@media screen and (min-width: 480px) {slot[style] {margin-bottom: 0 !important;}.columnDiv {margin-bottom: 0 !important;}}</style>
+  <style type="text/css">@media screen and (max-width: 480px) {.contentbuilderBaseColumnRow .columnCell {display:inline-block;width:100%}}</style>
+  <style type="text/css">.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 600px;}@media only screen and (max-width: 480px) {.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 320px;}}</style>
+ </head>
+ <body>
+  <table class="contentpageDefaultEmailTemplatePageTemplate" style="background-color: #E9EAEC;" role="presentation" id="contentpage_emailTemplateBodyContent" width="100%" cellpadding="0" cellspacing="0">
+   <tbody>
+    <tr>
+     <td width="100%" align="center">
+      <table class="contentRoot" style="background-color: #FFFFFF;" role="presentation" width="600" cellpadding="0" cellspacing="0">
+       <tbody>
+        <tr>
+         <td style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+          <table class="contentbuilderBaseColumnRow" style="align-items: flex-start; width: 100%; background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="100%" class="columnCell" style="vertical-align: top;display: inline-block; float:left">
+              <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                   <tbody>
+                    <tr>
+                     <td style="font-family: Arial, Helvetica, sans-serif;padding-right: 5px;padding-bottom: 5px;padding-left: 20px;"><p><br /><span style="font-size:14px;"><strong><span style="font-family:Arial,Helvetica,sans-serif;">Cher client,</span></strong></span></p><p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">Bonne nouvelle ! Une intervention est prévue prochainement dans le cadre de votre contrat.<br /><br /> Voici les détails principaux :</span></span></p>
+                      <ul>
+                       <li aria-level="1"><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Description du contrat</strong>: {{{WorkOrder.Name_Commercial_Contract__c}}}</span></span>
+                        <ul>
+                         <li aria-level="1"><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{WorkOrder.Product__c}}}</span></span></li>
+                        </ul></li>
+                       <li aria-level="1"><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Lieu</strong>: </span></span>
+                        <ul>
+                         <li aria-level="1"><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{WorkOrder.Address}}}</span></span></li>
+                        </ul></li>
+                      </ul><p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">L’intervention est prévue pour le&nbsp; {{{WorkOrder.Scheduled_Date__c}}}.</span></span></p><p><br /><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">Pour assurer un déroulement sans encombre, nous vous prions de bien vouloir libérer les zones nécessaires à l’avance. Cela nous permettra de commencer sans délai.</span></span><br /><br /><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">Vous avez des questions ou souhaitez discuter ? N’hésitez pas à nous contacter via les coordonnées dans la signature de cet e-mail. Nous sommes à votre disposition.</span></span></p><br /><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">Merci d’avance pour votre coopération.<br /> Cordialement,</span></span><br /><br /><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>{{{WorkOrder.Name_Contract_Manager__c}}}</strong><br /> {{{WorkOrder.Mobile_Contract_Manager__c}}}</span></span></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="align-items: flex-start; width: 100%; background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="33.33%" class="columnCell" style="vertical-align: top;display: inline-block; float:left">
+              <div class="columnDiv" style="margin-right: 5px;margin-bottom: 5px;">
+               <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; word-break:break-word;">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table style="width:100%; border-collapse: collapse; word-break:break-word;" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                    <tbody>
+                     <tr>
+                      <td align="Center"><img style="width: 100%; display: block; border: none; max-width: 100%; object-fit: fill;" src="{[devName:logo_krinkelsbelgie_balk_kort_1]}" alt="" width="194" /></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+              </div></td>
+             <td width="66.66%" class="columnCell" style="vertical-align: top;display: inline-block; float:left">
+              <div class="columnDiv" style="margin-right: 5px;margin-bottom: 5px;">
+               <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; word-break:break-word;"></table>
+              </div></td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="align-items: flex-start; width: 100%; background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="100%" class="columnCell" style="vertical-align: top;display: inline-block; float:left">
+              <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                   <tbody>
+                    <tr>
+                     <td style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size:10px;"><span style="color:#2ecc71;">Please consider the environment before printing this email</span><br /><span style="color:#7f8c8d;"><b>Krinkels nv</b>&nbsp;-<b>&nbsp;</b>RPR Brussel – BE0821 547 933 -&nbsp;Rue Emile Pathéstraat 410 1190 Bruxelles/Brussel</span></span></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

@@ -1,8 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Scheduled_WO_Send_NL_mail</name>
-        <label>Scheduled WO - Send NL mail</label>
+        <name>REScheduled_WO_Send_ENG_mail</name>
+        <label>REScheduled WO - Send ENG mail</label>
+        <locationX>842</locationX>
+        <locationY>1116</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_SA</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>info@upeoconsulting.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_work_Order.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <stringValue>{!Get_Contacts.Id}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>Get_Email_Template_ENG_REPlanned_WO.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>REScheduled_WO_Send_FR_mail</name>
+        <label>REScheduled WO - Send FR mail</label>
         <locationX>314</locationX>
         <locationY>1116</locationY>
         <actionName>emailSimple</actionName>
@@ -19,9 +76,249 @@
         </inputParameters>
         <inputParameters>
             <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
         </inputParameters>
         <inputParameters>
             <name>senderAddress</name>
+            <value>
+                <stringValue>info@upeoconsulting.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_work_Order.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <stringValue>{!Get_Contacts.Id}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>Get_Email_Template_FR_REPlanned_WO.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>REScheduled_WO_Send_NL_mail</name>
+        <label>REScheduled WO - Send NL mail</label>
+        <locationX>1370</locationX>
+        <locationY>1116</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_SA</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>info@upeoconsulting.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_work_Order.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <stringValue>{!Get_Contacts.Id}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>Get_Email_Template_NL_REPlanned_WO.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Scheduled_WO_Send_ENG_mail</name>
+        <label>Scheduled WO - Send ENG mail</label>
+        <locationX>578</locationX>
+        <locationY>1116</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_SA</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>info@upeoconsulting.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_work_Order.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <stringValue>{!Get_Contacts.Id}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>Get_Email_Template_ENG_Planned_WO.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Scheduled_WO_Send_FR_mail</name>
+        <label>Scheduled WO - Send FR mail</label>
+        <locationX>50</locationX>
+        <locationY>1116</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_SA</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>info@upeoconsulting.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_work_Order.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <stringValue>{!Get_Contacts.Id}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>Get_Email_Template_FR_Planned_WO.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Scheduled_WO_Send_NL_mail</name>
+        <label>Scheduled WO - Send NL mail</label>
+        <locationX>1106</locationX>
+        <locationY>1116</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_SA</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>info@upeoconsulting.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>Get_work_Order.Id</elementReference>
+            </value>
         </inputParameters>
         <inputParameters>
             <name>recipientId</name>
@@ -49,7 +346,7 @@
     <assignments>
         <name>Assign_email_Recipients</name>
         <label>Assign email Recipients</label>
-        <locationX>501</locationX>
+        <locationX>1172</locationX>
         <locationY>576</locationY>
         <assignmentItems>
             <assignToReference>Recipients</assignToReference>
@@ -65,7 +362,7 @@
     <decisions>
         <name>Contact_Language</name>
         <label>Contact Language</label>
-        <locationX>248</locationX>
+        <locationX>710</locationX>
         <locationY>792</locationY>
         <defaultConnector>
             <targetReference>First_send_or_Resend</targetReference>
@@ -86,14 +383,29 @@
             </connector>
             <label>FR</label>
         </rules>
+        <rules>
+            <name>ENG</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contacts.Language__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>English</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>First_send_or_Resend_ENG</targetReference>
+            </connector>
+            <label>ENG</label>
+        </rules>
     </decisions>
     <decisions>
         <name>First_send_or_Resend</name>
         <label>First send or Resend</label>
-        <locationX>446</locationX>
+        <locationX>1238</locationX>
         <locationY>900</locationY>
         <defaultConnector>
-            <targetReference>Update_SA</targetReference>
+            <targetReference>Get_Email_Template_NL_REPlanned_WO</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Resend</defaultConnectorLabel>
         <rules>
@@ -113,16 +425,16 @@
         </rules>
     </decisions>
     <decisions>
-        <name>First_send_or_Resend_FR</name>
-        <label>First send or Resend FR</label>
-        <locationX>50</locationX>
+        <name>First_send_or_Resend_ENG</name>
+        <label>First send or Resend ENG</label>
+        <locationX>710</locationX>
         <locationY>900</locationY>
         <defaultConnector>
-            <targetReference>Update_SA</targetReference>
+            <targetReference>Get_Email_Template_ENG_REPlanned_WO</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Resend</defaultConnectorLabel>
         <rules>
-            <name>Copy_1_of_First_Send</name>
+            <name>First_SendENG</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Scheduling_Notification_Send__c</leftValueReference>
@@ -132,15 +444,40 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_SA</targetReference>
+                <targetReference>Get_Email_Template_ENG_Planned_WO</targetReference>
             </connector>
-            <label>Copy 1 of First Send</label>
+            <label>First Send</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>First_send_or_Resend_FR</name>
+        <label>First send or Resend FR</label>
+        <locationX>182</locationX>
+        <locationY>900</locationY>
+        <defaultConnector>
+            <targetReference>Get_Email_Template_FR_REPlanned_WO</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Resend</defaultConnectorLabel>
+        <rules>
+            <name>First_SendFR</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Scheduling_Notification_Send__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Send</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Email_Template_FR_Planned_WO</targetReference>
+            </connector>
+            <label>First Send</label>
         </rules>
     </decisions>
     <decisions>
         <name>Work_Order_Contact_with_Email_Found</name>
         <label>Work Order &amp; Contact with Email Found?</label>
-        <locationX>501</locationX>
+        <locationX>1172</locationX>
         <locationY>684</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -192,7 +529,7 @@
     <recordLookups>
         <name>Get_Contact_Relation</name>
         <label>Get Contact Relation</label>
-        <locationX>501</locationX>
+        <locationX>1172</locationX>
         <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -200,7 +537,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Intervention_Registration_Contact__c</field>
+            <field>Operational_SPOC__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -220,7 +557,7 @@
     <recordLookups>
         <name>Get_Contacts</name>
         <label>Get Contacts</label>
-        <locationX>501</locationX>
+        <locationX>1172</locationX>
         <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -234,14 +571,105 @@
                 <elementReference>Get_Contact_Relation.ContactId</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Email</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Contact</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Email_Template_ENG_Planned_WO</name>
+        <label>Get Email Template ENG Planned WO</label>
+        <locationX>578</locationX>
+        <locationY>1008</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Scheduled_WO_Send_ENG_mail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Notification_Scheduled_WO_ENG_1732012994513</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailTemplate</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Email_Template_ENG_REPlanned_WO</name>
+        <label>Get Email Template ENG REPlanned WO</label>
+        <locationX>842</locationX>
+        <locationY>1008</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>REScheduled_WO_Send_ENG_mail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Notification_REScheduled_WO_ENG_1732012846597</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailTemplate</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Email_Template_FR_Planned_WO</name>
+        <label>Get Email Template FR Planned WO</label>
+        <locationX>50</locationX>
+        <locationY>1008</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Scheduled_WO_Send_FR_mail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Notification_Scheduled_WO_FR_1732000418709</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailTemplate</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Email_Template_FR_REPlanned_WO</name>
+        <label>Get Email Template FR REPlanned WO</label>
+        <locationX>314</locationX>
+        <locationY>1008</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>REScheduled_WO_Send_FR_mail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Notification_REScheduled_WO_FR_1732001152863</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailTemplate</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Email_Template_NL_Planned_WO</name>
         <label>Get Email Template NL Planned WO</label>
-        <locationX>314</locationX>
+        <locationX>1106</locationX>
         <locationY>1008</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -260,9 +688,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Email_Template_NL_REPlanned_WO</name>
+        <label>Get Email Template NL REPlanned WO</label>
+        <locationX>1370</locationX>
+        <locationY>1008</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>REScheduled_WO_Send_NL_mail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Notification_REScheduled_WO_NL_1732001423106</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>EmailTemplate</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_work_Order</name>
         <label>Get Work Order</label>
-        <locationX>501</locationX>
+        <locationX>1172</locationX>
         <locationY>252</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -270,7 +719,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>WorkTypeId</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.ParentRecordId</elementReference>
@@ -283,7 +732,7 @@
     <recordUpdates>
         <name>Update_SA</name>
         <label>Update SA</label>
-        <locationX>248</locationX>
+        <locationX>710</locationX>
         <locationY>1392</locationY>
         <inputAssignments>
             <field>Scheduling_Notification_Send__c</field>
@@ -294,7 +743,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>375</locationX>
+        <locationX>1046</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_work_Order</targetReference>
@@ -338,12 +787,12 @@
         <object>ServiceAppointment</object>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2024-11-18</startDate>
-            <startTime>01:00:00.000Z</startTime>
+            <startDate>2024-11-20</startDate>
+            <startTime>06:00:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>Recipients</name>
         <dataType>String</dataType>

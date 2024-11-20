@@ -17,13 +17,6 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>TypeText</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Update_Contact_Field_on_WO</targetReference>
             </connector>
@@ -32,11 +25,6 @@
     </decisions>
     <description>This flow populates the contact field on a work order and its related service appointment on creation. It takes an operational contact of the related operational account.</description>
     <environments>Default</environments>
-    <formulas>
-        <name>TypeText</name>
-        <dataType>Boolean</dataType>
-        <expression>INCLUDES({!Get_Operational_Contact.Type__c}, &apos;Operational&apos;)</expression>
-    </formulas>
     <interviewLabel>[Work Order][After-Save][Record-Triggered] Populate Contact on WO and SA {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Work Order][After-Save][Record-Triggered] Populate Contact on WO and SA</label>
     <processMetadataValues>
@@ -75,8 +63,15 @@
                 <elementReference>$Record.AccountId</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Operational_SPOC__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Contact</object>
+        <object>AccountContactRelation</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -111,7 +106,7 @@
         <inputAssignments>
             <field>ContactId</field>
             <value>
-                <elementReference>Get_Operational_Contact.Id</elementReference>
+                <elementReference>Get_Operational_Contact.ContactId</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>

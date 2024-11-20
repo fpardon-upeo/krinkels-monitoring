@@ -1,0 +1,141 @@
+:root {
+    /* SLDS Colors */
+    --fc-border-color: rgb(221, 219, 218);
+    --fc-button-text-color: rgb(255, 255, 255);
+    --fc-button-bg-color: rgb(0, 112, 210);
+    --fc-button-border-color: rgb(0, 112, 210);
+    --fc-button-hover-bg-color: rgb(0, 95, 178);
+    --fc-button-hover-border-color: rgb(0, 95, 178);
+    --fc-button-active-bg-color: rgb(0, 95, 178);
+    --fc-button-active-border-color: rgb(0, 95, 178);
+    --fc-event-bg-color: rgb(0, 112, 210);
+    --fc-event-border-color: rgb(0, 112, 210);
+    --fc-event-text-color: rgb(255, 255, 255);
+    --fc-today-bg-color: rgb(250, 250, 249);
+    --fc-neutral-bg-color: rgb(243, 242, 242);
+    --fc-list-event-hover-bg-color: rgb(243, 242, 242);
+    --fc-page-bg-color: rgb(255, 255, 255);
+}
+
+/* Core Calendar Styles */
+.fc {
+    font-family: "Salesforce Sans", Arial, sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+}
+
+/* Calendar Header */
+.fc .fc-toolbar {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: var(--fc-page-bg-color);
+    border-bottom: 1px solid var(--fc-border-color);
+}
+
+.fc .fc-toolbar-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+}
+
+/* Button Styles */
+.fc .fc-button {
+    padding: 0 1rem;
+    font-size: 0.8125rem;
+    line-height: 2;
+    border-radius: 0.25rem;
+    transition: background-color 0.1s linear;
+}
+
+.fc .fc-button-primary {
+    color: var(--fc-button-text-color);
+    background: var(--fc-button-bg-color);
+    border-color: var(--fc-button-border-color);
+}
+
+.fc .fc-button-primary:hover,
+.fc .fc-button-primary:focus {
+    background-color: var(--fc-button-hover-bg-color);
+    border-color: var(--fc-button-hover-border-color);
+}
+
+.fc .fc-button-primary:disabled {
+    background-color: var(--fc-button-bg-color);
+    border-color: var(--fc-button-border-color);
+    opacity: 0.5;
+}
+
+/* Grid Styles */
+.fc th {
+    padding: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--fc-neutral-bg-color);
+}
+
+.fc td,
+.fc th {
+    border: 1px solid var(--fc-border-color);
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border: 1px solid var(--fc-border-color);
+}
+
+/* Event Styles */
+.fc-h-event {
+    background: var(--fc-event-bg-color);
+    border: 1px solid var(--fc-event-border-color);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+}
+
+.fc-h-event .fc-event-main {
+    color: var(--fc-event-text-color);
+}
+
+.fc-daygrid-event {
+    font-size: 0.75rem;
+    margin: 0.125rem 0;
+}
+
+/* Today Highlighting */
+.fc .fc-day-today {
+    background: var(--fc-today-bg-color) !important;
+}
+
+/* List View */
+.fc-theme-standard .fc-list {
+    border: 1px solid var(--fc-border-color);
+}
+
+.fc-theme-standard .fc-list-day-cushion {
+    background: var(--fc-neutral-bg-color);
+}
+
+.fc .fc-list-event:hover td {
+    background: var(--fc-list-event-hover-bg-color);
+}
+
+/* Time Grid */
+.fc .fc-timegrid-slot {
+    height: 2rem;
+}
+
+.fc .fc-timegrid-slot-label {
+    font-size: 0.75rem;
+}
+
+/* Popover */
+.fc .fc-popover {
+    border-radius: 0.25rem;
+    border: 1px solid var(--fc-border-color);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+}
+
+.fc .fc-popover-header {
+    background: var(--fc-neutral-bg-color);
+    padding: 0.5rem;
+    font-weight: 700;
+}

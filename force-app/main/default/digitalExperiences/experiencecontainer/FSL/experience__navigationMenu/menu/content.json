@@ -25,24 +25,6 @@
       }, {
         "attributes" : {
           "icon" : {
-            "name" : "lwc",
-            "source" : {
-              "type" : "SLDS",
-              "value" : "utility:clock"
-            }
-          },
-          "label" : "Timesheet"
-        },
-        "target" : {
-          "attributes" : {
-            "actionName" : "Global.Timesheet"
-          },
-          "definition" : "experience/quickAction"
-        },
-        "definition" : "experience/navigationMenuItem"
-      }, {
-        "attributes" : {
-          "icon" : {
             "name" : "Schedule",
             "source" : {
               "type" : "SLDS",

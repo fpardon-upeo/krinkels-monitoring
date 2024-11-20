@@ -272,9 +272,9 @@ export default class TimeSheetCalendarCustom extends LightningElement {
             selectMirror: true,
 
             // Increase delays and make more forgiving
-            eventLongPressDelay: 300,      // Reduced from 500
-            longPressDelay: 300,           // Reduced from 500
-            selectLongPressDelay: 300,     // Reduced from 500
+            eventLongPressDelay: 600,      // Reduced from 500
+            longPressDelay: 600,           // Reduced from 500
+            selectLongPressDelay: 600,     // Reduced from 500
 
             // Event settings
             eventDurationEditable: true,

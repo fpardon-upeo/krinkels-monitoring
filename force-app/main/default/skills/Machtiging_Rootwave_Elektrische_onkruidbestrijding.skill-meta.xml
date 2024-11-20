@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skill xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Rootwave (Elektrische onkruidbestrijding) / Rootwave (désherbeur électrique / attestation)</description>
+    <label>Machtiging Rootwave (Elektrische onkruidbestrijding)</label>
+    <skillType>Machine_Authorisations</skillType>
+</Skill>

@@ -1,109 +1,170 @@
-<!--
- - Created by fpardon on 17/11/2024.
- -->
-
-<!-- Start Operator Day -->
 <template>
-    <template if:true={showSpinner}>
-        <c-loading-spinner loading-message={labels.StartDay_Loading_Message}></c-loading-spinner>
-    </template>
-    <template if:true={showInitialScreen}>
-        <lightning-card>
-            <div class="slds-grid slds-grid_vertical slds-p-around_small">
-                <div class="slds-text-heading_medium slds-align_absolute-center slds-p-horizontal_medium slds-p-bottom_medium">
-                    {labels.StartDay_Next_Action_Text}
-                </div>
-
-                <div class="slds-grid slds-grid_align-center slds-wrap slds-gutters_medium">
-                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
-                        <div class="action-box brand"
-                             ontouchstart={handleTouchStart}
-                             ontouchend={handleTouchEnd}
-                             onclick={handleSetAppointmentClicked}>
-                            <div class="slds-text-heading_medium slds-p-bottom_small">
-                                {labels.StartDay_Start_Button_Text}
-                            </div>
-                            <div class="slds-text-body_regular">
-                                {labels.StartDay_Start_Button_Sub_Text}
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Took this out for now
-                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
-                        <div class="action-box neutral"
-                             ontouchstart={handleTouchStart}
-                             ontouchend={handleTouchEnd}
-                             onclick={handleSetKMClicked}>
-                            <div class="slds-text-heading_medium slds-p-bottom_small">
-                                {labels.StartDay_KM_Button_Text}
-                            </div>
-                            <div class="slds-text-body_regular">
-                                {labels.StartDay_KM_Button_Sub_Text}
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                </div>
-            </div>
-        </lightning-card>
-    </template>
-    <template if:true={showMilageEntryScreen}>
-        <lightning-card title={labels.StartDay_KM_Card_Title} icon-name="utility:transport_heavy_truck">
-            <lightning-record-edit-form
-                    onsuccess={handleMileageSuccess}
-                    object-api-name="Mileage_Entry__c">
-                <div class="slds-grid slds-grid_vertical slds-p-around_small">
-                    <div class="slds-col">
-                        <lightning-input-field field-name="Allowance_Type__c"></lightning-input-field>
-                        <lightning-input-field field-name="Service_Resource__c" value={serviceResourceId}></lightning-input-field>
-                        <lightning-input-field field-name="Starting_Location_Type__c"></lightning-input-field>
-                        <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
-                        <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
-                        <lightning-input-field field-name="Ending_Mileage__c"></lightning-input-field>
-                        <lightning-input-field field-name="Work_Order__c" value={nextWorkOrderId}></lightning-input-field>
-                        <lightning-input-field class="slds-hide" field-name="Time_Sheet__c" value={timeSheetId}></lightning-input-field>
-                    </div>
-                    <div class="slds-col slds-align_absolute-center">
-                        <lightning-button class="slds-m-right_medium" label={labels.StartDay_KM_Back_Button_Text} onclick={handleBack}></lightning-button>
-                        <lightning-button label={labels.StartDay_KM_Save_Button_Text} type="submit"></lightning-button>
-                    </div>
-                </div>
-            </lightning-record-edit-form>
-        </lightning-card>
-    </template>
-    <template if:true={showAppointmentScreen}>
-        <div class="table-container">
-            <div class="datatable-wrapper">
-                <lightning-datatable
-                        class="slds-table_striped slds-cell-wrap"
-                        columns={columns}
-                        data={serviceAppointments}
-                        key-field="Id"
-                        max-row-selection="1"
-                        wrap-text-max-lines="3"
-                        onrowselection={handleRowSelection}
-                ></lightning-datatable>
-            </div>
-            <div class="button-wrapper">
+    <div class="page-wrapper">
+        <c-start-operator-day-metrics></c-start-operator-day-metrics>
+        <div if:true={showTimesheetScreen} class="top-nav">
+            <div class="nav-content">
                 <lightning-button
-                        label={labels.StartDay_KM_Back_Button_Text}
-                        class="slds-m-right_medium"
-                        onclick={handleBack}
-                        variant="neutral"
-                ></lightning-button>
-                <lightning-button
-                        label={labels.AppointmentPicker_Next_Button}
-                        onclick={handleSelect}
-                        variant="brand"
-                        disabled={disableNextButton}
-                ></lightning-button>
+                  label="Back to Main Menu"
+                  icon-name="utility:home"
+                  variant="brand"
+                  onclick={handleBack}>
+                </lightning-button>
             </div>
         </div>
-    </template>
+        <div class="content-area">
+            <template if:true={showSpinner}>
+                <c-loading-spinner loading-message={labels.StartDay_Loading_Message}></c-loading-spinner>
+            </template>
+
+            <template if:true={showInitialScreen}>
+                <lightning-card>
+                    <div class="slds-grid slds-grid_vertical slds-p-around_small">
+                        <div class="slds-text-heading_medium slds-align_absolute-center slds-p-horizontal_medium slds-p-bottom_medium">
+                            {labels.StartDay_Next_Action_Text}
+                        </div>
+
+                        <div class="slds-grid slds-grid_align-center slds-wrap slds-gutters_medium">
+                            <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                                <div class="action-box brand"
+                                     ontouchstart={handleTouchStart}
+                                     ontouchend={handleTouchEnd}
+                                     onclick={handleSetAppointmentClicked}>
+                                    <lightning-icon
+                                      icon-name="utility:setup_assistant_guide"
+                                      size="medium"
+                                      variant="inverse"
+                                      class="slds-m-bottom_small">
+                                    </lightning-icon>
+                                    <div class="slds-text-heading_medium slds-p-bottom_small">
+                                        {labels.StartDay_Start_Button_Text}
+                                    </div>
+                                    <div class="slds-text-body_regular">
+                                        {labels.StartDay_Start_Button_Sub_Text}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                                <div class="action-box neutral"
+                                     ontouchstart={handleTouchStart}
+                                     ontouchend={handleTouchEnd}
+                                     onclick={handleSetAppointmentClickedNoKM}>
+                                    <lightning-icon
+                                      icon-name="utility:event"
+                                      size="medium"
+                                      class="icon-green slds-m-bottom_small">
+                                    </lightning-icon>
+                                    <div class="slds-text-heading_medium slds-p-bottom_small">
+                                        {labels.StartDay_Next_Appointment_Button_Text}
+                                    </div>
+                                    <div class="slds-text-body_regular">
+                                        {labels.StartDay_Next_Appointment_Button_Sub_Text}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                                <div class="action-box brand"
+                                     ontouchstart={handleTouchStart}
+                                     ontouchend={handleTouchEnd}
+                                     onclick={handleTimeSheetClicked}>
+                                    <lightning-icon
+                                      icon-name="utility:clock"
+                                      size="medium"
+                                      variant="inverse"
+                                      class="slds-m-bottom_small">
+                                    </lightning-icon>
+                                    <div class="slds-text-heading_medium slds-p-bottom_small">
+                                        {labels.StartDay_Timesheet_Button_Text}
+                                    </div>
+                                    <div class="slds-text-body_regular">
+                                        {labels.StartDay_Timesheet_Button_Sub_Text}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <template if:true={showMilageEntryScreen}>
+                <lightning-card title={labels.StartDay_KM_Card_Title} icon-name="utility:transport_heavy_truck">
+                    <lightning-record-edit-form
+                      onsuccess={handleMileageSuccess}
+                      object-api-name="Mileage_Entry__c">
+                        <div class="slds-grid slds-grid_vertical slds-p-around_small">
+                            <div class="slds-col">
+                                <lightning-input-field field-name="Allowance_Type__c"></lightning-input-field>
+                                <lightning-input-field class="slds-hide" field-name="Service_Resource__c" value={serviceResourceId}></lightning-input-field>
+                                <lightning-input-field field-name="Starting_Location_Type__c"></lightning-input-field>
+                                <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
+                                <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
+                                <lightning-input-field field-name="Ending_Mileage__c"></lightning-input-field>
+                                <lightning-input-field class="slds-hide" field-name="Work_Order__c" value={nextWorkOrderId}></lightning-input-field>
+                                <lightning-input-field class="slds-hide" field-name="Time_Sheet__c" value={timeSheetId}></lightning-input-field>
+                                <lightning-record-picker
+                                  label="Appointment"
+                                  placeholder="..."
+                                  object-api-name="ServiceAppointment"
+                                  filter={filterInfo}
+                                  display-info={displayInfo}
+                                  matching-info={matchingInfo}>
+                                </lightning-record-picker>
+                            </div>
+                        </div>
+                    </lightning-record-edit-form>
+                </lightning-card>
+            </template>
+
+            <template if:true={showAppointmentScreen}>
+                <div class="table-container">
+                    <div class="datatable-wrapper">
+                        <lightning-datatable
+                          class="slds-table_striped slds-cell-wrap"
+                          columns={columns}
+                          data={serviceAppointments}
+                          key-field="Id"
+                          max-row-selection="1"
+                          wrap-text-max-lines="3"
+                          onrowselection={handleRowSelection}>
+                        </lightning-datatable>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={showTimesheetScreen}>
+                <c-time-sheet-calendar record-id={timeSheetId}></c-time-sheet-calendar>
+            </template>
+        </div>
+
+        <!-- Footer -->
+        <div if:true={showBottomFooter} class="footer">
+            <div class="footer-content">
+                <div class="footer-buttons">
+                    <lightning-button
+                      label="Back to Main Menu"
+                      icon-name="utility:home"
+                      variant="brand"
+                      class="slds-m-right_small"
+                      onclick={handleBack}>
+                    </lightning-button>
+                    <lightning-button-group>
+                        <lightning-button
+                          if:true={showAppointmentScreen}
+                          label="Continue"
+                          icon-name="utility:forward"
+                          variant="neutral"
+                          disabled={disableNextButton}
+                          onclick={handleSelect}>
+                        </lightning-button>
+                    </lightning-button-group>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <c-toast-message
-            if:true={shouldShowToast}
-            message={toastMessage}
-            type={toastType}
-            onclose={hideToast}
-    ></c-toast-message>
+      if:true={shouldShowToast}
+      message={toastMessage}
+      type={toastType}
+      onclose={hideToast}>
+    </c-toast-message>
 </template>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Notification - Scheduled WO (FR)</name>
+    <pageDevName>Notification_Scheduled_WO_FR</pageDevName>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>Intervention prévue - [Votre Référence/Notre Référence]</subject>
+    <textOnly>Cher client,
+
+Bonne nouvelle ! Une intervention est prévue prochainement dans le cadre de votre contrat.
+
+Voici les détails principaux :
+
+ - Description du contrat: {{{WorkOrder.Name_Commercial_Contract__c}}}
+ - {{{WorkOrder.Product__c}}}
+
+ - Lieu: 
+ - {{{WorkOrder.Address}}}
+
+L’intervention est prévue pour le {{{WorkOrder.Scheduled_Date__c}}}.
+
+Pour assurer un déroulement sans encombre, nous vous prions de bien vouloir libérer les zones nécessaires à l’avance. Cela nous permettra de commencer sans délai.
+
+Vous avez des questions ou souhaitez discuter ? N’hésitez pas à nous contacter via les coordonnées dans la signature de cet e-mail. Nous sommes à votre disposition.
+
+Merci d’avance pour votre coopération.
+
+Cordialement,
+
+{{{WorkOrder.Name_Contract_Manager__c}}}
+
+{{{WorkOrder.Mobile_Contract_Manager__c}}}
+
+Please consider the environment before printing this email
+
+Krinkels nv-RPR Brussel – BE0821 547 933 - Rue Emile Pathéstraat 410 1190 Bruxelles/Brussel</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

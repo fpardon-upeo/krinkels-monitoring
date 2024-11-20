@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Post_Changes_to_chatter</name>
         <label>Post Changes to chatter</label>
-        <locationX>314</locationX>
-        <locationY>1190</locationY>
+        <locationX>176</locationX>
+        <locationY>1082</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -27,7 +27,7 @@
     <assignments>
         <name>Add_to_Details_list</name>
         <label>Add to Details list</label>
-        <locationX>270</locationX>
+        <locationX>264</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>OperatingHoursDetails</assignToReference>
@@ -40,52 +40,6 @@
             <targetReference>Loop_Through_Operating_Hours</targetReference>
         </connector>
     </assignments>
-    <decisions>
-        <name>Information_on_Location_Passport_Present</name>
-        <label>Information on Location Passport Present ?</label>
-        <locationX>182</locationX>
-        <locationY>758</locationY>
-        <defaultConnector>
-            <targetReference>Display_Location_Passport_Information</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Yes</defaultConnectorLabel>
-        <rules>
-            <name>No</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>AccountRecord.Access_Information__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>AccountRecord.Attention_points_for_execution__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>AccountRecord.OperatingHoursId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Closing_Days</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>No_Location_Passport_Information</targetReference>
-            </connector>
-            <label>No</label>
-        </rules>
-    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>formTimeSlotDetail</name>
@@ -97,7 +51,7 @@
     <loops>
         <name>Loop_Through_Operating_Hours</name>
         <label>Loop Through Operating Hours</label>
-        <locationX>182</locationX>
+        <locationX>176</locationX>
         <locationY>458</locationY>
         <assignNextValueToReference>TimeSlots</assignNextValueToReference>
         <collectionReference>OperatingHours_TimeSlots</collectionReference>
@@ -106,7 +60,7 @@
             <targetReference>Add_to_Details_list</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Information_on_Location_Passport_Present</targetReference>
+            <targetReference>Display_Location_Passport_Information</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -131,7 +85,7 @@
     <recordLookups>
         <name>Get_Account_Information</name>
         <label>Get Account Information</label>
-        <locationX>182</locationX>
+        <locationX>176</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -157,8 +111,8 @@
     <recordLookups>
         <name>Get_Contract_Manager</name>
         <label>Get Contract Manager</label>
-        <locationX>314</locationX>
-        <locationY>1082</locationY>
+        <locationX>176</locationX>
+        <locationY>974</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Post_Changes_to_chatter</targetReference>
@@ -178,7 +132,7 @@
     <recordLookups>
         <name>Get_Operating_Hours</name>
         <label>Get Operating Hours</label>
-        <locationX>182</locationX>
+        <locationX>176</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -203,8 +157,8 @@
     <recordLookups>
         <name>Get_Service_Territory</name>
         <label>Get Service Territory</label>
-        <locationX>314</locationX>
-        <locationY>974</locationY>
+        <locationX>176</locationX>
+        <locationY>866</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Contract_Manager</targetReference>
@@ -225,7 +179,7 @@
     <recordLookups>
         <name>Get_Work_Order_Info</name>
         <label>Get Work Order Info</label>
-        <locationX>182</locationX>
+        <locationX>176</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -248,8 +202,8 @@
     <screens>
         <name>Display_Location_Passport_Information</name>
         <label>Display Location Passport Information</label>
-        <locationX>314</locationX>
-        <locationY>866</locationY>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -354,24 +308,8 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <screens>
-        <name>No_Location_Passport_Information</name>
-        <label>No Location Passport Information</label>
-        <locationX>50</locationX>
-        <locationY>866</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Message_No_Location_Passport_Information</name>
-            <fieldText>&lt;p&gt;No location passport information exists for this account.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Work_Order_Info</targetReference>

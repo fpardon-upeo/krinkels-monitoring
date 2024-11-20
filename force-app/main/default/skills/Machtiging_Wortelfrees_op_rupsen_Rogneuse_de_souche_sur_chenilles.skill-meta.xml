@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skill xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Wortelfrees op rupsen / Rogneuse de souche sur chenilles</description>
+    <label>Machtiging Wortelfrees op rupsen / Rogneuse de souche sur chenilles</label>
+    <skillType>Machine_Authorisations</skillType>
+</Skill>

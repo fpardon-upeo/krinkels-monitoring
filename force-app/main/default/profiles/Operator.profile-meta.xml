@@ -259,6 +259,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>WeatherService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>WorkOrderLocationBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -640,7 +644,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>AccountContactRelation.Intervention_Registration_Contact__c</field>
+        <field>AccountContactRelation.OLDIntervention_Registration_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1640,6 +1644,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ProductConsumed.Van_Crew__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ProductItem.Van_Crew__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1859,8 +1868,18 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.ATAK_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Asset__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Day_Pause_Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2014,6 +2033,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Night_Pause_Duration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ServiceAppointment.Notification_Day__c</field>
         <readable>true</readable>
@@ -2021,6 +2045,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Overdue_Reminder_Send__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Previous_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2244,6 +2273,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceResourceSkill.Skill_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ServiceTerritory.FSL__Hide_Emergency_Map__c</field>
         <readable>false</readable>
@@ -2369,6 +2403,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>TimeSheet.Send_to_ATAK__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheet.Total_Hours__c</field>
         <readable>true</readable>
@@ -2386,6 +2425,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheet.Total_Travel_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Break_Duration_in_Minutes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2416,6 +2460,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheetEntry.Total_Hours_Minus_Breaks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Total_Hours_Minus_Breaks_and_Pauses__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Total_Hours_Minus_Pauses__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2660,7 +2714,11 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Service_Appointment_After_Save_Record_Triggered_Add_Start_Date_and_Retrigger_Not</flow>
+        <flow>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -2696,6 +2754,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Time_Sheet_After_Save_Send_to_ATAK</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Time_Sheet_Entry_Before_Save</flow>
     </flowAccesses>
     <flowAccesses>
@@ -2705,6 +2767,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>User_After_Update_RecordTrigered_Create_Service_Resource</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -3220,6 +3286,9 @@
         <layout>ServiceTerritory-Service Territory Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ServiceTerritoryLocation-Service Territory Location Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ServiceTerritoryMember-Service Territory Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -3274,7 +3343,7 @@
         <layout>TimeSheet-FSL Time Sheet Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>TimeSheetEntry-Time Sheet Entry Layout</layout>
+        <layout>TimeSheetEntry-FLS Time Sheet Entry Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>TimeSlot-Time Slot Layout</layout>

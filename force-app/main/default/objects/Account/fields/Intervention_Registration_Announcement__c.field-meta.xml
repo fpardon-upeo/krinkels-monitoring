@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Intervention_Registration_Announcement__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>How many days before a scheduled WO a reminder needs to send to the customer?</inlineHelpText>
     <label>Intervention Registration Announcement</label>
     <precision>2</precision>
     <required>false</required>

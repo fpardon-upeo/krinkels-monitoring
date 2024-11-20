@@ -30,15 +30,15 @@
                 <behavior>Readonly</behavior>
                 <field>Recurrence__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>ATAK_Code__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Status</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>StatusCategory</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -249,7 +249,12 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>New_Status__c</fields>
+        <fields>Previous_Status__c</fields>
+        <fields>Status_Change_Date__c</fields>
         <relatedList>Service_Appointment_Status__c.Service_Appointment__c</relatedList>
+        <sortField>Status_Change_Date__c</sortField>
+        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

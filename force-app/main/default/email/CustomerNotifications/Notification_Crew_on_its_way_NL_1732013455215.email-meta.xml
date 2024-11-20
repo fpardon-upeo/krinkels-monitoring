@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Notification - Crew on its way (NL)</name>
+    <pageDevName>Notification_Crew_on_its_way_NL</pageDevName>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>Onze ploeg is onderweg!</subject>
+    <textOnly>Beste klant,
+
+Goed nieuws! Onze medewerkers zijn onderweg naar onderstaand adres om de geplande interventie uit te voeren. Vandaag pakken we de volgende werkzaamheden voor u op:
+
+ - {{{WorkOrder.Product__c}}}
+
+ - Locatie: 
+ - {{{WorkOrder.Address}}}
+
+Heeft u vragen of is er iets dat we vooraf nog moeten weten? Laat het ons gerust weten via de contactgegevens in de e-mailhandtekening hieronder.
+
+Met vriendelijke groet,
+
+{{{WorkOrder.Name_Contract_Manager__c}}}
+
+{{{WorkOrder.Mobile_Contract_Manager__c}}}
+
+Please consider the environment before printing this email
+
+Krinkels nv-RPR Brussel – BE0821 547 933 - Rue Emile Pathéstraat 410 1190 Bruxelles/Brussel</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

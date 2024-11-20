@@ -20,6 +20,13 @@
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.IsMobile</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
     </assignments>
     <description>This flow sets the naming convention for a Van and flagged the record as an inventory location. We can link material items only to inventory locations.</description>
     <environments>Default</environments>

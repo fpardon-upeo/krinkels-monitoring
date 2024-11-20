@@ -4,8 +4,8 @@
     <assignments>
         <name>Prepare_Time_Sheet_Entry_Completed</name>
         <label>Prepare Time Sheet Entry Completed</label>
-        <locationX>3614</locationX>
-        <locationY>1656</locationY>
+        <locationX>3350</locationX>
+        <locationY>1140</locationY>
         <assignmentItems>
             <assignToReference>CompletedTimesheetCurrent.StartTime</assignToReference>
             <operator>Assign</operator>
@@ -52,7 +52,7 @@
             <assignToReference>CompletedTimesheetCurrent.Pause_Duration__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>CalculatedPauseTime</elementReference>
+                <elementReference>$Record.Day_Pause_Duration__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -69,8 +69,8 @@
     <assignments>
         <name>Prepare_Time_Sheet_Entry_Completed_Full_Night</name>
         <label>Prepare Time Sheet Entry Completed Full Night</label>
-        <locationX>3086</locationX>
-        <locationY>1656</locationY>
+        <locationX>2822</locationX>
+        <locationY>1140</locationY>
         <assignmentItems>
             <assignToReference>CompletedTimesheetCurrent.StartTime</assignToReference>
             <operator>Assign</operator>
@@ -117,7 +117,7 @@
             <assignToReference>CompletedTimesheetCurrent.Pause_Duration__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>CalculatedPauseTime</elementReference>
+                <elementReference>$Record.Night_Pause_Duration__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -134,8 +134,8 @@
     <assignments>
         <name>Prepare_Time_Sheet_Entry_Completed_Partial_Day</name>
         <label>Prepare Time Sheet Entry Completed Partial Day</label>
-        <locationX>3350</locationX>
-        <locationY>1656</locationY>
+        <locationX>3086</locationX>
+        <locationY>1140</locationY>
         <assignmentItems>
             <assignToReference>CompletedTimesheetCurrent.StartTime</assignToReference>
             <operator>Assign</operator>
@@ -182,7 +182,7 @@
             <assignToReference>CompletedTimesheetCurrent.Pause_Duration__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>NonNightPauseTimeMinutes</elementReference>
+                <elementReference>$Record.Day_Pause_Duration__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -199,8 +199,8 @@
     <assignments>
         <name>Prepare_Time_Sheet_Entry_Completed_Partial_Night</name>
         <label>Prepare Time Sheet Entry Completed Partial Night</label>
-        <locationX>3350</locationX>
-        <locationY>1764</locationY>
+        <locationX>3086</locationX>
+        <locationY>1248</locationY>
         <assignmentItems>
             <assignToReference>CompletedTimeSheetCurrentNight.StartTime</assignToReference>
             <operator>Assign</operator>
@@ -247,7 +247,7 @@
             <assignToReference>CompletedTimeSheetCurrentNight.Pause_Duration__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>NightPauseTimeMinutes</elementReference>
+                <elementReference>$Record.Night_Pause_Duration__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -264,7 +264,7 @@
     <assignments>
         <name>Prepare_Time_Sheet_Entry_Travel</name>
         <label>Prepare Time Sheet Entry Travel</label>
-        <locationX>1194</locationX>
+        <locationX>930</locationX>
         <locationY>1032</locationY>
         <assignmentItems>
             <assignToReference>TravelTimeSheetCurrent.StartTime</assignToReference>
@@ -322,8 +322,8 @@
     <decisions>
         <name>Assigned_Resource_Type_Completed</name>
         <label>Assigned Resource Type Completed</label>
-        <locationX>3856</locationX>
-        <locationY>1332</locationY>
+        <locationX>3592</locationX>
+        <locationY>816</locationY>
         <defaultConnector>
             <targetReference>Loop_Assigned_Resources_Completed</targetReference>
         </defaultConnector>
@@ -362,7 +362,7 @@
     <decisions>
         <name>Assigned_Resource_Type_Travel</name>
         <label>Assigned Resource Type Travel</label>
-        <locationX>1414</locationX>
+        <locationX>1150</locationX>
         <locationY>816</locationY>
         <defaultConnector>
             <targetReference>Loop_Assigned_Resources</targetReference>
@@ -402,8 +402,8 @@
     <decisions>
         <name>Is_Night_Hour</name>
         <label>Is Night Hour</label>
-        <locationX>3482</locationX>
-        <locationY>1548</locationY>
+        <locationX>3218</locationX>
+        <locationY>1032</locationY>
         <defaultConnector>
             <targetReference>Loop_Assigned_Resources_Completed</targetReference>
         </defaultConnector>
@@ -499,21 +499,9 @@
     <decisions>
         <name>Status_is_changed</name>
         <label>Status is changed</label>
-        <locationX>2074</locationX>
+        <locationX>2052</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Travel</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Travelling</stringValue>
-                </rightValue>
-            </conditions>
-            <label>Travel</label>
-        </rules>
         <rules>
             <name>In_Progress</name>
             <conditionLogic>and</conditionLogic>
@@ -525,20 +513,20 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Travel_is_Done__c</leftValueReference>
+                <leftValueReference>$Record.Previous_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>Travelling</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Get_Travel_Start_Time</targetReference>
             </connector>
-            <label>In Progress</label>
+            <label>Travel to In Progress</label>
         </rules>
         <rules>
             <name>Completed</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -546,26 +534,6 @@
                     <stringValue>Completed</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Get_Completed_Start_Time</targetReference>
-            </connector>
-            <label>Completed</label>
-        </rules>
-        <rules>
-            <name>Cancelled</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Canceled</stringValue>
-                </rightValue>
-            </conditions>
-            <label>Cancelled</label>
-        </rules>
-        <rules>
-            <name>Cannot_Complete</name>
-            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -573,32 +541,32 @@
                     <stringValue>Cannot Complete</stringValue>
                 </rightValue>
             </conditions>
-            <label>Cannot Complete</label>
+            <connector>
+                <targetReference>Get_Completed_Start_Time</targetReference>
+            </connector>
+            <label>Completed or Cannot Complete</label>
         </rules>
-    </decisions>
-    <decisions>
-        <name>Was_there_a_Pause</name>
-        <label>Was there a Pause?</label>
-        <locationX>2998</locationX>
-        <locationY>816</locationY>
-        <defaultConnector>
-            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>YesPause</name>
+            <name>Paused</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Pause_Check</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Previous_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Paused</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Pause_Start_Time</targetReference>
+                <targetReference>Get_Latest_Pause_Start_Time</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>Paused to In Progress</label>
         </rules>
     </decisions>
     <description>This flows creates the automatic time sheet entries based on the evolving status of the service appointment</description>
@@ -606,7 +574,7 @@
     <formulas>
         <name>CalculatedPauseTime</name>
         <dataType>Number</dataType>
-        <expression>({!Get_Pause_End_Time.Status_Change_Date__c}-{!Get_Pause_Start_Time.Status_Change_Date__c})*1440</expression>
+        <expression>({!Get_Latest_Pause_End_Time.Status_Change_Date__c}-{!Get_Latest_Pause_Start_Time.Status_Change_Date__c})*1440</expression>
         <scale>0</scale>
     </formulas>
     <formulas>
@@ -647,44 +615,44 @@
         <dataType>Number</dataType>
         <expression>IF(
     AND(
-        {!Get_Pause_End_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
-            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+        {!Get_Latest_Pause_End_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
         ),
-        {!Get_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
-            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+        {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
         )
     ),
     (
         (
             IF(
-                {!Get_Pause_End_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                {!Get_Latest_Pause_End_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
                 ),
-                {!Get_Pause_End_Time.Status_Change_Date__c},
+                {!Get_Latest_Pause_End_Time.Status_Change_Date__c},
                 DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
                 )
             )
         ) - (
             IF(
-                {!Get_Pause_Start_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
                 ),
-                {!Get_Pause_Start_Time.Status_Change_Date__c},
+                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c},
                 DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
                 )
             )
         )
@@ -698,44 +666,44 @@
         <dataType>Number</dataType>
         <expression>IF(
     AND(
-        {!Get_Pause_End_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
-            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+        {!Get_Latest_Pause_End_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
         ),
-        {!Get_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
-            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+        {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
         )
     ),
     (
         (
             IF(
-                {!Get_Pause_End_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                {!Get_Latest_Pause_End_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
                 ),
-                {!Get_Pause_End_Time.Status_Change_Date__c},
+                {!Get_Latest_Pause_End_Time.Status_Change_Date__c},
                 DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
                 )
             )
         ) - (
             IF(
-                {!Get_Pause_Start_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
                 ),
-                {!Get_Pause_Start_Time.Status_Change_Date__c},
+                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c},
                 DATETIMEVALUE(
-                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
+                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
+                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 05:00:00&quot;
                 )
             )
         )
@@ -808,12 +776,24 @@
     )
 )</expression>
     </formulas>
+    <formulas>
+        <name>TopupNightPauseTimeMinutes</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Night_Pause_Duration__c}+{!NightPauseTimeMinutes}</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>TopupNonNightPauseTimeMinutes</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Day_Pause_Duration__c}+{!NonNightPauseTimeMinutes}</expression>
+        <scale>0</scale>
+    </formulas>
     <interviewLabel>Service Appointment - Time Sheet Automations {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Service Appointment] - [After-Save] - [Record-Triggered] - Time Sheet Automations</label>
     <loops>
         <name>Loop_Assigned_Resources</name>
         <label>Loop Assigned Resources</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>708</locationY>
         <collectionReference>Get_Assigned_Resources_Travel</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -827,8 +807,8 @@
     <loops>
         <name>Loop_Assigned_Resources_Completed</name>
         <label>Loop Assigned Resources Completed</label>
-        <locationX>2998</locationX>
-        <locationY>1224</locationY>
+        <locationX>2734</locationX>
+        <locationY>708</locationY>
         <collectionReference>Get_Assigned_Resources_Completed</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -862,6 +842,9 @@
         <label>Create Status Change Log</label>
         <locationX>50</locationX>
         <locationY>276</locationY>
+        <connector>
+            <targetReference>Update_Previous_Status</targetReference>
+        </connector>
         <inputAssignments>
             <field>New_Status__c</field>
             <value>
@@ -892,28 +875,25 @@
     <recordCreates>
         <name>Create_Timesheet_Entries_Completed</name>
         <label>Create Timesheet Entries Completed</label>
-        <locationX>2998</locationX>
-        <locationY>2124</locationY>
+        <locationX>2734</locationX>
+        <locationY>1608</locationY>
         <inputReference>CompletedTimeSheetEntryCollection</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_Timesheet_Entries_Travel</name>
         <label>Create Timesheet Entries Travel</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>1308</locationY>
-        <connector>
-            <targetReference>Flag_Travel_is_Done</targetReference>
-        </connector>
         <inputReference>TravelTimeSheetEntryCollection</inputReference>
     </recordCreates>
     <recordLookups>
         <name>Get_Assigned_Resources_Completed</name>
         <label>Get Assigned Resources Completed</label>
-        <locationX>2998</locationX>
+        <locationX>2734</locationX>
         <locationY>600</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Pause_Check</targetReference>
+            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -930,7 +910,7 @@
     <recordLookups>
         <name>Get_Assigned_Resources_Travel</name>
         <label>Get Assigned Resources Travel</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>600</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -951,7 +931,7 @@
     <recordLookups>
         <name>Get_Completed_End_Time</name>
         <label>Get Completed End Time</label>
-        <locationX>2998</locationX>
+        <locationX>2734</locationX>
         <locationY>492</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -988,7 +968,7 @@
     <recordLookups>
         <name>Get_Completed_Start_Time</name>
         <label>Get Completed Start Time</label>
-        <locationX>2998</locationX>
+        <locationX>2734</locationX>
         <locationY>384</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1025,8 +1005,8 @@
     <recordLookups>
         <name>Get_Current_User_Time_Sheet_Completed</name>
         <label>Get Current User Time Sheet Completed</label>
-        <locationX>3482</locationX>
-        <locationY>1440</locationY>
+        <locationX>3218</locationX>
+        <locationY>924</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Is_Night_Hour</targetReference>
@@ -1053,7 +1033,7 @@
     <recordLookups>
         <name>Get_Current_User_Time_Sheet_Travel</name>
         <label>Get Current User Time Sheet Travel</label>
-        <locationX>1194</locationX>
+        <locationX>930</locationX>
         <locationY>924</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1079,48 +1059,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Pause_Check</name>
-        <label>Get Pause Check</label>
+        <name>Get_Latest_Pause_End_Time</name>
+        <label>Get Latest Pause End Time</label>
         <locationX>2998</locationX>
-        <locationY>708</locationY>
+        <locationY>492</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Was_there_a_Pause</targetReference>
-        </connector>
-        <filterLogic>1 AND (2 OR 3)</filterLogic>
-        <filters>
-            <field>Service_Appointment__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Previous_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Paused</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>New_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Paused</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Service_Appointment_Status__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Pause_End_Time</name>
-        <label>Get Pause End Time</label>
-        <locationX>2866</locationX>
-        <locationY>1032</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Loop_Assigned_Resources_Completed</targetReference>
+            <targetReference>Update_Pauses</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1140,17 +1085,17 @@
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Service_Appointment_Status__c</object>
         <sortField>Status_Change_Date__c</sortField>
-        <sortOrder>Asc</sortOrder>
+        <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Pause_Start_Time</name>
-        <label>Get Pause Start Time</label>
-        <locationX>2866</locationX>
-        <locationY>924</locationY>
+        <name>Get_Latest_Pause_Start_Time</name>
+        <label>Get Latest Pause Start Time</label>
+        <locationX>2998</locationX>
+        <locationY>384</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Pause_End_Time</targetReference>
+            <targetReference>Get_Latest_Pause_End_Time</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1170,13 +1115,13 @@
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Service_Appointment_Status__c</object>
         <sortField>Status_Change_Date__c</sortField>
-        <sortOrder>Asc</sortOrder>
+        <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Travel_End_Time</name>
         <label>Get Travel End Time</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>492</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1213,7 +1158,7 @@
     <recordLookups>
         <name>Get_Travel_Start_Time</name>
         <label>Get Travel Start Time</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>384</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1241,20 +1186,39 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Flag_Travel_is_Done</name>
-        <label>Flag Travel is Done</label>
-        <locationX>1106</locationX>
-        <locationY>1416</locationY>
+        <name>Update_Pauses</name>
+        <label>Update Pauses</label>
+        <locationX>2998</locationX>
+        <locationY>600</locationY>
         <inputAssignments>
-            <field>Travel_is_Done__c</field>
+            <field>Day_Pause_Duration__c</field>
             <value>
-                <booleanValue>true</booleanValue>
+                <elementReference>TopupNonNightPauseTimeMinutes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Night_Pause_Duration__c</field>
+            <value>
+                <elementReference>TopupNightPauseTimeMinutes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Previous_Status</name>
+        <label>Update Previous Status</label>
+        <locationX>50</locationX>
+        <locationY>384</locationY>
+        <inputAssignments>
+            <field>Previous_Status__c</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>936</locationX>
+        <locationX>925</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Create_Status_Change_Log</targetReference>

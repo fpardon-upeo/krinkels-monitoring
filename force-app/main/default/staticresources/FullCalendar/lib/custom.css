@@ -1,0 +1,18 @@
+/* Add to your custom.css */
+.fc {
+    height: 100% !important;
+    min-height: 600px; /* Adjust based on your needs */
+}
+
+.fc .fc-timegrid-slot {
+    height: 3em !important; /* Make slots taller */
+}
+
+.fc .fc-timegrid-slot-label {
+    font-size: 1em; /* Larger time labels */
+}
+
+/* Increase touch targets */
+.fc-event {
+    min-height: 44px;  /* iOS recommended minimum */
+}
