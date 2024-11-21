@@ -2,9 +2,9 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2236
+Metadatas: 2267
 
-<details><summary>ApexClass (72)</summary>
+<details><summary>ApexClass (75)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -69,6 +69,9 @@ Metadatas: 2236
   • ServiceContractHandler<br/>
   • ServiceContractTriggerHandler<br/>
   • ServiceResourceHandler<br/>
+  • TimeSheetCalculationInvocable<br/>
+  • TimeSheetCalculationService<br/>
+  • TimeSheetCalculationServiceTest<br/>
   • TimeSheetController<br/>
   • WeatherService<br/>
   • WorkOrderLocationBatch<br/>
@@ -187,7 +190,7 @@ Metadatas: 2236
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (510)</summary>
+<details><summary>CustomField (516)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -223,6 +226,7 @@ Metadatas: 2236
   • ATAK_Project__c.End_Date__c<br/>
   • ATAK_Project__c.Financial_Account__c<br/>
   • ATAK_Project__c.Group__c<br/>
+  • ATAK_Project__c.Language__c<br/>
   • ATAK_Project__c.Parent_Subproject__c<br/>
   • ATAK_Project__c.Region__c<br/>
   • ATAK_Project__c.Service_Territory__c<br/>
@@ -643,11 +647,13 @@ Metadatas: 2236
   • Service_Status_Time_Log__c.Service_Appointment__c<br/>
   • Service_Status_Time_Log__c.Start_Status__c<br/>
   • Service_Status_Time_Log__c.Start_Time__c<br/>
+  • TimeSheet.Needs_Review__c<br/>
   • TimeSheet.Send_to_ATAK__c<br/>
   • TimeSheet.Total_Hours__c<br/>
   • TimeSheet.Total_KM__c<br/>
   • TimeSheet.Total_Normal_Hours__c<br/>
   • TimeSheet.Total_Travel_Time__c<br/>
+  • TimeSheetEntry.Break_Duration__c<br/>
   • TimeSheetEntry.Break_Duration_in_Minutes__c<br/>
   • TimeSheetEntry.Code_ATAK_Limbus__c<br/>
   • TimeSheetEntry.Pause_Duration__c<br/>
@@ -659,6 +665,7 @@ Metadatas: 2236
   • TimeSheetEntry.Total_Hours_Minus_Pauses__c<br/>
   • TimeSheetEntry.Total_Hours__c<br/>
   • TimeSheetEntry.Urgent_Intervention__c<br/>
+  • TimeSheetEntry.Working_Time__c<br/>
   • TimeSlot.FSL__Designated_Work_Boolean_Fields__c<br/>
   • TimeSlot.FSL__Slot_Color__c<br/>
   • TimeSlot.Timeslot_Details__c<br/>
@@ -676,6 +683,7 @@ Metadatas: 2236
   • WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c<br/>
   • WorkOrder.FSL__Scheduling_Priority__c<br/>
   • WorkOrder.FSL__VisitingHours__c<br/>
+  • WorkOrder.Is_First_of_Day__c<br/>
   • WorkOrder.LMRA_Done__c<br/>
   • WorkOrder.LMRA__c<br/>
   • WorkOrder.Mobile_Contract_Manager__c<br/>
@@ -694,13 +702,14 @@ Metadatas: 2236
   • WorkOrder.Work_Order_Type__c<br/>
   • WorkOrderLineItem.FSL__IsFillInCandidate__c<br/>
   • WorkOrderLineItem.FSL__VisitingHours__c<br/>
+  • WorkStep.Reason__c<br/>
   • WorkStep.Work_Order_Line_Item__c<br/>
   • WorkType.FSL__Due_Date_Offset__c<br/>
   • WorkType.FSL__Exact_Appointments__c<br/>
   • Work_Order_Creation_Event__e.Maintenance_Plan_Id__c<br/>
 </details>
 
-<details><summary>CustomLabel (63)</summary>
+<details><summary>CustomLabel (64)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
   • AppointmentPicker_End_Day_Button<br/>
@@ -723,6 +732,7 @@ Metadatas: 2236
   • StartDay_Next_Action_Text<br/>
   • StartDay_Next_Appointment_Button_Sub_Text<br/>
   • StartDay_Next_Appointment_Button_Text<br/>
+  • StartDay_Open_Next_Appointment_Button_Text<br/>
   • StartDay_Start_Button_Sub_Text<br/>
   • StartDay_Start_Button_Text<br/>
   • StartDay_Timesheet_Button_Sub_Text<br/>
@@ -860,7 +870,7 @@ Metadatas: 2236
   • EmailToSalesforce<br/>
 </details>
 
-<details><summary>EmailTemplate (36)</summary>
+<details><summary>EmailTemplate (37)</summary>
   • CustomerNotifications<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215<br/>
@@ -897,6 +907,7 @@ Metadatas: 2236
   • unfiled$public/Sample_Reconnecting<br/>
   • unfiled$public/Sample_ScheduleMeeting<br/>
   • unfiled$public/Service_Report_Email_1731064851557<br/>
+  • unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354<br/>
 </details>
 
 <details><summary>EntitlementProcess (1)</summary>
@@ -1002,7 +1013,7 @@ Metadatas: 2236
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (43)</summary>
+<details><summary>Flow (50)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
@@ -1012,6 +1023,7 @@ Metadatas: 2236
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
+  • ResourceAbsence_After_Save_Break_Time<br/>
   • Resource_Absence_Before_Save<br/>
   • Send_Better_Email_Testflow<br/>
   • Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data<br/>
@@ -1026,8 +1038,12 @@ Metadatas: 2236
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • Time_Sheet_After_Save_Record_Triggered_Approval<br/>
   • Time_Sheet_After_Save_Send_to_ATAK<br/>
+  • Time_Sheet_Before_Save_Record_Triggered_Approval<br/>
+  • Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update<br/>
   • Time_Sheet_Entry_Before_Save<br/>
+  • TimesheetEntry_After_Save_Break_Time<br/>
   • User_After_Create_RecordTrigered_Create_Service_Resource<br/>
   • User_After_Update_RecordTrigered_Create_Service_Resource<br/>
   • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
@@ -1035,10 +1051,12 @@ Metadatas: 2236
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
+  • Work_Order_After_Update_Add_Log_KM<br/>
   • Work_Order_Mobile_Flow_Check_In<br/>
   • Work_Order_Mobile_Flow_Check_Out<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
+  • Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
@@ -1048,7 +1066,7 @@ Metadatas: 2236
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (43)</summary>
+<details><summary>FlowDefinition (50)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
@@ -1058,6 +1076,7 @@ Metadatas: 2236
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
+  • ResourceAbsence_After_Save_Break_Time<br/>
   • Resource_Absence_Before_Save<br/>
   • Send_Better_Email_Testflow<br/>
   • Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data<br/>
@@ -1072,8 +1091,12 @@ Metadatas: 2236
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • Time_Sheet_After_Save_Record_Triggered_Approval<br/>
   • Time_Sheet_After_Save_Send_to_ATAK<br/>
+  • Time_Sheet_Before_Save_Record_Triggered_Approval<br/>
+  • Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update<br/>
   • Time_Sheet_Entry_Before_Save<br/>
+  • TimesheetEntry_After_Save_Break_Time<br/>
   • User_After_Create_RecordTrigered_Create_Service_Resource<br/>
   • User_After_Update_RecordTrigered_Create_Service_Resource<br/>
   • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
@@ -1081,10 +1104,12 @@ Metadatas: 2236
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
+  • Work_Order_After_Update_Add_Log_KM<br/>
   • Work_Order_Mobile_Flow_Check_In<br/>
   • Work_Order_Mobile_Flow_Check_Out<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
+  • Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
@@ -1121,7 +1146,8 @@ Metadatas: 2236
   • Work_Type<br/>
 </details>
 
-<details><summary>Group (17)</summary>
+<details><summary>Group (18)</summary>
+  • ANGELIQUE_MOONEN<br/>
   • Antwerpen<br/>
   • BURGGRAEVE_SIMON<br/>
   • Bastogne<br/>
@@ -1600,7 +1626,7 @@ Metadatas: 2236
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (147)</summary>
+<details><summary>QuickAction (150)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Child_Account<br/>
   • Campaign.Child_Campaign<br/>
@@ -1626,6 +1652,8 @@ Metadatas: 2236
   • Quote.SendEmail<br/>
   • ServiceAppointment.Check_Out<br/>
   • ServiceAppointment.FSL__Change_Status<br/>
+  • ServiceAppointment.Pause_Work<br/>
+  • ServiceAppointment.Pause_or_Resume_Work<br/>
   • ServiceAppointment.SendEmail<br/>
   • ServiceAppointment.Start_Stop<br/>
   • ServiceContract.Create_Service_Contract<br/>
@@ -1746,6 +1774,7 @@ Metadatas: 2236
   • WorkOrderLineItem.Complete_Service<br/>
   • WorkOrderLineItem.SendEmail<br/>
   • WorkStep.Checkout<br/>
+  • WorkStep.Set_Service_Status<br/>
   • WorkStep.Take_After_Work_Photos<br/>
   • WorkStep.Take_Before_Work_Photos<br/>
 </details>
@@ -2483,8 +2512,13 @@ Metadatas: 2236
   • TimeSheet<br/>
 </details>
 
-<details><summary>WorkflowFieldUpdate (3)</summary>
+<details><summary>WorkflowAlert (1)</summary>
+  • TimeSheet.Time_Sheet_Not_Approved_Notification<br/>
+</details>
+
+<details><summary>WorkflowFieldUpdate (4)</summary>
   • Case.ChangePriorityToHigh<br/>
+  • TimeSheet.Flag_as_Review_Needed<br/>
   • TimeSheet.Update_to_Approved<br/>
   • TimeSheet.Update_to_Needs_Review<br/>
 </details>

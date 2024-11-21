@@ -6,7 +6,7 @@ import {LightningElement, api, wire, track} from 'lwc';
 import { getLocationService } from 'lightning/mobileCapabilities';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getNextHourForecast from '@salesforce/apex/WeatherService.getNextHourForecast';
-import {gql, graphql} from "lightning/uiGraphQLApi";
+import {gql, graphql, refreshGraphQL } from "lightning/uiGraphQLApi";
 import ID from '@salesforce/user/Id';
 
 
@@ -15,7 +15,7 @@ export default class StartOperatorDayMetrics extends LightningElement {
 
 //--------------------------------------API------------------------------------------//
 
-    serviceResourceId;
+    @api serviceResourceId;
     myLocationService;
     currentLocation;
     Latitude;
@@ -43,6 +43,9 @@ export default class StartOperatorDayMetrics extends LightningElement {
     @track totalAppointments = 9;
 
     connectedCallback() {
+        const today = new Date();
+        this.startDate = new Date(today.getFullYear(), today.getMonth(), 1).toISOString();
+        this.endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0).toISOString();
         console.log('serviceResourceId', this.serviceResourceId);
         this.myLocationService = getLocationService();
         //this.fetchWeather( 51.294896, 4.437022);
@@ -75,92 +78,6 @@ export default class StartOperatorDayMetrics extends LightningElement {
         }
     }
 
-    get variables() {
-        return {
-            userId: ID
-        };
-    }
-
-    @wire(graphql, {
-        query: gql`
-    query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput) {
-      uiapi {
-        query {
-          AssignedResource(
-            where: { 
-              and: [
-                { ServiceResourceId: { eq: $serviceResourceId } },
-                { ServiceAppointment: { 
-                    SchedStartTime: { 
-                      gte: $startDate,
-                      lte: $endDate
-                    } 
-                  }
-                }
-              ]
-            }
-          ) {
-            edges {
-              node {
-                ServiceAppointment {
-                  AppointmentNumber {
-                    value
-                    displayValue
-                  },
-                  Id,
-                  Status, {
-                    value
-                    displayValue
-                  },
-                  Subject {
-                    value
-                    displayValue
-                  }, 
-                  SchedStartTime {
-                    value
-                    displayValue
-                  },
-                  ParentRecordId {
-                    value
-                    displayValue
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }`,
-        variables: "$serviceAppointmentsVariables",
-    })
-    appointmentsQueryResult ({error, data}) {
-        if (data) {
-            console.log('service appointments data', data);
-            this.data = data.uiapi.query.AssignedResource.edges.map(edge => edge.node.ServiceAppointment);
-            this.serviceAppointments = this.data.map(appointment => {
-                return {
-                    Appointment: appointment.Subject.value,
-                    Status: appointment.Status.value,
-                }
-            });
-            console.log(JSON.stringify(this.serviceAppointments));
-            this.calculateAppointmentsMetrics();
-        } else if (error) {
-            console.log(error);
-        }
-    }
-
-    calculateAppointmentsMetrics() {
-        this.totalAppointments = this.serviceAppointments.length;
-
-        const completedStatuses = ['Completed', 'Canceled', 'Cannot Complete'];
-        this.completedAppointments = this.serviceAppointments.filter(
-            appointment => completedStatuses.includes(appointment.Status)
-        ).length;
-        console.log('completed appointments', this.completedAppointments);
-        this.showCompletion = true;
-    }
-
     get serviceAppointmentsVariables() {
         // Create date object for today
         const todayDate = new Date();
@@ -182,9 +99,111 @@ export default class StartOperatorDayMetrics extends LightningElement {
         };
     }
 
+    @wire(graphql, {
+        query: gql`
+            query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput) {
+                uiapi {
+                    query {
+                        AssignedResource(
+                            where: { 
+                                and: [
+                                    { ServiceResourceId: { eq: $serviceResourceId } },
+                                    { ServiceAppointment: { 
+                                        SchedStartTime: { 
+                                            gte: $startDate,
+                                            lte: $endDate
+                                        } 
+                                        }
+                                    }
+                                ]
+                            }
+                        ) {
+                            edges {
+                                node {
+                                    ServiceAppointment {
+                                        AppointmentNumber {
+                                            value
+                                            displayValue
+                                        },
+                                        Id,
+                                        Status {
+                                            value
+                                            displayValue
+                                        },
+                                        Subject {
+                                            value
+                                            displayValue
+                                        }, 
+                                        SchedStartTime {
+                                            value
+                                            displayValue
+                                        },
+                                        ParentRecordId {
+                                            value
+                                            displayValue
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }`,
+        variables: '$serviceAppointmentsVariables'
+    })
+    graphqlQueryResult(result) {
+        this.graphqlData = result;
+
+        if (result.data) {
+            console.log('service appointments data', result.data);
+            this.data = result.data.uiapi.query.AssignedResource.edges.map(edge => edge.node.ServiceAppointment);
+            this.serviceAppointments = this.data.map(appointment => ({
+                Appointment: appointment.Subject.value,
+                Status: appointment.Status.value,
+            }));
+            console.log(JSON.stringify(this.serviceAppointments));
+            this.calculateAppointmentsMetrics();
+        } else if (result.error) {
+            console.error('Query error:', result.error);
+        }
+    }
+
+    @api
+    async handleRefresh() {
+        try {
+            await refreshGraphQL(this.graphqlData);
+            await this.getLocation();
+        } catch (error) {
+            console.error('Error refreshing data:', error);
+            this.sendToastMessage('Error', 'Failed to refresh data', 'error');
+        }
+    }
+
+    get variables() {
+        return {
+            userId: ID
+        };
+    }
+
+    calculateAppointmentsMetrics() {
+        this.totalAppointments = this.serviceAppointments.length;
+        const completedStatuses = ['Completed', 'Canceled', 'Cannot Complete'];
+        this.completedAppointments = this.serviceAppointments.filter(
+            appointment => completedStatuses.includes(appointment.Status)
+        ).length;
+        console.log('completed appointments', this.completedAppointments);
+        this.showCompletion = true;
+
+        //Fire an event to the parent component to notify it on the amount of closed appointments
+        const event = new CustomEvent('completedappointments', {
+            detail: this.completedAppointments
+        });
+        this.dispatchEvent(event);
+
+    }
+
     async getLocation() {
         if(this.myLocationService != null && this.myLocationService.isAvailable()) {
-
             // Configure options for location request
             const locationOptions = {
                 enableHighAccuracy: true
@@ -193,46 +212,30 @@ export default class StartOperatorDayMetrics extends LightningElement {
             // Show an "indeterminate progress" spinner before we start the request
             this.requestInProgress = true;
 
-            // Make the request
-            // Uses anonymous function to handle results or errors
-            this.myLocationService
-                .getCurrentPosition(locationOptions)
-                .then((result)  => {
-                    this.currentLocation = result;
-                    this.Latitude = result.coords.latitude;
-                    this.Longitude = result.coords.longitude;
-                    //Convert the longitude and latitude to 6 points after the decimal
-                    this.Latitude = this.Latitude.toFixed(6);
-                    this.Longitude = this.Longitude.toFixed(6);
-                    // result is a Location object
-                    console.log(JSON.stringify(result));
-                    this.fetchWeather(this.Latitude, this.Longitude);
-                })
-                .catch((error) => {
-                    // Handle errors here
-                    console.error(error);
-                })
-                .finally(() => {
-                    console.log('#finally');
-                    // Remove the spinner
-                    this.requestInProgress = false;
-
-                });
+            try {
+                const result = await this.myLocationService.getCurrentPosition(locationOptions);
+                this.currentLocation = result;
+                this.Latitude = result.coords.latitude;
+                this.Longitude = result.coords.longitude;
+                //Convert the longitude and latitude to 6 points after the decimal
+                this.Latitude = this.Latitude.toFixed(6);
+                this.Longitude = this.Longitude.toFixed(6);
+                // result is a Location object
+                console.log(JSON.stringify(result));
+                await this.fetchWeather(this.Latitude, this.Longitude);
+            } catch (error) {
+                // Handle errors here
+                console.error(error);
+                throw error; // Re-throw to be caught by handleRefresh
+            } finally {
+                console.log('#finally');
+                // Remove the spinner
+                this.requestInProgress = false;
+            }
         } else {
             // LocationService is not available
-            // Not running on hardware with GPS, or some other context issue
-            console.log('Get Location button should be disabled and unclickable. ');
-            console.log('Somehow it got clicked: ');
-            console.log(event);
-
-            // Let user know they need to use a mobile phone with a GPS
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'LocationService Is Not Available',
-                    message: 'Try again from the Salesforce app on a mobile device.',
-                    variant: 'error'
-                })
-            );
+            const error = new Error('LocationService Is Not Available');
+            await this.fetchWeather( 51.294896, 4.437022);
         }
     }
 
@@ -252,18 +255,19 @@ export default class StartOperatorDayMetrics extends LightningElement {
         }
     }
 
+    sendToastMessage(title, message, variant) {
+        this.dispatchEvent(
+            new ShowToastEvent({
+                title: title,
+                message: message,
+                variant: variant
+            })
+        );
+    }
+
     get progressStyle() {
         const percentage = (this.completedAppointments / this.totalAppointments) * 100;
         return `width: ${percentage}%`;
     }
-
-
-
-    // Suggested data to retrieve from Salesforce:
-    // - Current ServiceAppointment (Status = In Progress)
-    // - Next ServiceAppointment (Status = Scheduled, earliest StartTime)
-    // - Daily ServiceAppointment count and completion status
-    // - ServiceResource current location (if available)
-    // - Travel time estimates (if using Field Service routing features)
 
 }

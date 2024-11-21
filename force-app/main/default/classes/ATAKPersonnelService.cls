@@ -43,8 +43,8 @@ public with sharing class ATAKPersonnelService {
         atakPerson.Depot_Name__c = personnelData.depot_name;
         atakPerson.Department_Code__c = personnelData.department_code;
         atakPerson.Statute__c = personnelData.statute;
-        atakPerson.Startdate__c = personnelData.startdate != '' ? Date.valueOf(personnelData.startdate) : null;
-        atakPerson.Enddate__c = personnelData.enddate != '' ? Date.valueOf(personnelData.enddate) : null;
+        atakPerson.Startdate__c = personnelData.startdate != '' && personnelData.startdate != null ? Date.valueOf(personnelData.startdate) : null;
+        atakPerson.Enddate__c = personnelData.enddate != '' && personnelData.enddate != null ? Date.valueOf(personnelData.enddate) : null;
         atakPerson.Department_Name__c = personnelData.department_name;
         atakPerson.Sitemanager_Code__c = personnelData.sitemanager_code;
         atakPerson.Sitemanager_Code__c = personnelData.sitemanager_name;

@@ -255,6 +255,18 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TimeSheetCalculationInvocable</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetCalculationService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetCalculationServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TimeSheetController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -455,6 +467,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ATAK_Project__c.Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Language__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2404,6 +2421,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>TimeSheet.Needs_Review__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>TimeSheet.Send_to_ATAK__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2425,6 +2447,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheet.Total_Travel_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>TimeSheetEntry.Break_Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2480,6 +2507,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>TimeSheetEntry.Urgent_Intervention__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>TimeSheetEntry.Working_Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2561,6 +2593,11 @@
         <editable>false</editable>
         <field>WorkOrder.FSL__VisitingHours__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Is_First_of_Day__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2654,6 +2691,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkStep.Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkStep.Work_Order_Line_Item__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2706,6 +2748,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>ResourceAbsence_After_Save_Break_Time</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Resource_Absence_Before_Save</flow>
     </flowAccesses>
     <flowAccesses>
@@ -2754,11 +2800,27 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Time_Sheet_After_Save_Record_Triggered_Approval</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Time_Sheet_After_Save_Send_to_ATAK</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Time_Sheet_Before_Save_Record_Triggered_Approval</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Time_Sheet_Entry_Before_Save</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>TimesheetEntry_After_Save_Break_Time</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -2790,6 +2852,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_After_Update_Add_Log_KM</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_Mobile_Flow_Check_In</flow>
     </flowAccesses>
     <flowAccesses>
@@ -2803,6 +2869,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

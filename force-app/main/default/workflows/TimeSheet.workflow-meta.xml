@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Time_Sheet_Not_Approved_Notification</fullName>
+        <description>Time Sheet Not Approved Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Flag_as_Review_Needed</fullName>
+        <field>Needs_Review__c</field>
+        <literalValue>1</literalValue>
+        <name>Flag as Review Needed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <fieldUpdates>
         <fullName>Update_to_Approved</fullName>
         <field>Status</field>

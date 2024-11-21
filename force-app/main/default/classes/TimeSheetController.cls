@@ -44,7 +44,7 @@ public with sharing class TimeSheetController {
 
     // Get ResourceAbsence records for the same ServiceResource
     wrapper.resourceAbsences = [
-      SELECT Id, Start, End, Type, ResourceId, RecordTypeId
+      SELECT Id, Start, End, Type, ResourceId, RecordTypeId, Description
       FROM ResourceAbsence
       WHERE
         ResourceId = :wrapper.timeSheet.ServiceResourceId

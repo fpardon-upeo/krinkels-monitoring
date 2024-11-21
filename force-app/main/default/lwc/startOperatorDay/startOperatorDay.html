@@ -1,6 +1,6 @@
 <template>
     <div class="page-wrapper">
-        <c-start-operator-day-metrics></c-start-operator-day-metrics>
+        <c-start-operator-day-metrics oncompletedappointments={handleShowStartOrNot}></c-start-operator-day-metrics>
         <div if:true={showTimesheetScreen} class="top-nav">
             <div class="nav-content">
                 <lightning-button
@@ -22,9 +22,8 @@
                         <div class="slds-text-heading_medium slds-align_absolute-center slds-p-horizontal_medium slds-p-bottom_medium">
                             {labels.StartDay_Next_Action_Text}
                         </div>
-
                         <div class="slds-grid slds-grid_align-center slds-wrap slds-gutters_medium">
-                            <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                            <div if:true={showStartDayButton} class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
                                 <div class="action-box brand"
                                      ontouchstart={handleTouchStart}
                                      ontouchend={handleTouchEnd}
@@ -84,7 +83,6 @@
                     </div>
                 </lightning-card>
             </template>
-
             <template if:true={showMilageEntryScreen}>
                 <lightning-card title={labels.StartDay_KM_Card_Title} icon-name="utility:transport_heavy_truck">
                     <lightning-record-edit-form
@@ -97,21 +95,39 @@
                                 <lightning-input-field field-name="Starting_Location_Type__c"></lightning-input-field>
                                 <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
                                 <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
-                                <lightning-input-field field-name="Ending_Mileage__c"></lightning-input-field>
                                 <lightning-input-field class="slds-hide" field-name="Work_Order__c" value={nextWorkOrderId}></lightning-input-field>
                                 <lightning-input-field class="slds-hide" field-name="Time_Sheet__c" value={timeSheetId}></lightning-input-field>
-                                <lightning-record-picker
-                                  label="Appointment"
-                                  placeholder="..."
-                                  object-api-name="ServiceAppointment"
-                                  filter={filterInfo}
-                                  display-info={displayInfo}
-                                  matching-info={matchingInfo}>
-                                </lightning-record-picker>
                             </div>
+                        </div>
+                        <div class="slds-p-around_small slds-align_absolute-center">
+                            <lightning-button
+                              class="slds-m-top_small"
+                              type="submit"
+                              label={labels.StartDay_KM_Save_Button_Text}>
+                            </lightning-button>
                         </div>
                     </lightning-record-edit-form>
                 </lightning-card>
+            </template>
+
+            <template if:true={showNavigationScreen}>
+                <div>
+                    <a href={navigationUrl}>
+                        <div class="action-box neutral"
+                             ontouchstart={handleTouchStart}
+                             ontouchend={handleTouchEnd}
+                             onclick={handleHideNavigationScreen}>
+                            <lightning-icon
+                              icon-name="utility:event"
+                              size="medium"
+                              class="icon-green slds-m-bottom_small">
+                            </lightning-icon>
+                            <div class="slds-text-heading_medium slds-p-bottom_small">
+                                {labels.StartDay_Open_Next_Appointment_Button_Text}
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </template>
 
             <template if:true={showAppointmentScreen}>

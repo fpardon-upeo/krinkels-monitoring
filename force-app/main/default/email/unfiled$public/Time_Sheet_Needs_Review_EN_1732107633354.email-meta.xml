@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Time Sheet Needs Review - EN</name>
+    <relatedEntityType>TimeSheet</relatedEntityType>
+    <style>none</style>
+    <subject>Your time sheet {{{TimeSheet.TimeSheetNumber}}} is NOT APPROVED - Review Needed</subject>
+    <textOnly>Beste klant,
+
+Goed nieuws! Er staat binnenkort een interventie gepland in het kader van uw contract. 
+
+Hieronder vindt u de belangrijkste details:
+
+ - Contractomschrijving: {{{WorkOrder.Name_Commercial_Contract__c}}}
+ - {{{WorkOrder.Product__c}}}
+
+ - Locatie: 
+ - {{{WorkOrder.Address}}}
+
+De interventie vindt plaats op {{{WorkOrder.Scheduled_Date__c}}}.
+
+Om alles soepel te laten verlopen, vragen we u vriendelijk om de nodige zones alvast vrij te maken. Zo kunnen we zonder vertraging aan de slag.
+
+Heeft u nog vragen of wilt u iets bespreken? Laat het ons gerust weten via de gegevens in de e-mailhandtekening hieronder. We helpen u graag verder.
+
+Alvast bedankt voor uw medewerking!
+
+Met vriendelijke groet,
+
+{{{WorkOrder.Name_Contract_Manager__c}}}
+
+{{{WorkOrder.Mobile_Contract_Manager__c}}}
+
+Please consider the environment before printing this email
+
+Krinkels nv-RPR Brussel – BE0821 547 933 - Rue Emile Pathéstraat 410 1190 Bruxelles/Brussel</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

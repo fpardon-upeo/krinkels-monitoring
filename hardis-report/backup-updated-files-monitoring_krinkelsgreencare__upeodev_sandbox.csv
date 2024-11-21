@@ -1,115 +1,71 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-approvalProcesses/TimeSheet.Time_Sheet_Approval_Process.approvalProcess-meta.xml,A,ApprovalProcess TimeSheet.Time_Sheet_Approval_Process,,,log,📰
-classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
-classes/ATAKPerformanceServiceInvocable.cls," ",ApexClass ATAKPerformanceServiceInvocable,M,,log,📰
+approvalProcesses/TimeSheet.Time_Sheet_Approval_Process.approvalProcess-meta.xml," ",ApprovalProcess TimeSheet.Time_Sheet_Approval_Process,M,,log,📰
+classes/ATAKMaterialService.cls," ",ApexClass ATAKMaterialService,M,,log,📰
+classes/ATAKPersonnelService.cls," ",ApexClass ATAKPersonnelService,M,,log,📰
+classes/ATAKProjectService.cls," ",ApexClass ATAKProjectService,M,,log,📰
+classes/FieldServiceTestData.cls," ",ApexClass FieldServiceTestData,M,,log,📰
+classes/TimeSheetCalculationInvocable.cls,A,ApexClass TimeSheetCalculationInvocable,,,log,📰
+classes/TimeSheetCalculationInvocable.cls-meta.xml,A,ApexClass TimeSheetCalculationInvocable,,,log,📰
+classes/TimeSheetCalculationService.cls,A,ApexClass TimeSheetCalculationService,,,log,📰
+classes/TimeSheetCalculationService.cls-meta.xml,A,ApexClass TimeSheetCalculationService,,,log,📰
+classes/TimeSheetCalculationServiceTest.cls,A,ApexClass TimeSheetCalculationServiceTest,,,log,📰
+classes/TimeSheetCalculationServiceTest.cls-meta.xml,A,ApexClass TimeSheetCalculationServiceTest,,,log,📰
 classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
-classes/WeatherService.cls,A,ApexClass WeatherService,,,log,📰
-classes/WeatherService.cls-meta.xml,A,ApexClass WeatherService,,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-cspTrustedSites/weatherAPI.cspTrustedSite-meta.xml,A,CspTrustedSite weatherAPI,,,log,📰
-digitalExperiences/experiencecontainer/FSL/experience__navigationMenu/menu/content.json," ",DigitalExperienceBundle experiencecontainer/FSL/experience__navigationMenu/menu/content.json,M,,log,📰
-email/CustomerNotifications.emailFolder-meta.xml," ",EmailTemplate CustomerNotificationsFolder-meta.xml,M,,log,📰
-email/CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179.email,A,EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179,,,log,📰
-email/CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179,,,log,📰
-email/CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215.email,A,EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215,,,log,📰
-email/CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215,,,log,📰
-email/CustomerNotifications/Notification_Planned_WO_NL_1731941363446.email," ",EmailTemplate CustomerNotifications/Notification_Planned_WO_NL_1731941363446,M,,log,📰
-email/CustomerNotifications/Notification_Planned_WO_NL_1731941363446.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Planned_WO_NL_1731941363446,M,,log,📰
-email/CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597.email,A,EmailTemplate CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597,,,log,📰
-email/CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597,,,log,📰
-email/CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863.email,A,EmailTemplate CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863,,,log,📰
-email/CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863,,,log,📰
-email/CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106.email,A,EmailTemplate CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106,,,log,📰
-email/CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106,,,log,📰
-email/CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513.email,A,EmailTemplate CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513,,,log,📰
-email/CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513,,,log,📰
-email/CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709.email,A,EmailTemplate CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709,,,log,📰
-email/CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709,,,log,📰
-flexipages/Contact_Record_Page.flexipage-meta.xml," ",FlexiPage Contact_Record_Page,M,,log,📰
-flexipages/Financial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Financial_Account_Record_Page,M,,log,📰
-flexipages/Operational_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Operational_Account_Record_Page,M,,log,📰
-flexipages/Product_Consumed_Record_Page.flexipage-meta.xml,A,FlexiPage Product_Consumed_Record_Page,,,log,📰
+email/unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354.email,A,EmailTemplate unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354,,,log,📰
+email/unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354.email-meta.xml,A,EmailTemplate unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354,,,log,📰
+flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
 flexipages/Service_Appointment_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Appointment_Record_Page,M,,log,📰
 flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
-flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
-flowDefinitions/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flowDefinition-meta.xml," ",FlowDefinition Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
-flowDefinitions/Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data.flowDefinition-meta.xml,A,FlowDefinition Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data,,,log,📰
-flowDefinitions/Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO.flowDefinition-meta.xml,A,FlowDefinition Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO,,,log,📰
-flowDefinitions/Service_Appointment_Scheduled_Customer_Notification.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Scheduled_Customer_Notification,M,,log,📰
+flexipages/Work_Step_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Step_Record_Page,M,,log,📰
+flowDefinitions/ResourceAbsence_After_Save_Break_Time.flowDefinition-meta.xml,A,FlowDefinition ResourceAbsence_After_Save_Break_Time,,,log,📰
 flowDefinitions/Service_Appointment_Time_Sheet_Automations.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Time_Sheet_Automations,M,,log,📰
-flowDefinitions/Time_Sheet_After_Save_Send_to_ATAK.flowDefinition-meta.xml,A,FlowDefinition Time_Sheet_After_Save_Send_to_ATAK,,,log,📰
+flowDefinitions/Time_Sheet_After_Save_Record_Triggered_Approval.flowDefinition-meta.xml,A,FlowDefinition Time_Sheet_After_Save_Record_Triggered_Approval,,,log,📰
+flowDefinitions/Time_Sheet_After_Save_Send_to_ATAK.flowDefinition-meta.xml," ",FlowDefinition Time_Sheet_After_Save_Send_to_ATAK,M,,log,📰
+flowDefinitions/Time_Sheet_Before_Save_Record_Triggered_Approval.flowDefinition-meta.xml,A,FlowDefinition Time_Sheet_Before_Save_Record_Triggered_Approval,,,log,📰
+flowDefinitions/Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update.flowDefinition-meta.xml,A,FlowDefinition Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update,,,log,📰
 flowDefinitions/Time_Sheet_Entry_Before_Save.flowDefinition-meta.xml," ",FlowDefinition Time_Sheet_Entry_Before_Save,M,,log,📰
-flowDefinitions/Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member.flowDefinition-meta.xml,A,FlowDefinition Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member,,,log,📰
-flowDefinitions/Van_Before_Save_Record_Triggered_Set_Naming_Convention.flowDefinition-meta.xml," ",FlowDefinition Van_Before_Save_Record_Triggered_Set_Naming_Convention,M,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,M,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
-flows/Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information.flow-meta.xml," ",Flow Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information,M,,log,📰
-flows/Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data.flow-meta.xml,A,Flow Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data,,,log,📰
-flows/Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO.flow-meta.xml,A,Flow Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO,,,log,📰
-flows/Service_Appointment_Scheduled_Customer_Notification.flow-meta.xml," ",Flow Service_Appointment_Scheduled_Customer_Notification,M,,log,📰
+flowDefinitions/TimesheetEntry_After_Save_Break_Time.flowDefinition-meta.xml,A,FlowDefinition TimesheetEntry_After_Save_Break_Time,,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flowDefinitions/Work_Order_After_Update_Add_Log_KM.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Update_Add_Log_KM,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage,,,log,📰
+flows/ResourceAbsence_After_Save_Break_Time.flow-meta.xml,A,Flow ResourceAbsence_After_Save_Break_Time,,,log,📰
 flows/Service_Appointment_Time_Sheet_Automations.flow-meta.xml," ",Flow Service_Appointment_Time_Sheet_Automations,M,,log,📰
-flows/Time_Sheet_After_Save_Send_to_ATAK.flow-meta.xml,A,Flow Time_Sheet_After_Save_Send_to_ATAK,,,log,📰
+flows/Time_Sheet_After_Save_Record_Triggered_Approval.flow-meta.xml,A,Flow Time_Sheet_After_Save_Record_Triggered_Approval,,,log,📰
+flows/Time_Sheet_After_Save_Send_to_ATAK.flow-meta.xml," ",Flow Time_Sheet_After_Save_Send_to_ATAK,M,,log,📰
+flows/Time_Sheet_Before_Save_Record_Triggered_Approval.flow-meta.xml,A,Flow Time_Sheet_Before_Save_Record_Triggered_Approval,,,log,📰
+flows/Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update.flow-meta.xml,A,Flow Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update,,,log,📰
 flows/Time_Sheet_Entry_Before_Save.flow-meta.xml," ",Flow Time_Sheet_Entry_Before_Save,M,,log,📰
-flows/Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member.flow-meta.xml,A,Flow Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member,,,log,📰
-flows/Van_Before_Save_Record_Triggered_Set_Naming_Convention.flow-meta.xml," ",Flow Van_Before_Save_Record_Triggered_Set_Naming_Convention,M,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,M,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+flows/TimesheetEntry_After_Save_Break_Time.flow-meta.xml,A,Flow TimesheetEntry_After_Save_Break_Time,,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flows/Work_Order_After_Update_Add_Log_KM.flow-meta.xml,A,Flow Work_Order_After_Update_Add_Log_KM,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage,,,log,📰
+groups/ANGELIQUE_MOONEN.group-meta.xml,A,Group ANGELIQUE_MOONEN,,,log,📰
 labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-layouts/Account-Commercial Account Layout.layout-meta.xml," ",Layout Account-Commercial Account Layout,M,,log,📰
-layouts/Account-Financial Account Layout.layout-meta.xml," ",Layout Account-Financial Account Layout,M,,log,📰
-layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
-layouts/AccountContactRelation-Account Contact Relationship Layout.layout-meta.xml," ",Layout AccountContactRelation-Account Contact Relationship Layout,M,,log,📰
-layouts/Location-Van Layout.layout-meta.xml," ",Layout Location-Van Layout,M,,log,📰
-layouts/ProductConsumed-Product Consumed Layout.layout-meta.xml," ",Layout ProductConsumed-Product Consumed Layout,M,,log,📰
+layouts/ATAK_Project__c-ATAK Project Layout.layout-meta.xml," ",Layout ATAK_Project__c-ATAK Project Layout,M,,log,📰
 layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
-layouts/ServiceResource-Service Resource Layout.layout-meta.xml," ",Layout ServiceResource-Service Resource Layout,M,,log,📰
-layouts/ServiceResourceSkill-Service Resource Skill Layout.layout-meta.xml," ",Layout ServiceResourceSkill-Service Resource Skill Layout,M,,log,📰
-layouts/ServiceTerritoryLocation-Service Territory Location Layout.layout-meta.xml,A,Layout ServiceTerritoryLocation-Service Territory Location Layout,,,log,📰
-layouts/TimeSheet-FSL Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-FSL Time Sheet Layout,M,,log,📰
-layouts/TimeSheet-Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-Time Sheet Layout,M,,log,📰
-layouts/TimeSheetEntry-FLS Time Sheet Entry Layout.layout-meta.xml,A,Layout TimeSheetEntry-FLS Time Sheet Entry Layout,,,log,📰
+layouts/TimeSheetEntry-FLS Time Sheet Entry Layout.layout-meta.xml," ",Layout TimeSheetEntry-FLS Time Sheet Entry Layout,M,,log,📰
 layouts/TimeSheetEntry-Time Sheet Entry Layout.layout-meta.xml," ",Layout TimeSheetEntry-Time Sheet Entry Layout,M,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.css," ",LightningComponentBundle startOperatorDay/startOperatorDay.css,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.css,A,LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.css,,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.html,A,LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.html,,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.js,A,LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.js,,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.js-meta.xml,A,LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.js-meta.xml,,,log,📰
-lwc/startOperatorDayMetrics/weather.js,A,LightningComponentBundle startOperatorDayMetrics/weather.js,,,log,📰
+lwc/startOperatorDayMetrics/startOperatorDayMetrics.html," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.html,M,,log,📰
+lwc/startOperatorDayMetrics/startOperatorDayMetrics.js," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.js,M,,log,📰
+lwc/startStopTimer/startStopTimer.css," ",LightningComponentBundle startStopTimer/startStopTimer.css,M,,log,📰
+lwc/startStopTimer/startStopTimer.html," ",LightningComponentBundle startStopTimer/startStopTimer.html,M,,log,📰
+lwc/startStopTimer/startStopTimer.js," ",LightningComponentBundle startStopTimer/startStopTimer.js,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.css," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.css,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-lwc/timeSheetCalendarCustom/timeSheetCalendarCustom.js," ",LightningComponentBundle timeSheetCalendarCustom/timeSheetCalendarCustom.js,M,,log,📰
-lwc/timesheetEntryForm/timesheetEntryForm.css,A,LightningComponentBundle timesheetEntryForm/timesheetEntryForm.css,,,log,📰
-lwc/timesheetEntryForm/timesheetEntryForm.html,A,LightningComponentBundle timesheetEntryForm/timesheetEntryForm.html,,,log,📰
-lwc/timesheetEntryForm/timesheetEntryForm.js,A,LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,,,log,📰
-lwc/timesheetEntryForm/timesheetEntryForm.js-meta.xml,A,LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js-meta.xml,,,log,📰
-objects/Account/fields/Intervention_Registration_Announcement__c.field-meta.xml," ",CustomField Intervention_Registration_Announcement__c,M,,log,📰
-objects/AccountContactRelation/fields/OLDIntervention_Registration_Contact__c.field-meta.xml,A,CustomField OLDIntervention_Registration_Contact__c,,,log,📰
-objects/Product2/recordTypes/Material.recordType-meta.xml," ",RecordType Material,M,,log,📰
-objects/Product2/recordTypes/Vehicle.recordType-meta.xml," ",RecordType Vehicle,M,,log,📰
-objects/ProductConsumed/ProductConsumed.object-meta.xml,A,CustomObject ProductConsumed/ProductConsumed,,,log,📰
-objects/ProductConsumed/compactLayouts/Product_Consumed_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Product_Consumed_Compact_Layout,,,log,📰
-objects/ProductConsumed/fields/Van_Crew__c.field-meta.xml,A,CustomField Van_Crew__c,,,log,📰
-objects/ResourceAbsence/recordTypes/FSL__Break.recordType-meta.xml," ",RecordType FSL__Break,M,,log,📰
-objects/ResourceAbsence/recordTypes/FSL__Non_Availability.recordType-meta.xml," ",RecordType FSL__Non_Availability,M,,log,📰
-objects/ResourceAbsence/recordTypes/Internal_Meeting.recordType-meta.xml," ",RecordType Internal_Meeting,M,,log,📰
-objects/ResourceAbsence/recordTypes/Physical_Check_up.recordType-meta.xml," ",RecordType Physical_Check_up,M,,log,📰
-objects/ServiceAppointment/compactLayouts/Service_Appointment_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Service_Appointment_Compact_Layout,,,log,📰
-objects/ServiceAppointment/fields/ATAK_Code__c.field-meta.xml,A,CustomField ATAK_Code__c,,,log,📰
-objects/ServiceAppointment/fields/Day_Pause_Duration__c.field-meta.xml,A,CustomField Day_Pause_Duration__c,,,log,📰
-objects/ServiceAppointment/fields/Night_Pause_Duration__c.field-meta.xml,A,CustomField Night_Pause_Duration__c,,,log,📰
-objects/ServiceAppointment/fields/Previous_Status__c.field-meta.xml,A,CustomField Previous_Status__c,,,log,📰
-objects/ServiceResourceSkill/ServiceResourceSkill.object-meta.xml,A,CustomObject ServiceResourceSkill/ServiceResourceSkill,,,log,📰
-objects/ServiceResourceSkill/fields/Skill_Level__c.field-meta.xml,A,CustomField Skill_Level__c,,,log,📰
-objects/TimeSheet/fields/Send_to_ATAK__c.field-meta.xml,A,CustomField Send_to_ATAK__c,,,log,📰
-objects/TimeSheetEntry/fields/Break_Duration_in_Minutes__c.field-meta.xml,A,CustomField Break_Duration_in_Minutes__c,,,log,📰
-objects/TimeSheetEntry/fields/Total_Hours_Minus_Breaks_and_Pauses__c.field-meta.xml,A,CustomField Total_Hours_Minus_Breaks_and_Pauses__c,,,log,📰
-objects/TimeSheetEntry/fields/Total_Hours_Minus_Pauses__c.field-meta.xml,A,CustomField Total_Hours_Minus_Pauses__c,,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.css," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.css,M,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.html," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.html,M,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.js," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,M,,log,📰
+objects/ATAK_Project__c/fields/Language__c.field-meta.xml,A,CustomField Language__c,,,log,📰
+objects/TimeSheet/fields/Needs_Review__c.field-meta.xml,A,CustomField Needs_Review__c,,,log,📰
+objects/TimeSheetEntry/fields/Break_Duration__c.field-meta.xml,A,CustomField Break_Duration__c,,,log,📰
+objects/TimeSheetEntry/fields/Working_Time__c.field-meta.xml,A,CustomField Working_Time__c,,,log,📰
+objects/WorkOrder/fields/Is_First_of_Day__c.field-meta.xml,A,CustomField Is_First_of_Day__c,,,log,📰
+objects/WorkStep/fields/Reason__c.field-meta.xml,A,CustomField Reason__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -135,49 +91,10 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/TimeSheet.Send_to_ATAK.quickAction-meta.xml,A,QuickAction TimeSheet.Send_to_ATAK,,,log,📰
-remoteSiteSettings/WeatherAPI.remoteSite-meta.xml,A,RemoteSiteSetting WeatherAPI,,,log,📰
-reportTypes/Service_Appointments.reportType-meta.xml," ",ReportType Service_Appointments,M,,log,📰
-reportTypes/Service_Appointments_with_Service_Resources.reportType-meta.xml," ",ReportType Service_Appointments_with_Service_Resources,M,,log,📰
-skills/Machtiging_Autolaadkraan_Autorisation_Grue_sur_camion.skill-meta.xml,A,Skill Machtiging_Autolaadkraan_Autorisation_Grue_sur_camion,,,log,📰
-skills/Machtiging_Betonslijper_Disqueuse.skill-meta.xml,A,Skill Machtiging_Betonslijper_Disqueuse,,,log,📰
-skills/Machtiging_Draaibank_Tour.skill-meta.xml,A,Skill Machtiging_Draaibank_Tour,,,log,📰
-skills/Machtiging_Dumper_Dumper.skill-meta.xml,A,Skill Machtiging_Dumper_Dumper,,,log,📰
-skills/Machtiging_Hakselaar_aanhanger_Broyeur_de_branches_sur_remorque.skill-meta.xml,A,Skill Machtiging_Hakselaar_aanhanger_Broyeur_de_branches_sur_remorque,,,log,📰
-skills/Machtiging_Kolkenzuiger_Hydrocureuse.skill-meta.xml,A,Skill Machtiging_Kolkenzuiger_Hydrocureuse,,,log,📰
-skills/Machtiging_Laspost_Poste_soudage.skill-meta.xml,A,Skill Machtiging_Laspost_Poste_soudage,,,log,📰
-skills/Machtiging_Motoculteur_Motoculteur.skill-meta.xml,A,Skill Machtiging_Motoculteur_Motoculteur,,,log,📰
-skills/Machtiging_Pneumatisch_gereedschap_Outil_pneumatique.skill-meta.xml,A,Skill Machtiging_Pneumatisch_gereedschap_Outil_pneumatique,,,log,📰
-skills/Machtiging_Pneumatische_hamer_Marteau_pneumatique.skill-meta.xml,A,Skill Machtiging_Pneumatische_hamer_Marteau_pneumatique,,,log,📰
-skills/Machtiging_Rolbrug_Pont_roulant.skill-meta.xml,A,Skill Machtiging_Rolbrug_Pont_roulant,,,log,📰
-skills/Machtiging_Rootwave_Elektrische_onkruidbestrijding.skill-meta.xml,A,VirtualWave skills/Machtiging_Rootwave_Elektrische_onkruidbestrijding.skill-meta.xml,,,log,📰
-skills/Machtiging_Signalisatiewagen_botser_Camion_absorbeur_de_choc.skill-meta.xml,A,VirtualBot skills/Machtiging_Signalisatiewagen_botser_Camion_absorbeur_de_choc.skill-meta.xml,,,log,📰
-skills/Machtiging_Slijpschijf_Meule.skill-meta.xml,A,Skill Machtiging_Slijpschijf_Meule,,,log,📰
-skills/Machtiging_Spoorwegkraan_Infrabel.skill-meta.xml,A,Skill Machtiging_Spoorwegkraan_Infrabel,,,log,📰
-skills/Machtiging_Toelating_personenvervoer_Amission_transport_de_passagers.skill-meta.xml,A,Skill Machtiging_Toelating_personenvervoer_Amission_transport_de_passagers,,,log,📰
-skills/Machtiging_Tractor_klein_tot_50_pk_met_accessoires.skill-meta.xml,A,Skill Machtiging_Tractor_klein_tot_50_pk_met_accessoires,,,log,📰
-skills/Machtiging_Tractor_met_arm_en_trekkerTracteur_avec_bras_et_cuve_de_ramassage.skill-meta.xml,A,Skill Machtiging_Tractor_met_arm_en_trekkerTracteur_avec_bras_et_cuve_de_ramassage,,,log,📰
-skills/Machtiging_Tractor_met_hakselaar_Tracteur_avec_broyeur.skill-meta.xml,A,Skill Machtiging_Tractor_met_hakselaar_Tracteur_avec_broyeur,,,log,📰
-skills/Machtiging_Tractor_met_trekker_zuigwagen_citerne_Tracteur_avec_remorque.skill-meta.xml,A,Skill Machtiging_Tractor_met_trekker_zuigwagen_citerne_Tracteur_avec_remorque,,,log,📰
-skills/Machtiging_Transmobile_plaatsen_boordstenen_Transmobile_pose_de_bordure.skill-meta.xml,A,Skill Machtiging_Transmobile_plaatsen_boordstenen_Transmobile_pose_de_bordure,,,log,📰
-skills/Machtiging_Trilplaat_Plaque_vibrante.skill-meta.xml,A,Skill Machtiging_Trilplaat_Plaque_vibrante,,,log,📰
-skills/Machtiging_Veegwagen_vrachtwagen_Balayeuse_camion.skill-meta.xml,A,Skill Machtiging_Veegwagen_vrachtwagen_Balayeuse_camion,,,log,📰
-skills/Machtiging_Wals_Rouleau_compacteur.skill-meta.xml,A,Skill Machtiging_Wals_Rouleau_compacteur,,,log,📰
-skills/Machtiging_Wortelfrees_op_rupsen_Rogneuse_de_souche_sur_chenilles.skill-meta.xml,A,Skill Machtiging_Wortelfrees_op_rupsen_Rogneuse_de_souche_sur_chenilles,,,log,📰
-skills/Machtiging_Zelfrijdende_hoogwerker_Nacelle_automotrice.skill-meta.xml,A,Skill Machtiging_Zelfrijdende_hoogwerker_Nacelle_automotrice,,,log,📰
-skills/Machtiging_roterende_verreiker_met_hijsfunctie.skill-meta.xml,A,Skill Machtiging_roterende_verreiker_met_hijsfunctie,,,log,📰
-skills/Machtiging_veegwagen_klein_Balayeuse_petite.skill-meta.xml,A,Skill Machtiging_veegwagen_klein_Balayeuse_petite,,,log,📰
-skills/Test.skill-meta.xml," ",Skill Test,M,,log,📰
-skilltypes/Expertise.skilltype-meta.xml,A,skilltypes/Expertise.skilltype-meta.xml,,,log,📰
-skilltypes/Machine_Authorisations.skilltype-meta.xml,A,skilltypes/Machine_Authorisations.skilltype-meta.xml,,,log,📰
-skilltypes/Machine_authorisations_Intern.skilltype-meta.xml,A,skilltypes/Machine_authorisations_Intern.skilltype-meta.xml,,,log,📰
-standardValueSets/QuantityUnitOfMeasure.standardValueSet-meta.xml," ",StandardValueSet QuantityUnitOfMeasure,M,,log,📰
-staticresources/FullCalendar/lib/bootstrap-icons.css,A,StaticResource FullCalendar/lib/bootstrap-icons.css,,,log,📰
-staticresources/FullCalendar/lib/bootstrap.css,A,StaticResource FullCalendar/lib/bootstrap.css,,,log,📰
-staticresources/FullCalendar/lib/custom.css,A,StaticResource FullCalendar/lib/custom.css,,,log,📰
-staticresources/FullCalendar/lib/main.min.js," ",StaticResource FullCalendar/lib/main.min.js,M,,log,📰
-staticresources/FullCalendar/lib/slds.css,A,StaticResource FullCalendar/lib/slds.css,,,log,📰
-staticresources/FullCalendar/lib/slds.min.css,A,StaticResource FullCalendar/lib/slds.min.css,,,log,📰
-workflows/TimeSheet.workflow-meta.xml,A,Workflow TimeSheet,,,log,📰
+quickActions/ServiceAppointment.Pause_Work.quickAction-meta.xml,A,QuickAction ServiceAppointment.Pause_Work,,,log,📰
+quickActions/ServiceAppointment.Pause_or_Resume_Work.quickAction-meta.xml,A,QuickAction ServiceAppointment.Pause_or_Resume_Work,,,log,📰
+quickActions/WorkStep.Set_Service_Status.quickAction-meta.xml,A,QuickAction WorkStep.Set_Service_Status,,,log,📰
+standardValueSets/WorkOrderStatus.standardValueSet-meta.xml," ",StandardValueSet WorkOrderStatus,M,,log,📰
+workflows/TimeSheet.workflow-meta.xml," ",Workflow TimeSheet,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

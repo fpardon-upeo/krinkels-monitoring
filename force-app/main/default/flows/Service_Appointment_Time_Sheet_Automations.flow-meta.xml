@@ -587,12 +587,12 @@
         <dataType>Boolean</dataType>
         <expression>AND(
     OR(
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18,
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 4
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 19,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 5
     ),
     OR(
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 4,
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 5,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 19
     )
 )</expression>
     </formulas>
@@ -601,12 +601,12 @@
         <dataType>Boolean</dataType>
         <expression>OR(
     OR(
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18,
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 4
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 19,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 5
     ),
     OR(
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 4,
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 5,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 19
     )
 )</expression>
     </formulas>
@@ -618,7 +618,7 @@
         {!Get_Latest_Pause_End_Time.Status_Change_Date__c} &gt; DATETIMEVALUE(
             TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
             TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 19:00:00&quot;
         ),
         {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
             TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
@@ -674,7 +674,7 @@
         {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} &lt; DATETIMEVALUE(
             TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
             TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot;-&quot; &amp;
-            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 18:00:00&quot;
+            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) &amp; &quot; 19:00:00&quot;
         )
     ),
     (
@@ -717,8 +717,8 @@
         <dataType>DateTime</dataType>
         <expression>IF(
     OR(
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 18,
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 4
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &gt;= 19,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) &lt; 5
     ),
     {!Get_Completed_End_Time.Status_Change_Date__c},
     DATETIMEVALUE(
@@ -733,8 +733,8 @@
         <dataType>DateTime</dataType>
         <expression>IF(
     OR(
-        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) &gt;= 18,
-        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) &lt; 4
+        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) &gt;= 19,
+        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) &lt; 5
     ),
     {!Get_Completed_Start_Time.Status_Change_Date__c},
     DATETIMEVALUE(
@@ -749,8 +749,8 @@
         <dataType>DateTime</dataType>
         <expression>IF(
     AND(
-        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) &gt;= 4,
-        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) &lt; 18
+        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) &gt;= 5,
+        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) &lt; 19
     ),
     {!Get_Completed_End_Time.Status_Change_Date__c},
     DATETIMEVALUE(
@@ -765,8 +765,8 @@
         <dataType>DateTime</dataType>
         <expression>IF(
     AND(
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 4,
-        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 18
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &gt;= 5,
+        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) &lt; 19
     ),
     {!Get_Completed_Start_Time.Status_Change_Date__c},
     DATETIMEVALUE(

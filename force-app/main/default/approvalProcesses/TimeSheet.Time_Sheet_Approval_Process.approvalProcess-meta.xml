@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>false</active>
+    <active>true</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -26,6 +26,14 @@
                 <type>userHierarchyField</type>
             </approver>
         </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>TimeSheet.Needs_Review__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
         <label>General Approval</label>
         <name>General_Approval</name>
     </approvalStep>
@@ -46,6 +54,14 @@
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
+            <name>Flag_as_Review_Needed</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Time_Sheet_Not_Approved_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
             <name>Update_to_Needs_Review</name>
             <type>FieldUpdate</type>
         </action>
@@ -56,7 +72,7 @@
         <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
         <userHierarchyField>Manager</userHierarchyField>
     </nextAutomatedApprover>
-    <processOrder>0</processOrder>
+    <processOrder>1</processOrder>
     <recordEditability>AdminOrCurrentApprover</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>

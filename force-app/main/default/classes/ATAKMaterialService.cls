@@ -52,8 +52,8 @@ public with sharing class ATAKMaterialService {
         atakMat.Depot_Code__c = materialData.depot_code;
         atakMat.Depot_Name__c = materialData.depot_name;
         atakMat.Rate__c = materialData.rate;
-        atakMat.Date_Use_End__c = materialData.date_use_end != null ? Date.valueOf(materialData.date_use_end) : null;
-        atakMat.Date_Out_of_Service__c = materialData.date_out_of_service != null ? Date.valueOf(materialData.date_out_of_service) : null;
+        atakMat.Date_Use_End__c = materialData.date_use_end != null && materialData.date_use_end != '' ? Date.valueOf(materialData.date_use_end) : null;
+        atakMat.Date_Out_of_Service__c = materialData.date_out_of_service != null && materialData.date_out_of_service != '' ? Date.valueOf(materialData.date_out_of_service) : null;
         atakMat.RecordTypeId = materialRecordTypeId;
         return atakMat;
     }

@@ -62,6 +62,9 @@
         <members>ServiceBuilderWrapper</members>
         <members>ServiceContractTriggerHandler</members>
         <members>ServiceResourceHandler</members>
+        <members>TimeSheetCalculationInvocable</members>
+        <members>TimeSheetCalculationService</members>
+        <members>TimeSheetCalculationServiceTest</members>
         <members>TimeSheetController</members>
         <members>WeatherService</members>
         <members>WorkOrderLocationBatch</members>
@@ -212,6 +215,7 @@
         <members>ATAK_Project__c.End_Date__c</members>
         <members>ATAK_Project__c.Financial_Account__c</members>
         <members>ATAK_Project__c.Group__c</members>
+        <members>ATAK_Project__c.Language__c</members>
         <members>ATAK_Project__c.Parent_Subproject__c</members>
         <members>ATAK_Project__c.Region__c</members>
         <members>ATAK_Project__c.Service_Territory__c</members>
@@ -631,11 +635,13 @@
         <members>Service_Status_Time_Log__c.Service_Appointment__c</members>
         <members>Service_Status_Time_Log__c.Start_Status__c</members>
         <members>Service_Status_Time_Log__c.Start_Time__c</members>
+        <members>TimeSheet.Needs_Review__c</members>
         <members>TimeSheet.Send_to_ATAK__c</members>
         <members>TimeSheet.Total_Hours__c</members>
         <members>TimeSheet.Total_KM__c</members>
         <members>TimeSheet.Total_Normal_Hours__c</members>
         <members>TimeSheet.Total_Travel_Time__c</members>
+        <members>TimeSheetEntry.Break_Duration__c</members>
         <members>TimeSheetEntry.Break_Duration_in_Minutes__c</members>
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
         <members>TimeSheetEntry.Pause_Duration__c</members>
@@ -647,6 +653,7 @@
         <members>TimeSheetEntry.Total_Hours_Minus_Pauses__c</members>
         <members>TimeSheetEntry.Total_Hours__c</members>
         <members>TimeSheetEntry.Urgent_Intervention__c</members>
+        <members>TimeSheetEntry.Working_Time__c</members>
         <members>TimeSlot.FSL__Designated_Work_Boolean_Fields__c</members>
         <members>TimeSlot.FSL__Slot_Color__c</members>
         <members>TimeSlot.Timeslot_Details__c</members>
@@ -663,6 +670,7 @@
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
+        <members>WorkOrder.Is_First_of_Day__c</members>
         <members>WorkOrder.LMRA_Done__c</members>
         <members>WorkOrder.LMRA__c</members>
         <members>WorkOrder.Mobile_Contract_Manager__c</members>
@@ -681,6 +689,7 @@
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
+        <members>WorkStep.Reason__c</members>
         <members>WorkStep.Work_Order_Line_Item__c</members>
         <members>WorkType.FSL__Due_Date_Offset__c</members>
         <members>WorkType.FSL__Exact_Appointments__c</members>
@@ -732,6 +741,8 @@
         <members>StartDay_Next_Appointment_Button_Sub_Text</members>
         <members>StartDay_Next_Appointment_Button_Text</members>
         <members>StartDay_Next_Appointment_Button_Text</members>
+        <members>StartDay_Open_Next_Appointment_Button_Text</members>
+        <members>StartDay_Open_Next_Appointment_Button_Text</members>
         <members>StartDay_Start_Button_Sub_Text</members>
         <members>StartDay_Start_Button_Sub_Text</members>
         <members>StartDay_Start_Button_Text</members>
@@ -943,6 +954,7 @@
         <members>unfiled$public/Sample_Reconnecting</members>
         <members>unfiled$public/Sample_ScheduleMeeting</members>
         <members>unfiled$public/Service_Report_Email_1731064851557</members>
+        <members>unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354</members>
         <name>EmailTemplate</name>
     </types>
     <types>
@@ -1056,6 +1068,7 @@
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
@@ -1068,8 +1081,12 @@
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>Time_Sheet_After_Save_Record_Triggered_Approval</members>
         <members>Time_Sheet_After_Save_Send_to_ATAK</members>
+        <members>Time_Sheet_Before_Save_Record_Triggered_Approval</members>
+        <members>Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update</members>
         <members>Time_Sheet_Entry_Before_Save</members>
+        <members>TimesheetEntry_After_Save_Break_Time</members>
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member</members>
@@ -1077,10 +1094,12 @@
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
+        <members>Work_Order_After_Update_Add_Log_KM</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
@@ -1097,6 +1116,7 @@
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
@@ -1109,8 +1129,12 @@
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>Time_Sheet_After_Save_Record_Triggered_Approval</members>
         <members>Time_Sheet_After_Save_Send_to_ATAK</members>
+        <members>Time_Sheet_Before_Save_Record_Triggered_Approval</members>
+        <members>Time_Sheet_Before_Save_Record_Triggered_Review_Approval_Auto_Update</members>
         <members>Time_Sheet_Entry_Before_Save</members>
+        <members>TimesheetEntry_After_Save_Break_Time</members>
         <members>User_After_Create_RecordTrigered_Create_Service_Resource</members>
         <members>User_After_Update_RecordTrigered_Create_Service_Resource</members>
         <members>Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member</members>
@@ -1118,10 +1142,12 @@
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
+        <members>Work_Order_After_Update_Add_Log_KM</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
@@ -1156,6 +1182,7 @@
         <name>GlobalValueSet</name>
     </types>
     <types>
+        <members>ANGELIQUE_MOONEN</members>
         <members>BURGGRAEVE_SIMON</members>
         <members>Bastogne</members>
         <members>Charleroi</members>
@@ -1650,8 +1677,9 @@
         <members>Quote.SendEmail</members>
         <members>ServiceAppointment.Check_Out</members>
         <members>ServiceAppointment.FSL__Change_Status</members>
+        <members>ServiceAppointment.Pause_Work</members>
+        <members>ServiceAppointment.Pause_or_Resume_Work</members>
         <members>ServiceAppointment.SendEmail</members>
-        <members>ServiceAppointment.Start_Stop</members>
         <members>ServiceContract.Create_Service_Contract</members>
         <members>ServiceContract.Export_Lines</members>
         <members>ServiceContract.Generate_Maintenance_Plan</members>
@@ -1770,6 +1798,7 @@
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
         <members>WorkStep.Checkout</members>
+        <members>WorkStep.Set_Service_Status</members>
         <members>WorkStep.Take_After_Work_Photos</members>
         <members>WorkStep.Take_Before_Work_Photos</members>
         <name>QuickAction</name>
@@ -2505,7 +2534,12 @@
         <name>Workflow</name>
     </types>
     <types>
+        <members>TimeSheet.Time_Sheet_Not_Approved_Notification</members>
+        <name>WorkflowAlert</name>
+    </types>
+    <types>
         <members>Case.ChangePriorityToHigh</members>
+        <members>TimeSheet.Flag_as_Review_Needed</members>
         <members>TimeSheet.Update_to_Approved</members>
         <members>TimeSheet.Update_to_Needs_Review</members>
         <name>WorkflowFieldUpdate</name>

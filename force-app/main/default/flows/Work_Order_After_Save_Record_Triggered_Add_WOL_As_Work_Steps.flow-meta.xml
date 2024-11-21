@@ -58,6 +58,13 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>WorkStepRecord.ActionDefinition</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>WorkStep.Set_Service_Status</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>WorkStepCollection</assignToReference>
             <operator>Add</operator>
             <value>

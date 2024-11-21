@@ -4,39 +4,84 @@
 
 <!-- Start Stop Timer -->
 <template>
-  <lightning-card title="Start Stop Timer" icon-name="utility:timer">
-    <div class="slds-grid_vertical">
-      <div class="slds-col">
-        <div class="slds-grid">
-          <!-- Show the elapsed time -->
-          <div class="slds-col">
-            <p class="slds-align_absolute-center bigFont">{formattedTime}</p>
-          </div>
-        </div>
-      </div>
-      <div class="slds-col">
-        <div class="slds-grid slds-align_absolute-center slds-p-top_medium">
-          <lightning-button
-            class="slds-m-right_small"
-            label="Start"
-            onclick={startHandler}
-          ></lightning-button>
-          <lightning-button
-            class="slds-m-right_small"
-            label="Pause"
-            onclick={pauseHandler}
-          ></lightning-button>
-          <lightning-button
-            class="slds-m-right_small"
-            label="Resume"
-            onclick={resumeHandler}
-          ></lightning-button>
-          <lightning-button
-            label="Stop"
-            onclick={stopHandler}
-          ></lightning-button>
-        </div>
-      </div>
+  <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+  <div class="mobile-bottom-sheet">
+    <div class="bottom-sheet-header">
+      <div class="drag-indicator"></div>
+      <h2 class="sheet-title">Pause or Resume the Work</h2>
     </div>
-  </lightning-card>
+    <div class="bottom-sheet-content">
+      <div if:true={showSelectionScreen} class="action-buttons">
+
+        <button
+          onclick={handleAddBreak}
+          class="action-button break-button"
+        >
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:food_and_drink"
+                size="small"
+              ></lightning-icon>
+            </span>
+          <span class="button-text">
+              <span class="button-label">Log a break</span>
+              <span class="button-description">
+                Use this to log a coffee or lunch break
+              </span>
+            </span>
+        </button>
+
+        <button
+          onclick={handleResumeWork}
+          class="action-button timesheet-button"
+        >
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:play"
+                size="small"
+              ></lightning-icon>
+            </span>
+          <span class="button-text">
+              <span class="button-label">Resume the work</span>
+              <span class="button-description">
+                Starts the clock again after pausing the work
+              </span>
+            </span>
+        </button>
+
+        <button
+          onclick={handlePauseWork}
+          class="action-button break-button"
+        >
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:pause"
+                size="small"
+              ></lightning-icon>
+            </span>
+          <span class="button-text">
+              <span class="button-label">Pause the work</span>
+              <span class="button-description">
+                Pauses the clock on the current work
+              </span>
+            </span>
+        </button>
+      </div>
+      <div if:true={showBreakForm} class="break-form">
+        <div class="input-container">
+          <lightning-input
+            type="number"
+            label="Break Duration (minutes)"
+            step="5"
+            value={breakDuration}
+            onchange={breakDurationChange}
+            class="duration-input"
+          ></lightning-input>
+        </div>
+        <div class="button-group">
+          <button class="submit-button" onclick={handleLogBreak} type="submit">Save</button>
+        </div>
+      </div>
+  </div>
+  </div>
 </template>

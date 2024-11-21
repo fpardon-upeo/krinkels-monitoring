@@ -502,4 +502,12 @@
         <shortDescription>StartDay_Timesheet_Button_Text</shortDescription>
         <value>Timesheet</value>
     </labels>
+    <labels>
+        <fullName>StartDay_Open_Next_Appointment_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Open_Next_Appointment_Button_Text</shortDescription>
+        <value>Go to Work Order</value>
+    </labels>
 </CustomLabels>

@@ -33,6 +33,12 @@
         <groupingString>InProgress</groupingString>
     </standardValue>
     <standardValue>
+        <fullName>Paused</fullName>
+        <default>false</default>
+        <label>Paused</label>
+        <groupingString>OnHold</groupingString>
+    </standardValue>
+    <standardValue>
         <fullName>Completed</fullName>
         <default>false</default>
         <label>Completed</label>

@@ -74,4 +74,159 @@ public class FieldServiceTestData {
         update pb;
         return pb.Id;
     }
+
+    public static User createTestUser(String name, String profileName, Boolean doInsert) {
+        Profile profile = [SELECT Id FROM Profile WHERE Name = :profileName LIMIT 1];
+        User user = new User();
+        user.FirstName = name;
+        user.LastName = name;
+        user.Email = name + '@test.com';
+        user.Username = name + '@krinkels.com.'+ String.valueOf(System.currentTimeMillis());
+        user.Alias = name.substring(0, 5);
+        user.CommunityNickname = name;
+        user.LocaleSidKey = 'en_US';
+        user.TimeZoneSidKey = 'America/Los_Angeles';
+        user.EmailEncodingKey = 'UTF-8';
+        user.ProfileId = profile.Id;
+        user.LanguageLocaleKey = 'en_US';
+        user.TimeZoneSidKey = 'America/Los_Angeles';
+        user.EmailEncodingKey = 'ISO-8859-1';
+        user.ProfileId = profile.Id;
+        if (doInsert) {
+            insert user;
+        }
+        return user;
+    }
+
+    public static void assignFieldServicePermissionSetLicense(Id userId) {
+        // Assign FSL Permission Set License
+        List<PermissionSet> permissionSets = [SELECT Id FROM PermissionSet WHERE Label IN ('Field Service Mobile License', 'Field Service Resource License', 'Field Service Resource Permissions')];
+        List<PermissionSetAssignment> permissionSetAssignments = new List<PermissionSetAssignment>();
+        for(PermissionSet permissionSet : permissionSets){
+            PermissionSetAssignment permissionSetAssignment = new PermissionSetAssignment();
+            permissionSetAssignment.AssigneeId = userId;
+            permissionSetAssignment.PermissionSetId = permissionSet.Id;
+            permissionSetAssignments.add(permissionSetAssignment);
+        }
+        insert permissionSetAssignments;
+    }
+
+    public static ServiceResource createTestServiceResource(String name, String recordTypeName, Boolean doInsert, String userId) {
+        ServiceResource serviceResource = new ServiceResource();
+        serviceResource.Name = name;
+        serviceResource.ResourceType = 'T';
+        serviceResource.IsActive = true;
+        serviceResource.RelatedRecordId = userId;
+        if (doInsert) {
+            insert serviceResource;
+        }
+        return serviceResource;
+    }
+
+    /**
+ * Creates a test TimeSheet
+ * @param serviceResourceId The Id of the ServiceResource
+ * @param startDate The start date of the TimeSheet
+ * @param doInsert Whether to insert the record
+ * @return TimeSheet The created TimeSheet
+ */
+    public static TimeSheet createTestTimeSheet(Id serviceResourceId, Date startDate, Boolean doInsert) {
+        TimeSheet timeSheet = new TimeSheet(
+                ServiceResourceId = serviceResourceId,
+                StartDate = startDate,
+                EndDate = startDate.addDays(6)  // Weekly timesheet
+        );
+
+        if(doInsert) {
+            insert timeSheet;
+        }
+        return timeSheet;
+    }
+
+
+    /**
+     * Creates a test TimeSheetEntry
+     * @param timeSheetId The Id of the TimeSheet
+     * @param startTime The start time of the entry
+     * @param endTime The end time of the entry
+     * @param doInsert Whether to insert the record
+     * @return TimeSheetEntry The created TimeSheetEntry
+     */
+    public static TimeSheetEntry createTestTimeSheetEntry(Id timeSheetId, DateTime startTime,
+            DateTime endTime, Boolean doInsert) {
+        TimeSheetEntry entry = new TimeSheetEntry(
+                TimeSheetId = timeSheetId,
+                StartTime = startTime,
+                EndTime = endTime,
+                Type = 'Work'  // or other valid types as needed
+        );
+
+        if(doInsert) {
+            insert entry;
+        }
+        return entry;
+    }
+
+    /**
+     * Creates a test ResourceAbsence
+     * @param serviceResourceId The Id of the ServiceResource
+     * @param startTime The start time of the absence
+     * @param endTime The end time of the absence
+     * @param doInsert Whether to insert the record
+     * @return ResourceAbsence The created ResourceAbsence
+     */
+    public static ResourceAbsence createTestResourceAbsence(Id serviceResourceId, DateTime startTime,
+            DateTime endTime, Boolean doInsert) {
+        ResourceAbsence absence = new ResourceAbsence(
+                ResourceId = serviceResourceId,
+                Start = startTime,
+                End = endTime,
+                Type = 'Break'  // or other valid types as needed
+        );
+
+        if(doInsert) {
+            insert absence;
+        }
+        return absence;
+    }
+
+    /**
+     * Creates a complete set of test data for TimeSheet calculations
+     * @return Map<String, Object> Map containing all created test records
+     */
+    public static Map<String, Object> createTimeSheetTestData() {
+        Map<String, Object> testData = new Map<String, Object>();
+
+        // Create user and assign permissions in first transaction
+        User testUser;
+        System.runAs(new User(Id = UserInfo.getUserId())) {
+            testUser = createTestUser('TestFSL', 'Standard User', true);
+            assignFieldServicePermissionSetLicense(testUser.Id);
+        }
+        testData.put('User', testUser);
+
+        // Create regular objects as the test user
+        System.runAs(testUser) {
+            // Create Service Resource
+            ServiceResource resource = createTestServiceResource('Test Resource', null, true, testUser.Id);
+            testData.put('ServiceResource', resource);
+
+            // Create TimeSheet
+            TimeSheet timeSheet = createTestTimeSheet(resource.Id, Date.today(), true);
+            testData.put('TimeSheet', timeSheet);
+
+            // Create TimeSheet Entry
+            DateTime startTime = DateTime.now().addHours(-4);
+            DateTime endTime = DateTime.now();
+            TimeSheetEntry entry = createTestTimeSheetEntry(timeSheet.Id, startTime, endTime, true);
+            testData.put('TimeSheetEntry', entry);
+
+            // Create Resource Absence
+            ResourceAbsence absence = createTestResourceAbsence(resource.Id, startTime.addHours(1),
+                    startTime.addHours(2), true);
+            testData.put('ResourceAbsence', absence);
+        }
+
+        return testData;
+    }
 }

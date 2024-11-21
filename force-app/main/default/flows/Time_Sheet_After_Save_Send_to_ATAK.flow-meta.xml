@@ -3,10 +3,13 @@
     <actionCalls>
         <name>Process_Timesheet</name>
         <label>Process Timesheet</label>
-        <locationX>314</locationX>
+        <locationX>308</locationX>
         <locationY>276</locationY>
         <actionName>ATAKPerformanceServiceInvocable</actionName>
         <actionType>apex</actionType>
+        <connector>
+            <targetReference>Reset_Flag</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>timesheetId</name>
@@ -44,8 +47,8 @@
     <recordUpdates>
         <name>Reset_Flag</name>
         <label>Reset Flag</label>
-        <locationX>50</locationX>
-        <locationY>276</locationY>
+        <locationX>308</locationX>
+        <locationY>384</locationY>
         <inputAssignments>
             <field>Send_to_ATAK__c</field>
             <value>
@@ -55,11 +58,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>Reset_Flag</targetReference>
-        </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>

@@ -136,10 +136,13 @@ c-time-sheet-calendar {
 
 /* Footer Styles */
 .footer {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     position: relative;
     height: 4rem;
     background: white;
     border-top: 2px solid #449f03;
+    border-bottom: 2px solid #449f03;
     box-shadow: 0 -2px 8px rgba(68, 159, 3, 0.1);
 }
 

@@ -82,6 +82,16 @@
                 <identifier>RecordRegion__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Language__c</fieldItem>
+                <identifier>RecordLanguage__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-aab991b4-abe4-47de-88d8-594d83049792</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -408,12 +418,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>startOperatorDay</componentName>
-                <identifier>c_startOperatorDay</identifier>
-            </componentInstance>
-        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

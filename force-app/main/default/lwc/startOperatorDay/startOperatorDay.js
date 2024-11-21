@@ -24,6 +24,7 @@ import StartDay_Timesheet_Button_Text from '@salesforce/label/c.StartDay_Timeshe
 import StartDay_Timesheet_Button_Sub_Text from '@salesforce/label/c.StartDay_Timesheet_Button_Sub_Text';
 import StartDay_Next_Appointment_Button_Text from '@salesforce/label/c.StartDay_Next_Appointment_Button_Text';
 import StartDay_Next_Appointment_Button_Sub_Text from '@salesforce/label/c.StartDay_Next_Appointment_Button_Sub_Text';
+import StartDay_Open_Next_Appointment_Button_Text from '@salesforce/label/c.StartDay_Open_Next_Appointment_Button_Text';
 import {NavigationMixin} from "lightning/navigation";
 import {
     ToastTypes,
@@ -58,7 +59,9 @@ export default class StartOperatorDay extends LightningElement {
     showInitialScreen = true;
     showAppointmentScreen = false;
     showMilageEntryScreen = false;
+    showNavigationScreen = false;
     showTimesheetScreen = false;
+    showStartDayButton = true;
     selectedRows = [];
     labels = {
         StartDay_Start_Button_Text,
@@ -77,7 +80,8 @@ export default class StartOperatorDay extends LightningElement {
         StartDay_Timesheet_Button_Text,
         StartDay_Timesheet_Button_Sub_Text,
         StartDay_Next_Appointment_Button_Text,
-        StartDay_Next_Appointment_Button_Sub_Text
+        StartDay_Next_Appointment_Button_Sub_Text,
+        StartDay_Open_Next_Appointment_Button_Text
     }
 
     milesEntryFields = [
@@ -210,62 +214,75 @@ export default class StartOperatorDay extends LightningElement {
 
     @wire(graphql, {
         query: gql`
-    query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput) {
-      uiapi {
-        query {
-          AssignedResource(
-            where: { 
-              and: [
-                { ServiceResourceId: { eq: $serviceResourceId } },
-                { ServiceAppointment: { Status: { ne: "Completed" } } },
-                { ServiceAppointment: { Status: { ne: "Unscheduled" } } },
-                { ServiceAppointment: { Status: { ne: "Cannot Complete" } } },
-                { ServiceAppointment: { Status: { ne: "Cancelled" } } },
-                { ServiceAppointment: { 
-                    SchedStartTime: { 
-                      gte: $startDate,
-                      lte: $endDate
-                    } 
-                  }
-                }
-              ]
-            }
-          ) {
-            edges {
-              node {
-                ServiceAppointment {
-                  AppointmentNumber {
-                    value
-                    displayValue
-                  },
-                  Id,
-                  Subject {
-                    value
-                    displayValue
-                  }, 
-                  SchedStartTime {
-                    value
-                    displayValue
-                  },
-                  ParentRecordId {
-                    value
-                    displayValue
+        query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput) {
+          uiapi {
+            query {
+              AssignedResource(
+                where: { 
+                  and: [
+                    { ServiceResourceId: { eq: $serviceResourceId } },
+                    { ServiceAppointment: { Status: { ne: "Completed" } } },
+                    { ServiceAppointment: { Status: { ne: "Unscheduled" } } },
+                    { ServiceAppointment: { Status: { ne: "Cannot Complete" } } },
+                    { ServiceAppointment: { Status: { ne: "Cancelled" } } },
+                    { ServiceAppointment: { 
+                        SchedStartTime: { 
+                          gte: $startDate,
+                          lte: $endDate
+                        } 
+                      }
+                    }
+                  ]
+                },
+                orderBy: { ServiceAppointment: { SchedStartTime: { order: ASC } } }
+              ) {
+                edges {
+                  node {
+                    ServiceAppointment {
+                      AppointmentNumber {
+                        value
+                        displayValue
+                      },
+                      Account {
+                        Name {
+                          value
+                          displayValue
+                        }
+                      },
+                      Id,
+                      Subject {
+                        value
+                        displayValue
+                      }, 
+                      SchedStartTime {
+                        value
+                        displayValue
+                      },
+                      ParentRecordId {
+                        value
+                        displayValue
+                      }
+                    }
                   }
                 }
               }
             }
           }
-        }
-      }
-    }`,
+        }`,
         variables: "$serviceAppointmentsVariables",
     })
     appointmentsQueryResult ({error, data}) {
         if (data) {
             this.data = data.uiapi.query.AssignedResource.edges.map(edge => edge.node.ServiceAppointment);
             this.serviceAppointments = this.data.map(appointment => {
+                //Pretty schedule start time
+                let date = new Date(appointment.SchedStartTime.value);
+                //Use the date and the cleaned up hours and minutes, use 24h format
+                let dateFormatted =  date.getDate() + '/' + (date.getMonth() + 1) + ' ' + date.getHours() + ':' + date.getMinutes();
+                //Make sure we don't return things like 14:0, but 14:00
+                dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
                 return {
-                    Appointment: appointment.Subject.value,
+                    Appointment: appointment.Account.Name.value + ' - ' + dateFormatted,
                     AppointmentNumber: appointment.AppointmentNumber.value,
                     Subject: appointment.Subject.value,
                     Id: appointment.Id,
@@ -291,21 +308,24 @@ export default class StartOperatorDay extends LightningElement {
         this.disableNextButton = selectedRows.length === 0;
     }
 
+    handleShowStartOrNot(event) {
+        console.log('closed appts: ', event.detail);
+        console.log('closed appts: ', typeof event.detail);
+        if(event.detail > 0) {
+            this.showStartDayButton = false;
+        }
+    }
+
+    handleHideNavigationScreen() {
+        this.showNavigationScreen = false;
+        this.showInitialScreen = true;
+    }
+
     handleMileageSuccess() {
         console.log('Mileage entry success');
+        console.log('this.nextWorkOrderId', this.nextWorkOrderId);
         this.showMilageEntryScreen = false;
-        this.showInitialScreen = true;
-        this.toastType = ToastTypes.Success;
-        this.toastMessage = this.labels.StartDay_KM_Save_Success_Result;
-
-        setTimeout(() => {
-            this[NavigationMixin.Navigate]({
-                "type": "standard__webPage",
-                "attributes": {
-                    "url": `com.salesforce.fieldservice://v1`
-                }
-            });
-        }, 2000);
+        this.showNavigationScreen = true;
     }
 
     handleSetAppointmentClicked() {
@@ -319,27 +339,21 @@ export default class StartOperatorDay extends LightningElement {
         this.showInitialScreen = false;
         this.showAppointmentScreen = true;
         this.travelTimeOnly = true;
-
-        setTimeout(() => {
-            this[NavigationMixin.Navigate]({
-                "type": "standard__webPage",
-                "attributes": {
-                    "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
-                }
-            });
-        }, 2000);
-
     }
 
     handleSelect() {
-        console.log('selectedRows', JSON.stringify(this.selectedRows));
-        console.log('selectedRows Id', this.selectedRows[0].Id);
         this.setNextServiceAppointStatus();
         this.setNextWorkOrderStatus();
-        this.toastType = ToastTypes.Success;
+        this.toastType = ToastTypes.SUCCESS;
         this.toastMessage = this.labels.AppointmentPicker_Travel_Started_Toast;
         this.showAppointmentScreen = false;
-        this.showMilageEntryScreen = this.travelTimeOnly !== true;
+
+        if(this.travelTimeOnly === true) {
+            this.showNavigationScreen = true;
+        } else {
+            this.showMilageEntryScreen = true;
+        }
+
     }
 
     handleSetKMClicked() {
@@ -375,6 +389,7 @@ export default class StartOperatorDay extends LightningElement {
         this.showTimesheetScreen = false;
         this.showInitialScreen = true;
         this.travelTimeOnly = false;
+        this.showNavigationScreen = false;
     }
 
 //--------------------------------------HELPERS--------------------------------------//
@@ -400,6 +415,7 @@ export default class StartOperatorDay extends LightningElement {
         const fields = {};
         fields['Id'] = this.selectedRows[0].ParentRecordId;
         fields['Status'] = 'Travelling';
+        fields['Is_First_of_Day__c'] = true;
         const recordInput = { fields };
         console.log('recordInput wo', JSON.stringify(recordInput));
         updateRecord(recordInput)
@@ -431,6 +447,10 @@ export default class StartOperatorDay extends LightningElement {
             startDate: { value: lastWeekStart.toISOString() },
             endDate: { value: nextWeekEnd.toISOString() }
         };
+    }
+
+    get navigationUrl() {
+        return `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`;
     }
 
     get variables() {
