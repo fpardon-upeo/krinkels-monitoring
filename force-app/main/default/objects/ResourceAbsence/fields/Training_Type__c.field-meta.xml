@@ -3,6 +3,7 @@
     <fullName>Training_Type__c</fullName>
     <label>Training Type</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

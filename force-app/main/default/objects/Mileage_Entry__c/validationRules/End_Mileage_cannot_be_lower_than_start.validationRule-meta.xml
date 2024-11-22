@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_Mileage_cannot_be_lower_than_start</fullName>
+    <active>true</active>
+    <errorConditionFormula>Starting_Mileage__c &gt; Ending_Mileage__c</errorConditionFormula>
+    <errorDisplayField>Starting_Mileage__c</errorDisplayField>
+    <errorMessage>You cannot have a greater Starting Mileage than the Ending Mileage. Please correct the amount.</errorMessage>
+</ValidationRule>

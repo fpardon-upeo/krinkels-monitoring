@@ -63,17 +63,32 @@
         </div>
 
         <div class="stat-card">
-          <div class="stat-iconAndInfo-container">
-            <div class="stat-icon">
-              <lightning-icon
-                icon-name="utility:summary"
-                size="small"
-                class="total-icon"
-              ></lightning-icon>
+          <div class="slds-grid_vertical">
+            <div class="stat-iconAndInfo-container">
+              <div class="stat-icon">
+                <lightning-icon
+                  icon-name="utility:summary"
+                  size="small"
+                  class="total-icon"
+                ></lightning-icon>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">Total Hours</span>
+                <span class="stat-value">{totalHours}h</span>
+              </div>
             </div>
-            <div class="stat-info">
-              <span class="stat-label">Total Hours</span>
-              <span class="stat-value">{totalHours}h</span>
+            <div class="stat-iconAndInfo-container">
+              <div class="stat-icon">
+                <lightning-icon
+                  icon-name="utility:food_and_drink"
+                  size="small"
+                  class="total-icon"
+                ></lightning-icon>
+              </div>
+              <div class="stat-info">
+                <span class="stat-label">Total Break</span>
+                <span class="stat-value">{totalBreakHours}h</span>
+              </div>
             </div>
           </div>
         </div>
@@ -364,6 +379,11 @@
               class="slds-hide"
             ></lightning-input-field>
             <lightning-input-field
+              field-name="Type__c"
+              value="Ending"
+              class="slds-hide"
+            ></lightning-input-field>
+            <lightning-input-field
               field-name="Service_Resource__c"
               value={timeSheetResourceId}
               class="slds-hide"
@@ -415,6 +435,11 @@
         >
           <lightning-messages></lightning-messages>
           <div class="form-fields">
+            <lightning-input-field
+              field-name="Type__c"
+              value="Starting"
+              class="slds-hide"
+            ></lightning-input-field>
             <lightning-input-field
               field-name="Time_Sheet__c"
               value={recordId}

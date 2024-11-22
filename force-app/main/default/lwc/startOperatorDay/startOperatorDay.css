@@ -153,11 +153,61 @@ c-time-sheet-calendar {
 
 .footer-buttons {
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 0.75rem;
     height: 100%;
 }
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    align-items: center;
+    width: 100%;  /* Ensure the container takes full width */
+    padding: 0 16px;  /* Add some padding on smaller screens */
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    width: 100%;  /* Take full width of parent */
+    max-width: 500px;  /* Maximum width on larger screens */
+    min-width: 280px;  /* Minimum width on smaller screens */
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: rgba(68, 159, 3, 0.2);
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.action-button:active {
+    background-color: #e7e8e9;
+}
+
+.button-icon {
+    margin-right: 16px;
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1b1f23;
+    margin-bottom: 4px;
+}
+
+.button-description {
+    font-size: 14px;
+    color: #6c757d;
+}
+
 
 /* Form input & button styling */
 :host {

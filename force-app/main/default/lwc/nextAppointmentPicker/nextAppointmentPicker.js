@@ -58,6 +58,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     showHasIncompleteWorkSteps = false;
     showMilageEntryScreen = false;
     selectedRows = [];
+    mileageType = '';
     labels = {
         AppointmentPicker_Next_Button,
         AppointmentPicker_No_Results,
@@ -221,63 +222,75 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
 
     @wire(graphql, {
         query: gql`
-    query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput, $saId: ID) {
-      uiapi {
-        query {
-          AssignedResource(
-            where: { 
-              and: [
-                { ServiceResourceId: { eq: $serviceResourceId } },
-                { ServiceAppointment: { Id: { ne: $saId } } },
-                { ServiceAppointment: { Status: { ne: "Completed" } } },
-                { ServiceAppointment: { Status: { ne: "Unscheduled" } } },
-                { ServiceAppointment: { Status: { ne: "Cannot Complete" } } },
-                { ServiceAppointment: { Status: { ne: "Cancelled" } } },
-                { ServiceAppointment: { 
-                    SchedStartTime: { 
-                      gte: $startDate,
-                      lte: $endDate
-                    } 
-                  }
-                }
-              ]
-            }
-          ) {
-            edges {
-              node {
-                ServiceAppointment {
-                  AppointmentNumber {
-                    value
-                    displayValue
-                  },
-                  Id,
-                  Subject {
-                    value
-                    displayValue
-                  }, 
-                  SchedStartTime {
-                    value
-                    displayValue
-                  },
-                  ParentRecordId {
-                    value
-                    displayValue
+        query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput) {
+          uiapi {
+            query {
+              AssignedResource(
+                where: { 
+                  and: [
+                    { ServiceResourceId: { eq: $serviceResourceId } },
+                    { ServiceAppointment: { Status: { ne: "Completed" } } },
+                    { ServiceAppointment: { Status: { ne: "Unscheduled" } } },
+                    { ServiceAppointment: { Status: { ne: "Cannot Complete" } } },
+                    { ServiceAppointment: { Status: { ne: "Cancelled" } } },
+                    { ServiceAppointment: { 
+                        SchedStartTime: { 
+                          gte: $startDate,
+                          lte: $endDate
+                        } 
+                      }
+                    }
+                  ]
+                },
+                orderBy: { ServiceAppointment: { SchedStartTime: { order: ASC } } }
+              ) {
+                edges {
+                  node {
+                    ServiceAppointment {
+                      AppointmentNumber {
+                        value
+                        displayValue
+                      },
+                      Account {
+                        Name {
+                          value
+                          displayValue
+                        }
+                      },
+                      Id,
+                      Subject {
+                        value
+                        displayValue
+                      }, 
+                      SchedStartTime {
+                        value
+                        displayValue
+                      },
+                      ParentRecordId {
+                        value
+                        displayValue
+                      }
+                    }
                   }
                 }
               }
             }
           }
-        }
-      }
-    }`,
+        }`,
         variables: "$serviceAppointmentsVariables",
     })
     appointmentsQueryResult ({error, data}) {
         if (data) {
             this.data = data.uiapi.query.AssignedResource.edges.map(edge => edge.node.ServiceAppointment);
             this.serviceAppointments = this.data.map(appointment => {
+                //Pretty schedule start time
+                let date = new Date(appointment.SchedStartTime.value);
+                //Use the date and the cleaned up hours and minutes, use 24h format
+                let dateFormatted =  date.getDate() + '/' + (date.getMonth() + 1) + ' ' + date.getHours() + ':' + date.getMinutes();
+                //Make sure we don't return things like 14:0, but 14:00
+                dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
                 return {
-                    Appointment: appointment.Subject.value,
+                    Appointment: appointment.Account.Name.value + ' - ' + dateFormatted,
                     AppointmentNumber: appointment.AppointmentNumber.value,
                     Subject: appointment.Subject.value,
                     Id: appointment.Id,
@@ -366,12 +379,19 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         }, 2000);
     }
 
+    handleEndWorkingDay() {
+        console.log('End working day clicked');
+        this.showInitialScreen = false;
+        this.showMilageEntryScreen = true;
+    }
+
     handleEndDayClicked() {
         console.log('End day clicked');
         this.setWorkStepStatus();
         this.setCurrentServiceAppointStatus();
         this.setParentWorkOrderStatus();
         this.showInitialScreen = false;
+        this.mileageType = 'Ending';
         this.showMilageEntryScreen = true;
     }
 

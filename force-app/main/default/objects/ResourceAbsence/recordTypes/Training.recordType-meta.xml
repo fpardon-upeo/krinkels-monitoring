@@ -26,19 +26,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>KMEV</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>MU</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>NW</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Nieuwe code</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Nieuwe code of KMEV</fullName>
             <default>false</default>
         </values>
         <values>

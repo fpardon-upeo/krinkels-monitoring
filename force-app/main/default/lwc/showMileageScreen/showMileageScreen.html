@@ -1,0 +1,365 @@
+<template>
+  <!-- Main Quick Action Content -->
+  <div class="main-container">
+    <div class="header">
+      <lightning-icon
+        icon-name="utility:travel_and_places"
+        size="small"
+        class="header-icon"
+      ></lightning-icon>
+      <h2 class="header-title">Review Your Mileage Entries</h2>
+    </div>
+
+    <div class="action-buttons">
+      <button onclick={handleInMileageEntries} class="action-button">
+        <span class="button-icon">
+          <lightning-icon
+            icon-name="utility:travel_and_places"
+            size="small"
+          ></lightning-icon>
+        </span>
+        <span class="button-text">
+          <span class="button-label">In Mileage Entries</span>
+          <span class="button-description">View or add in mileage records</span>
+        </span>
+      </button>
+
+      <button onclick={handleOutMileageEntries} class="action-button">
+        <span class="button-icon">
+          <lightning-icon
+            icon-name="utility:travel_and_places"
+            size="small"
+          ></lightning-icon>
+        </span>
+        <span class="button-text">
+          <span class="button-label">Out Mileage Entries</span>
+          <span class="button-description"
+            >View or add out mileage records</span
+          >
+        </span>
+      </button>
+    </div>
+
+    <div class="footer">
+      <button onclick={handleBackToMenu} class="submit-button">
+        <span class="button-icon">
+          <lightning-icon
+            icon-name="utility:home"
+            size="small"
+            variant="inverse"
+          ></lightning-icon>
+        </span>
+        <span class="button-text">Back to Main Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mileage Entries Modal -->
+  <template if:true={showMileageEntries}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet large-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">Mileage Entries</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <div class="MileageEntries-container">
+          <template for:each={mileageEntries} for:item="entry">
+            <div class="MileageEntryContainer" key={entry.Id}>
+              <div class="form-element">
+                <label class="slds-form-element__label"
+                  >Starting Location</label
+                >
+              </div>
+
+              <div class="form-element">
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    readonly
+                    class="slds-input"
+                    value={entry.Starting_Location_Type__c}
+                  />
+                </div>
+              </div>
+
+              <div class="form-element">
+                <label class="slds-form-element__label">Ending Location</label>
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    readonly
+                    class="slds-input"
+                    value={entry.Ending_Location_Type__c}
+                  />
+                </div>
+              </div>
+
+              <div class="form-element">
+                <label class="slds-form-element__label">Allowance</label>
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    readonly
+                    class="slds-input"
+                    value={entry.Allowance_Type__c}
+                  />
+                </div>
+              </div>
+
+              <div class="form-element">
+                <label class="slds-form-element__label">Starting Mileage</label>
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    readonly
+                    class="slds-input"
+                    value={entry.Starting_Mileage__c}
+                  />
+                </div>
+              </div>
+
+              <div class="form-element">
+                <label class="slds-form-element__label">Ending Mileage</label>
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    readonly
+                    class="slds-input"
+                    value={entry.Ending_Mileage__c}
+                  />
+                </div>
+              </div>
+
+              <div class="button-mileage-container">
+                <button class="cancel-button" onclick={handleCloseForm}>
+                  Cancel
+                </button>
+
+                <button
+                  class="submit-button"
+                  onclick={handleMileageEntryEdit}
+                  data-id={entry.Id}
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- New Mileage Out Entry Form -->
+  <template if:true={showOutMileageEntryNewForm}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet large-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">New Out Mileage Entry</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <lightning-record-edit-form
+          object-api-name="Mileage_Entry__c"
+          onsuccess={handleSuccessMileageEntryNew}
+        >
+          <lightning-messages></lightning-messages>
+          <div class="form-fields">
+            <lightning-input-field
+              field-name="Time_Sheet__c"
+              value={recordId}
+              class="slds-hide"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Type__c"
+              value="Ending"
+              class="slds-hide"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Service_Resource__c"
+              value={timeSheetResourceId}
+              class="slds-hide"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Starting_Location_Type__c"
+              value="Customer"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Ending_Location_Type__c"
+              required
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Allowance_Type__c"
+              required
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Starting_Mileage__c"
+              required
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Ending_Mileage__c"
+              required
+            ></lightning-input-field>
+          </div>
+          <div class="button-group">
+            <button class="cancel-button" onclick={handleCloseForm}>
+              Cancel
+            </button>
+            <button class="submit-button" type="submit">Save</button>
+          </div>
+        </lightning-record-edit-form>
+      </div>
+    </div>
+  </template>
+
+  <!-- New Mileage In Entry Form -->
+  <template if:true={showInMileageEntryNewForm}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet large-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">New In Mileage Entry</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <lightning-record-edit-form
+          object-api-name="Mileage_Entry__c"
+          onsuccess={handleSuccessMileageEntryNew}
+        >
+          <lightning-messages></lightning-messages>
+          <div class="form-fields">
+            <lightning-input-field
+              field-name="Time_Sheet__c"
+              value={recordId}
+              class="slds-hide"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Type__c"
+              value="Starting"
+              class="slds-hide"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Service_Resource__c"
+              value={timeSheetResourceId}
+              class="slds-hide"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Starting_Location_Type__c"
+              value="Home"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Ending_Location_Type__c"
+              required
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Allowance_Type__c"
+              required
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Starting_Mileage__c"
+              required
+            ></lightning-input-field>
+          </div>
+          <div class="button-group">
+            <button class="cancel-button" onclick={handleCloseForm}>
+              Cancel
+            </button>
+            <button class="submit-button" type="submit">Save</button>
+          </div>
+        </lightning-record-edit-form>
+      </div>
+    </div>
+  </template>
+
+  <!-- Mileage Entry Edit Form -->
+  <template if:true={showMileageEntryEditForm}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet large-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">Edit Mileage Entry</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <lightning-record-edit-form
+          object-api-name="Mileage_Entry__c"
+          onsuccess={handleSuccessMileageEntryEdit}
+          record-id={mileageEntryIdBeingHandled}
+        >
+          <lightning-messages></lightning-messages>
+          <div class="form-fields">
+            <lightning-input-field
+              field-name="Starting_Mileage__c"
+              class="form-element"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="Ending_Mileage__c"
+              class="form-element"
+            ></lightning-input-field>
+          </div>
+          <div class="button-group">
+            <button class="cancel-button" onclick={handleCloseForm}>
+              Cancel
+            </button>
+            <button class="submit-button" type="submit">Save</button>
+          </div>
+        </lightning-record-edit-form>
+      </div>
+    </div>
+  </template>
+
+  <!-- In Mileage Message Modal (No entries) -->
+  <template if:true={showInMileageMessage}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">In Mileage Entries</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <div class="action-buttons">
+          <button onclick={handleNewInMileageEntry} class="action-button">
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:travel_and_places"
+                size="small"
+              ></lightning-icon>
+            </span>
+            <span class="button-text">
+              <span class="button-label">Add In Mileage Entry</span>
+              <span class="button-description">Record your in mileage</span>
+            </span>
+          </button>
+        </div>
+        <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Out Mileage Message Modal (No entries) -->
+  <template if:true={showOutMileageMessage}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">Out Mileage Entries</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <div class="action-buttons">
+          <button onclick={handleNewOutMileageEntry} class="action-button">
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:travel_and_places"
+                size="small"
+              ></lightning-icon>
+            </span>
+            <span class="button-text">
+              <span class="button-label">Add Out Mileage Entry</span>
+              <span class="button-description">Record your out mileage</span>
+            </span>
+          </button>
+        </div>
+        <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+      </div>
+    </div>
+  </template>
+</template>

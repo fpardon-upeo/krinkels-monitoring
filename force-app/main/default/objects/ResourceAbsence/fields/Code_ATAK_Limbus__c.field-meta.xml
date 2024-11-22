@@ -3,6 +3,7 @@
     <fullName>Code_ATAK_Limbus__c</fullName>
     <label>Code ATAK/Limbus</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

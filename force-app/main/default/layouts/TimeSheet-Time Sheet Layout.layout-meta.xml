@@ -18,6 +18,10 @@
                 <behavior>Readonly</behavior>
                 <field>TimeSheetEntryCount</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Break_Time__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

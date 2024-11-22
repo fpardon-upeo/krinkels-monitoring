@@ -22,6 +22,7 @@ public with sharing class TimeSheetController {
         Total_Km__c,
         Total_Normal_Hours__c,
         Total_Travel_Time__c,
+        Total_Break_Time__c,
         (
           SELECT Id, StartTime, EndTime, Subject, Type
           FROM TimeSheetEntries
@@ -127,6 +128,48 @@ public with sharing class TimeSheetController {
       return Schema.SObjectType.ResourceAbsence.getRecordTypeInfosByDeveloperName()
         .get('Break')
         .getRecordTypeId();
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+
+  @AuraEnabled
+  public static TimeSheet getMileageEntries(Id recordId) {
+    System.debug('recordId: ' + recordId);
+    try {
+      return [
+        SELECT
+          Id,
+          Total_KM__c,
+          (
+            SELECT
+              Id,
+              Allowance_Type__c,
+              Starting_Mileage__c,
+              Ending_Mileage__c,
+              Starting_Location_Type__c,
+              Ending_Location_Type__c,
+              Calculated_Mileage__c
+            FROM Mileage_Entries__r
+          )
+        FROM TimeSheet
+        WHERE Id = :recordId
+      ];
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+
+  //Return the resourceId of the TimeSheet
+  @AuraEnabled
+  public static Id getResourceId(String timeSheetId) {
+    try {
+      return [
+        SELECT ServiceResourceId
+        FROM TimeSheet
+        WHERE Id = :timeSheetId
+      ][0]
+      .ServiceResourceId;
     } catch (Exception e) {
       throw new AuraHandledException(e.getMessage());
     }

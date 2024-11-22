@@ -57,6 +57,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>locationPassport</componentName>
+                <identifier>c_locationPassport</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>force:detailPanel</componentName>
                 <identifier>force_detailPanel</identifier>
             </componentInstance>

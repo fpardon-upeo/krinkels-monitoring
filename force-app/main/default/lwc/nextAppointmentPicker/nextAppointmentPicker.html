@@ -23,31 +23,49 @@
                 </div>
 
                 <div class="slds-grid slds-grid_align-center slds-wrap slds-gutters_medium">
-                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
-                        <div class="action-box brand"
-                             ontouchstart={handleTouchStart}
-                             ontouchend={handleTouchEnd}
-                             onclick={handleSetAppointmentClicked}>
-                            <div class="slds-text-heading_medium slds-p-bottom_small">
-                                {labels.AppointmentPicker_Select_Next_Appointment_Button}
-                            </div>
-                            <div class="slds-text-body_regular">
-                                {labels.AppointmentPicker_Next_Action_Sub_Text}
-                            </div>
-                        </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons">
+                        <button class="action-button brand"
+                                ontouchstart={handleTouchStart}
+                                ontouchend={handleTouchEnd}
+                                onclick={handleSetAppointmentClicked}>
+                                    <span class="button-icon">
+                                        <lightning-icon
+                                          icon-name="utility:tour"
+                                          size="medium"
+                                          class="slds-m-bottom_small">
+                                        </lightning-icon>
+                                    </span>
+                            <span class="button-text">
+                                      <span class="button-label">
+                                          {labels.AppointmentPicker_Select_Next_Appointment_Button}
+                                      </span>
+                                      <span class="button-description">
+                                       {labels.AppointmentPicker_Next_Action_Sub_Text}
+                                      </span>
+                                    </span>
+                        </button>
                     </div>
-                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
-                        <div class="action-box neutral"
-                             ontouchstart={handleTouchStart}
-                             ontouchend={handleTouchEnd}
-                             onclick={handleEndDayClicked}>
-                            <div class="slds-text-heading_medium slds-p-bottom_small">
-                                {labels.AppointmentPicker_End_Day_Button}
-                            </div>
-                            <div class="slds-text-body_regular">
-                                {labels.AppointmentPicker_End_Day_Button_Sub_Text}
-                            </div>
-                        </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons">
+                        <button class="action-button brand"
+                                ontouchstart={handleTouchStart}
+                                ontouchend={handleTouchEnd}
+                                onclick={handleEndDayClicked}>
+                                    <span class="button-icon">
+                                        <lightning-icon
+                                          icon-name="utility:waits"
+                                          size="medium"
+                                          class="slds-m-bottom_small">
+                                        </lightning-icon>
+                                    </span>
+                            <span class="button-text">
+                                      <span class="button-label">
+                                         {labels.AppointmentPicker_End_Day_Button}
+                                      </span>
+                                      <span class="button-description">
+                                          {labels.AppointmentPicker_End_Day_Button_Sub_Text}
+                                      </span>
+                                    </span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -84,11 +102,11 @@
                 <div class="slds-grid slds-grid_vertical slds-p-around_small">
                     <div class="slds-col">
                         <lightning-input-field field-name="Allowance_Type__c"></lightning-input-field>
+                        <lightning-input-field field-name="Type" value={mileageType}></lightning-input-field>
                         <lightning-input-field class="slds-hide"  field-name="Service_Resource__c" value={serviceResourceId}></lightning-input-field>
                         <lightning-input-field field-name="Starting_Location_Type__c"></lightning-input-field>
                         <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
                         <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
-                        <lightning-input-field field-name="Ending_Mileage__c"></lightning-input-field>
                         <lightning-input-field class="slds-hide"  field-name="Work_Order__c" value={workOrderId}></lightning-input-field>
                         <lightning-input-field class="slds-hide" field-name="Time_Sheet__c" value={timeSheetId}></lightning-input-field>
                     </div>

@@ -44,7 +44,7 @@
     <formulas>
         <name>formTimeSlotDetail</name>
         <dataType>String</dataType>
-        <expression>{!TimeSlots.Timeslot_Details__c}&amp;BR()</expression>
+        <expression>{!TimeSlots.Timeslot_Details__c}&amp;&quot; - &quot;</expression>
     </formulas>
     <interviewLabel>[Location Passport][Mobile Flow][Screen flow] Get Location Passport Information {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Location Passport][Mobile Flow][Screen flow] View Location Passport Information</label>
@@ -315,7 +315,7 @@
             <targetReference>Get_Work_Order_Info</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>templateChatterText</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>

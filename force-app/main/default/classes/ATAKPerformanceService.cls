@@ -4,6 +4,15 @@
 
 public with sharing class ATAKPerformanceService {
 
+    /**
+     * @description: This method syncs the ATAK performance data for a timesheet
+     * @param tsId - TimeSheet record Id
+     * @return Integer - the status code of the callout, this is pretty useless because
+     * ATAK always returns 200 unless there is a connection error.
+     * ATAK runs a large number of business rules after the data is added, but it does this after
+     * returning the 200 status code, so we cannot use this to determine if the data was accepted.
+    **/
+
     public static Integer syncATAKPerformanceData(String tsId) {
         ATAKPerformanceWrapper wrapper = prepareATAKPerformanceData(tsId);
         Integer statusCode = sendATAKPerformanceData(wrapper);
@@ -19,6 +28,8 @@ public with sharing class ATAKPerformanceService {
 
     public static ATAKPerformanceWrapper prepareATAKPerformanceData(String tsId) {
 
+        // Get the timesheet, timesheet entries, mileage entries and materials
+
         TimeSheet ts = [
                 SELECT Id, ServiceResource.RelatedRecord.ATAK_Code__c
                 FROM Timesheet WHERE Id = :tsId
@@ -26,39 +37,68 @@ public with sharing class ATAKPerformanceService {
 
         List<TimeSheetEntry> tsEntries = [
                 SELECT Id, WorkOrderId, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
-                        WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c
+                        WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
+                        Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
                 FROM TimeSheetEntry WHERE TimesheetId = :tsId
+                ORDER BY StartTime ASC
         ];
 
         List<Mileage_Entry__c> mileageEntries = [
                 SELECT Id, CreatedDate,
-                        Time_Sheet__r.StartDate, Codes_ATAK_Limbus__c,
+                        Time_Sheet__r.StartDate, Codes_ATAK_Limbus__c, Type__c,
                         Calculated_Mileage__c, Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c, Service_Resource__r.RelatedRecord.ATAK_Code__c
                 FROM Mileage_Entry__c WHERE Time_Sheet__c = :tsId
         ];
 
+        // Create the wrapper object and add the data
         ATAKPerformanceWrapper wrapper = new ATAKPerformanceWrapper();
         wrapper.personnelcode_writer = ts.ServiceResource.RelatedRecord.ATAK_Code__c; //The one who writes the timesheet, can log for other users
-
         List<ATAKPerformanceWrapper.Data> dataList = new List<ATAKPerformanceWrapper.Data>();
+
+        // Create a list of work order ids so we can get the subproject of the first and last work order
+        // We also need this list to get the materials
         List<String> workOrderIds = new List<String>();
 
+        // Loop through the timesheet entries and add them to the data list
         for(TimeSheetEntry timeSheetEntry : tsEntries){
             ATAKPerformanceWrapper.Data data = personnelTimesheetToATAKPerformance(timeSheetEntry);
             dataList.add(data);
             workOrderIds.add(timeSheetEntry.WorkOrderId);
+            if(timeSheetEntry.Starting_Allowance_Winter_Service__c == true){
+                //Add a second entry for the winter service, Code_ATAK_Limbus__c = "P"
+                timeSheetEntry.Code_ATAK_Limbus__c = 'P';
+                ATAKPerformanceWrapper.Data dataWinter = personnelTimesheetToATAKPerformance(timeSheetEntry);
+                dataList.add(dataWinter);
+            }
         }
 
+        //Before adding the mileage entries, we need to get the SubProject_ATAK__c of the first and last work order
+        String firstWorkOrderId = workOrderIds[0];
+        String lastWorkOrderId = workOrderIds[workOrderIds.size() - 1];
+
+        String firstSubProject = [
+                SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
+                FROM WorkOrder WHERE Id = :firstWorkOrderId
+        ].Asset.ATAK_Project__r.SubProject_ATAK__c;
+
+        String lastSubProject = [
+                SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
+                FROM WorkOrder WHERE Id = :lastWorkOrderId
+        ].Asset.ATAK_Project__r.SubProject_ATAK__c;
+
+        // Loop through the mileage entries and add them to the data list
         for(Mileage_Entry__c mileage : mileageEntries){
-            ATAKPerformanceWrapper.Data data = mileageToATAKPerformance(mileage);
+            ATAKPerformanceWrapper.Data data = mileageToATAKPerformance(mileage, firstSubProject, lastSubProject);
             dataList.add(data);
         }
 
+        // Get the materials based on the work order ids
         List<ProductConsumed> materials = [
                 SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
                 FROM ProductConsumed WHERE WorkOrderId IN :workOrderIds
         ];
 
+        // Loop through the materials and add them to the data list
         for(ProductConsumed material : materials){
             ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
             dataList.add(data);
@@ -71,12 +111,14 @@ public with sharing class ATAKPerformanceService {
 
     /**
     * @description: This method converts a TimeSheetEntry object to an ATAKPerformanceWrapper.Data object for personnel timesheets
-     * TODO: Split out the P from the HR hours and send them as a separate element
     * @remarks:
     *           - Dates need to be sent as strings in the format 20241008 ("YYYYMMDD")
     *           - Times need to be sent as strings in the format 20240908070000 ("YYYYMMDDHHMMSS")
     *           - If quantity_registration_unit is "P", then quantity is always 1
     *           - If quantity_registration_unit is "HR", then quantity is the number of hours worked
+     *@outstanding: What do we do with the first travel time record of the day? From a payroll perspective this is covered
+    *               by the kilometer allowance. Do we need to send this to ATAK for reporting reasons?
+     *              And if so, using which code?
     * @param: tsEntry - TimeSheetEntry record
     * @return: ATAKPerformanceWrapper.Data object
     **/
@@ -113,11 +155,25 @@ public with sharing class ATAKPerformanceService {
     *           - Dates need to be sent as strings in the format 20241008 ("YYYYMMDD")
     *           - Times need to be sent as strings in the format 20240908070000 ("YYYYMMDDHHMMSS")
     * @param: Mileage - Mileage_Entry__c
+    * @param: firstSubProject - SubProject_ATAK__c of the first work order
+    * @param: lastSubProject - SubProject_ATAK__c of the last work order
+     *
     * @return: ATAKPerformanceWrapper.Data object
     **/
 
-    public static ATAKPerformanceWrapper.Data mileageToATAKPerformance(Mileage_Entry__c mileage) {
+    public static ATAKPerformanceWrapper.Data mileageToATAKPerformance(Mileage_Entry__c mileage, String firstSubProject, String lastSubProject) {
         ATAKPerformanceWrapper.Data data = new ATAKPerformanceWrapper.Data();
+
+        String atakProject = '';
+
+        if(mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Starting'){
+            atakProject = firstSubProject;
+        } else if(mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Ending'){
+            atakProject = lastSubProject;
+        } else {
+            atakProject = mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c;
+        }
+
         data.registration_timestamp = mileage.CreatedDate.format('YYYYMMddHHmmss');
         data.dossier = 'KGC';
         data.performance_date = Datetime.newInstance(mileage.Time_Sheet__r.StartDate.year(), mileage.Time_Sheet__r.StartDate.month(), mileage.Time_Sheet__r.StartDate.day()).format('YYYYMMdd');
@@ -125,7 +181,7 @@ public with sharing class ATAKPerformanceService {
         data.end_timestamp = mileage.CreatedDate.format('YYYYMMddHHmmss');
         data.performance_resource_code = mileage.Service_Resource__r.RelatedRecord.ATAK_Code__c;
         data.performance_resource_type = 'P'; //P for personnel
-        data.projectcode = mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c;
+        data.projectcode = atakProject;
         data.quantity_registration_unit = mileage.Codes_ATAK_Limbus__c;
         data.quantity = mileage.Calculated_Mileage__c == null ? '0' : String.valueOf(mileage.Calculated_Mileage__c);
         return data;
@@ -219,6 +275,10 @@ public with sharing class ATAKPerformanceService {
     /**
      * @description: This method gets a new auth token
      * @return String - the auth token
+     * @remarks: we cannot use OAUTH2, so we need to send the username and password in the body.
+     * There is no refresh token, so we need to get a new token every time.
+     * ATAK returns a token in the response body
+     * This token is valid for 1 hours (in theory).
     **/
 
     public static String getAuthToken() {

@@ -17,10 +17,13 @@
         <members>ATAKVehicleService</members>
         <members>ATAKVehicleWrapper</members>
         <members>ATAKVehicleWrapperTest</members>
+        <members>AccountDetailsController</members>
         <members>AddressSearchService</members>
         <members>CallOut</members>
         <members>CallOutHandler</members>
         <members>ContractLineItemTriggerHandler</members>
+        <members>DateTimeRounder</members>
+        <members>DateTimeRounderTest</members>
         <members>ExportRecordsController</members>
         <members>FieldServiceTestData</members>
         <members>FileUploadImprovedHelper</members>
@@ -66,6 +69,7 @@
         <members>TimeSheetCalculationService</members>
         <members>TimeSheetCalculationServiceTest</members>
         <members>TimeSheetController</members>
+        <members>TimeSheetControllerTest</members>
         <members>WeatherService</members>
         <members>WorkOrderLocationBatch</members>
         <members>WorkOrderLocationQueueable</members>
@@ -86,12 +90,15 @@
     </types>
     <types>
         <members>ATAKPersonnelTrigger</members>
+        <members>AppointmentStatusTrigger</members>
         <members>ContentDocumentTrigger</members>
         <members>ContractLineItemTrigger</members>
+        <members>ResourceAbsenceTrigger</members>
         <members>ServiceAppointmentTrigger</members>
         <members>ServiceContractMaintenancePlan</members>
         <members>ServiceContractTrigger</members>
         <members>ServiceResourceEvent</members>
+        <members>TimeSheetEntryTrigger</members>
         <members>WorkOrderTrigger</members>
         <name>ApexTrigger</name>
     </types>
@@ -452,6 +459,7 @@
         <members>Mileage_Entry__c.Starting_Location_Type__c</members>
         <members>Mileage_Entry__c.Starting_Mileage__c</members>
         <members>Mileage_Entry__c.Time_Sheet__c</members>
+        <members>Mileage_Entry__c.Type__c</members>
         <members>Mileage_Entry__c.Work_Order__c</members>
         <members>Operator_Created_Event__e.User_Id__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
@@ -637,6 +645,7 @@
         <members>Service_Status_Time_Log__c.Start_Time__c</members>
         <members>TimeSheet.Needs_Review__c</members>
         <members>TimeSheet.Send_to_ATAK__c</members>
+        <members>TimeSheet.Total_Break_Time__c</members>
         <members>TimeSheet.Total_Hours__c</members>
         <members>TimeSheet.Total_KM__c</members>
         <members>TimeSheet.Total_Normal_Hours__c</members>
@@ -721,6 +730,10 @@
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
+        <members>StartDay_End_Day_Button_Sub_Text</members>
+        <members>StartDay_End_Day_Button_Sub_Text</members>
+        <members>StartDay_End_Day_Button_Text</members>
+        <members>StartDay_End_Day_Button_Text</members>
         <members>StartDay_KM_Back_Button_Text</members>
         <members>StartDay_KM_Back_Button_Text</members>
         <members>StartDay_KM_Button_Sub_Text</members>
@@ -1489,6 +1502,7 @@
         <members>imageTextEditor</members>
         <members>infoEditorPrompt</members>
         <members>loadingSpinner</members>
+        <members>locationPassport</members>
         <members>nextAppointmentPicker</members>
         <members>prepareContractForNextYear</members>
         <members>readyForValidation</members>
@@ -1501,6 +1515,7 @@
         <members>sendBetterEmailUcModal</members>
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
+        <members>showMileageScreen</members>
         <members>simpleDispatcherConsole</members>
         <members>startOperatorDay</members>
         <members>startOperatorDayMetrics</members>
@@ -1792,7 +1807,9 @@
         <members>Task.UpdateStatus_9</members>
         <members>TimeSheet.Send_to_ATAK</members>
         <members>TimeSheet.Time_Sheet_Review</members>
+        <members>TimeSheet.test_mileage</members>
         <members>Timesheet</members>
+        <members>WorkOrder.Location_Passport</members>
         <members>WorkOrder.SendEmail</members>
         <members>WorkOrder.Start_Stop</members>
         <members>WorkOrderLineItem.Complete_Service</members>
@@ -2494,6 +2511,7 @@
         <name>UiFormatSpecificationSet</name>
     </types>
     <types>
+        <members>Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start</members>
         <members>ResourceAbsence.FSL__Absence_Color_HEX_Format</members>
         <members>ResourceAbsence.FSL__startShouldPrecedeEnd</members>
         <members>ServiceAppointment.FSL__Dont_allow_scheduled_or_dispatched</members>

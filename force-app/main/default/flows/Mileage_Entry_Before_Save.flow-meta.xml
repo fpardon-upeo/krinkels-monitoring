@@ -1,10 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>KMAD</name>
+        <label>KMAD</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMAD</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMAP</name>
+        <label>KMAP</label>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMAP</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMBD</name>
+        <label>KMBD</label>
+        <locationX>842</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMBD</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMBP</name>
+        <label>KMBP</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMBP</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMEV</name>
+        <label>KMEV</label>
+        <locationX>1106</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMEV</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Code</name>
+        <label>Check Code</label>
+        <locationX>710</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Driver_Start_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Starting</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Driver</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMAD</targetReference>
+            </connector>
+            <label>Driver - Start of Day</label>
+        </rules>
+        <rules>
+            <name>Driver_End_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Driver</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMBP</targetReference>
+            </connector>
+            <label>Driver - End of Day</label>
+        </rules>
+        <rules>
+            <name>Passenger_Start_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Starting</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Passenger</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMAP</targetReference>
+            </connector>
+            <label>Passenger - Start of Day</label>
+        </rules>
+        <rules>
+            <name>Passenger_End_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Passenger</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMBD</targetReference>
+            </connector>
+            <label>Passenger - End of Day</label>
+        </rules>
+        <rules>
+            <name>Own_Vehicle</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Own Vehicle</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMEV</targetReference>
+            </connector>
+            <label>Own Vehicle</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Code_ATAK</name>
         <label>Code ATAK</label>
-        <locationX>182</locationX>
+        <locationX>1128</locationX>
         <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -45,8 +220,12 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
             <connector>
-                <targetReference>Update_ATAK_Codes</targetReference>
+                <targetReference>Check_Code</targetReference>
             </connector>
             <label>Needs Update</label>
         </rules>
@@ -136,27 +315,8 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordUpdates>
-        <name>Update_ATAK_Codes</name>
-        <label>Update ATAK Codes</label>
-        <locationX>50</locationX>
-        <locationY>395</locationY>
-        <inputAssignments>
-            <field>Codes_ATAK_Limbus__c</field>
-            <value>
-                <elementReference>CalculatedATAKCode</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Soccode__c</field>
-            <value>
-                <elementReference>CalculatedSoccode</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>1002</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Code_ATAK</targetReference>

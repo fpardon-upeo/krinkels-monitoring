@@ -510,4 +510,20 @@
         <shortDescription>StartDay_Open_Next_Appointment_Button_Text</shortDescription>
         <value>Go to Work Order</value>
     </labels>
+    <labels>
+        <fullName>StartDay_End_Day_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_End_Day_Button_Sub_Text</shortDescription>
+        <value>Log your closing km and finish up.</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_End_Day_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_End_Day_Button_Text</shortDescription>
+        <value>Review your Kilometers</value>
+    </labels>
 </CustomLabels>

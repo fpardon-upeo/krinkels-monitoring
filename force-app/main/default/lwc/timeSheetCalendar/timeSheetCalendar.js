@@ -45,6 +45,8 @@ export default class TimeSheetCalendar extends LightningElement {
   @track breakHours = 0;
   @track kmAmount = 0;
   @track travelHours = 0;
+  @track totalHours = 0;
+  @track totalBreakHours = 0;
 
   @track isLoading = true;
   @track showNewTimeSheetOrAbsenceModal = false;
@@ -76,6 +78,7 @@ export default class TimeSheetCalendar extends LightningElement {
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
+          this.totalBreakHours = result.timeSheet.Total_Break_Time__c/60 || 0;
         }
 
         // Get the Break record type ID
@@ -311,7 +314,7 @@ export default class TimeSheetCalendar extends LightningElement {
         minute: "2-digit",
         hour12: false
       },
-      snapDuration: "00:30:00",
+      snapDuration: "00:05:00",
       events: allEvents,
       editable: true,
       selectMirror: true,
@@ -721,11 +724,9 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   handleSuccessMileageEntryNew(event) {
-    const recordId = event.detail.id;
-
     const toastEvent = new ShowToastEvent({
       title: "Success",
-      message: `${recordId} - Mileage entry created successfully.`,
+      message: `Mileage entry created successfully.`,
       variant: "success"
     });
 

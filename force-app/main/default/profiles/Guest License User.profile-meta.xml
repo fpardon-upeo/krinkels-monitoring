@@ -75,6 +75,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountDetailsController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AddressSearchService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -88,6 +92,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ContractLineItemTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DateTimeRounder</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DateTimeRounderTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -268,6 +280,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1526,6 +1542,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Mileage_Entry__c.Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Mileage_Entry__c.Work_Order__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2427,6 +2448,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheet.Send_to_ATAK__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheet.Total_Break_Time__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

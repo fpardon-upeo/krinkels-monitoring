@@ -16,11 +16,6 @@
         <label>P</label>
     </customValue>
     <customValue>
-        <fullName>Nieuwe code</fullName>
-        <default>false</default>
-        <label>Nieuwe code</label>
-    </customValue>
-    <customValue>
         <fullName>KMAD</fullName>
         <default>false</default>
         <label>KMAD</label>
@@ -41,9 +36,9 @@
         <label>KMBD</label>
     </customValue>
     <customValue>
-        <fullName>Nieuwe code of KMEV</fullName>
+        <fullName>KMEV</fullName>
         <default>false</default>
-        <label>Nieuwe code of KMEV</label>
+        <label>KMEV</label>
     </customValue>
     <customValue>
         <fullName>VV</fullName>

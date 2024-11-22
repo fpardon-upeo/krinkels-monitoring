@@ -1,0 +1,31 @@
+/**
+ * Created by Frederik on 11/21/2024.
+ */
+
+.custom-datatable {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+}
+
+.slds-card_boundary {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.slds-item_label {
+    width: 30%;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.slds-item_detail {
+    width: 70%;
+    padding: 0.5rem;
+}
+
+.slds-list_horizontal {
+    display: flex;
+    flex-wrap: wrap;
+}

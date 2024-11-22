@@ -1,0 +1,415 @@
+/* Main container styles */
+.main-container {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding-bottom: 5rem;
+}
+
+.action-buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: auto 0;
+  padding: 2rem 0;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  text-align: left;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:active {
+  background-color: #e7e8e9;
+}
+
+.button-icon {
+  margin-right: 1.5rem;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1b1f23;
+  margin-bottom: 0.5rem;
+}
+
+.button-description {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.cancel-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #e7e8e9;
+  color: #dc3545;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Backdrop */
+.mobile-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Bottom Sheet */
+.mobile-bottom-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  border-radius: 12px 12px 0 0;
+  z-index: 9001;
+  animation: slideUp 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.bottom-sheet-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #dddbda;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+
+.drag-indicator {
+  width: 36px;
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 2px;
+  margin: 0 auto 0.5rem;
+}
+
+.sheet-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2b2826;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Content */
+.bottom-sheet-content {
+  padding: 1.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.action-button:active {
+  background-color: #e7e8e9;
+}
+
+.button-icon {
+  margin-right: 16px;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1b1f23;
+  margin-bottom: 4px;
+}
+
+.button-description {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.cancel-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #e7e8e9;
+  color: #dc3545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Larger bottom sheet for forms */
+.large-sheet {
+  max-height: 750px;
+}
+
+.large-sheet .bottom-sheet-content {
+  padding: 1.5rem;
+}
+
+.large-sheet .form-fields {
+  margin-bottom: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(75vh - 180px);
+}
+
+.form-element {
+  margin-bottom: 1rem;
+}
+
+/* Button group for form actions */
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid #dddbda;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #449f03;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cancel-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #e7e8e9;
+  color: #dc3545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit-buttonSecond {
+  width: 65%;
+  font-size: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #449f03;
+  color: white;
+  font-weight: 600;
+}
+
+.cancel-button:hover,
+.cancel-button:focus,
+.submit-button:hover,
+.submit-button:focus,
+.info-button:hover,
+.info-button:focus,
+.submit-buttonSecond:hover,
+.submit-buttonSecond:focus {
+  cursor: pointer;
+  opacity: 0.775;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Safe area spacing for modern mobile devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .mobile-bottom-sheet {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Mobile form styling */
+@media (max-width: 768px) {
+  .mobile-form-container {
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .mobile-form-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+    padding: 1rem;
+    border-bottom: 1px solid #dddbda;
+  }
+
+  .mobile-form-fields {
+    padding: 1rem;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .form-element {
+    margin-bottom: 1rem;
+  }
+
+  .mobile-form-footer {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem;
+    border-top: 1px solid #dddbda;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .slds-input,
+  .slds-select,
+  .slds-combobox__input {
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .slds-form-element__label {
+    font-size: 0.875rem !important;
+    color: #706e6b !important;
+    margin-bottom: 0.25rem !important;
+  }
+}
+
+/* Form label size */
+:host {
+  --lwc-formLabelFontSize: 16px;
+}
+
+/* Add these new styles */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+}
+
+.header-icon {
+  --sds-c-icon-color-foreground-default: #706e6b; /* Standard grey color */
+}
+
+.header-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1b1f23;
+}
+
+.no-entries-message {
+  text-align: center;
+  color: #706e6b;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.button-mileage-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Add these styles for the footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: white;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #dddbda;
+  z-index: 2;
+}
+
+/* Style the lightning-button in the footer */
+.footer lightning-button {
+  width: 65%;
+}
+
+/* Update footer button styling */
+.footer .submit-button {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer .button-icon {
+  margin-right: 0.5rem;
+}
+
+/* Make icon white to match button text */
+.footer .button-icon lightning-icon {
+  --sds-c-icon-color-foreground-default: white;
+}
