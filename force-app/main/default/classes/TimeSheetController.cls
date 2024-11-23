@@ -23,6 +23,7 @@ public with sharing class TimeSheetController {
         Total_Normal_Hours__c,
         Total_Travel_Time__c,
         Total_Break_Time__c,
+        Status,
         (
           SELECT Id, StartTime, EndTime, Subject, Type
           FROM TimeSheetEntries

@@ -61,6 +61,9 @@ export default class TimeSheetCalendar extends LightningElement {
   @track showResourceAbsenceNewForm = false;
   @track showResourceAbsenceEditForm = false;
   @track showMileageEntryEditForm = false;
+  @track submitTimeSheetMessage = false;
+  @track showNoEntriesModal = false;
+  @track isTimeSheetSubmittedOrApprovedOrNeedsReview = false;
 
   connectedCallback() {
     // Wait for DOM to be ready
@@ -73,12 +76,33 @@ export default class TimeSheetCalendar extends LightningElement {
         return getTimeSheet({ recordId: this.recordId });
       })
       .then((result) => {
+        console.log("result", JSON.stringify(result));
+
+        // Check if the TimeSheet is submitted or approved
+        if (
+          result.timeSheet.Status === "Submitted" ||
+          result.timeSheet.Status === "Approved" ||
+          result.timeSheet.Status === "Needs Review"
+        ) {
+          this.isTimeSheetSubmittedOrApprovedOrNeedsReview = true;
+        }
+
+        // Check if there are no entries or breaks and display the modal and not the calendar
+        if (
+          !result.timeSheet?.TimeSheetEntries &&
+          result.resourceAbsences &&
+          result.resourceAbsences.length === 0
+        ) {
+          this.isLoading = false;
+          this.showNoEntriesModal = true;
+        }
+
         if (result.timeSheet) {
           this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours = result.timeSheet.Total_Break_Time__c/60 || 0;
+          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
         }
 
         // Get the Break record type ID
@@ -96,17 +120,17 @@ export default class TimeSheetCalendar extends LightningElement {
         }
 
         // Get the TimeSheet's ServiceResourceId/User
-        this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+        this.timeSheetResourceId = result.timeSheet?.ServiceResourceId;
 
-        if (result.timeSheet.StartDate) {
+        if (result.timeSheet?.StartDate) {
           this.startDate = result.timeSheet.StartDate;
         }
 
-        if (result.timeSheet.EndDate) {
+        if (result.timeSheet?.EndDate) {
           this.endDate = result.timeSheet.EndDate;
         }
 
-        if (result.timeSheet.Mileage_Entries__r) {
+        if (result.timeSheet?.Mileage_Entries__r) {
           this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
 
           // Reset arrays before populating
@@ -141,7 +165,7 @@ export default class TimeSheetCalendar extends LightningElement {
           });
         }
 
-        if (result.timeSheet.TimeSheetEntries) {
+        if (result.timeSheet?.TimeSheetEntries) {
           // Get the end date from the TimeSheet
           const endDate = result.timeSheet.EndDate;
 
@@ -187,7 +211,7 @@ export default class TimeSheetCalendar extends LightningElement {
           }
         }
 
-        if (result.resourceAbsences) {
+        if (result.resourceAbsences && result.resourceAbsences.length > 0) {
           this.resourceAbsences = [...result.resourceAbsences];
 
           this.resourceAbsences.forEach((absence) => {
@@ -251,15 +275,12 @@ export default class TimeSheetCalendar extends LightningElement {
             : entry.Type === "Night Work" || entry.Type === "Machine"
               ? "#DAA520"
               : "#c23934",
-      editable: true,
+      // Only allow editing if the TimeSheet is not submitted or approved
+      editable: !this.isTimeSheetSubmittedOrApprovedOrNeedsReview,
       extendedProps: {
         recordType: "TimeSheetEntry"
       }
     }));
-
-    this.resourceAbsences.forEach((absence) => {
-      console.log("absence", JSON.stringify(absence));
-    });
 
     const absenceEvents = this.resourceAbsences.map((absence) => ({
       id: absence.Id,
@@ -268,7 +289,8 @@ export default class TimeSheetCalendar extends LightningElement {
       title: absence.Description ? `Break - ${absence.Description}` : "Break",
       backgroundColor: "#c23934",
       borderColor: "#c23934",
-      editable: true,
+      // Only allow editing if the TimeSheet is not submitted or approved
+      editable: !this.isTimeSheetSubmittedOrApprovedOrNeedsReview,
       extendedProps: {
         recordType: "ResourceAbsence"
       }
@@ -286,9 +308,9 @@ export default class TimeSheetCalendar extends LightningElement {
       headerToolbar: false,
       selectable: true,
       // Increase delays and make more forgiving
-      eventLongPressDelay: 600, // Reduced from 500
-      longPressDelay: 600, // Reduced from 500
-      selectLongPressDelay: 600, // Reduced from 500
+      eventLongPressDelay: 600,
+      longPressDelay: 600,
+      selectLongPressDelay: 600,
       // Event settings
       eventDurationEditable: true,
       eventStartEditable: true,
@@ -316,7 +338,7 @@ export default class TimeSheetCalendar extends LightningElement {
       },
       snapDuration: "00:05:00",
       events: allEvents,
-      editable: true,
+      editable: !this.isTimeSheetSubmittedOrApprovedOrNeedsReview,
       selectMirror: true,
 
       // Event styling
@@ -341,7 +363,10 @@ export default class TimeSheetCalendar extends LightningElement {
       },
       // Click event
       eventClick: (info) => {
-        this.handleEventClick(info);
+        // Only allow clicking if the TimeSheet is not submitted or approved
+        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+          this.handleEventClick(info);
+        }
       },
       // Drag and drop event
       eventDrop: (info) => {
@@ -349,54 +374,63 @@ export default class TimeSheetCalendar extends LightningElement {
         const startTime = info.event.start.toISOString();
         const endTime = info.event.end.toISOString();
 
-        if (info.event.extendedProps.recordType === "TimeSheetEntry") {
-          updateTimeSheetEntry({
-            timeSheetEntryId: info.event.id,
-            startTime: startTime,
-            endTime: endTime
-          })
-            .then((result) => {
-              // Update the local data with the server response
-              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
-
-              if (result.timeSheet.TimeSheetEntries) {
-                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              }
-
-              if (result.resourceAbsences) {
-                this.resourceAbsences = [...result.resourceAbsences];
-              }
-
-              // Notify LDS of the updated record
-              getRecordNotifyChange([{ recordId: info.event.id }]);
+        // Only allow dragging if the TimeSheet is not submitted or approved
+        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+          if (info.event.extendedProps.recordType === "TimeSheetEntry") {
+            updateTimeSheetEntry({
+              timeSheetEntryId: info.event.id,
+              startTime: startTime,
+              endTime: endTime
             })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
-        } else if (info.event.extendedProps.recordType === "ResourceAbsence") {
-          updateAbsence({
-            absenceId: info.event.id,
-            startTime: startTime,
-            endTime: endTime,
-            timeSheetId: this.recordId
-          })
-            .then((result) => {
-              // Update the local data with the server response
-              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
-              if (result.timeSheet.TimeSheetEntries) {
-                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              }
+              .then((result) => {
+                // Update the local data with the server response
+                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
 
-              if (result.resourceAbsences) {
-                this.resourceAbsences = [...result.resourceAbsences];
-              }
+                if (result.timeSheet.TimeSheetEntries) {
+                  this.timeSheetEntries = [
+                    ...result.timeSheet.TimeSheetEntries
+                  ];
+                }
 
-              // Notify LDS of the updated record
-              getRecordNotifyChange([{ recordId: info.event.id }]);
+                if (result.resourceAbsences) {
+                  this.resourceAbsences = [...result.resourceAbsences];
+                }
+
+                // Notify LDS of the updated record
+                getRecordNotifyChange([{ recordId: info.event.id }]);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          } else if (
+            info.event.extendedProps.recordType === "ResourceAbsence"
+          ) {
+            updateAbsence({
+              absenceId: info.event.id,
+              startTime: startTime,
+              endTime: endTime,
+              timeSheetId: this.recordId
             })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
+              .then((result) => {
+                // Update the local data with the server response
+                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+                if (result.timeSheet.TimeSheetEntries) {
+                  this.timeSheetEntries = [
+                    ...result.timeSheet.TimeSheetEntries
+                  ];
+                }
+
+                if (result.resourceAbsences) {
+                  this.resourceAbsences = [...result.resourceAbsences];
+                }
+
+                // Notify LDS of the updated record
+                getRecordNotifyChange([{ recordId: info.event.id }]);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          }
         }
       },
       // Resize event
@@ -405,62 +439,78 @@ export default class TimeSheetCalendar extends LightningElement {
         const startTime = info.event.start;
         const endTime = info.event.end;
 
-        if (info.event.extendedProps.recordType === "TimeSheetEntry") {
-          updateTimeSheetEntry({
-            timeSheetEntryId: info.event.id,
-            startTime: startTime,
-            endTime: endTime
-          })
-            .then((result) => {
-              // Update the local data with the server response
-              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
-              if (result.timeSheet.TimeSheetEntries) {
-                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              }
-
-              if (result.resourceAbsences) {
-                this.resourceAbsences = [...result.resourceAbsences];
-              }
-
-              // Notify LDS of the updated record
-              getRecordNotifyChange([{ recordId: info.event.id }]);
+        // Only allow resizing if the TimeSheet is not submitted or approved
+        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+          if (info.event.extendedProps.recordType === "TimeSheetEntry") {
+            updateTimeSheetEntry({
+              timeSheetEntryId: info.event.id,
+              startTime: startTime,
+              endTime: endTime
             })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
-        } else if (info.event.extendedProps.recordType === "ResourceAbsence") {
-          updateAbsence({
-            absenceId: info.event.id,
-            startTime: startTime,
-            endTime: endTime,
-            timeSheetId: this.recordId
-          })
-            .then((result) => {
-              // Update the local data with the server response
-              this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
-              if (result.timeSheet.TimeSheetEntries) {
-                this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-              }
+              .then((result) => {
+                // Update the local data with the server response
+                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+                if (result.timeSheet.TimeSheetEntries) {
+                  this.timeSheetEntries = [
+                    ...result.timeSheet.TimeSheetEntries
+                  ];
+                }
 
-              if (result.resourceAbsences) {
-                this.resourceAbsences = [...result.resourceAbsences];
-              }
+                if (result.resourceAbsences) {
+                  this.resourceAbsences = [...result.resourceAbsences];
+                }
 
-              // Notify LDS of the updated record
-              getRecordNotifyChange([{ recordId: info.event.id }]);
+                // Notify LDS of the updated record
+                getRecordNotifyChange([{ recordId: info.event.id }]);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          } else if (
+            info.event.extendedProps.recordType === "ResourceAbsence"
+          ) {
+            updateAbsence({
+              absenceId: info.event.id,
+              startTime: startTime,
+              endTime: endTime,
+              timeSheetId: this.recordId
             })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
+              .then((result) => {
+                // Update the local data with the server response
+                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
+                if (result.timeSheet.TimeSheetEntries) {
+                  this.timeSheetEntries = [
+                    ...result.timeSheet.TimeSheetEntries
+                  ];
+                }
+
+                if (result.resourceAbsences) {
+                  this.resourceAbsences = [...result.resourceAbsences];
+                }
+
+                // Notify LDS of the updated record
+                getRecordNotifyChange([{ recordId: info.event.id }]);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          }
         }
       },
       // When multiple rows or cells are selected
       select: (info) => {
-        this.handleDateClick(info);
+        // Only allow selecting if the TimeSheet is not submitted or approved
+        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+          this.handleDateClick(info);
+        }
       }
     });
 
     this.calendar.render();
+    console.log(
+      "Calendar initialized, timesheet status:",
+      this.isTimeSheetSubmittedOrApprovedOrNeedsReview
+    );
   }
 
   /**
@@ -484,8 +534,6 @@ export default class TimeSheetCalendar extends LightningElement {
       // Add the object to the mileageEntries array as it's the one that will be displayed in the modal
       this.mileageEntries.push(obj);
     });
-    console.log("mileageArray", JSON.stringify(mileageArray));
-    console.log("this.mileageEntries", JSON.stringify(this.mileageEntries));
   }
 
   /**
@@ -534,6 +582,7 @@ export default class TimeSheetCalendar extends LightningElement {
     this.showMileageInfoModal = false;
     this.showOutMileageEntryNewForm = false;
     this.showInMileageEntryNewForm = false;
+    this.submitTimeSheetMessage = false;
   }
 
   /**
@@ -844,10 +893,15 @@ export default class TimeSheetCalendar extends LightningElement {
     this.dispatchEvent(toastEvent);
   }
 
+  handleSubmitTimeSheetMessage() {
+    this.handleCloseForm();
+
+    this.submitTimeSheetMessage = true;
+  }
   /**
    * Submits the Time Sheet and sets the status to "Submitted"
    */
-  handleSave() {
+  handleSubmitTimeSheet() {
     this.handleCloseForm();
 
     submitTimeSheet({ timeSheetId: this.recordId })
@@ -871,5 +925,58 @@ export default class TimeSheetCalendar extends LightningElement {
 
         console.error("Error:", error);
       });
+  }
+
+  ////////////////////////////// TESTING //////////////////////////////////
+
+  handleRefresh() {
+    //Either refresh the calendar completly or just refresh page - still to be decided
+
+    // Option 1 - Refresh completly the calendar data
+    this.isLoading = true;
+    getTimeSheet({ recordId: this.recordId })
+      .then((result) => {
+        // Reset all tracked arrays
+        this.timeSheetEntries = [];
+        this.resourceAbsences = [];
+        this.mileageEntries = [];
+        this.inMileageEntries = [];
+        this.outMileageEntries = [];
+        this.otherMileageEntries = [];
+
+        // Process the new data
+        if (result.timeSheet) {
+          console.log("result.timeSheet:", JSON.stringify(result.timeSheet));
+          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
+          this.kmAmount = result.timeSheet.Total_KM__c || 0;
+          this.totalHours = result.timeSheet.Total_Hours__c || 0;
+          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+        }
+
+        // Re-populate all data arrays
+        if (result.timeSheet.TimeSheetEntries) {
+          this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
+        }
+        if (result.resourceAbsences) {
+          this.resourceAbsences = [...result.resourceAbsences];
+        }
+
+        // Clear existing events and reinitialize calendar
+        if (this.calendar) {
+          this.calendar.destroy();
+        }
+
+        this.initializeCalendar();
+
+        this.isLoading = false;
+      })
+      .catch((error) => {
+        console.error("Error refreshing calendar:", error);
+        this.isLoading = false;
+      });
+
+    // Option 2 - Force page refresh
+    // window.location.reload();
   }
 }

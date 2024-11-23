@@ -77,7 +77,7 @@
                 <span class="stat-value">{totalHours}h</span>
               </div>
             </div>
-            <div class="stat-iconAndInfo-container">
+            <div class="stat-iconAndInfo-container slds-var-m-top_small">
               <div class="stat-icon">
                 <lightning-icon
                   icon-name="utility:food_and_drink"
@@ -95,16 +95,37 @@
       </div>
     </div>
 
-    <!-- Calendar -->
-    <div class="fullcalendar"></div>
+    <template if:false={showNoEntriesModal}>
+      <div class="refreshButton-container">
+        <button class="refreshButton" onclick={handleRefresh}>
+          <lightning-icon icon-name="utility:refresh"></lightning-icon>
+        </button>
+      </div>
+
+      <!-- Calendar -->
+      <div class="fullcalendar"></div>
+    </template>
+
+    <template if:true={showNoEntriesModal}>
+      <div class="noEntries-container">
+        <p class="noEntries-text">
+          No entries or breaks found for this time sheet.
+        </p>
+      </div>
+    </template>
   </div>
 
   <!-- Static Footer -->
-  <div class="footer">
-    <button onclick={handleSave} class="submit-buttonSecond">
-      Submit for Approval
-    </button>
-  </div>
+  <template if:false={isTimeSheetSubmittedOrApproved}>
+    <div class="footer">
+      <button
+        onclick={handleSubmitTimeSheetMessage}
+        class="submit-buttonSecond"
+      >
+        Submit for Approval
+      </button>
+    </div>
+  </template>
 
   <!-- New TimeSheet or Absence Entry Modal -->
   <template if:true={showNewTimeSheetOrAbsenceModal}>
@@ -352,6 +373,40 @@
           </button>
         </div>
         <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Submit Time Sheet Message Modal -->
+  <template if:true={submitTimeSheetMessage}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">Submit Time Sheet</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <div class="warning-container">
+          <div class="warning-icon">
+            <lightning-icon
+              icon-name="utility:warning"
+              size="small"
+              variant="warning"
+            ></lightning-icon>
+          </div>
+          <p class="warning-text">
+            Warning: After submission, this timesheet will be locked and cannot
+            be edited.
+          </p>
+        </div>
+        <div class="button-group">
+          <button class="cancel-button" onclick={handleCloseForm}>
+            Cancel
+          </button>
+          <button class="submit-button" onclick={handleSubmitTimeSheet}>
+            Submit
+          </button>
+        </div>
       </div>
     </div>
   </template>
