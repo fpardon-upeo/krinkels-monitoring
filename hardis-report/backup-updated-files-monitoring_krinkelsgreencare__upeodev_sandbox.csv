@@ -1,11 +1,3 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
+applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
-layouts/ServiceResource-Service Resource Layout.layout-meta.xml," ",Layout ServiceResource-Service Resource Layout,M,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.html," ",LightningComponentBundle showMileageScreen/showMileageScreen.html,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.css," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.css,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-triggers/TimeSheetEntryTrigger.trigger," ",ApexTrigger TimeSheetEntryTrigger,M,,log,📰
