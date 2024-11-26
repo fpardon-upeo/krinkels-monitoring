@@ -3,6 +3,7 @@
     <fullName>Additional_Work_in_scope_contract__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Additional Work in scope contract</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

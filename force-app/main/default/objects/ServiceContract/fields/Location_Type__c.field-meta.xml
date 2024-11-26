@@ -3,6 +3,7 @@
     <fullName>Location_Type__c</fullName>
     <label>Location Type</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

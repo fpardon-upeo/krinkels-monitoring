@@ -2596,6 +2596,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Check_In_At_Work_Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Check_In_At_Work_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Collected_Items__c</field>
         <readable>true</readable>
@@ -2628,6 +2638,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.LMRA_Done__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.LMRA_Type_formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

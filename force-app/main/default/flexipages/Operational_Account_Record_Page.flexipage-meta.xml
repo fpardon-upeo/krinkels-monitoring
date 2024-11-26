@@ -140,7 +140,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Priority__c</fieldItem>
                 <identifier>RecordPriority_cField</identifier>

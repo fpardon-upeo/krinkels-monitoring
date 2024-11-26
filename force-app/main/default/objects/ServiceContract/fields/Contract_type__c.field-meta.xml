@@ -3,6 +3,7 @@
     <fullName>Contract_type__c</fullName>
     <label>Contract type</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

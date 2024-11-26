@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Allocation_key__c</fullName>
+    <fullName>Check_In_At_Work_Reference__c</fullName>
     <externalId>false</externalId>
-    <label>Allocation key</label>
-    <length>100</length>
+    <formula>ServiceContract.ParentServiceContract.Check_In_At_Work_Reference__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Check-In-At-Work Reference</label>
     <required>false</required>
-    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Text</type>
     <unique>false</unique>

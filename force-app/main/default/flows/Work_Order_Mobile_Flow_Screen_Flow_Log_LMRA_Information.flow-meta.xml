@@ -20,7 +20,7 @@
         <name>Full_or_Limited_LMRA</name>
         <label>Full or Limited LMRA ?</label>
         <locationX>248</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Limited_LMRA_Information</targetReference>
         </defaultConnector>
@@ -29,7 +29,7 @@
             <name>Full_Full_or_Limited_LMRA</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>workOrderRecord.LMRA__c</leftValueReference>
+                <leftValueReference>RelatedAccount.LMRA_Type__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Full</stringValue>
@@ -45,7 +45,7 @@
         <name>Limited_LMRA_Confirmed</name>
         <label>Limited LMRA Confirmed ?</label>
         <locationX>446</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Limited_LMRA_Information</targetReference>
@@ -71,7 +71,7 @@
         <name>LMRA_Already_Done</name>
         <label>LMRA Already Done ?</label>
         <locationX>545</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <defaultConnector>
             <targetReference>LMRA_Done_Message</targetReference>
         </defaultConnector>
@@ -118,7 +118,7 @@
         <name>Create_Full_LMRA</name>
         <label>Create Full LMRA</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Update_Work_Step_Status_to_Complete_After</targetReference>
         </connector>
@@ -170,7 +170,7 @@
         <name>Create_Limited_LMRA</name>
         <label>Create Limited LMRA</label>
         <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationY>890</locationY>
         <connector>
             <targetReference>Update_Work_Step_Status_to_Complete_After</targetReference>
         </connector>
@@ -195,13 +195,35 @@
         <object>LMRA__c</object>
     </recordCreates>
     <recordLookups>
+        <name>Get_Related_Operational_Account</name>
+        <label>Get Related Operational Account</label>
+        <locationX>545</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LMRA_Already_Done</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>workOrderRecord.AccountId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>RelatedAccount</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>LMRA_Type__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Related_Work_Order</name>
         <label>Get Related Work Order</label>
         <locationX>545</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>LMRA_Already_Done</targetReference>
+            <targetReference>Get_Related_Operational_Account</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -217,6 +239,7 @@
         <queriedFields>WorkOrderNumber</queriedFields>
         <queriedFields>LMRA__c</queriedFields>
         <queriedFields>LMRA_Done__c</queriedFields>
+        <queriedFields>AccountId</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Work_Step_Information</name>
@@ -245,7 +268,7 @@
         <name>Confirmed_LMRA_Done_at_WO_level</name>
         <label>Confirmed LMRA Done at WO level</label>
         <locationX>248</locationX>
-        <locationY>1166</locationY>
+        <locationY>1274</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -266,7 +289,7 @@
         <name>Update_Work_Step_Status_to_Complete</name>
         <label>Update Work Step Status to Complete</label>
         <locationX>842</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -287,7 +310,7 @@
         <name>Update_Work_Step_Status_to_Complete_After</name>
         <label>Update Work Step Status to Complete After</label>
         <locationX>248</locationX>
-        <locationY>1058</locationY>
+        <locationY>1166</locationY>
         <connector>
             <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
         </connector>
@@ -311,7 +334,7 @@
         <name>Full_LMRA_Information</name>
         <label>Full LMRA Information</label>
         <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -403,7 +426,7 @@
         <name>Limited_LMRA_Information</name>
         <label>Limited LMRA Information</label>
         <locationX>446</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -435,7 +458,7 @@
         <name>LMRA_Done_Message</name>
         <label>LMRA Done Message</label>
         <locationX>842</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -465,6 +488,14 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RelatedAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
     </variables>
     <variables>
         <name>workOrderRecord</name>

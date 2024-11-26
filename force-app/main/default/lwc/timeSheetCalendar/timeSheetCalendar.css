@@ -282,6 +282,7 @@
   display: flex;
   flex-direction: column;
   background: white;
+  justify-content: space-between;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -548,7 +549,7 @@
   .slds-select,
   .slds-combobox__input {
     height: 44px;
-    font-size: 16px; /* Prevents iOS zoom */
+    font-size: 16px;
   }
 
   /* Hide labels but keep them accessible */
@@ -568,7 +569,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 120px); /* Account for header/footer */
+    height: calc(100vh - 120px);
   }
 
   /* Make buttons more touch-friendly */
@@ -617,7 +618,7 @@
 .large-sheet .form-fields {
   margin-bottom: 1.5rem;
   overflow-y: auto;
-  max-height: calc(75vh - 180px); /* Account for header and buttons */
+  max-height: calc(75vh - 180px);
 }
 
 .form-element {
@@ -703,4 +704,27 @@
   .warning-text {
     font-size: 0.9375rem;
   }
+}
+
+.refreshButton-container {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.backAndFurtherDays-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.date-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hide {
+  display: none;
 }

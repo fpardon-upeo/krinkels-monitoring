@@ -12,7 +12,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Not Send</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Not Send</label>
             </value>
             <value>

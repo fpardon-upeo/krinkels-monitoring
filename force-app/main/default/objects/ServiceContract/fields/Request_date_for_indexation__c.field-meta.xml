@@ -3,6 +3,7 @@
     <fullName>Request_date_for_indexation__c</fullName>
     <label>Request date for indexation</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Date</type>
 </CustomField>

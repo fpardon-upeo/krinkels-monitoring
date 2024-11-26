@@ -6,11 +6,13 @@ import updateTimeSheetEntry from "@salesforce/apex/TimeSheetController.updateTim
 import updateAbsence from "@salesforce/apex/TimeSheetController.updateAbsence";
 import submitTimeSheet from "@salesforce/apex/TimeSheetController.submitTimeSheet";
 import getBreakRecordTypeId from "@salesforce/apex/TimeSheetController.getBreakRecordTypeId";
+import getTimeSheetByResourceAndDate from "@salesforce/apex/TimeSheetController.getTimeSheetByResourceAndDate";
 import { getRecordNotifyChange } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class TimeSheetCalendar extends LightningElement {
   @api recordId;
+  @api resourceId;
 
   // Record ID being handled (TimeSheetEntry or ResourceAbsence)
   @track recordIdBeingHandled;
@@ -20,9 +22,6 @@ export default class TimeSheetCalendar extends LightningElement {
 
   // Break record type ID
   @track breakRecordTypeId;
-
-  // TimeSheet's ServiceResourceId/User
-  @track timeSheetResourceId;
 
   @track calendar;
 
@@ -36,10 +35,10 @@ export default class TimeSheetCalendar extends LightningElement {
 
   @track startDate;
   @track endDate;
-  @track startHoursLimit;
-  @track endHoursLimit;
+
   @track startDateAndHours;
   @track endDateAndHours;
+  @track date;
 
   @track workHours = 0;
   @track breakHours = 0;
@@ -48,6 +47,7 @@ export default class TimeSheetCalendar extends LightningElement {
   @track totalHours = 0;
   @track totalBreakHours = 0;
 
+  // Modal states
   @track isLoading = true;
   @track showNewTimeSheetOrAbsenceModal = false;
   @track showMileageInfoModal = false;
@@ -63,7 +63,13 @@ export default class TimeSheetCalendar extends LightningElement {
   @track showMileageEntryEditForm = false;
   @track submitTimeSheetMessage = false;
   @track showNoEntriesModal = false;
-  @track isTimeSheetSubmittedOrApprovedOrNeedsReview = false;
+  @track isTimeSheetSubmittedOrApproved = false;
+  @track isFurtherButtonDisabled = false;
+  @track isBackButtonDisabled = false;
+
+  @api refreshCalendar() {
+    this.handleRefresh();
+  }
 
   connectedCallback() {
     // Wait for DOM to be ready
@@ -77,24 +83,22 @@ export default class TimeSheetCalendar extends LightningElement {
       })
       .then((result) => {
         console.log("result", JSON.stringify(result));
-
         // Check if the TimeSheet is submitted or approved
         if (
           result.timeSheet.Status === "Submitted" ||
-          result.timeSheet.Status === "Approved" ||
-          result.timeSheet.Status === "Needs Review"
+          result.timeSheet.Status === "Approved"
         ) {
-          this.isTimeSheetSubmittedOrApprovedOrNeedsReview = true;
+          this.isTimeSheetSubmittedOrApproved = true;
         }
 
         // Check if there are no entries or breaks and display the modal and not the calendar
         if (
-          !result.timeSheet?.TimeSheetEntries &&
-          result.resourceAbsences &&
+          !result?.timeSheet?.TimeSheetEntries &&
           result.resourceAbsences.length === 0
         ) {
           this.isLoading = false;
           this.showNoEntriesModal = true;
+          this.isTimeSheetSubmittedOrApproved = true;
         }
 
         if (result.timeSheet) {
@@ -102,7 +106,10 @@ export default class TimeSheetCalendar extends LightningElement {
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+          this.totalBreakHours =
+            parseFloat(
+              (result.timeSheet.Total_Break_Time__c / 60).toFixed(2)
+            ) || 0;
         }
 
         // Get the Break record type ID
@@ -119,15 +126,46 @@ export default class TimeSheetCalendar extends LightningElement {
             });
         }
 
-        // Get the TimeSheet's ServiceResourceId/User
-        this.timeSheetResourceId = result.timeSheet?.ServiceResourceId;
-
         if (result.timeSheet?.StartDate) {
           this.startDate = result.timeSheet.StartDate;
         }
 
         if (result.timeSheet?.EndDate) {
           this.endDate = result.timeSheet.EndDate;
+
+          // Convert to a Date object
+          let dateObj = new Date(this.endDate);
+
+          // Extract day, month, and year
+          let day = dateObj.getDate();
+          let month = dateObj.getMonth() + 1;
+          let year = dateObj.getFullYear();
+
+          this.date = `${day}-${month}-${year}`;
+
+          //Get today's date in DD-MM-YYYY format
+          const today = new Date();
+          const todayDay = today.getDate();
+          const todayMonth = today.getMonth() + 1;
+          const todayYear = today.getFullYear();
+          this.todayFormatted = `${todayDay}-${todayMonth}-${todayYear}`;
+
+          if (this.date === this.todayFormatted) {
+            this.isFurtherButtonDisabled = true;
+          }
+        }
+
+        // Initialize back button state
+        if (this.date) {
+          let [day, month, year] = this.date.split("-");
+          const currentDate = new Date(year, month - 1, day);
+          const today = new Date();
+          const thirtyDaysAgo = new Date();
+          thirtyDaysAgo.setDate(today.getDate() - 30);
+
+          if (currentDate <= thirtyDaysAgo) {
+            this.isBackButtonDisabled = true;
+          }
         }
 
         if (result.timeSheet?.Mileage_Entries__r) {
@@ -194,52 +232,11 @@ export default class TimeSheetCalendar extends LightningElement {
               }
             }
           });
-
-          // Set initial limits
-          if (earliestTime && latestTime) {
-            earliestTime.setHours(earliestTime.getHours() - 1);
-            latestTime.setHours(latestTime.getHours() + 1);
-
-            this.startHoursLimit = earliestTime;
-            this.endHoursLimit = latestTime;
-          } else {
-            // Default values if no entries found
-            this.startHoursLimit = new Date(endDate);
-            this.startHoursLimit.setHours(6, 0, 0);
-            this.endHoursLimit = new Date(endDate);
-            this.endHoursLimit.setHours(20, 0, 0);
-          }
         }
 
         if (result.resourceAbsences && result.resourceAbsences.length > 0) {
           this.resourceAbsences = [...result.resourceAbsences];
-
-          this.resourceAbsences.forEach((absence) => {
-            const absenceStart = new Date(absence.Start);
-            const absenceEnd = new Date(absence.End);
-
-            // Check if the absence start time is earlier
-            if (absenceStart < this.startHoursLimit) {
-              this.startHoursLimit = new Date(absenceStart);
-              this.startHoursLimit.setHours(
-                this.startHoursLimit.getHours() - 1
-              );
-            }
-
-            // Check if the absence end time is later
-            if (absenceEnd > this.endHoursLimit) {
-              this.endHoursLimit = new Date(absenceEnd);
-              this.endHoursLimit.setHours(this.endHoursLimit.getHours() + 1);
-            }
-          });
         }
-
-        // Format the times for the calendar
-        this.startHoursLimit =
-          this.startHoursLimit.getHours().toString().padStart(2, "0") +
-          ":00:00";
-        this.endHoursLimit =
-          this.endHoursLimit.getHours().toString().padStart(2, "0") + ":00:00";
 
         this.initializeCalendar();
 
@@ -276,7 +273,7 @@ export default class TimeSheetCalendar extends LightningElement {
               ? "#DAA520"
               : "#c23934",
       // Only allow editing if the TimeSheet is not submitted or approved
-      editable: !this.isTimeSheetSubmittedOrApprovedOrNeedsReview,
+      editable: !this.isTimeSheetSubmittedOrApproved,
       extendedProps: {
         recordType: "TimeSheetEntry"
       }
@@ -290,7 +287,7 @@ export default class TimeSheetCalendar extends LightningElement {
       backgroundColor: "#c23934",
       borderColor: "#c23934",
       // Only allow editing if the TimeSheet is not submitted or approved
-      editable: !this.isTimeSheetSubmittedOrApprovedOrNeedsReview,
+      editable: !this.isTimeSheetSubmittedOrApproved,
       extendedProps: {
         recordType: "ResourceAbsence"
       }
@@ -302,8 +299,8 @@ export default class TimeSheetCalendar extends LightningElement {
     this.calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: "timeGridDay",
       allDaySlot: false,
-      slotMinTime: this.startHoursLimit,
-      slotMaxTime: this.endHoursLimit,
+      slotMinTime: "00:00:00",
+      slotMaxTime: "24:00:00",
       height: "auto",
       headerToolbar: false,
       selectable: true,
@@ -320,12 +317,12 @@ export default class TimeSheetCalendar extends LightningElement {
         end: "24:00"
       },
       eventResizeGrow: true,
-      //Set initial date and Range as well
+      // //Set initial date and Range as well
       initialDate: this.startDate,
-      validRange: {
-        start: this.startDate,
-        end: this.endDate
-      },
+      // validRange: {
+      //   start: this.startDate,
+      //   end: this.endDate
+      // },
       slotLabelFormat: {
         hour: "2-digit",
         minute: "2-digit",
@@ -338,7 +335,7 @@ export default class TimeSheetCalendar extends LightningElement {
       },
       snapDuration: "00:05:00",
       events: allEvents,
-      editable: !this.isTimeSheetSubmittedOrApprovedOrNeedsReview,
+      editable: !this.isTimeSheetSubmittedOrApproved,
       selectMirror: true,
 
       // Event styling
@@ -364,7 +361,7 @@ export default class TimeSheetCalendar extends LightningElement {
       // Click event
       eventClick: (info) => {
         // Only allow clicking if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+        if (!this.isTimeSheetSubmittedOrApproved) {
           this.handleEventClick(info);
         }
       },
@@ -375,7 +372,7 @@ export default class TimeSheetCalendar extends LightningElement {
         const endTime = info.event.end.toISOString();
 
         // Only allow dragging if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+        if (!this.isTimeSheetSubmittedOrApproved) {
           if (info.event.extendedProps.recordType === "TimeSheetEntry") {
             updateTimeSheetEntry({
               timeSheetEntryId: info.event.id,
@@ -383,9 +380,6 @@ export default class TimeSheetCalendar extends LightningElement {
               endTime: endTime
             })
               .then((result) => {
-                // Update the local data with the server response
-                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
-
                 if (result.timeSheet.TimeSheetEntries) {
                   this.timeSheetEntries = [
                     ...result.timeSheet.TimeSheetEntries
@@ -412,8 +406,6 @@ export default class TimeSheetCalendar extends LightningElement {
               timeSheetId: this.recordId
             })
               .then((result) => {
-                // Update the local data with the server response
-                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
                 if (result.timeSheet.TimeSheetEntries) {
                   this.timeSheetEntries = [
                     ...result.timeSheet.TimeSheetEntries
@@ -440,7 +432,7 @@ export default class TimeSheetCalendar extends LightningElement {
         const endTime = info.event.end;
 
         // Only allow resizing if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+        if (!this.isTimeSheetSubmittedOrApproved) {
           if (info.event.extendedProps.recordType === "TimeSheetEntry") {
             updateTimeSheetEntry({
               timeSheetEntryId: info.event.id,
@@ -448,8 +440,6 @@ export default class TimeSheetCalendar extends LightningElement {
               endTime: endTime
             })
               .then((result) => {
-                // Update the local data with the server response
-                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
                 if (result.timeSheet.TimeSheetEntries) {
                   this.timeSheetEntries = [
                     ...result.timeSheet.TimeSheetEntries
@@ -476,8 +466,6 @@ export default class TimeSheetCalendar extends LightningElement {
               timeSheetId: this.recordId
             })
               .then((result) => {
-                // Update the local data with the server response
-                this.timeSheetResourceId = result.timeSheet.ServiceResourceId;
                 if (result.timeSheet.TimeSheetEntries) {
                   this.timeSheetEntries = [
                     ...result.timeSheet.TimeSheetEntries
@@ -500,17 +488,13 @@ export default class TimeSheetCalendar extends LightningElement {
       // When multiple rows or cells are selected
       select: (info) => {
         // Only allow selecting if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApprovedOrNeedsReview) {
+        if (!this.isTimeSheetSubmittedOrApproved) {
           this.handleDateClick(info);
         }
       }
     });
 
     this.calendar.render();
-    console.log(
-      "Calendar initialized, timesheet status:",
-      this.isTimeSheetSubmittedOrApprovedOrNeedsReview
-    );
   }
 
   /**
@@ -653,6 +637,357 @@ export default class TimeSheetCalendar extends LightningElement {
     this.handleCloseForm();
     this.showMileageInfoModal = true;
   }
+
+  /**
+   * Increases the date by one day
+   */
+  handleFurtherDays() {
+    this.isLoading = true;
+    this.showNoEntriesModal = false;
+    this.isBackButtonDisabled = false;
+
+    //Reset arrays and tracked properties
+    this.timeSheetEntries = [];
+    this.resourceAbsences = [];
+
+    this.workHours = 0;
+    this.travelHours = 0;
+    this.kmAmount = 0;
+    this.totalHours = 0;
+    this.totalBreakHours = 0;
+
+    const calendarEl = this.template.querySelector("div.fullcalendar");
+
+    calendarEl.classList.remove("hide");
+
+    // Remove all existing events
+    this.calendar.removeAllEvents();
+
+    //Get todays date in DD-MM-YYYY format
+    const today = new Date();
+    const dayToday = today.getDate();
+    const monthToday = today.getMonth() + 1;
+    const yearToday = today.getFullYear();
+    const todayFormatted = `${dayToday}-${monthToday}-${yearToday}`;
+
+    //Convert this.date back to Date
+    let [day, month, year] = this.date.split("-");
+    let dateObj = new Date(year, month - 1, day);
+
+    // Add one day
+    dateObj.setDate(dateObj.getDate() + 1);
+
+    // Format back to DD-MM-YYYY string
+    let newDay = dateObj.getDate().toString().padStart(2, "0");
+    let newMonth = (dateObj.getMonth() + 1).toString().padStart(2, "0");
+    let newYear = dateObj.getFullYear();
+
+    this.date = `${newDay}-${newMonth}-${newYear}`;
+
+    if (this.date === todayFormatted) {
+      this.isFurtherButtonDisabled = true;
+    }
+
+    getTimeSheetByResourceAndDate({
+      serviceResourceId: this.resourceId,
+      endDate: `${newYear}-${newMonth}-${newDay}`
+    })
+      .then((result) => {
+        this.recordId = result.timeSheet.Id;
+        // Check if the TimeSheet is submitted or approved
+        if (
+          result.timeSheet.Status === "Submitted" ||
+          result.timeSheet.Status === "Approved"
+        ) {
+          this.isTimeSheetSubmittedOrApproved = true;
+        } else {
+          this.isTimeSheetSubmittedOrApproved = false;
+        }
+
+        // Update tracked properties from result
+        if (result.timeSheet) {
+          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
+          this.kmAmount = result.timeSheet.Total_KM__c || 0;
+          this.totalHours = result.timeSheet.Total_Hours__c || 0;
+          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+        }
+
+        // Handle mileage entries
+        if (result.timeSheet?.Mileage_Entries__r) {
+          this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
+          this.processMileageEntries();
+        }
+
+        // Check if there are no entries or breaks and display the modal and not the calendar
+        if (
+          !result.timeSheet?.TimeSheetEntries &&
+          result.resourceAbsences.length === 0
+        ) {
+          this.showNoEntriesModal = true;
+          this.isLoading = false;
+          calendarEl.classList.add("hide");
+          this.isTimeSheetSubmittedOrApproved = true;
+          return;
+        }
+
+        // Create new TimeSheet events
+        if (result.timeSheet?.TimeSheetEntries) {
+          const timeSheetEvents = result.timeSheet.TimeSheetEntries.map(
+            (entry) => ({
+              id: entry.Id,
+              start: entry.StartTime,
+              end: entry.EndTime,
+              title: entry.Subject
+                ? `${entry.Type} - ${entry.Subject}`
+                : `${entry.Type}`,
+              backgroundColor:
+                entry.Type === "Normal Hours"
+                  ? "#6DA241"
+                  : entry.Type === "Travel Time"
+                    ? "#009FBD"
+                    : entry.Type === "Night Work" || entry.Type === "Machine"
+                      ? "#DAA520"
+                      : "#c23934",
+              borderColor:
+                entry.Type === "Normal Hours"
+                  ? "#6DA241"
+                  : entry.Type === "Travel Time"
+                    ? "#009FBD"
+                    : entry.Type === "Night Work" || entry.Type === "Machine"
+                      ? "#DAA520"
+                      : "#c23934",
+              editable: !this.isTimeSheetSubmittedOrApproved,
+              extendedProps: {
+                recordType: "TimeSheetEntry"
+              }
+            })
+          );
+          timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
+        }
+
+        // Create new ResourceAbsence events
+        if (result.resourceAbsences) {
+          const absenceEvents = result.resourceAbsences.map((absence) => ({
+            id: absence.Id,
+            start: absence.Start,
+            end: absence.End,
+            title: absence.Description
+              ? `Break - ${absence.Description}`
+              : "Break",
+            backgroundColor: "#c23934",
+            borderColor: "#c23934",
+            editable: !this.isTimeSheetSubmittedOrApproved,
+            extendedProps: {
+              recordType: "ResourceAbsence"
+            }
+          }));
+          absenceEvents.forEach((event) => this.calendar.addEvent(event));
+        }
+
+        // Update calendar date
+        this.calendar.gotoDate(`${newYear}-${newMonth}-${newDay}`);
+
+        this.isLoading = false;
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        this.isLoading = false;
+        this.showNoEntriesModal = true;
+        calendarEl.classList.add("hide");
+        this.isTimeSheetSubmittedOrApproved = true;
+      });
+  }
+
+  /**
+   * Decreases the date by one day
+   */
+  handleBackDays() {
+    this.isLoading = true;
+    this.showNoEntriesModal = false;
+
+    //Reset arrays and tracked properties
+    this.timeSheetEntries = [];
+    this.resourceAbsences = [];
+    this.mileageEntries = [];
+    this.inMileageEntries = [];
+    this.outMileageEntries = [];
+    this.otherMileageEntries = [];
+
+    this.workHours = 0;
+    this.travelHours = 0;
+    this.kmAmount = 0;
+    this.totalHours = 0;
+    this.totalBreakHours = 0;
+
+    const calendarEl = this.template.querySelector("div.fullcalendar");
+    calendarEl.classList.remove("hide");
+
+    // Remove all existing events
+    this.calendar.removeAllEvents();
+
+    //Convert this.date back to Date
+    let [day, month, year] = this.date.split("-");
+    let dateObj = new Date(year, month - 1, day);
+
+    // Get today's date
+    const today = new Date();
+
+    // Calculate the date 30 days ago
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(today.getDate() - 30);
+
+    // Check if going back one more day would exceed the 30-day limit
+    const nextDate = new Date(dateObj);
+    nextDate.setDate(nextDate.getDate() - 1);
+
+    if (nextDate < thirtyDaysAgo) {
+      // Don't allow going back further than 30 days
+      this.isBackButtonDisabled = true;
+      this.isLoading = false;
+    }
+
+    // Subtract one day
+    dateObj.setDate(dateObj.getDate() - 1);
+
+    // Format back to DD-MM-YYYY string
+    let newDay = dateObj.getDate().toString().padStart(2, "0");
+    let newMonth = (dateObj.getMonth() + 1).toString().padStart(2, "0");
+    let newYear = dateObj.getFullYear();
+
+    this.date = `${newDay}-${newMonth}-${newYear}`;
+
+    // Check if we're at today's date (for further button)
+    const dayToday = today.getDate();
+    const monthToday = today.getMonth() + 1;
+    const yearToday = today.getFullYear();
+    const todayFormatted = `${dayToday}-${monthToday}-${yearToday}`;
+
+    if (this.date === todayFormatted) {
+      this.isFurtherButtonDisabled = true;
+    } else {
+      this.isFurtherButtonDisabled = false;
+    }
+
+    // Check if we're approaching the 30-day limit
+    const currentDate = new Date(newYear, newMonth - 1, newDay);
+    if (currentDate <= thirtyDaysAgo) {
+      this.isBackButtonDisabled = true;
+    } else {
+      this.isBackButtonDisabled = false;
+    }
+
+    getTimeSheetByResourceAndDate({
+      serviceResourceId: this.resourceId,
+      endDate: `${newYear}-${newMonth}-${newDay}`
+    })
+      .then((result) => {
+        this.recordId = result.timeSheet.Id;
+        // Check if the TimeSheet is submitted or approved
+        if (
+          result.timeSheet.Status === "Submitted" ||
+          result.timeSheet.Status === "Approved"
+        ) {
+          this.isTimeSheetSubmittedOrApproved = true;
+        } else {
+          this.isTimeSheetSubmittedOrApproved = false;
+        }
+
+        // Update tracked properties from result
+        if (result.timeSheet) {
+          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
+          this.kmAmount = result.timeSheet.Total_KM__c || 0;
+          this.totalHours = result.timeSheet.Total_Hours__c || 0;
+          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+        }
+
+        // Handle mileage entries
+        if (result.timeSheet?.Mileage_Entries__r) {
+          this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
+          this.processMileageEntries();
+        }
+
+        // Check if there are no entries or breaks and display the modal and not the calendar
+        if (
+          !result.timeSheet?.TimeSheetEntries &&
+          result.resourceAbsences.length === 0
+        ) {
+          this.showNoEntriesModal = true;
+          this.isLoading = false;
+          calendarEl.classList.add("hide");
+          this.isTimeSheetSubmittedOrApproved = true;
+          return;
+        }
+
+        // Create new TimeSheet events
+        if (result.timeSheet?.TimeSheetEntries) {
+          const timeSheetEvents = result.timeSheet.TimeSheetEntries.map(
+            (entry) => ({
+              id: entry.Id,
+              start: entry.StartTime,
+              end: entry.EndTime,
+              title: entry.Subject
+                ? `${entry.Type} - ${entry.Subject}`
+                : `${entry.Type}`,
+              backgroundColor:
+                entry.Type === "Normal Hours"
+                  ? "#6DA241"
+                  : entry.Type === "Travel Time"
+                    ? "#009FBD"
+                    : entry.Type === "Night Work" || entry.Type === "Machine"
+                      ? "#DAA520"
+                      : "#c23934",
+              borderColor:
+                entry.Type === "Normal Hours"
+                  ? "#6DA241"
+                  : entry.Type === "Travel Time"
+                    ? "#009FBD"
+                    : entry.Type === "Night Work" || entry.Type === "Machine"
+                      ? "#DAA520"
+                      : "#c23934",
+              editable: !this.isTimeSheetSubmittedOrApproved,
+              extendedProps: {
+                recordType: "TimeSheetEntry"
+              }
+            })
+          );
+          timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
+        }
+
+        // Create new ResourceAbsence events
+        if (result.resourceAbsences) {
+          const absenceEvents = result.resourceAbsences.map((absence) => ({
+            id: absence.Id,
+            start: absence.Start,
+            end: absence.End,
+            title: absence.Description
+              ? `Break - ${absence.Description}`
+              : "Break",
+            backgroundColor: "#c23934",
+            borderColor: "#c23934",
+            editable: !this.isTimeSheetSubmittedOrApproved,
+            extendedProps: {
+              recordType: "ResourceAbsence"
+            }
+          }));
+          absenceEvents.forEach((event) => this.calendar.addEvent(event));
+        }
+
+        // Update calendar date
+        this.calendar.gotoDate(`${newYear}-${newMonth}-${newDay}`);
+
+        this.isLoading = false;
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        this.isLoading = false;
+        this.showNoEntriesModal = true;
+        calendarEl.classList.add("hide");
+        this.isTimeSheetSubmittedOrApproved = true;
+      });
+  }
+
   ////////////////////////////////////////////////////////////////
 
   handleSuccessTimeSheetOrAbsenceEntry(event) {
@@ -927,56 +1262,82 @@ export default class TimeSheetCalendar extends LightningElement {
       });
   }
 
-  ////////////////////////////// TESTING //////////////////////////////////
-
   handleRefresh() {
-    //Either refresh the calendar completly or just refresh page - still to be decided
+    console.log("refreshed calendar - Need to be reworked");
 
     // Option 1 - Refresh completly the calendar data
-    this.isLoading = true;
-    getTimeSheet({ recordId: this.recordId })
-      .then((result) => {
-        // Reset all tracked arrays
-        this.timeSheetEntries = [];
-        this.resourceAbsences = [];
-        this.mileageEntries = [];
-        this.inMileageEntries = [];
-        this.outMileageEntries = [];
-        this.otherMileageEntries = [];
+    // this.isLoading = true;
+    // getTimeSheet({ recordId: this.recordId })
+    //   .then((result) => {
+    //     // Reset all tracked arrays
+    //     this.timeSheetEntries = [];
+    //     this.resourceAbsences = [];
+    //     this.mileageEntries = [];
+    //     this.inMileageEntries = [];
+    //     this.outMileageEntries = [];
+    //     this.otherMileageEntries = [];
 
-        // Process the new data
-        if (result.timeSheet) {
-          console.log("result.timeSheet:", JSON.stringify(result.timeSheet));
-          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
-          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
-          this.kmAmount = result.timeSheet.Total_KM__c || 0;
-          this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
-        }
+    //     // Process the new data
+    //     if (result.timeSheet) {
+    //       this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+    //       this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
+    //       this.kmAmount = result.timeSheet.Total_KM__c || 0;
+    //       this.totalHours = result.timeSheet.Total_Hours__c || 0;
+    //       this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+    //     }
 
-        // Re-populate all data arrays
-        if (result.timeSheet.TimeSheetEntries) {
-          this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
-        }
-        if (result.resourceAbsences) {
-          this.resourceAbsences = [...result.resourceAbsences];
-        }
+    //     // Re-populate all data arrays
+    //     if (result.timeSheet.TimeSheetEntries) {
+    //       this.timeSheetEntries = [...result.timeSheet.TimeSheetEntries];
+    //     }
 
-        // Clear existing events and reinitialize calendar
-        if (this.calendar) {
-          this.calendar.destroy();
-        }
+    //     if (result.resourceAbsences) {
+    //       this.resourceAbsences = [...result.resourceAbsences];
+    //     }
 
-        this.initializeCalendar();
+    //     // Clear existing events and reinitialize calendar
+    //     if (this.calendar) {
+    //       this.calendar.removeAllEvents();
+    //     }
 
-        this.isLoading = false;
-      })
-      .catch((error) => {
-        console.error("Error refreshing calendar:", error);
-        this.isLoading = false;
-      });
+    //     this.initializeCalendar();
 
-    // Option 2 - Force page refresh
-    // window.location.reload();
+    //     this.isLoading = false;
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error refreshing calendar:", error);
+    //     this.isLoading = false;
+    //   });
+  }
+
+  ///////////////////////////////HELPER FUNCTIONS///////////////////////////////
+  // Helper method to process mileage entries
+  processMileageEntries() {
+    //Reset mileage arrays
+    this.mileageEntries = [];
+    this.inMileageEntries = [];
+    this.outMileageEntries = [];
+    this.otherMileageEntries = [];
+
+    this.mileageEntries.forEach((entry) => {
+      if (
+        entry.Starting_Location_Type__c === "Customer" ||
+        entry.Ending_Location_Type__c === "Home"
+      ) {
+        this.outMileageEntries.push(entry);
+      } else if (
+        entry.Starting_Location_Type__c === "Home" ||
+        entry.Ending_Location_Type__c === "Customer"
+      ) {
+        this.inMileageEntries.push(entry);
+      } else if (
+        (entry.Starting_Location_Type__c === "Depot" ||
+          entry.Starting_Location_Type__c === "Other") &&
+        (entry.Ending_Location_Type__c === "Depot" ||
+          entry.Ending_Location_Type__c === "Other")
+      ) {
+        this.otherMileageEntries.push(entry);
+      }
+    });
   }
 }

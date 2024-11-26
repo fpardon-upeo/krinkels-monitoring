@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2283
+Metadatas: 2286
 
 <details><summary>ApexClass (79)</summary>
   • ATAKMaterialService<br/>
@@ -197,7 +197,7 @@ Metadatas: 2283
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (518)</summary>
+<details><summary>CustomField (521)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -686,6 +686,8 @@ Metadatas: 2283
   • User.Start_Date__c<br/>
   • WorkOrder.After_Work_Comments__c<br/>
   • WorkOrder.Before_Work_Comments__c<br/>
+  • WorkOrder.Check_In_At_Work_Reference__c<br/>
+  • WorkOrder.Check_In_At_Work_Required__c<br/>
   • WorkOrder.Check_In_Work__c<br/>
   • WorkOrder.Collected_Items__c<br/>
   • WorkOrder.FSL__IsFillInCandidate__c<br/>
@@ -694,6 +696,7 @@ Metadatas: 2283
   • WorkOrder.FSL__VisitingHours__c<br/>
   • WorkOrder.Is_First_of_Day__c<br/>
   • WorkOrder.LMRA_Done__c<br/>
+  • WorkOrder.LMRA_Type_formula__c<br/>
   • WorkOrder.LMRA__c<br/>
   • WorkOrder.Mobile_Contract_Manager__c<br/>
   • WorkOrder.Name_Commercial_Contract__c<br/>

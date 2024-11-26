@@ -3,6 +3,7 @@
     <fullName>Service_Package_Type__c</fullName>
     <label>Service Package Type</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

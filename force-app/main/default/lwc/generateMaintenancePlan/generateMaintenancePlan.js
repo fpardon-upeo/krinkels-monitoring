@@ -7,10 +7,8 @@ import LightningConfirm from "lightning/confirm";
 import { CloseActionScreenEvent } from "lightning/actions";
 import createMaintenancePlanFormServiceContract from "@salesforce/apex/MaintenancePlanService.createMaintenancePlanFormServiceContract";
 import getLinesWithInvalidATAKProject from "@salesforce/apex/MaintenancePlanService.getLinesWithInvalidATAKProject";
-import firePlatformEvent from "@salesforce/apex/ServiceBuilderController.firePlatformEvent";
 import Toast from "lightning/toast";
 import { createRecord, updateRecord } from "lightning/uiRecordApi";
-import CONTRACT_EVENT_OBJECT from "@salesforce/schema/Contract_Event__c";
 
 export default class GenerateMaintenancePlan extends LightningElement {
   @api recordId;
@@ -115,16 +113,6 @@ export default class GenerateMaintenancePlan extends LightningElement {
         .then(() => {
           recordsUpdated++;
           console.log("recordsUpdated", recordsUpdated);
-          if(recordsUpdated === recordsToUpdate) {
-            firePlatformEvent({ contractId: this.recordId })
-              .then(() => {
-              this.openConfirm();
-              })
-              .catch((error) => {
-                console.error("error", error);
-                this.openConfirm();
-              });
-          }
         })
         .catch((error) => {
           console.error("error", error);

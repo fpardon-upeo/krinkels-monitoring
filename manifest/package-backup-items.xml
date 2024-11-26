@@ -674,6 +674,8 @@
         <members>User.Start_Date__c</members>
         <members>WorkOrder.After_Work_Comments__c</members>
         <members>WorkOrder.Before_Work_Comments__c</members>
+        <members>WorkOrder.Check_In_At_Work_Reference__c</members>
+        <members>WorkOrder.Check_In_At_Work_Required__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
@@ -681,6 +683,7 @@
         <members>WorkOrder.FSL__VisitingHours__c</members>
         <members>WorkOrder.Is_First_of_Day__c</members>
         <members>WorkOrder.LMRA_Done__c</members>
+        <members>WorkOrder.LMRA_Type_formula__c</members>
         <members>WorkOrder.LMRA__c</members>
         <members>WorkOrder.Mobile_Contract_Manager__c</members>
         <members>WorkOrder.Name_Commercial_Contract__c</members>

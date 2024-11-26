@@ -3,6 +3,7 @@
     <fullName>Payment_Conditions__c</fullName>
     <label>Payment Conditions</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

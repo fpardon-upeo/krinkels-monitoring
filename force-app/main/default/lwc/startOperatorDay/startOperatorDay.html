@@ -2,7 +2,9 @@
   <div class="page-wrapper">
     <c-start-operator-day-metrics
       oncompletedappointments={handleShowStartOrNot}
+      onrefreshall={handleRefreshAll}
     ></c-start-operator-day-metrics>
+
     <div if:true={showTimesheetScreen} class="top-nav">
       <div class="nav-content">
         <lightning-button
@@ -36,7 +38,8 @@
               <div
                 class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons"
               >
-                <button if:true={showStartDayButton}
+                <button
+                  if:true={showStartDayButton}
                   class="action-button brand"
                   ontouchstart={handleTouchStart}
                   ontouchend={handleTouchEnd}
@@ -124,22 +127,22 @@
                 ontouchend={handleTouchEnd}
                 onclick={handleTimeSheetClicked}
               >
-                  <span class="button-icon">
-                    <lightning-icon
-                      icon-name="utility:clock"
-                      size="medium"
-                      class="slds-m-bottom_small"
-                    >
-                    </lightning-icon>
-                  </span>
+                <span class="button-icon">
+                  <lightning-icon
+                    icon-name="utility:clock"
+                    size="medium"
+                    class="slds-m-bottom_small"
+                  >
+                  </lightning-icon>
+                </span>
                 <span class="button-text">
-                    <span class="button-label">
-                      {labels.StartDay_Timesheet_Button_Text}
-                    </span>
-                    <span class="button-description">
-                      {labels.StartDay_Timesheet_Button_Sub_Text}
-                    </span>
+                  <span class="button-label">
+                    {labels.StartDay_Timesheet_Button_Text}
                   </span>
+                  <span class="button-description">
+                    {labels.StartDay_Timesheet_Button_Sub_Text}
+                  </span>
+                </span>
               </button>
             </div>
           </div>
@@ -154,27 +157,57 @@
       </template>
 
       <template if:true={showMilageEntryScreenSimple}>
-        <lightning-card title={labels.StartDay_KM_Card_Title} icon-name="utility:transport_heavy_truck">
+        <lightning-card
+          title={labels.StartDay_KM_Card_Title}
+          icon-name="utility:transport_heavy_truck"
+        >
           <lightning-record-edit-form
             onsuccess={handleMileageSuccess}
-            object-api-name="Mileage_Entry__c">
+            object-api-name="Mileage_Entry__c"
+          >
             <div class="slds-grid slds-grid_vertical slds-p-around_small">
               <div class="slds-col">
-                <lightning-input-field field-name="Allowance_Type__c"></lightning-input-field>
-                <lightning-input-field class="slds-hide" field-name="Service_Resource__c" value={serviceResourceId}></lightning-input-field>
-                <lightning-input-field class="slds-hide" field-name="Type__c" value="Starting"></lightning-input-field>
-                <lightning-input-field field-name="Starting_Location_Type__c" value="Home"></lightning-input-field>
-                <lightning-input-field field-name="Ending_Location_Type__c"></lightning-input-field>
-                <lightning-input-field field-name="Starting_Mileage__c"></lightning-input-field>
-                <lightning-input-field class="slds-hide" field-name="Work_Order__c" value={nextWorkOrderId}></lightning-input-field>
-                <lightning-input-field class="slds-hide" field-name="Time_Sheet__c" value={timeSheetId}></lightning-input-field>
+                <lightning-input-field
+                  field-name="Allowance_Type__c"
+                ></lightning-input-field>
+                <lightning-input-field
+                  class="slds-hide"
+                  field-name="Service_Resource__c"
+                  value={serviceResourceId}
+                ></lightning-input-field>
+                <lightning-input-field
+                  class="slds-hide"
+                  field-name="Type__c"
+                  value="Starting"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Starting_Location_Type__c"
+                  value="Home"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Ending_Location_Type__c"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Starting_Mileage__c"
+                ></lightning-input-field>
+                <lightning-input-field
+                  class="slds-hide"
+                  field-name="Work_Order__c"
+                  value={nextWorkOrderId}
+                ></lightning-input-field>
+                <lightning-input-field
+                  class="slds-hide"
+                  field-name="Time_Sheet__c"
+                  value={timeSheetId}
+                ></lightning-input-field>
               </div>
             </div>
             <div class="slds-p-around_small slds-align_absolute-center">
               <lightning-button
                 class="slds-m-top_small"
                 type="submit"
-                label={labels.StartDay_KM_Save_Button_Text}>
+                label={labels.StartDay_KM_Save_Button_Text}
+              >
               </lightning-button>
             </div>
           </lightning-record-edit-form>
@@ -222,7 +255,10 @@
       </template>
 
       <template if:true={showTimesheetScreen}>
-        <c-time-sheet-calendar record-id={timeSheetId}></c-time-sheet-calendar>
+        <c-time-sheet-calendar
+          record-id={timeSheetId}
+          resource-id={serviceResourceId}
+        ></c-time-sheet-calendar>
       </template>
     </div>
 

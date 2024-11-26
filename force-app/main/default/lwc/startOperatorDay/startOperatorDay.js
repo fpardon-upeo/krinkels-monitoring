@@ -38,7 +38,9 @@ import Service_Resource__c from "@salesforce/schema/Mileage_Entry__c.Service_Res
 import Starting_Mileage__c from "@salesforce/schema/Mileage_Entry__c.Starting_Mileage__c";
 import Ending_Mileage__c from "@salesforce/schema/Mileage_Entry__c.Ending_Mileage__c";
 
-export default class StartOperatorDay extends NavigationMixin(LightningElement) {
+export default class StartOperatorDay extends NavigationMixin(
+  LightningElement
+) {
   //--------------------------------------API------------------------------------------//
 
   @api recordId;
@@ -352,14 +354,14 @@ export default class StartOperatorDay extends NavigationMixin(LightningElement) 
     this.showMilageEntryScreen = false;
     this.showMilageEntryScreenSimple = false;
     this.showInitialScreen = true;
-      setTimeout(() => {
-          this[NavigationMixin.Navigate]({
-              "type": "standard__webPage",
-              "attributes": {
-                  "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
-              }
-          });
-      }, 2000);
+    setTimeout(() => {
+      this[NavigationMixin.Navigate]({
+        type: "standard__webPage",
+        attributes: {
+          url: `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
+        }
+      });
+    }, 2000);
   }
 
   handleSetAppointmentClicked() {
@@ -383,15 +385,15 @@ export default class StartOperatorDay extends NavigationMixin(LightningElement) 
     this.showAppointmentScreen = false;
 
     if (this.travelTimeOnly === true) {
-        this.showInitialScreen = true;
-        setTimeout(() => {
-            this[NavigationMixin.Navigate]({
-                "type": "standard__webPage",
-                "attributes": {
-                    "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
-                }
-            });
-        }, 2000);
+      this.showInitialScreen = true;
+      setTimeout(() => {
+        this[NavigationMixin.Navigate]({
+          type: "standard__webPage",
+          attributes: {
+            url: `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
+          }
+        });
+      }, 2000);
     } else {
       this.showMilageEntryScreenSimple = true;
     }
@@ -438,6 +440,16 @@ export default class StartOperatorDay extends NavigationMixin(LightningElement) 
     this.showNavigationScreen = false;
     this.showInitialScreen = true;
     this.showMilageEntryScreenSimple = false;
+  }
+
+  //TESTING
+  handleRefreshAll() {
+    const timeSheetCalendar = this.template.querySelector(
+      "c-time-sheet-calendar"
+    );
+    if (timeSheetCalendar) {
+      timeSheetCalendar.refreshCalendar();
+    }
   }
 
   //--------------------------------------HELPERS--------------------------------------//

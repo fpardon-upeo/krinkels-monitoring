@@ -3,6 +3,7 @@
     <fullName>External_Contract_Reference__c</fullName>
     <label>External Contract Reference</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>TextArea</type>
 </CustomField>

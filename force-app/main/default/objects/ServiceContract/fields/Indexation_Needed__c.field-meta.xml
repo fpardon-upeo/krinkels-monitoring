@@ -3,6 +3,7 @@
     <fullName>Indexation_Needed__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Indexation Needed</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

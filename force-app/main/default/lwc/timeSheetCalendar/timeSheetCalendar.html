@@ -57,6 +57,7 @@
               <span class="stat-value">{kmAmount}km</span>
             </div>
           </div>
+
           <button class="info-button" onclick={handleShowMileageInfo}>
             Info
           </button>
@@ -95,21 +96,38 @@
       </div>
     </div>
 
-    <template if:false={showNoEntriesModal}>
-      <div class="refreshButton-container">
-        <button class="refreshButton" onclick={handleRefresh}>
-          <lightning-icon icon-name="utility:refresh"></lightning-icon>
+    <div class="refreshButton-container">
+      <div class="backAndFurtherDays-container">
+        <button
+          class="backButton"
+          onclick={handleBackDays}
+          disabled={isBackButtonDisabled}
+        >
+          <lightning-icon icon-name="utility:left"></lightning-icon>
+        </button>
+        <p class="date-text">{date}</p>
+        <button
+          class="furtherButton"
+          onclick={handleFurtherDays}
+          disabled={isFurtherButtonDisabled}
+        >
+          <lightning-icon icon-name="utility:right"></lightning-icon>
         </button>
       </div>
-
-      <!-- Calendar -->
-      <div class="fullcalendar"></div>
-    </template>
-
+    </div>
+    <!-- Calendar -->
+    <div class="fullcalendar"></div>
     <template if:true={showNoEntriesModal}>
-      <div class="noEntries-container">
-        <p class="noEntries-text">
-          No entries or breaks found for this time sheet.
+      <div class="warning-container">
+        <div class="warning-icon">
+          <lightning-icon
+            icon-name="utility:warning"
+            size="small"
+            variant="warning"
+          ></lightning-icon>
+        </div>
+        <p class="warning-text">
+          Warning: No entries or breaks found for this time sheet.
         </p>
       </div>
     </template>
@@ -301,14 +319,15 @@
                 <button class="cancel-button" onclick={handleCloseForm}>
                   Cancel
                 </button>
-
-                <button
-                  class="submit-button"
-                  onclick={handleMileageEntryEdit}
-                  data-id={entry.Id}
-                >
-                  Edit
-                </button>
+                <template if:false={showNoEntriesModal}>
+                  <button
+                    class="submit-button"
+                    onclick={handleMileageEntryEdit}
+                    data-id={entry.Id}
+                  >
+                    Edit
+                  </button>
+                </template>
               </div>
             </div>
           </template>
@@ -357,20 +376,27 @@
       </div>
       <div class="bottom-sheet-content">
         <div class="action-buttons">
-          <button onclick={handleNewOutMileageEntry} class="action-button">
-            <span class="button-icon">
-              <lightning-icon
-                icon-name="utility:travel_and_places"
-                size="small"
-              ></lightning-icon>
-            </span>
-            <span class="button-text">
-              <span class="button-label">Add Out Mileage Entry</span>
-              <span class="button-description"
-                >Create a new out mileage record</span
-              >
-            </span>
-          </button>
+          <template if:false={showNoEntriesModal}>
+            <button onclick={handleNewOutMileageEntry} class="action-button">
+              <span class="button-icon">
+                <lightning-icon
+                  icon-name="utility:travel_and_places"
+                  size="small"
+                ></lightning-icon>
+              </span>
+              <span class="button-text">
+                <span class="button-label">Add Out Mileage Entry</span>
+                <span class="button-description"
+                  >Create a new out mileage record</span
+                >
+              </span>
+            </button>
+          </template>
+          <template if:true={showNoEntriesModal}>
+            <p class="no-entries-text">
+              No out mileage entries found for this time sheet.
+            </p>
+          </template>
         </div>
         <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
       </div>

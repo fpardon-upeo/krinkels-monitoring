@@ -62,6 +62,31 @@ public with sharing class TimeSheetController {
   }
 
   @AuraEnabled
+  public static TimeSheetWrapper getTimeSheetByResourceAndDate(
+    String serviceResourceId,
+    Date endDate
+  ) {
+    // First find the TimeSheet Id
+    List<TimeSheet> timeSheets = [
+      SELECT Id
+      FROM TimeSheet
+      WHERE ServiceResourceId = :serviceResourceId AND EndDate = :endDate
+      LIMIT 1
+    ];
+
+    // If found, use getTimeSheet to get full data
+    if (!timeSheets.isEmpty()) {
+      return getTimeSheet(timeSheets[0].Id);
+    }
+
+    // If no TimeSheet found, return empty wrapper
+    TimeSheetWrapper wrapper = new TimeSheetWrapper();
+    wrapper.timeSheet = null;
+    wrapper.resourceAbsences = new List<ResourceAbsence>();
+    return wrapper;
+  }
+
+  @AuraEnabled
   public static TimeSheetWrapper updateTimeSheetEntry(
     Id timeSheetEntryId,
     DateTime startTime,

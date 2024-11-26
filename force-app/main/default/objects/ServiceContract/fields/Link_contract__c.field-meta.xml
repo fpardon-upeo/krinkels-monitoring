@@ -3,6 +3,7 @@
     <fullName>Link_contract__c</fullName>
     <label>DMS Link contract</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Url</type>
 </CustomField>

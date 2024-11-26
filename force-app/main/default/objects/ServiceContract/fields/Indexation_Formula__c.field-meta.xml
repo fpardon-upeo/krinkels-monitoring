@@ -3,6 +3,7 @@
     <fullName>Indexation_Formula__c</fullName>
     <label>Indexation Formula</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>TextArea</type>
 </CustomField>

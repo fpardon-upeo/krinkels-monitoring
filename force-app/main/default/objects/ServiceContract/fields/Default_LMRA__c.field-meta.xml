@@ -3,6 +3,7 @@
     <fullName>Default_LMRA__c</fullName>
     <label>Default LMRA</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

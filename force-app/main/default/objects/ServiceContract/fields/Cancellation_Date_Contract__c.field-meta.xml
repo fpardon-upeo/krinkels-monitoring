@@ -3,6 +3,7 @@
     <fullName>Cancellation_Date_Contract__c</fullName>
     <label>Cancellation Date Contract</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Date</type>
 </CustomField>

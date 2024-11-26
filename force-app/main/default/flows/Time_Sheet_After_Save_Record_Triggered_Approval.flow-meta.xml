@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Send_Approved_Timesheet_to_ATAK</name>
         <label>Send Approved Timesheet to ATAK</label>
-        <locationX>1282</locationX>
+        <locationX>1370</locationX>
         <locationY>384</locationY>
         <actionName>ATAKPerformanceServiceInvocable</actionName>
         <actionType>apex</actionType>
@@ -38,6 +38,18 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>submitterId</name>
+            <value>
+                <elementReference>$Record.ServiceResource.RelatedRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>skipEntryCriteria</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>submit</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -57,6 +69,18 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>submitterId</name>
+            <value>
+                <elementReference>$Record.ServiceResource.RelatedRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>skipEntryCriteria</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
         <nameSegment>submit</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -66,7 +90,7 @@
     <decisions>
         <name>Async_Status_Changes</name>
         <label>Async Status Changes</label>
-        <locationX>1414</locationX>
+        <locationX>1502</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -125,7 +149,7 @@
     <decisions>
         <name>Status_Changes</name>
         <label>Status Changes</label>
-        <locationX>666</locationX>
+        <locationX>710</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -191,7 +215,7 @@
     <recordUpdates>
         <name>Update_Entries_to_Approved</name>
         <label>Update Entries to Approved</label>
-        <locationX>1282</locationX>
+        <locationX>1370</locationX>
         <locationY>492</locationY>
         <inputAssignments>
             <field>Status</field>
@@ -204,7 +228,7 @@
     <recordUpdates>
         <name>Update_Entries_to_Needs_Review</name>
         <label>Update Entries to Needs Review</label>
-        <locationX>754</locationX>
+        <locationX>842</locationX>
         <locationY>384</locationY>
         <inputAssignments>
             <field>Status</field>
@@ -228,7 +252,7 @@
         <inputReference>$Record.TimeSheetEntries</inputReference>
     </recordUpdates>
     <start>
-        <locationX>914</locationX>
+        <locationX>980</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Status_Changes</targetReference>

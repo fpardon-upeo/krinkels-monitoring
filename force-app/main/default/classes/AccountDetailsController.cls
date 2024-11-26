@@ -1,69 +1,84 @@
 /**
-* Created by Frederik on 11/21/2024.
-* Description:
-* Change Log:
-* Dependencies:
-*/
+ * Created by Frederik on 11/21/2024.
+ * Description:
+ * Change Log:
+ * Dependencies:
+ */
 
 public with sharing class AccountDetailsController {
-    @AuraEnabled(cacheable=true)
-    public static List<TimeSlot> getTimeSlots(Id accountId) {
-        List<TimeSlot> timeSlots = new List<TimeSlot>();
+  @AuraEnabled(cacheable=true)
+  public static List<TimeSlot> getTimeSlots(Id accountId) {
+    List<TimeSlot> timeSlots = new List<TimeSlot>();
 
-        // Get the Operating Hours ID from the Account
-        Account acc = [SELECT OperatingHoursId FROM Account WHERE Id = :accountId LIMIT 1];
+    // Get the Operating Hours ID from the Account
+    Account acc = [
+      SELECT OperatingHoursId
+      FROM Account
+      WHERE Id = :accountId
+      LIMIT 1
+    ];
 
-        if (acc.OperatingHoursId != null) {
-            timeSlots = [
-                    SELECT DayOfWeek, StartTime, EndTime
-                    FROM TimeSlot
-                    WHERE OperatingHoursId = :acc.OperatingHoursId
-                    ORDER BY DayOfWeek, StartTime
-            ];
-        }
-
-        return timeSlots;
+    if (acc.OperatingHoursId != null) {
+      timeSlots = [
+        SELECT DayOfWeek, StartTime, EndTime
+        FROM TimeSlot
+        WHERE OperatingHoursId = :acc.OperatingHoursId
+        ORDER BY DayOfWeek, StartTime
+      ];
     }
 
-    @AuraEnabled(cacheable=true)
-    public static List<ContentDocument> getContentDocuments(Id accountId) {
-        List<ContentDocumentLink> contentLinks = [
-                SELECT ContentDocumentId
-                FROM ContentDocumentLink
-                WHERE LinkedEntityId = :accountId
-        ];
+    return timeSlots;
+  }
 
-        Set<Id> documentIds = new Set<Id>();
-        for (ContentDocumentLink link : contentLinks) {
-            documentIds.add(link.ContentDocumentId);
-        }
+  @AuraEnabled(cacheable=true)
+  public static List<ContentDocument> getContentDocuments(Id accountId) {
+    List<ContentDocumentLink> contentLinks = [
+      SELECT ContentDocumentId
+      FROM ContentDocumentLink
+      WHERE LinkedEntityId = :accountId
+    ];
 
-        return [
-                SELECT Id, Title, FileExtension, ContentSize
-                FROM ContentDocument
-                WHERE Id IN :documentIds
-                ORDER BY LastModifiedDate DESC
-        ];
+    Set<Id> documentIds = new Set<Id>();
+    for (ContentDocumentLink link : contentLinks) {
+      documentIds.add(link.ContentDocumentId);
     }
 
-    @AuraEnabled
-    public static void createFeedbackPost(Id accountId, String feedbackText) {
+    return [
+      SELECT Id, Title, FileExtension, ContentSize
+      FROM ContentDocument
+      WHERE Id IN :documentIds
+      ORDER BY LastModifiedDate DESC
+    ];
+  }
 
-        //First get the current User Manager Id so we can @mention them in the post
-        User manager = [SELECT Id FROM User WHERE Id = :UserInfo.getUserId() LIMIT 1];
+  @AuraEnabled
+  public static void createFeedbackPost(Id accountId, String feedbackText) {
+    //First get the current User Manager Id so we can @mention them in the post
+    User currentUser = [
+      SELECT Id
+      FROM User
+      WHERE Id = :UserInfo.getUserId()
+      LIMIT 1
+    ];
 
-        String newFeedbackText = '@[' + manager.Id + '] - ' + feedbackText;
+    String newFeedbackText =
+      '@[' +
+      currentUser.ManagerId +
+      '] - ' +
+      feedbackText;
 
-        // Create a FeedItem (Chatter Post)
-        FeedItem post = new FeedItem();
-        post.ParentId = accountId;  // The Account where the post will appear
-        post.Body = newFeedbackText;
-        post.Type = 'TextPost';
+    // Create a FeedItem (Chatter Post)
+    FeedItem post = new FeedItem();
+    post.ParentId = accountId;
+    post.Body = newFeedbackText;
+    post.Type = 'TextPost';
 
-        try {
-            insert post;
-        } catch (Exception e) {
-            throw new AuraHandledException('Error creating feedback post: ' + e.getMessage());
-        }
+    try {
+      insert post;
+    } catch (Exception e) {
+      throw new AuraHandledException(
+        'Error creating feedback post: ' + e.getMessage()
+      );
     }
+  }
 }
