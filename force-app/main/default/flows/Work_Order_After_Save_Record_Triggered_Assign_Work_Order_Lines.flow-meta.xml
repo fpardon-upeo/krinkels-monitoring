@@ -144,6 +144,7 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <triggerOrder>500</triggerOrder>
     <variables>
         <name>WorkOrderLine</name>
         <dataType>SObject</dataType>

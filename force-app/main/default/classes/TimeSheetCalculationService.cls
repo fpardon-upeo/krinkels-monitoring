@@ -59,12 +59,33 @@ public without sharing class TimeSheetCalculationService {
         Set<Id> serviceResourceIds = new Set<Id>();
         Set<DateTime> startTimes = new Set<DateTime>();
         Set<DateTime> endTimes = new Set<DateTime>();
+        Set<Id> tseEntryIds = new Set<Id>();
+
+        for(TimeSheetEntry tse : timeSheetEntries) {
+            System.debug('tse: ' + tse.Id);
+            tseEntryIds.add(tse.Id);
+        }
+
+        System.debug('tseEntryIds: ' + tseEntryIds);
+
+        //Requery the needed TimeSheetEntries with all needed fields
+        timeSheetEntries = [
+                SELECT Id, StartTime, EndTime, TimeSheet.ServiceResourceId
+                FROM TimeSheetEntry
+                WHERE Id IN :tseEntryIds
+        ];
+
+        System.debug('timeSheetEntries: ' + timeSheetEntries);
 
         for(TimeSheetEntry tse : timeSheetEntries) {
             serviceResourceIds.add(tse.TimeSheet.ServiceResourceId);
             startTimes.add(tse.StartTime);
             endTimes.add(tse.EndTime);
         }
+
+        System.debug('serviceResourceIds: ' + serviceResourceIds);
+        System.debug('startTimes: ' + startTimes);
+        System.debug('endTimes: ' + endTimes);
 
         // Query all potentially relevant ResourceAbsences
         List<ResourceAbsence> allAbsences = [
@@ -83,27 +104,31 @@ public without sharing class TimeSheetCalculationService {
         List<TimeSheetEntry> entriesToUpdate = new List<TimeSheetEntry>();
 
         for(TimeSheetEntry entry : timeSheetEntries) {
+            TimeSheetEntry newEntry = new TimeSheetEntry();
             //If there are no absences, set the break time to 0 and the working time to the total duration
             if(allAbsences.isEmpty()){
-                entry.Break_Duration__c = 0;
+                newEntry.Id = entry.Id;
+                newEntry.Break_Duration__c = 0;
                 Long totalDurationMs = entry.EndTime.getTime() - entry.StartTime.getTime();
                 Integer totalDurationMinutes = (Integer)(totalDurationMs / (1000 * 60));
-                entry.Working_Time__c = totalDurationMinutes;
-                entriesToUpdate.add(entry);
+                newEntry.Working_Time__c = totalDurationMinutes;
+                entriesToUpdate.add(newEntry);
                 continue;
+            } else {
+                newEntry = entry;
             }
-            Integer totalBreakMinutes = calculateTotalBreakMinutes(entry, allAbsences);
+            Integer totalBreakMinutes = calculateTotalBreakMinutes(newEntry, allAbsences);
 
             // Calculate actual work time
-            Long totalDurationMs = entry.EndTime.getTime() - entry.StartTime.getTime();
+            Long totalDurationMs = newEntry.EndTime.getTime() - newEntry.StartTime.getTime();
             Integer totalDurationMinutes = (Integer)(totalDurationMs / (1000 * 60));
             Integer actualWorkMinutes = totalDurationMinutes - totalBreakMinutes;
 
             // Update the entry
-            entry.Break_Duration__c = totalBreakMinutes;
-            entry.Working_Time__c = actualWorkMinutes;
+            newEntry.Break_Duration__c = totalBreakMinutes;
+            newEntry.Working_Time__c = actualWorkMinutes;
 
-            entriesToUpdate.add(entry);
+            entriesToUpdate.add(newEntry);
         }
 
         if(!entriesToUpdate.isEmpty()) {

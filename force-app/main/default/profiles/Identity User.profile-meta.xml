@@ -195,6 +195,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>SDWorxAbsenceBatchScheduler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SDWorxToResourceAbsenceService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2586,6 +2590,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>User_Settings__c.End_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User_Settings__c.Service_Resource__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User_Settings__c.Start_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User_Settings__c.Time_Frame__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.After_Work_Comments__c</field>
         <readable>false</readable>
@@ -2628,6 +2652,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.FSL__VisitingHours__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Goodwill_Tasks__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2713,6 +2742,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.Special_Equipment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.WO_with_Goodwill_Tasks__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3484,6 +3518,9 @@
         <layout>UserProvisioningRequest-User Provisioning Request Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>User_Settings__c-User Settings Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>WarrantyTerm-Warranty Term Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -3672,6 +3709,10 @@
     <tabVisibilities>
         <tab>SD_Import__c</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>User_Settings__c</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Identity</userLicense>
     <userPermissions>

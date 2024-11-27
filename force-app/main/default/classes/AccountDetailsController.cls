@@ -55,7 +55,7 @@ public with sharing class AccountDetailsController {
   public static void createFeedbackPost(Id accountId, String feedbackText) {
     //First get the current User Manager Id so we can @mention them in the post
     User currentUser = [
-      SELECT Id
+      SELECT Id, ManagerId
       FROM User
       WHERE Id = :UserInfo.getUserId()
       LIMIT 1

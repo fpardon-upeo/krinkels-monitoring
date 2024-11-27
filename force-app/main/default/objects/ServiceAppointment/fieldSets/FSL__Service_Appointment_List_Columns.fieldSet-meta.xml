@@ -47,6 +47,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>City</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>ContactId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -68,6 +73,11 @@
     </availableFields>
     <availableFields>
         <field>Description</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>DueDate</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -232,11 +242,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>PostalCode</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -267,11 +272,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>SchedStartTime</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>FSL__Schedule_Mode__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -288,11 +288,6 @@
     </availableFields>
     <availableFields>
         <field>ServiceNote</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>ServiceTerritoryId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -348,22 +343,27 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>City</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>Status</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>DueDate</field>
+        <field>AccountId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>AccountId</field>
+        <field>PostalCode</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>SchedStartTime</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>ServiceTerritoryId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

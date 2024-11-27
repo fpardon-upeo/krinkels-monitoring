@@ -52,11 +52,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>ContactId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>Country</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -77,6 +72,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>DueDate</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Duration</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -88,6 +88,11 @@
     </availableFields>
     <availableFields>
         <field>FSL__Duration_In_Minutes__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>EarliestStartTime</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -212,11 +217,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>ParentRecordId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>ParentRecordStatusCategory</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -228,11 +228,6 @@
     </availableFields>
     <availableFields>
         <field>FSL__Pinned__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>PostalCode</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -292,12 +287,12 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>Status</field>
+        <field>StatusCategory</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>StatusCategory</field>
+        <field>Street</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -326,14 +321,14 @@
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
-    <availableFields>
-        <field>WorkTypeId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
     <description>Gantt map</description>
     <displayedFields>
         <field>AppointmentNumber</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Status</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
@@ -348,12 +343,7 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>EarliestStartTime</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>DueDate</field>
+        <field>WorkTypeId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
@@ -363,7 +353,17 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Street</field>
+        <field>PostalCode</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>ContactId</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>ParentRecordId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

@@ -2,6 +2,11 @@
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>FSL__Service_Appointment_Expanded</fullName>
     <availableFields>
+        <field>AccountId</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>ActualDuration</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -57,11 +62,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>ContactId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>Country</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -93,11 +93,6 @@
     </availableFields>
     <availableFields>
         <field>FSL__Duration_In_Minutes__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>EarliestStartTime</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -227,6 +222,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>ParentRecordType</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>FSL__Pinned__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -258,16 +258,6 @@
     </availableFields>
     <availableFields>
         <field>FSL__Same_Resource__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>SchedEndTime</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
-        <field>SchedStartTime</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -341,24 +331,14 @@
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
-    <availableFields>
-        <field>WorkTypeId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
     <description>Service appointment list expanded appointment</description>
     <displayedFields>
-        <field>AccountId</field>
+        <field>ContactId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>DueDate</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>ParentRecordType</field>
+        <field>ParentRecordId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
@@ -368,7 +348,27 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>ParentRecordId</field>
+        <field>WorkTypeId</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>SchedStartTime</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>SchedEndTime</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>EarliestStartTime</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>DueDate</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

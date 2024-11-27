@@ -2,9 +2,9 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2286
+Metadatas: 2301
 
-<details><summary>ApexClass (79)</summary>
+<details><summary>ApexClass (80)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -53,6 +53,7 @@ Metadatas: 2286
   • RRuleDescriptionGenerator<br/>
   • ReadyForValidation<br/>
   • SDWorxAbsenceBatch<br/>
+  • SDWorxAbsenceBatchScheduler<br/>
   • SDWorxToResourceAbsenceService<br/>
   • SchedulingController<br/>
   • SendBetterEmail<br/>
@@ -197,7 +198,7 @@ Metadatas: 2286
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (521)</summary>
+<details><summary>CustomField (527)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -684,6 +685,10 @@ Metadatas: 2286
   • User.End_Date__c<br/>
   • User.Interim_Office__c<br/>
   • User.Start_Date__c<br/>
+  • User_Settings__c.End_Time__c<br/>
+  • User_Settings__c.Service_Resource__c<br/>
+  • User_Settings__c.Start_Time__c<br/>
+  • User_Settings__c.Time_Frame__c<br/>
   • WorkOrder.After_Work_Comments__c<br/>
   • WorkOrder.Before_Work_Comments__c<br/>
   • WorkOrder.Check_In_At_Work_Reference__c<br/>
@@ -694,6 +699,7 @@ Metadatas: 2286
   • WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c<br/>
   • WorkOrder.FSL__Scheduling_Priority__c<br/>
   • WorkOrder.FSL__VisitingHours__c<br/>
+  • WorkOrder.Goodwill_Tasks__c<br/>
   • WorkOrder.Is_First_of_Day__c<br/>
   • WorkOrder.LMRA_Done__c<br/>
   • WorkOrder.LMRA_Type_formula__c<br/>
@@ -711,6 +717,7 @@ Metadatas: 2286
   • WorkOrder.Shop_Visit_Reviewed_Approved__c<br/>
   • WorkOrder.Shop_Visit_Start_Time__c<br/>
   • WorkOrder.Special_Equipment__c<br/>
+  • WorkOrder.WO_with_Goodwill_Tasks__c<br/>
   • WorkOrder.Work_Order_Type__c<br/>
   • WorkOrderLineItem.FSL__IsFillInCandidate__c<br/>
   • WorkOrderLineItem.FSL__VisitingHours__c<br/>
@@ -805,7 +812,7 @@ Metadatas: 2286
   • Standard_Notification<br/>
 </details>
 
-<details><summary>CustomObject (21)</summary>
+<details><summary>CustomObject (22)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • ATAK_Settings__c<br/>
@@ -827,9 +834,10 @@ Metadatas: 2286
   • Service_Appointment_Status__c<br/>
   • Service_Item__c<br/>
   • Service_Status_Time_Log__c<br/>
+  • User_Settings__c<br/>
 </details>
 
-<details><summary>CustomTab (13)</summary>
+<details><summary>CustomTab (14)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Asset_Scheduler<br/>
@@ -843,6 +851,7 @@ Metadatas: 2286
   • MobileLanding<br/>
   • Outbound_Log__c<br/>
   • SD_Import__c<br/>
+  • User_Settings__c<br/>
 </details>
 
 <details><summary>Dashboard (11)</summary>
@@ -976,7 +985,7 @@ Metadatas: 2286
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (48)</summary>
+<details><summary>FlexiPage (49)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
   • Account_Record_Page<br/>
@@ -1012,6 +1021,7 @@ Metadatas: 2286
   • Product_Item_Record_Page<br/>
   • Product_Record_Page<br/>
   • SalesCloudMobile_UtilityBar<br/>
+  • Scheduling_Policy_Record_Page<br/>
   • Service_Appointment_Record_Page<br/>
   • Service_Contract_Record_Page<br/>
   • Service_Crew_Record_Page<br/>
@@ -1189,7 +1199,7 @@ Metadatas: 2286
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<details><summary>Layout (216)</summary>
+<details><summary>Layout (217)</summary>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Account Layout<br/>
@@ -1384,6 +1394,7 @@ Metadatas: 2286
   • UserProvAccount-User Provisioning Account Layout<br/>
   • UserProvisioningLog-User Provisioning Log Layout<br/>
   • UserProvisioningRequest-User Provisioning Request Layout<br/>
+  • User_Settings__c-User Settings Layout<br/>
   • WarrantyTerm-Warranty Term Layout<br/>
   • WorkAccess-Access Layout<br/>
   • WorkBadge-Badge Layout<br/>
@@ -1500,7 +1511,7 @@ Metadatas: 2286
   • KrinkelsTheme<br/>
 </details>
 
-<details><summary>ListView (11)</summary>
+<details><summary>ListView (12)</summary>
   • ATAK_Personnel__c.All<br/>
   • ATAK_Project__c.All<br/>
   • Error_Log__c.All<br/>
@@ -1512,6 +1523,7 @@ Metadatas: 2286
   • Mileage_Entry__c.All<br/>
   • Outbound_Log__c.All<br/>
   • SD_Import__c.All<br/>
+  • User_Settings__c.All<br/>
 </details>
 
 <details><summary>ManagedContentType (3)</summary>
@@ -1642,7 +1654,7 @@ Metadatas: 2286
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (152)</summary>
+<details><summary>QuickAction (153)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Child_Account<br/>
   • Campaign.Child_Campaign<br/>
@@ -1787,6 +1799,7 @@ Metadatas: 2286
   • TimeSheet.test_mileage<br/>
   • Timesheet<br/>
   • WorkOrder.Location_Passport<br/>
+  • WorkOrder.Log_Goodwill_Tasks<br/>
   • WorkOrder.SendEmail<br/>
   • WorkOrder.Start_Stop<br/>
   • WorkOrderLineItem.Complete_Service<br/>
@@ -2116,7 +2129,7 @@ Metadatas: 2286
   • WorkDotCom<br/>
 </details>
 
-<details><summary>SharingRules (157)</summary>
+<details><summary>SharingRules (158)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -2258,6 +2271,7 @@ Metadatas: 2286
   • UserPrioritizedRecord<br/>
   • UserProvisioningRequest<br/>
   • UserServicePresence<br/>
+  • User_Settings__c<br/>
   • VideoCall<br/>
   • VoiceCall<br/>
   • WarrantyTerm<br/>
@@ -2388,7 +2402,7 @@ Metadatas: 2286
   • Default_Timesheet_Daily<br/>
 </details>
 
-<details><summary>TopicsForObjects (95)</summary>
+<details><summary>TopicsForObjects (96)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -2472,6 +2486,7 @@ Metadatas: 2286
   • TimeSheet<br/>
   • TimeSheetEntry<br/>
   • TravelMode<br/>
+  • User_Settings__c<br/>
   • WarrantyTerm<br/>
   • WorkCapacityAvailability<br/>
   • WorkCapacityLimit<br/>

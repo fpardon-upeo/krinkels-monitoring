@@ -49,6 +49,7 @@
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
         <members>SDWorxAbsenceBatch</members>
+        <members>SDWorxAbsenceBatchScheduler</members>
         <members>SDWorxToResourceAbsenceService</members>
         <members>SchedulingController</members>
         <members>SendBetterEmail</members>
@@ -680,6 +681,10 @@
         <members>User.End_Date__c</members>
         <members>User.Interim_Office__c</members>
         <members>User.Start_Date__c</members>
+        <members>User_Settings__c.End_Time__c</members>
+        <members>User_Settings__c.Service_Resource__c</members>
+        <members>User_Settings__c.Start_Time__c</members>
+        <members>User_Settings__c.Time_Frame__c</members>
         <members>WorkOrder.After_Work_Comments__c</members>
         <members>WorkOrder.Before_Work_Comments__c</members>
         <members>WorkOrder.Check_In_At_Work_Reference__c</members>
@@ -690,6 +695,7 @@
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
+        <members>WorkOrder.Goodwill_Tasks__c</members>
         <members>WorkOrder.Is_First_of_Day__c</members>
         <members>WorkOrder.LMRA_Done__c</members>
         <members>WorkOrder.LMRA_Type_formula__c</members>
@@ -707,6 +713,7 @@
         <members>WorkOrder.Shop_Visit_Reviewed_Approved__c</members>
         <members>WorkOrder.Shop_Visit_Start_Time__c</members>
         <members>WorkOrder.Special_Equipment__c</members>
+        <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
@@ -823,6 +830,7 @@
         <members>Service_Appointment_Status__c</members>
         <members>Service_Item__c</members>
         <members>Service_Status_Time_Log__c</members>
+        <members>User_Settings__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -839,6 +847,7 @@
         <members>MobileLanding</members>
         <members>Outbound_Log__c</members>
         <members>SD_Import__c</members>
+        <members>User_Settings__c</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -1008,6 +1017,7 @@
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
+        <members>Scheduling_Policy_Record_Page</members>
         <members>Service_Appointment_Record_Page</members>
         <members>Service_Contract_Record_Page</members>
         <members>Service_Crew_Record_Page</members>
@@ -1380,6 +1390,7 @@
         <members>UserProvAccount-User Provisioning Account Layout</members>
         <members>UserProvisioningLog-User Provisioning Log Layout</members>
         <members>UserProvisioningRequest-User Provisioning Request Layout</members>
+        <members>User_Settings__c-User Settings Layout</members>
         <members>WarrantyTerm-Warranty Term Layout</members>
         <members>WorkAccess-Access Layout</members>
         <members>WorkBadge-Badge Layout</members>
@@ -1508,6 +1519,7 @@
         <members>Mileage_Entry__c.All</members>
         <members>Outbound_Log__c.All</members>
         <members>SD_Import__c.All</members>
+        <members>User_Settings__c.All</members>
         <name>ListView</name>
     </types>
     <types>
@@ -1783,6 +1795,7 @@
         <members>TimeSheet.test_mileage</members>
         <members>Timesheet</members>
         <members>WorkOrder.Location_Passport</members>
+        <members>WorkOrder.Log_Goodwill_Tasks</members>
         <members>WorkOrder.SendEmail</members>
         <members>WorkOrder.Start_Stop</members>
         <members>WorkOrderLineItem.Complete_Service</members>
@@ -2254,6 +2267,7 @@
         <members>UserPrioritizedRecord</members>
         <members>UserProvisioningRequest</members>
         <members>UserServicePresence</members>
+        <members>User_Settings__c</members>
         <members>VideoCall</members>
         <members>VoiceCall</members>
         <members>WarrantyTerm</members>
@@ -2468,6 +2482,7 @@
         <members>TimeSheet</members>
         <members>TimeSheetEntry</members>
         <members>TravelMode</members>
+        <members>User_Settings__c</members>
         <members>WarrantyTerm</members>
         <members>WorkCapacityAvailability</members>
         <members>WorkCapacityLimit</members>

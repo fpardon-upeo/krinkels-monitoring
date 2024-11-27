@@ -132,6 +132,19 @@ public with sharing class TimeSheetController {
   }
 
   @AuraEnabled
+  public static User_Settings__c getUserSettings(String userId) {
+    List<User_Settings__c> userSettings = [
+      SELECT Id, Start_Time__c, End_Time__c
+      FROM User_Settings__c
+      WHERE Service_Resource__c = :userId
+      LIMIT 1
+    ];
+
+    // Return null if no settings found
+    return userSettings.isEmpty() ? null : userSettings[0];
+  }
+
+  @AuraEnabled
   //Fetch the Time Sheet and set the field Status to "Submitted"
   public static void submitTimeSheet(String timeSheetId) {
     try {

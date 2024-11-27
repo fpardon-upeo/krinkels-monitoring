@@ -47,7 +47,7 @@ public without sharing class ServiceResourceHandler {
     }
 
     public static void createPermissionSetAssignments(String userId){
-        List<PermissionSet> permissionSets = [SELECT Id FROM PermissionSet WHERE Label IN ('Field Service Mobile License', 'Field Service Resource License', 'Field Service Resource Permissions')];
+        List<PermissionSet> permissionSets = [SELECT Id FROM PermissionSet WHERE Label IN ('Field Service Mobile License', 'Field Service Resource License', 'Field Service Resource Permissions', 'Field Service Agent Permissions', 'Field Service Mobile Custom Permission Set')];
         List<PermissionSetAssignment> permissionSetAssignments = new List<PermissionSetAssignment>();
         for(PermissionSet permissionSet : permissionSets){
             PermissionSetAssignment permissionSetAssignment = new PermissionSetAssignment();

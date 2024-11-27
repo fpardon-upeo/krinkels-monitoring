@@ -2,9 +2,9 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 12402
+Metadatas: 12420
 
-<details><summary>ApexClass (770)</summary>
+<details><summary>ApexClass (771)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -705,6 +705,7 @@ Metadatas: 12402
   • RRuleDescriptionGenerator<br/>
   • ReadyForValidation<br/>
   • SDWorxAbsenceBatch<br/>
+  • SDWorxAbsenceBatchScheduler<br/>
   • SDWorxToResourceAbsenceService<br/>
   • SchedulingController<br/>
   • SendBetterEmail<br/>
@@ -1140,7 +1141,7 @@ Metadatas: 12402
   • standard__ServiceConsole<br/>
 </details>
 
-<details><summary>CustomField (1182)</summary>
+<details><summary>CustomField (1188)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -2271,6 +2272,10 @@ Metadatas: 12402
   • User.End_Date__c<br/>
   • User.Interim_Office__c<br/>
   • User.Start_Date__c<br/>
+  • User_Settings__c.End_Time__c<br/>
+  • User_Settings__c.Service_Resource__c<br/>
+  • User_Settings__c.Start_Time__c<br/>
+  • User_Settings__c.Time_Frame__c<br/>
   • WorkOrder.After_Work_Comments__c<br/>
   • WorkOrder.Before_Work_Comments__c<br/>
   • WorkOrder.Check_In_At_Work_Reference__c<br/>
@@ -2280,6 +2285,7 @@ Metadatas: 12402
   • WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c<br/>
   • WorkOrder.FSL__Scheduling_Priority__c<br/>
   • WorkOrder.FSL__VisitingHours__c<br/>
+  • WorkOrder.Goodwill_Tasks__c<br/>
   • WorkOrder.Is_First_of_Day__c<br/>
   • WorkOrder.LMRA_Done__c<br/>
   • WorkOrder.LMRA_Type_formula__c<br/>
@@ -2297,6 +2303,7 @@ Metadatas: 12402
   • WorkOrder.Shop_Visit_Reviewed_Approved__c<br/>
   • WorkOrder.Shop_Visit_Start_Time__c<br/>
   • WorkOrder.Special_Equipment__c<br/>
+  • WorkOrder.WO_with_Goodwill_Tasks__c<br/>
   • WorkOrder.Work_Order_Type__c<br/>
   • WorkOrderLineItem.FSL__IsFillInCandidate__c<br/>
   • WorkOrderLineItem.FSL__VisitingHours__c<br/>
@@ -7885,7 +7892,7 @@ Metadatas: 12402
   • Standard_Notification<br/>
 </details>
 
-<details><summary>CustomObject (303)</summary>
+<details><summary>CustomObject (304)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • ATAK_Settings__c<br/>
@@ -8165,6 +8172,7 @@ Metadatas: 12402
   • UserPrioritizedRecord<br/>
   • UserProvisioningRequest<br/>
   • UserServicePresence<br/>
+  • User_Settings__c<br/>
   • VideoCall<br/>
   • VideoCallParticipant<br/>
   • VideoCallRecording<br/>
@@ -8191,7 +8199,7 @@ Metadatas: 12402
   • bmpyrckt__Timeline_Configuration__mdt<br/>
 </details>
 
-<details><summary>CustomObjectTranslation (1409)</summary>
+<details><summary>CustomObjectTranslation (1410)</summary>
   • ATAK_Personnel__c-en_US<br/>
   • ATAK_Project__c-en_US<br/>
   • ATAK_Settings__c-en_US<br/>
@@ -9503,6 +9511,7 @@ Metadatas: 12402
   • TimeSlot-vi<br/>
   • TimeSlot-zh_CN<br/>
   • TimeSlot-zh_TW<br/>
+  • User_Settings__c-en_US<br/>
   • WorkOrder-bg<br/>
   • WorkOrder-cs<br/>
   • WorkOrder-da<br/>
@@ -9665,7 +9674,7 @@ Metadatas: 12402
   • FSL__View_resource_on_secondary_STM<br/>
 </details>
 
-<details><summary>CustomTab (22)</summary>
+<details><summary>CustomTab (23)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Asset_Scheduler<br/>
@@ -9686,6 +9695,7 @@ Metadatas: 12402
   • MobileLanding<br/>
   • Outbound_Log__c<br/>
   • SD_Import__c<br/>
+  • User_Settings__c<br/>
   • mobileLanding__Mobile_Landing_vf<br/>
   • mobileLanding__Non_Mobile_Landing<br/>
 </details>
@@ -9925,7 +9935,7 @@ Metadatas: 12402
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (48)</summary>
+<details><summary>FlexiPage (49)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
   • Asset_Record_Page<br/>
@@ -9961,6 +9971,7 @@ Metadatas: 12402
   • Product_Item_Record_Page<br/>
   • Product_Record_Page<br/>
   • SalesCloudMobile_UtilityBar<br/>
+  • Scheduling_Policy_Record_Page<br/>
   • Service_Appointment_Record_Page<br/>
   • Service_Contract_Record_Page<br/>
   • Service_Crew_Record_Page<br/>
@@ -10141,7 +10152,7 @@ Metadatas: 12402
   • usf3<br/>
 </details>
 
-<details><summary>Layout (262)</summary>
+<details><summary>Layout (263)</summary>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Commercial Account Layout<br/>
@@ -10378,6 +10389,7 @@ Metadatas: 12402
   • UserProvAccount-User Provisioning Account Layout<br/>
   • UserProvisioningLog-User Provisioning Log Layout<br/>
   • UserProvisioningRequest-User Provisioning Request Layout<br/>
+  • User_Settings__c-User Settings Layout<br/>
   • WarrantyTerm-Warranty Term Layout<br/>
   • WorkAccess-Access Layout<br/>
   • WorkBadge-Badge Layout<br/>
@@ -10587,7 +10599,7 @@ Metadatas: 12402
   • KrinkelsTheme<br/>
 </details>
 
-<details><summary>ListView (478)</summary>
+<details><summary>ListView (480)</summary>
   • ATAK_Personnel__c.All<br/>
   • ATAK_Personnel__c.All<br/>
   • ATAK_Project__c.All<br/>
@@ -11002,6 +11014,8 @@ Metadatas: 12402
   • User.AdminUsers<br/>
   • User.AllUsers<br/>
   • User.AllUsers<br/>
+  • User_Settings__c.All<br/>
+  • User_Settings__c.All<br/>
   • WarrantyTerm.All_WarrantyTerms<br/>
   • WarrantyTerm.All_WarrantyTerms<br/>
   • WarrantyTerm.My_WarrantyTerms<br/>
@@ -11217,7 +11231,7 @@ Metadatas: 12402
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (155)</summary>
+<details><summary>QuickAction (156)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Child_Account<br/>
   • Book_Appointment<br/>
@@ -11365,6 +11379,7 @@ Metadatas: 12402
   • TimeSheet.test_mileage<br/>
   • Timesheet<br/>
   • WorkOrder.Location_Passport<br/>
+  • WorkOrder.Log_Goodwill_Tasks<br/>
   • WorkOrder.SendEmail<br/>
   • WorkOrder.Start_Stop<br/>
   • WorkOrderLineItem.Complete_Service<br/>
@@ -11790,7 +11805,7 @@ Metadatas: 12402
   • FSL__Optimization_Request__c.FSL__Related_Service_Territory__c<br/>
 </details>
 
-<details><summary>SharingRules (169)</summary>
+<details><summary>SharingRules (170)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -11944,6 +11959,7 @@ Metadatas: 12402
   • UserPrioritizedRecord<br/>
   • UserProvisioningRequest<br/>
   • UserServicePresence<br/>
+  • User_Settings__c<br/>
   • VideoCall<br/>
   • VoiceCall<br/>
   • WarrantyTerm<br/>
@@ -12453,7 +12469,7 @@ Metadatas: 12402
   • Default_Timesheet_Daily<br/>
 </details>
 
-<details><summary>TopicsForObjects (118)</summary>
+<details><summary>TopicsForObjects (119)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -12560,6 +12576,7 @@ Metadatas: 12402
   • TimeSheet<br/>
   • TimeSheetEntry<br/>
   • TravelMode<br/>
+  • User_Settings__c<br/>
   • WarrantyTerm<br/>
   • WorkCapacityAvailability<br/>
   • WorkCapacityLimit<br/>
@@ -12578,7 +12595,7 @@ Metadatas: 12402
   • Type<br/>
 </details>
 
-<details><summary>UiViewDefinition (41)</summary>
+<details><summary>UiViewDefinition (42)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
   • Asset_Record_Page<br/>
@@ -12607,6 +12624,7 @@ Metadatas: 12402
   • Product_Consumed_Record_Page<br/>
   • Product_Item_Record_Page<br/>
   • Product_Record_Page<br/>
+  • Scheduling_Policy_Record_Page<br/>
   • Service_Appointment_Record_Page<br/>
   • Service_Contract_Record_Page<br/>
   • Service_Crew_Record_Page<br/>

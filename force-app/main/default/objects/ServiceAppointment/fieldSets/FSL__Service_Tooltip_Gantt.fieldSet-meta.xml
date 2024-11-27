@@ -2,11 +2,6 @@
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>FSL__Service_Tooltip_Gantt</fullName>
     <availableFields>
-        <field>AccountId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>ActualDuration</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -37,6 +32,16 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>ArrivalWindowEndTime</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>ArrivalWindowStartTime</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>FSL__Auto_Schedule__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -47,7 +52,7 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>ContactId</field>
+        <field>City</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -72,6 +77,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>DueDate</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Duration</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -83,6 +93,11 @@
     </availableFields>
     <availableFields>
         <field>FSL__Duration_In_Minutes__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>EarliestStartTime</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -222,11 +237,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>PostalCode</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>FSL__Prevent_Geocoding_For_Chatter_Actions__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -297,6 +307,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Street</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Subject</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -321,11 +336,6 @@
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
-    <availableFields>
-        <field>WorkTypeId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
     <description>Service Tooltip Gantt</description>
     <displayedFields>
         <field>Status</field>
@@ -333,37 +343,27 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>ArrivalWindowStartTime</field>
+        <field>AccountId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>ArrivalWindowEndTime</field>
+        <field>PostalCode</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>EarliestStartTime</field>
+        <field>WorkTypeId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>DueDate</field>
+        <field>ContactId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>ParentRecordId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Street</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>City</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

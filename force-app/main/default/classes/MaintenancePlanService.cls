@@ -125,10 +125,11 @@ public with sharing class MaintenancePlanService {
         String recordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Operational Account').getRecordTypeId();
 
         for (ContractLineItem line : serviceLines) {
-            String locationKey = serviceContract.Account.Name + '-' + line.Location__Street__s + '-' + line.Location__City__s;
+            String locationKeyName = serviceContract.Account.Name + '-' + line.Location__Street__s + '-' + line.Location__City__s;
+            String locationKey = serviceContract.AccountId + '-' + line.Location__Street__s + '-' + line.Location__City__s;
             if (!locationKeys.contains(locationKey)) {
                 Account location = new Account();
-                location.Name = locationKey.abbreviate(80);
+                location.Name = locationKeyName.abbreviate(80);
                 location.RecordTypeId = recordTypeId;
                 location.ShippingStreet = line.Location__Street__s;
                 location.ShippingCity = line.Location__City__s;
@@ -185,7 +186,7 @@ public with sharing class MaintenancePlanService {
         for (ContractLineItem line : serviceLines) {
             System.debug('Line: ' + line);
             // Generate locationKey based on street and city
-            String locationKey = serviceContract.Account.Name + '-' + line.Location__Street__s + '-' + line.Location__City__s;
+            String locationKey = serviceContract.AccountId + '-' + line.Location__Street__s + '-' + line.Location__City__s;
             Asset asset = new Asset();
             asset.Name = (line.Product2.Name + ' - ' + serviceContract.Account.Name + ' - ' + line.Location__City__s + ' ' + line.Location__Street__s).abbreviate(80);
             asset.Account = new Account(Address_Identifier__c = locationKey);  // Using locationKey instead of Account.Name
@@ -326,7 +327,7 @@ public with sharing class MaintenancePlanService {
     private static void updateContractLineItems(List<ContractLineItem> serviceLines, List<Asset> assets) {
         for (ContractLineItem line : serviceLines) {
             // Generate locationKey based on street and city for updating contract line items
-            String locationKey = line.ServiceContract.Account.Name + '-' + line.Location__Street__s + '-' + line.Location__City__s;
+            String locationKey = line.ServiceContract.AccountId + '-' + line.Location__Street__s + '-' + line.Location__City__s;
 
             line.Asset = new Asset(Unique_Id__c = generateUniqueAssetKey(line, locationKey));  // Using locationKey, not Account.Name
         }

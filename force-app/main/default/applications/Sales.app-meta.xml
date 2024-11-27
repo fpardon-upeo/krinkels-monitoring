@@ -1224,5 +1224,6 @@
     <tabs>standard-Product2</tabs>
     <tabs>MobileLanding</tabs>
     <tabs>Mileage_Entry__c</tabs>
+    <tabs>User_Settings__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

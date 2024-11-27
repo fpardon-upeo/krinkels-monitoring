@@ -706,9 +706,9 @@
   }
 }
 
-.refreshButton-container {
+.timeSheetHeader {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -727,4 +727,18 @@
 
 .hide {
   display: none;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.min-slider,
+.max-slider {
+  width: 80%;
 }
