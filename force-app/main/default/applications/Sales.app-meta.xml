@@ -1225,5 +1225,7 @@
     <tabs>MobileLanding</tabs>
     <tabs>Mileage_Entry__c</tabs>
     <tabs>User_Settings__c</tabs>
+    <tabs>Work_Schedule__c</tabs>
+    <tabs>Work_Schedule_Day__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

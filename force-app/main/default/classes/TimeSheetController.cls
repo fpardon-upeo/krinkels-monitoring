@@ -132,19 +132,6 @@ public with sharing class TimeSheetController {
   }
 
   @AuraEnabled
-  public static User_Settings__c getUserSettings(String userId) {
-    List<User_Settings__c> userSettings = [
-      SELECT Id, Start_Time__c, End_Time__c
-      FROM User_Settings__c
-      WHERE Service_Resource__c = :userId
-      LIMIT 1
-    ];
-
-    // Return null if no settings found
-    return userSettings.isEmpty() ? null : userSettings[0];
-  }
-
-  @AuraEnabled
   //Fetch the Time Sheet and set the field Status to "Submitted"
   public static void submitTimeSheet(String timeSheetId) {
     try {
@@ -209,6 +196,77 @@ public with sharing class TimeSheetController {
         WHERE Id = :timeSheetId
       ][0]
       .ServiceResourceId;
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+
+  // Helper method to convert milliseconds into Time
+  private static Time millisecondsToTime(Integer milliseconds) {
+    Integer totalSeconds = milliseconds / 1000;
+    Integer hours = totalSeconds / 3600;
+    Integer minutes = Math.mod(totalSeconds, 3600) / 60;
+    Integer seconds = Math.mod(totalSeconds, 60);
+
+    return Time.newInstance(hours, minutes, seconds, 0);
+  }
+
+  @AuraEnabled
+  public static User_Settings__c getUserSettings(String userId) {
+    List<User_Settings__c> userSettings = [
+      SELECT Id, Start_Time__c, End_Time__c
+      FROM User_Settings__c
+      WHERE Service_Resource__c = :userId
+      LIMIT 1
+    ];
+
+    // Return null if no settings found
+    return userSettings.isEmpty() ? null : userSettings[0];
+  }
+
+  @AuraEnabled
+  public static void updateUserSettings(
+    String settingsId,
+    Integer startMilliseconds,
+    Integer endMilliseconds
+  ) {
+    User_Settings__c userSettings = [
+      SELECT Id, Start_Time__c, End_Time__c
+      FROM User_Settings__c
+      WHERE Id = :settingsId
+      LIMIT 1
+    ];
+    Time startTime = millisecondsToTime(startMilliseconds);
+    Time endTime = millisecondsToTime(endMilliseconds);
+
+    try {
+      userSettings.Start_Time__c = startTime;
+      userSettings.End_Time__c = endTime;
+
+      update userSettings;
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+
+  @AuraEnabled
+  public static void createUserSettings(
+    String userId,
+    Integer startMilliseconds,
+    Integer endMilliseconds
+  ) {
+    // Convert milliseconds to Time
+    Time startTime = millisecondsToTime(startMilliseconds);
+    Time endTime = millisecondsToTime(endMilliseconds);
+
+    try {
+      // Create the User_Settings__c record
+      User_Settings__c userSettings = new User_Settings__c();
+      userSettings.Service_Resource__c = userId;
+      userSettings.Start_Time__c = startTime;
+      userSettings.End_Time__c = endTime;
+
+      insert userSettings;
     } catch (Exception e) {
       throw new AuraHandledException(e.getMessage());
     }

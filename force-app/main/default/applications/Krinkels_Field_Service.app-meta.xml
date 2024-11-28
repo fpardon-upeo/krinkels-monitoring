@@ -2465,6 +2465,8 @@
     <tabs>Error_Log__c</tabs>
     <tabs>standard-Feed</tabs>
     <tabs>User_Settings__c</tabs>
+    <tabs>Work_Schedule__c</tabs>
+    <tabs>Work_Schedule_Day__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Krinkels_Field_Service_UtilityBar</utilityBar>
 </CustomApplication>

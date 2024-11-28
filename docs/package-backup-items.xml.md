@@ -2,7 +2,7 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 2336
+Metadatas: 2386
 
 <details><summary>ApexClass (77)</summary>
   • ATAKMaterialService<br/>
@@ -135,6 +135,12 @@ Metadatas: 2336
   • LEXTHEMINGKrinkelsTheme<br/>
 </details>
 
+<details><summary>BusinessProcess (3)</summary>
+  • Opportunity.B2B Tender<br/>
+  • Opportunity.Public Tender<br/>
+  • Opportunity.Quick Quote<br/>
+</details>
+
 <details><summary>CleanDataService (3)</summary>
   • DataCloudCompanyMatch<br/>
   • DataCloudGeoLocation<br/>
@@ -192,7 +198,7 @@ Metadatas: 2336
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (524)</summary>
+<details><summary>CustomField (537)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -470,7 +476,14 @@ Metadatas: 2336
   • Opportunity.Budget_Confirmed__c<br/>
   • Opportunity.Discovery_Completed__c<br/>
   • Opportunity.Loss_Reason__c<br/>
+  • Opportunity.Price_Request_BS_Comments__c<br/>
+  • Opportunity.Price_Request_Demand_Comments__c<br/>
+  • Opportunity.Price_Request_Priority__c<br/>
+  • Opportunity.Price_Request_Status__c<br/>
+  • Opportunity.Pricing_Request_Needed__c<br/>
   • Opportunity.ROI_Analysis_Completed__c<br/>
+  • Opportunity.Service_Contract__c<br/>
+  • Opportunity.Work_Size__c<br/>
   • Opportunity__hd.Amount__c<br/>
   • Opportunity__hd.CloseDate__c<br/>
   • Opportunity__hd.ForecastCategoryName__c<br/>
@@ -543,6 +556,7 @@ Metadatas: 2336
   • SD_Import__c.PersoonId__c<br/>
   • SD_Import__c.PersoonRoepAchternaam__c<br/>
   • SD_Import__c.PersoonRoepVoornaam__c<br/>
+  • SD_Import__c.Werkschema__c<br/>
   • ServiceAppointment.ATAK_Code__c<br/>
   • ServiceAppointment.Asset__c<br/>
   • ServiceAppointment.Day_Pause_Duration__c<br/>
@@ -717,11 +731,26 @@ Metadatas: 2336
   • WorkType.FSL__Due_Date_Offset__c<br/>
   • WorkType.FSL__Exact_Appointments__c<br/>
   • Work_Order_Creation_Event__e.Maintenance_Plan_Id__c<br/>
+  • Work_Schedule_Day__c.Day_of_Week_Number__c<br/>
+  • Work_Schedule_Day__c.Day_of_Week__c<br/>
+  • Work_Schedule_Day__c.Hours__c<br/>
+  • Work_Schedule_Day__c.Work_Schedule__c<br/>
+  • Work_Schedule__c.Total_Weekly_Hours__c<br/>
 </details>
 
-<details><summary>CustomLabel (132)</summary>
+<details><summary>CustomLabel (144)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Appointments_Header<br/>
+  • AppointmentPicker_Break_Button_Sub_Text<br/>
+  • AppointmentPicker_Break_Button_Sub_Text<br/>
+  • AppointmentPicker_Break_Button_Text<br/>
+  • AppointmentPicker_Break_Button_Text<br/>
+  • AppointmentPicker_Break_Duration_Label<br/>
+  • AppointmentPicker_Break_Duration_Label<br/>
+  • AppointmentPicker_Break_Form_Title<br/>
+  • AppointmentPicker_Break_Form_Title<br/>
+  • AppointmentPicker_Break_Success_Message<br/>
+  • AppointmentPicker_Break_Success_Message<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
   • AppointmentPicker_End_Day_Button<br/>
@@ -738,6 +767,8 @@ Metadatas: 2336
   • AppointmentPicker_Next_Button<br/>
   • AppointmentPicker_No_Results<br/>
   • AppointmentPicker_No_Results<br/>
+  • AppointmentPicker_Save_Button<br/>
+  • AppointmentPicker_Save_Button<br/>
   • AppointmentPicker_Select_Next_Appointment_Button<br/>
   • AppointmentPicker_Select_Next_Appointment_Button<br/>
   • AppointmentPicker_Spinner<br/>
@@ -865,7 +896,7 @@ Metadatas: 2336
   • Standard_Notification<br/>
 </details>
 
-<details><summary>CustomObject (22)</summary>
+<details><summary>CustomObject (24)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • ATAK_Settings__c<br/>
@@ -888,9 +919,11 @@ Metadatas: 2336
   • Service_Item__c<br/>
   • Service_Status_Time_Log__c<br/>
   • User_Settings__c<br/>
+  • Work_Schedule_Day__c<br/>
+  • Work_Schedule__c<br/>
 </details>
 
-<details><summary>CustomTab (13)</summary>
+<details><summary>CustomTab (15)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Asset_Scheduler<br/>
@@ -904,6 +937,8 @@ Metadatas: 2336
   • Outbound_Log__c<br/>
   • SD_Import__c<br/>
   • User_Settings__c<br/>
+  • Work_Schedule_Day__c<br/>
+  • Work_Schedule__c<br/>
 </details>
 
 <details><summary>Dashboard (11)</summary>
@@ -1066,12 +1101,12 @@ Metadatas: 2336
   • Maintenance_Plan_Record_Page<br/>
   • Operational_Account_Record_Page<br/>
   • Opportunity_Product_Record_Page<br/>
-  • Opportunity_Record_Page<br/>
   • Other_Record_Page<br/>
   • Price_Book_Record_Page<br/>
   • Product_Consumed_Record_Page<br/>
   • Product_Item_Record_Page<br/>
   • Product_Record_Page<br/>
+  • Quick_Opportunity_Record_Page<br/>
   • SalesCloudMobile_UtilityBar<br/>
   • Scheduling_Policy_Record_Page<br/>
   • Service_Appointment_Record_Page<br/>
@@ -1089,14 +1124,16 @@ Metadatas: 2336
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (45)</summary>
+<details><summary>Flow (47)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
+  • Account_Screen_Flow_Add_Extra_Work<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
+  • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1137,14 +1174,16 @@ Metadatas: 2336
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (45)</summary>
+<details><summary>FlowDefinition (47)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
+  • Account_Screen_Flow_Add_Extra_Work<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
+  • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1238,7 +1277,7 @@ Metadatas: 2336
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<details><summary>Layout (217)</summary>
+<details><summary>Layout (219)</summary>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project__c-ATAK Project Layout<br/>
   • Account-Commercial Account Layout<br/>
@@ -1456,6 +1495,8 @@ Metadatas: 2336
   • WorkType-FSL Work Type Layout<br/>
   • WorkType-Work Type Layout<br/>
   • WorkTypeGroup-Work Type Group Layout<br/>
+  • Work_Schedule_Day__c-Work Schedule Day Layout<br/>
+  • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
 <details><summary>LightningComponentBundle (85)</summary>
@@ -1680,8 +1721,9 @@ Metadatas: 2336
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (156)</summary>
+<details><summary>QuickAction (158)</summary>
   • ATAK_Personnel__c.Create_User<br/>
+  • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
   • Book_Appointment<br/>
   • Campaign.Child_Campaign<br/>
@@ -1707,6 +1749,7 @@ Metadatas: 2336
   • NewNote<br/>
   • NewOpportunity<br/>
   • NewTask<br/>
+  • Opportunity.Price_Request<br/>
   • Quote.SendEmail<br/>
   • ServiceAppointment.Check_Out<br/>
   • ServiceAppointment.FSL__Change_Status<br/>
@@ -1839,7 +1882,7 @@ Metadatas: 2336
   • WorkStep.Take_Before_Work_Photos<br/>
 </details>
 
-<details><summary>RecordType (16)</summary>
+<details><summary>RecordType (20)</summary>
   • Account.Commercial_Account<br/>
   • Account.Financial_Account<br/>
   • Account.Group_Account<br/>
@@ -1847,6 +1890,10 @@ Metadatas: 2336
   • Account.Other<br/>
   • Knowledge__kav.FAQ<br/>
   • Knowledge__kav.Procedure<br/>
+  • Opportunity.B2B_Tender<br/>
+  • Opportunity.Public_Tender<br/>
+  • Opportunity.Quick_Quote<br/>
+  • Product2.Extra_Work<br/>
   • Product2.Material<br/>
   • Product2.Service<br/>
   • Product2.Service_Package<br/>
@@ -2158,7 +2205,7 @@ Metadatas: 2336
   • WorkDotCom<br/>
 </details>
 
-<details><summary>SharingRules (155)</summary>
+<details><summary>SharingRules (157)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -2314,6 +2361,8 @@ Metadatas: 2336
   • WorkThanks<br/>
   • WorkType<br/>
   • WorkTypeGroup<br/>
+  • Work_Schedule_Day__c<br/>
+  • Work_Schedule__c<br/>
 </details>
 
 <details><summary>Skill (29)</summary>
@@ -2428,7 +2477,7 @@ Metadatas: 2336
   • Default_Timesheet_Daily<br/>
 </details>
 
-<details><summary>TopicsForObjects (96)</summary>
+<details><summary>TopicsForObjects (98)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • Account<br/>
@@ -2525,14 +2574,18 @@ Metadatas: 2336
   • WorkPlanTemplateEntry<br/>
   • WorkStep<br/>
   • WorkStepTemplate<br/>
+  • Work_Schedule_Day__c<br/>
+  • Work_Schedule__c<br/>
 </details>
 
-<details><summary>UiFormatSpecificationSet (1)</summary>
+<details><summary>UiFormatSpecificationSet (2)</summary>
+  • Price_Request_Status_Icon<br/>
   • Type<br/>
 </details>
 
-<details><summary>ValidationRule (20)</summary>
+<details><summary>ValidationRule (21)</summary>
   • Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start<br/>
+  • Opportunity.Maximum_Value_for_Quick_Quote<br/>
   • ResourceAbsence.FSL__Absence_Color_HEX_Format<br/>
   • ResourceAbsence.FSL__startShouldPrecedeEnd<br/>
   • ServiceAppointment.FSL__Dont_allow_scheduled_or_dispatched<br/>

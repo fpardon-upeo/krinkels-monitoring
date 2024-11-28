@@ -804,36 +804,6 @@
         <h2 class="sheet-title">Settings</h2>
       </div>
       <div class="bottom-sheet-content">
-        <!-- <lightning-record-edit-form
-          object-api-name="User_Settings__c"
-          onsuccess={handleSuccessSettings}
-          record-id={user.Id}
-        >
-          <lightning-messages></lightning-messages>
-          <div class="form-fields">
-            <lightning-input-field
-              field-name="Start_Time__c"
-              class="form-element"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="End_Time__c"
-              class="form-element"
-            ></lightning-input-field>
-
-            <lightning-input-field
-              field-name="Service_Resource__c"
-              value={resourceId}
-              class="slds-hide"
-            ></lightning-input-field>
-          </div>
-          <div class="button-group">
-            <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
-            </button>
-            <button class="submit-button" type="submit">Save</button>
-          </div>
-        </lightning-record-edit-form> -->
-
         <lightning-card title="Time Range Selector" icon-name="utility:clock">
           <div class="slider-container">
             <!-- Min Time Slider -->
@@ -842,7 +812,7 @@
                 label="Start Time"
                 min="0"
                 max="24"
-                step="0.25"
+                step="0.5"
                 value={minValue}
                 onchange={handleMinChange}
               >
@@ -855,7 +825,7 @@
                 label="End Time"
                 min="0"
                 max="24"
-                step="0.25"
+                step="0.5"
                 value={maxValue}
                 onchange={handleMaxChange}
               >
@@ -869,7 +839,11 @@
           <button class="cancel-button" onclick={handleCloseForm}>
             Cancel
           </button>
-          <button class="submit-button" onclick={handleSuccessSettings}>
+          <button
+            class="submit-button"
+            onclick={handleSuccessSettings}
+            data-type="edit"
+          >
             Save
           </button>
         </div>
@@ -885,34 +859,49 @@
         <h2 class="sheet-title">Settings</h2>
       </div>
       <div class="bottom-sheet-content">
-        <lightning-record-edit-form
-          object-api-name="User_Settings__c"
-          onsuccess={handleSuccessSettings}
-        >
-          <lightning-messages></lightning-messages>
-          <div class="form-fields">
-            <lightning-input-field
-              field-name="Start_Time__c"
-              class="form-element"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="End_Time__c"
-              class="form-element"
-            ></lightning-input-field>
+        <lightning-card title="Time Range Selector" icon-name="utility:clock">
+          <div class="slider-container">
+            <!-- Min Time Slider -->
+            <div class="min-slider">
+              <lightning-slider
+                label="Start Time"
+                min="0"
+                max="24"
+                step="0.5"
+                value={minValue}
+                onchange={handleMinChange}
+              >
+              </lightning-slider>
+              <p>Selected Start Time: {minLabel}</p>
+            </div>
+            <!-- Max Time Slider -->
+            <div class="max-slider">
+              <lightning-slider
+                label="End Time"
+                min="0"
+                max="24"
+                step="0.5"
+                value={maxValue}
+                onchange={handleMaxChange}
+              >
+              </lightning-slider>
+              <p>Selected End Time: {maxLabel}</p>
+            </div>
+          </div>
+        </lightning-card>
 
-            <lightning-input-field
-              field-name="Service_Resource__c"
-              value={resourceId}
-              class="slds-hide"
-            ></lightning-input-field>
-          </div>
-          <div class="button-group">
-            <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
-            </button>
-            <button class="submit-button" type="submit">Save</button>
-          </div>
-        </lightning-record-edit-form>
+        <div class="button-group">
+          <button class="cancel-button" onclick={handleCloseForm}>
+            Cancel
+          </button>
+          <button
+            class="submit-button"
+            onclick={handleSuccessSettings}
+            data-type="new"
+          >
+            Save
+          </button>
+        </div>
       </div>
     </div>
   </template>

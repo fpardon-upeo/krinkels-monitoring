@@ -49,6 +49,28 @@
                         <button class="action-button brand"
                                 ontouchstart={handleTouchStart}
                                 ontouchend={handleTouchEnd}
+                                onclick={handleTakeBreakClicked}>
+                                    <span class="button-icon">
+                                        <lightning-icon
+                                                icon-name="utility:food_and_drink"
+                                                size="medium"
+                                                class="slds-m-bottom_small">
+                                        </lightning-icon>
+                                    </span>
+                            <span class="button-text">
+                                      <span class="button-label">
+                                         {labels.AppointmentPicker_Break_Button_text}
+                                      </span>
+                                      <span class="button-description">
+                                          {labels.AppointmentPicker_Break_Button_Sub_Text}
+                                      </span>
+                                    </span>
+                        </button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons">
+                        <button class="action-button brand"
+                                ontouchstart={handleTouchStart}
+                                ontouchend={handleTouchEnd}
                                 onclick={handleEndDayClicked}>
                                     <span class="button-icon">
                                         <lightning-icon
@@ -93,6 +115,32 @@
                 ></lightning-button>
             </div>
         </div>
+    </template>
+    <!-- Simple break form with a picklist to select the break duration -->
+    <template if:true={showBreakForm}>
+        <lightning-card title={labels.AppointmentPicker_Break_Form_Title}>
+            <div class="break-form">
+                <div class="input-container">
+                    <div>
+                        <lightning-combobox
+                                name="breakDuration"
+                                label={labels.AppointmentPicker_Break_Duration_Label}
+                                value={breakDuration}
+                                options={breakDurationOptions}
+                                onchange={handleBreakDurationChange}
+                                required>
+                        </lightning-combobox>
+                    </div>
+                    <div class="button-wrapper">
+                        <lightning-button
+                                label={labels.AppointmentPicker_Save_Button}
+                                onclick={handleSaveBreak}
+                                variant="brand"
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
     </template>
     <template if:true={showMilageEntryScreen}>
         <lightning-card title={labels.StartDay_KM_Card_Title} icon-name="utility:transport_heavy_truck">

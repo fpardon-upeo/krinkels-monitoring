@@ -23,6 +23,60 @@
   --slds-c-button-sizing-border: 0.25rem;
 }
 
+.submit-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #449f03;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.next-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #60635d;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.button-icon {
+  margin-right: 0.5rem;
+}
+
+/* Style the lightning-button in the footer */
+.footer lightning-button {
+  width: 65%;
+}
+
+/* Style the lightning-button in the footer */
+.footer lightning-button {
+  width: 65%;
+}
+
+/* Update footer button styling */
+.footer .submit-button {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer .button-icon {
+  margin-right: 0.5rem;
+}
+
+/* Make icon white to match button text */
+.footer .button-icon lightning-icon {
+  --sds-c-icon-color-foreground-default: white;
+}
+
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -141,7 +195,6 @@ c-time-sheet-calendar {
   padding-bottom: 1rem;
   padding-top: 1rem;
   position: relative;
-  height: 4rem;
   background: white;
   border-top: 2px solid #449f03;
   border-bottom: 2px solid #449f03;
@@ -153,11 +206,23 @@ c-time-sheet-calendar {
   padding: 0.75rem;
 }
 
+.footer {
+  width: 100%; /* Ensure the footer takes full width */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
 .footer-buttons {
   display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  height: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%; /* Ensure buttons container takes full width */
+}
+
+.submit-button,
+.next-button {
+  flex: 1; /* Make both buttons take equal space */
+  max-width: 48%; /* Ensure buttons don’t exceed half the width */
+  text-align: center;
 }
 
 .action-buttons {

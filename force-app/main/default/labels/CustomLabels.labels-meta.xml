@@ -308,7 +308,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AppointmentPicker_End_Day_Button</shortDescription>
-        <value>End Day</value>
+        <value>Last Appointment</value>
     </labels>
     <labels>
         <fullName>AppointmentPicker_End_Day_Button_Sub_Text</fullName>
@@ -316,7 +316,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AppointmentPicker_End_Day_Button_Sub_Text</shortDescription>
-        <value>Complete your work for today</value>
+        <value>Log your kilometers and drive home</value>
     </labels>
     <labels>
         <fullName>AppointmentPicker_Incomplete_Work_Steps_Message</fullName>
@@ -525,5 +525,53 @@
         <protected>false</protected>
         <shortDescription>StartDay_End_Day_Button_Text</shortDescription>
         <value>Review your Kilometers</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Break_Button_Sub_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Break_Button_Sub_Text</shortDescription>
+        <value>Take a break before going to your next appointment</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Break_Button_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Break_Button_Text</shortDescription>
+        <value>Take a break</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Break_Duration_Label</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Break_Duration_Label</shortDescription>
+        <value>Duration</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Break_Form_Title</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Break_Form_Title</shortDescription>
+        <value>Select Break Duration</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Break_Success_Message</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Break_Success_Message</shortDescription>
+        <value>Break added!</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Save_Button</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Save_Button</shortDescription>
+        <value>Save</value>
     </labels>
 </CustomLabels>

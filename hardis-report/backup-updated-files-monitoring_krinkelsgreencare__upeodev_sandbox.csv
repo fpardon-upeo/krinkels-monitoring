@@ -2,48 +2,61 @@ File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
 applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
 classes/AccountDetailsController.cls," ",ApexClass AccountDetailsController,M,,log,📰
-classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
-classes/SDWorxAbsenceBatchScheduler.cls,A,ApexClass SDWorxAbsenceBatchScheduler,,,log,📰
-classes/SDWorxAbsenceBatchScheduler.cls-meta.xml,A,ApexClass SDWorxAbsenceBatchScheduler,,,log,📰
-classes/ServiceResourceHandler.cls," ",ApexClass ServiceResourceHandler,M,,log,📰
-classes/TimeSheetCalculationService.cls," ",ApexClass TimeSheetCalculationService,M,,log,📰
+classes/SDWorxToResourceAbsenceService.cls," ",ApexClass SDWorxToResourceAbsenceService,M,,log,📰
 classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/Scheduling_Policy_Record_Page.flexipage-meta.xml,A,FlexiPage Scheduling_Policy_Record_Page,,,log,📰
-flowDefinitions/ResourceAbsence_After_Save_Break_Time.flowDefinition-meta.xml," ",FlowDefinition ResourceAbsence_After_Save_Break_Time,M,,log,📰
-flowDefinitions/TimesheetEntry_After_Save_Break_Time.flowDefinition-meta.xml," ",FlowDefinition TimesheetEntry_After_Save_Break_Time,M,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,M,,log,📰
-flows/ResourceAbsence_After_Save_Break_Time.flow-meta.xml," ",Flow ResourceAbsence_After_Save_Break_Time,M,,log,📰
-flows/TimesheetEntry_After_Save_Break_Time.flow-meta.xml," ",Flow TimesheetEntry_After_Save_Break_Time,M,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,M,,log,📰
-layouts/ServiceResource-Service Resource Layout.layout-meta.xml," ",Layout ServiceResource-Service Resource Layout,M,,log,📰
-layouts/User_Settings__c-User Settings Layout.layout-meta.xml,A,Layout User_Settings__c-User Settings Layout,,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-layouts/WorkType-Work Type Layout.layout-meta.xml," ",Layout WorkType-Work Type Layout,M,,log,📰
+digitalExperiences/experiencecontainer/FSL/experience__navigationMenu/menu/content.json," ",DigitalExperienceBundle experiencecontainer/FSL/experience__navigationMenu/menu/content.json,M,,log,📰
+flexipages/Operational_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Operational_Account_Record_Page,M,,log,📰
+flexipages/Quick_Opportunity_Record_Page.flexipage-meta.xml,A,FlexiPage Quick_Opportunity_Record_Page,,,log,📰
+flexipages/Work_Step_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Step_Record_Page,M,,log,📰
+flowDefinitions/Account_Screen_Flow_Add_Extra_Work.flowDefinition-meta.xml,A,FlowDefinition Account_Screen_Flow_Add_Extra_Work,,,log,📰
+flowDefinitions/Opportunity_Screen_Flow_Pricing_Request.flowDefinition-meta.xml,A,FlowDefinition Opportunity_Screen_Flow_Pricing_Request,,,log,📰
+flows/Account_Screen_Flow_Add_Extra_Work.flow-meta.xml,A,Flow Account_Screen_Flow_Add_Extra_Work,,,log,📰
+flows/Opportunity_Screen_Flow_Pricing_Request.flow-meta.xml,A,Flow Opportunity_Screen_Flow_Pricing_Request,,,log,📰
+labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
+layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
+layouts/Opportunity-Opportunity Layout.layout-meta.xml," ",Layout Opportunity-Opportunity Layout,M,,log,📰
+layouts/SD_Import__c-SD Import Layout.layout-meta.xml," ",Layout SD_Import__c-SD Import Layout,M,,log,📰
+layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
+layouts/Work_Schedule_Day__c-Work Schedule Day Layout.layout-meta.xml,A,Layout Work_Schedule_Day__c-Work Schedule Day Layout,,,log,📰
+layouts/Work_Schedule__c-Work Schedule Layout.layout-meta.xml,A,Layout Work_Schedule__c-Work Schedule Layout,,,log,📰
 lwc/locationPassport/locationPassport.js," ",LightningComponentBundle locationPassport/locationPassport.js,M,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.css," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.css,M,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
+lwc/startOperatorDay/startOperatorDay.css," ",LightningComponentBundle startOperatorDay/startOperatorDay.css,M,,log,📰
+lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
+lwc/startOperatorDayMetrics/startOperatorDayMetrics.css," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.css,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.css," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.css,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-objects/Account/fieldSets/FSL__Gantt_Lightbox.fieldSet-meta.xml," ",FieldSet FSL__Gantt_Lightbox,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Appointment_Expanded.fieldSet-meta.xml," ",FieldSet FSL__Service_Appointment_Expanded,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Appointment_List_Columns.fieldSet-meta.xml," ",FieldSet FSL__Service_Appointment_List_Columns,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Appt_Resource_Calendar_Tooltip.fieldSet-meta.xml," ",FieldSet FSL__Service_Appt_Resource_Calendar_Tooltip,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Info_Window_Map.fieldSet-meta.xml," ",FieldSet FSL__Service_Info_Window_Map,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Lightbox.fieldSet-meta.xml," ",FieldSet FSL__Service_Lightbox,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Lightbox_Address.fieldSet-meta.xml," ",FieldSet FSL__Service_Lightbox_Address,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Lightbox_Time.fieldSet-meta.xml," ",FieldSet FSL__Service_Lightbox_Time,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Tooltip_Gantt.fieldSet-meta.xml," ",FieldSet FSL__Service_Tooltip_Gantt,M,,log,📰
-objects/ServiceResource/fieldSets/FSL__Resource_Lightbox.fieldSet-meta.xml," ",FieldSet FSL__Resource_Lightbox,M,,log,📰
-objects/User_Settings__c/User_Settings__c.object-meta.xml,A,CustomObject User_Settings__c/User_Settings__c,,,log,📰
-objects/User_Settings__c/fields/End_Time__c.field-meta.xml,A,CustomField End_Time__c,,,log,📰
-objects/User_Settings__c/fields/Service_Resource__c.field-meta.xml,A,CustomField Service_Resource__c,,,log,📰
-objects/User_Settings__c/fields/Start_Time__c.field-meta.xml,A,CustomField Start_Time__c,,,log,📰
-objects/User_Settings__c/fields/Time_Frame__c.field-meta.xml,A,CustomField Time_Frame__c,,,log,📰
-objects/User_Settings__c/listViews/All.listView-meta.xml,A,ListView All,,,log,📰
-objects/WorkOrder/fieldSets/FSL__Gantt_Lightbox.fieldSet-meta.xml," ",FieldSet FSL__Gantt_Lightbox,M,,log,📰
-objects/WorkOrder/fields/Goodwill_Tasks__c.field-meta.xml,A,CustomField Goodwill_Tasks__c,,,log,📰
-objects/WorkOrder/fields/WO_with_Goodwill_Tasks__c.field-meta.xml,A,CustomField WO_with_Goodwill_Tasks__c,,,log,📰
-permissionsets/sfdcInternalInt__sfdc_fieldservice.permissionset-meta.xml," ",PermissionSet sfdcInternalInt__sfdc_fieldservice,M,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.html," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.html,M,,log,📰
+objects/Opportunity/businessProcesses/B2B Tender.businessProcess-meta.xml,A,BusinessProcess B2B Tender,,,log,📰
+objects/Opportunity/businessProcesses/Public Tender.businessProcess-meta.xml,A,BusinessProcess Public Tender,,,log,📰
+objects/Opportunity/businessProcesses/Quick Quote.businessProcess-meta.xml,A,BusinessProcess Quick Quote,,,log,📰
+objects/Opportunity/fields/Price_Request_BS_Comments__c.field-meta.xml,A,CustomField Price_Request_BS_Comments__c,,,log,📰
+objects/Opportunity/fields/Price_Request_Demand_Comments__c.field-meta.xml,A,CustomField Price_Request_Demand_Comments__c,,,log,📰
+objects/Opportunity/fields/Price_Request_Priority__c.field-meta.xml,A,CustomField Price_Request_Priority__c,,,log,📰
+objects/Opportunity/fields/Price_Request_Status__c.field-meta.xml,A,CustomField Price_Request_Status__c,,,log,📰
+objects/Opportunity/fields/Pricing_Request_Needed__c.field-meta.xml,A,CustomField Pricing_Request_Needed__c,,,log,📰
+objects/Opportunity/fields/Service_Contract__c.field-meta.xml,A,CustomField Service_Contract__c,,,log,📰
+objects/Opportunity/fields/Work_Size__c.field-meta.xml,A,CustomField Work_Size__c,,,log,📰
+objects/Opportunity/recordTypes/B2B_Tender.recordType-meta.xml,A,RecordType B2B_Tender,,,log,📰
+objects/Opportunity/recordTypes/Public_Tender.recordType-meta.xml,A,RecordType Public_Tender,,,log,📰
+objects/Opportunity/recordTypes/Quick_Quote.recordType-meta.xml,A,RecordType Quick_Quote,,,log,📰
+objects/Opportunity/validationRules/Maximum_Value_for_Quick_Quote.validationRule-meta.xml,A,ValidationRule Maximum_Value_for_Quick_Quote,,,log,📰
+objects/Product2/recordTypes/Extra_Work.recordType-meta.xml,A,RecordType Extra_Work,,,log,📰
+objects/SD_Import__c/fields/Werkschema__c.field-meta.xml,A,CustomField Werkschema__c,,,log,📰
+objects/Work_Schedule_Day__c/Work_Schedule_Day__c.object-meta.xml,A,CustomObject Work_Schedule_Day__c/Work_Schedule_Day__c,,,log,📰
+objects/Work_Schedule_Day__c/fields/Day_of_Week_Number__c.field-meta.xml,A,CustomField Day_of_Week_Number__c,,,log,📰
+objects/Work_Schedule_Day__c/fields/Day_of_Week__c.field-meta.xml,A,CustomField Day_of_Week__c,,,log,📰
+objects/Work_Schedule_Day__c/fields/Hours__c.field-meta.xml,A,CustomField Hours__c,,,log,📰
+objects/Work_Schedule_Day__c/fields/Work_Schedule__c.field-meta.xml,A,CustomField Work_Schedule__c,,,log,📰
+objects/Work_Schedule_Day__c/listViews/All.listView-meta.xml,A,ListView All,,,log,📰
+objects/Work_Schedule__c/Work_Schedule__c.object-meta.xml,A,CustomObject Work_Schedule__c/Work_Schedule__c,,,log,📰
+objects/Work_Schedule__c/fields/Total_Weekly_Hours__c.field-meta.xml,A,CustomField Total_Weekly_Hours__c,,,log,📰
+objects/Work_Schedule__c/listViews/All.listView-meta.xml,A,ListView All,,,log,📰
+pathAssistants/Default_Opportunity.pathAssistant-meta.xml," ",PathAssistant Default_Opportunity,M,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -69,13 +82,19 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/WorkOrder.Log_Goodwill_Tasks.quickAction-meta.xml,A,QuickAction WorkOrder.Log_Goodwill_Tasks,,,log,📰
-settings/Deployment.settings-meta.xml," ",Settings Deployment,M,,log,📰
+quickActions/Account.Add_Extra_Work.quickAction-meta.xml,A,QuickAction Account.Add_Extra_Work,,,log,📰
+quickActions/Opportunity.Price_Request.quickAction-meta.xml,A,QuickAction Opportunity.Price_Request,,,log,📰
+reportTypes/Opportunities_with_Historical_Trending.reportType-meta.xml," ",ReportType Opportunities_with_Historical_Trending,M,,log,📰
+settings/Forecasting.settings-meta.xml," ",Settings Forecasting,M,,log,📰
+settings/ForecastingObjectList.settings-meta.xml," ",Settings ForecastingObjectList,M,,log,📰
 settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
-sharingRules/User_Settings__c.sharingRules-meta.xml,A,SharingRules User_Settings__c,,,log,📰
-tabs/User_Settings__c.tab-meta.xml,A,CustomTab User_Settings__c,,,log,📰
-topicsForObjects/User_Settings__c.topicsForObjects-meta.xml,A,TopicsForObjects User_Settings__c,,,log,📰
-triggers/ResourceAbsenceTrigger.trigger," ",ApexTrigger ResourceAbsenceTrigger,M,,log,📰
-triggers/TimeSheetEntryTrigger.trigger," ",ApexTrigger TimeSheetEntryTrigger,M,,log,📰
+sharingRules/Work_Schedule_Day__c.sharingRules-meta.xml,A,SharingRules Work_Schedule_Day__c,,,log,📰
+sharingRules/Work_Schedule__c.sharingRules-meta.xml,A,SharingRules Work_Schedule__c,,,log,📰
+standardValueSets/OpportunityStage.standardValueSet-meta.xml," ",StandardValueSet OpportunityStage,M,,log,📰
+tabs/Work_Schedule_Day__c.tab-meta.xml,A,CustomTab Work_Schedule_Day__c,,,log,📰
+tabs/Work_Schedule__c.tab-meta.xml,A,CustomTab Work_Schedule__c,,,log,📰
+topicsForObjects/Work_Schedule_Day__c.topicsForObjects-meta.xml,A,TopicsForObjects Work_Schedule_Day__c,,,log,📰
+topicsForObjects/Work_Schedule__c.topicsForObjects-meta.xml,A,TopicsForObjects Work_Schedule__c,,,log,📰
+uiFormatSpecificationSets/Price_Request_Status_Icon.uiFormatSpecificationSet-meta.xml,A,uiFormatSpecificationSets/Price_Request_Status_Icon.uiFormatSpecificationSet-meta.xml,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

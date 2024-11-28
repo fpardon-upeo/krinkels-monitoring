@@ -4,7 +4,7 @@
 
 import {LightningElement, api, wire, track} from 'lwc';
 import { gql, graphql } from "lightning/uiGraphQLApi";
-import { getRecord, updateRecord}  from "lightning/uiRecordApi";
+import { getRecord, updateRecord, createRecord}  from "lightning/uiRecordApi";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
 import ID from '@salesforce/user/Id';
@@ -24,7 +24,12 @@ import AppointmentPicker_End_Day_Button_Sub_Text from '@salesforce/label/c.Appoi
 import StartDay_KM_Card_Title from '@salesforce/label/c.StartDay_KM_Card_Title';
 import StartDay_KM_Back_Button_Text from '@salesforce/label/c.StartDay_KM_Back_Button_Text';
 import StartDay_KM_Save_Button_Text from '@salesforce/label/c.StartDay_KM_Save_Button_Text';
-
+import AppointmentPicker_Break_Button_Sub_Text from '@salesforce/label/c.AppointmentPicker_Break_Button_Sub_Text';
+import AppointmentPicker_Break_Button_text from '@salesforce/label/c.AppointmentPicker_Break_Button_Text';
+import AppointmentPicker_Break_Form_Title from '@salesforce/label/c.AppointmentPicker_Break_Form_Title';
+import AppointmentPicker_Break_Duration_Label from '@salesforce/label/c.AppointmentPicker_Break_Duration_Label';
+import AppointmentPicker_Save_Button from '@salesforce/label/c.AppointmentPicker_Save_Button';
+import AppointmentPicker_Break_Success_Message from '@salesforce/label/c.AppointmentPicker_Break_Success_Message';
 import {NavigationMixin} from "lightning/navigation";
 import {
     ToastTypes,
@@ -50,6 +55,15 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     otherWorkSteps;
     toastType = null;
     toastMessage = '';
+    breakDuration = 15;
+
+    breakDurationOptions = [
+        { label: '15', value: 15 },
+        { label: '30', value: 30 },
+        { label: '45', value: 45 },
+        { label: '60', value: 60 },
+    ];
+
 
 //--------------------------------------VISIBILITY----------------------------------------//
     disableNextButton = true;
@@ -57,6 +71,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     showAppointmentScreen = false;
     showHasIncompleteWorkSteps = false;
     showMilageEntryScreen = false;
+    showBreakForm = false;
     selectedRows = [];
     mileageType = '';
     labels = {
@@ -74,7 +89,13 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         AppointmentPicker_End_Day_Button_Sub_Text,
         StartDay_KM_Card_Title,
         StartDay_KM_Back_Button_Text,
-        StartDay_KM_Save_Button_Text
+        StartDay_KM_Save_Button_Text,
+        AppointmentPicker_Break_Button_Sub_Text,
+        AppointmentPicker_Break_Button_text,
+        AppointmentPicker_Break_Form_Title,
+        AppointmentPicker_Break_Duration_Label,
+        AppointmentPicker_Save_Button,
+        AppointmentPicker_Break_Success_Message
     }
     columns = [
         { label: this.labels.AppointmentPicker_Appointments_Header, fieldName: 'Appointment', type: 'text', wrapText: true },
@@ -352,10 +373,23 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         this.disableNextButton = selectedRows.length === 0;
     }
 
+    handleTakeBreakClicked() {
+        console.log('Take break clicked');
+        this.showInitialScreen = false;
+        this.showBreakForm = true;
+    }
+
     handleSetAppointmentClicked() {
         console.log('Set appointment clicked');
         this.showInitialScreen = false;
         this.showAppointmentScreen = true;
+    }
+
+    handleBreakDurationChange(event) {
+        console.log('break duration', event.detail.value);
+        console.log('type of break duration', typeof event.detail.value);
+        //Convert the string to a number
+        this.breakDuration = parseInt(event.detail.value);
     }
 
     handleSelect() {
@@ -376,7 +410,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
                     "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
                 }
             });
-        }, 2000);
+        }, 500);
     }
 
     handleEndWorkingDay() {
@@ -391,8 +425,48 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         this.setCurrentServiceAppointStatus();
         this.setParentWorkOrderStatus();
         this.showInitialScreen = false;
+        this.showBreakForm = false;
         this.mileageType = 'Ending';
         this.showMilageEntryScreen = true;
+    }
+
+    handleSaveBreak() {
+        //Create a new ResourceAbsence record
+
+        //First set the current date time
+        let startDate = new Date().toISOString();
+
+        //Add the break duration to the start date
+        let endDate = new Date(new Date(startDate).getTime() + this.breakDuration * 60000).toISOString();
+
+        const fields = {};
+        fields['ResourceId'] = this.serviceResourceId;
+        fields['Start'] = startDate;
+        fields['End'] = endDate;
+
+        const recordInput = { apiName: 'ResourceAbsence', fields };
+        createRecord(recordInput)
+            .then(() => {
+                console.log('ResourceAbsence record created');
+                const toastEvent = new ShowToastEvent({
+                    title: 'Success',
+                    message: this.labels.AppointmentPicker_Break_Success_Message,
+                    variant: 'success',
+                });
+                this.dispatchEvent(toastEvent);
+                setTimeout(() => {
+                    this[NavigationMixin.Navigate]({
+                        "type": "standard__webPage",
+                        "attributes": {
+                            "url": `com.salesforce.fieldservice://v1`
+                        }
+                    });
+                }, 500);
+            })
+            .catch(error => {
+                console.log('Error creating ResourceAbsence record', error);
+            });
+
     }
 
     handleTouchStart(event) {
@@ -419,7 +493,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
                     "url": `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
                 }
             });
-        }, 2000);
+        }, 500);
     }
 
 //--------------------------------------HELPERS--------------------------------------//

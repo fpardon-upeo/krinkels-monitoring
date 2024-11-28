@@ -8,6 +8,8 @@ import submitTimeSheet from "@salesforce/apex/TimeSheetController.submitTimeShee
 import getBreakRecordTypeId from "@salesforce/apex/TimeSheetController.getBreakRecordTypeId";
 import getTimeSheetByResourceAndDate from "@salesforce/apex/TimeSheetController.getTimeSheetByResourceAndDate";
 import getUserSettings from "@salesforce/apex/TimeSheetController.getUserSettings";
+import updateUserSettings from "@salesforce/apex/TimeSheetController.updateUserSettings";
+import createUserSettings from "@salesforce/apex/TimeSheetController.createUserSettings";
 import { getRecordNotifyChange } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
@@ -88,10 +90,15 @@ export default class TimeSheetCalendar extends LightningElement {
     ])
       .then(([css1, js, css2, userSettings]) => {
         // Set user settings first
-        this.user = userSettings || {
-          Start_Time__c: null,
-          End_Time__c: null
-        };
+        if (
+          userSettings &&
+          userSettings.Start_Time__c &&
+          userSettings.End_Time__c
+        ) {
+          this.user = userSettings;
+          this.minValue = userSettings.Start_Time__c / (1000 * 60 * 60);
+          this.maxValue = userSettings.End_Time__c / (1000 * 60 * 60);
+        }
 
         // Then get TimeSheet data
         return getTimeSheet({ recordId: this.recordId });
@@ -339,12 +346,7 @@ export default class TimeSheetCalendar extends LightningElement {
         end: "24:00"
       },
       eventResizeGrow: true,
-      // //Set initial date and Range as well
       initialDate: this.startDate,
-      // validRange: {
-      //   start: this.startDate,
-      //   end: this.endDate
-      // },
       slotLabelFormat: {
         hour: "2-digit",
         minute: "2-digit",
@@ -660,6 +662,16 @@ export default class TimeSheetCalendar extends LightningElement {
   handleShowMileageInfo() {
     this.handleCloseForm();
     this.showMileageInfoModal = true;
+  }
+
+  handleOpenSettings() {
+    if (this.user.Id) {
+      console.log("edit");
+      this.settingsEditModal = true;
+    } else {
+      console.log("new");
+      this.settingsNewModal = true;
+    }
   }
 
   /**
@@ -1255,38 +1267,75 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   handleSuccessSettings(event) {
-    getUserSettings({ userId: this.resourceId })
-      .then((userSettings) => {
-        this.user = userSettings;
+    const type = event.target.dataset.type;
 
-        const newStartTime = this.msToHoursMinutes(this.user.Start_Time__c);
-        const newEndTime = this.msToHoursMinutes(this.user.End_Time__c);
+    // Convert slider values to Time format
+    const startTime = this.convertToTime(this.minValue);
+    const endTime = this.convertToTime(this.maxValue);
 
-        this.calendar.setOption("slotMinTime", newStartTime);
-        this.calendar.setOption("slotMaxTime", newEndTime);
-
-        this.calendar.render();
-        this.calendar.refetchEvents();
-
-        const toastEvent = new ShowToastEvent({
-          title: "Success",
-          message: `Settings updated successfully.`,
-          variant: "success"
-        });
-
-        this.dispatchEvent(toastEvent);
+    if (type === "new") {
+      createUserSettings({
+        userId: this.resourceId,
+        startMilliseconds: this.timeStringToMilliseconds(startTime),
+        endMilliseconds: this.timeStringToMilliseconds(endTime)
       })
-      .catch((error) => {
-        console.error("Error:", error);
+        .then(() => {
+          const toastEvent = new ShowToastEvent({
+            title: "Success",
+            message: "Settings created successfully.",
+            variant: "success"
+          });
 
-        const toastEvent = new ShowToastEvent({
-          title: "Error",
-          message: "Error updating settings.",
-          variant: "error"
+          this.dispatchEvent(toastEvent);
+          this.updateCalendarView(startTime, endTime);
+
+          getUserSettings({ userId: this.resourceId })
+            .then((result) => {
+              this.userSettings = result.userSettings;
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        })
+        .catch((error) => {
+          const toastEvent = new ShowToastEvent({
+            title: "Error",
+            message: "Error creating settings.",
+            variant: "error"
+          });
+
+          this.dispatchEvent(toastEvent);
+          console.error("Error:", error);
         });
+    } else if (type === "edit") {
+      console.log("edit");
+      updateUserSettings({
+        settingsId: this.user.Id,
+        startMilliseconds: this.timeStringToMilliseconds(startTime),
+        endMilliseconds: this.timeStringToMilliseconds(endTime)
+      })
+        .then(() => {
+          const toastEvent = new ShowToastEvent({
+            title: "Success",
+            message: "Settings updated successfully.",
+            variant: "success"
+          });
 
-        this.dispatchEvent(toastEvent);
-      });
+          this.dispatchEvent(toastEvent);
+          this.updateCalendarView(startTime, endTime);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+
+          const toastEvent = new ShowToastEvent({
+            title: "Error",
+            message: "Error updating settings.",
+            variant: "error"
+          });
+
+          this.dispatchEvent(toastEvent);
+        });
+    }
 
     this.handleCloseForm();
   }
@@ -1425,16 +1474,6 @@ export default class TimeSheetCalendar extends LightningElement {
       });
   }
 
-  handleOpenSettings() {
-    if (this.user.Id) {
-      console.log("edit");
-      this.settingsEditModal = true;
-    } else {
-      console.log("new");
-      this.settingsNewModal = true;
-    }
-  }
-
   ///////////////////////////////HELPER FUNCTIONS///////////////////////////////
 
   // Helper method to process mileage entries
@@ -1466,7 +1505,30 @@ export default class TimeSheetCalendar extends LightningElement {
     });
   }
 
-  //Helper method to convert milliseconds to hours and minutes
+  // Helper method to update the calendar view
+  updateCalendarView(startTime, endTime) {
+    this.calendar.setOption("slotMinTime", startTime);
+    this.calendar.setOption("slotMaxTime", endTime);
+    this.calendar.render();
+    this.calendar.refetchEvents();
+  }
+
+  /**
+   * Helper method to convert slider value to time format (0 -> 00:00, 0.50 -> 00:30)
+   * @param {Number} value - The slider value (ex 0.5, 12.5)
+   * @returns {String} - The formatted time (ex "00:30", "12:30")
+   */
+  convertToTime(value) {
+    const hours = Math.floor(value);
+    const minutes = (value % 1) * 60;
+
+    const displayHours = hours.toString().padStart(2, "0");
+    const displayMinutes = minutes === 30 ? "30" : "00";
+
+    return `${displayHours}:${displayMinutes}`;
+  }
+
+  // Helper method to convert milliseconds to hours and minutes
   msToHoursMinutes(ms) {
     const totalMinutes = Math.floor(ms / 60000);
     const hours = Math.floor(totalMinutes / 60);
@@ -1475,18 +1537,10 @@ export default class TimeSheetCalendar extends LightningElement {
     return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:00`;
   }
 
-  //// TESTING ///////
-  /**
-   * Converts slider value 0 -> 00:00, 0.25 -> 00:15)
-   * @param {Number} value - The slider value (ex  0.25, 12,5)
-   * @returns {String} - The formatted time (ex "12:15")
-   */
-  convertToTime(value) {
-    const hours = Math.floor(value);
-    const minutes = Math.round((value - hours) * 60);
-    const displayHours = hours.toString().padStart(2, "0");
-    const displayMinutes = minutes.toString().padStart(2, "0");
-    return `${displayHours}:${displayMinutes}`;
+  // Helper method to convert time string from hours and minutes to milliseconds
+  timeStringToMilliseconds(timeString) {
+    const [hours, minutes] = timeString.split(":").map(Number);
+    return hours * 60 * 60 * 1000 + minutes * 60 * 1000;
   }
 
   // Handlers for slider changes

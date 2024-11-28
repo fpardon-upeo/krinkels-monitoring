@@ -83,6 +83,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>nextAppointmentPicker</componentName>
+                <identifier>c_nextAppointmentPicker</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>

@@ -53,19 +53,31 @@ public with sharing class AccountDetailsController {
 
   @AuraEnabled
   public static void createFeedbackPost(Id accountId, String feedbackText) {
-    //First get the current User Manager Id so we can @mention them in the post
-    User currentUser = [
-      SELECT Id, ManagerId
-      FROM User
-      WHERE Id = :UserInfo.getUserId()
+    // //First get the current User Manager Id so we can @mention them in the post
+    // User currentUser = [
+    //   SELECT Id, ManagerId
+    //   FROM User
+    //   WHERE Id = :UserInfo.getUserId()
+    //   LIMIT 1
+    // ];
+
+    //Get the Atak Project field of the Account t
+    Account acc = [
+      SELECT Id, ATAK_Project__c
+      FROM Account
+      WHERE Id = :accountId
       LIMIT 1
     ];
 
-    String newFeedbackText =
-      '@[' +
-      currentUser.ManagerId +
-      '] - ' +
-      feedbackText;
+    //Get the ATAK Project record based on the lookup field
+    ATAK_Project__c atakProject = [
+      SELECT Id, Name, OwnerId
+      FROM ATAK_Project__c
+      WHERE Id = :acc.ATAK_Project__c
+      LIMIT 1
+    ];
+
+    String newFeedbackText = '@[' + atakProject.OwnerId + '] - ' + feedbackText;
 
     // Create a FeedItem (Chatter Post)
     FeedItem post = new FeedItem();

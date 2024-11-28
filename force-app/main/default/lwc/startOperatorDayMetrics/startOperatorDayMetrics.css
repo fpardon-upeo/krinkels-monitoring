@@ -1,44 +1,48 @@
 /* statusBanner.css */
 .slds-progress-bar_circular {
-    height: 4px;
-    width: 100%;
-    max-width: 150px;
-    margin-top: 4px;
-    background: #ecebea;
-    border-radius: 12px;
+  height: 4px;
+  width: 100%;
+  max-width: 150px;
+  margin-top: 4px;
+  background: #ecebea;
+  border-radius: 12px;
 }
 
 .slds-progress-bar__value {
-    background: #4bca81;
-    border-radius: 12px;
+  background: #4bca81;
+  border-radius: 12px;
 }
 
 .slds-border_left {
-    border-left: 1px solid #dddbda;
+  border-left: 1px solid #dddbda;
 }
 
 .slds-border_right {
-    border-right: 1px solid #dddbda;
+  border-right: 1px solid #dddbda;
 }
 
 .weather-icon {
-    filter: grayscale(100%) brightness(0.8);
+  filter: grayscale(100%) brightness(0.8);
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
 }
 
 /* Mobile-specific styles */
 @media (max-width: 48em) {
-    .progress-bar-container {
-        max-width: 100%; /* Full width on mobile */
-    }
+  .progress-bar-container {
+    max-width: 100%; /* Full width on mobile */
+  }
 
-    /* Center align all content on mobile */
-    .slds-grid_align-end {
-        justify-content: flex-start;
-    }
+  /* Center align all content on mobile */
+  .slds-grid_align-end {
+    justify-content: flex-start;
+  }
 
-    /* Add dividers between stacked sections */
-    .slds-m-bottom_small:not(:last-child) {
-        border-bottom: 1px solid #dddbda;
-        padding-bottom: 0.75rem;
-    }
+  /* Add dividers between stacked sections */
+  .slds-m-bottom_small:not(:last-child) {
+    border-bottom: 1px solid #dddbda;
+    padding-bottom: 0.75rem;
+  }
 }

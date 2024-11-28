@@ -2,33 +2,57 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Qualification</fullName>
+        <fullName>On Hold</fullName>
         <default>false</default>
-        <description>You&apos;ve contacted the prospect and they&apos;re interested.</description>
-        <label>Qualification</label>
+        <label>On Hold</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
         <closed>false</closed>
         <forecastCategory>Pipeline</forecastCategory>
         <probability>10</probability>
         <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Needs Analysis</fullName>
+        <fullName>Evaluation</fullName>
         <default>false</default>
-        <description>You&apos;re defining the prospect&apos;s needs.</description>
-        <label>Needs Analysis</label>
+        <label>Evaluation</label>
         <closed>false</closed>
         <forecastCategory>Pipeline</forecastCategory>
-        <probability>35</probability>
+        <probability>20</probability>
         <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Proposal</fullName>
+        <fullName>Pricing</fullName>
         <default>false</default>
-        <description>You&apos;re developing a sales proposal for the prospect.</description>
-        <label>Proposal</label>
+        <label>Pricing</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>25</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Pricing Ready</fullName>
+        <default>false</default>
+        <label>Pricing Ready</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>30</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Quote Sent</fullName>
+        <default>false</default>
+        <label>Quote Sent</label>
         <closed>false</closed>
         <forecastCategory>BestCase</forecastCategory>
-        <probability>75</probability>
+        <probability>50</probability>
         <won>false</won>
     </standardValue>
     <standardValue>
@@ -38,6 +62,15 @@
         <label>Negotiation</label>
         <closed>false</closed>
         <forecastCategory>Forecast</forecastCategory>
+        <probability>90</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>BAFO</fullName>
+        <default>false</default>
+        <label>BAFO</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
         <probability>90</probability>
         <won>false</won>
     </standardValue>

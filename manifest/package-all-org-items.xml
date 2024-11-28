@@ -1048,6 +1048,12 @@
         <name>BrandingSet</name>
     </types>
     <types>
+        <members>Opportunity.B2B Tender</members>
+        <members>Opportunity.Public Tender</members>
+        <members>Opportunity.Quick Quote</members>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
         <members>sfdc</members>
         <name>Certificate</name>
     </types>
@@ -2061,7 +2067,14 @@
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
         <members>Opportunity.Loss_Reason__c</members>
+        <members>Opportunity.Price_Request_BS_Comments__c</members>
+        <members>Opportunity.Price_Request_Demand_Comments__c</members>
+        <members>Opportunity.Price_Request_Priority__c</members>
+        <members>Opportunity.Price_Request_Status__c</members>
+        <members>Opportunity.Pricing_Request_Needed__c</members>
         <members>Opportunity.ROI_Analysis_Completed__c</members>
+        <members>Opportunity.Service_Contract__c</members>
+        <members>Opportunity.Work_Size__c</members>
         <members>Opportunity__hd.Amount__c</members>
         <members>Opportunity__hd.CloseDate__c</members>
         <members>Opportunity__hd.ForecastCategoryName__c</members>
@@ -2134,6 +2147,7 @@
         <members>SD_Import__c.PersoonId__c</members>
         <members>SD_Import__c.PersoonRoepAchternaam__c</members>
         <members>SD_Import__c.PersoonRoepVoornaam__c</members>
+        <members>SD_Import__c.Werkschema__c</members>
         <members>ServiceAppointment.ATAK_Code__c</members>
         <members>ServiceAppointment.Asset__c</members>
         <members>ServiceAppointment.Day_Pause_Duration__c</members>
@@ -2308,6 +2322,11 @@
         <members>WorkType.FSL__Due_Date_Offset__c</members>
         <members>WorkType.FSL__Exact_Appointments__c</members>
         <members>Work_Order_Creation_Event__e.Maintenance_Plan_Id__c</members>
+        <members>Work_Schedule_Day__c.Day_of_Week_Number__c</members>
+        <members>Work_Schedule_Day__c.Day_of_Week__c</members>
+        <members>Work_Schedule_Day__c.Hours__c</members>
+        <members>Work_Schedule_Day__c.Work_Schedule__c</members>
+        <members>Work_Schedule__c.Total_Weekly_Hours__c</members>
         <members>bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Active__c</members>
         <members>bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Detail_Field__c</members>
         <members>bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Drilldown_Id_Field__c</members>
@@ -2331,6 +2350,16 @@
     <types>
         <members>AppointmentPicker_Appointments_Header</members>
         <members>AppointmentPicker_Appointments_Header</members>
+        <members>AppointmentPicker_Break_Button_Sub_Text</members>
+        <members>AppointmentPicker_Break_Button_Sub_Text</members>
+        <members>AppointmentPicker_Break_Button_Text</members>
+        <members>AppointmentPicker_Break_Button_Text</members>
+        <members>AppointmentPicker_Break_Duration_Label</members>
+        <members>AppointmentPicker_Break_Duration_Label</members>
+        <members>AppointmentPicker_Break_Form_Title</members>
+        <members>AppointmentPicker_Break_Form_Title</members>
+        <members>AppointmentPicker_Break_Success_Message</members>
+        <members>AppointmentPicker_Break_Success_Message</members>
         <members>AppointmentPicker_Day_Ended_Toast</members>
         <members>AppointmentPicker_Day_Ended_Toast</members>
         <members>AppointmentPicker_End_Day_Button</members>
@@ -2347,6 +2376,8 @@
         <members>AppointmentPicker_Next_Button</members>
         <members>AppointmentPicker_No_Results</members>
         <members>AppointmentPicker_No_Results</members>
+        <members>AppointmentPicker_Save_Button</members>
+        <members>AppointmentPicker_Save_Button</members>
         <members>AppointmentPicker_Select_Next_Appointment_Button</members>
         <members>AppointmentPicker_Select_Next_Appointment_Button</members>
         <members>AppointmentPicker_Spinner</members>
@@ -8192,6 +8223,8 @@
         <members>WorkTypeGroup</members>
         <members>WorkTypeGroupMember</members>
         <members>Work_Order_Creation_Event__e</members>
+        <members>Work_Schedule_Day__c</members>
+        <members>Work_Schedule__c</members>
         <members>bmpyrckt__Timeline_Configuration__mdt</members>
         <name>CustomObject</name>
     </types>
@@ -9605,6 +9638,8 @@
         <members>WorkType-zh_CN</members>
         <members>WorkType-zh_TW</members>
         <members>Work_Order_Creation_Event__e-en_US</members>
+        <members>Work_Schedule_Day__c-en_US</members>
+        <members>Work_Schedule__c-en_US</members>
         <members>bmpyrckt__Timeline_Configuration__mdt-en_US</members>
         <name>CustomObjectTranslation</name>
     </types>
@@ -9692,6 +9727,8 @@
         <members>Outbound_Log__c</members>
         <members>SD_Import__c</members>
         <members>User_Settings__c</members>
+        <members>Work_Schedule_Day__c</members>
+        <members>Work_Schedule__c</members>
         <members>mobileLanding__Mobile_Landing_vf</members>
         <members>mobileLanding__Non_Mobile_Landing</members>
         <name>CustomTab</name>
@@ -9960,12 +9997,12 @@
         <members>Maintenance_Plan_Record_Page</members>
         <members>Operational_Account_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
-        <members>Opportunity_Record_Page</members>
         <members>Other_Record_Page</members>
         <members>Price_Book_Record_Page</members>
         <members>Product_Consumed_Record_Page</members>
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
+        <members>Quick_Opportunity_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
         <members>Scheduling_Policy_Record_Page</members>
         <members>Service_Appointment_Record_Page</members>
@@ -9986,6 +10023,7 @@
     <types>
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
+        <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
@@ -9993,6 +10031,7 @@
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>Resource_Absence_Before_Save</members>
@@ -10036,6 +10075,7 @@
     <types>
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
+        <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
@@ -10043,6 +10083,7 @@
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>Resource_Absence_Before_Save</members>
@@ -10411,6 +10452,8 @@
         <members>WorkType-FSL Work Type Layout</members>
         <members>WorkType-Work Type Layout</members>
         <members>WorkTypeGroup-Work Type Group Layout</members>
+        <members>Work_Schedule_Day__c-Work Schedule Day Layout</members>
+        <members>Work_Schedule__c-Work Schedule Layout</members>
         <members>bmpyrckt__Timeline_Configuration__mdt-Timeline Configuration Layout</members>
         <name>Layout</name>
     </types>
@@ -11072,6 +11115,10 @@
         <members>WorkTypeGroup.All_WorkTypeGroups</members>
         <members>WorkTypeGroup.My_WorkTypeGroups</members>
         <members>WorkTypeGroup.My_WorkTypeGroups</members>
+        <members>Work_Schedule_Day__c.All</members>
+        <members>Work_Schedule_Day__c.All</members>
+        <members>Work_Schedule__c.All</members>
+        <members>Work_Schedule__c.All</members>
         <members>bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Active_Configurations</members>
         <members>bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Active_Configurations</members>
         <members>bmpyrckt__Timeline_Configuration__mdt.bmpyrckt__Test_Configurations</members>
@@ -11229,6 +11276,7 @@
     </types>
     <types>
         <members>ATAK_Personnel__c.Create_User</members>
+        <members>Account.Add_Extra_Work</members>
         <members>Account.Child_Account</members>
         <members>Book_Appointment</members>
         <members>Campaign.Child_Campaign</members>
@@ -11254,6 +11302,7 @@
         <members>NewNote</members>
         <members>NewOpportunity</members>
         <members>NewTask</members>
+        <members>Opportunity.Price_Request</members>
         <members>Quote.SendEmail</members>
         <members>ServiceAppointment.Check_Out</members>
         <members>ServiceAppointment.FSL__Change_Status</members>
@@ -11420,6 +11469,10 @@
         <members>FSL__Work_Rule__c.FSL__Time_Rule_Service</members>
         <members>Knowledge__kav.FAQ</members>
         <members>Knowledge__kav.Procedure</members>
+        <members>Opportunity.B2B_Tender</members>
+        <members>Opportunity.Public_Tender</members>
+        <members>Opportunity.Quick_Quote</members>
+        <members>Product2.Extra_Work</members>
         <members>Product2.Material</members>
         <members>Product2.Service</members>
         <members>Product2.Service_Package</members>
@@ -11972,6 +12025,8 @@
         <members>WorkThanks</members>
         <members>WorkType</members>
         <members>WorkTypeGroup</members>
+        <members>Work_Schedule_Day__c</members>
+        <members>Work_Schedule__c</members>
         <name>SharingRules</name>
     </types>
     <types>
@@ -12585,9 +12640,12 @@
         <members>WorkPlanTemplateEntry</members>
         <members>WorkStep</members>
         <members>WorkStepTemplate</members>
+        <members>Work_Schedule_Day__c</members>
+        <members>Work_Schedule__c</members>
         <name>TopicsForObjects</name>
     </types>
     <types>
+        <members>Price_Request_Status_Icon</members>
         <members>Type</members>
         <name>UiFormatSpecificationSet</name>
     </types>
@@ -12614,12 +12672,12 @@
         <members>Maintenance_Plan_Record_Page</members>
         <members>Operational_Account_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
-        <members>Opportunity_Record_Page</members>
         <members>Other_Record_Page</members>
         <members>Price_Book_Record_Page</members>
         <members>Product_Consumed_Record_Page</members>
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
+        <members>Quick_Opportunity_Record_Page</members>
         <members>Scheduling_Policy_Record_Page</members>
         <members>Service_Appointment_Record_Page</members>
         <members>Service_Contract_Record_Page</members>
@@ -12654,6 +12712,7 @@
         <members>FSL__Work_Rule__c.FSL__Start_Of_Day_Time_Format</members>
         <members>FSL__Work_Rule__c.FSL__Time_Format</members>
         <members>Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start</members>
+        <members>Opportunity.Maximum_Value_for_Quick_Quote</members>
         <members>ResourceAbsence.FSL__Absence_Color_HEX_Format</members>
         <members>ResourceAbsence.FSL__startShouldPrecedeEnd</members>
         <members>ServiceAppointment.FSL__Dont_allow_scheduled_or_dispatched</members>

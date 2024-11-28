@@ -266,15 +266,31 @@
     <div if:true={showBottomFooter} class="footer">
       <div class="footer-content">
         <div class="footer-buttons">
-          <lightning-button
-            label="Back to Main Menu"
-            icon-name="utility:home"
-            variant="brand"
-            class="slds-m-right_small"
-            onclick={handleBack}
-          >
-          </lightning-button>
-          <lightning-button-group>
+          <button onclick={handleBackToMenu} class="submit-button">
+            <span class="button-icon">
+              <lightning-icon
+                      icon-name="utility:home"
+                      size="small"
+                      variant="inverse"
+              ></lightning-icon>
+            </span>
+            <span class="button-text">Back to Main Menu</span>
+          </button>
+          <button
+                  if:true={showAppointmentScreen}
+                  disabled={disableNextButton}
+                  onclick={handleSelect}
+                  class="next-button slds-m-left_medium">
+          <span class="button-icon">
+            <lightning-icon
+                    icon-name="utility:forward"
+                    size="small"
+                    variant="inverse"
+            ></lightning-icon>
+          </span>
+            <span class="button-text">Next</span>
+          </button>
+            <!--
             <lightning-button
               if:true={showAppointmentScreen}
               label="Continue"
@@ -284,7 +300,7 @@
               onclick={handleSelect}
             >
             </lightning-button>
-          </lightning-button-group>
+            -->
         </div>
       </div>
     </div>
