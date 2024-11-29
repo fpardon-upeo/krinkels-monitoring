@@ -28,9 +28,9 @@ export default class ShowMileageScreen extends LightningElement {
   loadMileageData() {
     getMileageEntries({ recordId: this.recordId })
       .then((result) => {
+        console.log("result of mileage entries", result);
         if (result) {
           this.kmAmount = result.Total_KM__c || 0;
-
           if (result.Mileage_Entries__r) {
             this.mileageEntries = [...result.Mileage_Entries__r];
             this.categorizeMileageEntries();
@@ -141,7 +141,11 @@ export default class ShowMileageScreen extends LightningElement {
     this.showMileageEntryEditForm = true;
   }
 
-  handleSuccessMileageEntryNew() {
+  handleSuccessMileageEntryNew(event) {
+
+    console.log("event.detail", event.detail);
+    console.log("event", event);
+
     this.handleCloseForm();
     this.loadMileageData();
 

@@ -2,6 +2,34 @@
   --slds-g-shadow-inset-inverse-focus-1: null !important;
 }
 
+/* Add to your component's CSS file */
+
+/* Style selected rows */
+.datatable-wrapper .slds-is-selected {
+  --lwc-colorBackgroundRowSelected: #ebf5e7 !important;
+  --lwc-colorBackgroundRowSelectedHover: #d8ebcf !important;
+}
+
+/* Increase touch targets */
+.datatable-wrapper .slds-table td {
+  padding: 0.75rem;
+  height: 3rem;
+}
+
+/* Style table rows */
+.datatable-wrapper .slds-table_striped tbody tr:nth-of-type(even) {
+  --lwc-colorBackgroundRowHover: #f3f3f3;
+}
+
+.datatable-wrapper .slds-table tbody tr {
+  cursor: pointer;
+}
+
+/* Add left border to selected row */
+.datatable-wrapper .slds-is-selected td:first-child {
+  border-left: 4px solid #449f03;
+}
+
 .top-nav {
   background: white;
   border-bottom: 2px solid #449f03;
@@ -35,6 +63,17 @@
 }
 
 .next-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #449f03;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.next-button-disabled {
   width: 100%;
   padding: 16px;
   border: none;
@@ -201,28 +240,46 @@ c-time-sheet-calendar {
   box-shadow: 0 -2px 8px rgba(68, 159, 3, 0.1);
 }
 
+/* Original footer styles remain */
 .footer-content {
   height: 100%;
   padding: 0.75rem;
 }
 
 .footer {
-  width: 100%; /* Ensure the footer takes full width */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Updated footer-buttons styling */
 .footer-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Default center alignment */
   gap: 1rem;
-  width: 100%; /* Ensure buttons container takes full width */
+  width: 100%;
+}
+
+/* When there are multiple buttons, spread them out */
+.footer-buttons:has(> :nth-child(2)) {
+  justify-content: space-between;
 }
 
 .submit-button,
 .next-button {
-  flex: 1; /* Make both buttons take equal space */
-  max-width: 48%; /* Ensure buttons don’t exceed half the width */
+  flex: 0 1 auto; /* Change from flex: 1 to flex: 0 1 auto */
+  max-width: 48%;
   text-align: center;
+}
+
+.next-button-disabled {
+  flex: 0 1 auto; /* Change from flex: 1 to flex: 0 1 auto */
+  max-width: 48%;
+  text-align: center;
+}
+
+/* When it's the only button, limit its width */
+.footer-buttons:has(> :only-child) .submit-button {
+  max-width: 65%;
 }
 
 .action-buttons {

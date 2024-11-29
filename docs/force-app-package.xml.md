@@ -2,9 +2,9 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2348
+Metadatas: 2404
 
-<details><summary>ApexClass (80)</summary>
+<details><summary>ApexClass (91)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -21,6 +21,8 @@ Metadatas: 2348
   • ATAKVehicleService<br/>
   • ATAKVehicleWrapper<br/>
   • ATAKVehicleWrapperTest<br/>
+  • ATAKWorkLogService<br/>
+  • ATAKWorkLogServiceTest<br/>
   • AccountDetailsController<br/>
   • AddressSearchService<br/>
   • CallOut<br/>
@@ -34,6 +36,7 @@ Metadatas: 2348
   • FileUploadImprovedHelper<br/>
   • FileUploadImproved_Test<br/>
   • GanttRoundPinAction<br/>
+  • ImageCaptureService<br/>
   • InboundLoggerService<br/>
   • LoggerService<br/>
   • MachineRestResource<br/>
@@ -43,6 +46,8 @@ Metadatas: 2348
   • MapsGeoCodeService<br/>
   • MapsGeoCodeWrapper<br/>
   • MapsGeoCodeWrapperTest<br/>
+  • MileageEntryProjectLinkService<br/>
+  • MileageEntryProjectLinkServiceTest<br/>
   • OutboundLoggerService<br/>
   • PersonnelRestResource<br/>
   • PersonnelRestResourceTest<br/>
@@ -78,29 +83,38 @@ Metadatas: 2348
   • TimeSheetCalculationServiceTest<br/>
   • TimeSheetController<br/>
   • TimeSheetControllerTest<br/>
+  • TimeSheetProjectLinkService<br/>
+  • TimeSheetProjectLinkServiceTest<br/>
   • WeatherService<br/>
   • WorkOrderLocationBatch<br/>
   • WorkOrderLocationQueueable<br/>
   • WorkOrderScheduler<br/>
   • WorkOrderSchedulerBatch<br/>
   • WorkOrderSchedulerController<br/>
+  • WorkOrderSequence<br/>
   • WorkOrderTriggerHandler<br/>
+  • WorkStepSignatureController<br/>
+  • WorkStepSignatureControllerTest<br/>
+  • fsl_Console_AccountController<br/>
 </details>
 
 <details><summary>ApexEmailNotifications (1)</summary>
   • apexEmailNotifications<br/>
 </details>
 
-<details><summary>ApexPage (2)</summary>
+<details><summary>ApexPage (4)</summary>
+  • CustomAccountLightboxVfPage<br/>
   • NonEssentialsMobileLanding<br/>
   • fsc_screenFlow<br/>
+  • test<br/>
 </details>
 
-<details><summary>ApexTrigger (11)</summary>
+<details><summary>ApexTrigger (12)</summary>
   • ATAKPersonnelTrigger<br/>
   • AppointmentStatusTrigger<br/>
   • ContentDocumentTrigger<br/>
   • ContractLineItemTrigger<br/>
+  • MileageEntryTrigger<br/>
   • ResourceAbsenceTrigger<br/>
   • ServiceAppointmentTrigger<br/>
   • ServiceContractMaintenancePlan<br/>
@@ -124,7 +138,8 @@ Metadatas: 2348
   • Lead<br/>
 </details>
 
-<details><summary>AuraDefinitionBundle (2)</summary>
+<details><summary>AuraDefinitionBundle (3)</summary>
+  • CustomAccountLightboxApp<br/>
   • fsc_openUrl<br/>
   • fsc_screenFlowApp<br/>
 </details>
@@ -194,6 +209,10 @@ Metadatas: 2348
   • logo_krinkelsbelgie_balk_kort_1<br/>
 </details>
 
+<details><summary>CorsWhitelistOrigin (1)</summary>
+  • https_krinkelsgreencare_upeodev_sandbox_lightning_force_com<br/>
+</details>
+
 <details><summary>CspTrustedSite (2)</summary>
   • bpost<br/>
   • weatherAPI<br/>
@@ -204,7 +223,7 @@ Metadatas: 2348
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (540)</summary>
+<details><summary>CustomField (559)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -252,6 +271,22 @@ Metadatas: 2348
   • ATAK_Settings__c.Token__c<br/>
   • ATAK_Settings__c.Validity_End__c<br/>
   • ATAK_Settings__c.Validity_Start__c<br/>
+  • ATAK_Work_Log__c.Comments__c<br/>
+  • ATAK_Work_Log__c.Dossier__c<br/>
+  • ATAK_Work_Log__c.End_Timestamp__c<br/>
+  • ATAK_Work_Log__c.External_Id__c<br/>
+  • ATAK_Work_Log__c.Performance_Date__c<br/>
+  • ATAK_Work_Log__c.Performance_Resource_Code__c<br/>
+  • ATAK_Work_Log__c.Performance_Resource_Type__c<br/>
+  • ATAK_Work_Log__c.Project_Code__c<br/>
+  • ATAK_Work_Log__c.Quantity_Registration_Unit__c<br/>
+  • ATAK_Work_Log__c.Quantity__c<br/>
+  • ATAK_Work_Log__c.Registration_Timestamp__c<br/>
+  • ATAK_Work_Log__c.Source_Record_Id__c<br/>
+  • ATAK_Work_Log__c.Source_Type__c<br/>
+  • ATAK_Work_Log__c.Start_Timestamp__c<br/>
+  • ATAK_Work_Log__c.Status__c<br/>
+  • ATAK_Work_Log__c.Time_Sheet__c<br/>
   • Account.ATAK_Project__c<br/>
   • Account.Access_Information__c<br/>
   • Account.Address_Identifier__c<br/>
@@ -537,6 +572,7 @@ Metadatas: 2348
   • ResourceAbsence.Remarks__c<br/>
   • ResourceAbsence.Soccode__c<br/>
   • ResourceAbsence.Status__c<br/>
+  • ResourceAbsence.Time_Sheet__c<br/>
   • ResourceAbsence.Training_Type__c<br/>
   • ResourceAbsence.Unique_Key__c<br/>
   • SD_Import__c.AfdelingLabel__c<br/>
@@ -677,6 +713,7 @@ Metadatas: 2348
   • TimeSheet.Total_KM__c<br/>
   • TimeSheet.Total_Normal_Hours__c<br/>
   • TimeSheet.Total_Travel_Time__c<br/>
+  • TimeSheetEntry.Atak_Project__c<br/>
   • TimeSheetEntry.Break_Duration__c<br/>
   • TimeSheetEntry.Break_Duration_in_Minutes__c<br/>
   • TimeSheetEntry.Code_ATAK_Limbus__c<br/>
@@ -730,6 +767,7 @@ Metadatas: 2348
   • WorkOrder.Shop_Visit_End_Time__c<br/>
   • WorkOrder.Shop_Visit_Reviewed_Approved__c<br/>
   • WorkOrder.Shop_Visit_Start_Time__c<br/>
+  • WorkOrder.Signature_Required__c<br/>
   • WorkOrder.Special_Equipment__c<br/>
   • WorkOrder.WO_with_Goodwill_Tasks__c<br/>
   • WorkOrder.Work_Order_Type__c<br/>
@@ -747,7 +785,7 @@ Metadatas: 2348
   • Work_Schedule__c.Total_Weekly_Hours__c<br/>
 </details>
 
-<details><summary>CustomLabel (72)</summary>
+<details><summary>CustomLabel (74)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Break_Button_Sub_Text<br/>
   • AppointmentPicker_Break_Button_Text<br/>
@@ -766,6 +804,8 @@ Metadatas: 2348
   • AppointmentPicker_Select_Next_Appointment_Button<br/>
   • AppointmentPicker_Spinner<br/>
   • AppointmentPicker_Travel_Started_Toast<br/>
+  • StartDay_End_Button_Sub_Text<br/>
+  • StartDay_End_Button_Text<br/>
   • StartDay_End_Day_Button_Sub_Text<br/>
   • StartDay_End_Day_Button_Text<br/>
   • StartDay_KM_Back_Button_Text<br/>
@@ -837,10 +877,11 @@ Metadatas: 2348
   • Standard_Notification<br/>
 </details>
 
-<details><summary>CustomObject (24)</summary>
+<details><summary>CustomObject (25)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
   • ATAK_Settings__c<br/>
+  • ATAK_Work_Log__c<br/>
   • Asset_Financial_Account__c<br/>
   • Contract_Line_Financial_Account__c<br/>
   • Error_Log__c<br/>
@@ -1067,7 +1108,7 @@ Metadatas: 2348
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (52)</summary>
+<details><summary>Flow (55)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1075,11 +1116,13 @@ Metadatas: 2348
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
+  • Mileage_Entry_After_Save_Record_Triggered<br/>
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
+  • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
   • Send_Better_Email_Testflow<br/>
   • Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data<br/>
@@ -1108,6 +1151,7 @@ Metadatas: 2348
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
   • Work_Order_After_Update_Add_Log_KM<br/>
+  • Work_Order_Goodwill_Task_Check<br/>
   • Work_Order_Mobile_Flow_Check_In<br/>
   • Work_Order_Mobile_Flow_Check_Out<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
@@ -1122,7 +1166,7 @@ Metadatas: 2348
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (52)</summary>
+<details><summary>FlowDefinition (55)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1130,11 +1174,13 @@ Metadatas: 2348
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
+  • Mileage_Entry_After_Save_Record_Triggered<br/>
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
+  • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
   • Send_Better_Email_Testflow<br/>
   • Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data<br/>
@@ -1163,6 +1209,7 @@ Metadatas: 2348
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
   • Work_Order_After_Update_Add_Log_KM<br/>
+  • Work_Order_Goodwill_Task_Check<br/>
   • Work_Order_Mobile_Flow_Check_In<br/>
   • Work_Order_Mobile_Flow_Check_Out<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
@@ -1233,9 +1280,10 @@ Metadatas: 2348
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<details><summary>Layout (219)</summary>
+<details><summary>Layout (221)</summary>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project__c-ATAK Project Layout<br/>
+  • ATAK_Work_Log__c-ATAK Work Log Layout<br/>
   • Account-Account Layout<br/>
   • Account-Commercial Account Layout<br/>
   • Account-Commercial Layout<br/>
@@ -1314,6 +1362,7 @@ Metadatas: 2348
   • Global-FSL Global Actions<br/>
   • Global-Global Layout<br/>
   • Idea-Idea Layout<br/>
+  • IframeWhiteListUrl-Trusted Domain for Inline Frames Layout<br/>
   • Inbound_Log__c-Inbound Log Layout<br/>
   • Individual-Individual Layout<br/>
   • JobProfile-Job Profile Layout<br/>
@@ -1455,7 +1504,7 @@ Metadatas: 2348
   • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (85)</summary>
+<details><summary>LightningComponentBundle (87)</summary>
   • addressSearch<br/>
   • colorsPicker<br/>
   • contractLineEditor<br/>
@@ -1506,6 +1555,7 @@ Metadatas: 2348
   • fsc_sortingConfigurationLine<br/>
   • fsc_toastMessage<br/>
   • fsc_transferMetadata3<br/>
+  • fslConsoleAccount<br/>
   • generateMaintenancePlan<br/>
   • imageAnnotate<br/>
   • imageCapture<br/>
@@ -1541,6 +1591,7 @@ Metadatas: 2348
   • timesheetEntryForm<br/>
   • toastMessage<br/>
   • utilsImageCapture<br/>
+  • workStepSignature<br/>
 </details>
 
 <details><summary>LightningExperienceTheme (1)</summary>
@@ -1606,10 +1657,11 @@ Metadatas: 2348
   • Default_Opportunity<br/>
 </details>
 
-<details><summary>PermissionSet (8)</summary>
+<details><summary>PermissionSet (9)</summary>
   • ATAK_Permissions<br/>
   • Field_Service_Mobile_Custom_Permission_Set<br/>
   • Lightning_Email_Template_Builder<br/>
+  • Query_All_Files<br/>
   • USF_Flow_Screen_Component_Custom_Objects<br/>
   • cases_Permisssion_Set<br/>
   • fileUploadImproved<br/>
@@ -1692,7 +1744,7 @@ Metadatas: 2348
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (155)</summary>
+<details><summary>QuickAction (157)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -1839,6 +1891,7 @@ Metadatas: 2348
   • TimeSheet.test_mileage<br/>
   • Timesheet<br/>
   • WorkOrder.Location_Passport<br/>
+  • WorkOrder.Log_Edit_Goodwill_Tasks<br/>
   • WorkOrder.Log_Goodwill_Tasks<br/>
   • WorkOrder.SendEmail<br/>
   • WorkOrder.Start_Stop<br/>
@@ -1848,6 +1901,7 @@ Metadatas: 2348
   • WorkStep.Set_Service_Status<br/>
   • WorkStep.Take_After_Work_Photos<br/>
   • WorkStep.Take_Before_Work_Photos<br/>
+  • WorkStep.Work_Step_Signature<br/>
 </details>
 
 <details><summary>RecordType (21)</summary>
@@ -1888,7 +1942,7 @@ Metadatas: 2348
   • bpost<br/>
 </details>
 
-<details><summary>Report (125)</summary>
+<details><summary>Report (126)</summary>
   • DashboardReportsAdoption/<br/>
   • DashboardReportsAdoption/UsageActivitiesCompleted<br/>
   • EBotR_v3/<br/>
@@ -1974,6 +2028,7 @@ Metadatas: 2348
   • Service_Dashboards_Reports/Trend_of_Cases_Closed<br/>
   • Service_Dashboards_Reports/Trend_of_Cases_Created<br/>
   • unfiled$public/Crew_Members_Planning_oXN<br/>
+  • unfiled$public/Goodwill_Tasks_Report_S7D<br/>
   • unfiled$public/Opportunity_Amount_by_Stage_Sample<br/>
   • unfiled$public/SampleReportActiveUsers<br/>
   • unfiled$public/SampleReportCasesStatusbyRep<br/>
@@ -2016,12 +2071,13 @@ Metadatas: 2348
   • unfiled$public/flow_screen_prebuilt_report<br/>
 </details>
 
-<details><summary>ReportType (11)</summary>
+<details><summary>ReportType (12)</summary>
   • Maintenance_Plans_with_Maintenance_Assets<br/>
   • Opportunities_with_Historical_Trending<br/>
   • Service_Appointments<br/>
   • Service_Appointments_with_Service_Resources<br/>
   • Vans_with_Material_Items<br/>
+  • Work_Orders<br/>
   • flow_orchestration_log_ootb_crt_two_four_eight<br/>
   • flow_orchestration_run_ootb_crt_two_four_eight<br/>
   • flow_orchestration_stage_run_ootb_crt_two_four_eight<br/>
@@ -2173,9 +2229,10 @@ Metadatas: 2348
   • WorkDotCom<br/>
 </details>
 
-<details><summary>SharingRules (160)</summary>
+<details><summary>SharingRules (161)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
+  • ATAK_Work_Log__c<br/>
   • Account<br/>
   • ActivityRecurrence2<br/>
   • ActivityRecurrence2Exception<br/>
@@ -2438,19 +2495,21 @@ Metadatas: 2348
   • WorkOrderStatus<br/>
 </details>
 
-<details><summary>StaticResource (3)</summary>
+<details><summary>StaticResource (4)</summary>
   • FullCalendar<br/>
   • FullCalendarV5<br/>
   • fsc_Quickchoice_Images<br/>
+  • signature_pad<br/>
 </details>
 
 <details><summary>TimeSheetTemplate (1)</summary>
   • Default_Timesheet_Daily<br/>
 </details>
 
-<details><summary>TopicsForObjects (98)</summary>
+<details><summary>TopicsForObjects (99)</summary>
   • ATAK_Personnel__c<br/>
   • ATAK_Project__c<br/>
+  • ATAK_Work_Log__c<br/>
   • Account<br/>
   • ApptBundleAggrDurDnscale<br/>
   • ApptBundleAggrPolicy<br/>

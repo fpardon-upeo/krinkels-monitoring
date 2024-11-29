@@ -13,8 +13,10 @@ import {
   ToastTypes,
   dataURLtoFile
 } from "c/utilsImageCapture";
-
-export default class ImageCapture extends LightningElement {
+import { NavigationMixin } from "lightning/navigation";
+import getWorkOrderIdFromWorkStepId from "@salesforce/apex/ImageCaptureService.getWorkOrderIdFromWorkStepId";
+import { CloseActionScreenEvent } from 'lightning/actions';
+export default class ImageCapture extends NavigationMixin(LightningElement) {
   // This allows the component to be placed on a record page, or other record
   // context, and receive the record's ID when it runs
   @api
@@ -25,6 +27,8 @@ export default class ImageCapture extends LightningElement {
 
   @track
   allImagesData = [];
+
+  workOrderId;
 
   compressionOptions = {
     compressionEnabled: true,
@@ -85,6 +89,14 @@ export default class ImageCapture extends LightningElement {
 
   connectedCallback() {
     debug(`Working on ${this.objectApiName} with Id '${this.recordId}'`);
+    getWorkOrderIdFromWorkStepId({ workStepId: this.recordId })
+      .then((result) => {
+        this.workOrderId = result;
+        debug(`Work Order Id: ${this.workOrderId}`);
+      })
+      .catch((error) => {
+        log(`Error getting Work Order Id: ${error}`);
+      });
   }
 
   async handleImagesSelected(event) {
@@ -182,6 +194,15 @@ export default class ImageCapture extends LightningElement {
         break;
       }
     }
+  }
+
+  navigateToWorkSteps() {
+    this[NavigationMixin.Navigate]({
+      type: "standard__webPage",
+      attributes: {
+        url: `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}/workplans`
+      }
+    });
   }
 
   handleSaveAnnotatedImage(event) {
@@ -301,7 +322,7 @@ export default class ImageCapture extends LightningElement {
 
   getFullFileName(item) {
     const ext = item.metadata.edited ? IMAGE_EXT : item.metadata.ext;
-    var fullFileName = item.editedImageInfo.fileName || item.metadata.fileName; 
+    var fullFileName = item.editedImageInfo.fileName || item.metadata.fileName;
     if (!isNullOrEmpty(ext)) {
       fullFileName += `.${ext}`;
     }

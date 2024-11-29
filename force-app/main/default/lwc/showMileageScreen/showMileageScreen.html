@@ -19,8 +19,8 @@
           ></lightning-icon>
         </span>
         <span class="button-text">
-          <span class="button-label">In Mileage Entries</span>
-          <span class="button-description">View or add in mileage records</span>
+          <span class="button-label">Start of Day Kilometers</span>
+          <span class="button-description">View or add starting mileage records</span>
         </span>
       </button>
 
@@ -32,10 +32,23 @@
           ></lightning-icon>
         </span>
         <span class="button-text">
-          <span class="button-label">Out Mileage Entries</span>
+          <span class="button-label">End of Day Kilometers</span>
           <span class="button-description"
-            >View or add out mileage records</span
+            >View or add ending mileage records</span
           >
+        </span>
+      </button>
+
+      <button onclick={handleInMileageEntries} class="action-button">
+        <span class="button-icon">
+          <lightning-icon
+            icon-name="utility:travel_and_places"
+            size="small"
+          ></lightning-icon>
+        </span>
+        <span class="button-text">
+          <span class="button-label">Own Vehicle Kilometers</span>
+          <span class="button-description">View or add own vehicle mileage records</span>
         </span>
       </button>
     </div>

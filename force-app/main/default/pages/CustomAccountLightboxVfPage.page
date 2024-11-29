@@ -1,0 +1,18 @@
+<apex:page showHeader="false" sidebar="false" standardController="ServiceAppointment">
+    <apex:includeLightning />
+    <div id="lightbox"></div> 
+    <script>
+        $Lightning.use("c:CustomAccountLightboxApp", function() {
+            $Lightning.createComponent(
+                "c:fslConsoleAccount", 
+                { 
+                    recordId: "{!serviceappointment.Id}" 
+                },
+                "lightbox",
+                function() {
+                    console.log('Lightbox component loaded successfully');
+                }
+            );
+        });
+    </script>
+</apex:page>

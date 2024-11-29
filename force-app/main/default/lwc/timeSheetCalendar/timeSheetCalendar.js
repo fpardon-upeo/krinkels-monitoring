@@ -666,10 +666,8 @@ export default class TimeSheetCalendar extends LightningElement {
 
   handleOpenSettings() {
     if (this.user.Id) {
-      console.log("edit");
       this.settingsEditModal = true;
     } else {
-      console.log("new");
       this.settingsNewModal = true;
     }
   }
@@ -730,7 +728,6 @@ export default class TimeSheetCalendar extends LightningElement {
       endDate: `${newYear}-${newMonth}-${newDay}`
     })
       .then((result) => {
-        console.log("result", result);
         this.recordId = result.timeSheet.Id;
         // Check if the TimeSheet is submitted or approved
         if (
@@ -917,8 +914,6 @@ export default class TimeSheetCalendar extends LightningElement {
       endDate: `${newYear}-${newMonth}-${newDay}`
     })
       .then((result) => {
-        console.log("result", result);
-
         this.recordId = result.timeSheet.Id;
         // Check if the TimeSheet is submitted or approved
         if (
@@ -1291,7 +1286,9 @@ export default class TimeSheetCalendar extends LightningElement {
 
           getUserSettings({ userId: this.resourceId })
             .then((result) => {
-              this.userSettings = result.userSettings;
+              if (result) {
+                this.user = result;
+              }
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -1308,7 +1305,6 @@ export default class TimeSheetCalendar extends LightningElement {
           console.error("Error:", error);
         });
     } else if (type === "edit") {
-      console.log("edit");
       updateUserSettings({
         settingsId: this.user.Id,
         startMilliseconds: this.timeStringToMilliseconds(startTime),

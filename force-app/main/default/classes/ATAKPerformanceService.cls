@@ -76,15 +76,27 @@ public with sharing class ATAKPerformanceService {
         String firstWorkOrderId = workOrderIds[0];
         String lastWorkOrderId = workOrderIds[workOrderIds.size() - 1];
 
-        String firstSubProject = [
-                SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
-                FROM WorkOrder WHERE Id = :firstWorkOrderId
-        ].Asset.ATAK_Project__r.SubProject_ATAK__c;
+        String firstSubProject;
 
-        String lastSubProject = [
-                SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
-                FROM WorkOrder WHERE Id = :lastWorkOrderId
-        ].Asset.ATAK_Project__r.SubProject_ATAK__c;
+        try {
+            firstSubProject = [
+                    SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
+                    FROM WorkOrder WHERE Id = :firstWorkOrderId
+            ].Asset.ATAK_Project__r.SubProject_ATAK__c;
+        } catch (Exception e) {
+            firstSubProject = '';
+        }
+
+        String lastSubProject;
+
+        try {
+            lastSubProject = [
+                    SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
+                    FROM WorkOrder WHERE Id = :lastWorkOrderId
+            ].Asset.ATAK_Project__r.SubProject_ATAK__c;
+        } catch (Exception e) {
+            lastSubProject = '';
+        }
 
         // Loop through the mileage entries and add them to the data list
         for(Mileage_Entry__c mileage : mileageEntries){

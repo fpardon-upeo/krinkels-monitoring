@@ -24,6 +24,10 @@
                 <behavior>Edit</behavior>
                 <field>WorkOrderId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Atak_Project__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

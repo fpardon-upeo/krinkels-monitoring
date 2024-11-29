@@ -1,0 +1,40 @@
+<template>
+    <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title">
+            <button aria-controls="account-details-section" aria-expanded="true" class="slds-button slds-section__title-action">
+                <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                </svg>
+                <span class="slds-truncate" title="Account Details">Account Details</span>
+            </button>
+        </h3>
+        <div class="slds-section__content" id="account-details-section">
+            <template if:true={hasFieldsAndAccountId}>
+                <lightning-record-view-form record-id={accountId} object-api-name="Account">
+                    <div class="slds-grid slds-wrap">
+                        <!-- Left Column -->
+                        <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                            <lightning-output-field field-name="Name"></lightning-output-field>
+                            <lightning-output-field field-name="ATAK_Project__c"></lightning-output-field>
+                            <lightning-output-field field-name="Type"></lightning-output-field>
+                            <lightning-output-field field-name="Region__c"></lightning-output-field>
+                            <lightning-output-field field-name="Client_Region__c"></lightning-output-field>
+                            <lightning-output-field field-name="Facility_Type__c"></lightning-output-field>
+                        </div>
+                        <!-- Right Column -->
+                        <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                            <lightning-output-field field-name="OwnerId"></lightning-output-field>
+                            <lightning-output-field field-name="ParentId"></lightning-output-field>
+                            <lightning-output-field field-name="Client_Code__c"></lightning-output-field>
+                            <lightning-output-field field-name="Priority__c"></lightning-output-field>
+                            <lightning-output-field field-name="ContractType__c"></lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+            </template>
+            <template if:false={accountId}>
+                <div class="slds-p-around_medium">No related Account found for this Service Appointment</div>
+            </template>
+        </div>
+    </div>
+</template>

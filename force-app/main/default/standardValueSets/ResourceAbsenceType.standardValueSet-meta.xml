@@ -6,4 +6,9 @@
         <default>true</default>
         <label>Standard</label>
     </standardValue>
+    <standardValue>
+        <fullName>Eblox</fullName>
+        <default>false</default>
+        <label>Eblox</label>
+    </standardValue>
 </StandardValueSet>

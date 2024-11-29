@@ -28,6 +28,10 @@
                 <behavior>Edit</behavior>
                 <field>External_Location__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Time_Sheet__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

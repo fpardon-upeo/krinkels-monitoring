@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>KMAD</name>
+        <label>KMAD</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMAD</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMAP</name>
+        <label>KMAP</label>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMAP</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMBD</name>
+        <label>KMBD</label>
+        <locationX>842</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMBD</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMBP</name>
+        <label>KMBP</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMBP</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>KMEV</name>
+        <label>KMEV</label>
+        <locationX>1106</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Codes_ATAK_Limbus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>KMEV</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Code</name>
+        <label>Check Code</label>
+        <locationX>710</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Driver_Start_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Starting</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Driver</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMAD</targetReference>
+            </connector>
+            <label>Driver - Start of Day</label>
+        </rules>
+        <rules>
+            <name>Driver_End_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Driver</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMBP</targetReference>
+            </connector>
+            <label>Driver - End of Day</label>
+        </rules>
+        <rules>
+            <name>Passenger_Start_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Starting</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Passenger</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMAP</targetReference>
+            </connector>
+            <label>Passenger - Start of Day</label>
+        </rules>
+        <rules>
+            <name>Passenger_End_of_Day</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Passenger</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMBD</targetReference>
+            </connector>
+            <label>Passenger - End of Day</label>
+        </rules>
+        <rules>
+            <name>Own_Vehicle</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Allowance_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Own Vehicle</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>KMEV</targetReference>
+            </connector>
+            <label>Own Vehicle</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Code_ATAK</name>
+        <label>Code ATAK</label>
+        <locationX>1172</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Needs_Update</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Codes_ATAK_Limbus__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Starting_Mileage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Ending_Mileage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Starting_Location_Type__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Ending_Location_Type__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Check_Code</targetReference>
+            </connector>
+            <label>Needs Update</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>CalculatedATAKCode</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT($Record.Allowance_Type__c) = &quot;Own Vehicle&quot;, &quot;KMEV&quot;,
+  IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+          TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+          TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;KMAD&quot;,
+    IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+            TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+            TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;KMBD&quot;,
+      IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+              TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+              TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;KMAD&quot;,
+        IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;KMBD&quot;,
+          IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+                  TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+                  TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;KMAP&quot;,
+            IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                    TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                    TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;KMBP&quot;,
+              &quot;&quot;
+            )
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CalculatedSoccode</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT($Record.Allowance_Type__c) = &quot;Own Vehicle&quot;, &quot;3301&quot;,
+  IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+          TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+          TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;3210&quot;,
+    IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+            TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+            TEXT($Record.Allowance_Type__c) = &quot;Driver (with passenger)&quot;), &quot;3210&quot;,
+      IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+              TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+              TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;3210&quot;,
+        IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                TEXT($Record.Allowance_Type__c) = &quot;Driver (no passenger)&quot;), &quot;3210&quot;,
+          IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Home&quot;, 
+                  TEXT($Record.Ending_Location_Type__c) = &quot;Customer&quot;, 
+                  TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;3210&quot;,
+            IF(AND(TEXT($Record.Starting_Location_Type__c) = &quot;Customer&quot;, 
+                    TEXT($Record.Ending_Location_Type__c) = &quot;Home&quot;, 
+                    TEXT($Record.Allowance_Type__c) = &quot;Passenger&quot;), &quot;3210&quot;,
+              &quot;&quot;
+            )
+          )
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <interviewLabel>[Mileage Entry] - [After-Save] - [Record-Triggered] {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[Mileage Entry] - [After-Save] - [Record-Triggered]</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>1046</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Code_ATAK</targetReference>
+        </connector>
+        <object>Mileage_Entry__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

@@ -52,7 +52,11 @@ public with sharing class AccountDetailsController {
   }
 
   @AuraEnabled
-  public static void createFeedbackPost(Id accountId, String feedbackText) {
+  public static void createFeedbackPost(
+    Id workOrderId,
+    Id accountId,
+    String feedbackText
+  ) {
     // //First get the current User Manager Id so we can @mention them in the post
     // User currentUser = [
     //   SELECT Id, ManagerId
@@ -61,23 +65,43 @@ public with sharing class AccountDetailsController {
     //   LIMIT 1
     // ];
 
-    //Get the Atak Project field of the Account t
-    Account acc = [
-      SELECT Id, ATAK_Project__c
-      FROM Account
-      WHERE Id = :accountId
+    // //Get the Atak Project field of the Account t
+    // Account acc = [
+    //   SELECT Id, ATAK_Project__c
+    //   FROM Account
+    //   WHERE Id = :accountId
+    //   LIMIT 1
+    // ];
+
+    // //Get the ATAK Project record based on the lookup field
+    // ATAK_Project__c atakProject = [
+    //   SELECT Id, Name, OwnerId
+    //   FROM ATAK_Project__c
+    //   WHERE Id = :acc.ATAK_Project__c
+    //   LIMIT 1
+    // ];
+
+    //Get the Service Territory lookup field of the Work Order
+    WorkOrder wo = [
+      SELECT Id, ServiceTerritoryId
+      FROM WorkOrder
+      WHERE Id = :workOrderId
       LIMIT 1
     ];
 
-    //Get the ATAK Project record based on the lookup field
-    ATAK_Project__c atakProject = [
-      SELECT Id, Name, OwnerId
-      FROM ATAK_Project__c
-      WHERE Id = :acc.ATAK_Project__c
+    //Get Main Responsible of the Service Territory
+    ServiceTerritory st = [
+      SELECT Id, Main_Responsible__c
+      FROM ServiceTerritory
+      WHERE Id = :wo.ServiceTerritoryId
       LIMIT 1
     ];
 
-    String newFeedbackText = '@[' + atakProject.OwnerId + '] - ' + feedbackText;
+    String newFeedbackText =
+      '@[' +
+      st.Main_Responsible__c +
+      '] - ' +
+      feedbackText;
 
     // Create a FeedItem (Chatter Post)
     FeedItem post = new FeedItem();

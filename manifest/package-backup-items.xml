@@ -17,6 +17,8 @@
         <members>ATAKVehicleService</members>
         <members>ATAKVehicleWrapper</members>
         <members>ATAKVehicleWrapperTest</members>
+        <members>ATAKWorkLogService</members>
+        <members>ATAKWorkLogServiceTest</members>
         <members>AccountDetailsController</members>
         <members>AddressSearchService</members>
         <members>CallOut</members>
@@ -29,6 +31,7 @@
         <members>FileUploadImprovedHelper</members>
         <members>FileUploadImproved_Test</members>
         <members>GanttRoundPinAction</members>
+        <members>ImageCaptureService</members>
         <members>InboundLoggerService</members>
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
@@ -37,6 +40,8 @@
         <members>MapsGeoCodeService</members>
         <members>MapsGeoCodeWrapper</members>
         <members>MapsGeoCodeWrapperTest</members>
+        <members>MileageEntryProjectLinkService</members>
+        <members>MileageEntryProjectLinkServiceTest</members>
         <members>OutboundLoggerService</members>
         <members>PersonnelRestResource</members>
         <members>PersonnelRestResourceTest</members>
@@ -71,13 +76,19 @@
         <members>TimeSheetCalculationServiceTest</members>
         <members>TimeSheetController</members>
         <members>TimeSheetControllerTest</members>
+        <members>TimeSheetProjectLinkService</members>
+        <members>TimeSheetProjectLinkServiceTest</members>
         <members>WeatherService</members>
         <members>WorkOrderLocationBatch</members>
         <members>WorkOrderLocationQueueable</members>
         <members>WorkOrderScheduler</members>
         <members>WorkOrderSchedulerBatch</members>
         <members>WorkOrderSchedulerController</members>
+        <members>WorkOrderSequence</members>
         <members>WorkOrderTriggerHandler</members>
+        <members>WorkStepSignatureController</members>
+        <members>WorkStepSignatureControllerTest</members>
+        <members>fsl_Console_AccountController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -85,8 +96,10 @@
         <name>ApexEmailNotifications</name>
     </types>
     <types>
+        <members>CustomAccountLightboxVfPage</members>
         <members>NonEssentialsMobileLanding</members>
         <members>fsc_screenFlow</members>
+        <members>test</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -94,6 +107,7 @@
         <members>AppointmentStatusTrigger</members>
         <members>ContentDocumentTrigger</members>
         <members>ContractLineItemTrigger</members>
+        <members>MileageEntryTrigger</members>
         <members>ResourceAbsenceTrigger</members>
         <members>ServiceAppointmentTrigger</members>
         <members>ServiceContractMaintenancePlan</members>
@@ -118,6 +132,7 @@
         <name>AssignmentRules</name>
     </types>
     <types>
+        <members>CustomAccountLightboxApp</members>
         <members>fsc_openUrl</members>
         <members>fsc_screenFlowApp</members>
         <name>AuraDefinitionBundle</name>
@@ -185,6 +200,10 @@
         <name>ContentAsset</name>
     </types>
     <types>
+        <members>https_krinkelsgreencare_upeodev_sandbox_lightning_force_com</members>
+        <name>CorsWhitelistOrigin</name>
+    </types>
+    <types>
         <members>bpost</members>
         <members>weatherAPI</members>
         <name>CspTrustedSite</name>
@@ -241,6 +260,22 @@
         <members>ATAK_Settings__c.Token__c</members>
         <members>ATAK_Settings__c.Validity_End__c</members>
         <members>ATAK_Settings__c.Validity_Start__c</members>
+        <members>ATAK_Work_Log__c.Comments__c</members>
+        <members>ATAK_Work_Log__c.Dossier__c</members>
+        <members>ATAK_Work_Log__c.End_Timestamp__c</members>
+        <members>ATAK_Work_Log__c.External_Id__c</members>
+        <members>ATAK_Work_Log__c.Performance_Date__c</members>
+        <members>ATAK_Work_Log__c.Performance_Resource_Code__c</members>
+        <members>ATAK_Work_Log__c.Performance_Resource_Type__c</members>
+        <members>ATAK_Work_Log__c.Project_Code__c</members>
+        <members>ATAK_Work_Log__c.Quantity_Registration_Unit__c</members>
+        <members>ATAK_Work_Log__c.Quantity__c</members>
+        <members>ATAK_Work_Log__c.Registration_Timestamp__c</members>
+        <members>ATAK_Work_Log__c.Source_Record_Id__c</members>
+        <members>ATAK_Work_Log__c.Source_Type__c</members>
+        <members>ATAK_Work_Log__c.Start_Timestamp__c</members>
+        <members>ATAK_Work_Log__c.Status__c</members>
+        <members>ATAK_Work_Log__c.Time_Sheet__c</members>
         <members>Account.ATAK_Project__c</members>
         <members>Account.Access_Information__c</members>
         <members>Account.Address_Identifier__c</members>
@@ -531,6 +566,7 @@
         <members>ResourceAbsence.Remarks__c</members>
         <members>ResourceAbsence.Soccode__c</members>
         <members>ResourceAbsence.Status__c</members>
+        <members>ResourceAbsence.Time_Sheet__c</members>
         <members>ResourceAbsence.Training_Type__c</members>
         <members>ResourceAbsence.Unique_Key__c</members>
         <members>SD_Import__c.AfdelingLabel__c</members>
@@ -665,6 +701,7 @@
         <members>TimeSheet.Total_KM__c</members>
         <members>TimeSheet.Total_Normal_Hours__c</members>
         <members>TimeSheet.Total_Travel_Time__c</members>
+        <members>TimeSheetEntry.Atak_Project__c</members>
         <members>TimeSheetEntry.Break_Duration__c</members>
         <members>TimeSheetEntry.Break_Duration_in_Minutes__c</members>
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
@@ -717,6 +754,7 @@
         <members>WorkOrder.Shop_Visit_End_Time__c</members>
         <members>WorkOrder.Shop_Visit_Reviewed_Approved__c</members>
         <members>WorkOrder.Shop_Visit_Start_Time__c</members>
+        <members>WorkOrder.Signature_Required__c</members>
         <members>WorkOrder.Special_Equipment__c</members>
         <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
         <members>WorkOrder.Work_Order_Type__c</members>
@@ -771,6 +809,10 @@
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
+        <members>StartDay_End_Button_Sub_Text</members>
+        <members>StartDay_End_Button_Sub_Text</members>
+        <members>StartDay_End_Button_Text</members>
+        <members>StartDay_End_Button_Text</members>
         <members>StartDay_End_Day_Button_Sub_Text</members>
         <members>StartDay_End_Day_Button_Sub_Text</members>
         <members>StartDay_End_Day_Button_Text</members>
@@ -896,6 +938,7 @@
         <members>ATAK_Personnel__c</members>
         <members>ATAK_Project__c</members>
         <members>ATAK_Settings__c</members>
+        <members>ATAK_Work_Log__c</members>
         <members>Asset_Financial_Account__c</members>
         <members>Contract_Line_Financial_Account__c</members>
         <members>Error_Log__c</members>
@@ -1127,11 +1170,13 @@
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Mileage_Entry_After_Save_Record_Triggered</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
+        <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
@@ -1158,6 +1203,7 @@
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
@@ -1177,11 +1223,13 @@
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
+        <members>Mileage_Entry_After_Save_Record_Triggered</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
+        <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
@@ -1208,6 +1256,7 @@
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
@@ -1276,6 +1325,7 @@
     <types>
         <members>ATAK_Personnel__c-ATAK Personnel Layout</members>
         <members>ATAK_Project__c-ATAK Project Layout</members>
+        <members>ATAK_Work_Log__c-ATAK Work Log Layout</members>
         <members>Account-Commercial Account Layout</members>
         <members>Account-FSL Commercial Account Layout</members>
         <members>Account-FSL Financial Account Layout</members>
@@ -1349,6 +1399,7 @@
         <members>Global-FSL Global Actions</members>
         <members>Global-Global Layout</members>
         <members>Idea-Idea Layout</members>
+        <members>IframeWhiteListUrl-Trusted Domain for Inline Frames Layout</members>
         <members>Inbound_Log__c-Inbound Log Layout</members>
         <members>Individual-Individual Layout</members>
         <members>JobProfile-Job Profile Layout</members>
@@ -1546,6 +1597,7 @@
         <members>fsc_sortingConfigurationLine</members>
         <members>fsc_toastMessage</members>
         <members>fsc_transferMetadata3</members>
+        <members>fslConsoleAccount</members>
         <members>generateMaintenancePlan</members>
         <members>imageAnnotate</members>
         <members>imageCapture</members>
@@ -1581,6 +1633,7 @@
         <members>timesheetEntryForm</members>
         <members>toastMessage</members>
         <members>utilsImageCapture</members>
+        <members>workStepSignature</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -1636,6 +1689,7 @@
         <members>ATAK_Permissions</members>
         <members>Field_Service_Mobile_Custom_Permission_Set</members>
         <members>Lightning_Email_Template_Builder</members>
+        <members>Query_All_Files</members>
         <members>USF_Flow_Screen_Component_Custom_Objects</members>
         <members>cases_Permisssion_Set</members>
         <members>fileUploadImproved</members>
@@ -1867,7 +1921,7 @@
         <members>TimeSheet.test_mileage</members>
         <members>Timesheet</members>
         <members>WorkOrder.Location_Passport</members>
-        <members>WorkOrder.Log_Goodwill_Tasks</members>
+        <members>WorkOrder.Log_Edit_Goodwill_Tasks</members>
         <members>WorkOrder.SendEmail</members>
         <members>WorkOrder.Start_Stop</members>
         <members>WorkOrderLineItem.Complete_Service</members>
@@ -1876,6 +1930,7 @@
         <members>WorkStep.Set_Service_Status</members>
         <members>WorkStep.Take_After_Work_Photos</members>
         <members>WorkStep.Take_Before_Work_Photos</members>
+        <members>WorkStep.Work_Step_Signature</members>
         <name>QuickAction</name>
     </types>
     <types>
@@ -2002,6 +2057,7 @@
         <members>Service_Dashboards_Reports/Trend_of_Cases_Created</members>
         <members>unfiled$public/</members>
         <members>unfiled$public/Crew_Members_Planning_oXN</members>
+        <members>unfiled$public/Goodwill_Tasks_Report_S7D</members>
         <members>unfiled$public/Opportunity_Amount_by_Stage_Sample</members>
         <members>unfiled$public/SampleReportActiveUsers</members>
         <members>unfiled$public/SampleReportCasesStatusbyRep</members>
@@ -2050,6 +2106,7 @@
         <members>Service_Appointments</members>
         <members>Service_Appointments_with_Service_Resources</members>
         <members>Vans_with_Material_Items</members>
+        <members>Work_Orders</members>
         <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_run_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_stage_run_ootb_crt_two_four_eight</members>
@@ -2204,6 +2261,7 @@
     <types>
         <members>ATAK_Personnel__c</members>
         <members>ATAK_Project__c</members>
+        <members>ATAK_Work_Log__c</members>
         <members>Account</members>
         <members>ActivityRecurrence2</members>
         <members>ActivityRecurrence2Exception</members>
@@ -2467,6 +2525,7 @@
         <members>FullCalendar</members>
         <members>FullCalendarV5</members>
         <members>fsc_Quickchoice_Images</members>
+        <members>signature_pad</members>
         <name>StaticResource</name>
     </types>
     <types>
@@ -2476,6 +2535,7 @@
     <types>
         <members>ATAK_Personnel__c</members>
         <members>ATAK_Project__c</members>
+        <members>ATAK_Work_Log__c</members>
         <members>Account</members>
         <members>ApptBundleAggrDurDnscale</members>
         <members>ApptBundleAggrPolicy</members>

@@ -184,6 +184,14 @@ export default class StartStopTimer extends LightningElement{
       variant: variant
     });
     this.dispatchEvent(event);
+    //Wait 1 second before closing the toast
+    setTimeout(() => {
+      this.closeActionScreen();
+    }, 1000);
+  }
+
+  closeActionScreen() {
+    this.dispatchEvent(new CloseActionScreenEvent());
   }
 
 }

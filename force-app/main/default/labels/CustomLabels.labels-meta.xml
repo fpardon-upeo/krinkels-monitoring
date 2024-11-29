@@ -574,4 +574,20 @@
         <shortDescription>AppointmentPicker_Save_Button</shortDescription>
         <value>Save</value>
     </labels>
+    <labels>
+        <fullName>StartDay_End_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_End_Button_Sub_Text</shortDescription>
+        <value>Submit final kilometers and review timesheet</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_End_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_End_Button_Text</shortDescription>
+        <value>End Your Day</value>
+    </labels>
 </CustomLabels>

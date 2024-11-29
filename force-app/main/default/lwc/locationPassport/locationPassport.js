@@ -153,7 +153,8 @@ export default class LocationPassport extends NavigationMixin(
     try {
       await createFeedbackPost({
         //For accountId use the recordId of the record being open
-        accountId: this.recordId,
+        workOrderId: this.recordId,
+        accountId: this.accountId,
         feedbackText: this.feedbackText
       }).then((result) => {
         console.log("result", result);

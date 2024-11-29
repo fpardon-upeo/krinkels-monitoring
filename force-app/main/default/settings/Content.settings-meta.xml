@@ -12,7 +12,7 @@
     <enableContentWorkspaceAccess>true</enableContentWorkspaceAccess>
     <enableDeleteFileInContentPacks>false</enableDeleteFileInContentPacks>
     <enableFileIngestToDataCloud>true</enableFileIngestToDataCloud>
-    <enableFileShareSetByRecord>false</enableFileShareSetByRecord>
+    <enableFileShareSetByRecord>true</enableFileShareSetByRecord>
     <enableFilesUsrShareNetRestricted>false</enableFilesUsrShareNetRestricted>
     <enableJPGPreviews>false</enableJPGPreviews>
     <enableLWCFileUpload>false</enableLWCFileUpload>

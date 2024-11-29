@@ -27,6 +27,9 @@ import StartDay_Next_Appointment_Button_Sub_Text from "@salesforce/label/c.Start
 import StartDay_Open_Next_Appointment_Button_Text from "@salesforce/label/c.StartDay_Open_Next_Appointment_Button_Text";
 import StartDay_End_Day_Button_Text from "@salesforce/label/c.StartDay_End_Day_Button_Text";
 import StartDay_End_Day_Button_Sub_Text from "@salesforce/label/c.StartDay_End_Day_Button_Sub_Text";
+import StartDay_End_Button_Text from "@salesforce/label/c.StartDay_End_Button_Text";
+import StartDay_End_Button_Sub_Text from "@salesforce/label/c.StartDay_End_Button_Sub_Text";
+
 import { NavigationMixin } from "lightning/navigation";
 import { ToastTypes } from "c/utilsImageCapture";
 
@@ -64,6 +67,7 @@ export default class StartOperatorDay extends NavigationMixin(
   showTimesheetScreen = false;
   showStartDayButton = true;
   showMilageEntryScreenSimple = false;
+  showEndDayScreen = false;
   selectedRows = [];
   labels = {
     StartDay_Start_Button_Text,
@@ -85,7 +89,9 @@ export default class StartOperatorDay extends NavigationMixin(
     StartDay_Next_Appointment_Button_Sub_Text,
     StartDay_Open_Next_Appointment_Button_Text,
     StartDay_End_Day_Button_Text,
-    StartDay_End_Day_Button_Sub_Text
+    StartDay_End_Day_Button_Sub_Text,
+    StartDay_End_Button_Text,
+    StartDay_End_Button_Sub_Text
   };
 
   milesEntryFields = [
@@ -100,9 +106,13 @@ export default class StartOperatorDay extends NavigationMixin(
   columns = [
     {
       label: this.labels.AppointmentPicker_Appointments_Header,
-      fieldName: "Appointment",
-      type: "text",
-      wrapText: true
+      fieldName: 'Appointment',
+      type: 'text',
+      wrapText: true,
+      cellAttributes: {
+        class: 'slds-text-color-default',
+        style: 'cursor: pointer;'
+      }
     }
   ];
 
@@ -242,6 +252,7 @@ export default class StartOperatorDay extends NavigationMixin(
                   { ServiceAppointment: { Status: { ne: "Unscheduled" } } }
                   { ServiceAppointment: { Status: { ne: "Cannot Complete" } } }
                   { ServiceAppointment: { Status: { ne: "Cancelled" } } }
+                  { ServiceAppointment: { Status: { ne: "In Progress" } } }
                   {
                     ServiceAppointment: {
                       SchedStartTime: { gte: $startDate, lte: $endDate }
@@ -329,10 +340,71 @@ export default class StartOperatorDay extends NavigationMixin(
 
   handleRowSelection(event) {
     const selectedRows = event.detail.selectedRows;
-    console.log("selectedRows", JSON.stringify(selectedRows));
-    this.selectedRows = selectedRows;
-    this.nextWorkOrderId = selectedRows[0].ParentRecordId;
-    this.disableNextButton = selectedRows.length === 0;
+    console.log('Selected rows:', selectedRows);
+
+    if (selectedRows && selectedRows.length > 0) {
+      const selectedRow = selectedRows[0];
+      this.selectedRows = [selectedRow];
+      this.nextWorkOrderId = selectedRow.ParentRecordId;
+      this.disableNextButton = false;
+    } else {
+      this.selectedRows = [];
+      this.nextWorkOrderId = null;
+      this.disableNextButton = true;
+    }
+  }
+
+  handleRowClick(event) {
+
+    console.log("event.currentTarget", event.currentTarget);
+    const clickedRow = event.currentTarget;
+    const rowId = clickedRow.getAttribute('data-row-id');
+    console.log('row id: ', rowId);
+
+    // Find the row data
+    const row = this.serviceAppointments.find(row => row.Id === rowId);
+
+    console.log('row: ', row )
+
+    if (row) {
+      this.selectedRows = [row];
+      this.nextWorkOrderId = row.ParentRecordId;
+      this.disableNextButton = false;
+
+      console.log('selectedRows: ', this.selectedRows);
+      console.log('nextWorkOrderId: ', this.nextWorkOrderId);
+
+      // Force refresh of the data to update styling
+      this.data = [...this.data];
+    }
+  }
+
+  handleCellClick(event) {
+    const row = event.detail.row;
+
+    // Get the current selection state
+    const isSelected = this.selectedRows.some(selected => selected.Id === row.Id);
+
+    // Toggle selection
+    if (isSelected) {
+      this.selectedRows = [];
+    } else {
+      this.selectedRows = [row];
+    }
+
+    // Update the datatable selection
+    const datatable = this.template.querySelector('lightning-datatable');
+    if (datatable) {
+      datatable.selectedRows = this.selectedRows.map(row => row.Id);
+    }
+
+    // Update the next button state
+    this.disableNextButton = this.selectedRows.length === 0;
+
+    // If a row was selected, also update the work order ID
+    if (this.selectedRows.length > 0) {
+      this.nextWorkOrderId = this.selectedRows[0].ParentRecordId;
+    }
   }
 
   handleShowStartOrNot(event) {
@@ -430,17 +502,34 @@ export default class StartOperatorDay extends NavigationMixin(
     }, 150); // 150ms delay
   }
 
-  handleBack() {
-    this.nextWorkOrderId = null;
-    this.selectedRows = [];
-    this.showAppointmentScreen = false;
-    this.showMilageEntryScreen = false;
-    this.showTimesheetScreen = false;
-    this.travelTimeOnly = false;
-    this.showNavigationScreen = false;
-    this.showInitialScreen = true;
-    this.showMilageEntryScreenSimple = false;
+  handleOpenEndDay() {
+    this.showInitialScreen = false;
+    this.showEndDayScreen = true;
   }
+
+  handleBack() {
+    // Update existing handleBack to include new screen
+
+    if(this.showMilageEntryScreen === true && this.showEndDayScreen === true){
+      //In this case, we are coming from the mileage entry screen via the end day screen
+      //We need to hide the mileage entry screen and show the end day screen
+      this.showMilageEntryScreen = false;
+      this.showEndDayScreen = true;
+    } else {
+      this.nextWorkOrderId = null;
+      this.selectedRows = [];
+      this.disableNextButton = true;
+      this.showAppointmentScreen = false;
+      this.showMilageEntryScreen = false;
+      this.showTimesheetScreen = false;
+      this.travelTimeOnly = false;
+      this.showNavigationScreen = false;
+      this.showEndDayScreen = false;
+      this.showInitialScreen = true;
+      this.showMilageEntryScreenSimple = false;
+    }
+  }
+
 
   //TESTING
   handleRefreshAll() {
@@ -535,4 +624,31 @@ export default class StartOperatorDay extends NavigationMixin(
     //Return true if showInitialScreen and showTimesheetScreen are false
     return !this.showInitialScreen && !this.showTimesheetScreen;
   }
+
+  get serviceAppointments() {
+    return this.data.map((appointment) => {
+      let date = new Date(appointment.SchedStartTime.value);
+      let dateFormatted = date.getDate() +
+        "/" +
+        (date.getMonth() + 1) +
+        " " +
+        date.getHours() +
+        ":" +
+        date.getMinutes();
+      dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
+
+      const isSelected = this.selectedRows.some(row => row.Id === appointment.Id);
+
+      return {
+        Appointment: appointment.Account.Name.value + " - " + dateFormatted,
+        AppointmentNumber: appointment.AppointmentNumber.value,
+        Subject: appointment.Subject.value,
+        Id: appointment.Id,
+        SchedStartTime: appointment.SchedStartTime.value,
+        ParentRecordId: appointment.ParentRecordId.value,
+        cellStyle: isSelected ? 'background-color: #ebf5e7; font-weight: bold;' : ''
+      };
+    });
+  }
+
 }

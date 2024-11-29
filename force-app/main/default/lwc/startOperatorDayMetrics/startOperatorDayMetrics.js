@@ -8,8 +8,9 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getNextHourForecast from "@salesforce/apex/WeatherService.getNextHourForecast";
 import { gql, graphql, refreshGraphQL } from "lightning/uiGraphQLApi";
 import ID from "@salesforce/user/Id";
+import {NavigationMixin} from "lightning/navigation";
 
-export default class StartOperatorDayMetrics extends LightningElement {
+export default class StartOperatorDayMetrics extends NavigationMixin(LightningElement) {
   //--------------------------------------API------------------------------------------//
 
   @api serviceResourceId;
@@ -24,17 +25,8 @@ export default class StartOperatorDayMetrics extends LightningElement {
   data;
   serviceAppointments;
 
-  @track currentAppointment = {
-    customerName: "Aldi",
-    serviceType: "Greencare",
-    status: "Ongoing"
-  };
 
-  @track nextAppointment = {
-    address: "LIDL",
-    estimatedArrival: "Grass Maintenance",
-    scheduledTime: "09:00"
-  };
+  @track nextAppointment = {};
 
   @track completedAppointments = 5;
   @track totalAppointments = 9;
@@ -197,6 +189,17 @@ export default class StartOperatorDayMetrics extends LightningElement {
     }
   }
 
+  handleOpenWorkOrder() {
+    setTimeout(() => {
+      this[NavigationMixin.Navigate]({
+        "type": "standard__webPage",
+        "attributes": {
+          "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
+        }
+      });
+    }, 500);
+  }
+
   get variables() {
     return {
       userId: ID
@@ -290,5 +293,9 @@ export default class StartOperatorDayMetrics extends LightningElement {
     const percentage =
       (this.completedAppointments / this.totalAppointments) * 100;
     return `width: ${percentage}%`;
+  }
+
+  get nextWorkOrderURL() {
+    return `/com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`;
   }
 }

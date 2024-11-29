@@ -122,11 +122,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>ResourceId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>FSL__Scheduling_Policy_Used__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -141,12 +136,17 @@
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
-    <availableFields>
+    <description>Used in the Service Resource calendar VF page</description>
+    <displayedFields>
+        <field>ResourceId</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
         <field>Type</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
-    </availableFields>
-    <description>Used in the Service Resource calendar VF page</description>
+    </displayedFields>
     <displayedFields>
         <field>Start</field>
         <isFieldManaged>false</isFieldManaged>

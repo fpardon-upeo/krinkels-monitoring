@@ -11,14 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Driver (with passenger)</fullName>
+                <fullName>Driver</fullName>
                 <default>false</default>
-                <label>Driver (with passenger)</label>
-            </value>
-            <value>
-                <fullName>Driver (no passenger)</fullName>
-                <default>false</default>
-                <label>Driver (no passenger)</label>
+                <label>Driver</label>
             </value>
             <value>
                 <fullName>Passenger</fullName>
@@ -29,6 +24,12 @@
                 <fullName>Own Vehicle</fullName>
                 <default>false</default>
                 <label>Own Vehicle</label>
+            </value>
+            <value>
+                <fullName>Driver (no passenger)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Driver (no passenger)</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -20,8 +20,8 @@ public with sharing class ATAKPerformanceServiceInvocable {
         for(RequestWrapper request : requests) {
             ResponseWrapper resp = new ResponseWrapper();
             String timesheetId = request.timesheetId;
-            Integer statusCode = ATAKPerformanceService.syncATAKPerformanceData(timesheetId);
-            resp.statusCode = statusCode;
+            ATAKWorkLogService.createWorkLogsForTimeSheet(timesheetId);
+            resp.statusCode = 200;
             response.add(resp);
         }
     }

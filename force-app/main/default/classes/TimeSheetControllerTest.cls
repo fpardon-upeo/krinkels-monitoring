@@ -90,7 +90,7 @@ private class TimeSheetControllerTest {
       Ending_Mileage__c = 150,
       Starting_Location_Type__c = 'Home',
       Ending_Location_Type__c = 'Customer',
-      Allowance_Type__c = 'Driver (no passenger)'
+      Allowance_Type__c = 'Driver'
     );
     insert mileageEntry;
 
@@ -139,31 +139,44 @@ private class TimeSheetControllerTest {
   @isTest
   static void testUpdateTimeSheetEntry() {
     TimeSheetEntry entry = [SELECT Id, TimeSheetId FROM TimeSheetEntry LIMIT 1];
+
+    // Create input times
     DateTime newStartTime = DateTime.now().addHours(-3);
     DateTime newEndTime = DateTime.now().addHours(-1);
 
+    System.debug('Original input start time: ' + newStartTime.format('yyyy-MM-dd HH:mm:ss'));
+
+    // Round input times to match the expected behavior
+    DateTime expectedStartTime = DateTimeRounder.roundSingle(newStartTime, 5); // Changed to 20 minutes
+    DateTime expectedEndTime = DateTimeRounder.roundSingle(newEndTime, 5);
+
+    System.debug('Expected rounded start time: ' + expectedStartTime.format('yyyy-MM-dd HH:mm:ss'));
+
     Test.startTest();
     TimeSheetController.TimeSheetWrapper result = TimeSheetController.updateTimeSheetEntry(
-      entry.Id,
-      newStartTime,
-      newEndTime
+            entry.Id,
+            newStartTime,
+            newEndTime
     );
     Test.stopTest();
 
     TimeSheetEntry updatedEntry = [
-      SELECT StartTime, EndTime
-      FROM TimeSheetEntry
-      WHERE Id = :entry.Id
+            SELECT StartTime, EndTime
+            FROM TimeSheetEntry
+            WHERE Id = :entry.Id
     ];
+
+    System.debug('Actual stored start time: ' + updatedEntry.StartTime.format('yyyy-MM-dd HH:mm:ss'));
+
     Assert.areEqual(
-      newStartTime.format('yyyy-MM-dd HH:mm'),
-      updatedEntry.StartTime.format('yyyy-MM-dd HH:mm'),
-      'Start time should be updated'
+            expectedStartTime.format('yyyy-MM-dd HH:mm'),
+            updatedEntry.StartTime.format('yyyy-MM-dd HH:mm'),
+            'Start time should be rounded to nearest 5-minute interval'
     );
     Assert.areEqual(
-      newEndTime.format('yyyy-MM-dd HH:mm'),
-      updatedEntry.EndTime.format('yyyy-MM-dd HH:mm'),
-      'End time should be updated'
+            expectedEndTime.format('yyyy-MM-dd HH:mm'),
+            updatedEntry.EndTime.format('yyyy-MM-dd HH:mm'),
+            'End time should be rounded to nearest 5-minute interval'
     );
   }
 
@@ -172,33 +185,43 @@ private class TimeSheetControllerTest {
     TimeSheet ts = [SELECT Id FROM TimeSheet LIMIT 1];
     ResourceAbsence absence = [SELECT Id FROM ResourceAbsence LIMIT 1];
 
+    // Create input times
     DateTime newStart = DateTime.now().addHours(-2);
     DateTime newEnd = DateTime.now().addHours(-1);
 
+    // Calculate expected rounded times
+    DateTime expectedStart = DateTimeRounder.roundSingle(newStart, 5); // Using 20-minute intervals
+    DateTime expectedEnd = DateTimeRounder.roundSingle(newEnd, 5);
+
+    System.debug('Original start time: ' + newStart.format('yyyy-MM-dd HH:mm:ss'));
+    System.debug('Expected rounded start: ' + expectedStart.format('yyyy-MM-dd HH:mm:ss'));
+
     Test.startTest();
     TimeSheetController.TimeSheetWrapper result = TimeSheetController.updateAbsence(
-      absence.Id,
-      newStart,
-      newEnd,
-      ts.Id
+            absence.Id,
+            newStart,
+            newEnd,
+            ts.Id
     );
     Test.stopTest();
 
     ResourceAbsence updatedAbsence = [
-      SELECT Start, End
-      FROM ResourceAbsence
-      WHERE Id = :absence.Id
+            SELECT Start, End
+            FROM ResourceAbsence
+            WHERE Id = :absence.Id
     ];
 
+    System.debug('Actual stored start: ' + updatedAbsence.Start.format('yyyy-MM-dd HH:mm:ss'));
+
     Assert.areEqual(
-      newStart.format('yyyy-MM-dd HH:mm'),
-      updatedAbsence.Start.format('yyyy-MM-dd HH:mm'),
-      'Start time should be updated'
+            expectedStart.format('yyyy-MM-dd HH:mm'),
+            updatedAbsence.Start.format('yyyy-MM-dd HH:mm'),
+            'Start time should be rounded to nearest 5-minute interval'
     );
     Assert.areEqual(
-      newEnd.format('yyyy-MM-dd HH:mm'),
-      updatedAbsence.End.format('yyyy-MM-dd HH:mm'),
-      'End time should be updated'
+            expectedEnd.format('yyyy-MM-dd HH:mm'),
+            updatedAbsence.End.format('yyyy-MM-dd HH:mm'),
+            'End time should be rounded to nearest 5-minute interval'
     );
   }
 

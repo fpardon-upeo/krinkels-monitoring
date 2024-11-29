@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Sheet__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Time Sheet</label>
+    <referenceTo>TimeSheet</referenceTo>
+    <relationshipLabel>Resource Absences</relationshipLabel>
+    <relationshipName>Resource_Absences</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -8,6 +8,7 @@ import { getRecord, updateRecord, createRecord}  from "lightning/uiRecordApi";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
 import ID from '@salesforce/user/Id';
+import getBreakRecordTypeId from "@salesforce/apex/TimeSheetController.getBreakRecordTypeId";
 //LABELS
 import AppointmentPicker_Next_Button from '@salesforce/label/c.AppointmentPicker_Next_Button';
 import AppointmentPicker_No_Results from '@salesforce/label/c.AppointmentPicker_No_Results';
@@ -56,6 +57,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     toastType = null;
     toastMessage = '';
     breakDuration = 15;
+    breakRecordTypeId;
 
     breakDurationOptions = [
         { label: '15', value: 15 },
@@ -106,6 +108,12 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     connectedCallback() {
         console.log('connectedCallback');
         console.log(this.recordId);
+        getBreakRecordTypeId().then(
+          result => {
+              this.breakRecordTypeId = result;
+              console.log('Break Record Type Id: ', this.recordTypeId);
+          }
+        )
     }
 
 //--------------------------------------WIRE-----------------------------------------//
@@ -243,13 +251,14 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
 
     @wire(graphql, {
         query: gql`
-        query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput) {
+        query ServiceAppointments($serviceResourceId: ID, $startDate: DateTimeInput, $endDate: DateTimeInput, $saId: ID) {
           uiapi {
             query {
               AssignedResource(
                 where: { 
                   and: [
                     { ServiceResourceId: { eq: $serviceResourceId } },
+                    { Id : { ne: $saId } },
                     { ServiceAppointment: { Status: { ne: "Completed" } } },
                     { ServiceAppointment: { Status: { ne: "Unscheduled" } } },
                     { ServiceAppointment: { Status: { ne: "Cannot Complete" } } },
@@ -431,8 +440,12 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     }
 
     handleSaveBreak() {
-        //Create a new ResourceAbsence record
 
+        this.setWorkStepStatus();
+        this.setCurrentServiceAppointStatus();
+        this.setParentWorkOrderStatus();
+
+        //Create a new ResourceAbsence record
         //First set the current date time
         let startDate = new Date().toISOString();
 
@@ -443,6 +456,8 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         fields['ResourceId'] = this.serviceResourceId;
         fields['Start'] = startDate;
         fields['End'] = endDate;
+        fields['Type'] = 'Standard';
+        fields['RecordTypeId'] = this.breakRecordTypeId;
 
         const recordInput = { apiName: 'ResourceAbsence', fields };
         createRecord(recordInput)
@@ -458,7 +473,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
                     this[NavigationMixin.Navigate]({
                         "type": "standard__webPage",
                         "attributes": {
-                            "url": `com.salesforce.fieldservice://v1`
+                            "url": `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
                         }
                     });
                 }, 500);

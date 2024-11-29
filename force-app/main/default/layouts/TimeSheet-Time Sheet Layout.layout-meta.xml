@@ -188,6 +188,17 @@
         <fields>Calculated_Mileage__c</fields>
         <relatedList>Mileage_Entry__c.Time_Sheet__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>Resource</fields>
+        <fields>Type</fields>
+        <fields>Start</fields>
+        <fields>End</fields>
+        <relatedList>ResourceAbsence.Time_Sheet__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>ATAK_Work_Log__c.Time_Sheet__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
