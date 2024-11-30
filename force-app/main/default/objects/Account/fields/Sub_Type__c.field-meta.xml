@@ -15,9 +15,9 @@
                 <label>Depot KGC</label>
             </value>
             <value>
-                <fullName>Wate Depot</fullName>
+                <fullName>Waste Depot</fullName>
                 <default>false</default>
-                <label>Wate Depot</label>
+                <label>Waste Depot</label>
             </value>
             <value>
                 <fullName>Other</fullName>

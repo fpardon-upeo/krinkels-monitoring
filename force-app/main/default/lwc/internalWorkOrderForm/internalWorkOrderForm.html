@@ -1,0 +1,177 @@
+<template>
+  <lightning-spinner if:true={showSpinner} alternative-text="Loading" size="medium" variant="brand">
+  </lightning-spinner>
+  <template if:true={showAppointmentScreen}>
+    <div class="table-container">
+      <div class="datatable-wrapper">
+        <lightning-datatable
+          class="slds-table_striped slds-cell-wrap"
+          columns={columns}
+          data={serviceAppointments}
+          key-field="Id"
+          max-row-selection="1"
+          wrap-text-max-lines="3"
+          onrowselection={handleRowSelection}
+          enable-infinite-loading
+          suppress-bottom-bar
+        >
+        </lightning-datatable>
+      </div>
+    </div>
+  </template>
+
+  <div if:true={showBottomFooter} class="footer">
+    <div class="button-group">
+      <button class="cancel-button" onclick={handleBack}>Back</button>
+      <button
+        if:true={showAppointmentScreen}
+        class="grey-button"
+        onclick={handleSelect}
+        disabled={disableNextButton}
+      >
+        Continue
+      </button>
+    </div>
+  </div>
+
+  <template if:true={showStartTravel}>
+    <lightning-card>
+      <div class="slds-grid slds-grid_vertical slds-p-around_small">
+        <div
+          class="slds-grid slds-grid_vertical slds-grid_align-center slds-wrap slds-gutters_medium">
+          <div
+            class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons">
+            <button
+              class="action-button brand"
+              onclick={handleStartTravel}
+            >
+                  <span class="button-icon">
+                    <lightning-icon
+                      icon-name="utility:tour"
+                      size="medium"
+                      class="slds-m-bottom_small"
+                    >
+                    </lightning-icon>
+                  </span>
+              <span class="button-text">
+                    <span class="button-label">
+                      {labels.InternalWorkOrder_Start_Travel_Text}
+                    </span>
+                    <span class="button-description">
+                      {labels.InternalWorkOrder_Start_Travel_Sub_Text}
+                    </span>
+                  </span>
+            </button>
+          </div>
+          <div
+            class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons"
+          >
+            <button
+              class="action-button brand"
+              onclick={handleCloseWasteVisitScreen}
+            >
+                  <span class="button-icon">
+                    <lightning-icon
+                      icon-name="utility:back"
+                      size="medium"
+                      class="slds-m-bottom_small"
+                    >
+                    </lightning-icon>
+                  </span>
+              <span class="button-text">
+                    <span class="button-label">
+                      {labels.InternalWorkOrder_No_Travel_Text}
+                    </span>
+                    <span class="button-description">
+                      {labels.InternalWorkOrder_No_Travel_Sub_Text}
+                    </span>
+                  </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </lightning-card>
+  </template>
+
+  <template if:true={showRecordForm}>
+    <lightning-record-edit-form
+      onsubmit={handleSubmit}
+      onsuccess={handleWorkOrderCreated}
+      object-api-name="WorkOrder"
+    >
+      <div class="slds-grid slds-grid_vertical slds-p-around_small">
+        <div class="slds-col">
+          <!-- Moved this to the top of the form because when click it deletes everything from the form so it's better to have it as 1st element rather than in last and have to re-enter all the data -->
+          <div
+            class={formElementClass}
+          >
+            <label class="slds-form-element__label">
+              <abbr class="slds-required" title="required">*</abbr>
+              Work Order
+            </label>
+            <div class="slds-form-element__control">
+              <div
+                class="slds-grid slds-gutters slds-grid_vertical-align-center"
+              >
+                <div class="slds-col slds-size_2-of-4">
+                  <button
+                    type="button"
+                    class="slds-button slds-button_brand lookup-button"
+                    onclick={handleSetAppointmentClicked}
+                  >
+                    <lightning-icon
+                      icon-name="utility:search"
+                      size="xx-small"
+                      variant="inverse"
+                      class="slds-m-right_xx-small"
+                    >
+                    </lightning-icon>
+                    Select Work Order
+                  </button>
+                </div>
+                <div class="slds-col slds-size_2-of-4">
+                  <lightning-input-field
+                    if:true={workOrderId}
+                    field-name="ParentWorkOrderId"
+                    value={workOrderId}
+                    variant="label-hidden"
+                    required
+                  >
+                  </lightning-input-field>
+                </div>
+              </div>
+            </div>
+            <div if:false={workOrderId} class="slds-form-element__help slds-text-color_error">
+              Please select a Work Order
+            </div>
+          </div>
+
+          <lightning-combobox
+            name="Type"
+            label="Type"
+            value={defaultType}
+            options={workOrderTypeOptions}
+            onchange={handleTypeChange}
+            required
+            variant="label-inline"
+            class="form-element"
+          >
+          </lightning-combobox>
+
+
+          <lightning-input-field
+            field-name="Subject"
+            value={defaultSubject}
+            onchange={handleSubjectChange}
+            required
+            class="form-element"
+          >
+          </lightning-input-field>
+        </div>
+      </div>
+      <div class="button-group-form">
+        <button class="submit-button" type="submit">Save</button>
+      </div>
+    </lightning-record-edit-form>
+  </template>
+</template>

@@ -688,6 +688,7 @@
         <members>GanttRoundPinAction</members>
         <members>ImageCaptureService</members>
         <members>InboundLoggerService</members>
+        <members>InternalWorkOrderController</members>
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
@@ -1052,6 +1053,7 @@
         <members>fsc_screenFlowApp</members>
         <members>mobileLanding__defaultTokens</members>
         <members>mobileLanding__essMobilLanding</members>
+        <members>showToast</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
@@ -1090,6 +1092,7 @@
         <members>Account.Financial_Account</members>
         <members>Account.Group_Account</members>
         <members>Account.Operational_Account</members>
+        <members>Account.Other_Compact_Layout</members>
         <members>Contact.Contact</members>
         <members>FSL__Optimization_Request__c.FSL__Compact_Opt_Request</members>
         <members>FSL__Scheduling_Policy_Goal__c.FSL__Compact_Objective</members>
@@ -2329,6 +2332,9 @@
         <members>WorkOrder.Check_In_At_Work_Reference__c</members>
         <members>WorkOrder.Check_In_At_Work_Required__c</members>
         <members>WorkOrder.Collected_Items__c</members>
+        <members>WorkOrder.Contract_Manager__c</members>
+        <members>WorkOrder.Depot_Visit_Comments__c</members>
+        <members>WorkOrder.Drop_Off_Items__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
@@ -2342,6 +2348,7 @@
         <members>WorkOrder.Name_Commercial_Contract__c</members>
         <members>WorkOrder.Name_Contract_Manager__c</members>
         <members>WorkOrder.Operating_Hours__c</members>
+        <members>WorkOrder.Pick_Up_Items__c</members>
         <members>WorkOrder.Product__c</members>
         <members>WorkOrder.Scheduled_Date__c</members>
         <members>WorkOrder.Shop_Name__c</members>
@@ -7685,6 +7692,16 @@
         <members>FSL__x_was_dispatched_successfully</members>
         <members>FSL__x_was_scheduled_to_y_on_z</members>
         <members>FSL__x_was_scheduled_to_y_on_z</members>
+        <members>InternalWorkOrder_Header_Text</members>
+        <members>InternalWorkOrder_Header_Text</members>
+        <members>InternalWorkOrder_No_Travel_Sub_Text</members>
+        <members>InternalWorkOrder_No_Travel_Sub_Text</members>
+        <members>InternalWorkOrder_No_Travel_Text</members>
+        <members>InternalWorkOrder_No_Travel_Text</members>
+        <members>InternalWorkOrder_Start_Travel_Sub_Text</members>
+        <members>InternalWorkOrder_Start_Travel_Sub_Text</members>
+        <members>InternalWorkOrder_Start_Travel_Text</members>
+        <members>InternalWorkOrder_Start_Travel_Text</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Text</members>
@@ -7693,6 +7710,10 @@
         <members>StartDay_End_Day_Button_Sub_Text</members>
         <members>StartDay_End_Day_Button_Text</members>
         <members>StartDay_End_Day_Button_Text</members>
+        <members>StartDay_Internal_Button_Sub_Text</members>
+        <members>StartDay_Internal_Button_Sub_Text</members>
+        <members>StartDay_Internal_Button_Text</members>
+        <members>StartDay_Internal_Button_Text</members>
         <members>StartDay_KM_Back_Button_Text</members>
         <members>StartDay_KM_Back_Button_Text</members>
         <members>StartDay_KM_Button_Sub_Text</members>
@@ -7723,6 +7744,10 @@
         <members>StartDay_Timesheet_Button_Sub_Text</members>
         <members>StartDay_Timesheet_Button_Text</members>
         <members>StartDay_Timesheet_Button_Text</members>
+        <members>StartDay_Waste_Button_Sub_Text</members>
+        <members>StartDay_Waste_Button_Sub_Text</members>
+        <members>StartDay_Waste_Button_Text</members>
+        <members>StartDay_Waste_Button_Text</members>
         <members>TimeSheet_Header_Title</members>
         <members>TimeSheet_Header_Title</members>
         <members>bmpyrckt__Timeline_Error_Apex</members>
@@ -10107,13 +10132,16 @@
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
         <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
+        <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
@@ -10162,13 +10190,16 @@
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
         <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
+        <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
@@ -10604,6 +10635,7 @@
         <members>colorsPicker</members>
         <members>contractLineEditor</members>
         <members>darkInput</members>
+        <members>depotVisit</members>
         <members>exportRecords</members>
         <members>fileUploadImproved</members>
         <members>fileUploadImprovedCPE</members>
@@ -10661,6 +10693,7 @@
         <members>imageSelector</members>
         <members>imageTextEditor</members>
         <members>infoEditorPrompt</members>
+        <members>internalWorkOrderForm</members>
         <members>loadingSpinner</members>
         <members>locationPassport</members>
         <members>nextAppointmentPicker</members>
@@ -11481,6 +11514,7 @@
         <members>TimeSheet.Time_Sheet_Review</members>
         <members>TimeSheet.test_mileage</members>
         <members>Timesheet</members>
+        <members>WorkOrder.Create_Depot_Visit</members>
         <members>WorkOrder.Location_Passport</members>
         <members>WorkOrder.Log_Edit_Goodwill_Tasks</members>
         <members>WorkOrder.SendEmail</members>

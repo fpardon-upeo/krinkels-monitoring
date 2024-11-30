@@ -590,4 +590,76 @@
         <shortDescription>StartDay_End_Button_Text</shortDescription>
         <value>End Your Day</value>
     </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Header_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Header_Text</shortDescription>
+        <value>Create an internal work order</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_No_Travel_Sub_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_No_Travel_Sub_Text</shortDescription>
+        <value>Do not start the travel time and return to main</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_No_Travel_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_No_Travel_Text</shortDescription>
+        <value>Don&apos;t start travel time</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Start_Travel_Sub_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Start_Travel_Sub_Text</shortDescription>
+        <value>Set this as your next appointment and start travel time</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Start_Travel_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Start_Travel_Text</shortDescription>
+        <value>Start Travel Time</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Internal_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Internal_Button_Sub_Text</shortDescription>
+        <value>Create a waste management or depot visit work order</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Internal_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Internal_Button_Text</shortDescription>
+        <value>Internal Work Order</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Waste_Button_Sub_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Waste_Button_Sub_Text</shortDescription>
+        <value>Create a work order for Waste Management so you can log your time against it.</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Waste_Button_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Waste_Button_Text</shortDescription>
+        <value>Create a Waste Management Visit</value>
+    </labels>
 </CustomLabels>

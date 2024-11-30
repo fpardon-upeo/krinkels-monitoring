@@ -1,104 +1,49 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-aura/CustomAccountLightboxApp/CustomAccountLightboxApp.app,A,AuraDefinitionBundle CustomAccountLightboxApp/CustomAccountLightboxApp.app,,,log,📰
-aura/CustomAccountLightboxApp/CustomAccountLightboxApp.app-meta.xml,A,AuraDefinitionBundle CustomAccountLightboxApp/CustomAccountLightboxApp.app-meta.xml,,,log,📰
-classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
-classes/ATAKPerformanceServiceInvocable.cls," ",ApexClass ATAKPerformanceServiceInvocable,M,,log,📰
-classes/ATAKWorkLogService.cls,A,ApexClass ATAKWorkLogService,,,log,📰
-classes/ATAKWorkLogService.cls-meta.xml,A,ApexClass ATAKWorkLogService,,,log,📰
-classes/ATAKWorkLogServiceTest.cls,A,ApexClass ATAKWorkLogServiceTest,,,log,📰
-classes/ATAKWorkLogServiceTest.cls-meta.xml,A,ApexClass ATAKWorkLogServiceTest,,,log,📰
-classes/AccountDetailsController.cls," ",ApexClass AccountDetailsController,M,,log,📰
-classes/ImageCaptureService.cls,A,ApexClass ImageCaptureService,,,log,📰
-classes/ImageCaptureService.cls-meta.xml,A,ApexClass ImageCaptureService,,,log,📰
-classes/MileageEntryProjectLinkService.cls,A,ApexClass MileageEntryProjectLinkService,,,log,📰
-classes/MileageEntryProjectLinkService.cls-meta.xml,A,ApexClass MileageEntryProjectLinkService,,,log,📰
-classes/MileageEntryProjectLinkServiceTest.cls,A,ApexClass MileageEntryProjectLinkServiceTest,,,log,📰
-classes/MileageEntryProjectLinkServiceTest.cls-meta.xml,A,ApexClass MileageEntryProjectLinkServiceTest,,,log,📰
-classes/TimeSheetControllerTest.cls," ",ApexClass TimeSheetControllerTest,M,,log,📰
-classes/TimeSheetProjectLinkService.cls,A,ApexClass TimeSheetProjectLinkService,,,log,📰
-classes/TimeSheetProjectLinkService.cls-meta.xml,A,ApexClass TimeSheetProjectLinkService,,,log,📰
-classes/TimeSheetProjectLinkServiceTest.cls,A,ApexClass TimeSheetProjectLinkServiceTest,,,log,📰
-classes/TimeSheetProjectLinkServiceTest.cls-meta.xml,A,ApexClass TimeSheetProjectLinkServiceTest,,,log,📰
-classes/WorkOrderSequence.cls,A,ApexClass WorkOrderSequence,,,log,📰
-classes/WorkOrderSequence.cls-meta.xml,A,ApexClass WorkOrderSequence,,,log,📰
-classes/WorkStepSignatureController.cls,A,ApexClass WorkStepSignatureController,,,log,📰
-classes/WorkStepSignatureController.cls-meta.xml,A,ApexClass WorkStepSignatureController,,,log,📰
-classes/WorkStepSignatureControllerTest.cls,A,ApexClass WorkStepSignatureControllerTest,,,log,📰
-classes/WorkStepSignatureControllerTest.cls-meta.xml,A,ApexClass WorkStepSignatureControllerTest,,,log,📰
-classes/fsl_Console_AccountController.cls,A,ApexClass fsl_Console_AccountController,,,log,📰
-classes/fsl_Console_AccountController.cls-meta.xml,A,ApexClass fsl_Console_AccountController,,,log,📰
-corsWhitelistOrigins/https_krinkelsgreencare_upeodev_sandbox_lightning_force_com.corsWhitelistOrigin-meta.xml,A,CorsWhitelistOrigin https_krinkelsgreencare_upeodev_sandbox_lightning_force_com,,,log,📰
-flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
-flowDefinitions/Mileage_Entry_After_Save_Record_Triggered.flowDefinition-meta.xml,A,FlowDefinition Mileage_Entry_After_Save_Record_Triggered,,,log,📰
-flowDefinitions/ResourceAbsence_Before_Save_Set_Timesheet_Id.flowDefinition-meta.xml,A,FlowDefinition ResourceAbsence_Before_Save_Set_Timesheet_Id,,,log,📰
-flowDefinitions/Work_Order_Goodwill_Task_Check.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Goodwill_Task_Check,,,log,📰
-flows/Mileage_Entry_After_Save_Record_Triggered.flow-meta.xml,A,Flow Mileage_Entry_After_Save_Record_Triggered,,,log,📰
-flows/ResourceAbsence_Before_Save_Set_Timesheet_Id.flow-meta.xml,A,Flow ResourceAbsence_Before_Save_Set_Timesheet_Id,,,log,📰
-flows/Work_Order_Goodwill_Task_Check.flow-meta.xml,A,Flow Work_Order_Goodwill_Task_Check,,,log,📰
+applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
+aura/showToast/showToast.cmp,A,AuraDefinitionBundle showToast/showToast.cmp,,,log,📰
+aura/showToast/showToast.cmp-meta.xml,A,AuraDefinitionBundle showToast/showToast.cmp-meta.xml,,,log,📰
+aura/showToast/showToast.design,A,AuraDefinitionBundle showToast/showToast.design,,,log,📰
+aura/showToast/showToastController.js,A,AuraDefinitionBundle showToast/showToastController.js,,,log,📰
+aura/showToast/showToastHelper.js,A,AuraDefinitionBundle showToast/showToastHelper.js,,,log,📰
+classes/InternalWorkOrderController.cls,A,ApexClass InternalWorkOrderController,,,log,📰
+classes/InternalWorkOrderController.cls-meta.xml,A,ApexClass InternalWorkOrderController,,,log,📰
+cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+flexipages/Other_Record_Page.flexipage-meta.xml," ",FlexiPage Other_Record_Page,M,,log,📰
+flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flowDefinitions/Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit,,,log,📰
+flowDefinitions/Work_Order_Screen_Flow_Create_Depot_Visit.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Screen_Flow_Create_Depot_Visit,,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flows/Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value.flow-meta.xml,A,Flow Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit,,,log,📰
+flows/Work_Order_Screen_Flow_Create_Depot_Visit.flow-meta.xml,A,Flow Work_Order_Screen_Flow_Create_Depot_Visit,,,log,📰
 labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-layouts/ATAK_Work_Log__c-ATAK Work Log Layout.layout-meta.xml,A,Layout ATAK_Work_Log__c-ATAK Work Log Layout,,,log,📰
-layouts/IframeWhiteListUrl-Trusted Domain for Inline Frames Layout.layout-meta.xml,A,Layout IframeWhiteListUrl-Trusted Domain for Inline Frames Layout,,,log,📰
-layouts/ResourceAbsence-Internal Meeting Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Internal Meeting Resource Absence Layout,M,,log,📰
-layouts/ResourceAbsence-Physical Check-up Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Physical Check-up Resource Absence Layout,M,,log,📰
-layouts/ResourceAbsence-Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Resource Absence Layout,M,,log,📰
-layouts/ResourceAbsence-Training Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Training Resource Absence Layout,M,,log,📰
-layouts/TimeSheet-FSL Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-FSL Time Sheet Layout,M,,log,📰
-layouts/TimeSheet-Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-Time Sheet Layout,M,,log,📰
-layouts/TimeSheetEntry-FLS Time Sheet Entry Layout.layout-meta.xml," ",Layout TimeSheetEntry-FLS Time Sheet Entry Layout,M,,log,📰
-layouts/TimeSheetEntry-Time Sheet Entry Layout.layout-meta.xml," ",Layout TimeSheetEntry-Time Sheet Entry Layout,M,,log,📰
+layouts/Account-Other Account Layout.layout-meta.xml," ",Layout Account-Other Account Layout,M,,log,📰
 layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-layouts/WorkStep-FSL Work Step Layout.layout-meta.xml," ",Layout WorkStep-FSL Work Step Layout,M,,log,📰
-lwc/fslConsoleAccount/fslConsoleAccount.css,A,LightningComponentBundle fslConsoleAccount/fslConsoleAccount.css,,,log,📰
-lwc/fslConsoleAccount/fslConsoleAccount.html,A,LightningComponentBundle fslConsoleAccount/fslConsoleAccount.html,,,log,📰
-lwc/fslConsoleAccount/fslConsoleAccount.js,A,LightningComponentBundle fslConsoleAccount/fslConsoleAccount.js,,,log,📰
-lwc/fslConsoleAccount/fslConsoleAccount.js-meta.xml,A,LightningComponentBundle fslConsoleAccount/fslConsoleAccount.js-meta.xml,,,log,📰
-lwc/imageCapture/imageCapture.js," ",LightningComponentBundle imageCapture/imageCapture.js,M,,log,📰
-lwc/locationPassport/locationPassport.js," ",LightningComponentBundle locationPassport/locationPassport.js,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.html," ",LightningComponentBundle showMileageScreen/showMileageScreen.html,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.js," ",LightningComponentBundle showMileageScreen/showMileageScreen.js,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.css," ",LightningComponentBundle startOperatorDay/startOperatorDay.css,M,,log,📰
+lwc/depotVisit/depotVisit.css,A,LightningComponentBundle depotVisit/depotVisit.css,,,log,📰
+lwc/depotVisit/depotVisit.html,A,LightningComponentBundle depotVisit/depotVisit.html,,,log,📰
+lwc/depotVisit/depotVisit.js,A,LightningComponentBundle depotVisit/depotVisit.js,,,log,📰
+lwc/depotVisit/depotVisit.js-meta.xml,A,LightningComponentBundle depotVisit/depotVisit.js-meta.xml,,,log,📰
+lwc/internalWorkOrderForm/internalWorkOrderForm.css,A,LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.css,,,log,📰
+lwc/internalWorkOrderForm/internalWorkOrderForm.html,A,LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.html,,,log,📰
+lwc/internalWorkOrderForm/internalWorkOrderForm.js,A,LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.js,,,log,📰
+lwc/internalWorkOrderForm/internalWorkOrderForm.js-meta.xml,A,LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.js-meta.xml,,,log,📰
 lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.css," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.css,M,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.html," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.html,M,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.js," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.js,M,,log,📰
-lwc/startStopTimer/startStopTimer.js," ",LightningComponentBundle startStopTimer/startStopTimer.js,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-lwc/workStepSignature/workStepSignature.css,A,LightningComponentBundle workStepSignature/workStepSignature.css,,,log,📰
-lwc/workStepSignature/workStepSignature.html,A,LightningComponentBundle workStepSignature/workStepSignature.html,,,log,📰
-lwc/workStepSignature/workStepSignature.js,A,LightningComponentBundle workStepSignature/workStepSignature.js,,,log,📰
-lwc/workStepSignature/workStepSignature.js-meta.xml,A,LightningComponentBundle workStepSignature/workStepSignature.js-meta.xml,,,log,📰
-objects/ATAK_Work_Log__c/ATAK_Work_Log__c.object-meta.xml,A,CustomObject ATAK_Work_Log__c/ATAK_Work_Log__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Comments__c.field-meta.xml,A,CustomField Comments__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Dossier__c.field-meta.xml,A,CustomField Dossier__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/End_Timestamp__c.field-meta.xml,A,CustomField End_Timestamp__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/External_Id__c.field-meta.xml,A,CustomField External_Id__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Performance_Date__c.field-meta.xml,A,CustomField Performance_Date__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Performance_Resource_Code__c.field-meta.xml,A,CustomField Performance_Resource_Code__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Performance_Resource_Type__c.field-meta.xml,A,CustomField Performance_Resource_Type__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Project_Code__c.field-meta.xml,A,CustomField Project_Code__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Quantity_Registration_Unit__c.field-meta.xml,A,CustomField Quantity_Registration_Unit__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Quantity__c.field-meta.xml,A,CustomField Quantity__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Registration_Timestamp__c.field-meta.xml,A,CustomField Registration_Timestamp__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Source_Record_Id__c.field-meta.xml,A,CustomField Source_Record_Id__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Source_Type__c.field-meta.xml,A,CustomField Source_Type__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Start_Timestamp__c.field-meta.xml,A,CustomField Start_Timestamp__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Status__c.field-meta.xml,A,CustomField Status__c,,,log,📰
-objects/ATAK_Work_Log__c/fields/Time_Sheet__c.field-meta.xml,A,CustomField Time_Sheet__c,,,log,📰
-objects/Mileage_Entry__c/fields/Allowance_Type__c.field-meta.xml," ",CustomField Allowance_Type__c,M,,log,📰
-objects/ResourceAbsence/fieldSets/FSL__Absence_Resource_Calendar_Tooltip.fieldSet-meta.xml," ",FieldSet FSL__Absence_Resource_Calendar_Tooltip,M,,log,📰
-objects/ResourceAbsence/fieldSets/FSL__Resource_Absence_Lightbox.fieldSet-meta.xml," ",FieldSet FSL__Resource_Absence_Lightbox,M,,log,📰
-objects/ResourceAbsence/fieldSets/FSL__Resource_Absence_Resource_Calendar.fieldSet-meta.xml," ",FieldSet FSL__Resource_Absence_Resource_Calendar,M,,log,📰
-objects/ResourceAbsence/fields/Time_Sheet__c.field-meta.xml,A,CustomField Time_Sheet__c,,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Gantt_Filter.fieldSet-meta.xml," ",FieldSet FSL__Gantt_Filter,M,,log,📰
-objects/TimeSheetEntry/fields/Atak_Project__c.field-meta.xml,A,CustomField Atak_Project__c,,,log,📰
-objects/WorkOrder/fields/Signature_Required__c.field-meta.xml,A,CustomField Signature_Required__c,,,log,📰
-pages/CustomAccountLightboxVfPage.page,A,ApexPage CustomAccountLightboxVfPage,,,log,📰
-pages/CustomAccountLightboxVfPage.page-meta.xml,A,ApexPage CustomAccountLightboxVfPage,,,log,📰
-pages/test.page,A,ApexPage test,,,log,📰
-pages/test.page-meta.xml,A,ApexPage test,,,log,📰
-permissionsets/Query_All_Files.permissionset-meta.xml,A,PermissionSet Query_All_Files,,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.html," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.html,M,,log,📰
+objects/Account/compactLayouts/Other_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Other_Compact_Layout,,,log,📰
+objects/Account/fields/Sub_Type__c.field-meta.xml," ",CustomField Sub_Type__c,M,,log,📰
+objects/Account/recordTypes/Commercial_Account.recordType-meta.xml," ",RecordType Commercial_Account,M,,log,📰
+objects/Account/recordTypes/Financial_Account.recordType-meta.xml," ",RecordType Financial_Account,M,,log,📰
+objects/Account/recordTypes/Group_Account.recordType-meta.xml," ",RecordType Group_Account,M,,log,📰
+objects/Account/recordTypes/Operational_Account.recordType-meta.xml," ",RecordType Operational_Account,M,,log,📰
+objects/Account/recordTypes/Other.recordType-meta.xml," ",RecordType Other,M,,log,📰
+objects/WorkOrder/fields/Contract_Manager__c.field-meta.xml,A,CustomField Contract_Manager__c,,,log,📰
+objects/WorkOrder/fields/Depot_Visit_Comments__c.field-meta.xml,A,CustomField Depot_Visit_Comments__c,,,log,📰
+objects/WorkOrder/fields/Drop_Off_Items__c.field-meta.xml,A,CustomField Drop_Off_Items__c,,,log,📰
+objects/WorkOrder/fields/Pick_Up_Items__c.field-meta.xml,A,CustomField Pick_Up_Items__c,,,log,📰
+pages/CustomAccountLightboxVfPage.page," ",ApexPage CustomAccountLightboxVfPage,M,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -124,54 +69,8 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/WorkOrder.Log_Edit_Goodwill_Tasks.quickAction-meta.xml,A,QuickAction WorkOrder.Log_Edit_Goodwill_Tasks,,,log,📰
-quickActions/WorkStep.Work_Step_Signature.quickAction-meta.xml,A,QuickAction WorkStep.Work_Step_Signature,,,log,📰
-reportTypes/Work_Orders.reportType-meta.xml,A,ReportType Work_Orders,,,log,📰
-reports/Sales_Marketing_Reports/Closed_Lost_by_Reason.report-meta.xml," ",Report Sales_Marketing_Reports/Closed_Lost_by_Reason,M,,log,📰
-reports/Sales_Marketing_Reports/Hot_Leads_w_o_Activity_96_Hours.report-meta.xml," ",Report Sales_Marketing_Reports/Hot_Leads_w_o_Activity_96_Hours,M,,log,📰
-reports/Sales_Marketing_Reports/Open_Oppties_This_Q_No_Acti_Last_96hrs.report-meta.xml," ",Report Sales_Marketing_Reports/Open_Oppties_This_Q_No_Acti_Last_96hrs,M,,log,📰
-reports/Sales_Marketing_Reports/Pipeline_Report_This_Q.report-meta.xml," ",Report Sales_Marketing_Reports/Pipeline_Report_This_Q,M,,log,📰
-reports/Sales_and_Marketing_Reports/Marketing_Exec_Converted_Amount.report-meta.xml," ",Report Sales_and_Marketing_Reports/Marketing_Exec_Converted_Amount,M,,log,📰
-reports/Sales_and_Marketing_Reports/Marketing_Exec_Converted_and_Won_Amount.report-meta.xml," ",Report Sales_and_Marketing_Reports/Marketing_Exec_Converted_and_Won_Amount,M,,log,📰
-reports/Sales_and_Marketing_Reports/Marketing_Exec_Converted_by_Month.report-meta.xml," ",Report Sales_and_Marketing_Reports/Marketing_Exec_Converted_by_Month,M,,log,📰
-reports/Sales_and_Marketing_Reports/Marketing_Exec_Leads_Converted.report-meta.xml," ",Report Sales_and_Marketing_Reports/Marketing_Exec_Leads_Converted,M,,log,📰
-reports/Sales_and_Marketing_Reports/Sales_Exec_Lost_Deals.report-meta.xml," ",Report Sales_and_Marketing_Reports/Sales_Exec_Lost_Deals,M,,log,📰
-reports/Service_Dashboards_Reports/Age_of_Cases_Currently_Open_by_Type.report-meta.xml," ",Report Service_Dashboards_Reports/Age_of_Cases_Currently_Open_by_Type,M,,log,📰
-reports/Service_Dashboards_Reports/Aged_Cases_by_Account.report-meta.xml," ",Report Service_Dashboards_Reports/Aged_Cases_by_Account,M,,log,📰
-reports/Service_Dashboards_Reports/Aged_Cases_by_Agent.report-meta.xml," ",Report Service_Dashboards_Reports/Aged_Cases_by_Agent,M,,log,📰
-reports/Service_Dashboards_Reports/Average_Case_Resolution_Time_1.report-meta.xml," ",Report Service_Dashboards_Reports/Average_Case_Resolution_Time_1,M,,log,📰
-reports/Service_Dashboards_Reports/Average_Case_Resolution_Time_MTD.report-meta.xml," ",Report Service_Dashboards_Reports/Average_Case_Resolution_Time_MTD,M,,log,📰
-reports/Service_Dashboards_Reports/Avg_Case_Resolution_Time_MTD_by_Agen.report-meta.xml," ",Report Service_Dashboards_Reports/Avg_Case_Resolution_Time_MTD_by_Agen,M,,log,📰
-reports/Service_Dashboards_Reports/Case_Resolution_Time_MTD_by_Origin.report-meta.xml," ",Report Service_Dashboards_Reports/Case_Resolution_Time_MTD_by_Origin,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Closed_MTD.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Closed_MTD,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Closed_MTD_by_Agent.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Closed_MTD_by_Agent,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Currently_Open.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Currently_Open,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Currently_Open_by_Account.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Currently_Open_by_Account,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Currently_Open_by_Agent.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Currently_Open_by_Agent,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Currently_Open_by_Origin.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Currently_Open_by_Origin,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Currently_Open_by_Priority.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Currently_Open_by_Priority,M,,log,📰
-reports/Service_Dashboards_Reports/Cases_Currently_Open_by_Type.report-meta.xml," ",Report Service_Dashboards_Reports/Cases_Currently_Open_by_Type,M,,log,📰
-reports/Service_Dashboards_Reports/High_Priority_Open_Cases_by_Account.report-meta.xml," ",Report Service_Dashboards_Reports/High_Priority_Open_Cases_by_Account,M,,log,📰
-reports/Service_Dashboards_Reports/Top_10_Cases_by_Age.report-meta.xml," ",Report Service_Dashboards_Reports/Top_10_Cases_by_Age,M,,log,📰
-reports/Service_Dashboards_Reports/Trend_of_Case_Resolution_Time.report-meta.xml," ",Report Service_Dashboards_Reports/Trend_of_Case_Resolution_Time,M,,log,📰
-reports/Service_Dashboards_Reports/Trend_of_Cases_Closed.report-meta.xml," ",Report Service_Dashboards_Reports/Trend_of_Cases_Closed,M,,log,📰
-reports/unfiled$public/Crew_Members_Planning_oXN.report-meta.xml," ",Report unfiled$public/Crew_Members_Planning_oXN,M,,log,📰
-reports/unfiled$public/Goodwill_Tasks_Report_S7D.report-meta.xml,A,Report unfiled$public/Goodwill_Tasks_Report_S7D,,,log,📰
-reports/unfiled$public/SampleReportLoginLeaderboard.report-meta.xml," ",Report unfiled$public/SampleReportLoginLeaderboard,M,,log,📰
-reports/unfiled$public/SampleReportLoginWallofShame.report-meta.xml," ",Report unfiled$public/SampleReportLoginWallofShame,M,,log,📰
-reports/unfiled$public/SampleReportOpenCasesByPriority.report-meta.xml," ",Report unfiled$public/SampleReportOpenCasesByPriority,M,,log,📰
-settings/Content.settings-meta.xml," ",Settings Content,M,,log,📰
-settings/Flow.settings-meta.xml," ",Settings Flow,M,,log,📰
-settings/Language.settings-meta.xml," ",Settings Language,M,,log,📰
-settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
-sharingRules/ATAK_Work_Log__c.sharingRules-meta.xml,A,SharingRules ATAK_Work_Log__c,,,log,📰
-standardValueSets/ResourceAbsenceType.standardValueSet-meta.xml," ",StandardValueSet ResourceAbsenceType,M,,log,📰
-staticresources/signature_pad.js,A,StaticResource signature_pad.js,,,log,📰
-staticresources/signature_pad.resource-meta.xml,A,StaticResource signature_pad,,,log,📰
-topicsForObjects/ATAK_Work_Log__c.topicsForObjects-meta.xml,A,TopicsForObjects ATAK_Work_Log__c,,,log,📰
-triggers/MileageEntryTrigger.trigger,A,ApexTrigger MileageEntryTrigger,,,log,📰
-triggers/MileageEntryTrigger.trigger-meta.xml,A,ApexTrigger MileageEntryTrigger,,,log,📰
-triggers/ResourceAbsenceTrigger.trigger," ",ApexTrigger ResourceAbsenceTrigger,M,,log,📰
-triggers/TimeSheetEntryTrigger.trigger," ",ApexTrigger TimeSheetEntryTrigger,M,,log,📰
+quickActions/WorkOrder.Create_Depot_Visit.quickAction-meta.xml,A,QuickAction WorkOrder.Create_Depot_Visit,,,log,📰
+reportTypes/Work_Orders.reportType-meta.xml," ",ReportType Work_Orders,M,,log,📰
+installedPackages/ShowToast.json,A,InstalledPackage ShowToast.json,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

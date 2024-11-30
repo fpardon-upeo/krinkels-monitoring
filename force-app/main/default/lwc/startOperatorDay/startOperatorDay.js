@@ -29,6 +29,10 @@ import StartDay_End_Day_Button_Text from "@salesforce/label/c.StartDay_End_Day_B
 import StartDay_End_Day_Button_Sub_Text from "@salesforce/label/c.StartDay_End_Day_Button_Sub_Text";
 import StartDay_End_Button_Text from "@salesforce/label/c.StartDay_End_Button_Text";
 import StartDay_End_Button_Sub_Text from "@salesforce/label/c.StartDay_End_Button_Sub_Text";
+import StartDay_Waste_Button_Text from "@salesforce/label/c.StartDay_Waste_Button_Text";
+import StartDay_Waste_Button_Sub_Text from "@salesforce/label/c.StartDay_Waste_Button_Sub_Text";
+import StartDay_Internal_Button_Text from "@salesforce/label/c.StartDay_Internal_Button_Text";
+import StartDay_Internal_Button_Sub_Text from "@salesforce/label/c.StartDay_Internal_Button_Sub_Text";
 
 import { NavigationMixin } from "lightning/navigation";
 import { ToastTypes } from "c/utilsImageCapture";
@@ -67,6 +71,7 @@ export default class StartOperatorDay extends NavigationMixin(
   showTimesheetScreen = false;
   showStartDayButton = true;
   showMilageEntryScreenSimple = false;
+  showWorkOrderScreen = false;
   showEndDayScreen = false;
   selectedRows = [];
   labels = {
@@ -91,7 +96,11 @@ export default class StartOperatorDay extends NavigationMixin(
     StartDay_End_Day_Button_Text,
     StartDay_End_Day_Button_Sub_Text,
     StartDay_End_Button_Text,
-    StartDay_End_Button_Sub_Text
+    StartDay_End_Button_Sub_Text,
+    StartDay_Waste_Button_Text,
+    StartDay_Waste_Button_Sub_Text,
+    StartDay_Internal_Button_Text,
+    StartDay_Internal_Button_Sub_Text
   };
 
   milesEntryFields = [
@@ -290,6 +299,11 @@ export default class StartOperatorDay extends NavigationMixin(
                       value
                       displayValue
                     }
+                    WorkType {
+                      Name {
+                        value
+                      }
+                    }
                   }
                 }
               }
@@ -319,8 +333,18 @@ export default class StartOperatorDay extends NavigationMixin(
           date.getMinutes();
         //Make sure we don't return things like 14:0, but 14:00
         dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
+
+        let icon = '';
+        if(appointment.WorkType.Name.value === 'Waste Management') {
+          icon = '🗑️'
+        } else if (appointment.WorkType.Name.value === 'Internal Depot') {
+          icon = '🏭'
+        } else {
+          icon = '💲'
+        }
+
         return {
-          Appointment: appointment.Account.Name.value + " - " + dateFormatted,
+          Appointment: icon + " " +appointment.Account.Name.value + " - " + dateFormatted + " - " + appointment.WorkType.Name.value,
           AppointmentNumber: appointment.AppointmentNumber.value,
           Subject: appointment.Subject.value,
           Id: appointment.Id,
@@ -354,57 +378,9 @@ export default class StartOperatorDay extends NavigationMixin(
     }
   }
 
-  handleRowClick(event) {
-
-    console.log("event.currentTarget", event.currentTarget);
-    const clickedRow = event.currentTarget;
-    const rowId = clickedRow.getAttribute('data-row-id');
-    console.log('row id: ', rowId);
-
-    // Find the row data
-    const row = this.serviceAppointments.find(row => row.Id === rowId);
-
-    console.log('row: ', row )
-
-    if (row) {
-      this.selectedRows = [row];
-      this.nextWorkOrderId = row.ParentRecordId;
-      this.disableNextButton = false;
-
-      console.log('selectedRows: ', this.selectedRows);
-      console.log('nextWorkOrderId: ', this.nextWorkOrderId);
-
-      // Force refresh of the data to update styling
-      this.data = [...this.data];
-    }
-  }
-
-  handleCellClick(event) {
-    const row = event.detail.row;
-
-    // Get the current selection state
-    const isSelected = this.selectedRows.some(selected => selected.Id === row.Id);
-
-    // Toggle selection
-    if (isSelected) {
-      this.selectedRows = [];
-    } else {
-      this.selectedRows = [row];
-    }
-
-    // Update the datatable selection
-    const datatable = this.template.querySelector('lightning-datatable');
-    if (datatable) {
-      datatable.selectedRows = this.selectedRows.map(row => row.Id);
-    }
-
-    // Update the next button state
-    this.disableNextButton = this.selectedRows.length === 0;
-
-    // If a row was selected, also update the work order ID
-    if (this.selectedRows.length > 0) {
-      this.nextWorkOrderId = this.selectedRows[0].ParentRecordId;
-    }
+  handleOpenWasteVisitScreen(){
+    this.showInitialScreen = false;
+    this.showWorkOrderScreen = true;
   }
 
   handleShowStartOrNot(event) {
@@ -480,6 +456,7 @@ export default class StartOperatorDay extends NavigationMixin(
   handleTimeSheetClicked() {
     this.showInitialScreen = false;
     this.showTimesheetScreen = true;
+    this.showEndDayScreen = false;
   }
 
   handleTouchStart(event) {
@@ -527,6 +504,7 @@ export default class StartOperatorDay extends NavigationMixin(
       this.showEndDayScreen = false;
       this.showInitialScreen = true;
       this.showMilageEntryScreenSimple = false;
+      this.showWorkOrderScreen = false;
     }
   }
 

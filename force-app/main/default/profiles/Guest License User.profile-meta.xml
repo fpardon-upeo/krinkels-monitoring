@@ -139,6 +139,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>InternalWorkOrderController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MachineRestResource</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2810,6 +2814,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.Contract_Manager__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Depot_Visit_Comments__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Drop_Off_Items__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.FSL__IsFillInCandidate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2871,6 +2890,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.Operating_Hours__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Pick_Up_Items__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3151,6 +3175,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_Goodwill_Task_Check</flow>
     </flowAccesses>
     <flowAccesses>
@@ -3160,6 +3188,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Mobile_Flow_Check_Out</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -3176,6 +3208,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Screen_Flow_Create_Depot_Visit</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

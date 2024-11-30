@@ -6,7 +6,7 @@
             $Lightning.createComponent(
                 "c:fslConsoleAccount", 
                 { 
-                    recordId: "{!serviceappointment.Id}" 
+                    recordId: "{!serviceappointment.Id}"
                 },
                 "lightbox",
                 function() {

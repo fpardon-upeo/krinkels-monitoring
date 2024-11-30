@@ -24,6 +24,16 @@
                         <valueListItems>
                             <value>DeleteWorkPlans</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>WorkOrder.Create_Depot_Visit</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Work_Order_Type__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Production</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>

@@ -284,6 +284,13 @@
                 <stringValue>Dispatched</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>Work_Order_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Depot Visit</stringValue>
+            </value>
+        </filters>
         <object>WorkOrder</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

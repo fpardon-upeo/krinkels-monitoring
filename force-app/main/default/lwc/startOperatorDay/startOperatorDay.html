@@ -97,6 +97,33 @@
                   class="action-button brand"
                   ontouchstart={handleTouchStart}
                   ontouchend={handleTouchEnd}
+                  onclick={handleOpenWasteVisitScreen}
+                >
+                  <span class="button-icon">
+                    <lightning-icon
+                      icon-name="utility:case"
+                      size="medium"
+                      class="slds-m-bottom_small"
+                    >
+                    </lightning-icon>
+                  </span>
+                  <span class="button-text">
+                    <span class="button-label">
+                      {labels.StartDay_Internal_Button_Text}
+                    </span>
+                    <span class="button-description">
+                      {labels.StartDay_Internal_Button_Sub_Text}
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons"
+              >
+                <button
+                  class="action-button brand"
+                  ontouchstart={handleTouchStart}
+                  ontouchend={handleTouchEnd}
                   onclick={handleOpenEndDay}
                 >
                   <span class="button-icon">
@@ -198,6 +225,14 @@
           record-id={timeSheetId}
           onback={handleBack}
         ></c-show-mileage-screen>
+      </template>
+
+      <template if:true={showWorkOrderScreen}>
+        <c-internal-work-order-form
+          service-resource-id={serviceResourceId}
+          record-id={serviceResourceId}
+          oncloseform={handleBack}
+        ></c-internal-work-order-form>
       </template>
 
       <template if:true={showMilageEntryScreenSimple}>
