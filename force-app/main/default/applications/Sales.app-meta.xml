@@ -1114,7 +1114,7 @@
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Other</recordType>
         <type>Flexipage</type>
-        <profile>Minimum Access - API Only Integrations</profile>
+        <profile>MarketingProfile</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -1123,7 +1123,7 @@
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Other</recordType>
         <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
+        <profile>Minimum Access - API Only Integrations</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
