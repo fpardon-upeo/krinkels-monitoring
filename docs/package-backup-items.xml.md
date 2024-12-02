@@ -2,9 +2,9 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 2477
+Metadatas: 2498
 
-<details><summary>ApexClass (89)</summary>
+<details><summary>ApexClass (97)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -24,6 +24,7 @@ Metadatas: 2477
   • ATAKWorkLogService<br/>
   • ATAKWorkLogServiceTest<br/>
   • AccountDetailsController<br/>
+  • AccountWasteRetriever<br/>
   • AddressSearchService<br/>
   • CallOut<br/>
   • CallOutHandler<br/>
@@ -35,6 +36,8 @@ Metadatas: 2477
   • FileUploadImprovedHelper<br/>
   • FileUploadImproved_Test<br/>
   • GanttRoundPinAction<br/>
+  • GetRecordsIn<br/>
+  • GetRecordsInTest<br/>
   • ImageCaptureService<br/>
   • InboundLoggerService<br/>
   • InternalWorkOrderController<br/>
@@ -42,11 +45,16 @@ Metadatas: 2477
   • MaintenancePlanException<br/>
   • MaintenancePlanService<br/>
   • MaintenancePlanServiceTest<br/>
+  • ManageMultiselectField<br/>
+  • ManageMultiselectFieldTest<br/>
   • MapsGeoCodeService<br/>
   • MapsGeoCodeWrapper<br/>
   • MapsGeoCodeWrapperTest<br/>
   • MileageEntryProjectLinkService<br/>
   • MileageEntryProjectLinkServiceTest<br/>
+  • MultiSelectFlowValues<br/>
+  • ObjectFieldSelectorController<br/>
+  • ObjectFieldSelectorControllerTest<br/>
   • OutboundLoggerService<br/>
   • PersonnelRestResource<br/>
   • PersonnelRestResourceTest<br/>
@@ -220,7 +228,7 @@ Metadatas: 2477
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (560)</summary>
+<details><summary>CustomField (563)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -294,6 +302,7 @@ Metadatas: 2477
   • Account.Contactperson_commercial_customer_key__c<br/>
   • Account.Contactperson_operational_customer_key__c<br/>
   • Account.ContractType__c<br/>
+  • Account.Contract__c<br/>
   • Account.Email__c<br/>
   • Account.Enterprise_Number__c<br/>
   • Account.Facility_Type__c<br/>
@@ -312,6 +321,7 @@ Metadatas: 2477
   • Account.Related_account__c<br/>
   • Account.Status__c<br/>
   • Account.Sub_Type__c<br/>
+  • Account.Type_of_Waste__c<br/>
   • AccountContactRelation.Commercial_SPOC__c<br/>
   • AccountContactRelation.OLDIntervention_Registration_Contact__c<br/>
   • AccountContactRelation.Operational_SPOC__c<br/>
@@ -768,6 +778,7 @@ Metadatas: 2477
   • WorkOrder.Signature_Required__c<br/>
   • WorkOrder.Special_Equipment__c<br/>
   • WorkOrder.WO_with_Goodwill_Tasks__c<br/>
+  • WorkOrder.Waste_to_Drop_Off__c<br/>
   • WorkOrder.Work_Order_Type__c<br/>
   • WorkOrderLineItem.FSL__IsFillInCandidate__c<br/>
   • WorkOrderLineItem.FSL__VisitingHours__c<br/>
@@ -1192,7 +1203,7 @@ Metadatas: 2477
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (53)</summary>
+<details><summary>Flow (54)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1242,13 +1253,14 @@ Metadatas: 2477
   • Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Work_Order_Screen_Flow_Create_Depot_Visit<br/>
+  • Work_Order_Screen_Flow_Create_Waste_Depot_Visit<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (53)</summary>
+<details><summary>FlowDefinition (54)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1298,6 +1310,7 @@ Metadatas: 2477
   • Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Work_Order_Screen_Flow_Create_Depot_Visit<br/>
+  • Work_Order_Screen_Flow_Create_Waste_Depot_Visit<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
@@ -1319,7 +1332,7 @@ Metadatas: 2477
   • OpportunityRevenueScheduleDate<br/>
 </details>
 
-<details><summary>GlobalValueSet (8)</summary>
+<details><summary>GlobalValueSet (9)</summary>
   • Codes_ATAK_Limbus<br/>
   • LMRA_Type<br/>
   • Language<br/>
@@ -1327,6 +1340,7 @@ Metadatas: 2477
   • Priority<br/>
   • Region<br/>
   • Service_package_type<br/>
+  • Type_of_Waste<br/>
   • Work_Type<br/>
 </details>
 
@@ -1581,12 +1595,17 @@ Metadatas: 2477
   • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (89)</summary>
+<details><summary>LightningComponentBundle (95)</summary>
   • addressSearch<br/>
   • colorsPicker<br/>
   • contractLineEditor<br/>
   • darkInput<br/>
   • depotVisit<br/>
+  • df_combobox<br/>
+  • df_comboboxUtils<br/>
+  • df_fieldSelector2<br/>
+  • df_objectFieldSelectorUtils<br/>
+  • df_objectSelector<br/>
   • exportRecords<br/>
   • fileUploadImproved<br/>
   • fileUploadImprovedCPE<br/>
@@ -1635,6 +1654,7 @@ Metadatas: 2477
   • fsc_transferMetadata3<br/>
   • fslConsoleAccount<br/>
   • generateMaintenancePlan<br/>
+  • getRecordsInCPE<br/>
   • imageAnnotate<br/>
   • imageCapture<br/>
   • imageCropper<br/>
@@ -1808,7 +1828,7 @@ Metadatas: 2477
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (160)</summary>
+<details><summary>QuickAction (161)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -1958,6 +1978,7 @@ Metadatas: 2477
   • TimeSheet.test_mileage<br/>
   • Timesheet<br/>
   • WorkOrder.Create_Depot_Visit<br/>
+  • WorkOrder.Create_Waste_Depot_Visit<br/>
   • WorkOrder.Location_Passport<br/>
   • WorkOrder.Log_Edit_Goodwill_Tasks<br/>
   • WorkOrder.SendEmail<br/>

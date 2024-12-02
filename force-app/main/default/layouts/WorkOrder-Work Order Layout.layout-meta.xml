@@ -171,6 +171,20 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
+        <label>Waste Visit Information</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Waste_to_Drop_Off__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns/>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
         <label>Shop Visit Information</label>
         <layoutColumns>
             <layoutItems>
@@ -403,6 +417,11 @@
             <actionName>WorkOrder.Create_Depot_Visit</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>27</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>WorkOrder.Create_Waste_Depot_Visit</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>28</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>

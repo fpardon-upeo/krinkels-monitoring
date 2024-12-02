@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Asbestos</fullName>
+        <default>false</default>
+        <label>Asbestos</label>
+    </customValue>
+    <customValue>
+        <fullName>Asphalt</fullName>
+        <default>false</default>
+        <label>Asphalt</label>
+    </customValue>
+    <customValue>
+        <fullName>Class II waste</fullName>
+        <default>false</default>
+        <label>Class II waste</label>
+    </customValue>
+    <customValue>
+        <fullName>Concrete debris</fullName>
+        <default>false</default>
+        <label>Concrete debris</label>
+    </customValue>
+    <customValue>
+        <fullName>Construction debris</fullName>
+        <default>false</default>
+        <label>Construction debris</label>
+    </customValue>
+    <customValue>
+        <fullName>Green waste</fullName>
+        <default>false</default>
+        <label>Green waste</label>
+    </customValue>
+    <customValue>
+        <fullName>Mowing waste</fullName>
+        <default>false</default>
+        <label>Mowing waste</label>
+    </customValue>
+    <customValue>
+        <fullName>Sludge</fullName>
+        <default>false</default>
+        <label>Sludge</label>
+    </customValue>
+    <customValue>
+        <fullName>Soil</fullName>
+        <default>false</default>
+        <label>Soil</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweeping waste</fullName>
+        <default>false</default>
+        <label>Sweeping waste</label>
+    </customValue>
+    <customValue>
+        <fullName>Tree trunks and roots</fullName>
+        <default>false</default>
+        <label>Tree trunks and roots</label>
+    </customValue>
+    <customValue>
+        <fullName>Type B wood</fullName>
+        <default>false</default>
+        <label>Type B wood</label>
+    </customValue>
+    <customValue>
+        <fullName>Tyres</fullName>
+        <default>false</default>
+        <label>Tyres</label>
+    </customValue>
+    <customValue>
+        <fullName>Wood chips</fullName>
+        <default>false</default>
+        <label>Wood chips</label>
+    </customValue>
+    <masterLabel>Type of Waste</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

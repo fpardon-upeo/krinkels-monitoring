@@ -25,6 +25,11 @@
                 <default>false</default>
                 <label>Depot Visit</label>
             </value>
+            <value>
+                <fullName>Waste Depot Visit</fullName>
+                <default>false</default>
+                <label>Waste Depot Visit</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

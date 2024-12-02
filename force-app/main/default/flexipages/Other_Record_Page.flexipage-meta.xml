@@ -62,6 +62,40 @@
                 <identifier>RecordSub_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Type_of_Waste__c</fieldItem>
+                <identifier>RecordType_of_Waste__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Sub_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Waste Depot</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Contract__c</fieldItem>
+                <identifier>RecordContract__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Sub_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Waste Depot</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-1f8fd4a4-f9e7-4f44-a1f7-d737cf04e740</name>
         <type>Facet</type>
     </flexiPageRegions>

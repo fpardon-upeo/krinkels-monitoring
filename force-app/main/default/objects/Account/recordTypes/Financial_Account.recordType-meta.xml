@@ -393,4 +393,63 @@
             <default>false</default>
         </values>
     </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Waste__c</picklist>
+        <values>
+            <fullName>Asbestos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asphalt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class II waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concrete debris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction debris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mowing waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sludge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sweeping waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tree trunks and roots</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Type B wood</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tyres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wood chips</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

@@ -20,6 +20,7 @@
         <members>ATAKWorkLogService</members>
         <members>ATAKWorkLogServiceTest</members>
         <members>AccountDetailsController</members>
+        <members>AccountWasteRetriever</members>
         <members>AddressSearchService</members>
         <members>CallOut</members>
         <members>CallOutHandler</members>
@@ -32,6 +33,8 @@
         <members>FileUploadImprovedHelper</members>
         <members>FileUploadImproved_Test</members>
         <members>GanttRoundPinAction</members>
+        <members>GetRecordsIn</members>
+        <members>GetRecordsInTest</members>
         <members>ImageCaptureService</members>
         <members>InboundLoggerService</members>
         <members>InternalWorkOrderController</members>
@@ -40,11 +43,16 @@
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
         <members>MaintenancePlanServiceTest</members>
+        <members>ManageMultiselectField</members>
+        <members>ManageMultiselectFieldTest</members>
         <members>MapsGeoCodeService</members>
         <members>MapsGeoCodeWrapper</members>
         <members>MapsGeoCodeWrapperTest</members>
         <members>MileageEntryProjectLinkService</members>
         <members>MileageEntryProjectLinkServiceTest</members>
+        <members>MultiSelectFlowValues</members>
+        <members>ObjectFieldSelectorController</members>
+        <members>ObjectFieldSelectorControllerTest</members>
         <members>OutboundLoggerService</members>
         <members>PersonnelRestResource</members>
         <members>PersonnelRestResourceTest</members>
@@ -299,6 +307,7 @@
         <members>Account.Contactperson_commercial_customer_key__c</members>
         <members>Account.Contactperson_operational_customer_key__c</members>
         <members>Account.ContractType__c</members>
+        <members>Account.Contract__c</members>
         <members>Account.Default_LMRA__c</members>
         <members>Account.Email__c</members>
         <members>Account.Enterprise_Number__c</members>
@@ -321,6 +330,7 @@
         <members>Account.Short_Name__c</members>
         <members>Account.Status__c</members>
         <members>Account.Sub_Type__c</members>
+        <members>Account.Type_of_Waste__c</members>
         <members>AccountContactRelation.Commercial_SPOC__c</members>
         <members>AccountContactRelation.Intervention_Registration_Contact__c</members>
         <members>AccountContactRelation.OLDIntervention_Registration_Contact__c</members>
@@ -773,6 +783,7 @@
         <members>WorkOrder.Signature_Required__c</members>
         <members>WorkOrder.Special_Equipment__c</members>
         <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
+        <members>WorkOrder.Waste_to_Drop_Off__c</members>
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
@@ -1175,6 +1186,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
+        <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
@@ -1236,6 +1248,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
+        <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
@@ -1266,6 +1279,7 @@
         <members>Priority</members>
         <members>Region</members>
         <members>Service_package_type</members>
+        <members>Type_of_Waste</members>
         <members>Work_Type</members>
         <name>GlobalValueSet</name>
     </types>
@@ -1528,6 +1542,11 @@
         <members>contractLineEditor</members>
         <members>darkInput</members>
         <members>depotVisit</members>
+        <members>df_combobox</members>
+        <members>df_comboboxUtils</members>
+        <members>df_fieldSelector2</members>
+        <members>df_objectFieldSelectorUtils</members>
+        <members>df_objectSelector</members>
         <members>exportRecords</members>
         <members>fileUploadImproved</members>
         <members>fileUploadImprovedCPE</members>
@@ -1576,6 +1595,7 @@
         <members>fsc_transferMetadata3</members>
         <members>fslConsoleAccount</members>
         <members>generateMaintenancePlan</members>
+        <members>getRecordsInCPE</members>
         <members>imageAnnotate</members>
         <members>imageCapture</members>
         <members>imageCropper</members>
@@ -1911,6 +1931,7 @@
         <members>TimeSheet.test_mileage</members>
         <members>Timesheet</members>
         <members>WorkOrder.Create_Depot_Visit</members>
+        <members>WorkOrder.Create_Waste_Depot_Visit</members>
         <members>WorkOrder.Location_Passport</members>
         <members>WorkOrder.Log_Edit_Goodwill_Tasks</members>
         <members>WorkOrder.Log_Goodwill_Tasks</members>
