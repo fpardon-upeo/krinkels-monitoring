@@ -103,6 +103,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CheckInService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ContractLineItemTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -133,6 +137,10 @@
     <classAccesses>
         <apexClass>GanttRoundPinAction</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GanttRoundPinActionTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>GetRecordsIn</apexClass>
@@ -344,6 +352,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetMapController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -915,6 +927,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>AssignedResource.External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>AssignedResource.FSL__EstimatedTravelDistanceFrom__c</field>
         <readable>false</readable>
@@ -1410,6 +1427,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Location.Current_User_is_CM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Location.Driver_Code__c</field>
         <readable>true</readable>
@@ -1637,6 +1659,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Location_Visit__c.Visit_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Work_Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1908,6 +1935,11 @@
         <editable>false</editable>
         <field>Reorder_Work_Step__e.Work_Order_Id__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ResourceAbsence.Absence_Type__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2851,6 +2883,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkOrder.Checkin_Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkOrder.Collected_Items__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3222,11 +3259,11 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</flow>
+        <flow>Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Work_Order_Goodwill_Task_Check</flow>
+        <flow>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

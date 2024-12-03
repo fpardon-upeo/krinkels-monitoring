@@ -212,12 +212,16 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
     this.completedAppointments = this.serviceAppointments.filter(
       (appointment) => completedStatuses.includes(appointment.Status)
     ).length;
+    const inProgressStatuses = ["Completed", "Canceled", "Cannot Complete","Scheduled", "Dispatched", "In Progress", "Travelling"];
+    const hasInProgress = this.serviceAppointments.filter(
+      (appointment) => inProgressStatuses.includes(appointment.Status)
+    ).length > 0;
     console.log("completed appointments", this.completedAppointments);
     this.showCompletion = true;
 
     //Fire an event to the parent component to notify it on the amount of closed appointments
     const event = new CustomEvent("completedappointments", {
-      detail: this.completedAppointments
+      detail: hasInProgress
     });
     this.dispatchEvent(event);
   }

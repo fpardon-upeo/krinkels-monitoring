@@ -4,7 +4,7 @@
 
 import { api, LightningElement, wire } from "lwc";
 import { gql, graphql } from "lightning/uiGraphQLApi";
-import {updateRecord} from "lightning/uiRecordApi";
+import { updateRecord } from "lightning/uiRecordApi";
 import ID from "@salesforce/user/Id";
 import InternalWorkOrder_Header_Text from "@salesforce/label/c.InternalWorkOrder_Header_Text";
 import AppointmentPicker_Appointments_Header from "@salesforce/label/c.AppointmentPicker_Appointments_Header";
@@ -14,13 +14,12 @@ import InternalWorkOrder_Start_Travel_Text from "@salesforce/label/c.InternalWor
 import InternalWorkOrder_Start_Travel_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Start_Travel_Sub_Text";
 import { NavigationMixin } from "lightning/navigation";
 
-
-
 import createInternalWorkOrder from "@salesforce/apex/InternalWorkOrderController.createInternalWorkOrder";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
-export default class InternalWorkOrderForm extends NavigationMixin(LightningElement) {
-
+export default class InternalWorkOrderForm extends NavigationMixin(
+  LightningElement
+) {
   @api startDate;
   @api endDate;
   @api timeSheetId;
@@ -161,7 +160,6 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
         (edge) => edge.node.ServiceAppointment
       );
       this.serviceAppointments = this.data.map((appointment) => {
-
         let date = new Date(appointment.SchedStartTime.value);
         //Use the date and the cleaned up hours and minutes, use 24h format
         let dateFormatted =
@@ -175,17 +173,24 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
         //Make sure we don't return things like 14:0, but 14:00
         dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
 
-        let icon = '';
-        if(appointment.WorkType.Name.value === 'Waste Management') {
-          icon = '🗑️'
-        } else if (appointment.WorkType.Name.value === 'Internal Depot') {
-          icon = '🏭'
+        let icon = "";
+        if (appointment.WorkType.Name.value === "Waste Management") {
+          icon = "🗑️";
+        } else if (appointment.WorkType.Name.value === "Internal Depot") {
+          icon = "🏭";
         } else {
-          icon = '💲'
+          icon = "💲";
         }
 
         return {
-          Appointment: icon + " " +appointment.Account.Name.value + " - " + dateFormatted + " - " + appointment.WorkType.Name.value,
+          Appointment:
+            icon +
+            " " +
+            appointment.Account.Name.value +
+            " - " +
+            dateFormatted +
+            " - " +
+            appointment.WorkType.Name.value,
           AppointmentNumber: appointment.AppointmentNumber.value,
           Subject: appointment.Subject.value,
           Id: appointment.Id,
@@ -201,30 +206,28 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
 
   @wire(graphql, {
     query: gql`
-    query WorkTypes {
-      uiapi {
-        query {
-          WorkType {
-            edges {
-              node {
-                Name {
-                  value
-                  displayValue
+      query WorkTypes {
+        uiapi {
+          query {
+            WorkType {
+              edges {
+                node {
+                  Name {
+                    value
+                    displayValue
+                  }
+                  Id
                 }
-                Id
               }
             }
           }
         }
       }
-    }
-  `
+    `
   })
   workTypesQueryResult({ error, data }) {
     if (data) {
-      this.data = data.uiapi.query.WorkType.edges.map(
-        (edge) => edge.node
-      );
+      this.data = data.uiapi.query.WorkType.edges.map((edge) => edge.node);
       this.workTypes = this.data.map((workType) => {
         return {
           Name: workType.Name.value,
@@ -242,10 +245,14 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
   }
 
   handleSetAppointmentClicked(event) {
-    event.preventDefault(); // Add this line
+    event.preventDefault();
     this.showRecordForm = false;
     this.showAppointmentScreen = true;
     this.showBottomFooter = true;
+
+    this.selectedRows = [];
+    this.workOrderId = "";
+    this.disableNextButton = true;
   }
 
   handleCloseWasteVisitScreen() {
@@ -261,7 +268,7 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
     this.showSpinner = true;
     let fields = {};
     fields["Id"] = this.newServiceAppointmentId;
-    fields['Status'] = 'Travelling';
+    fields["Status"] = "Travelling";
 
     const recordInput = { fields };
     updateRecord(recordInput)
@@ -282,7 +289,6 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
       .catch((error) => {
         this.showSpinner = false;
       });
-
   }
 
   handleTypeChange(event) {
@@ -294,6 +300,10 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
     this.showAppointmentScreen = false;
     this.showRecordForm = true;
     this.showBottomFooter = false;
+
+    this.selectedRows = [];
+    this.workOrderId = "";
+    this.disableNextButton = true;
   }
 
   handleCancel(event) {
@@ -305,7 +315,9 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
   }
 
   handleSelect() {
-    this.handleBack();
+    this.showAppointmentScreen = false;
+    this.showRecordForm = true;
+    this.showBottomFooter = false;
   }
 
   handleWorkOrderCreated(event) {
@@ -328,7 +340,11 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
 
     this.showSpinner = true;
 
-    createInternalWorkOrder({subject: this.defaultSubject, workTypeId: workType.Id, parentWorkOrderId: this.workOrderId})
+    createInternalWorkOrder({
+      subject: this.defaultSubject,
+      workTypeId: workType.Id,
+      parentWorkOrderId: this.workOrderId
+    })
       .then((result) => {
         console.log("result", JSON.stringify(result));
         this.newWorkOrderId = result.workOrderId;
@@ -343,7 +359,6 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
         this.showSpinner = false;
         this.showToastError();
       });
-
   }
 
   showToastSuccess() {
@@ -389,7 +404,7 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
   }
 
   get formElementClass() {
-    return `slds-form-element slds-m-top_medium slds-m-bottom_x-small ${!this.workOrderId ? 'slds-has-error' : ''}`;
+    return `slds-form-element slds-m-top_medium slds-m-bottom_x-small ${!this.workOrderId ? "slds-has-error" : ""}`;
   }
 
   get serviceAppointmentsVariables() {
@@ -409,5 +424,4 @@ export default class InternalWorkOrderForm extends NavigationMixin(LightningElem
       endDate: { value: nextWeekEnd.toISOString() }
     };
   }
-
 }

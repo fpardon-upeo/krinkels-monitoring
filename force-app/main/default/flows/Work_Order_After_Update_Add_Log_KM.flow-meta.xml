@@ -3,7 +3,7 @@
     <apiVersion>62.0</apiVersion>
     <environments>Default</environments>
     <interviewLabel>[Work Order] - After Update - Add Log KM {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>[Work Order] - After Update - Add Log KM</label>
+    <label>[Work Order] - [After Update] - Add Log KM</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>

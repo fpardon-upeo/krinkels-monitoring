@@ -61,6 +61,21 @@ public without sharing class InternalWorkOrderController {
         System.debug('serviceResourceId: ' + serviceResourceId);
         System.debug('internalWorkOrderId: ' + internalWorkOrderId);
 
+        //Check if the Service Resource is part of a Crew
+        //The Service Crew Member record Start Date needs to be less than today
+        //The Service Crew Member record End Date needs to be blank or greater than today
+        //The Service Crew Member record Service Resource ID needs to be the same as the Service Resource ID
+
+        ServiceCrewMember serviceCrewMember = null;
+
+        try {
+            serviceCrewMember = [SELECT Id FROM ServiceCrewMember WHERE ServiceResourceId = :serviceResourceId AND StartDate <= TODAY AND (EndDate = NULL OR EndDate >= TODAY) LIMIT 1];
+        } catch (QueryException e) {
+            System.debug('No Service Crew Member found');
+        }
+
+
+
         ServiceAppointment serviceAppointment = [SELECT Id FROM ServiceAppointment WHERE ParentRecordId = :internalWorkOrderId];
         serviceAppointment.SchedStartTime = Datetime.now();
         serviceAppointment.SchedEndTime = Datetime.now().addHours(1);
@@ -68,8 +83,13 @@ public without sharing class InternalWorkOrderController {
         update serviceAppointment;
 
         AssignedResource assignedResource = new AssignedResource();
-        assignedResource.ServiceResourceId = serviceResourceId;
         assignedResource.ServiceAppointmentId = serviceAppointment.Id;
+
+        if(serviceCrewMember != null) {
+            assignedResource.ServiceCrewId = serviceCrewMember.Id;
+        } else {
+            assignedResource.ServiceResourceId = serviceResourceId;
+        }
 
         insert assignedResource;
 

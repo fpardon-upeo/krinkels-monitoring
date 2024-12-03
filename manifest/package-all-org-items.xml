@@ -24,6 +24,7 @@
         <members>AddressSearchService</members>
         <members>CallOut</members>
         <members>CallOutHandler</members>
+        <members>CheckInService</members>
         <members>ContractLineItemTriggerHandler</members>
         <members>DateTimeRounder</members>
         <members>DateTimeRounderTest</members>
@@ -687,6 +688,7 @@
         <members>FileUploadImprovedHelper</members>
         <members>FileUploadImproved_Test</members>
         <members>GanttRoundPinAction</members>
+        <members>GanttRoundPinActionTest</members>
         <members>GetRecordsIn</members>
         <members>GetRecordsInTest</members>
         <members>ImageCaptureService</members>
@@ -740,6 +742,7 @@
         <members>TimeSheetCalculationServiceTest</members>
         <members>TimeSheetController</members>
         <members>TimeSheetControllerTest</members>
+        <members>TimeSheetMapController</members>
         <members>TimeSheetProjectLinkService</members>
         <members>TimeSheetProjectLinkServiceTest</members>
         <members>WeatherService</members>
@@ -1286,6 +1289,7 @@
         <members>Asset_Financial_Account__c.Account__c</members>
         <members>Asset_Financial_Account__c.Asset__c</members>
         <members>Asset_Financial_Account__c.Key__c</members>
+        <members>AssignedResource.External_Id__c</members>
         <members>AssignedResource.FSL__EstimatedTravelDistanceFrom__c</members>
         <members>AssignedResource.FSL__EstimatedTravelDistanceTo__c</members>
         <members>AssignedResource.FSL__EstimatedTravelTimeFrom__c</members>
@@ -2046,6 +2050,7 @@
         <members>Location.Account__c</members>
         <members>Location.Code__c</members>
         <members>Location.Contract_Manager__c</members>
+        <members>Location.Current_User_is_CM__c</members>
         <members>Location.Driver_Code__c</members>
         <members>Location.License_Plate__c</members>
         <members>Location.Van_Crew__c</members>
@@ -2092,6 +2097,7 @@
         <members>Location_Visit__c.Unit__c</members>
         <members>Location_Visit__c.Visit_Address__c</members>
         <members>Location_Visit__c.Visit_Date__c</members>
+        <members>Location_Visit__c.Work_Order__c</members>
         <members>Logger_Settings__c.Enable_Inbound_Logs__c</members>
         <members>Logger_Settings__c.Enable_Outbound_Logs__c</members>
         <members>MaintenanceAsset.Contract_Manager__c</members>
@@ -2155,6 +2161,7 @@
         <members>ProductItem.Van_Crew__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
         <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
+        <members>ResourceAbsence.Absence_Type__c</members>
         <members>ResourceAbsence.Code_ATAK_Limbus__c</members>
         <members>ResourceAbsence.Contract_Manager__c</members>
         <members>ResourceAbsence.Depot__c</members>
@@ -2341,6 +2348,7 @@
         <members>WorkOrder.Before_Work_Comments__c</members>
         <members>WorkOrder.Check_In_At_Work_Reference__c</members>
         <members>WorkOrder.Check_In_At_Work_Required__c</members>
+        <members>WorkOrder.Checkin_Location__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.Contract_Manager__c</members>
         <members>WorkOrder.Depot_Visit_Comments__c</members>
@@ -2441,6 +2449,84 @@
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
+        <members>Calendar_Add_Break</members>
+        <members>Calendar_Add_Break</members>
+        <members>Calendar_Add_Break_Description</members>
+        <members>Calendar_Add_Break_Description</members>
+        <members>Calendar_Add_In_Mileage_Entry_Description</members>
+        <members>Calendar_Add_In_Mileage_Entry_Description</members>
+        <members>Calendar_Add_Out_Mileage_Entry</members>
+        <members>Calendar_Add_Out_Mileage_Entry</members>
+        <members>Calendar_Add_Out_Mileage_Entry_Description</members>
+        <members>Calendar_Add_Out_Mileage_Entry_Description</members>
+        <members>Calendar_Add_Time_Sheet_Entry_Description</members>
+        <members>Calendar_Add_Time_Sheet_Entry_Description</members>
+        <members>Calendar_Cancel</members>
+        <members>Calendar_Cancel</members>
+        <members>Calendar_Create_New_Entry</members>
+        <members>Calendar_Create_New_Entry</members>
+        <members>Calendar_Edit</members>
+        <members>Calendar_Edit</members>
+        <members>Calendar_Edit_Break_Entry</members>
+        <members>Calendar_Edit_Break_Entry</members>
+        <members>Calendar_Edit_Mileage_Entry</members>
+        <members>Calendar_Edit_Mileage_Entry</members>
+        <members>Calendar_Edit_Time_Sheet_Entry</members>
+        <members>Calendar_Edit_Time_Sheet_Entry</members>
+        <members>Calendar_In_Mileage_Entries</members>
+        <members>Calendar_In_Mileage_Entries</members>
+        <members>Calendar_In_Mileage_Entries_Description</members>
+        <members>Calendar_In_Mileage_Entries_Description</members>
+        <members>Calendar_Mileage_Allowance</members>
+        <members>Calendar_Mileage_Allowance</members>
+        <members>Calendar_Mileage_Ending_Location</members>
+        <members>Calendar_Mileage_Ending_Location</members>
+        <members>Calendar_Mileage_Ending_Mileage</members>
+        <members>Calendar_Mileage_Ending_Mileage</members>
+        <members>Calendar_Mileage_Entries</members>
+        <members>Calendar_Mileage_Entries</members>
+        <members>Calendar_Mileage_Options</members>
+        <members>Calendar_Mileage_Options</members>
+        <members>Calendar_Mileage_Starting_Location</members>
+        <members>Calendar_Mileage_Starting_Location</members>
+        <members>Calendar_Mileage_Starting_Mileage</members>
+        <members>Calendar_Mileage_Starting_Mileage</members>
+        <members>Calendar_New_Break_Entry</members>
+        <members>Calendar_New_Break_Entry</members>
+        <members>Calendar_New_In_Mileage_Entry</members>
+        <members>Calendar_New_In_Mileage_Entry</members>
+        <members>Calendar_New_Out_Mileage_Entry</members>
+        <members>Calendar_New_Out_Mileage_Entry</members>
+        <members>Calendar_New_Timesheet_Entry</members>
+        <members>Calendar_New_Timesheet_Entry</members>
+        <members>Calendar_No_Entries</members>
+        <members>Calendar_No_Entries</members>
+        <members>Calendar_No_In_Mileage_Entries_Description</members>
+        <members>Calendar_No_In_Mileage_Entries_Description</members>
+        <members>Calendar_No_Out_Mileage_Entries_Description</members>
+        <members>Calendar_No_Out_Mileage_Entries_Description</members>
+        <members>Calendar_Out_Mileage_Entries</members>
+        <members>Calendar_Out_Mileage_Entries</members>
+        <members>Calendar_Out_Mileage_Entries_Description</members>
+        <members>Calendar_Out_Mileage_Entries_Description</members>
+        <members>Calendar_Save</members>
+        <members>Calendar_Save</members>
+        <members>Calendar_Submit</members>
+        <members>Calendar_Submit</members>
+        <members>Calendar_Submit_For_Approval</members>
+        <members>Calendar_Submit_For_Approval</members>
+        <members>Calendar_Submit_Time_Sheet</members>
+        <members>Calendar_Submit_Time_Sheet</members>
+        <members>Calendar_User_Settings</members>
+        <members>Calendar_User_Settings</members>
+        <members>Calendar_User_Settings_End_Time</members>
+        <members>Calendar_User_Settings_End_Time</members>
+        <members>Calendar_User_Settings_Start_Time</members>
+        <members>Calendar_User_Settings_Start_Time</members>
+        <members>Calendar_User_Settings_Time_Range</members>
+        <members>Calendar_User_Settings_Time_Range</members>
+        <members>Calendar_Warning_Submit_Timesheet</members>
+        <members>Calendar_Warning_Submit_Timesheet</members>
         <members>FSL__ABNotificationIsComplexWorkO2</members>
         <members>FSL__ABNotificationIsComplexWorkO2</members>
         <members>FSL__AB_Explanation_Header</members>
@@ -10143,8 +10229,8 @@
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check</members>
         <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
-        <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
@@ -10202,8 +10288,8 @@
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check</members>
         <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
-        <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
@@ -10646,6 +10732,7 @@
         <members>addressSearch</members>
         <members>bmpyrckt__illustration</members>
         <members>bmpyrckt__timeline</members>
+        <members>checkIn</members>
         <members>colorsPicker</members>
         <members>contractLineEditor</members>
         <members>darkInput</members>
@@ -10716,6 +10803,7 @@
         <members>internalWorkOrderForm</members>
         <members>loadingSpinner</members>
         <members>locationPassport</members>
+        <members>locationServiceUtil</members>
         <members>nextAppointmentPicker</members>
         <members>prepareContractForNextYear</members>
         <members>readyForValidation</members>
@@ -10736,6 +10824,7 @@
         <members>timeSheetCalendar</members>
         <members>timeSheetCalendarCustom</members>
         <members>timeSheetHeader</members>
+        <members>timeSheetMap</members>
         <members>timesheetEntryForm</members>
         <members>toastMessage</members>
         <members>utilsImageCapture</members>
@@ -11544,6 +11633,7 @@
         <members>WorkOrder.Start_Stop</members>
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
+        <members>WorkStep.Check_In</members>
         <members>WorkStep.Checkout</members>
         <members>WorkStep.Set_Service_Status</members>
         <members>WorkStep.Take_After_Work_Photos</members>
@@ -12870,6 +12960,7 @@
         <members>Lead.GoogleMaps</members>
         <members>Lead.GoogleNews</members>
         <members>Lead.GoogleSearch</members>
+        <members>WorkOrder.Waste_Depot_Visit</members>
         <name>WebLink</name>
     </types>
     <types>

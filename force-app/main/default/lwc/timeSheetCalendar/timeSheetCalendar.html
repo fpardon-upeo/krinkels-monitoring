@@ -135,9 +135,7 @@
             variant="warning"
           ></lightning-icon>
         </div>
-        <p class="warning-text">
-          Warning: No entries or breaks found for this time sheet.
-        </p>
+        <p class="warning-text">{labels.Calendar_No_Entries}</p>
       </div>
     </template>
   </div>
@@ -149,7 +147,7 @@
         onclick={handleSubmitTimeSheetMessage}
         class="submit-buttonSecond"
       >
-        Submit for Approval
+        {labels.Calendar_Submit_For_Approval}
       </button>
     </div>
   </template>
@@ -160,7 +158,7 @@
     <div class="mobile-bottom-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Create New Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_Create_New_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="action-buttons">
@@ -175,9 +173,11 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">Add Time Sheet Entry</span>
+              <span class="button-label"
+                >{labels.Calendar_Add_Time_Sheet_Entry}</span
+              >
               <span class="button-description"
-                >Record work hours or other activities</span
+                >{labels.Calendar_Add_Time_Sheet_Entry_Description}</span
               >
             </span>
           </button>
@@ -193,13 +193,17 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">Add Break</span>
-              <span class="button-description">Record break time</span>
+              <span class="button-label">{labels.Calendar_Add_Break}</span>
+              <span class="button-description"
+                >{labels.Calendar_Add_Break_Description}</span
+              >
             </span>
           </button>
         </div>
 
-        <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+        <button class="cancel-button" onclick={handleCloseForm}>
+          {labels.Calendar_Cancel}
+        </button>
       </div>
     </div>
   </template>
@@ -210,7 +214,7 @@
     <div class="mobile-bottom-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Mileage Options</h2>
+        <h2 class="sheet-title">{labels.Calendar_Mileage_Options}</h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="action-buttons">
@@ -222,9 +226,11 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">In Mileage Entries</span>
+              <span class="button-label"
+                >{labels.Calendar_In_Mileage_Entries}</span
+              >
               <span class="button-description"
-                >View or add in mileage records</span
+                >{labels.Calendar_In_Mileage_Entries_Description}</span
               >
             </span>
           </button>
@@ -237,15 +243,19 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">Out Mileage Entries</span>
+              <span class="button-label"
+                >{labels.Calendar_Out_Mileage_Entries}</span
+              >
               <span class="button-description"
-                >View or add out mileage records</span
+                >{labels.Calendar_Out_Mileage_Entries_Description}</span
               >
             </span>
           </button>
         </div>
 
-        <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+        <button class="cancel-button" onclick={handleCloseForm}>
+          {labels.Calendar_Cancel}
+        </button>
       </div>
     </div>
   </template>
@@ -256,7 +266,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Mileage Entries</h2>
+        <h2 class="sheet-title">{labels.Calendar_Mileage_Entries}</h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="MileageEntries-container">
@@ -264,7 +274,7 @@
             <div class="MileageEntryContainer" key={entry.Id}>
               <div class="form-element">
                 <label class="slds-form-element__label"
-                  >Starting Location</label
+                  >{labels.Calendar_Mileage_Starting_Location}</label
                 >
                 <div class="slds-form-element__control">
                   <input
@@ -277,7 +287,9 @@
               </div>
 
               <div class="form-element">
-                <label class="slds-form-element__label">Ending Location</label>
+                <label class="slds-form-element__label"
+                  >{labels.Calendar_Mileage_Ending_Location}</label
+                >
                 <div class="slds-form-element__control">
                   <input
                     type="text"
@@ -289,7 +301,9 @@
               </div>
 
               <div class="form-element">
-                <label class="slds-form-element__label">Allowance</label>
+                <label class="slds-form-element__label"
+                  >{labels.Calendar_Mileage_Allowance}</label
+                >
                 <div class="slds-form-element__control">
                   <input
                     type="text"
@@ -301,7 +315,9 @@
               </div>
 
               <div class="form-element">
-                <label class="slds-form-element__label">Starting Mileage</label>
+                <label class="slds-form-element__label"
+                  >{labels.Calendar_Mileage_Starting_Mileage}</label
+                >
                 <div class="slds-form-element__control">
                   <input
                     type="text"
@@ -313,7 +329,9 @@
               </div>
 
               <div class="form-element">
-                <label class="slds-form-element__label">Ending Mileage</label>
+                <label class="slds-form-element__label"
+                  >{labels.Calendar_Mileage_Ending_Mileage}</label
+                >
                 <div class="slds-form-element__control">
                   <input
                     type="text"
@@ -326,7 +344,7 @@
 
               <div class="button-mileage-container">
                 <button class="cancel-button" onclick={handleCloseForm}>
-                  Cancel
+                  {labels.Calendar_Cancel}
                 </button>
                 <template if:false={showNoEntriesModal}>
                   <button
@@ -334,7 +352,7 @@
                     onclick={handleMileageEntryEdit}
                     data-id={entry.Id}
                   >
-                    Edit
+                    {labels.Calendar_Edit}
                   </button>
                 </template>
               </div>
@@ -351,7 +369,9 @@
     <div class="mobile-bottom-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">No In Mileage Entries Found</h2>
+        <h2 class="sheet-title">
+          {labels.Calendar_No_In_Mileage_Entries_Description}
+        </h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="action-buttons">
@@ -363,14 +383,18 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">Add In Mileage Entry</span>
+              <span class="button-label"
+                >{labels.Calendar_Add_In_Mileage_Entry}</span
+              >
               <span class="button-description"
-                >Create a new in mileage record</span
+                >{labels.Calendar_Add_In_Mileage_Entry_Description}</span
               >
             </span>
           </button>
         </div>
-        <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+        <button class="cancel-button" onclick={handleCloseForm}>
+          {labels.Calendar_Cancel}
+        </button>
       </div>
     </div>
   </template>
@@ -381,7 +405,9 @@
     <div class="mobile-bottom-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">No Out Mileage Entries Found</h2>
+        <h2 class="sheet-title">
+          {labels.Calendar_No_Out_Mileage_Entries_Description}
+        </h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="action-buttons">
@@ -394,20 +420,24 @@
                 ></lightning-icon>
               </span>
               <span class="button-text">
-                <span class="button-label">Add Out Mileage Entry</span>
+                <span class="button-label"
+                  >{labels.Calendar_Add_Out_Mileage_Entry}</span
+                >
                 <span class="button-description"
-                  >Create a new out mileage record</span
+                  >{labels.Calendar_Add_Out_Mileage_Entry_Description}</span
                 >
               </span>
             </button>
           </template>
           <template if:true={showNoEntriesModal}>
             <p class="no-entries-text">
-              No out mileage entries found for this time sheet.
+              {labels.Calendar_No_Out_Mileage_Entries_Description}
             </p>
           </template>
         </div>
-        <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+        <button class="cancel-button" onclick={handleCloseForm}>
+          {labels.Calendar_Cancel}
+        </button>
       </div>
     </div>
   </template>
@@ -418,7 +448,7 @@
     <div class="mobile-bottom-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Submit Time Sheet</h2>
+        <h2 class="sheet-title">{labels.Calendar_Submit_Time_Sheet}</h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="warning-container">
@@ -429,17 +459,14 @@
               variant="warning"
             ></lightning-icon>
           </div>
-          <p class="warning-text">
-            Warning: After submission, this timesheet will be locked and cannot
-            be edited.
-          </p>
+          <p class="warning-text">{labels.Calendar_Warning_Submit_Timesheet}</p>
         </div>
         <div class="button-group">
           <button class="cancel-button" onclick={handleCloseForm}>
-            Cancel
+            {labels.Calendar_Cancel}
           </button>
           <button class="submit-button" onclick={handleSubmitTimeSheet}>
-            Submit
+            {labels.Calendar_Submit}
           </button>
         </div>
       </div>
@@ -454,7 +481,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">New Out Mileage Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_New_Out_Mileage_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <lightning-record-edit-form
@@ -501,9 +528,11 @@
           </div>
           <div class="button-group">
             <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
+              {labels.Calendar_Cancel}
             </button>
-            <button class="submit-button" type="submit">Save</button>
+            <button class="submit-button" type="submit">
+              {labels.Calendar_Save}
+            </button>
           </div>
         </lightning-record-edit-form>
       </div>
@@ -516,7 +545,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">New In Mileage Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_New_In_Mileage_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <lightning-record-edit-form
@@ -563,9 +592,11 @@
           </div>
           <div class="button-group">
             <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
+              {labels.Calendar_Cancel}
             </button>
-            <button class="submit-button" type="submit">Save</button>
+            <button class="submit-button" type="submit">
+              {labels.Calendar_Save}
+            </button>
           </div>
         </lightning-record-edit-form>
       </div>
@@ -581,7 +612,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">New Time Sheet Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_New_Time_Sheet_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <c-timesheet-entry-form
@@ -604,7 +635,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">New Break Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_New_Break_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <lightning-record-edit-form
@@ -654,9 +685,11 @@
 
           <div class="button-group">
             <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
+              {labels.Calendar_Cancel}
             </button>
-            <button class="submit-button" type="submit">Save</button>
+            <button class="submit-button" type="submit">
+              {labels.Calendar_Save}
+            </button>
           </div>
         </lightning-record-edit-form>
       </div>
@@ -669,7 +702,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Edit Time Sheet Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_Edit_Time_Sheet_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <lightning-record-edit-form
@@ -699,9 +732,11 @@
 
           <div class="button-group">
             <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
+              {labels.Calendar_Cancel}
             </button>
-            <button class="submit-button" type="submit">Save</button>
+            <button class="submit-button" type="submit">
+              {labels.Calendar_Save}
+            </button>
           </div>
         </lightning-record-edit-form>
       </div>
@@ -714,7 +749,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Edit Break Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_Edit_Break_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <lightning-record-edit-form
@@ -743,9 +778,11 @@
 
           <div class="button-group">
             <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
+              {labels.Calendar_Cancel}
             </button>
-            <button class="submit-button" type="submit">Save</button>
+            <button class="submit-button" type="submit">
+              {labels.Calendar_Save}
+            </button>
           </div>
         </lightning-record-edit-form>
       </div>
@@ -758,7 +795,7 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Edit Mileage Entry</h2>
+        <h2 class="sheet-title">{labels.Calendar_Edit_Mileage_Entry}</h2>
       </div>
       <div class="bottom-sheet-content">
         <lightning-record-edit-form
@@ -784,9 +821,11 @@
 
           <div class="button-group">
             <button class="cancel-button" onclick={handleCloseForm}>
-              Cancel
+              {labels.Calendar_Cancel}
             </button>
-            <button class="submit-button" type="submit">Save</button>
+            <button class="submit-button" type="submit">
+              {labels.Calendar_Save}
+            </button>
           </div>
         </lightning-record-edit-form>
       </div>
@@ -801,15 +840,18 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Settings</h2>
+        <h2 class="sheet-title">{labels.Calendar_User_Settings}</h2>
       </div>
       <div class="bottom-sheet-content">
-        <lightning-card title="Time Range Selector" icon-name="utility:clock">
+        <lightning-card
+          title={labels.Calendar_User_Settings_Time_Range}
+          icon-name="utility:clock"
+        >
           <div class="slider-container">
             <!-- Min Time Slider -->
             <div class="min-slider">
               <lightning-slider
-                label="Start Time"
+                label={labels.Calendar_User_Settings_Start_Time}
                 min="0"
                 max="24"
                 step="0.5"
@@ -817,12 +859,12 @@
                 onchange={handleMinChange}
               >
               </lightning-slider>
-              <p>Selected Start Time: {minLabel}</p>
+              <p>{labels.Calendar_User_Settings_Start_Time}: {minLabel}</p>
             </div>
             <!-- Max Time Slider -->
             <div class="max-slider">
               <lightning-slider
-                label="End Time"
+                label={labels.Calendar_User_Settings_End_Time}
                 min="0"
                 max="24"
                 step="0.5"
@@ -830,21 +872,21 @@
                 onchange={handleMaxChange}
               >
               </lightning-slider>
-              <p>Selected End Time: {maxLabel}</p>
+              <p>{labels.Calendar_User_Settings_End_Time}: {maxLabel}</p>
             </div>
           </div>
         </lightning-card>
 
         <div class="button-group">
           <button class="cancel-button" onclick={handleCloseForm}>
-            Cancel
+            {labels.Calendar_Cancel}
           </button>
           <button
             class="submit-button"
             onclick={handleSuccessSettings}
             data-type="edit"
           >
-            Save
+            {labels.Calendar_Save}
           </button>
         </div>
       </div>
@@ -856,15 +898,18 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Settings</h2>
+        <h2 class="sheet-title">{labels.Calendar_User_Settings}</h2>
       </div>
       <div class="bottom-sheet-content">
-        <lightning-card title="Time Range Selector" icon-name="utility:clock">
+        <lightning-card
+          title={labels.Calendar_User_Settings_Time_Range}
+          icon-name="utility:clock"
+        >
           <div class="slider-container">
             <!-- Min Time Slider -->
             <div class="min-slider">
               <lightning-slider
-                label="Start Time"
+                label={labels.Calendar_User_Settings_Start_Time}
                 min="0"
                 max="24"
                 step="0.5"
@@ -872,12 +917,12 @@
                 onchange={handleMinChange}
               >
               </lightning-slider>
-              <p>Selected Start Time: {minLabel}</p>
+              <p>{labels.Calendar_User_Settings_Start_Time}: {minLabel}</p>
             </div>
             <!-- Max Time Slider -->
             <div class="max-slider">
               <lightning-slider
-                label="End Time"
+                label={labels.Calendar_User_Settings_End_Time}
                 min="0"
                 max="24"
                 step="0.5"
@@ -885,21 +930,21 @@
                 onchange={handleMaxChange}
               >
               </lightning-slider>
-              <p>Selected End Time: {maxLabel}</p>
+              <p>{labels.Calendar_User_Settings_End_Time}: {maxLabel}</p>
             </div>
           </div>
         </lightning-card>
 
         <div class="button-group">
           <button class="cancel-button" onclick={handleCloseForm}>
-            Cancel
+            {labels.Calendar_Cancel}
           </button>
           <button
             class="submit-button"
             onclick={handleSuccessSettings}
             data-type="new"
           >
-            Save
+            {labels.Calendar_Save}
           </button>
         </div>
       </div>

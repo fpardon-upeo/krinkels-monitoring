@@ -662,4 +662,316 @@
         <shortDescription>StartDay_Waste_Button_Text</shortDescription>
         <value>Create a Waste Management Visit</value>
     </labels>
+    <labels>
+        <fullName>Calendar_Add_Break</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_Break</shortDescription>
+        <value>Add Break</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Add_Break_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_Break_Description</shortDescription>
+        <value>Record break time</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Add_In_Mileage_Entry_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_In_Mileage_Entry_Description</shortDescription>
+        <value>Create a new in mileage record</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Add_Out_Mileage_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_Out_Mileage_Entry</shortDescription>
+        <value>Add Out Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Add_Out_Mileage_Entry_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_Out_Mileage_Entry_Description</shortDescription>
+        <value>Create a new out mileage record</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Add_Time_Sheet_Entry_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_Time_Sheet_Entry_Description</shortDescription>
+        <value>Record work hours or other activities</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Cancel</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Create_New_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Create_New_Entry</shortDescription>
+        <value>Create New Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Edit</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Edit_Break_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Edit_Break_Entry</shortDescription>
+        <value>Edit Break Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Edit_Mileage_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Edit_Mileage_Entry</shortDescription>
+        <value>Edit Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Edit_Time_Sheet_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Edit_Time_Sheet_Entry</shortDescription>
+        <value>Edit Time Sheet Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_In_Mileage_Entries</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_In_Mileage_Entries</shortDescription>
+        <value>In Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_In_Mileage_Entries_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_In_Mileage_Entries_Description</shortDescription>
+        <value>View or add In mileage records</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Allowance</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Allowance</shortDescription>
+        <value>Allowance</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Ending_Location</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Ending_Location</shortDescription>
+        <value>Ending Location</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Ending_Mileage</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Ending_Mileage</shortDescription>
+        <value>Ending Mileage</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Entries</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Entries</shortDescription>
+        <value>Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Options</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Options</shortDescription>
+        <value>Mileage Options</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Starting_Location</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Starting_Location</shortDescription>
+        <value>Starting Location</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Starting_Mileage</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Starting_Mileage</shortDescription>
+        <value>Starting Mileage</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_New_Break_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_New_Break_Entry</shortDescription>
+        <value>New Break Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_New_In_Mileage_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_New_In_Mileage_Entry</shortDescription>
+        <value>New In Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_New_Out_Mileage_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_New_Out_Mileage_Entry</shortDescription>
+        <value>New Out Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_New_Timesheet_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_New_Timesheet_Entry</shortDescription>
+        <value>New Time Sheet Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_No_Entries</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_No_Entries</shortDescription>
+        <value>Warning: No entries or breaks found for this time sheet.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_No_In_Mileage_Entries_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_No_In_Mileage_Entries_Description</shortDescription>
+        <value>No In Mileage Entries Found</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_No_Out_Mileage_Entries_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_No_Out_Mileage_Entries_Description</shortDescription>
+        <value>No Out Mileage Entries Found</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Out_Mileage_Entries</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Out_Mileage_Entries</shortDescription>
+        <value>Out Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Out_Mileage_Entries_Description</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Out_Mileage_Entries_Description</shortDescription>
+        <value>View or add out mileage records</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Save</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Submit</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Submit_For_Approval</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Submit_For_Approval</shortDescription>
+        <value>Submit for Approval</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Submit_Time_Sheet</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Submit Time Sheet</shortDescription>
+        <value>Submit Time Sheet</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_User_Settings</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_User_Settings</shortDescription>
+        <value>User Settings</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_User_Settings_End_Time</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_User_Settings_End_Time</shortDescription>
+        <value>End Time</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_User_Settings_Start_Time</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_User_Settings_Start_Time</shortDescription>
+        <value>Start Time</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_User_Settings_Time_Range</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_User_Settings_Time_Range</shortDescription>
+        <value>Time Range Selector Teste</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Warning_Submit_Timesheet</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Warning_Submit_Timesheet</shortDescription>
+        <value>Warning: After submission, this timesheet will be locked and cannot be edited.</value>
+    </labels>
 </CustomLabels>

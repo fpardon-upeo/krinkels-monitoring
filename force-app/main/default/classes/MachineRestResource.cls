@@ -24,7 +24,7 @@ global with sharing class MachineRestResource {
 
         if(typeOfData == 'voertuig'){
             returnMessage = ATAKVehicleService.createATAKVehicle(ATAKVehicleWrapper.parse(fullBody));
-        } else if(typeOfData == 'materieel'){
+        } else if(typeOfData == 'materiaal'){
             returnMessage = ATAKMaterialService.createATAKMaterial(ATAKMaterialWrapper.parse(fullBody));
         } else {
             return 'Error: Type not recognized';

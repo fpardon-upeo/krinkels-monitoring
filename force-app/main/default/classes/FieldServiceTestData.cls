@@ -229,4 +229,73 @@ public class FieldServiceTestData {
 
         return testData;
     }
+
+    // Add these methods to FieldServiceTestData class
+
+    /**
+     * Creates a test ServiceTerritory
+     * @param name The name of the territory
+     * @param isActive Whether the territory is active
+     * @param operatingHoursId The ID of the OperatingHours record
+     * @param doInsert Whether to insert the record
+     * @return ServiceTerritory The created ServiceTerritory
+     */
+    public static ServiceTerritory createTestServiceTerritory(String name, Boolean isActive, Id operatingHoursId, Boolean doInsert) {
+        ServiceTerritory territory = new ServiceTerritory(
+                Name = name,
+                IsActive = isActive,
+                OperatingHoursId = operatingHoursId
+        );
+
+        if(doInsert) {
+            insert territory;
+        }
+        return territory;
+    }
+
+    /**
+     * Creates a test OperatingHours record
+     * @param name The name of the operating hours
+     * @param timezone The timezone
+     * @param doInsert Whether to insert the record
+     * @return OperatingHours The created OperatingHours
+     */
+    public static OperatingHours createTestOperatingHours(String name, String timezone, Boolean doInsert) {
+        OperatingHours oh = new OperatingHours(
+                Name = name,
+                TimeZone = timezone
+        );
+
+        if(doInsert) {
+            insert oh;
+        }
+        return oh;
+    }
+
+    /**
+     * Creates a test ServiceTerritoryMember
+     * @param territoryId The ID of the ServiceTerritory
+     * @param resourceId The ID of the ServiceResource
+     * @param effectiveStartDate The start date of the membership
+     * @param doInsert Whether to insert the record
+     * @return ServiceTerritoryMember The created ServiceTerritoryMember
+     */
+    public static ServiceTerritoryMember createTestServiceTerritoryMember(
+            Id territoryId,
+            Id resourceId,
+            Datetime effectiveStartDate,
+            Boolean doInsert
+    ) {
+        ServiceTerritoryMember stm = new ServiceTerritoryMember(
+                ServiceTerritoryId = territoryId,
+                ServiceResourceId = resourceId,
+                EffectiveStartDate = effectiveStartDate,
+                TerritoryType = 'P'  // P for Primary
+        );
+
+        if(doInsert) {
+            insert stm;
+        }
+        return stm;
+    }
 }

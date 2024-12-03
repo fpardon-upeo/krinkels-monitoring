@@ -3,7 +3,7 @@
  */
 
 import {LightningElement, api, wire, track} from 'lwc';
-import { gql, graphql } from "lightning/uiGraphQLApi";
+import { gql, graphql, refreshGraphQL } from "lightning/uiGraphQLApi";
 import { getRecord, updateRecord, createRecord}  from "lightning/uiRecordApi";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
@@ -31,6 +31,8 @@ import AppointmentPicker_Break_Form_Title from '@salesforce/label/c.AppointmentP
 import AppointmentPicker_Break_Duration_Label from '@salesforce/label/c.AppointmentPicker_Break_Duration_Label';
 import AppointmentPicker_Save_Button from '@salesforce/label/c.AppointmentPicker_Save_Button';
 import AppointmentPicker_Break_Success_Message from '@salesforce/label/c.AppointmentPicker_Break_Success_Message';
+import StartDay_Internal_Button_Sub_Text from '@salesforce/label/c.StartDay_Internal_Button_Sub_Text';
+import StartDay_Internal_Button_Text from '@salesforce/label/c.StartDay_Internal_Button_Text';
 import {NavigationMixin} from "lightning/navigation";
 import {
     ToastTypes,
@@ -58,6 +60,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     toastMessage = '';
     breakDuration = 15;
     breakRecordTypeId;
+    graphQLServiceAppointments;
 
     breakDurationOptions = [
         { label: '15', value: 15 },
@@ -73,6 +76,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
     showAppointmentScreen = false;
     showHasIncompleteWorkSteps = false;
     showMilageEntryScreen = false;
+    showWorkOrderScreen = false;
     showBreakForm = false;
     selectedRows = [];
     mileageType = '';
@@ -97,7 +101,9 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         AppointmentPicker_Break_Form_Title,
         AppointmentPicker_Break_Duration_Label,
         AppointmentPicker_Save_Button,
-        AppointmentPicker_Break_Success_Message
+        AppointmentPicker_Break_Success_Message,
+        StartDay_Internal_Button_Sub_Text,
+        StartDay_Internal_Button_Text
     }
     columns = [
         { label: this.labels.AppointmentPicker_Appointments_Header, fieldName: 'Appointment', type: 'text', wrapText: true },
@@ -263,6 +269,7 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
                     { ServiceAppointment: { Status: { ne: "Unscheduled" } } },
                     { ServiceAppointment: { Status: { ne: "Cannot Complete" } } },
                     { ServiceAppointment: { Status: { ne: "Cancelled" } } },
+                    { ServiceAppointment: { Status: { ne: "In Progress" } } },
                     { ServiceAppointment: { 
                         SchedStartTime: { 
                           gte: $startDate,
@@ -300,6 +307,11 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
                         value
                         displayValue
                       }
+                      WorkType {
+                        Name {
+                          value
+                       }
+                      }
                     }
                   }
                 }
@@ -309,18 +321,35 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         }`,
         variables: "$serviceAppointmentsVariables",
     })
-    appointmentsQueryResult ({error, data}) {
-        if (data) {
-            this.data = data.uiapi.query.AssignedResource.edges.map(edge => edge.node.ServiceAppointment);
+    appointmentsQueryResult (result) {
+        this.graphQLServiceAppointments = result;
+        if (result.data) {
+            this.data = result.data.uiapi.query.AssignedResource.edges.map(edge => edge.node.ServiceAppointment);
             this.serviceAppointments = this.data.map(appointment => {
                 //Pretty schedule start time
                 let date = new Date(appointment.SchedStartTime.value);
                 //Use the date and the cleaned up hours and minutes, use 24h format
-                let dateFormatted =  date.getDate() + '/' + (date.getMonth() + 1) + ' ' + date.getHours() + ':' + date.getMinutes();
+                let dateFormatted =
+                  date.getDate() +
+                  "/" +
+                  (date.getMonth() + 1) +
+                  " " +
+                  date.getHours() +
+                  ":" +
+                  date.getMinutes();
                 //Make sure we don't return things like 14:0, but 14:00
                 dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
+
+                let icon = '';
+                if(appointment.WorkType.Name.value === 'Waste Management') {
+                    icon = '🗑️'
+                } else if (appointment.WorkType.Name.value === 'Internal Depot') {
+                    icon = '🏭'
+                } else {
+                    icon = '💲'
+                }
                 return {
-                    Appointment: appointment.Account.Name.value + ' - ' + dateFormatted,
+                    Appointment: icon + " " +appointment.Account.Name.value + " - " + dateFormatted + " - " + appointment.WorkType.Name.value,
                     AppointmentNumber: appointment.AppointmentNumber.value,
                     Subject: appointment.Subject.value,
                     Id: appointment.Id,
@@ -329,8 +358,17 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
                 }
             });
             console.log(JSON.stringify(this.serviceAppointments));
-        } else if (error) {
-            console.log(error);
+        } else if (result.error) {
+            console.log(result.error);
+        }
+    }
+
+    @api
+    async handleServiceAppointmentsRefresh() {
+        try {
+            await refreshGraphQL(this.graphQLServiceAppointments);
+        } catch (error) {
+            console.error('Error refreshing service appointments', error);
         }
     }
 
@@ -392,6 +430,18 @@ export default class NextAppointmentPicker extends NavigationMixin(LightningElem
         console.log('Set appointment clicked');
         this.showInitialScreen = false;
         this.showAppointmentScreen = true;
+    }
+
+    handleInternalOrderClicked() {
+        console.log('Internal order clicked');
+        this.showInitialScreen = false;
+        this.showWorkOrderScreen = true;
+    }
+
+    async handleWorkOrderCreated(event) {
+        await this.handleServiceAppointmentsRefresh();
+        this.showWorkOrderScreen = false;
+        this.showInitialScreen = true;
     }
 
     handleBreakDurationChange(event) {

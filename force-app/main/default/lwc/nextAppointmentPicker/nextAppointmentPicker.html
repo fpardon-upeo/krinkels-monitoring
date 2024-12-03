@@ -71,6 +71,28 @@
                         <button class="action-button brand"
                                 ontouchstart={handleTouchStart}
                                 ontouchend={handleTouchEnd}
+                                onclick={handleInternalOrderClicked}>
+                                    <span class="button-icon">
+                                        <lightning-icon
+                                          icon-name="utility:case"
+                                          size="medium"
+                                          class="slds-m-bottom_small">
+                                        </lightning-icon>
+                                    </span>
+                            <span class="button-text">
+                                      <span class="button-label">
+                                         {labels.StartDay_Internal_Button_Text}
+                                      </span>
+                                      <span class="button-description">
+                                          {labels.StartDay_Internal_Button_Sub_Text}
+                                      </span>
+                                    </span>
+                        </button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons">
+                        <button class="action-button brand"
+                                ontouchstart={handleTouchStart}
+                                ontouchend={handleTouchEnd}
                                 onclick={handleEndDayClicked}>
                                     <span class="button-icon">
                                         <lightning-icon
@@ -92,6 +114,13 @@
                 </div>
             </div>
         </lightning-card>
+    </template>
+    <template if:true={showWorkOrderScreen}>
+        <c-internal-work-order-form
+          service-resource-id={serviceResourceId}
+          record-id={serviceResourceId}
+          oncloseform={handleWorkOrderCreated}
+        ></c-internal-work-order-form>
     </template>
     <template if:true={showAppointmentScreen}>
         <div class="table-container">

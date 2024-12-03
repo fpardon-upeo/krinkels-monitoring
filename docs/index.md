@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (12594) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (2498) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (12685) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (2589) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (2450) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (2504) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -15,7 +15,7 @@ ___
 
 | Name  | Namespace | Version | Version Name |
 | :---- | :-------- | :------ | :----------: | 
-| FSL | FSL | [252.0.107.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKX000000Q4u1YAC) | Winter 2025 |
+| FSL | FSL | [252.0.127.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKX000000QAGgYAO) | Winter 2025 |
 | Sales Insights | OIQ | [1.0.0.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t58000000SGw3AAG) | 1.0 |
 | SocialCustomerService | SocialService | [1.0.0.2](https://test.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000QzQyAAK) | Winter 2013 |
 | Time Warp | bmpyrckt | [1.14.0.1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t2w000009gtDFAAY) | Ross |

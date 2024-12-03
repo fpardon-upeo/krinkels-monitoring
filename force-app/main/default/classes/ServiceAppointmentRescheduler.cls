@@ -47,15 +47,15 @@ public without sharing class ServiceAppointmentRescheduler {
             if(futureAppointments != null){
                 for(Integer i = 0; i < futureAppointments.size(); i++){
                     ServiceAppointment futureAppointment = futureAppointments[i];
-                    System.debug('Future Appointment: ' + futureAppointment.AppointmentNumber);
-                    System.debug('newDates at i: ' +i + ' ' + result.newDates[i]);
+                    //System.debug('Future Appointment: ' + futureAppointment.AppointmentNumber);
+                    //System.debug('newDates at i: ' +i + ' ' + result.newDates[i]);
 
                     // Since RRuleAdjuster is already giving us UTC times, use them directly
                     futureAppointment.SchedStartTime = i == 0 ? result.newDates[i+1] : result.newDates[i+1];
                     futureAppointment.SchedEndTime = i == 0 ? result.newDates[i+1].addMinutes(durationInMinutesInt) : result.newDates[i+1].addMinutes(durationInMinutesInt);
 
-                    System.debug('New Start Time (UTC): ' + futureAppointment.SchedStartTime);
-                    System.debug('New End Time (UTC): ' + futureAppointment.SchedEndTime);
+                    //System.debug('New Start Time (UTC): ' + futureAppointment.SchedStartTime);
+                    //System.debug('New End Time (UTC): ' + futureAppointment.SchedEndTime);
                 }
             }
 

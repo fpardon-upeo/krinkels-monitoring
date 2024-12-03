@@ -1,136 +1,146 @@
 /* Main container styles */
 .main-container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    background: white;
-    overflow: hidden;
-    box-sizing: border-box;
-    position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem 1rem 2rem 1rem;
+  background: white;
+  box-sizing: border-box;
+  position: relative;
 }
 
 /* Header styles */
 .header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .header-icon {
-    --sds-c-icon-color-foreground-default: #706e6b;
+  --sds-c-icon-color-foreground-default: #706e6b;
 }
 
 .header-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #1b1f23;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1b1f23;
 }
 
 /* Signature section */
 .signature-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
-    width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  width: 100%;
 }
 
 .signature-instruction {
-    font-size: 1rem;
-    color: #706e6b;
-    margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #706e6b;
+  margin-bottom: 0.75rem;
 }
 
 .signature-container {
-    width: 100%;
-    height: 400px;
-    border: 2px solid #d8dde6;
-    border-radius: 4px;
-    background: white;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
-    margin: 1rem 0;
+  width: 100%;
+  height: 400px;
+  border: 2px solid #d8dde6;
+  border-radius: 4px;
+  background: grey;
+  position: relative;
+  overflow: hidden;
 }
 
 .signature-pad {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    touch-action: none;
-    border-radius: 4px;
-    box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /* Action buttons */
 .action-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0.75rem;
-    margin-top: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .action-button {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background: white;
-    text-align: left;
-    transition: background-color 0.2s;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  text-align: left;
+  transition: background-color 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 0;
 }
 
-.action-button:active {
-    background-color: #e7e8e9;
+.action-button:hover {
+  cursor: pointer;
+  background-color: #c4c4c4;
 }
 
 .button-icon {
-    margin-right: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .button-text {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .button-label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #1b1f23;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1b1f23;
 }
 
 .button-description {
-    font-size: 0.75rem;
-    color: #6c757d;
+  font-size: 0.75rem;
+  color: #6c757d;
 }
 
 /* Success message styles */
 .success-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #2e844a;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-align: center;
-    z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2e844a;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1.5rem;
+}
+
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
 }

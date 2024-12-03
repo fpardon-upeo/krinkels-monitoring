@@ -292,4 +292,12 @@
         </columns>
         <masterLabel>Product Item Transactions</masterLabel>
     </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Current_User_is_CM__c</field>
+            <table>Location</table>
+        </columns>
+        <masterLabel>Vans</masterLabel>
+    </sections>
 </ReportType>

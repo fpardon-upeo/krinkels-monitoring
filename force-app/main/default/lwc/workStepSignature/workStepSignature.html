@@ -1,61 +1,72 @@
 <template>
-    <div class="main-container">
-        <!-- Success Message Overlay -->
-        <template if:true={showSuccessMessage}>
-            <div class="success-overlay">
-                <div class="success-content">
-                    <lightning-icon
-                        icon-name="utility:success"
-                        size="medium"
-                        variant="inverse">
-                    </lightning-icon>
-                    <p>Signature Saved Successfully</p>
-                </div>
-            </div>
-        </template>
+  <div class="main-container">
+    <!--Modal template loading spinner-->
+    <template if:true={showLoadingSpinner}>
+      <div class="loading-spinner">
+        <lightning-spinner
+          alternative-text="Loading"
+          size="medium"
+          variant="base"
+        ></lightning-spinner>
+      </div>
+    </template>
 
-        <div class="header">
-            <lightning-icon
-                icon-name="utility:signature"
-                size="small"
-                class="header-icon">
+    <!-- Success Message Overlay -->
+    <!-- <template if:true={showSuccessMessage}>
+      <div class="success-overlay">
+        <div class="success-content">
+          <lightning-icon
+            icon-name="utility:success"
+            size="medium"
+            variant="inverse"
+          >
+          </lightning-icon>
+          <p>Signature Saved Successfully</p>
+        </div>
+      </div>
+    </template> -->
+
+    <template if:true={showSignatureSection}>
+      <div class="header">
+        <lightning-icon
+          icon-name="utility:signature"
+          size="small"
+          class="header-icon"
+        >
+        </lightning-icon>
+        <h2 class="header-title">Capture Signature</h2>
+      </div>
+
+      <div class="signature-section">
+        <p class="signature-instruction">Please sign here:</p>
+        <div class="signature-container">
+          <canvas class="signature-pad"></canvas>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button onclick={handleClear} class="action-button">
+          <span class="button-icon">
+            <lightning-icon icon-name="utility:clear" size="small">
             </lightning-icon>
-            <h2 class="header-title">Capture Signature</h2>
-        </div>
+          </span>
+          <span class="button-text">
+            <span class="button-label">Clear Signature</span>
+            <span class="button-description">Reset the signature pad</span>
+          </span>
+        </button>
 
-        <div class="signature-section">
-            <p class="signature-instruction">Please sign here:</p>
-            <div class="signature-container">
-                <canvas class="signature-pad"></canvas>
-            </div>
-        </div>
-
-        <div class="action-buttons">
-            <button onclick={handleClear} class="action-button">
-                <span class="button-icon">
-                    <lightning-icon
-                        icon-name="utility:clear"
-                        size="small">
-                    </lightning-icon>
-                </span>
-                <span class="button-text">
-                    <span class="button-label">Clear Signature</span>
-                    <span class="button-description">Reset the signature pad</span>
-                </span>
-            </button>
-
-            <button onclick={handleSave} class="action-button">
-                <span class="button-icon">
-                    <lightning-icon
-                        icon-name="utility:save"
-                        size="small">
-                    </lightning-icon>
-                </span>
-                <span class="button-text">
-                    <span class="button-label">Save Signature</span>
-                    <span class="button-description">Save and complete this step</span>
-                </span>
-            </button>
-        </div>
-    </div>
+        <button onclick={handleSave} class="action-button">
+          <span class="button-icon">
+            <lightning-icon icon-name="utility:save" size="small">
+            </lightning-icon>
+          </span>
+          <span class="button-text">
+            <span class="button-label">Save Signature</span>
+            <span class="button-description">Save and complete this step</span>
+          </span>
+        </button>
+      </div>
+    </template>
+  </div>
 </template>

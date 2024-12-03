@@ -563,6 +563,11 @@
             <field>Service_Territory__c</field>
             <table>ServiceAppointment.ServiceResources</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>External_Id__c</field>
+            <table>ServiceAppointment.ServiceResources</table>
+        </columns>
         <masterLabel>Assigned Resources</masterLabel>
     </sections>
 </ReportType>

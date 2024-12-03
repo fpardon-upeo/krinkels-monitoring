@@ -123,7 +123,8 @@
     <relatedLists>
         <fields>Start</fields>
         <fields>End</fields>
-        <fields>Type</fields>
+        <fields>Absence_Type__c</fields>
+        <fields>Name</fields>
         <relatedList>ResourceAbsences</relatedList>
         <sortField>Start</sortField>
         <sortOrder>Desc</sortOrder>

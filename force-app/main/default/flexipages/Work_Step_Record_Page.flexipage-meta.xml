@@ -83,8 +83,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>nextAppointmentPicker</componentName>
-                <identifier>c_nextAppointmentPicker</identifier>
+                <componentName>checkIn</componentName>
+                <identifier>c_checkIn</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

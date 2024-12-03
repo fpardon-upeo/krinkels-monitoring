@@ -27,6 +27,10 @@
                 <behavior>Edit</behavior>
                 <field>Time_Sheet__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Absence_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

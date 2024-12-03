@@ -5,7 +5,7 @@ public class RRuleAdjuster {
     private static final String FREQ_WEEKLY = 'WEEKLY';
     private static final String FREQ_MONTHLY = 'MONTHLY';
     private static final String FREQ_YEARLY = 'YEARLY';
-    private static final String FREQ_DAILY = 'DAILY'; 
+    private static final String FREQ_DAILY = 'DAILY';
 
 
     public class RRuleResult {
@@ -137,8 +137,8 @@ public class RRuleAdjuster {
 
 
     public RRuleResult calculateAdjustment(DateTime originalInstance, DateTime newDate) {
-        System.debug('Original Instance: ' + originalInstance);
-        System.debug('New Date: ' + newDate);
+        //System.debug('Original Instance: ' + originalInstance);
+        //System.debug('New Date: ' + newDate);
         // Parse the original RRULE
         Map<String, String> ruleParams = parseRRule(originalRRule);
         String freq = ruleParams.get('FREQ');
@@ -178,7 +178,7 @@ public class RRuleAdjuster {
                 7
         ).intValue();
 
-        System.debug('Calculated day index: ' + daysDiff);
+        //System.debug('Calculated day index: ' + daysDiff);
         return days[daysDiff];
     }
 

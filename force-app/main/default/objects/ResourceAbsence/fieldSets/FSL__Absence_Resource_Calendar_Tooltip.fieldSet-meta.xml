@@ -136,6 +136,11 @@
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
+    <availableFields>
+        <field>Type</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
     <description>Used in Service Resource calendar VF page</description>
     <displayedFields>
         <field>AbsenceNumber</field>
@@ -148,7 +153,7 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Type</field>
+        <field>Absence_Type__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

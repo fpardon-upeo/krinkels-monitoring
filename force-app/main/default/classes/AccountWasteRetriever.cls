@@ -1,3 +1,10 @@
+/**
+ * Created by Gaël on 12/01/2024.
+ * Description:
+ * Change Log:
+ * Dependencies:
+ */
+
 public with sharing class AccountWasteRetriever {
     @InvocableMethod(label='Retrieve Accounts by Waste Types' description='Fetch accounts matching all selected waste types')
     public static List<List<Account>> getAccountsByWasteTypes(List<RequestWrapper> requests) {

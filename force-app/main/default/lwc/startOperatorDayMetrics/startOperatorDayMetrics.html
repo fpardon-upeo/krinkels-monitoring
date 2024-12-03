@@ -1,72 +1,91 @@
 <template>
-    <div class="slds-card slds-m-bottom_small">
-        <div if:true={requestInProgress} class="spinner-container">
-            <lightning-spinner
-              alternative-text="Loading"
-              size="medium"
-              variant="brand">
-            </lightning-spinner>
-        </div>
-        <div class="slds-grid_vertical box">
-            <div class="slds-col slds-grid slds-wrap slds-p-around_small align-left">
-                <div if:true={showCompletion} class="slds-col slds-size_4-of-12 slds-large-size_4-of-12">
-                    <div class="slds-grid slds-grid_vertical">
-                        <div class="slds-grid slds-grid_vertical-align-center">
-                            <lightning-icon
-                              icon-name="utility:metrics"
-                              size="small"
-                              class="slds-m-right_x-small">
-                            </lightning-icon>
-                            <div class="slds-text-title slds-text-color_weak">TODAY'S PROGRESS</div>
-                        </div>
-                        <div class="slds-text-heading_small slds-m-top_xx-small">
-                            {completedAppointments} of {totalAppointments} Complete
-                        </div>
-                        <div class="progress-bar slds-progress-bar_circular" role="progressbar">
-                            <span class="slds-progress-bar__value" style={progressStyle}></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Weather Section -->
-                <div if:true={showWeather} class="slds-col slds-size_6-of-12 slds-large-size_6-of-12">
-                    <div class="slds-grid slds-grid_vertical">
-                        <div class="slds-grid slds-grid_vertical-align-center">
-                            <lightning-icon
-                              icon-name="utility:salesforce1"
-                              size="small"
-                              class="slds-m-right_x-small">
-                            </lightning-icon>
-                            <div class="slds-text-title slds-text-color_weak">WEATHER FORECAST</div>
-                        </div>
-                        <div class="slds-text-heading_small slds-m-top_xx-small">
-                            {weatherInfo.condition}
-                        </div>
-                        <div class="slds-text-body_small">
-                            {weatherInfo.temperature}°C
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Refresh Icon Column -->
-                <div class="slds-col slds-size_1-of-12 slds-large-size_1-of-12">
-                    <div class="slds-grid slds-grid_vertical">
-                        <!-- Empty div to match the header spacing -->
-                        <div class="slds-grid slds-grid_vertical-align-center" style="height: 1.5rem;">
-                        </div>
-                        <!-- Refresh icon aligned with first value row -->
-                        <div class="slds-text-heading_small slds-m-top_xx-small slds-grid slds-grid_align-center">
-                            <lightning-icon
-                              icon-name="utility:refresh"
-                              size="small"
-                              class="cursor-pointer"
-                              onclick={handleRefresh}>
-                            </lightning-icon>
-                        </div>
-                    </div>
-                </div>
+  <div class="slds-card slds-m-bottom_small">
+    <div if:true={requestInProgress} class="spinner-container">
+      <lightning-spinner
+        alternative-text="Loading"
+        size="medium"
+        variant="brand"
+      >
+      </lightning-spinner>
+    </div>
+    <div class="slds-grid_vertical box">
+      <div class="slds-col slds-grid slds-wrap slds-p-around_small align-left">
+        <div
+          if:true={showCompletion}
+          class="slds-col slds-size_4-of-12 slds-large-size_4-of-12"
+        >
+          <div class="slds-grid slds-grid_vertical">
+            <div class="slds-grid slds-grid_vertical-align-center">
+              <lightning-icon
+                icon-name="utility:metrics"
+                size="small"
+                class="slds-m-right_x-small"
+              >
+              </lightning-icon>
+              <div class="slds-text-title slds-text-color_weak">
+                TODAY'S PROGRESS
+              </div>
             </div>
-            <!-- Next Appointment Section
+            <div class="slds-text-heading_small slds-m-top_xx-small">
+              {completedAppointments} of {totalAppointments} Complete
+            </div>
+            <div
+              class="progress-bar slds-progress-bar_circular"
+              role="progressbar"
+            >
+              <span class="slds-progress-bar__value"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Section -->
+        <div
+          if:true={showWeather}
+          class="slds-col slds-size_6-of-12 slds-large-size_6-of-12"
+        >
+          <div class="slds-grid slds-grid_vertical">
+            <div class="slds-grid slds-grid_vertical-align-center">
+              <lightning-icon
+                icon-name="utility:salesforce1"
+                size="small"
+                class="slds-m-right_x-small"
+              >
+              </lightning-icon>
+              <div class="slds-text-title slds-text-color_weak">
+                WEATHER FORECAST
+              </div>
+            </div>
+            <div class="slds-text-heading_small slds-m-top_xx-small">
+              {weatherInfo.condition}
+            </div>
+            <div class="slds-text-body_small">{weatherInfo.temperature}°C</div>
+          </div>
+        </div>
+
+        <!-- Refresh Icon Column -->
+        <div class="slds-col slds-size_1-of-12 slds-large-size_1-of-12">
+          <div class="slds-grid slds-grid_vertical">
+            <!-- Empty div to match the header spacing -->
+            <div
+              class="slds-grid slds-grid_vertical-align-center"
+              style="height: 1.5rem"
+            ></div>
+            <!-- Refresh icon aligned with first value row -->
+            <div
+              class="slds-text-heading_small slds-m-top_xx-small slds-grid slds-grid_align-center"
+            >
+              <lightning-icon
+                icon-name="utility:refresh"
+                size="small"
+                class="cursor-pointer"
+                onclick={handleRefresh}
+              >
+              </lightning-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Next Appointment Section
             <div class="slds-grid slds-wrap slds-p-around_small align-left">
                 <div class="slds-col slds-size_4-of-12">
                     <div class="slds-grid slds-grid_vertical">
@@ -95,6 +114,6 @@
                 </div>
             </div>
             -->
-        </div>
     </div>
+  </div>
 </template>

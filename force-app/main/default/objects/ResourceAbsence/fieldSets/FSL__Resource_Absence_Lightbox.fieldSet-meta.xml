@@ -136,6 +136,11 @@
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
+    <availableFields>
+        <field>Type</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
     <description>Resource absence lightbox fields</description>
     <displayedFields>
         <field>AbsenceNumber</field>
@@ -158,7 +163,7 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Type</field>
+        <field>Absence_Type__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

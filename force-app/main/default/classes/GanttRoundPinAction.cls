@@ -21,7 +21,8 @@ global class GanttRoundPinAction implements FSL.CustomGanttServiceAppointmentAct
         List<ServiceAppointment> serviceAppointmentsToUpdate = new List<ServiceAppointment>();
         List<AssignedResource> assignedResources = new List<AssignedResource>();
         List<AssignedResource> assignedResourcesToDelete = new List<AssignedResource>();
-        List<String> assignedResourceIdsToDelete = new List<String>();
+        List<String> assignedResourceIdsToKeep = new List<String>();
+        List<String> serviceAppointmentsToQuery = new List<String>();
 
         List<String> assignedResourcesAdded = new List<String>();
 
@@ -53,8 +54,10 @@ global class GanttRoundPinAction implements FSL.CustomGanttServiceAppointmentAct
                     ar.ServiceResourceId = sr.ServiceResourceId;
                     ar.ServiceAppointmentId = saRescheduled.Id;
                     ar.ServiceCrewId = sr.ServiceCrewId;
-                    assignedResourceIdsToDelete.add(saRescheduled.Id);
+                    ar.External_Id__c = sr.Id + '-' + saRescheduled.Id;
+                    assignedResourceIdsToKeep.add(ar.External_Id__c);
                     assignedResources.add(ar);
+                    serviceAppointmentsToQuery.add(saRescheduled.Id);
                 }
             }
         }
@@ -71,20 +74,24 @@ global class GanttRoundPinAction implements FSL.CustomGanttServiceAppointmentAct
         System.debug('serviceAppointmentsToUpdate: ' + serviceAppointmentsToUpdate.size());
         System.debug('assignedResources: ' + assignedResources.size());
 
-        //Update the service appointments
-        try{
-            assignedResourcesToDelete = [SELECT Id FROM AssignedResource WHERE ServiceAppointmentId IN :assignedResourceIdsToDelete];
-            delete assignedResourcesToDelete;
-        }catch(Exception e){
-            System.debug('Error updating service appointments: ' + e.getMessage());
-            return 'error: ' + e.getMessage();
-        }
+        Schema.SObjectField externalIdField = AssignedResource.External_Id__c;
 
-        Database.SaveResult[] saveResults = Database.insert(assignedResources, false);
-        for(Database.SaveResult sr: saveResults){
+        Database.UpsertResult[] saveResults = Database.upsert(assignedResources, externalIdField, false);
+        for(Database.UpsertResult sr: saveResults){
             if(!sr.isSuccess()){
                 for(Database.Error e: sr.getErrors()){
                     System.debug('Error inserting assigned resource: ' + e.getMessage());
+                }
+            }
+        }
+
+        assignedResourcesToDelete = [SELECT Id FROM AssignedResource WHERE ServiceAppointmentId IN :serviceAppointmentsToQuery AND External_Id__c NOT IN :assignedResourceIdsToKeep];
+        System.debug('assignedResourcesToDelete: ' + assignedResourcesToDelete.size());
+        Database.DeleteResult[] deleteResults = Database.delete(assignedResourcesToDelete, false);
+        for(Database.DeleteResult dr: deleteResults){
+            if(!dr.isSuccess()){
+                for(Database.Error e: dr.getErrors()){
+                    System.debug('Error deleting assigned resource: ' + e.getMessage());
                 }
             }
         }

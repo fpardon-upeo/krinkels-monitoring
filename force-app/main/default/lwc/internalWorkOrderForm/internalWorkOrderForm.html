@@ -1,5 +1,10 @@
 <template>
-  <lightning-spinner if:true={showSpinner} alternative-text="Loading" size="medium" variant="brand">
+  <lightning-spinner
+    if:true={showSpinner}
+    alternative-text="Loading"
+    size="medium"
+    variant="brand"
+  >
   </lightning-spinner>
   <template if:true={showAppointmentScreen}>
     <div class="table-container">
@@ -25,7 +30,7 @@
       <button class="cancel-button" onclick={handleBack}>Back</button>
       <button
         if:true={showAppointmentScreen}
-        class="grey-button"
+        class="submit-button"
         onclick={handleSelect}
         disabled={disableNextButton}
       >
@@ -38,29 +43,28 @@
     <lightning-card>
       <div class="slds-grid slds-grid_vertical slds-p-around_small">
         <div
-          class="slds-grid slds-grid_vertical slds-grid_align-center slds-wrap slds-gutters_medium">
+          class="slds-grid slds-grid_vertical slds-grid_align-center slds-wrap slds-gutters_medium"
+        >
           <div
-            class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons">
-            <button
-              class="action-button brand"
-              onclick={handleStartTravel}
-            >
-                  <span class="button-icon">
-                    <lightning-icon
-                      icon-name="utility:tour"
-                      size="medium"
-                      class="slds-m-bottom_small"
-                    >
-                    </lightning-icon>
-                  </span>
+            class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons"
+          >
+            <button class="action-button brand" onclick={handleStartTravel}>
+              <span class="button-icon">
+                <lightning-icon
+                  icon-name="utility:tour"
+                  size="medium"
+                  class="slds-m-bottom_small"
+                >
+                </lightning-icon>
+              </span>
               <span class="button-text">
-                    <span class="button-label">
-                      {labels.InternalWorkOrder_Start_Travel_Text}
-                    </span>
-                    <span class="button-description">
-                      {labels.InternalWorkOrder_Start_Travel_Sub_Text}
-                    </span>
-                  </span>
+                <span class="button-label">
+                  {labels.InternalWorkOrder_Start_Travel_Text}
+                </span>
+                <span class="button-description">
+                  {labels.InternalWorkOrder_Start_Travel_Sub_Text}
+                </span>
+              </span>
             </button>
           </div>
           <div
@@ -70,22 +74,22 @@
               class="action-button brand"
               onclick={handleCloseWasteVisitScreen}
             >
-                  <span class="button-icon">
-                    <lightning-icon
-                      icon-name="utility:back"
-                      size="medium"
-                      class="slds-m-bottom_small"
-                    >
-                    </lightning-icon>
-                  </span>
+              <span class="button-icon">
+                <lightning-icon
+                  icon-name="utility:back"
+                  size="medium"
+                  class="slds-m-bottom_small"
+                >
+                </lightning-icon>
+              </span>
               <span class="button-text">
-                    <span class="button-label">
-                      {labels.InternalWorkOrder_No_Travel_Text}
-                    </span>
-                    <span class="button-description">
-                      {labels.InternalWorkOrder_No_Travel_Sub_Text}
-                    </span>
-                  </span>
+                <span class="button-label">
+                  {labels.InternalWorkOrder_No_Travel_Text}
+                </span>
+                <span class="button-description">
+                  {labels.InternalWorkOrder_No_Travel_Sub_Text}
+                </span>
+              </span>
             </button>
           </div>
         </div>
@@ -102,9 +106,7 @@
       <div class="slds-grid slds-grid_vertical slds-p-around_small">
         <div class="slds-col">
           <!-- Moved this to the top of the form because when click it deletes everything from the form so it's better to have it as 1st element rather than in last and have to re-enter all the data -->
-          <div
-            class={formElementClass}
-          >
+          <div class={formElementClass}>
             <label class="slds-form-element__label">
               <abbr class="slds-required" title="required">*</abbr>
               Work Order
@@ -141,7 +143,10 @@
                 </div>
               </div>
             </div>
-            <div if:false={workOrderId} class="slds-form-element__help slds-text-color_error">
+            <div
+              if:false={workOrderId}
+              class="slds-form-element__help slds-text-color_error"
+            >
               Please select a Work Order
             </div>
           </div>
@@ -158,7 +163,6 @@
           >
           </lightning-combobox>
 
-
           <lightning-input-field
             field-name="Subject"
             value={defaultSubject}
@@ -170,7 +174,7 @@
         </div>
       </div>
       <div class="button-group-form">
-        <button class="submit-button" type="submit">Save</button>
+        <button class="submit-button50" type="submit">Save</button>
       </div>
     </lightning-record-edit-form>
   </template>

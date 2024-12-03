@@ -12,6 +12,48 @@ import updateUserSettings from "@salesforce/apex/TimeSheetController.updateUserS
 import createUserSettings from "@salesforce/apex/TimeSheetController.createUserSettings";
 import { getRecordNotifyChange } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
+//Import labels
+import Calendar_User_Settings_Start_Time from "@salesforce/label/c.Calendar_User_Settings_Start_Time";
+import Calendar_User_Settings_End_Time from "@salesforce/label/c.Calendar_User_Settings_End_Time";
+import Calendar_Cancel from "@salesforce/label/c.Calendar_Cancel";
+import Calendar_Save from "@salesforce/label/c.Calendar_Save";
+import Calendar_Submit_For_Approval from "@salesforce/label/c.Calendar_Submit_For_Approval";
+import Calendar_Create_New_Entry from "@salesforce/label/c.Calendar_Create_New_Entry";
+// import Calendar_Add_Time_Sheet_Entry from "@salesforce/label/c.Calendar_Add_Time_Sheet_Entry";
+import Calendar_Add_Time_Sheet_Entry_Description from "@salesforce/label/c.Calendar_Add_Time_Sheet_Entry_Description";
+import Calendar_Add_Break from "@salesforce/label/c.Calendar_Add_Break";
+import Calendar_Add_Break_Description from "@salesforce/label/c.Calendar_Add_Break_Description";
+import Calendar_Mileage_Options from "@salesforce/label/c.Calendar_Mileage_Options";
+import Calendar_In_Mileage_Entries from "@salesforce/label/c.Calendar_In_Mileage_Entries";
+import Calendar_In_Mileage_Entries_Description from "@salesforce/label/c.Calendar_In_Mileage_Entries_Description";
+import Calendar_Out_Mileage_Entries from "@salesforce/label/c.Calendar_Out_Mileage_Entries";
+import Calendar_Out_Mileage_Entries_Description from "@salesforce/label/c.Calendar_Out_Mileage_Entries_Description";
+import Calendar_Mileage_Entries from "@salesforce/label/c.Calendar_Mileage_Entries";
+import Calendar_Mileage_Starting_Location from "@salesforce/label/c.Calendar_Mileage_Starting_Location";
+import Calendar_Mileage_Ending_Location from "@salesforce/label/c.Calendar_Mileage_Ending_Location";
+import Calendar_Mileage_Allowance from "@salesforce/label/c.Calendar_Mileage_Allowance";
+import Calendar_Mileage_Starting_Mileage from "@salesforce/label/c.Calendar_Mileage_Starting_Mileage";
+import Calendar_Mileage_Ending_Mileage from "@salesforce/label/c.Calendar_Mileage_Ending_Mileage";
+import Calendar_Edit from "@salesforce/label/c.Calendar_Edit";
+import Calendar_No_In_Mileage_Entries_Description from "@salesforce/label/c.Calendar_No_In_Mileage_Entries_Description";
+// import Calendar_Add_In_Mileage_Entry from "@salesforce/label/c.Calendar_Add_In_Mileage_Entry";
+import Calendar_Add_In_Mileage_Entry_Description from "@salesforce/label/c.Calendar_Add_In_Mileage_Entry_Description";
+import Calendar_No_Out_Mileage_Entries_Description from "@salesforce/label/c.Calendar_No_Out_Mileage_Entries_Description";
+import Calendar_Add_Out_Mileage_Entry from "@salesforce/label/c.Calendar_Add_Out_Mileage_Entry";
+import Calendar_Add_Out_Mileage_Entry_Description from "@salesforce/label/c.Calendar_Add_Out_Mileage_Entry_Description";
+import Calendar_Submit_Time_Sheet from "@salesforce/label/c.Calendar_Submit_Time_Sheet";
+import Calendar_Warning_Submit_Timesheet from "@salesforce/label/c.Calendar_Warning_Submit_Timesheet";
+import Calendar_Submit from "@salesforce/label/c.Calendar_Submit";
+import Calendar_New_Out_Mileage_Entry from "@salesforce/label/c.Calendar_New_Out_Mileage_Entry";
+import Calendar_New_In_Mileage_Entry from "@salesforce/label/c.Calendar_New_In_Mileage_Entry";
+import Calendar_New_Timesheet_Entry from "@salesforce/label/c.Calendar_New_Timesheet_Entry";
+import Calendar_New_Break_Entry from "@salesforce/label/c.Calendar_New_Break_Entry";
+import Calendar_Edit_Time_Sheet_Entry from "@salesforce/label/c.Calendar_Edit_Time_Sheet_Entry";
+import Calendar_Edit_Break_Entry from "@salesforce/label/c.Calendar_Edit_Break_Entry";
+import Calendar_Edit_Mileage_Entry from "@salesforce/label/c.Calendar_Edit_Mileage_Entry";
+import Calendar_User_Settings from "@salesforce/label/c.Calendar_User_Settings";
+import Calendar_No_Entries from "@salesforce/label/c.Calendar_No_Entries";
+import Calendar_User_Settings_Time_Range from "@salesforce/label/c.Calendar_User_Settings_Time_Range";
 
 export default class TimeSheetCalendar extends LightningElement {
   @api recordId;
@@ -75,6 +117,50 @@ export default class TimeSheetCalendar extends LightningElement {
 
   @track minValue = 0;
   @track maxValue = 24;
+
+  labels = {
+    Calendar_Submit_For_Approval,
+    Calendar_Create_New_Entry,
+    // Calendar_Add_Time_Sheet_Entry,
+    Calendar_Add_Time_Sheet_Entry_Description,
+    Calendar_Add_Break,
+    Calendar_Add_Break_Description,
+    Calendar_Mileage_Options,
+    Calendar_In_Mileage_Entries,
+    Calendar_In_Mileage_Entries_Description,
+    Calendar_Out_Mileage_Entries,
+    Calendar_Out_Mileage_Entries_Description,
+    Calendar_Mileage_Entries,
+    Calendar_Mileage_Starting_Location,
+    Calendar_Mileage_Ending_Location,
+    Calendar_Mileage_Allowance,
+    Calendar_Mileage_Starting_Mileage,
+    Calendar_Mileage_Ending_Mileage,
+    Calendar_Edit,
+    Calendar_No_In_Mileage_Entries_Description,
+    // Calendar_Add_In_Mileage_Entry,
+    Calendar_Add_In_Mileage_Entry_Description,
+    Calendar_No_Out_Mileage_Entries_Description,
+    Calendar_Add_Out_Mileage_Entry,
+    Calendar_Add_Out_Mileage_Entry_Description,
+    Calendar_Submit_Time_Sheet,
+    Calendar_Warning_Submit_Timesheet,
+    Calendar_Submit,
+    Calendar_New_Out_Mileage_Entry,
+    Calendar_New_In_Mileage_Entry,
+    Calendar_New_Timesheet_Entry,
+    Calendar_New_Break_Entry,
+    Calendar_Edit_Time_Sheet_Entry,
+    Calendar_Edit_Break_Entry,
+    Calendar_Edit_Mileage_Entry,
+    Calendar_User_Settings,
+    Calendar_No_Entries,
+    Calendar_User_Settings_Start_Time,
+    Calendar_User_Settings_End_Time,
+    Calendar_Cancel,
+    Calendar_Save,
+    Calendar_User_Settings_Time_Range
+  };
 
   @api refreshCalendar() {
     this.handleRefresh();
