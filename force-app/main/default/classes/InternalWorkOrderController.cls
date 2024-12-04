@@ -13,9 +13,13 @@ public without sharing class InternalWorkOrderController {
     }
 
     @AuraEnabled
-    public static InternalWorkOrderWrapper createInternalWorkOrder(String subject, String workTypeId, String parentWorkOrderId) {
+    public static InternalWorkOrderWrapper createInternalWorkOrder(String subject, String workTypeId, String parentWorkOrderId, String accountId) {
 
         System.debug('Creating Internal Work Order');
+        System.debug('subject: ' + subject);
+        System.debug('workTypeId: ' + workTypeId);
+        System.debug('parentWorkOrderId: ' + parentWorkOrderId);
+        System.debug('accountId: ' + accountId);
         WorkOrder parentWorkOrder = getParentWorkOrder(parentWorkOrderId);
 
         WorkOrder internalWorkOrder = new WorkOrder();
@@ -26,7 +30,7 @@ public without sharing class InternalWorkOrderController {
         internalWorkOrder.ParentWorkOrderId = parentWorkOrderId;
         internalWorkOrder.SuggestedMaintenanceDate = Date.today();
         internalWorkOrder.MaintenancePlanId = parentWorkOrder.MaintenancePlanId;
-        internalWorkOrder.AccountId = parentWorkOrder.AccountId;
+        internalWorkOrder.AccountId = accountId;
         internalWorkOrder.Work_Order_Type__c = 'Depot Visit';
 
         insert internalWorkOrder;
@@ -69,10 +73,12 @@ public without sharing class InternalWorkOrderController {
         ServiceCrewMember serviceCrewMember = null;
 
         try {
-            serviceCrewMember = [SELECT Id FROM ServiceCrewMember WHERE ServiceResourceId = :serviceResourceId AND StartDate <= TODAY AND (EndDate = NULL OR EndDate >= TODAY) LIMIT 1];
+            serviceCrewMember = [SELECT Id, ServiceCrewId FROM ServiceCrewMember WHERE ServiceResourceId = :serviceResourceId AND StartDate <= TODAY AND (EndDate = NULL OR EndDate >= TODAY) LIMIT 1];
         } catch (QueryException e) {
             System.debug('No Service Crew Member found');
         }
+
+        System.debug('serviceCrewMember: ' + serviceCrewMember);
 
 
 
@@ -85,8 +91,9 @@ public without sharing class InternalWorkOrderController {
         AssignedResource assignedResource = new AssignedResource();
         assignedResource.ServiceAppointmentId = serviceAppointment.Id;
 
-        if(serviceCrewMember != null) {
-            assignedResource.ServiceCrewId = serviceCrewMember.Id;
+        if(serviceCrewMember != null && serviceCrewMember.ServiceCrewId != null) {
+            assignedResource.ServiceCrewId = serviceCrewMember.ServiceCrewId;
+            assignedResource.ServiceResourceId = serviceResourceId;
         } else {
             assignedResource.ServiceResourceId = serviceResourceId;
         }

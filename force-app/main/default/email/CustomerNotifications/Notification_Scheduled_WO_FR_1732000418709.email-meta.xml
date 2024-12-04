@@ -6,7 +6,7 @@
     <pageDevName>Notification_Scheduled_WO_FR</pageDevName>
     <relatedEntityType>WorkOrder</relatedEntityType>
     <style>none</style>
-    <subject>Intervention prévue - [Votre Référence/Notre Référence]</subject>
+    <subject>Intervention prévue - [{{{WorkOrder.WorkOrderNumber}}}{{{WorkOrder.Customer_Reference__c}}}]</subject>
     <textOnly>Cher client,
 
 Bonne nouvelle ! Une intervention est prévue prochainement dans le cadre de votre contrat.
@@ -19,9 +19,7 @@ Voici les détails principaux :
  - Lieu: 
  - {{{WorkOrder.Address}}}
 
-L’intervention est prévue pour le {{{WorkOrder.Scheduled_Date__c}}}.
-
-Pour assurer un déroulement sans encombre, nous vous prions de bien vouloir libérer les zones nécessaires à l’avance. Cela nous permettra de commencer sans délai.
+L’intervention aura lieu durant la semaine {{{WorkOrder.Excecution_Week__c}}}.
 
 Vous avez des questions ou souhaitez discuter ? N’hésitez pas à nous contacter via les coordonnées dans la signature de cet e-mail. Nous sommes à votre disposition.
 

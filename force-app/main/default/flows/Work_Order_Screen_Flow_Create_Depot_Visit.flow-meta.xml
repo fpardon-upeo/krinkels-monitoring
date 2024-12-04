@@ -184,12 +184,6 @@
                 <elementReference>Get_Work_Type.Id</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>Work_Order_Type__c</field>
-            <value>
-                <stringValue>Depot Visit</stringValue>
-            </value>
-        </inputAssignments>
         <object>WorkOrder</object>
     </recordCreates>
     <recordLookups>

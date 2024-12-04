@@ -58,13 +58,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>WorkStepRecord.ActionDefinition</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>WorkStep.Set_Service_Status</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>WorkStepCollection</assignToReference>
             <operator>Add</operator>
             <value>
@@ -282,13 +275,6 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Dispatched</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Work_Order_Type__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Depot Visit</stringValue>
             </value>
         </filters>
         <object>WorkOrder</object>

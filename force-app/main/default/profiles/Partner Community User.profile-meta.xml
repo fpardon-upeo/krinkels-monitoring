@@ -843,6 +843,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Signature_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1533,6 +1538,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Location_Visit__c.Fixed_date_Already_planned__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Location_Visit__c.Frequency_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1648,6 +1658,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Location_Visit__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Location_Visit__c.Unit__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1660,6 +1675,11 @@
         <editable>true</editable>
         <field>Location_Visit__c.Visit_Date__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Location_Visit__c.Visitor_Internal__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1754,6 +1774,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Operator_Created_Event__e.User_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1924,6 +1949,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ProductItem.Van_Crew__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2898,12 +2928,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.Customer_Reference__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.Depot_Visit_Comments__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.Drop_Off_Items__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Excecution_Week__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2983,6 +3023,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.Production_Work__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Rework_for_Work_Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Rework_reasons__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.Scheduled_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3017,7 +3072,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>WorkOrder.Signature_Required__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3028,7 +3083,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.WO_with_Goodwill_Tasks__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Waste_Visit_Done__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3123,6 +3188,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</flow>
     </flowAccesses>
     <flowAccesses>
@@ -3139,11 +3208,19 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Opportunity_Screen_Flow_Pricing_Request</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Platform_Event_Reorder_Work_Steps</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -3255,7 +3332,15 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_After_Update_Add_Log_KM</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_After_Update_Create_Signature_Work_Step</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -3272,6 +3357,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Mobile_Flow_Check_Out</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Log_Waste_Depot_Visit</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -3296,6 +3385,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Screen_Flow_Create_Depot_Visit</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Screen_Flow_Create_Rework_WO</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

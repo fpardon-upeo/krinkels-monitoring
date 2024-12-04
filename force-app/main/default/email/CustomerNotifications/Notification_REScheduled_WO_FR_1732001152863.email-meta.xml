@@ -6,7 +6,7 @@
     <pageDevName>Notification_REScheduled_WO_FR</pageDevName>
     <relatedEntityType>WorkOrder</relatedEntityType>
     <style>none</style>
-    <subject>Modification d’une intervention prévue - [Votre Référence/Notre Référence]</subject>
+    <subject>Modification d’une intervention prévue - [{{{WorkOrder.WorkOrderNumber}}}{{{WorkOrder.Customer_Reference__c}}}]</subject>
     <textOnly>Cher client,
 
 Nous souhaitons vous informer d’une modification concernant l’intervention prévue précédemment. Voici les détails mis à jour:
@@ -17,9 +17,7 @@ Nous souhaitons vous informer d’une modification concernant l’intervention p
  - Lieu: 
  - {{{WorkOrder.Address}}}
 
-L’intervention aura désormais lieu le {{{WorkOrder.Scheduled_Date__c}}}.
-
-Pour assurer un déroulement sans encombre, nous vous prions de bien vouloir libérer les zones nécessaires à l’avance. Cela nous permettra de commencer sans délai.
+L’intervention aura désormais lieu durant la semaine {{{WorkOrder.Excecution_Week__c}}}.
 
 Merci pour votre compréhension. Vous avez des questions ou souhaitez discuter ? N’hésitez pas à nous contacter via les coordonnées dans la signature de cet e-mail.
 

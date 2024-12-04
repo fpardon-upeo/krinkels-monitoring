@@ -1,0 +1,160 @@
+<template>
+  <div class="mobile-backdrop" onclick={closeModal}></div>
+
+  <div class="mobile-bottom-sheet">
+    <div class="bottom-sheet-header">
+      <div class="drag-indicator"></div>
+      <h2 class="sheet-title">Work Order Actions</h2>
+    </div>
+
+    <div class="bottom-sheet-content">
+      <!-- Initial Screen -->
+      <template if:true={showInitialScreen}>
+        <div class="action-buttons">
+          <button class="action-button brand" onclick={logShopVisit}>
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:store"
+                size="medium"
+                class="slds-m-bottom_small"
+              ></lightning-icon>
+            </span>
+            <span class="button-text">
+              <span class="button-label">Log Shop Visit</span>
+              <span class="button-description"
+                >Record details of your shop visit</span
+              >
+            </span>
+          </button>
+
+          <button class="action-button brand" onclick={logSpecialEquipment}>
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:custom_apps"
+                size="medium"
+                class="slds-m-bottom_small"
+              ></lightning-icon>
+            </span>
+            <span class="button-text">
+              <span class="button-label">Log Special Equipment</span>
+              <span class="button-description"
+                >Record special equipment usage</span
+              >
+            </span>
+          </button>
+
+          <button class="action-button brand" onclick={logEditTasks}>
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:edit"
+                size="medium"
+                class="slds-m-bottom_small"
+              ></lightning-icon>
+            </span>
+            <span class="button-text">
+              <span class="button-label">Log/Edit Goodwill Tasks</span>
+              <span class="button-description"
+                >Manage goodwill task entries</span
+              >
+            </span>
+          </button>
+
+          <!-- Add cancel button -->
+          <div class="button-container">
+            <button class="cancel-button" onclick={closeAction}>Cancel</button>
+          </div>
+        </div>
+      </template>
+
+      <!-- Shop Visit Form -->
+      <template if:true={showLogShopVisit}>
+        <lightning-record-edit-form
+          object-api-name="WorkOrder"
+          record-id={recordId}
+          onsuccess={handleSuccess}
+        >
+          <div class="form-fields">
+            <lightning-input-field field-name="Shop_Name__c" required>
+            </lightning-input-field>
+            <lightning-input-field field-name="Shop_Visit_Date__c" required>
+            </lightning-input-field>
+            <lightning-input-field
+              field-name="Shop_Visit_Start_Time__c"
+              required
+            >
+            </lightning-input-field>
+            <lightning-input-field field-name="Shop_Visit_End_Time__c" required>
+            </lightning-input-field>
+          </div>
+
+          <div class="button-group">
+            <button class="cancel-button" type="button" onclick={closeModal}>
+              Cancel
+            </button>
+            <button class="submit-button" type="submit">Save</button>
+          </div>
+        </lightning-record-edit-form>
+      </template>
+
+      <!-- Special Equipment Form -->
+      <template if:true={showLogSpecialEquipment}>
+        <div class="mobile-bottom-sheet">
+          <div class="bottom-sheet-header">
+            <div class="drag-indicator"></div>
+            <h2 class="sheet-title">Log Special Equipment</h2>
+          </div>
+          <div class="bottom-sheet-content">
+            <div class="button-container">
+              <button class="cancel-button" onclick={closeModal}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Edit Tasks Form -->
+      <template if:true={showLogEditTasks}>
+        <div class="mobile-bottom-sheet">
+          <div class="bottom-sheet-header">
+            <div class="drag-indicator"></div>
+            <h2 class="sheet-title">Log/Edit Tasks</h2>
+          </div>
+          <div class="bottom-sheet-content">
+            <lightning-record-edit-form
+              object-api-name="WorkOrder"
+              record-id={recordId}
+              onsuccess={handleSuccess}
+            >
+              <div class="form-fields">
+                <lightning-input-field
+                  field-name="WorkOrderNumber"
+                  disabled
+                  class="slds-hide"
+                >
+                </lightning-input-field>
+                <lightning-input-field
+                  field-name="AccountId"
+                  disabled
+                  class="slds-hide"
+                >
+                </lightning-input-field>
+                <lightning-input-field field-name="Goodwill_Tasks__c" required>
+                </lightning-input-field>
+              </div>
+
+              <div class="button-group">
+                <button
+                  class="cancel-button"
+                  type="button"
+                  onclick={closeModal}
+                >
+                  Cancel
+                </button>
+                <button class="submit-button" type="submit">Save</button>
+              </div>
+            </lightning-record-edit-form>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</template>

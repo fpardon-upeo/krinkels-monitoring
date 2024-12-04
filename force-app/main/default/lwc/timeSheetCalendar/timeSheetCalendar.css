@@ -267,13 +267,6 @@
   }
 }
 
-/* Safe area spacing for modern mobile devices */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .mobile-bottom-sheet {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
-
 /* ------------------------------------------------------------ */
 
 /* Stats Container Styles */

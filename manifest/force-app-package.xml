@@ -195,6 +195,7 @@
         <members>Location.Van_Compact_Layout</members>
         <members>Location_Visit__c.Location_Visit</members>
         <members>Opportunity.New_Awesome_Companct_Layout</members>
+        <members>Opportunity.Opportunity</members>
         <members>ProductConsumed.Product_Consumed_Compact_Layout</members>
         <members>SD_Import__c.Custom_Compact_Layout</members>
         <members>ServiceAppointment.Service_Appointment_Compact_Layout</members>
@@ -331,6 +332,7 @@
         <members>Account.Region__c</members>
         <members>Account.Related_account__c</members>
         <members>Account.Short_Name__c</members>
+        <members>Account.Signature_Required__c</members>
         <members>Account.Status__c</members>
         <members>Account.Sub_Type__c</members>
         <members>Account.Type_of_Waste__c</members>
@@ -480,6 +482,7 @@
         <members>Location_Visit__c.Estimation_Intervention_Time__c</members>
         <members>Location_Visit__c.Execution_Deadline_Request__c</members>
         <members>Location_Visit__c.Extra_Opportunity_Information__c</members>
+        <members>Location_Visit__c.Fixed_date_Already_planned__c</members>
         <members>Location_Visit__c.Frequency_Type__c</members>
         <members>Location_Visit__c.Frequency__c</members>
         <members>Location_Visit__c.Geolocation__c</members>
@@ -504,11 +507,13 @@
         <members>Location_Visit__c.Service_Contract__c</members>
         <members>Location_Visit__c.Service_Package_Name__c</members>
         <members>Location_Visit__c.Site_Boundaries_Info__c</members>
+        <members>Location_Visit__c.Status__c</members>
         <members>Location_Visit__c.Type__c</members>
         <members>Location_Visit__c.Unit__c</members>
         <members>Location_Visit__c.Visit_Address__c</members>
         <members>Location_Visit__c.Visit_Date__c</members>
         <members>Location_Visit__c.Visit_Notes__c</members>
+        <members>Location_Visit__c.Visitor_Internal__c</members>
         <members>Location_Visit__c.Work_Order__c</members>
         <members>Logger_Settings__c.Enable_Inbound_Logs__c</members>
         <members>Logger_Settings__c.Enable_Outbound_Logs__c</members>
@@ -531,6 +536,7 @@
         <members>Mileage_Entry__c.Type__c</members>
         <members>Mileage_Entry__c.Work_Order__c</members>
         <members>Operator_Created_Event__e.User_Id__c</members>
+        <members>Opportunity.Amount__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
         <members>Opportunity.Loss_Reason__c</members>
@@ -565,6 +571,7 @@
         <members>Product2.Work_Type__c</members>
         <members>ProductConsumed.Van_Crew__c</members>
         <members>ProductItem.Van_Crew__c</members>
+        <members>Quote.Amount__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
         <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
         <members>ResourceAbsence.Absence_Type__c</members>
@@ -764,8 +771,10 @@
         <members>WorkOrder.Checkin_Location__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.Contract_Manager__c</members>
+        <members>WorkOrder.Customer_Reference__c</members>
         <members>WorkOrder.Depot_Visit_Comments__c</members>
         <members>WorkOrder.Drop_Off_Items__c</members>
+        <members>WorkOrder.Excecution_Week__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
         <members>WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c</members>
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
@@ -781,6 +790,9 @@
         <members>WorkOrder.Operating_Hours__c</members>
         <members>WorkOrder.Pick_Up_Items__c</members>
         <members>WorkOrder.Product__c</members>
+        <members>WorkOrder.Production_Work__c</members>
+        <members>WorkOrder.Rework_for_Work_Order__c</members>
+        <members>WorkOrder.Rework_reasons__c</members>
         <members>WorkOrder.Scheduled_Date__c</members>
         <members>WorkOrder.Shop_Name__c</members>
         <members>WorkOrder.Shop_Visit_Date__c</members>
@@ -790,7 +802,9 @@
         <members>WorkOrder.Shop_Visit_Start_Time__c</members>
         <members>WorkOrder.Signature_Required__c</members>
         <members>WorkOrder.Special_Equipment__c</members>
+        <members>WorkOrder.Type__c</members>
         <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
+        <members>WorkOrder.Waste_Visit_Done__c</members>
         <members>WorkOrder.Waste_to_Drop_Off__c</members>
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
@@ -814,6 +828,7 @@
         <members>AppointmentPicker_Break_Duration_Label</members>
         <members>AppointmentPicker_Break_Form_Title</members>
         <members>AppointmentPicker_Break_Success_Message</members>
+        <members>AppointmentPicker_Cancel_Button</members>
         <members>AppointmentPicker_Day_Ended_Toast</members>
         <members>AppointmentPicker_End_Day_Button</members>
         <members>AppointmentPicker_End_Day_Button_Sub_Text</members>
@@ -828,9 +843,11 @@
         <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>Calendar_Add_Break</members>
         <members>Calendar_Add_Break_Description</members>
+        <members>Calendar_Add_In_Mileage_Entry</members>
         <members>Calendar_Add_In_Mileage_Entry_Description</members>
         <members>Calendar_Add_Out_Mileage_Entry</members>
         <members>Calendar_Add_Out_Mileage_Entry_Description</members>
+        <members>Calendar_Add_Time_Sheet_Entry</members>
         <members>Calendar_Add_Time_Sheet_Entry_Description</members>
         <members>Calendar_Cancel</members>
         <members>Calendar_Create_New_Entry</members>
@@ -865,11 +882,15 @@
         <members>Calendar_User_Settings_Start_Time</members>
         <members>Calendar_User_Settings_Time_Range</members>
         <members>Calendar_Warning_Submit_Timesheet</members>
+        <members>InternalWorkOrder_Depot_Button_Sub_Text</members>
+        <members>InternalWorkOrder_Depot_Button_Text</members>
         <members>InternalWorkOrder_Header_Text</members>
         <members>InternalWorkOrder_No_Travel_Sub_Text</members>
         <members>InternalWorkOrder_No_Travel_Text</members>
         <members>InternalWorkOrder_Start_Travel_Sub_Text</members>
         <members>InternalWorkOrder_Start_Travel_Text</members>
+        <members>InternalWorkOrder_Waste_Button_Sub_Text</members>
+        <members>InternalWorkOrder_Waste_Button_Text</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Text</members>
         <members>StartDay_End_Day_Button_Sub_Text</members>
@@ -1161,6 +1182,7 @@
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>Quick_Opportunity_Record_Page</members>
+        <members>Quote_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
         <members>Scheduling_Policy_Record_Page</members>
         <members>Service_Appointment_Record_Page</members>
@@ -1184,13 +1206,16 @@
         <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
+        <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_After_Save_Record_Triggered</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1220,12 +1245,15 @@
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
+        <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_After_Update_Create_Signature_Work_Step</members>
         <members>Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check</members>
         <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
         <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
+        <members>Work_Order_Mobile_Flow_Log_Waste_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
@@ -1234,6 +1262,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
+        <members>Work_Order_Screen_Flow_Create_Rework_WO</members>
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
@@ -1247,13 +1276,16 @@
         <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
+        <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_After_Save_Record_Triggered</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
+        <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1283,12 +1315,15 @@
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
+        <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
+        <members>Work_Order_After_Update_Create_Signature_Work_Step</members>
         <members>Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check</members>
         <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
         <members>Work_Order_Goodwill_Task_Check</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
         <members>Work_Order_Mobile_Flow_Check_Out</members>
+        <members>Work_Order_Mobile_Flow_Log_Waste_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
@@ -1297,6 +1332,7 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
+        <members>Work_Order_Screen_Flow_Create_Rework_WO</members>
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
@@ -1591,6 +1627,7 @@
         <members>colorsPicker</members>
         <members>contractLineEditor</members>
         <members>darkInput</members>
+        <members>debugPanel</members>
         <members>depotVisit</members>
         <members>df_combobox</members>
         <members>df_comboboxUtils</members>
@@ -1683,6 +1720,7 @@
         <members>timesheetEntryForm</members>
         <members>toastMessage</members>
         <members>utilsImageCapture</members>
+        <members>workOrderActions</members>
         <members>workStepSignature</members>
         <name>LightningComponentBundle</name>
     </types>
@@ -1987,8 +2025,10 @@
         <members>WorkOrder.Location_Passport</members>
         <members>WorkOrder.Log_Edit_Goodwill_Tasks</members>
         <members>WorkOrder.Log_Goodwill_Tasks</members>
+        <members>WorkOrder.Rework</members>
         <members>WorkOrder.SendEmail</members>
         <members>WorkOrder.Start_Stop</members>
+        <members>WorkOrder.Work_Order_Actions</members>
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
         <members>WorkStep.Check_In</members>

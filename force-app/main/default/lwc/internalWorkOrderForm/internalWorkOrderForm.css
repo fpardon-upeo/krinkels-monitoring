@@ -175,3 +175,29 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Form Layout and Field Widths */
+lightning-combobox,
+lightning-input-field,
+.slds-form-element {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure the internal elements of the combobox also stretch */
+.slds-combobox_container,
+.slds-combobox,
+lightning-combobox .slds-input,
+.slds-form-element__control {
+  width: 100% !important;
+}
+
+/* Subject input field specific */
+lightning-input-field[field-name="Subject"] .slds-form-element__control {
+  width: 100% !important;
+}
+
+/* Ensure form container has proper padding */
+.form-container {
+  padding: 1rem;
+}

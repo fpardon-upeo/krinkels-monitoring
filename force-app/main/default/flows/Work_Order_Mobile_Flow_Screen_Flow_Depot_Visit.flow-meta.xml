@@ -4,7 +4,7 @@
         <name>Post_Remarks_to_Chatter</name>
         <label>Post Remarks to Chatter</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -24,11 +24,27 @@
         <offset>0</offset>
         <versionSegment>1</versionSegment>
     </actionCalls>
+    <assignments>
+        <name>Set_Work_Step_Status</name>
+        <label>Set Work Step Status</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>WorkStepRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Work_Order_Information</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Remarks_Logged</name>
         <label>Remarks Logged ?</label>
         <locationX>182</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -73,7 +89,7 @@
         <name>Get_Account_Information</name>
         <label>Get Account Information</label>
         <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Depot_Visit_Information</targetReference>
@@ -96,7 +112,7 @@
         <name>Get_Work_Order_Information</name>
         <label>Get Work Order Information</label>
         <locationX>182</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Account_Information</targetReference>
@@ -125,7 +141,7 @@
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Work_Order_Information</targetReference>
+            <targetReference>Set_Work_Step_Status</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -140,16 +156,26 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>WorkOrderId</queriedFields>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Work_Step</name>
+        <label>Update Work Step</label>
+        <locationX>182</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Remarks_Logged</targetReference>
+        </connector>
+        <inputReference>WorkStepRecord</inputReference>
+    </recordUpdates>
     <screens>
         <name>Depot_Visit_Information</name>
         <label>Depot Visit Information</label>
         <locationX>182</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Remarks_Logged</targetReference>
+            <targetReference>Update_Work_Step</targetReference>
         </connector>
         <fields>
             <name>Depot_KCG</name>

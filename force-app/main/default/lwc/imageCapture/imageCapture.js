@@ -302,6 +302,9 @@ export default class ImageCapture extends NavigationMixin(LightningElement) {
       this.deleteImageById(item.id);
     }
     await this.updateWorkStepRecord();
+
+    this.dispatchEvent(new CloseActionScreenEvent());
+
   }
 
   async updateWorkStepRecord() {

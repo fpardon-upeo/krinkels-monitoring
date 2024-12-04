@@ -57,30 +57,6 @@ public with sharing class AccountDetailsController {
     Id accountId,
     String feedbackText
   ) {
-    // //First get the current User Manager Id so we can @mention them in the post
-    // User currentUser = [
-    //   SELECT Id, ManagerId
-    //   FROM User
-    //   WHERE Id = :UserInfo.getUserId()
-    //   LIMIT 1
-    // ];
-
-    // //Get the Atak Project field of the Account t
-    // Account acc = [
-    //   SELECT Id, ATAK_Project__c
-    //   FROM Account
-    //   WHERE Id = :accountId
-    //   LIMIT 1
-    // ];
-
-    // //Get the ATAK Project record based on the lookup field
-    // ATAK_Project__c atakProject = [
-    //   SELECT Id, Name, OwnerId
-    //   FROM ATAK_Project__c
-    //   WHERE Id = :acc.ATAK_Project__c
-    //   LIMIT 1
-    // ];
-
     //Get the Service Territory lookup field of the Work Order
     WorkOrder wo = [
       SELECT Id, ServiceTerritoryId
@@ -97,20 +73,31 @@ public with sharing class AccountDetailsController {
       LIMIT 1
     ];
 
-    String newFeedbackText =
-      '@[' +
-      st.Main_Responsible__c +
-      '] - ' +
-      feedbackText;
+    // Create a ConnectApi.FeedItemInput object
+    ConnectApi.FeedItemInput feedItemInput = new ConnectApi.FeedItemInput();
+    ConnectApi.MessageBodyInput messageInput = new ConnectApi.MessageBodyInput();
+    ConnectApi.TextSegmentInput textSegment = new ConnectApi.TextSegmentInput();
+    ConnectApi.MentionSegmentInput mentionSegment = new ConnectApi.MentionSegmentInput();
 
-    // Create a FeedItem (Chatter Post)
-    FeedItem post = new FeedItem();
-    post.ParentId = accountId;
-    post.Body = newFeedbackText;
-    post.Type = 'TextPost';
+    messageInput.messageSegments = new List<ConnectApi.MessageSegmentInput>();
+
+    // Add the mention
+    mentionSegment.id = st.Main_Responsible__c;
+    messageInput.messageSegments.add(mentionSegment);
+
+    // Add the text
+    textSegment.text = ' - ' + feedbackText;
+    messageInput.messageSegments.add(textSegment);
+
+    feedItemInput.body = messageInput;
+    feedItemInput.feedElementType = ConnectApi.FeedElementType.FeedItem;
+    feedItemInput.subjectId = accountId;
 
     try {
-      insert post;
+      ConnectApi.FeedElement feedElement = ConnectApi.ChatterFeeds.postFeedElement(
+        Network.getNetworkId(),
+        feedItemInput
+      );
     } catch (Exception e) {
       throw new AuraHandledException(
         'Error creating feedback post: ' + e.getMessage()

@@ -12,6 +12,10 @@ import InternalWorkOrder_No_Travel_Text from "@salesforce/label/c.InternalWorkOr
 import InternalWorkOrder_No_Travel_Sub_Text from "@salesforce/label/c.InternalWorkOrder_No_Travel_Sub_Text";
 import InternalWorkOrder_Start_Travel_Text from "@salesforce/label/c.InternalWorkOrder_Start_Travel_Text";
 import InternalWorkOrder_Start_Travel_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Start_Travel_Sub_Text";
+import InternalWorkOrder_Waste_Button_Text from "@salesforce/label/c.InternalWorkOrder_Waste_Button_Text";
+import InternalWorkOrder_Waste_Button_Sub_Text  from "@salesforce/label/c.InternalWorkOrder_Waste_Button_Sub_Text";
+import InternalWorkOrder_Depot_Button_Text from "@salesforce/label/c.InternalWorkOrder_Depot_Button_Text";
+import InternalWorkOrder_Depot_Button_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Depot_Button_Sub_Text";
 import { NavigationMixin } from "lightning/navigation";
 
 import createInternalWorkOrder from "@salesforce/apex/InternalWorkOrderController.createInternalWorkOrder";
@@ -33,6 +37,7 @@ export default class InternalWorkOrderForm extends NavigationMixin(
   workTypes = [];
   showSpinner = false;
   showStartTravel = false;
+  showAccountScreen = false;
   newWorkOrderId;
   newServiceAppointmentId;
 
@@ -59,7 +64,11 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     InternalWorkOrder_No_Travel_Text,
     InternalWorkOrder_No_Travel_Sub_Text,
     InternalWorkOrder_Start_Travel_Text,
-    InternalWorkOrder_Start_Travel_Sub_Text
+    InternalWorkOrder_Start_Travel_Sub_Text,
+    InternalWorkOrder_Waste_Button_Text,
+    InternalWorkOrder_Waste_Button_Sub_Text,
+    InternalWorkOrder_Depot_Button_Text,
+    InternalWorkOrder_Depot_Button_Sub_Text
   };
 
   workOrderTypeOptions = [
@@ -76,14 +85,33 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     }
   ];
 
+  accountWasteColumns = [
+    { label: "Name", fieldName: "Name" },
+    { label: "Waste Types", fieldName: "Type_Of_Waste__c" },
+    { label: "City", fieldName: "ShippingCity" },
+    { label: "Postal Code", fieldName: "ShippingPostalCode" }
+  ];
+
+  accountInternalDepotColumns = [
+    { label: "Name", fieldName: "Name" }
+  ];
+
   serviceAppointments = [];
+  wasteAccounts = [];
+  internalDepotAccounts = [];
   data;
+  wasteAccountData;
+  internalDepotData;
   showAppointmentScreen = false;
+  showWasteAccountScreen = false;
+  showInternalDepotScreen = false;
   showRecordForm = false;
+  showSelectionScreen = true;
   selectedRows = [];
   workOrderId;
   disableNextButton = true;
   showBottomFooter = false;
+  selectedAccountId;
 
   @wire(graphql, {
     query: gql`
@@ -157,19 +185,19 @@ export default class InternalWorkOrderForm extends NavigationMixin(
   appointmentsQueryResult({ error, data }) {
     if (data) {
       this.data = data.uiapi.query.AssignedResource.edges.map(
-        (edge) => edge.node.ServiceAppointment
+          (edge) => edge.node.ServiceAppointment
       );
       this.serviceAppointments = this.data.map((appointment) => {
         let date = new Date(appointment.SchedStartTime.value);
         //Use the date and the cleaned up hours and minutes, use 24h format
         let dateFormatted =
-          date.getDate() +
-          "/" +
-          (date.getMonth() + 1) +
-          " " +
-          date.getHours() +
-          ":" +
-          date.getMinutes();
+            date.getDate() +
+            "/" +
+            (date.getMonth() + 1) +
+            " " +
+            date.getHours() +
+            ":" +
+            date.getMinutes();
         //Make sure we don't return things like 14:0, but 14:00
         dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
 
@@ -184,13 +212,13 @@ export default class InternalWorkOrderForm extends NavigationMixin(
 
         return {
           Appointment:
-            icon +
-            " " +
-            appointment.Account.Name.value +
-            " - " +
-            dateFormatted +
-            " - " +
-            appointment.WorkType.Name.value,
+              icon +
+              " " +
+              appointment.Account.Name.value +
+              " - " +
+              dateFormatted +
+              " - " +
+              appointment.WorkType.Name.value,
           AppointmentNumber: appointment.AppointmentNumber.value,
           Subject: appointment.Subject.value,
           Id: appointment.Id,
@@ -201,6 +229,93 @@ export default class InternalWorkOrderForm extends NavigationMixin(
       console.log(JSON.stringify(this.serviceAppointments));
     } else if (error) {
       console.log(error);
+    }
+  }
+
+  @wire(graphql, {
+    query: gql`
+    query WasteAccounts {
+      uiapi {
+        query {
+          Account(
+            where: {
+              Sub_Type__c: { eq: "Waste Depot"}
+            }
+            orderBy: { Name: { order: ASC } }
+          ) {
+            edges {
+              node {
+                Id
+                Name {
+                  value
+                }
+                Type_of_Waste__c {
+                  value
+                }
+                ShippingCity {
+                  value
+                }
+                ShippingPostalCode {
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+  })
+  wasteAccountsResult({ error, data }) {
+    if (data) {
+      console.log('data:', JSON.stringify(data))
+      this.wasteAccountData = data;
+      this.wasteAccounts = data.uiapi.query.Account.edges.map(edge => ({
+        Id: edge.node.Id,
+        Name: edge.node.Name.value,
+        Type_Of_Waste__c: edge.node.Type_of_Waste__c.value,
+        ShippingCity: edge.node.ShippingCity.value,
+        ShippingPostalCode: edge.node.ShippingPostalCode.value
+      }));
+    } else if (error) {
+      console.error('Error fetching waste accounts:', error);
+    }
+  }
+
+  @wire(graphql, {
+    query: gql`
+    query InternalDepotAccounts {
+      uiapi {
+        query {
+          Account(
+            where: {
+              Sub_Type__c: { eq: "Depot KGCx@" }
+            }
+            orderBy: { Name: { order: ASC } }
+          ) {
+            edges {
+              node {
+                Id
+                Name {
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+  })
+  internalDepotAccountsResult({ error, data }) {
+    if (data) {
+      this.internalDepotData = data;
+      this.internalDepotAccounts = data.uiapi.query.Account.edges.map(edge => ({
+        Id: edge.node.Id,
+        Name: edge.node.Name.value
+      }));
+    } else if (error) {
+      console.error('Error fetching internal depot accounts:', error);
     }
   }
 
@@ -255,6 +370,17 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     this.disableNextButton = true;
   }
 
+  handleSetWasteVisit() {
+    this.showSelectionScreen = false;
+    this.defaultType = "Waste Management";
+  }
+
+  handleSetInternalDepot() {
+    this.showSelectionScreen = false;
+    this.defaultType = "Internal Depot";
+  }
+
+
   handleCloseWasteVisitScreen() {
     this.showAppointmentScreen = false;
     this.showRecordForm = true;
@@ -291,9 +417,31 @@ export default class InternalWorkOrderForm extends NavigationMixin(
       });
   }
 
+  handleSetAccountClicked() {
+    this.showRecordForm = false;
+    this.showBottomFooter = true;
+
+    if (this.defaultType === 'Waste Management') {
+      this.showWasteAccountScreen = true;
+    } else {
+      this.showInternalDepotScreen = true;
+    }
+  }
+
+// Add this method to handle account selection (call this when an account is selected)
+  handleAccountSelected(event) {
+    const selectedAccount = event.detail;
+    this.selectedAccountId = selectedAccount.Id;
+    this.showWasteAccountScreen = false;
+    this.showInternalDepotScreen = false;
+    this.showRecordForm = true;
+    this.showBottomFooter = false;
+  }
+
   handleTypeChange(event) {
     console.log("event.target.value", event.target.value);
     this.defaultType = event.target.value;
+    this.selectedAccountId = null; // Reset account selection when type changes
   }
 
   handleBack() {
@@ -312,6 +460,20 @@ export default class InternalWorkOrderForm extends NavigationMixin(
       detail: event.detail
     });
     this.dispatchEvent(selectedEvent);
+  }
+
+  handleWasteAccountSelection(event) {
+    const selectedRows = event.detail.selectedRows;
+    if (selectedRows.length > 0) {
+      this.handleAccountSelected({ detail: selectedRows[0] });
+    }
+  }
+
+  handleInternalDepotSelection(event) {
+    const selectedRows = event.detail.selectedRows;
+    if (selectedRows.length > 0) {
+      this.handleAccountSelected({ detail: selectedRows[0] });
+    }
   }
 
   handleSelect() {
@@ -339,11 +501,13 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     );
 
     this.showSpinner = true;
+    console.log('selectedAccountId', this.selectedAccountId);
 
     createInternalWorkOrder({
       subject: this.defaultSubject,
       workTypeId: workType.Id,
-      parentWorkOrderId: this.workOrderId
+      parentWorkOrderId: this.workOrderId,
+      accountId: this.selectedAccountId
     })
       .then((result) => {
         console.log("result", JSON.stringify(result));
@@ -380,23 +544,15 @@ export default class InternalWorkOrderForm extends NavigationMixin(
   }
 
   handleRowSelection(event) {
-    const button = this.template.querySelector(".grey-button");
-
-    //If the button exists, remove the grey-button class and add the submit-button class
-    // This will only happens once, when the user selects an option
-    if (button) {
-      button.classList.remove("grey-button");
-      button.classList.add("submit-button");
-    }
-
-    //Continue with the rest of the logic, this will happen every time the user selects an option
     const selectedRows = event.detail.selectedRows;
-    console.log("selectedRows", JSON.stringify(selectedRows));
-    this.selectedRows = selectedRows;
-    this.workOrderId = selectedRows[0].ParentRecordId;
-    this.disableNextButton = selectedRows.length === 0;
+    if (selectedRows.length > 0) {
+      this.selectedRows = selectedRows;
+      this.workOrderId = selectedRows[0].ParentRecordId;
+      this.showAppointmentScreen = false;
+      this.showRecordForm = true;
+      this.showBottomFooter = false;
+    }
   }
-
   get variables() {
     return {
       userId: ID

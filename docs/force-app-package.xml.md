@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2504
+Metadatas: 2544
 
 <details><summary>ApexClass (103)</summary>
   • ATAKMaterialService<br/>
@@ -186,7 +186,7 @@ Metadatas: 2504
   • Internal Community<br/>
 </details>
 
-<details><summary>CompactLayout (20)</summary>
+<details><summary>CompactLayout (21)</summary>
   • ATAK_Personnel__c.Custom_Compact_Layout<br/>
   • Account.Account_Compact_Layout<br/>
   • Account.Commercial_Account<br/>
@@ -199,6 +199,7 @@ Metadatas: 2504
   • Location.Van_Compact_Layout<br/>
   • Location_Visit__c.Location_Visit<br/>
   • Opportunity.New_Awesome_Companct_Layout<br/>
+  • Opportunity.Opportunity<br/>
   • ProductConsumed.Product_Consumed_Compact_Layout<br/>
   • SD_Import__c.Custom_Compact_Layout<br/>
   • ServiceAppointment.Service_Appointment_Compact_Layout<br/>
@@ -237,7 +238,7 @@ Metadatas: 2504
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (571)</summary>
+<details><summary>CustomField (584)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -335,6 +336,7 @@ Metadatas: 2504
   • Account.Region__c<br/>
   • Account.Related_account__c<br/>
   • Account.Short_Name__c<br/>
+  • Account.Signature_Required__c<br/>
   • Account.Status__c<br/>
   • Account.Sub_Type__c<br/>
   • Account.Type_of_Waste__c<br/>
@@ -484,6 +486,7 @@ Metadatas: 2504
   • Location_Visit__c.Estimation_Intervention_Time__c<br/>
   • Location_Visit__c.Execution_Deadline_Request__c<br/>
   • Location_Visit__c.Extra_Opportunity_Information__c<br/>
+  • Location_Visit__c.Fixed_date_Already_planned__c<br/>
   • Location_Visit__c.Frequency_Type__c<br/>
   • Location_Visit__c.Frequency__c<br/>
   • Location_Visit__c.Geolocation__c<br/>
@@ -508,11 +511,13 @@ Metadatas: 2504
   • Location_Visit__c.Service_Contract__c<br/>
   • Location_Visit__c.Service_Package_Name__c<br/>
   • Location_Visit__c.Site_Boundaries_Info__c<br/>
+  • Location_Visit__c.Status__c<br/>
   • Location_Visit__c.Type__c<br/>
   • Location_Visit__c.Unit__c<br/>
   • Location_Visit__c.Visit_Address__c<br/>
   • Location_Visit__c.Visit_Date__c<br/>
   • Location_Visit__c.Visit_Notes__c<br/>
+  • Location_Visit__c.Visitor_Internal__c<br/>
   • Location_Visit__c.Work_Order__c<br/>
   • Logger_Settings__c.Enable_Inbound_Logs__c<br/>
   • Logger_Settings__c.Enable_Outbound_Logs__c<br/>
@@ -535,6 +540,7 @@ Metadatas: 2504
   • Mileage_Entry__c.Type__c<br/>
   • Mileage_Entry__c.Work_Order__c<br/>
   • Operator_Created_Event__e.User_Id__c<br/>
+  • Opportunity.Amount__c<br/>
   • Opportunity.Budget_Confirmed__c<br/>
   • Opportunity.Discovery_Completed__c<br/>
   • Opportunity.Loss_Reason__c<br/>
@@ -569,6 +575,7 @@ Metadatas: 2504
   • Product2.Work_Type__c<br/>
   • ProductConsumed.Van_Crew__c<br/>
   • ProductItem.Van_Crew__c<br/>
+  • Quote.Amount__c<br/>
   • Reorder_Work_Step__e.Next_Number__c<br/>
   • Reorder_Work_Step__e.Work_Order_Id__c<br/>
   • ResourceAbsence.Absence_Type__c<br/>
@@ -768,8 +775,10 @@ Metadatas: 2504
   • WorkOrder.Checkin_Location__c<br/>
   • WorkOrder.Collected_Items__c<br/>
   • WorkOrder.Contract_Manager__c<br/>
+  • WorkOrder.Customer_Reference__c<br/>
   • WorkOrder.Depot_Visit_Comments__c<br/>
   • WorkOrder.Drop_Off_Items__c<br/>
+  • WorkOrder.Excecution_Week__c<br/>
   • WorkOrder.FSL__IsFillInCandidate__c<br/>
   • WorkOrder.FSL__Prevent_Geocoding_For_Chatter_Actions__c<br/>
   • WorkOrder.FSL__Scheduling_Priority__c<br/>
@@ -785,6 +794,9 @@ Metadatas: 2504
   • WorkOrder.Operating_Hours__c<br/>
   • WorkOrder.Pick_Up_Items__c<br/>
   • WorkOrder.Product__c<br/>
+  • WorkOrder.Production_Work__c<br/>
+  • WorkOrder.Rework_for_Work_Order__c<br/>
+  • WorkOrder.Rework_reasons__c<br/>
   • WorkOrder.Scheduled_Date__c<br/>
   • WorkOrder.Shop_Name__c<br/>
   • WorkOrder.Shop_Visit_Date__c<br/>
@@ -794,7 +806,9 @@ Metadatas: 2504
   • WorkOrder.Shop_Visit_Start_Time__c<br/>
   • WorkOrder.Signature_Required__c<br/>
   • WorkOrder.Special_Equipment__c<br/>
+  • WorkOrder.Type__c<br/>
   • WorkOrder.WO_with_Goodwill_Tasks__c<br/>
+  • WorkOrder.Waste_Visit_Done__c<br/>
   • WorkOrder.Waste_to_Drop_Off__c<br/>
   • WorkOrder.Work_Order_Type__c<br/>
   • WorkOrderLineItem.FSL__IsFillInCandidate__c<br/>
@@ -811,13 +825,14 @@ Metadatas: 2504
   • Work_Schedule__c.Total_Weekly_Hours__c<br/>
 </details>
 
-<details><summary>CustomLabel (122)</summary>
+<details><summary>CustomLabel (129)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Break_Button_Sub_Text<br/>
   • AppointmentPicker_Break_Button_Text<br/>
   • AppointmentPicker_Break_Duration_Label<br/>
   • AppointmentPicker_Break_Form_Title<br/>
   • AppointmentPicker_Break_Success_Message<br/>
+  • AppointmentPicker_Cancel_Button<br/>
   • AppointmentPicker_Day_Ended_Toast<br/>
   • AppointmentPicker_End_Day_Button<br/>
   • AppointmentPicker_End_Day_Button_Sub_Text<br/>
@@ -832,9 +847,11 @@ Metadatas: 2504
   • AppointmentPicker_Travel_Started_Toast<br/>
   • Calendar_Add_Break<br/>
   • Calendar_Add_Break_Description<br/>
+  • Calendar_Add_In_Mileage_Entry<br/>
   • Calendar_Add_In_Mileage_Entry_Description<br/>
   • Calendar_Add_Out_Mileage_Entry<br/>
   • Calendar_Add_Out_Mileage_Entry_Description<br/>
+  • Calendar_Add_Time_Sheet_Entry<br/>
   • Calendar_Add_Time_Sheet_Entry_Description<br/>
   • Calendar_Cancel<br/>
   • Calendar_Create_New_Entry<br/>
@@ -869,11 +886,15 @@ Metadatas: 2504
   • Calendar_User_Settings_Start_Time<br/>
   • Calendar_User_Settings_Time_Range<br/>
   • Calendar_Warning_Submit_Timesheet<br/>
+  • InternalWorkOrder_Depot_Button_Sub_Text<br/>
+  • InternalWorkOrder_Depot_Button_Text<br/>
   • InternalWorkOrder_Header_Text<br/>
   • InternalWorkOrder_No_Travel_Sub_Text<br/>
   • InternalWorkOrder_No_Travel_Text<br/>
   • InternalWorkOrder_Start_Travel_Sub_Text<br/>
   • InternalWorkOrder_Start_Travel_Text<br/>
+  • InternalWorkOrder_Waste_Button_Sub_Text<br/>
+  • InternalWorkOrder_Waste_Button_Text<br/>
   • StartDay_End_Button_Sub_Text<br/>
   • StartDay_End_Button_Text<br/>
   • StartDay_End_Day_Button_Sub_Text<br/>
@@ -1129,7 +1150,7 @@ Metadatas: 2504
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (50)</summary>
+<details><summary>FlexiPage (51)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
   • Account_Record_Page<br/>
@@ -1165,6 +1186,7 @@ Metadatas: 2504
   • Product_Item_Record_Page<br/>
   • Product_Record_Page<br/>
   • Quick_Opportunity_Record_Page<br/>
+  • Quote_Record_Page<br/>
   • SalesCloudMobile_UtilityBar<br/>
   • Scheduling_Policy_Record_Page<br/>
   • Service_Appointment_Record_Page<br/>
@@ -1182,19 +1204,22 @@ Metadatas: 2504
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (60)</summary>
+<details><summary>Flow (67)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
+  • Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Mileage_Entry_After_Save_Record_Triggered<br/>
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
+  • Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
+  • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1224,12 +1249,15 @@ Metadatas: 2504
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
+  • Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status<br/>
   • Work_Order_After_Update_Add_Log_KM<br/>
+  • Work_Order_After_Update_Create_Signature_Work_Step<br/>
   • Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check<br/>
   • Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value<br/>
   • Work_Order_Goodwill_Task_Check<br/>
   • Work_Order_Mobile_Flow_Check_In<br/>
   • Work_Order_Mobile_Flow_Check_Out<br/>
+  • Work_Order_Mobile_Flow_Log_Waste_Depot_Visit<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
@@ -1238,6 +1266,7 @@ Metadatas: 2504
   • Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Work_Order_Screen_Flow_Create_Depot_Visit<br/>
+  • Work_Order_Screen_Flow_Create_Rework_WO<br/>
   • Work_Order_Screen_Flow_Create_Waste_Depot_Visit<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
@@ -1245,19 +1274,22 @@ Metadatas: 2504
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (60)</summary>
+<details><summary>FlowDefinition (67)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
+  • Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit<br/>
   • Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field<br/>
   • Mileage_Entry_After_Save_Record_Triggered<br/>
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
+  • Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
+  • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1287,12 +1319,15 @@ Metadatas: 2504
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
+  • Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status<br/>
   • Work_Order_After_Update_Add_Log_KM<br/>
+  • Work_Order_After_Update_Create_Signature_Work_Step<br/>
   • Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check<br/>
   • Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value<br/>
   • Work_Order_Goodwill_Task_Check<br/>
   • Work_Order_Mobile_Flow_Check_In<br/>
   • Work_Order_Mobile_Flow_Check_Out<br/>
+  • Work_Order_Mobile_Flow_Log_Waste_Depot_Visit<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
@@ -1301,6 +1336,7 @@ Metadatas: 2504
   • Work_Order_Mobile_Flow_Screen_Flow_Take_Before_Work_Photos<br/>
   • Work_Order_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Work_Order_Screen_Flow_Create_Depot_Visit<br/>
+  • Work_Order_Screen_Flow_Create_Rework_WO<br/>
   • Work_Order_Screen_Flow_Create_Waste_Depot_Visit<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
@@ -1589,12 +1625,13 @@ Metadatas: 2504
   • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (98)</summary>
+<details><summary>LightningComponentBundle (100)</summary>
   • addressSearch<br/>
   • checkIn<br/>
   • colorsPicker<br/>
   • contractLineEditor<br/>
   • darkInput<br/>
+  • debugPanel<br/>
   • depotVisit<br/>
   • df_combobox<br/>
   • df_comboboxUtils<br/>
@@ -1687,6 +1724,7 @@ Metadatas: 2504
   • timesheetEntryForm<br/>
   • toastMessage<br/>
   • utilsImageCapture<br/>
+  • workOrderActions<br/>
   • workStepSignature<br/>
 </details>
 
@@ -1840,7 +1878,7 @@ Metadatas: 2504
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (160)</summary>
+<details><summary>QuickAction (162)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -1991,8 +2029,10 @@ Metadatas: 2504
   • WorkOrder.Location_Passport<br/>
   • WorkOrder.Log_Edit_Goodwill_Tasks<br/>
   • WorkOrder.Log_Goodwill_Tasks<br/>
+  • WorkOrder.Rework<br/>
   • WorkOrder.SendEmail<br/>
   • WorkOrder.Start_Stop<br/>
+  • WorkOrder.Work_Order_Actions<br/>
   • WorkOrderLineItem.Complete_Service<br/>
   • WorkOrderLineItem.SendEmail<br/>
   • WorkStep.Check_In<br/>

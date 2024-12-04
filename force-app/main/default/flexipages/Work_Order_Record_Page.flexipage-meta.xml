@@ -28,14 +28,24 @@
                             <value>WorkOrder.Create_Depot_Visit</value>
                             <visibilityRule>
                                 <criteria>
-                                    <leftValue>{!Record.Work_Order_Type__c}</leftValue>
+                                    <leftValue>{!Record.Production_Work__c}</leftValue>
                                     <operator>EQUAL</operator>
-                                    <rightValue>Production</rightValue>
+                                    <rightValue>true</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>WorkOrder.Create_Waste_Depot_Visit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>WorkOrder.Rework</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Production_Work__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -374,12 +384,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>workStepSignature</componentName>
-                <identifier>c_workStepSignature</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

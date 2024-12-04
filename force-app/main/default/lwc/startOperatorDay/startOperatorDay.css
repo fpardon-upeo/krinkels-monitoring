@@ -120,7 +120,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .content-area {
@@ -244,6 +243,7 @@ c-time-sheet-calendar {
 /* Original footer styles remain */
 .footer-content {
   height: 100%;
+  padding: 0.75rem;
 }
 
 .footer {

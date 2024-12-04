@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixed_date_Already_planned__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Is this visit on a fixed date or is the date already planned?</inlineHelpText>
+    <label>Fixed date / Already planned</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

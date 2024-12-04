@@ -243,12 +243,6 @@
                 <stringValue>Pricing</stringValue>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>Work_Size__c</field>
-            <value>
-                <elementReference>Size_of_the_Extra_Work</elementReference>
-            </value>
-        </inputAssignments>
         <object>Opportunity</object>
     </recordCreates>
     <recordCreates>
@@ -332,12 +326,6 @@
                 <stringValue>Pricing</stringValue>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>Work_Size__c</field>
-            <value>
-                <elementReference>Size_of_the_Extra_Work</elementReference>
-            </value>
-        </inputAssignments>
         <object>Opportunity</object>
     </recordCreates>
     <recordCreates>
@@ -349,6 +337,12 @@
         <connector>
             <targetReference>Pricing</targetReference>
         </connector>
+        <inputAssignments>
+            <field>Amount__c</field>
+            <value>
+                <elementReference>Unit_Price</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Name</field>
             <value>
@@ -398,7 +392,7 @@
         <inputAssignments>
             <field>Quantity</field>
             <value>
-                <elementReference>Quantity</elementReference>
+                <numberValue>1.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -410,7 +404,7 @@
         <inputAssignments>
             <field>UnitPrice</field>
             <value>
-                <elementReference>Unit_Price</elementReference>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <object>QuoteLineItem</object>
@@ -448,10 +442,10 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>IsStandard</field>
+            <field>Name</field>
             <operator>EqualTo</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <stringValue>Extra Work</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -593,26 +587,6 @@
                 <name>Add_Extra_Work_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Size_of_the_Extra_Work</name>
-                    <choiceReferences>WorkSizeChoice</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>Size of the Extra Work</fieldText>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Add_Extra_Work_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>Expected_Work_Date</name>
                     <dataType>Date</dataType>
                     <defaultValue>
@@ -631,15 +605,26 @@
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
+            <fields>
+                <name>Add_Extra_Work_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Please_provide_a_description_of_the_extra_work</name>
+                    <fieldText>Please provide a description of the extra work</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Please_provide_a_description_of_the_extra_work</name>
-            <fieldText>Please provide a description of the extra work</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Link_this_Extra_Work_to_a_Service_Contract</name>
@@ -808,12 +793,9 @@
                 <name>PricingScreen_Section2_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Quantity</name>
-                    <dataType>Number</dataType>
-                    <defaultValue>
-                        <numberValue>1.0</numberValue>
-                    </defaultValue>
-                    <fieldText>Quantity</fieldText>
+                    <name>Unit_Price</name>
+                    <dataType>Currency</dataType>
+                    <fieldText>Sales Price</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
@@ -831,13 +813,22 @@
                 <name>PricingScreen_Section2_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Unit_Price</name>
-                    <dataType>Currency</dataType>
-                    <fieldText>Unit Price</fieldText>
+                    <name>Any_additional_comments</name>
+                    <dataType>String</dataType>
+                    <fieldText>Any additional comments?</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <scale>0</scale>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>No</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -849,24 +840,6 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>No</elementReference>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Any_additional_comments</name>
-            <dataType>String</dataType>
-            <fieldText>Any additional comments?</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>

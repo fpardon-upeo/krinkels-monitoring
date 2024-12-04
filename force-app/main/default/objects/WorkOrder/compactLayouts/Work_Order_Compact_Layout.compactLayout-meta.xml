@@ -5,6 +5,6 @@
     <fields>Status</fields>
     <fields>StartDate</fields>
     <fields>EndDate</fields>
-    <fields>Work_Order_Type__c</fields>
+    <fields>WorkTypeId</fields>
     <label>Work Order Compact Layout</label>
 </CompactLayout>

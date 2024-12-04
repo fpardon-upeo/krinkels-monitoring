@@ -1,77 +1,97 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-classes/AccountWasteRetriever.cls," ",ApexClass AccountWasteRetriever,M,,log,📰
-classes/CheckInService.cls,A,ApexClass CheckInService,,,log,📰
-classes/CheckInService.cls-meta.xml,A,ApexClass CheckInService,,,log,📰
-classes/FieldServiceTestData.cls," ",ApexClass FieldServiceTestData,M,,log,📰
-classes/GanttRoundPinAction.cls," ",ApexClass GanttRoundPinAction,M,,log,📰
-classes/GanttRoundPinActionTest.cls,A,ApexClass GanttRoundPinActionTest,,,log,📰
-classes/GanttRoundPinActionTest.cls-meta.xml,A,ApexClass GanttRoundPinActionTest,,,log,📰
+classes/ATAKWorkLogService.cls," ",ApexClass ATAKWorkLogService,M,,log,📰
+classes/AccountDetailsController.cls," ",ApexClass AccountDetailsController,M,,log,📰
 classes/InternalWorkOrderController.cls," ",ApexClass InternalWorkOrderController,M,,log,📰
-classes/MachineRestResource.cls," ",ApexClass MachineRestResource,M,,log,📰
-classes/RRuleAdjuster.cls," ",ApexClass RRuleAdjuster,M,,log,📰
-classes/ServiceAppointmentRescheduler.cls," ",ApexClass ServiceAppointmentRescheduler,M,,log,📰
-classes/TimeSheetMapController.cls,A,ApexClass TimeSheetMapController,,,log,📰
-classes/TimeSheetMapController.cls-meta.xml,A,ApexClass TimeSheetMapController,,,log,📰
-classes/WorkStepSignatureControllerTest.cls," ",ApexClass WorkStepSignatureControllerTest,M,,log,📰
-cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+email/CustomerNotifications/Notification_Planned_WO_NL_1731941363446.email," ",EmailTemplate CustomerNotifications/Notification_Planned_WO_NL_1731941363446,M,,log,📰
+email/CustomerNotifications/Notification_Planned_WO_NL_1731941363446.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Planned_WO_NL_1731941363446,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597.email," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863.email," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106.email," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513.email," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709.email," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709,M,,log,📰
 flexipages/Location_Visit_Record_Page.flexipage-meta.xml," ",FlexiPage Location_Visit_Record_Page,M,,log,📰
-flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
+flexipages/Operational_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Operational_Account_Record_Page,M,,log,📰
+flexipages/Quick_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Quick_Opportunity_Record_Page,M,,log,📰
+flexipages/Quote_Record_Page.flexipage-meta.xml,A,FlexiPage Quote_Record_Page,,,log,📰
 flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
-flexipages/Work_Step_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Step_Record_Page,M,,log,📰
-flowDefinitions/Work_Order_After_Update_Add_Log_KM.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Update_Add_Log_KM,M,,log,📰
-flowDefinitions/Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check,,,log,📰
-flows/Work_Order_After_Update_Add_Log_KM.flow-meta.xml," ",Flow Work_Order_After_Update_Add_Log_KM,M,,log,📰
-flows/Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check.flow-meta.xml,A,Flow Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check,,,log,📰
+flowDefinitions/Account_Screen_Flow_Add_Extra_Work.flowDefinition-meta.xml," ",FlowDefinition Account_Screen_Flow_Add_Extra_Work,M,,log,📰
+flowDefinitions/Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit.flowDefinition-meta.xml,A,FlowDefinition Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit,,,log,📰
+flowDefinitions/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.flowDefinition-meta.xml,A,FlowDefinition Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote,,,log,📰
+flowDefinitions/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flowDefinition-meta.xml,A,FlowDefinition Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,,,log,📰
+flowDefinitions/Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO,M,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,M,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status,,,log,📰
+flowDefinitions/Work_Order_After_Update_Create_Signature_Work_Step.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Update_Create_Signature_Work_Step,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Log_Waste_Depot_Visit.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Log_Waste_Depot_Visit,,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit,M,,log,📰
+flowDefinitions/Work_Order_Screen_Flow_Create_Depot_Visit.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Screen_Flow_Create_Depot_Visit,M,,log,📰
+flowDefinitions/Work_Order_Screen_Flow_Create_Rework_WO.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Screen_Flow_Create_Rework_WO,,,log,📰
+flows/Account_Screen_Flow_Add_Extra_Work.flow-meta.xml," ",Flow Account_Screen_Flow_Add_Extra_Work,M,,log,📰
+flows/Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit.flow-meta.xml,A,Flow Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit,,,log,📰
+flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.flow-meta.xml,A,Flow Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote,,,log,📰
+flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flow-meta.xml,A,Flow Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,,,log,📰
+flows/Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO.flow-meta.xml," ",Flow Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO,M,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines,M,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.flow-meta.xml,A,Flow Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status,,,log,📰
+flows/Work_Order_After_Update_Create_Signature_Work_Step.flow-meta.xml,A,Flow Work_Order_After_Update_Create_Signature_Work_Step,,,log,📰
+flows/Work_Order_Mobile_Flow_Log_Waste_Depot_Visit.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Log_Waste_Depot_Visit,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit,M,,log,📰
+flows/Work_Order_Screen_Flow_Create_Depot_Visit.flow-meta.xml," ",Flow Work_Order_Screen_Flow_Create_Depot_Visit,M,,log,📰
+flows/Work_Order_Screen_Flow_Create_Rework_WO.flow-meta.xml,A,Flow Work_Order_Screen_Flow_Create_Rework_WO,,,log,📰
 labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-layouts/AssignedResource-Assigned Resource Layout.layout-meta.xml," ",Layout AssignedResource-Assigned Resource Layout,M,,log,📰
+layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
 layouts/Location_Visit__c-Location Visit Layout.layout-meta.xml," ",Layout Location_Visit__c-Location Visit Layout,M,,log,📰
-layouts/ResourceAbsence-Internal Meeting Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Internal Meeting Resource Absence Layout,M,,log,📰
-layouts/ResourceAbsence-Physical Check-up Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Physical Check-up Resource Absence Layout,M,,log,📰
-layouts/ResourceAbsence-Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Resource Absence Layout,M,,log,📰
-layouts/ResourceAbsence-Training Resource Absence Layout.layout-meta.xml," ",Layout ResourceAbsence-Training Resource Absence Layout,M,,log,📰
-layouts/ServiceResource-Service Resource Layout.layout-meta.xml," ",Layout ServiceResource-Service Resource Layout,M,,log,📰
+layouts/Opportunity-Opportunity Layout.layout-meta.xml," ",Layout Opportunity-Opportunity Layout,M,,log,📰
+layouts/Quote-Quote Layout.layout-meta.xml," ",Layout Quote-Quote Layout,M,,log,📰
 layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-layouts/WorkStep-FSL Work Step Layout.layout-meta.xml," ",Layout WorkStep-FSL Work Step Layout,M,,log,📰
 layouts/WorkStep-Work Step Layout.layout-meta.xml," ",Layout WorkStep-Work Step Layout,M,,log,📰
-lwc/checkIn/checkIn.css,A,LightningComponentBundle checkIn/checkIn.css,,,log,📰
-lwc/checkIn/checkIn.html,A,LightningComponentBundle checkIn/checkIn.html,,,log,📰
-lwc/checkIn/checkIn.js,A,LightningComponentBundle checkIn/checkIn.js,,,log,📰
-lwc/checkIn/checkIn.js-meta.xml,A,LightningComponentBundle checkIn/checkIn.js-meta.xml,,,log,📰
+lwc/debugPanel/debugPanel.css,A,LightningComponentBundle debugPanel/debugPanel.css,,,log,📰
+lwc/debugPanel/debugPanel.html,A,LightningComponentBundle debugPanel/debugPanel.html,,,log,📰
+lwc/debugPanel/debugPanel.js,A,LightningComponentBundle debugPanel/debugPanel.js,,,log,📰
+lwc/debugPanel/debugPanel.js-meta.xml,A,LightningComponentBundle debugPanel/debugPanel.js-meta.xml,,,log,📰
+lwc/imageCapture/imageCapture.js," ",LightningComponentBundle imageCapture/imageCapture.js,M,,log,📰
 lwc/internalWorkOrderForm/internalWorkOrderForm.css," ",LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.css,M,,log,📰
 lwc/internalWorkOrderForm/internalWorkOrderForm.html," ",LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.html,M,,log,📰
 lwc/internalWorkOrderForm/internalWorkOrderForm.js," ",LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.js,M,,log,📰
-lwc/locationServiceUtil/locationServiceUtil.html,A,LightningComponentBundle locationServiceUtil/locationServiceUtil.html,,,log,📰
-lwc/locationServiceUtil/locationServiceUtil.js,A,LightningComponentBundle locationServiceUtil/locationServiceUtil.js,,,log,📰
-lwc/locationServiceUtil/locationServiceUtil.js-meta.xml,A,LightningComponentBundle locationServiceUtil/locationServiceUtil.js-meta.xml,,,log,📰
+lwc/nextAppointmentPicker/nextAppointmentPicker.css," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.css,M,,log,📰
 lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
 lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.css," ",LightningComponentBundle showMileageScreen/showMileageScreen.css,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.html," ",LightningComponentBundle showMileageScreen/showMileageScreen.html,M,,log,📰
+lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.css," ",LightningComponentBundle startOperatorDay/startOperatorDay.css,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.html," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.html,M,,log,📰
 lwc/startOperatorDayMetrics/startOperatorDayMetrics.js," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.js,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.css," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.css,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-lwc/timeSheetMap/timeSheetMap.css,A,LightningComponentBundle timeSheetMap/timeSheetMap.css,,,log,📰
-lwc/timeSheetMap/timeSheetMap.html,A,LightningComponentBundle timeSheetMap/timeSheetMap.html,,,log,📰
-lwc/timeSheetMap/timeSheetMap.js,A,LightningComponentBundle timeSheetMap/timeSheetMap.js,,,log,📰
-lwc/timeSheetMap/timeSheetMap.js-meta.xml,A,LightningComponentBundle timeSheetMap/timeSheetMap.js-meta.xml,,,log,📰
-lwc/workStepSignature/workStepSignature.css," ",LightningComponentBundle workStepSignature/workStepSignature.css,M,,log,📰
-lwc/workStepSignature/workStepSignature.html," ",LightningComponentBundle workStepSignature/workStepSignature.html,M,,log,📰
+lwc/workOrderActions/workOrderActions.css,A,LightningComponentBundle workOrderActions/workOrderActions.css,,,log,📰
+lwc/workOrderActions/workOrderActions.html,A,LightningComponentBundle workOrderActions/workOrderActions.html,,,log,📰
+lwc/workOrderActions/workOrderActions.js,A,LightningComponentBundle workOrderActions/workOrderActions.js,,,log,📰
+lwc/workOrderActions/workOrderActions.js-meta.xml,A,LightningComponentBundle workOrderActions/workOrderActions.js-meta.xml,,,log,📰
 lwc/workStepSignature/workStepSignature.js," ",LightningComponentBundle workStepSignature/workStepSignature.js,M,,log,📰
-lwc/workStepSignature/workStepSignature.js-meta.xml," ",LightningComponentBundle workStepSignature/workStepSignature.js-meta.xml,M,,log,📰
-objects/AssignedResource/fields/External_Id__c.field-meta.xml,A,CustomField External_Id__c,,,log,📰
-objects/Location/fields/Current_User_is_CM__c.field-meta.xml,A,CustomField Current_User_is_CM__c,,,log,📰
-objects/Location_Visit__c/fields/Work_Order__c.field-meta.xml,A,CustomField Work_Order__c,,,log,📰
-objects/ResourceAbsence/fieldSets/FSL__Absence_Resource_Calendar_Tooltip.fieldSet-meta.xml," ",FieldSet FSL__Absence_Resource_Calendar_Tooltip,M,,log,📰
-objects/ResourceAbsence/fieldSets/FSL__Resource_Absence_Lightbox.fieldSet-meta.xml," ",FieldSet FSL__Resource_Absence_Lightbox,M,,log,📰
-objects/ResourceAbsence/fieldSets/FSL__Resource_Absence_Resource_Calendar.fieldSet-meta.xml," ",FieldSet FSL__Resource_Absence_Resource_Calendar,M,,log,📰
-objects/ResourceAbsence/fields/Absence_Type__c.field-meta.xml,A,CustomField Absence_Type__c,,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Appointment_List_Columns.fieldSet-meta.xml," ",FieldSet FSL__Service_Appointment_List_Columns,M,,log,📰
-objects/WorkOrder/fields/Checkin_Location__c.field-meta.xml,A,CustomField Checkin_Location__c,,,log,📰
-objects/WorkOrder/webLinks/Waste_Depot_Visit.webLink-meta.xml,A,WebLink Waste_Depot_Visit,,,log,📰
+objects/Account/fields/Signature_Required__c.field-meta.xml,A,CustomField Signature_Required__c,,,log,📰
+objects/Location_Visit__c/fields/Fixed_date_Already_planned__c.field-meta.xml,A,CustomField Fixed_date_Already_planned__c,,,log,📰
+objects/Location_Visit__c/fields/Status__c.field-meta.xml,A,CustomField Status__c,,,log,📰
+objects/Location_Visit__c/fields/Visitor_Internal__c.field-meta.xml,A,CustomField Visitor_Internal__c,,,log,📰
+objects/Opportunity/compactLayouts/Opportunity.compactLayout-meta.xml,A,CompactLayout Opportunity,,,log,📰
+objects/Opportunity/fields/Amount__c.field-meta.xml,A,CustomField Amount__c,,,log,📰
+objects/Quote/Quote.object-meta.xml,A,CustomObject Quote/Quote,,,log,📰
+objects/Quote/fields/Amount__c.field-meta.xml,A,CustomField Amount__c,,,log,📰
+objects/WorkOrder/compactLayouts/Work_Order_Compact_Layout.compactLayout-meta.xml," ",CompactLayout Work_Order_Compact_Layout,M,,log,📰
+objects/WorkOrder/fields/Customer_Reference__c.field-meta.xml,A,CustomField Customer_Reference__c,,,log,📰
+objects/WorkOrder/fields/Excecution_Week__c.field-meta.xml,A,CustomField Excecution_Week__c,,,log,📰
+objects/WorkOrder/fields/Production_Work__c.field-meta.xml,A,CustomField Production_Work__c,,,log,📰
+objects/WorkOrder/fields/Rework_for_Work_Order__c.field-meta.xml,A,CustomField Rework_for_Work_Order__c,,,log,📰
+objects/WorkOrder/fields/Rework_reasons__c.field-meta.xml,A,CustomField Rework_reasons__c,,,log,📰
+objects/WorkOrder/fields/Signature_Required__c.field-meta.xml," ",CustomField Signature_Required__c,M,,log,📰
+objects/WorkOrder/fields/Type__c.field-meta.xml,A,CustomField Type__c,,,log,📰
+objects/WorkOrder/fields/Waste_Visit_Done__c.field-meta.xml,A,CustomField Waste_Visit_Done__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -97,12 +117,11 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/WorkOrder.Create_Depot_Visit.quickAction-meta.xml," ",QuickAction WorkOrder.Create_Depot_Visit,M,,log,📰
-quickActions/WorkOrder.Create_Waste_Depot_Visit.quickAction-meta.xml," ",QuickAction WorkOrder.Create_Waste_Depot_Visit,M,,log,📰
-quickActions/WorkStep.Check_In.quickAction-meta.xml,A,QuickAction WorkStep.Check_In,,,log,📰
-reportTypes/Service_Appointments.reportType-meta.xml," ",ReportType Service_Appointments,M,,log,📰
-reportTypes/Service_Appointments_with_Service_Resources.reportType-meta.xml," ",ReportType Service_Appointments_with_Service_Resources,M,,log,📰
-reportTypes/Vans_with_Material_Items.reportType-meta.xml," ",ReportType Vans_with_Material_Items,M,,log,📰
-installedPackages/FSL.json," ",InstalledPackage FSL.json,M,,log,📰
+quickActions/WorkOrder.Rework.quickAction-meta.xml,A,QuickAction WorkOrder.Rework,,,log,📰
+quickActions/WorkOrder.Work_Order_Actions.quickAction-meta.xml,A,QuickAction WorkOrder.Work_Order_Actions,,,log,📰
+reportTypes/Opportunities_with_Historical_Trending.reportType-meta.xml," ",ReportType Opportunities_with_Historical_Trending,M,,log,📰
+reportTypes/Work_Orders.reportType-meta.xml," ",ReportType Work_Orders,M,,log,📰
+settings/Forecasting.settings-meta.xml," ",Settings Forecasting,M,,log,📰
+settings/ForecastingObjectList.settings-meta.xml," ",Settings ForecastingObjectList,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

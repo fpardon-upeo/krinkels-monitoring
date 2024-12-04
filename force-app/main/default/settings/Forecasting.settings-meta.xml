@@ -241,6 +241,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -344,6 +348,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -516,6 +521,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -619,6 +628,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -795,6 +805,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -899,6 +913,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1071,6 +1086,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1174,6 +1193,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1350,6 +1370,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1454,6 +1478,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1626,6 +1651,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1729,6 +1758,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1905,6 +1935,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2009,6 +2043,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2181,6 +2216,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2284,6 +2323,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2460,6 +2500,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2564,6 +2608,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2736,6 +2781,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2839,6 +2888,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -3015,6 +3065,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -3119,6 +3173,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -3291,6 +3346,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -3394,6 +3453,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>

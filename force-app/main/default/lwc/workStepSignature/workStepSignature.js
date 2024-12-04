@@ -116,8 +116,8 @@ export default class WorkStepSignature extends LightningElement {
       this.dispatchEvent(errorEvt);
     }
 
-    // 4. Add a delay before closing (4 seconds)
-    await new Promise((resolve) => setTimeout(resolve, 4000));
+    // 4. Add a delay before closing (1.5 seconds)
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     // 5. Close the screen
     this.dispatchEvent(new CloseActionScreenEvent());

@@ -98,6 +98,10 @@
             <label>Price Request BS Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </forecastingObjectListLabelMappings>
@@ -237,6 +241,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -355,6 +360,10 @@
             <label>Price Request BS Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </forecastingObjectListLabelMappings>
@@ -494,6 +503,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -616,6 +626,10 @@
             <label>Price Request BS Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </forecastingObjectListLabelMappings>
@@ -756,6 +770,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -872,6 +887,10 @@
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmk</field>
             <label>Price Request BS Comments</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
@@ -1013,6 +1032,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1135,6 +1155,10 @@
             <label>Price Request BS Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </forecastingObjectListLabelMappings>
@@ -1275,6 +1299,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1391,6 +1416,10 @@
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmk</field>
             <label>Price Request BS Comments</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
@@ -1532,6 +1561,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1654,6 +1684,10 @@
             <label>Price Request BS Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </forecastingObjectListLabelMappings>
@@ -1794,6 +1828,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1910,6 +1945,10 @@
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmk</field>
             <label>Price Request BS Comments</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
@@ -2051,6 +2090,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2173,6 +2213,10 @@
             <label>Price Request BS Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </forecastingObjectListLabelMappings>
@@ -2313,6 +2357,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2429,6 +2474,10 @@
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmk</field>
             <label>Price Request BS Comments</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
@@ -2570,6 +2619,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2692,6 +2742,10 @@
             <label>Price Request BS Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </forecastingObjectListLabelMappings>
@@ -2832,6 +2886,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2948,6 +3003,10 @@
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmk</field>
             <label>Price Request BS Comments</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q75fP</field>
+            <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00N07000002R5Hu</field>
@@ -3089,6 +3148,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00NKF00000Q75fP</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>

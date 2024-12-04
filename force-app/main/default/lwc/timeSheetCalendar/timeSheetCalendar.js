@@ -19,7 +19,7 @@ import Calendar_Cancel from "@salesforce/label/c.Calendar_Cancel";
 import Calendar_Save from "@salesforce/label/c.Calendar_Save";
 import Calendar_Submit_For_Approval from "@salesforce/label/c.Calendar_Submit_For_Approval";
 import Calendar_Create_New_Entry from "@salesforce/label/c.Calendar_Create_New_Entry";
-// import Calendar_Add_Time_Sheet_Entry from "@salesforce/label/c.Calendar_Add_Time_Sheet_Entry";
+import Calendar_Add_Time_Sheet_Entry from "@salesforce/label/c.Calendar_Add_Time_Sheet_Entry";
 import Calendar_Add_Time_Sheet_Entry_Description from "@salesforce/label/c.Calendar_Add_Time_Sheet_Entry_Description";
 import Calendar_Add_Break from "@salesforce/label/c.Calendar_Add_Break";
 import Calendar_Add_Break_Description from "@salesforce/label/c.Calendar_Add_Break_Description";
@@ -36,7 +36,7 @@ import Calendar_Mileage_Starting_Mileage from "@salesforce/label/c.Calendar_Mile
 import Calendar_Mileage_Ending_Mileage from "@salesforce/label/c.Calendar_Mileage_Ending_Mileage";
 import Calendar_Edit from "@salesforce/label/c.Calendar_Edit";
 import Calendar_No_In_Mileage_Entries_Description from "@salesforce/label/c.Calendar_No_In_Mileage_Entries_Description";
-// import Calendar_Add_In_Mileage_Entry from "@salesforce/label/c.Calendar_Add_In_Mileage_Entry";
+import Calendar_Add_In_Mileage_Entry from "@salesforce/label/c.Calendar_Add_In_Mileage_Entry";
 import Calendar_Add_In_Mileage_Entry_Description from "@salesforce/label/c.Calendar_Add_In_Mileage_Entry_Description";
 import Calendar_No_Out_Mileage_Entries_Description from "@salesforce/label/c.Calendar_No_Out_Mileage_Entries_Description";
 import Calendar_Add_Out_Mileage_Entry from "@salesforce/label/c.Calendar_Add_Out_Mileage_Entry";
@@ -121,7 +121,7 @@ export default class TimeSheetCalendar extends LightningElement {
   labels = {
     Calendar_Submit_For_Approval,
     Calendar_Create_New_Entry,
-    // Calendar_Add_Time_Sheet_Entry,
+    Calendar_Add_Time_Sheet_Entry,
     Calendar_Add_Time_Sheet_Entry_Description,
     Calendar_Add_Break,
     Calendar_Add_Break_Description,
@@ -138,7 +138,7 @@ export default class TimeSheetCalendar extends LightningElement {
     Calendar_Mileage_Ending_Mileage,
     Calendar_Edit,
     Calendar_No_In_Mileage_Entries_Description,
-    // Calendar_Add_In_Mileage_Entry,
+    Calendar_Add_In_Mileage_Entry,
     Calendar_Add_In_Mileage_Entry_Description,
     Calendar_No_Out_Mileage_Entries_Description,
     Calendar_Add_Out_Mileage_Entry,
@@ -175,12 +175,16 @@ export default class TimeSheetCalendar extends LightningElement {
       getUserSettings({ userId: this.resourceId })
     ])
       .then(([css1, js, css2, userSettings]) => {
+        console.log("userSettings before:", userSettings);
+        console.log("resourceId:", this.resourceId);
         // Set user settings first
         if (
           userSettings &&
           userSettings.Start_Time__c &&
           userSettings.End_Time__c
         ) {
+          console.log("userSettings:", userSettings);
+
           this.user = userSettings;
           this.minValue = userSettings.Start_Time__c / (1000 * 60 * 60);
           this.maxValue = userSettings.End_Time__c / (1000 * 60 * 60);

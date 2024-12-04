@@ -139,6 +139,24 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Visitor_Internal__c</fieldItem>
+                <identifier>RecordVisitor_Internal__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Status__c</fieldItem>
+                <identifier>RecordStatus__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Fixed_date_Already_planned__c</fieldItem>
+                <identifier>RecordFixed_date_Already_planned__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-ac27e172-1249-4ce9-b4f4-3070c37d8a0b</name>
         <type>Facet</type>
     </flexiPageRegions>

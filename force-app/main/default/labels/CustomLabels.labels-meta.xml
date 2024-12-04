@@ -964,7 +964,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Calendar_User_Settings_Time_Range</shortDescription>
-        <value>Time Range Selector Teste</value>
+        <value>Time Range Selector</value>
     </labels>
     <labels>
         <fullName>Calendar_Warning_Submit_Timesheet</fullName>
@@ -973,5 +973,61 @@
         <protected>false</protected>
         <shortDescription>Calendar_Warning_Submit_Timesheet</shortDescription>
         <value>Warning: After submission, this timesheet will be locked and cannot be edited.</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Cancel_Button</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Cancel_Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Add_In_Mileage_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_In_Mileage_Entry</shortDescription>
+        <value>Add In Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_Add_Time_Sheet_Entry</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Add_Time_Sheet_Entry</shortDescription>
+        <value>Add time sheet entry</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Depot_Button_Sub_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Depot_Button_Sub_Text</shortDescription>
+        <value>Log a work order to keep track of your visits to Krinkels depots.</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Depot_Button_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Depot_Button_Text</shortDescription>
+        <value>Depot Visit</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Waste_Button_Sub_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Waste_Button_Sub_Text</shortDescription>
+        <value>Create a work order to log your waste management activities.</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Waste_Button_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Waste_Button_Text</shortDescription>
+        <value>Waste Management</value>
     </labels>
 </CustomLabels>

@@ -64,6 +64,9 @@ export default class ServiceBuilder extends LightningElement {
     additionalFields: [{ fieldPath: "ProductCode" }]
   };
 
+  //TODO: Add filterOptions to filter out Product RecordType (only need 'Service' and 'Service Package')
+    // Filter Options
+
   ///////////////////////////////Getters/////////////////////////////
 
   /**

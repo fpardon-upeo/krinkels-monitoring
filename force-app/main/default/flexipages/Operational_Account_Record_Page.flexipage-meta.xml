@@ -102,6 +102,12 @@
                 <identifier>RecordFacility_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Signature_Required__c</fieldItem>
+                <identifier>RecordSignature_Required__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-1f8fd4a4-f9e7-4f44-a1f7-d737cf04e740</name>
         <type>Facet</type>
     </flexiPageRegions>

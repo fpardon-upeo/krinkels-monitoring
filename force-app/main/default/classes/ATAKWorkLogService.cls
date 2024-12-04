@@ -12,6 +12,7 @@ public with sharing class ATAKWorkLogService {
 
         try {
             ATAKPerformanceWrapper wrapper = ATAKPerformanceService.prepareATAKPerformanceData(timeSheetId);
+            Integer statusCode = ATAKPerformanceService.sendATAKPerformanceData(wrapper);
 
             if(wrapper.data == null || wrapper.data.isEmpty()) {
                 System.debug('⚠️ No data to process for TimeSheet: ' + timeSheetId);
@@ -52,7 +53,15 @@ public with sharing class ATAKWorkLogService {
             }
 
             if(!workLogs.isEmpty()) {
-                upsert workLogs External_Id__c;
+                //upsert workLogs External_Id__c;
+                List<Database.UpsertResult> results = Database.upsert(workLogs, ATAK_Work_Log__c.Fields.External_Id__c, false);
+                for(Database.UpsertResult result : results) {
+                    if(!result.isSuccess()) {
+                        for(Database.Error error : result.getErrors()) {
+                            System.debug('❌ Error upserting Work Log: ' + error.getMessage());
+                        }
+                    }
+                }
                 System.debug('✅ Successfully upserted ' + workLogs.size() + ' Work Logs');
             }
         } catch(Exception e) {

@@ -6,7 +6,7 @@
     <pageDevName>Notification_REScheduled_WO_NL</pageDevName>
     <relatedEntityType>WorkOrder</relatedEntityType>
     <style>none</style>
-    <subject>Aanpassing in geplande interventie - [Uw Referentie/Onze Referentie]</subject>
+    <subject>Aanpassing in geplande interventie - [{{{WorkOrder.WorkOrderNumber}}}{{{WorkOrder.Customer_Reference__c}}}]</subject>
     <textOnly>Beste klant,
 
 We willen u op de hoogte brengen van een aanpassing in de eerder geplande interventie. Hier vindt u de bijgewerkte details:
@@ -17,9 +17,7 @@ We willen u op de hoogte brengen van een aanpassing in de eerder geplande interv
  - Locatie: 
  - {{{WorkOrder.Address}}}
 
-De interventie vindt nu plaats op {{{WorkOrder.Scheduled_Date__c}}}.
-
-Om alles soepel te laten verlopen, vragen we u vriendelijk om de nodige zones alvast vrij te maken. Zo kunnen we zonder vertraging aan de slag.
+De interventie vindt plaats in week {{{WorkOrder.Excecution_Week__c}}}.
 
 We danken u voor uw begrip. Heeft u nog vragen of wilt u iets bespreken? Laat het ons gerust weten via de gegevens in de e-mailhandtekening hieronder.
 

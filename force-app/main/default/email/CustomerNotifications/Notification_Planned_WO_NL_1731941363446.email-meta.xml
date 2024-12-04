@@ -6,7 +6,7 @@
     <pageDevName>Notification_Planned_WO_NL</pageDevName>
     <relatedEntityType>WorkOrder</relatedEntityType>
     <style>none</style>
-    <subject>Geplande interventie - [Uw Referentie/Onze Referentie]</subject>
+    <subject>Geplande interventie - [{{{WorkOrder.WorkOrderNumber}}}{{{WorkOrder.Customer_Reference__c}}}]</subject>
     <textOnly>Beste klant,
 
 Goed nieuws! Er staat binnenkort een interventie gepland in het kader van uw contract. 
@@ -19,9 +19,7 @@ Hieronder vindt u de belangrijkste details:
  - Locatie: 
  - {{{WorkOrder.Address}}}
 
-De interventie vindt plaats op {{{WorkOrder.Scheduled_Date__c}}}.
-
-Om alles soepel te laten verlopen, vragen we u vriendelijk om de nodige zones alvast vrij te maken. Zo kunnen we zonder vertraging aan de slag.
+De interventie vindt nu plaats in week {{{WorkOrder.Excecution_Week__c}}}.
 
 Heeft u nog vragen of wilt u iets bespreken? Laat het ons gerust weten via de gegevens in de e-mailhandtekening hieronder. We helpen u graag verder.
 

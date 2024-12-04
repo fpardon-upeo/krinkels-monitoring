@@ -6,28 +6,26 @@
     <pageDevName>Notification_Scheduled_WO_ENG</pageDevName>
     <relatedEntityType>WorkOrder</relatedEntityType>
     <style>none</style>
-    <subject>Geplande interventie - [Uw Referentie/Onze Referentie]</subject>
-    <textOnly>Beste klant,
+    <subject>Planned intervention - [{{{WorkOrder.WorkOrderNumber}}}{{{WorkOrder.Customer_Reference__c}}}]</subject>
+    <textOnly>Dear customer,
 
-Goed nieuws! Er staat binnenkort een interventie gepland in het kader van uw contract. 
+Good news! An intervention under your contract is scheduled soon. 
 
-Hieronder vindt u de belangrijkste details:
+You will find the key details below:
 
- - Contractomschrijving: {{{WorkOrder.Name_Commercial_Contract__c}}}
+ - Contract description: {{{WorkOrder.Name_Commercial_Contract__c}}}
  - {{{WorkOrder.Product__c}}}
 
- - Locatie: 
+ - Location: 
  - {{{WorkOrder.Address}}}
 
-De interventie vindt plaats op {{{WorkOrder.Scheduled_Date__c}}}.
+The ntervention takes place in week {{{WorkOrder.Excecution_Week__c}}}.
 
-Om alles soepel te laten verlopen, vragen we u vriendelijk om de nodige zones alvast vrij te maken. Zo kunnen we zonder vertraging aan de slag.
+Do you have any questions or want to discuss anything? Feel free to let us know via the details in the email signature below. We will be happy to help you further.
 
-Heeft u nog vragen of wilt u iets bespreken? Laat het ons gerust weten via de gegevens in de e-mailhandtekening hieronder. We helpen u graag verder.
+Thank you in advance for your cooperation!
 
-Alvast bedankt voor uw medewerking!
-
-Met vriendelijke groet,
+Kind regards,
 
 {{{WorkOrder.Name_Contract_Manager__c}}}
 
