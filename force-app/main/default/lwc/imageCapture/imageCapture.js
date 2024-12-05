@@ -1,7 +1,8 @@
 /* eslint-disable no-await-in-loop */
 import { LightningElement, api, track } from "lwc";
 import {
-  createRecord, updateRecord,
+  createRecord,
+  updateRecord,
   unstable_createContentDocumentAndVersion
 } from "lightning/uiRecordApi";
 import { processImage } from "lightning/mediaUtils";
@@ -15,7 +16,7 @@ import {
 } from "c/utilsImageCapture";
 import { NavigationMixin } from "lightning/navigation";
 import getWorkOrderIdFromWorkStepId from "@salesforce/apex/ImageCaptureService.getWorkOrderIdFromWorkStepId";
-import { CloseActionScreenEvent } from 'lightning/actions';
+import { CloseActionScreenEvent } from "lightning/actions";
 export default class ImageCapture extends NavigationMixin(LightningElement) {
   // This allows the component to be placed on a record page, or other record
   // context, and receive the record's ID when it runs
@@ -304,7 +305,6 @@ export default class ImageCapture extends NavigationMixin(LightningElement) {
     await this.updateWorkStepRecord();
 
     this.dispatchEvent(new CloseActionScreenEvent());
-
   }
 
   async updateWorkStepRecord() {
@@ -321,7 +321,6 @@ export default class ImageCapture extends NavigationMixin(LightningElement) {
         log("Error updating record: " + JSON.stringify(error));
       });
   }
-
 
   getFullFileName(item) {
     const ext = item.metadata.edited ? IMAGE_EXT : item.metadata.ext;

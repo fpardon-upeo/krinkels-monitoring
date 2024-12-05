@@ -57,5 +57,20 @@ export default class WorkOrderActions extends LightningElement {
     });
 
     this.dispatchEvent(evt);
+
+    this.dispatchEvent(new CloseActionScreenEvent());
+  }
+
+  handleUploadFinished(event) {
+    //Add on toastEvent file Id to the message
+    console.log("handleUploadFinished", event.detail.files);
+
+    const toastEvent = new ShowToastEvent({
+      title: "Success",
+      message: JSON.stringify(event.detail.files),
+      variant: "success"
+    });
+
+    this.dispatchEvent(toastEvent);
   }
 }

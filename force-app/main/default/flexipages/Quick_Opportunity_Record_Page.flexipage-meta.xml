@@ -139,16 +139,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Work_Size__c</fieldItem>
-                <identifier>RecordWork_Size__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Service_Contract__c</fieldItem>
                 <identifier>RecordService_Contract__cField</identifier>
             </fieldInstance>

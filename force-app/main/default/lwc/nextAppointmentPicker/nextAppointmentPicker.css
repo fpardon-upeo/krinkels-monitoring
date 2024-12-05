@@ -132,20 +132,20 @@
   color: #6c757d;
 }
 
-.table-container {
+/* .table-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Or a specific height like 500px */
-  max-height: 80vh; /* Prevent it from being too tall */
+  height: 100vh; 
+  max-height: 80vh; 
   position: relative;
 }
 
 .datatable-wrapper {
   flex: 1;
   overflow-y: auto;
-  min-height: 200px; /* Minimum height for the table */
-  max-height: calc(100% - 60px); /* Leave space for button */
-}
+  min-height: 200px;
+  max-height: calc(100% - 60px); 
+} */
 
 .button-wrapper {
   position: sticky;
@@ -299,4 +299,11 @@
   color: #dc3545;
   font-size: 16px;
   font-weight: 600;
+}
+
+.button-notGroup {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
 }

@@ -42,7 +42,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>SP</fullName>
+            <fullName>RT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SP-</fullName>
             <default>false</default>
         </values>
         <values>

@@ -105,6 +105,12 @@
                 <identifier>RecordOpportunityIdField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.ATAK_Project__c</fieldItem>
+                <identifier>RecordATAK_Project__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6b21543c-915e-47c2-a784-e5e66cefff7e</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -126,6 +126,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Extra Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>New Business</fullName>
             <default>false</default>
         </values>

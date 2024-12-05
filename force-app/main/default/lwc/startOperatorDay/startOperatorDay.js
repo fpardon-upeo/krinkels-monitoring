@@ -3,7 +3,7 @@
  */
 
 import { LightningElement, api, wire, track } from "lwc";
-import {gql, graphql, refreshGraphQL} from "lightning/uiGraphQLApi";
+import { gql, graphql } from "lightning/uiGraphQLApi";
 import { getRecord, updateRecord } from "lightning/uiRecordApi";
 import ID from "@salesforce/user/Id";
 //LABELS
@@ -74,7 +74,7 @@ export default class StartOperatorDay extends NavigationMixin(
   showWorkOrderScreen = false;
   showEndDayScreen = false;
   selectedRows = [];
-  graphQLServiceAppointments;
+  hasFirstWorkOrder = false;
   labels = {
     StartDay_Start_Button_Text,
     StartDay_Start_Button_Sub_Text,
@@ -116,12 +116,12 @@ export default class StartOperatorDay extends NavigationMixin(
   columns = [
     {
       label: this.labels.AppointmentPicker_Appointments_Header,
-      fieldName: 'Appointment',
-      type: 'text',
+      fieldName: "Appointment",
+      type: "text",
       wrapText: true,
       cellAttributes: {
-        class: 'slds-text-color-default',
-        style: 'cursor: pointer;'
+        class: "slds-text-color-default",
+        style: "cursor: pointer;"
       }
     }
   ];
@@ -316,12 +316,14 @@ export default class StartOperatorDay extends NavigationMixin(
     `,
     variables: "$serviceAppointmentsVariables"
   })
-  appointmentsQueryResult(result) {
-    this.graphQLServiceAppointments = result;
-    if (result.data) {
-      this.data = result.data.uiapi.query.AssignedResource.edges.map(
+  appointmentsQueryResult({ error, data }) {
+    if (data) {
+      this.data = data.uiapi.query.AssignedResource.edges.map(
         (edge) => edge.node.ServiceAppointment
       );
+
+      console.log("data", JSON.stringify(data));
+
       this.serviceAppointments = this.data.map((appointment) => {
         //Pretty schedule start time
         let date = new Date(appointment.SchedStartTime.value);
@@ -337,52 +339,38 @@ export default class StartOperatorDay extends NavigationMixin(
         //Make sure we don't return things like 14:0, but 14:00
         dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
 
-        let icon = '';
-        try {
-          if(appointment.WorkType.Name.value === 'Waste Management') {
-            icon = '🗑️'
-          } else if (appointment.WorkType.Name.value === 'Internal Depot') {
-            icon = '🏭'
-          } else {
-            icon = '💲'
-          }
-        } catch (error) {
-          //show a question mark if we can't determine the work type
-            icon = '❓';
-        }
-
-        let appointmentDisplay = "";
-        try {
-          appointmentDisplay = appointment.Account.Name.value + " - " + dateFormatted + " - " + appointment.WorkType.Name.value;
-        } catch (error) {
-          appointmentDisplay = appointment.AppointmentNumber.value + " - " + dateFormatted
+        let icon = "";
+        if (appointment.WorkType.Name.value === "Waste Management") {
+          icon = "🗑️";
+        } else if (appointment.WorkType.Name.value === "Internal Depot") {
+          icon = "🏭";
+        } else {
+          icon = "💲";
         }
 
         return {
-          Appointment: appointmentDisplay,
+          Appointment:
+            icon +
+            " " +
+            appointment.Account.Name.value +
+            " - " +
+            dateFormatted +
+            " - " +
+            appointment.WorkType.Name.value,
           AppointmentNumber: appointment.AppointmentNumber.value,
           Subject: appointment.Subject.value,
           Id: appointment.Id,
           SchedStartTime: appointment.SchedStartTime.value,
-          ParentRecordId: appointment.ParentRecordId.value
+          ParentRecordId: appointment.ParentRecordId.value,
+          WorkOrderType: appointment.WorkType.Name.value
         };
       });
-      console.log(JSON.stringify(this.serviceAppointments));
-    } else if (result.error) {
-      console.log(result.error);
-      console.log("Error fetching service appointments", result.error);
-      console.log("Error fetching service appointments", JSON.stringify(result.error));
-    }
-  }
-
-  @api
-  async handleServiceAppointmentsRefresh() {
-    try {
-      await refreshGraphQL(this.graphQLServiceAppointments);
-    } catch (error) {
-      console.error('Error refreshing service appointments', error.message);
-      console.error('Error refreshing service appointments', error);
-      console.error('Error refreshing service appointments', JSON.stringify(error));
+      console.log(
+        "serviceAppointments",
+        JSON.stringify(this.serviceAppointments)
+      );
+    } else if (error) {
+      console.log(error);
     }
   }
 
@@ -392,7 +380,7 @@ export default class StartOperatorDay extends NavigationMixin(
 
   handleRowSelection(event) {
     const selectedRows = event.detail.selectedRows;
-    console.log('Selected rows:', selectedRows);
+    console.log("Selected rows:", JSON.stringify(selectedRows));
 
     if (selectedRows && selectedRows.length > 0) {
       const selectedRow = selectedRows[0];
@@ -406,15 +394,22 @@ export default class StartOperatorDay extends NavigationMixin(
     }
   }
 
-  handleOpenWasteVisitScreen(){
+  handleOpenWasteVisitScreen() {
     this.showInitialScreen = false;
     this.showWorkOrderScreen = true;
+  }
+
+  handleFirstWorkOrderChecked(event) {
+    console.log("hasFirstWorkOrder in parent: ", event.detail);
+    this.hasFirstWorkOrder = event.detail;
   }
 
   handleShowStartOrNot(event) {
     console.log("closed appts: ", event.detail);
     console.log("closed appts: ", typeof event.detail);
-    this.showStartDayButton = event.detail;
+    if (event.detail > 0) {
+      this.showStartDayButton = false;
+    }
   }
 
   handleHideNavigationScreen() {
@@ -422,9 +417,8 @@ export default class StartOperatorDay extends NavigationMixin(
     this.showInitialScreen = true;
   }
 
-  async handleMileageSuccess() {
+  handleMileageSuccess() {
     console.log("Mileage entry success");
-    await this.handleServiceAppointmentsRefresh();
     console.log("this.nextWorkOrderId", this.nextWorkOrderId);
     this.showMilageEntryScreen = false;
     this.showMilageEntryScreenSimple = false;
@@ -514,7 +508,7 @@ export default class StartOperatorDay extends NavigationMixin(
   handleBack() {
     // Update existing handleBack to include new screen
 
-    if(this.showMilageEntryScreen === true && this.showEndDayScreen === true){
+    if (this.showMilageEntryScreen === true && this.showEndDayScreen === true) {
       //In this case, we are coming from the mileage entry screen via the end day screen
       //We need to hide the mileage entry screen and show the end day screen
       this.showMilageEntryScreen = false;
@@ -535,16 +529,14 @@ export default class StartOperatorDay extends NavigationMixin(
     }
   }
 
-
   //TESTING
-  async handleRefreshAll() {
+  handleRefreshAll() {
     const timeSheetCalendar = this.template.querySelector(
       "c-time-sheet-calendar"
     );
     if (timeSheetCalendar) {
       timeSheetCalendar.refreshCalendar();
     }
-    await this.handleServiceAppointmentsRefresh();
   }
 
   //--------------------------------------HELPERS--------------------------------------//
@@ -565,10 +557,12 @@ export default class StartOperatorDay extends NavigationMixin(
   }
 
   setNextWorkOrderStatus() {
+    console.log("selectedRows", JSON.stringify(this.selectedRows[0]));
     const fields = {};
     fields["Id"] = this.selectedRows[0].ParentRecordId;
     fields["Status"] = "Travelling";
-    fields["Is_First_of_Day__c"] = true;
+    fields["Is_First_of_Day__c"] = this.selectedRows[0].WorkOrderType === "Production Work";
+    console.log("work order fields", JSON.stringify(fields));
     const recordInput = { fields };
     console.log("recordInput wo", JSON.stringify(recordInput));
     updateRecord(recordInput)
@@ -634,7 +628,8 @@ export default class StartOperatorDay extends NavigationMixin(
   get serviceAppointments() {
     return this.data.map((appointment) => {
       let date = new Date(appointment.SchedStartTime.value);
-      let dateFormatted = date.getDate() +
+      let dateFormatted =
+        date.getDate() +
         "/" +
         (date.getMonth() + 1) +
         " " +
@@ -643,7 +638,9 @@ export default class StartOperatorDay extends NavigationMixin(
         date.getMinutes();
       dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
 
-      const isSelected = this.selectedRows.some(row => row.Id === appointment.Id);
+      const isSelected = this.selectedRows.some(
+        (row) => row.Id === appointment.Id
+      );
 
       return {
         Appointment: appointment.Account.Name.value + " - " + dateFormatted,
@@ -652,9 +649,10 @@ export default class StartOperatorDay extends NavigationMixin(
         Id: appointment.Id,
         SchedStartTime: appointment.SchedStartTime.value,
         ParentRecordId: appointment.ParentRecordId.value,
-        cellStyle: isSelected ? 'background-color: #ebf5e7; font-weight: bold;' : ''
+        cellStyle: isSelected
+          ? "background-color: #ebf5e7; font-weight: bold;"
+          : ""
       };
     });
   }
-
 }

@@ -13,7 +13,7 @@ import InternalWorkOrder_No_Travel_Sub_Text from "@salesforce/label/c.InternalWo
 import InternalWorkOrder_Start_Travel_Text from "@salesforce/label/c.InternalWorkOrder_Start_Travel_Text";
 import InternalWorkOrder_Start_Travel_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Start_Travel_Sub_Text";
 import InternalWorkOrder_Waste_Button_Text from "@salesforce/label/c.InternalWorkOrder_Waste_Button_Text";
-import InternalWorkOrder_Waste_Button_Sub_Text  from "@salesforce/label/c.InternalWorkOrder_Waste_Button_Sub_Text";
+import InternalWorkOrder_Waste_Button_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Waste_Button_Sub_Text";
 import InternalWorkOrder_Depot_Button_Text from "@salesforce/label/c.InternalWorkOrder_Depot_Button_Text";
 import InternalWorkOrder_Depot_Button_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Depot_Button_Sub_Text";
 import { NavigationMixin } from "lightning/navigation";
@@ -92,9 +92,7 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     { label: "Postal Code", fieldName: "ShippingPostalCode" }
   ];
 
-  accountInternalDepotColumns = [
-    { label: "Name", fieldName: "Name" }
-  ];
+  accountInternalDepotColumns = [{ label: "Name", fieldName: "Name" }];
 
   serviceAppointments = [];
   wasteAccounts = [];
@@ -185,19 +183,19 @@ export default class InternalWorkOrderForm extends NavigationMixin(
   appointmentsQueryResult({ error, data }) {
     if (data) {
       this.data = data.uiapi.query.AssignedResource.edges.map(
-          (edge) => edge.node.ServiceAppointment
+        (edge) => edge.node.ServiceAppointment
       );
       this.serviceAppointments = this.data.map((appointment) => {
         let date = new Date(appointment.SchedStartTime.value);
         //Use the date and the cleaned up hours and minutes, use 24h format
         let dateFormatted =
-            date.getDate() +
-            "/" +
-            (date.getMonth() + 1) +
-            " " +
-            date.getHours() +
-            ":" +
-            date.getMinutes();
+          date.getDate() +
+          "/" +
+          (date.getMonth() + 1) +
+          " " +
+          date.getHours() +
+          ":" +
+          date.getMinutes();
         //Make sure we don't return things like 14:0, but 14:00
         dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
 
@@ -212,13 +210,13 @@ export default class InternalWorkOrderForm extends NavigationMixin(
 
         return {
           Appointment:
-              icon +
-              " " +
-              appointment.Account.Name.value +
-              " - " +
-              dateFormatted +
-              " - " +
-              appointment.WorkType.Name.value,
+            icon +
+            " " +
+            appointment.Account.Name.value +
+            " - " +
+            dateFormatted +
+            " - " +
+            appointment.WorkType.Name.value,
           AppointmentNumber: appointment.AppointmentNumber.value,
           Subject: appointment.Subject.value,
           Id: appointment.Id,
@@ -234,43 +232,41 @@ export default class InternalWorkOrderForm extends NavigationMixin(
 
   @wire(graphql, {
     query: gql`
-    query WasteAccounts {
-      uiapi {
-        query {
-          Account(
-            where: {
-              Sub_Type__c: { eq: "Waste Depot"}
-            }
-            orderBy: { Name: { order: ASC } }
-          ) {
-            edges {
-              node {
-                Id
-                Name {
-                  value
-                }
-                Type_of_Waste__c {
-                  value
-                }
-                ShippingCity {
-                  value
-                }
-                ShippingPostalCode {
-                  value
+      query WasteAccounts {
+        uiapi {
+          query {
+            Account(
+              where: { Sub_Type__c: { eq: "Waste Depot" } }
+              orderBy: { Name: { order: ASC } }
+            ) {
+              edges {
+                node {
+                  Id
+                  Name {
+                    value
+                  }
+                  Type_of_Waste__c {
+                    value
+                  }
+                  ShippingCity {
+                    value
+                  }
+                  ShippingPostalCode {
+                    value
+                  }
                 }
               }
             }
           }
         }
       }
-    }
-  `
+    `
   })
   wasteAccountsResult({ error, data }) {
     if (data) {
-      console.log('data:', JSON.stringify(data))
+      console.log("data:", JSON.stringify(data));
       this.wasteAccountData = data;
-      this.wasteAccounts = data.uiapi.query.Account.edges.map(edge => ({
+      this.wasteAccounts = data.uiapi.query.Account.edges.map((edge) => ({
         Id: edge.node.Id,
         Name: edge.node.Name.value,
         Type_Of_Waste__c: edge.node.Type_of_Waste__c.value,
@@ -278,44 +274,44 @@ export default class InternalWorkOrderForm extends NavigationMixin(
         ShippingPostalCode: edge.node.ShippingPostalCode.value
       }));
     } else if (error) {
-      console.error('Error fetching waste accounts:', error);
+      console.error("Error fetching waste accounts:", error);
     }
   }
 
   @wire(graphql, {
     query: gql`
-    query InternalDepotAccounts {
-      uiapi {
-        query {
-          Account(
-            where: {
-              Sub_Type__c: { eq: "Depot KGCx@" }
-            }
-            orderBy: { Name: { order: ASC } }
-          ) {
-            edges {
-              node {
-                Id
-                Name {
-                  value
+      query InternalDepotAccounts {
+        uiapi {
+          query {
+            Account(
+              where: { Sub_Type__c: { eq: "Depot KGC" } }
+              orderBy: { Name: { order: ASC } }
+            ) {
+              edges {
+                node {
+                  Id
+                  Name {
+                    value
+                  }
                 }
               }
             }
           }
         }
       }
-    }
-  `
+    `
   })
   internalDepotAccountsResult({ error, data }) {
     if (data) {
       this.internalDepotData = data;
-      this.internalDepotAccounts = data.uiapi.query.Account.edges.map(edge => ({
-        Id: edge.node.Id,
-        Name: edge.node.Name.value
-      }));
+      this.internalDepotAccounts = data.uiapi.query.Account.edges.map(
+        (edge) => ({
+          Id: edge.node.Id,
+          Name: edge.node.Name.value
+        })
+      );
     } else if (error) {
-      console.error('Error fetching internal depot accounts:', error);
+      console.error("Error fetching internal depot accounts:", error);
     }
   }
 
@@ -380,7 +376,6 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     this.defaultType = "Internal Depot";
   }
 
-
   handleCloseWasteVisitScreen() {
     this.showAppointmentScreen = false;
     this.showRecordForm = true;
@@ -421,14 +416,14 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     this.showRecordForm = false;
     this.showBottomFooter = true;
 
-    if (this.defaultType === 'Waste Management') {
+    if (this.defaultType === "Waste Management") {
       this.showWasteAccountScreen = true;
     } else {
       this.showInternalDepotScreen = true;
     }
   }
 
-// Add this method to handle account selection (call this when an account is selected)
+  // Add this method to handle account selection (call this when an account is selected)
   handleAccountSelected(event) {
     const selectedAccount = event.detail;
     this.selectedAccountId = selectedAccount.Id;
@@ -448,6 +443,8 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     this.showAppointmentScreen = false;
     this.showRecordForm = true;
     this.showBottomFooter = false;
+    this.showWasteAccountScreen = false;
+    this.showInternalDepotScreen = false;
 
     this.selectedRows = [];
     this.workOrderId = "";
@@ -501,7 +498,7 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     );
 
     this.showSpinner = true;
-    console.log('selectedAccountId', this.selectedAccountId);
+    console.log("selectedAccountId", this.selectedAccountId);
 
     createInternalWorkOrder({
       subject: this.defaultSubject,

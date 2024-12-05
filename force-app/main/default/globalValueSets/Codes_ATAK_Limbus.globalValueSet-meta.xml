@@ -46,14 +46,19 @@
         <label>VV</label>
     </customValue>
     <customValue>
-        <fullName>SP</fullName>
+        <fullName>SP-</fullName>
         <default>false</default>
-        <label>SP</label>
+        <label>SP-</label>
     </customValue>
     <customValue>
         <fullName>MU</fullName>
         <default>false</default>
         <label>MU</label>
+    </customValue>
+    <customValue>
+        <fullName>RT</fullName>
+        <default>false</default>
+        <label>RT</label>
     </customValue>
     <masterLabel>Codes ATAK/Limbus</masterLabel>
     <sorted>false</sorted>

@@ -1,0 +1,121 @@
+.entry-card {
+    padding: 0.5rem;
+}
+
+.card-content {
+    background: white;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-content.alert {
+    border: 2px solid #c23934;
+}
+
+.card-content.warning {
+    border: 2px solid #ff9900;
+}
+
+.work-order {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #16325c;
+}
+
+.technician {
+    font-size: 0.875rem;
+    color: #706e6b;
+    margin-top: 0.25rem;
+}
+
+.alert-badge {
+    background: #c23934;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.success-badge {
+    background: #2e844a;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    color: #706e6b;
+    font-size: 0.875rem;
+}
+
+.location-warning {
+    display: flex;
+    align-items: center;
+    color: #ff9900;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.time-info {
+    color: #706e6b;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-content:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.slider-container {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d8dde6;
+}
+
+/* Custom styles for the lightning-slider */
+.slider-container lightning-slider {
+    --sds-c-slider-track-color-background: #e0e5ee;
+    --sds-c-slider-track-color-background-active: #0176d3;
+    --sds-c-slider-handle-color-background: #0176d3;
+    --sds-c-slider-handle-color-border: #0176d3;
+    --sds-c-slider-handle-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-container .slds-slider-label__label {
+    font-weight: 600;
+    color: #16325c;
+}
+
+@media (max-width: 768px) {
+    .entry-card {
+        padding: 0.25rem;
+    }
+
+    .card-content {
+        padding: 0.75rem;
+    }
+
+    .work-order {
+        font-size: 0.875rem;
+    }
+
+    .technician {
+        font-size: 0.75rem;
+    }
+}

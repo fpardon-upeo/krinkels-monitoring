@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ATAK_Project__c</fullName>
+    <label>ATAK Project</label>
+    <referenceTo>ATAK_Project__c</referenceTo>
+    <relationshipLabel>ATAK Project Financial Accounts</relationshipLabel>
+    <relationshipName>ATAK_Project_Financial_Accounts</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

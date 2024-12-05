@@ -536,6 +536,11 @@
             <field>Rework_for_Work_Order__c</field>
             <table>WorkOrder</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Checkin_Deviation_KM__c</field>
+            <table>WorkOrder</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
 </ReportType>

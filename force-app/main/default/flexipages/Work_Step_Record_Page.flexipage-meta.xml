@@ -83,12 +83,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>checkIn</componentName>
-                <identifier>c_checkIn</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -131,6 +125,12 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>nextAppointmentPicker</componentName>
+                <identifier>c_nextAppointmentPicker</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

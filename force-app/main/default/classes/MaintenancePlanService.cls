@@ -167,7 +167,6 @@ public with sharing class MaintenancePlanService {
                 }
             }
         }
-
         System.debug('Upserted Locations: ' + upsertResults);
     }
 

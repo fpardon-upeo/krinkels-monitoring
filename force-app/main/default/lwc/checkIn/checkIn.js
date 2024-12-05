@@ -7,10 +7,8 @@ import checkIn from '@salesforce/apex/CheckInService.checkIn';
 import { getLocationService } from "lightning/mobileCapabilities";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { NavigationMixin } from 'lightning/navigation';
-import LightningAlert from 'lightning/alert';
-
-
-
+import { CloseActionScreenEvent } from 'lightning/actions';
+import LOADING_MESSAGE from '@salesforce/label/c.Checkin_Loading';
 
 export default class CheckIn extends  NavigationMixin(LightningElement) {
 
@@ -20,6 +18,10 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
   requestInProgress = false;
   myLocationService;
   currentLocation;
+
+  labels = {
+    loadingMessage: LOADING_MESSAGE
+  }
 
   @api
   get recordId() {
@@ -74,12 +76,6 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
           longitude: this.longitude
         });
 
-        await LightningAlert.open({
-          label: 'Check In',
-          theme: 'info',
-          message: 'Check In Successful'
-        });
-
         // Try multiple close methods
         this.closeQuickAction();
       } catch (error) {
@@ -92,10 +88,7 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
   }
 
   closeQuickAction() {
-    this.dispatchEvent(new CustomEvent('close'));
-
-    // Method 2: Force close
-    this.dispatchEvent(new CustomEvent('force:closeQuickAction'));
+    this.dispatchEvent(new CloseActionScreenEvent());
   }
 
 }

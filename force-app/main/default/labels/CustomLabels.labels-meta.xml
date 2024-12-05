@@ -348,7 +348,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AppointmentPicker_Next_Button</shortDescription>
-        <value>Start Travel Time</value>
+        <value>Start Traveling</value>
     </labels>
     <labels>
         <fullName>AppointmentPicker_No_Results</fullName>
@@ -1029,5 +1029,101 @@
         <protected>false</protected>
         <shortDescription>InternalWorkOrder_Waste_Button_Text</shortDescription>
         <value>Waste Management</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Last_Depot_Sub_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Last_Depot_Sub_Text</shortDescription>
+        <value>Drive to a depot before heading home.</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Last_Depot_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Last_Depot_Text</shortDescription>
+        <value>Depot Drop Off</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Simple_Checkout_Button_Sub_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Simple_Checkout_Button_Sub_Text</shortDescription>
+        <value>Simply close this Work Order</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Simple_Checkout_Button_Text</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Simple_Checkout_Button_Text</shortDescription>
+        <value>Just Close</value>
+    </labels>
+    <labels>
+        <fullName>Checkin_Loading</fullName>
+        <categories>Checkin</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Loading Spinner Message</shortDescription>
+        <value>Checking in, won&apos;t take long</value>
+    </labels>
+    <labels>
+        <fullName>LocationMonitor_DashboardTitle</fullName>
+        <categories>LocationMonitor</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard Title</shortDescription>
+        <value>Location Discrepancy Dashboard</value>
+    </labels>
+    <labels>
+        <fullName>LocationMonitor_ExceedsThreshold</fullName>
+        <categories>LocationMonitor</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Exceeds Threshold Message</shortDescription>
+        <value>Exceeds Threshold</value>
+    </labels>
+    <labels>
+        <fullName>LocationMonitor_NoCheckinLocation</fullName>
+        <categories>LocationMonitor</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Check-in Location Message</shortDescription>
+        <value>No check-in location recorded (Location Services Disabled?)</value>
+    </labels>
+    <labels>
+        <fullName>LocationMonitor_NoLocations</fullName>
+        <categories>LocationMonitor</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Locations Message</shortDescription>
+        <value>Both locations missing</value>
+    </labels>
+    <labels>
+        <fullName>LocationMonitor_NoWorkOrderLocation</fullName>
+        <categories>LocationMonitor</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Work Order Location Message</shortDescription>
+        <value>Work Order location not set</value>
+    </labels>
+    <labels>
+        <fullName>LocationMonitor_ThresholdSliderLabel</fullName>
+        <categories>LocationMonitor</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Threshold Slider Label</shortDescription>
+        <value>Alert Threshold (km)</value>
+    </labels>
+    <labels>
+        <fullName>LocationMonitor_WithinThreshold</fullName>
+        <categories>LocationMonitor</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Within Threshold Message</shortDescription>
+        <value>Within Threshold</value>
     </labels>
 </CustomLabels>

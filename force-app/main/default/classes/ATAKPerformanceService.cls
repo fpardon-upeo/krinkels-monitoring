@@ -36,12 +36,57 @@ public with sharing class ATAKPerformanceService {
         ];
 
         List<TimeSheetEntry> tsEntries = [
-                SELECT Id, WorkOrderId, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
+                SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
                 FROM TimeSheetEntry WHERE TimesheetId = :tsId
                 ORDER BY StartTime ASC
         ];
+
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntries: ' + tsEntries);
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntries: ' + tsEntries.size());
+
+        //Loop through the entries from first to last. The first entries with Work Type "Internal Depot" before we get to a work type with "Production Time" need to be removed
+
+        Boolean foundProductionTime = false;
+        List<TimeSheetEntry> tsEntriesFiltered = new List<TimeSheetEntry>();
+        for(TimeSheetEntry tsEntry : tsEntries){
+            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work'){
+                foundProductionTime = true;
+            }
+            if(foundProductionTime == true){
+                tsEntriesFiltered.add(tsEntry);
+            }
+        }
+
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntriesFiltered: ' + tsEntriesFiltered);
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntriesFiltered: ' + tsEntriesFiltered.size());
+
+        //Now we need to tsEntriesFiltered from last to first. The first entries with Work Type "Internal Depot" before we get to a work type with "Production Time" need to be removed
+        foundProductionTime = false;
+        List<TimeSheetEntry> tsEntriesFilteredFinal = new List<TimeSheetEntry>();
+        for(Integer i = tsEntriesFiltered.size() - 1; i >= 0; i--){
+            TimeSheetEntry tsEntry = tsEntriesFiltered[i];
+            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work'){
+                foundProductionTime = true;
+            }
+            if(foundProductionTime == true){
+                tsEntriesFilteredFinal.add(tsEntry);
+            }
+        }
+
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntriesFilteredFinal: ' + tsEntriesFilteredFinal);
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntriesFilteredFinal: ' + tsEntriesFilteredFinal.size());
+
+        //Now we need to reverse the list
+        List<TimeSheetEntry> reversedList = new List<TimeSheetEntry>();
+        for(Integer i = tsEntriesFilteredFinal.size() - 1; i >= 0; i--) {
+            reversedList.add(tsEntriesFilteredFinal[i]);
+        }
+
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - reversedList: ' + reversedList);
+        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - reversedList: ' + reversedList.size());
+
 
         List<Mileage_Entry__c> mileageEntries = [
                 SELECT Id, CreatedDate,
@@ -60,7 +105,7 @@ public with sharing class ATAKPerformanceService {
         List<String> workOrderIds = new List<String>();
 
         // Loop through the timesheet entries and add them to the data list
-        for(TimeSheetEntry timeSheetEntry : tsEntries){
+        for(TimeSheetEntry timeSheetEntry : reversedList){
             ATAKPerformanceWrapper.Data data = personnelTimesheetToATAKPerformance(timeSheetEntry);
             dataList.add(data);
             workOrderIds.add(timeSheetEntry.WorkOrderId);
@@ -149,6 +194,7 @@ public with sharing class ATAKPerformanceService {
         data.performance_resource_type = 'P'; //P for personnel
         data.projectcode = tsEntry.WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c;
         data.quantity_registration_unit = tsEntry.Code_ATAK_Limbus__c;
+        data.remarks = tsEntry.WorkOrder.Subject;
 
         // If quantity_registration_unit is "P", then quantity is always 1
         if (data.quantity_registration_unit == 'P') {

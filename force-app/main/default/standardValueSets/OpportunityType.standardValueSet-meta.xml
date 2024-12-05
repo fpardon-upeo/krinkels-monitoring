@@ -11,4 +11,9 @@
         <default>false</default>
         <label>New Business</label>
     </standardValue>
+    <standardValue>
+        <fullName>Extra Work</fullName>
+        <default>false</default>
+        <label>Extra Work</label>
+    </standardValue>
 </StandardValueSet>

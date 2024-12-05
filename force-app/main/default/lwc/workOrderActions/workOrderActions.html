@@ -71,7 +71,9 @@
         <lightning-record-edit-form
           object-api-name="WorkOrder"
           record-id={recordId}
+          onsubmit={handleSubmit}
           onsuccess={handleSuccess}
+          class="form-container"
         >
           <div class="form-fields">
             <lightning-input-field field-name="Shop_Name__c" required>
@@ -85,9 +87,16 @@
             </lightning-input-field>
             <lightning-input-field field-name="Shop_Visit_End_Time__c" required>
             </lightning-input-field>
+            <lightning-input-field field-name="Collected_Items__c">
+            </lightning-input-field>
+
+            <c-image-capture-test
+              record-id={recordId}
+              object-api-name="WorkOrder"
+            ></c-image-capture-test>
           </div>
 
-          <div class="button-group">
+          <div class="button-group sticky-buttons">
             <button class="cancel-button" type="button" onclick={closeModal}>
               Cancel
             </button>
@@ -104,9 +113,31 @@
             <h2 class="sheet-title">Log Special Equipment</h2>
           </div>
           <div class="bottom-sheet-content">
-            <div class="button-container">
-              <button class="cancel-button" onclick={closeModal}>Cancel</button>
-            </div>
+            <lightning-record-edit-form
+              object-api-name="WorkOrder"
+              record-id={recordId}
+              onsubmit={handleSubmit}
+              onsuccess={handleSuccess}
+            >
+              <div class="form-fields">
+                <lightning-input-field
+                  field-name="Special_Equipment__c"
+                  required
+                >
+                </lightning-input-field>
+              </div>
+
+              <div class="button-group">
+                <button
+                  class="cancel-button"
+                  type="button"
+                  onclick={closeModal}
+                >
+                  Cancel
+                </button>
+                <button class="submit-button" type="submit">Save</button>
+              </div>
+            </lightning-record-edit-form>
           </div>
         </div>
       </template>

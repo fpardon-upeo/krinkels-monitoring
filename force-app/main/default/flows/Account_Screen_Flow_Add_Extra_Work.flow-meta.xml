@@ -243,6 +243,12 @@
                 <stringValue>Pricing</stringValue>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Extra Work</stringValue>
+            </value>
+        </inputAssignments>
         <object>Opportunity</object>
     </recordCreates>
     <recordCreates>
@@ -324,6 +330,12 @@
             <field>StageName</field>
             <value>
                 <stringValue>Pricing</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Extra Work</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

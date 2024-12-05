@@ -31,6 +31,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ATAKPerformanceServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ATAKPerformanceWrapper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -87,6 +91,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccountTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountWasteRetriever</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -135,6 +143,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FirstWorkOrderChecker</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>GanttRoundPinAction</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -160,6 +172,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>InternalWorkOrderController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LocationMonitorController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -518,6 +534,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ATAK_Project_Financial_Account__c.ATAK_Project_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Project_Financial_Account__c.External_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ATAK_Project__c.ATAK_Creation_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -775,6 +801,11 @@
         <editable>true</editable>
         <field>Account.Facility_Type__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Financial_External_Id__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1952,6 +1983,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.ATAK_Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Quote.Amount__c</field>
         <readable>false</readable>
@@ -2913,6 +2949,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.Checkin_Deviation_KM__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.Checkin_Location__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3184,6 +3225,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>ContractLineItem_After_Save_Add_Default_Financial_Accounts</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</flow>
     </flowAccesses>
     <flowAccesses>
@@ -3412,6 +3457,9 @@
     </flowAccesses>
     <layoutAssignments>
         <layout>ATAK_Personnel__c-ATAK Personnel Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ATAK_Project_Financial_Account__c-ATAK Project Financial Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ATAK_Project__c-ATAK Project Layout</layout>
@@ -3707,6 +3755,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>OpportunityLineItem-Opportunity Product Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OpportunityTeamMember-Opportunity Team Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Order-Order Layout</layout>

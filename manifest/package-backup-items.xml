@@ -6,6 +6,7 @@
         <members>ATAKMaterialWrapperTest</members>
         <members>ATAKPerformanceService</members>
         <members>ATAKPerformanceServiceInvocable</members>
+        <members>ATAKPerformanceServiceTest</members>
         <members>ATAKPerformanceWrapper</members>
         <members>ATAKPerformanceWrapperTest</members>
         <members>ATAKPersonnelService</members>
@@ -20,6 +21,7 @@
         <members>ATAKWorkLogService</members>
         <members>ATAKWorkLogServiceTest</members>
         <members>AccountDetailsController</members>
+        <members>AccountTriggerHandler</members>
         <members>AccountWasteRetriever</members>
         <members>AddressSearchService</members>
         <members>CallOut</members>
@@ -32,6 +34,7 @@
         <members>FieldServiceTestData</members>
         <members>FileUploadImprovedHelper</members>
         <members>FileUploadImproved_Test</members>
+        <members>FirstWorkOrderChecker</members>
         <members>GanttRoundPinAction</members>
         <members>GanttRoundPinActionTest</members>
         <members>GetRecordsIn</members>
@@ -39,6 +42,7 @@
         <members>ImageCaptureService</members>
         <members>InboundLoggerService</members>
         <members>InternalWorkOrderController</members>
+        <members>LocationMonitorController</members>
         <members>MachineRestResource</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
@@ -116,6 +120,7 @@
     </types>
     <types>
         <members>ATAKPersonnelTrigger</members>
+        <members>AccountTrigger</members>
         <members>AppointmentStatusTrigger</members>
         <members>ContentDocumentTrigger</members>
         <members>ContractLineItemTrigger</members>
@@ -249,6 +254,10 @@
         <members>ATAK_Personnel__c.Startdate__c</members>
         <members>ATAK_Personnel__c.Statute__c</members>
         <members>ATAK_Personnel__c.User__c</members>
+        <members>ATAK_Project_Financial_Account__c.ATAK_Project_Code__c</members>
+        <members>ATAK_Project_Financial_Account__c.ATAK_Project__c</members>
+        <members>ATAK_Project_Financial_Account__c.Account__c</members>
+        <members>ATAK_Project_Financial_Account__c.External_Id__c</members>
         <members>ATAK_Project__c.ATAK_Creation_Date__c</members>
         <members>ATAK_Project__c.Branche__c</members>
         <members>ATAK_Project__c.Client_Type__c</members>
@@ -305,6 +314,7 @@
         <members>Account.Email__c</members>
         <members>Account.Enterprise_Number__c</members>
         <members>Account.Facility_Type__c</members>
+        <members>Account.Financial_External_Id__c</members>
         <members>Account.Financial_client_ATAK_Code__c</members>
         <members>Account.Financial_client_type_ATAK__c</members>
         <members>Account.Group__c</members>
@@ -568,6 +578,7 @@
         <members>Product2.Work_Type__c</members>
         <members>ProductConsumed.Van_Crew__c</members>
         <members>ProductItem.Van_Crew__c</members>
+        <members>Quote.ATAK_Project__c</members>
         <members>Quote.Amount__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
         <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
@@ -758,6 +769,7 @@
         <members>WorkOrder.Before_Work_Comments__c</members>
         <members>WorkOrder.Check_In_At_Work_Reference__c</members>
         <members>WorkOrder.Check_In_At_Work_Required__c</members>
+        <members>WorkOrder.Checkin_Deviation_KM__c</members>
         <members>WorkOrder.Checkin_Location__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.Contract_Manager__c</members>
@@ -834,6 +846,10 @@
         <members>AppointmentPicker_End_Day_Button_Sub_Text</members>
         <members>AppointmentPicker_Incomplete_Work_Steps_Message</members>
         <members>AppointmentPicker_Incomplete_Work_Steps_Message</members>
+        <members>AppointmentPicker_Last_Depot_Sub_Text</members>
+        <members>AppointmentPicker_Last_Depot_Sub_Text</members>
+        <members>AppointmentPicker_Last_Depot_Text</members>
+        <members>AppointmentPicker_Last_Depot_Text</members>
         <members>AppointmentPicker_Next_Action_Sub_Text</members>
         <members>AppointmentPicker_Next_Action_Sub_Text</members>
         <members>AppointmentPicker_Next_Action_Text</members>
@@ -846,6 +862,10 @@
         <members>AppointmentPicker_Save_Button</members>
         <members>AppointmentPicker_Select_Next_Appointment_Button</members>
         <members>AppointmentPicker_Select_Next_Appointment_Button</members>
+        <members>AppointmentPicker_Simple_Checkout_Button_Sub_Text</members>
+        <members>AppointmentPicker_Simple_Checkout_Button_Sub_Text</members>
+        <members>AppointmentPicker_Simple_Checkout_Button_Text</members>
+        <members>AppointmentPicker_Simple_Checkout_Button_Text</members>
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
@@ -932,6 +952,8 @@
         <members>Calendar_User_Settings_Time_Range</members>
         <members>Calendar_Warning_Submit_Timesheet</members>
         <members>Calendar_Warning_Submit_Timesheet</members>
+        <members>Checkin_Loading</members>
+        <members>Checkin_Loading</members>
         <members>InternalWorkOrder_Depot_Button_Sub_Text</members>
         <members>InternalWorkOrder_Depot_Button_Sub_Text</members>
         <members>InternalWorkOrder_Depot_Button_Text</members>
@@ -950,6 +972,20 @@
         <members>InternalWorkOrder_Waste_Button_Sub_Text</members>
         <members>InternalWorkOrder_Waste_Button_Text</members>
         <members>InternalWorkOrder_Waste_Button_Text</members>
+        <members>LocationMonitor_DashboardTitle</members>
+        <members>LocationMonitor_DashboardTitle</members>
+        <members>LocationMonitor_ExceedsThreshold</members>
+        <members>LocationMonitor_ExceedsThreshold</members>
+        <members>LocationMonitor_NoCheckinLocation</members>
+        <members>LocationMonitor_NoCheckinLocation</members>
+        <members>LocationMonitor_NoLocations</members>
+        <members>LocationMonitor_NoLocations</members>
+        <members>LocationMonitor_NoWorkOrderLocation</members>
+        <members>LocationMonitor_NoWorkOrderLocation</members>
+        <members>LocationMonitor_ThresholdSliderLabel</members>
+        <members>LocationMonitor_ThresholdSliderLabel</members>
+        <members>LocationMonitor_WithinThreshold</members>
+        <members>LocationMonitor_WithinThreshold</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Text</members>
@@ -1085,6 +1121,7 @@
     </types>
     <types>
         <members>ATAK_Personnel__c</members>
+        <members>ATAK_Project_Financial_Account__c</members>
         <members>ATAK_Project__c</members>
         <members>ATAK_Settings__c</members>
         <members>ATAK_Work_Log__c</members>
@@ -1318,6 +1355,7 @@
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
+        <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
@@ -1382,6 +1420,7 @@
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
+        <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
@@ -1497,6 +1536,7 @@
     </types>
     <types>
         <members>ATAK_Personnel__c-ATAK Personnel Layout</members>
+        <members>ATAK_Project_Financial_Account__c-ATAK Project Financial Account Layout</members>
         <members>ATAK_Project__c-ATAK Project Layout</members>
         <members>ATAK_Work_Log__c-ATAK Work Log Layout</members>
         <members>Account-Commercial Account Layout</members>
@@ -1600,6 +1640,7 @@
         <members>OperatingHoursHoliday-Operating Hours Holiday Layout</members>
         <members>Opportunity-Opportunity Layout</members>
         <members>OpportunityLineItem-Opportunity Product Layout</members>
+        <members>OpportunityTeamMember-Opportunity Team Member Layout</members>
         <members>Order-Order Layout</members>
         <members>OrderItem-Order Product Layout</members>
         <members>Outbound_Log__c-Outbound Log Layout</members>
@@ -1783,6 +1824,7 @@
         <members>getRecordsInCPE</members>
         <members>imageAnnotate</members>
         <members>imageCapture</members>
+        <members>imageCaptureTest</members>
         <members>imageCropper</members>
         <members>imageInfoEditor</members>
         <members>imageInfoViewer</members>
@@ -1792,6 +1834,7 @@
         <members>infoEditorPrompt</members>
         <members>internalWorkOrderForm</members>
         <members>loadingSpinner</members>
+        <members>locationMonitor</members>
         <members>locationPassport</members>
         <members>locationServiceUtil</members>
         <members>nextAppointmentPicker</members>
@@ -2568,6 +2611,7 @@
         <members>ShiftTemplate</members>
         <members>Shipment</members>
         <members>SiqUserBlacklist</members>
+        <members>SocialPersonaFieldBackup</members>
         <members>SocialPost</members>
         <members>StreamActivityAccess</members>
         <members>StreamingChannel</members>
@@ -2725,6 +2769,7 @@
     </types>
     <types>
         <members>ATAK_Personnel__c</members>
+        <members>ATAK_Project_Financial_Account__c</members>
         <members>ATAK_Project__c</members>
         <members>ATAK_Work_Log__c</members>
         <members>Account</members>
@@ -2833,6 +2878,7 @@
     <types>
         <members>Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start</members>
         <members>Opportunity.Maximum_Value_for_Quick_Quote</members>
+        <members>Quote.ATAK_Project_needed_for_Closed</members>
         <members>ResourceAbsence.FSL__Absence_Color_HEX_Format</members>
         <members>ResourceAbsence.FSL__startShouldPrecedeEnd</members>
         <members>ServiceAppointment.FSL__Dont_allow_scheduled_or_dispatched</members>

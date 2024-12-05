@@ -77,13 +77,13 @@
         <expression>IF($Record.Urgent_Intervention__c, &quot;URG&quot;, 
   CASE($Record.Type, 
     &quot;Normal Hours&quot;, &quot;HR&quot;, 
-    &quot;Travel Time&quot;, &quot;HR&quot;,
+    &quot;Travel Time&quot;, &quot;RT&quot;,
     &quot;Night Work&quot;, &quot;NW&quot;,
     &quot;Machines&quot;, &quot;MU&quot;,
     &quot;Frost Delay&quot;, &quot;VV&quot;, 
     &quot;Industrial Accident&quot;, &quot;HR&quot;,
     &quot;Illness&quot;,  &quot;HR&quot;,
-    &quot;Recup Overtime&quot;, &quot;SP&quot;,
+    &quot;Recup Overtime&quot;, &quot;SP-&quot;,
     &quot;Absent Hours&quot;, &quot;HR&quot;,
     &quot;&quot;
   )

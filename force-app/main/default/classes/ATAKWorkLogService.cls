@@ -14,6 +14,8 @@ public with sharing class ATAKWorkLogService {
             ATAKPerformanceWrapper wrapper = ATAKPerformanceService.prepareATAKPerformanceData(timeSheetId);
             Integer statusCode = ATAKPerformanceService.sendATAKPerformanceData(wrapper);
 
+            System.debug('🔍 ATAK Performance Data received: ' + JSON.serializePretty(wrapper.data));
+
             if(wrapper.data == null || wrapper.data.isEmpty()) {
                 System.debug('⚠️ No data to process for TimeSheet: ' + timeSheetId);
                 throw new WorkLogException('No data to process for TimeSheet: ' + timeSheetId);
@@ -38,18 +40,14 @@ public with sharing class ATAKWorkLogService {
                         Quantity_Registration_Unit__c = data.quantity_registration_unit,
                         Quantity__c = Decimal.valueOf(data.quantity),
                         Dossier__c = data.dossier,
-                        Status__c = 'New'
+                        Status__c = 'New',
+                        Comments__c = data.remarks
                 );
 
                 setSourceRecord(workLog, data, timeSheetEntriesByStartTime, mileageEntriesByDistance, materialsByATAKCode);
                 workLog.External_Id__c = generateExternalId(workLog);
                 workLogs.add(workLog);
 
-                System.debug('✏️ Created Work Log: ' +
-                        'Type: ' + workLog.Source_Type__c +
-                        ', Source: ' + workLog.Source_Record_Id__c +
-                        ', Resource: ' + workLog.Performance_Resource_Code__c +
-                        ', External Id: ' + workLog.External_Id__c);
             }
 
             if(!workLogs.isEmpty()) {
@@ -79,7 +77,9 @@ public with sharing class ATAKWorkLogService {
                         String.valueOf(workLog.Performance_Date__c),
                         workLog.Performance_Resource_Code__c,
                         workLog.Performance_Resource_Type__c,
-                        workLog.Quantity_Registration_Unit__c
+                        workLog.Quantity_Registration_Unit__c,
+                        workLog.Start_Timestamp__c.format('HHmmss'),
+                        workLog.End_Timestamp__c.format('HHmmss')
                 },
                 '_'
         );

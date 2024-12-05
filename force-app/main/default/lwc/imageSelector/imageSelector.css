@@ -4,10 +4,10 @@ lightning-input {
   margin-top: -28px;
 }
 
-.no-images-selected-screen {
+/* .no-images-selected-screen {
   height: 100%;
   margin-top: -5rem;
-}
+} */
 
 .text-container {
   margin: 0;
@@ -73,11 +73,11 @@ lightning-input {
   width: 100%;
 }
 
-.page {
+/* .page {
   display: flex;
   flex-flow: column;
   height: 100%;
-}
+} */
 
 .page .section.header {
   flex: 0 1 auto;

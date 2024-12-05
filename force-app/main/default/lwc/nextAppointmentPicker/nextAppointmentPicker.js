@@ -33,8 +33,14 @@ import AppointmentPicker_Save_Button from "@salesforce/label/c.AppointmentPicker
 import AppointmentPicker_Break_Success_Message from "@salesforce/label/c.AppointmentPicker_Break_Success_Message";
 import StartDay_Internal_Button_Sub_Text from "@salesforce/label/c.StartDay_Internal_Button_Sub_Text";
 import StartDay_Internal_Button_Text from "@salesforce/label/c.StartDay_Internal_Button_Text";
+import AppointmentPicker_Cancel_Button from "@salesforce/label/c.AppointmentPicker_Cancel_Button";
+import AppointmentPicker_Last_Depot_Text from "@salesforce/label/c.AppointmentPicker_Last_Depot_Text";
+import AppointmentPicker_Last_Depot_Sub_Text from "@salesforce/label/c.AppointmentPicker_Last_Depot_Sub_Text";
 import { NavigationMixin } from "lightning/navigation";
 import { ToastTypes } from "c/utilsImageCapture";
+
+import firstWorkOrderChecker from "@salesforce/apex/FirstWorkOrderChecker.hasFirstWorkOrder";
+
 
 export default class NextAppointmentPicker extends NavigationMixin(
   LightningElement
@@ -57,6 +63,8 @@ export default class NextAppointmentPicker extends NavigationMixin(
   breakDuration = 15;
   breakRecordTypeId;
   graphQLServiceAppointments;
+  startingLocationType = "";
+  endingLocationType = "";
 
   breakDurationOptions = [
     { label: "15", value: 15 },
@@ -73,8 +81,10 @@ export default class NextAppointmentPicker extends NavigationMixin(
   showMilageEntryScreen = false;
   showWorkOrderScreen = false;
   showBreakForm = false;
+  hasFirstWorkOrder = false;
   selectedRows = [];
   mileageType = "";
+  endingDayAtDepot = false;
   labels = {
     AppointmentPicker_Next_Button,
     AppointmentPicker_No_Results,
@@ -98,8 +108,12 @@ export default class NextAppointmentPicker extends NavigationMixin(
     AppointmentPicker_Save_Button,
     AppointmentPicker_Break_Success_Message,
     StartDay_Internal_Button_Sub_Text,
-    StartDay_Internal_Button_Text
+    StartDay_Internal_Button_Text,
+    AppointmentPicker_Cancel_Button,
+    AppointmentPicker_Last_Depot_Text,
+    AppointmentPicker_Last_Depot_Sub_Text
   };
+
   columns = [
     {
       label: this.labels.AppointmentPicker_Appointments_Header,
@@ -118,6 +132,11 @@ export default class NextAppointmentPicker extends NavigationMixin(
       this.breakRecordTypeId = result;
       console.log("Break Record Type Id: ", this.recordTypeId);
     });
+    firstWorkOrderChecker().then((result) => {
+      console.log("hasFirstWorkOrder", result);
+      this.hasFirstWorkOrder = result;
+    });
+
   }
 
   //--------------------------------------WIRE-----------------------------------------//
@@ -463,6 +482,16 @@ export default class NextAppointmentPicker extends NavigationMixin(
     this.showWorkOrderScreen = true;
   }
 
+  handleEndDayWithDepotClicked() {
+    console.log("End day with depot clicked");
+    this.showInitialScreen = false;
+    this.showMilageEntryScreen = true;
+    this.endingDayAtDepot = true;
+    this.mileageType = "Ending";
+    this.endingLocationType = "Depot";
+    this.startingLocationType = "Customer";
+  }
+
   async handleWorkOrderCreated(event) {
     await this.handleServiceAppointmentsRefresh();
     this.showWorkOrderScreen = false;
@@ -576,14 +605,19 @@ export default class NextAppointmentPicker extends NavigationMixin(
   handleMileageSuccess(event) {
     this.toastType = ToastTypes.Success;
     this.toastMessage = this.labels.AppointmentPicker_Day_Ended_Toast;
-    setTimeout(() => {
-      this[NavigationMixin.Navigate]({
-        type: "standard__webPage",
-        attributes: {
-          url: `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
-        }
-      });
-    }, 500);
+    if(this.endingDayAtDepot === false) {
+      setTimeout(() => {
+        this[NavigationMixin.Navigate]({
+          type: "standard__webPage",
+          attributes: {
+            url: `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
+          }
+        });
+      }, 500);
+    } else {
+      this.showMilageEntryScreen = false;
+      this.showAppointmentScreen = true;
+    }
   }
 
   //--------------------------------------HELPERS--------------------------------------//
@@ -620,13 +654,19 @@ export default class NextAppointmentPicker extends NavigationMixin(
 
   setNextWorkOrderStatus() {
     const fields = {};
-    fields["Id"] = this.workOrderId;
+    fields["Id"] = this.nextWorkOrderId;
     fields["Status"] = "Travelling";
+    console.log("hasFirstWorkOrder", this.hasFirstWorkOrder);
+    if(this.hasFirstWorkOrder === false) {
+        console.log('setting first work order');
+        fields["Is_First_of_Day__c"] = true;
+    }
     const recordInput = { fields };
     console.log("recordInput", JSON.stringify(recordInput));
     updateRecord(recordInput)
-      .then(() => {
-        console.log("Work Order status updated");
+      .then((result) => {
+        console.log("Work Order status updated", result);
+        console.log(result);
       })
       .catch((error) => {
         console.log("Error updating work order status", error);
@@ -720,12 +760,14 @@ export default class NextAppointmentPicker extends NavigationMixin(
   }
 
   handleClose() {
-    disableNextButton = true;
-    showInitialScreen = true;
-    showAppointmentScreen = false;
-    showHasIncompleteWorkSteps = false;
-    showMilageEntryScreen = false;
-    showWorkOrderScreen = false;
-    showBreakForm = false;
+    this.disableNextButton = true;
+
+    this.showAppointmentScreen = false;
+    this.showHasIncompleteWorkSteps = false;
+    this.showMilageEntryScreen = false;
+    this.showWorkOrderScreen = false;
+    this.showBreakForm = false;
+
+    this.showInitialScreen = true;
   }
 }

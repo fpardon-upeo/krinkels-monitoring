@@ -9,6 +9,7 @@ import getNextHourForecast from "@salesforce/apex/WeatherService.getNextHourFore
 import { gql, graphql, refreshGraphQL } from "lightning/uiGraphQLApi";
 import ID from "@salesforce/user/Id";
 import {NavigationMixin} from "lightning/navigation";
+import firstWorkOrderChecker from "@salesforce/apex/FirstWorkOrderChecker.hasFirstWorkOrder";
 
 export default class StartOperatorDayMetrics extends NavigationMixin(LightningElement) {
   //--------------------------------------API------------------------------------------//
@@ -24,6 +25,7 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
   showCompletion = false;
   data;
   serviceAppointments;
+  hasFirstWorkOrder = false;
 
 
   @track nextAppointment = {};
@@ -47,6 +49,15 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
     this.myLocationService = getLocationService();
     //this.fetchWeather( 51.294896, 4.437022);
     this.getLocation();
+    firstWorkOrderChecker().then((result) => {
+        console.log("hasFirstWorkOrder", result);
+        this.hasFirstWorkOrder = result;
+        //Fire an event to the parent component to notify it of the first work order
+        const event = new CustomEvent("firstworkorderchecked", {
+          detail: this.hasFirstWorkOrder
+        });
+        this.dispatchEvent(event);
+    });
   }
 
   @wire(graphql, {
@@ -173,6 +184,7 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
       console.error("Query error:", result.error);
     }
   }
+
 
   @api
   async handleRefresh() {

@@ -26,6 +26,10 @@ public with sharing class ATAKProjectService {
             }
         }
 
+        for(ATAKProjectWrapper.Data projectData : projects.data) {
+            createSingleFinancialAccount(projectData);
+        }
+
         return 'Success: ' + successCount + ' Error: ' + errorCount + ' Total: ' + results.size() + ' processed.';
 
     }
@@ -57,8 +61,60 @@ public with sharing class ATAKProjectService {
         }
 
         System.debug('ATAKProjectService.createATAKProject - atakProject: ' + atakProject);
-
         return atakProject;
+    }
+
+    public static void createSingleFinancialAccount(ATAKProjectWrapper.Data projectData){
+
+        List<Account> accounts = new List<Account>();
+        List<ATAK_Project_Financial_Account__c> atakProjectFinancialAccounts = new List<ATAK_Project_Financial_Account__c>();
+
+        String recordtType = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Financial Account').getRecordTypeId();
+
+        for(ATAKProjectWrapper.Adrescodes adrescode : projectData.adrescodes){
+            System.debug('ATAKProjectService.createSingleFinancialAccount - adrescode: ' + adrescode.project_addresscode);
+            Account acc = new Account();
+            acc.Name = adrescode.project_addresscode;
+            acc.RecordTypeId = recordtType;
+            acc.Financial_External_Id__c = adrescode.project_addresscode;
+            accounts.add(acc);
+
+            ATAK_Project_Financial_Account__c atakProjectFinancialAccount = new ATAK_Project_Financial_Account__c();
+            atakProjectFinancialAccount.Name = projectData.projectcode + ' - ' + adrescode.project_addresscode;
+            atakProjectFinancialAccount.ATAK_Project__r = new Atak_Project__c(SubProject_ATAK__c = projectData.projectcode);
+            atakProjectFinancialAccount.Account__r = new Account(Financial_External_Id__c = adrescode.project_addresscode);
+            atakProjectFinancialAccount.External_Id__c = projectData.projectcode + adrescode.project_addresscode;
+            atakProjectFinancialAccounts.add(atakProjectFinancialAccount);
+
+        }
+
+        Database.UpsertResult[] results = Database.upsert(accounts, Account.Fields.Financial_External_Id__c, false);
+        Integer successCountAccts = 0;
+        Integer errorCountAccts = 0;
+        for(Database.UpsertResult result : results) {
+            if(!result.isSuccess()) {
+                for(Database.Error error : result.getErrors()) {
+                    System.debug('Error creating Fin Account: ' + error.getMessage());
+                    errorCountAccts++;
+                }
+            } else {
+                successCountAccts++;
+            }
+        }
+
+        Database.UpsertResult[] results2 = Database.upsert(atakProjectFinancialAccounts, ATAK_Project_Financial_Account__c.Fields.External_Id__c, false);
+        Integer successCountProjAcc = 0;
+        Integer errorCountProjAcc = 0;
+        for(Database.UpsertResult result : results2) {
+            if(!result.isSuccess()) {
+                for(Database.Error error : result.getErrors()) {
+                    System.debug('Error creating Fin Acc to Project link: ' + error.getMessage());
+                    errorCountProjAcc++;
+                }
+            } else {
+                successCountProjAcc++;
+            }
+        }
     }
 
 }

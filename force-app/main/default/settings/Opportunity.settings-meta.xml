@@ -8,7 +8,7 @@
     <enableForecastCategoryMetrics>true</enableForecastCategoryMetrics>
     <enableOpportunityFieldHistoryTracking>false</enableOpportunityFieldHistoryTracking>
     <enableOpportunityInsightsInMobile>false</enableOpportunityInsightsInMobile>
-    <enableOpportunityTeam>false</enableOpportunityTeam>
+    <enableOpportunityTeam>true</enableOpportunityTeam>
     <enablePipelineChangesMetrics>true</enablePipelineChangesMetrics>
     <enablePipelineInspection>true</enablePipelineInspection>
     <enablePipelineInspectionSingleCategoryRollup>true</enablePipelineInspectionSingleCategoryRollup>
