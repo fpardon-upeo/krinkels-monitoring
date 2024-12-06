@@ -7,7 +7,7 @@ public with sharing class TimeSheetController {
   }
 
   @AuraEnabled
-  public static TimeSheetWrapper getTimeSheet(Id recordId) {
+  public static TimeSheetWrapper getTimeSheet(String recordId) {
     TimeSheetWrapper wrapper = new TimeSheetWrapper();
 
     // Get TimeSheet and its entries ordered by StartTime
@@ -37,7 +37,8 @@ public with sharing class TimeSheetController {
             Ending_Mileage__c,
             Starting_Location_Type__c,
             Ending_Location_Type__c,
-            Calculated_Mileage__c
+            Calculated_Mileage__c,
+            Type__c
           FROM Mileage_Entries__r
         )
       FROM TimeSheet
@@ -84,6 +85,36 @@ public with sharing class TimeSheetController {
     wrapper.timeSheet = null;
     wrapper.resourceAbsences = new List<ResourceAbsence>();
     return wrapper;
+  }
+
+  @AuraEnabled
+  public static Work_Schedule__c getWorkSchedule(String resourceId) {
+    try {
+      List<ServiceResource> resources = [
+        SELECT Work_Schedule__c
+        FROM ServiceResource
+        WHERE Id = :resourceId
+      ];
+
+      if (resources.isEmpty() || resources[0].Work_Schedule__c == null) {
+        return null;
+      }
+
+      return [
+        SELECT
+          Id,
+          Name,
+          (
+            SELECT Id, Day_of_Week__c, Day_of_Week_Number__c, Hours__c
+            FROM Work_Schedule_Days__r
+            ORDER BY Day_of_Week_Number__c ASC
+          )
+        FROM Work_Schedule__c
+        WHERE Id = :resources[0].Work_Schedule__c
+      ];
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
   }
 
   @AuraEnabled
@@ -181,21 +212,6 @@ public with sharing class TimeSheetController {
         FROM TimeSheet
         WHERE Id = :recordId
       ];
-    } catch (Exception e) {
-      throw new AuraHandledException(e.getMessage());
-    }
-  }
-
-  //Return the resourceId of the TimeSheet
-  @AuraEnabled
-  public static Id getResourceId(String timeSheetId) {
-    try {
-      return [
-        SELECT ServiceResourceId
-        FROM TimeSheet
-        WHERE Id = :timeSheetId
-      ][0]
-      .ServiceResourceId;
     } catch (Exception e) {
       throw new AuraHandledException(e.getMessage());
     }

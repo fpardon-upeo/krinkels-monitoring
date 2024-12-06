@@ -1,0 +1,171 @@
+<template>
+  <lightning-card>
+    <!-- Pickup Section -->
+    <div class="pickup-section slds-p-around_medium">
+      <div class="slds-text-heading_medium slds-m-bottom_medium">
+        <lightning-icon
+          icon-name="utility:fulfillment_order"
+          size="small"
+          class="slds-m-right_small">
+        </lightning-icon>
+        Pick Up Items
+      </div>
+
+      <lightning-record-view-form
+        record-id={workOrderId}
+        object-api-name="WorkOrder">
+        <div class="slds-box slds-theme_default slds-m-bottom_medium">
+          <lightning-output-field field-name="Pick_Up_Items__c">
+          </lightning-output-field>
+        </div>
+      </lightning-record-view-form>
+
+      <!-- Input Fields -->
+      <div class="input-group">
+        <div class="slds-grid slds-gutters slds-m-bottom_medium">
+          <div class="slds-col slds-size_1-of-2">
+            <lightning-input
+              type="text"
+              label="Short Text"
+              onchange={handleCurrentShortTextChange}
+              value={currentShortText}>
+            </lightning-input>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+            <lightning-input
+              type="text"
+              label="ATAK Code"
+              onchange={handleCurrentAtakCodeChange}
+              value={currentAtakCode}>
+            </lightning-input>
+          </div>
+        </div>
+      </div>
+
+      <!-- Added Items List -->
+      <template if:true={materialPickupItems.length}>
+        <div class="slds-text-title slds-m-bottom_small">Added items:</div>
+        <div class="items-list">
+          <template for:each={materialPickupItems} for:item="item">
+            <div key={item.id} class="item-card">
+              <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+                <div class="slds-col slds-size_5-of-12">
+                  <span class="label">Short Text: </span>
+                  {item.shortText}
+                </div>
+                <div class="slds-col slds-size_5-of-12">
+                  <span class="label">ATAK Code: </span>
+                  {item.atakCode}
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-text-align_right">
+                  <lightning-button-icon
+                    icon-name="utility:delete"
+                    variant="border-filled"
+                    alternative-text="Delete"
+                    data-id={item.id}
+                    onclick={deleteItem}
+                    class="delete-button">
+                  </lightning-button-icon>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <div class="slds-grid slds-grid_align-spread slds-m-top_medium">
+        <lightning-button-icon
+          icon-name="utility:add"
+          variant="brand"
+          alternative-text="Add New Line"
+          onclick={addItem}
+          class="add-button">
+        </lightning-button-icon>
+        <lightning-button
+          variant="brand"
+          label="Save"
+          title="Save All Items"
+          onclick={saveItems}
+          class="save-button">
+        </lightning-button>
+      </div>
+    </div>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Drop Off Section -->
+    <div class="dropoff-section slds-p-around_medium">
+      <div class="slds-text-heading_medium slds-m-bottom_medium">
+        <lightning-icon
+          icon-name="utility:text_template"
+          size="small"
+          class="slds-m-right_small">
+        </lightning-icon>
+        Drop Off Items
+      </div>
+
+      <lightning-record-view-form
+        record-id={workOrderId}
+        object-api-name="WorkOrder">
+        <div class="slds-box slds-theme_default slds-m-bottom_medium">
+          <lightning-output-field field-name="Drop_Off_Items__c">
+          </lightning-output-field>
+        </div>
+      </lightning-record-view-form>
+
+      <div class="slds-m-top_medium">
+        <lightning-combobox
+          name="materialSelect"
+          label="Select Material to Return"
+          value={selectedMaterialId}
+          options={temporaryMaterialsInVanOptions}
+          onchange={handleMaterialSelection}>
+        </lightning-combobox>
+      </div>
+
+      <!-- Selected Materials List -->
+      <template if:true={materialDropoffItems.length}>
+        <div class="slds-text-title slds-m-vertical_small">Selected Materials to Return:</div>
+        <div class="items-list">
+          <template for:each={materialDropoffItems} for:item="item">
+            <div key={item.id} class="item-card">
+              <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+                <div class="slds-col slds-size_10-of-12">
+                  <span class="label">Material: </span>
+                  {item.shortText}
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-text-align_right">
+                  <lightning-button-icon
+                    icon-name="utility:delete"
+                    variant="border-filled"
+                    alternative-text="Delete"
+                    data-id={item.id}
+                    onclick={deleteDropoffItem}
+                    class="delete-button">
+                  </lightning-button-icon>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <div class="slds-text-align_right slds-m-top_medium">
+        <lightning-button
+          variant="brand"
+          label="Save Returns"
+          title="Save Return Items"
+          onclick={saveDropoffItems}
+          class="save-button">
+        </lightning-button>
+      </div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="close-button-section slds-p-around_medium">
+      <button class="close-qa-button" onclick={handleClose}>
+        Close
+      </button>
+    </div>
+  </lightning-card>
+</template>

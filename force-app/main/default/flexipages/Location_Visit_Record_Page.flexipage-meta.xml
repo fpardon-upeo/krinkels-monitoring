@@ -74,12 +74,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
@@ -102,12 +102,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -141,18 +141,43 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Visitor_Internal__c</fieldItem>
                 <identifier>RecordVisitor_Internal__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Contract opportunity</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Additional work opportunity</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Status__c</fieldItem>
                 <identifier>RecordStatus__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Fixed_date_Already_planned__c</fieldItem>
                 <identifier>RecordFixed_date_Already_planned__cField</identifier>
             </fieldInstance>
@@ -221,7 +246,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -238,7 +263,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -255,7 +280,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -272,7 +297,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -289,7 +314,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -306,7 +331,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -357,7 +382,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -392,12 +417,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -466,12 +491,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -498,12 +523,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
@@ -531,12 +556,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
@@ -610,12 +635,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -633,12 +658,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -656,12 +681,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -679,12 +704,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -702,12 +727,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -725,12 +750,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -776,12 +801,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -798,7 +823,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -816,12 +841,12 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Additional work opportunity visit</rightValue>
+                        <rightValue>Additional work opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -838,7 +863,7 @@
                     <criteria>
                         <leftValue>{!Record.Location_Visit_Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Contract opportunity visit</rightValue>
+                        <rightValue>Contract opportunity</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>

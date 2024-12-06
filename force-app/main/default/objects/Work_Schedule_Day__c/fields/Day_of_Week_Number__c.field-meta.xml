@@ -4,13 +4,13 @@
     <externalId>false</externalId>
     <formula>CASE(
     TEXT(Day_of_Week__c),
-    &apos;Sunday&apos;, 1,
-    &apos;Monday&apos;, 2,
-    &apos;Tuesday&apos;, 3,
-    &apos;Wednesday&apos;, 4,
-    &apos;Thursday&apos;, 5,
-    &apos;Friday&apos;, 6,
-    &apos;Saturday&apos;, 7,
+    &apos;Sunday&apos;, 0,
+    &apos;Monday&apos;, 1,
+    &apos;Tuesday&apos;, 2,
+    &apos;Wednesday&apos;, 3,
+    &apos;Thursday&apos;, 4,
+    &apos;Friday&apos;, 5,
+    &apos;Saturday&apos;, 6,
     NULL
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

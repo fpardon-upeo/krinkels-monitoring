@@ -131,7 +131,7 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>If nessary, attach a receipt.</stringValue>
+                    <stringValue>If necessary, attach a receipt.</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>

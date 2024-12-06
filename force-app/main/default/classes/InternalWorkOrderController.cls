@@ -80,8 +80,6 @@ public without sharing class InternalWorkOrderController {
 
         System.debug('serviceCrewMember: ' + serviceCrewMember);
 
-
-
         ServiceAppointment serviceAppointment = [SELECT Id FROM ServiceAppointment WHERE ParentRecordId = :internalWorkOrderId];
         serviceAppointment.SchedStartTime = Datetime.now();
         serviceAppointment.SchedEndTime = Datetime.now().addHours(1);

@@ -1,82 +1,63 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+approvalProcesses/Quote.Approval_Process_Quote_Over_5000.approvalProcess-meta.xml,A,ApprovalProcess Quote.Approval_Process_Quote_Over_5000,,,log,📰
 classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
-classes/ATAKPerformanceServiceTest.cls,A,ApexClass ATAKPerformanceServiceTest,,,log,📰
-classes/ATAKPerformanceServiceTest.cls-meta.xml,A,ApexClass ATAKPerformanceServiceTest,,,log,📰
-classes/ATAKProjectService.cls," ",ApexClass ATAKProjectService,M,,log,📰
+classes/ATAKPerformanceServiceTest.cls," ",ApexClass ATAKPerformanceServiceTest,M,,log,📰
 classes/ATAKWorkLogService.cls," ",ApexClass ATAKWorkLogService,M,,log,📰
-classes/AccountTriggerHandler.cls,A,ApexClass AccountTriggerHandler,,,log,📰
-classes/AccountTriggerHandler.cls-meta.xml,A,ApexClass AccountTriggerHandler,,,log,📰
-classes/FirstWorkOrderChecker.cls,A,ApexClass FirstWorkOrderChecker,,,log,📰
-classes/FirstWorkOrderChecker.cls-meta.xml,A,ApexClass FirstWorkOrderChecker,,,log,📰
-classes/LocationMonitorController.cls,A,ApexClass LocationMonitorController,,,log,📰
-classes/LocationMonitorController.cls-meta.xml,A,ApexClass LocationMonitorController,,,log,📰
-classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
-classes/WorkStepSignatureControllerTest.cls," ",ApexClass WorkStepSignatureControllerTest,M,,log,📰
+classes/ATAKWorkLogServiceTest.cls," ",ApexClass ATAKWorkLogServiceTest,M,,log,📰
+classes/InternalWorkOrderController.cls," ",ApexClass InternalWorkOrderController,M,,log,📰
+classes/MaterialPickupController.cls,A,ApexClass MaterialPickupController,,,log,📰
+classes/MaterialPickupController.cls-meta.xml,A,ApexClass MaterialPickupController,,,log,📰
+classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
+classes/ValidationService.cls,A,ApexClass ValidationService,,,log,📰
+classes/ValidationService.cls-meta.xml,A,ApexClass ValidationService,,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/Product_Record_Page.flexipage-meta.xml," ",FlexiPage Product_Record_Page,M,,log,📰
-flexipages/Quick_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Quick_Opportunity_Record_Page,M,,log,📰
+email/unfiled$public/Quote_Approval_EN_1733415638553.email,A,EmailTemplate unfiled$public/Quote_Approval_EN_1733415638553,,,log,📰
+email/unfiled$public/Quote_Approval_EN_1733415638553.email-meta.xml,A,EmailTemplate unfiled$public/Quote_Approval_EN_1733415638553,,,log,📰
+flexipages/Location_Visit_Record_Page.flexipage-meta.xml," ",FlexiPage Location_Visit_Record_Page,M,,log,📰
 flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
 flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
 flexipages/Work_Step_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Step_Record_Page,M,,log,📰
-flowDefinitions/Account_Screen_Flow_Add_Extra_Work.flowDefinition-meta.xml," ",FlowDefinition Account_Screen_Flow_Add_Extra_Work,M,,log,📰
-flowDefinitions/ContractLineItem_After_Save_Add_Default_Financial_Accounts.flowDefinition-meta.xml,A,FlowDefinition ContractLineItem_After_Save_Add_Default_Financial_Accounts,,,log,📰
-flowDefinitions/Time_Sheet_Entry_Before_Save.flowDefinition-meta.xml," ",FlowDefinition Time_Sheet_Entry_Before_Save,M,,log,📰
-flows/Account_Screen_Flow_Add_Extra_Work.flow-meta.xml," ",Flow Account_Screen_Flow_Add_Extra_Work,M,,log,📰
-flows/ContractLineItem_After_Save_Add_Default_Financial_Accounts.flow-meta.xml,A,Flow ContractLineItem_After_Save_Add_Default_Financial_Accounts,,,log,📰
-flows/Time_Sheet_Entry_Before_Save.flow-meta.xml," ",Flow Time_Sheet_Entry_Before_Save,M,,log,📰
-globalValueSets/Codes_ATAK_Limbus.globalValueSet-meta.xml," ",GlobalValueSet Codes_ATAK_Limbus,M,,log,📰
-labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-layouts/ATAK_Project_Financial_Account__c-ATAK Project Financial Account Layout.layout-meta.xml,A,Layout ATAK_Project_Financial_Account__c-ATAK Project Financial Account Layout,,,log,📰
-layouts/ATAK_Project__c-ATAK Project Layout.layout-meta.xml," ",Layout ATAK_Project__c-ATAK Project Layout,M,,log,📰
-layouts/Account-Financial Account Layout.layout-meta.xml," ",Layout Account-Financial Account Layout,M,,log,📰
-layouts/Opportunity-Opportunity Layout.layout-meta.xml," ",Layout Opportunity-Opportunity Layout,M,,log,📰
-layouts/OpportunityTeamMember-Opportunity Team Member Layout.layout-meta.xml,A,Layout OpportunityTeamMember-Opportunity Team Member Layout,,,log,📰
+flowDefinitions/Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit.flowDefinition-meta.xml," ",FlowDefinition Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit,M,,log,📰
+flowDefinitions/Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process.flowDefinition-meta.xml,A,FlowDefinition Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process,,,log,📰
+flowDefinitions/Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related.flowDefinition-meta.xml,A,FlowDefinition Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related,,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status,M,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Log_Waste_Depot_Visit.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Log_Waste_Depot_Visit,M,,log,📰
+flows/Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit.flow-meta.xml," ",Flow Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit,M,,log,📰
+flows/Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process.flow-meta.xml,A,Flow Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process,,,log,📰
+flows/Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related.flow-meta.xml,A,Flow Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related,,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status,M,,log,📰
+flows/Work_Order_Mobile_Flow_Log_Waste_Depot_Visit.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Log_Waste_Depot_Visit,M,,log,📰
 layouts/Product2-Product Layout.layout-meta.xml," ",Layout Product2-Product Layout,M,,log,📰
+layouts/ProductItem-Material Item Layout.layout-meta.xml," ",Layout ProductItem-Material Item Layout,M,,log,📰
+layouts/ProductRequired-Product Required Layout.layout-meta.xml," ",Layout ProductRequired-Product Required Layout,M,,log,📰
 layouts/Quote-Quote Layout.layout-meta.xml," ",Layout Quote-Quote Layout,M,,log,📰
-lwc/checkIn/checkIn.css," ",LightningComponentBundle checkIn/checkIn.css,M,,log,📰
-lwc/checkIn/checkIn.html," ",LightningComponentBundle checkIn/checkIn.html,M,,log,📰
-lwc/checkIn/checkIn.js," ",LightningComponentBundle checkIn/checkIn.js,M,,log,📰
-lwc/imageCapture/imageCapture.js," ",LightningComponentBundle imageCapture/imageCapture.js,M,,log,📰
-lwc/imageCaptureTest/imageCaptureTest.html,A,LightningComponentBundle imageCaptureTest/imageCaptureTest.html,,,log,📰
-lwc/imageCaptureTest/imageCaptureTest.js,A,LightningComponentBundle imageCaptureTest/imageCaptureTest.js,,,log,📰
-lwc/imageCaptureTest/imageCaptureTest.js-meta.xml,A,LightningComponentBundle imageCaptureTest/imageCaptureTest.js-meta.xml,,,log,📰
-lwc/imageSelector/imageSelector.css," ",LightningComponentBundle imageSelector/imageSelector.css,M,,log,📰
-lwc/imageSelector/imageSelector.html," ",LightningComponentBundle imageSelector/imageSelector.html,M,,log,📰
-lwc/imageSelector/imageSelector.js," ",LightningComponentBundle imageSelector/imageSelector.js,M,,log,📰
-lwc/internalWorkOrderForm/internalWorkOrderForm.html," ",LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.html,M,,log,📰
-lwc/internalWorkOrderForm/internalWorkOrderForm.js," ",LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.js,M,,log,📰
-lwc/locationMonitor/locationMonitor.css,A,LightningComponentBundle locationMonitor/locationMonitor.css,,,log,📰
-lwc/locationMonitor/locationMonitor.html,A,LightningComponentBundle locationMonitor/locationMonitor.html,,,log,📰
-lwc/locationMonitor/locationMonitor.js,A,LightningComponentBundle locationMonitor/locationMonitor.js,,,log,📰
-lwc/locationMonitor/locationMonitor.js-meta.xml,A,LightningComponentBundle locationMonitor/locationMonitor.js-meta.xml,,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.css," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.css,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.css," ",LightningComponentBundle startOperatorDay/startOperatorDay.css,M,,log,📰
+layouts/ServiceResource-Service Resource Layout.layout-meta.xml," ",Layout ServiceResource-Service Resource Layout,M,,log,📰
+layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
+layouts/WorkStep-Work Step Layout.layout-meta.xml," ",Layout WorkStep-Work Step Layout,M,,log,📰
+layouts/Work_Schedule__c-Work Schedule Layout.layout-meta.xml," ",Layout Work_Schedule__c-Work Schedule Layout,M,,log,📰
+lwc/materialPickup/materialPickup.css,A,LightningComponentBundle materialPickup/materialPickup.css,,,log,📰
+lwc/materialPickup/materialPickup.html,A,LightningComponentBundle materialPickup/materialPickup.html,,,log,📰
+lwc/materialPickup/materialPickup.js,A,LightningComponentBundle materialPickup/materialPickup.js,,,log,📰
+lwc/materialPickup/materialPickup.js-meta.xml,A,LightningComponentBundle materialPickup/materialPickup.js-meta.xml,,,log,📰
 lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
 lwc/startOperatorDayMetrics/startOperatorDayMetrics.js," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.js,M,,log,📰
-lwc/workOrderActions/workOrderActions.css," ",LightningComponentBundle workOrderActions/workOrderActions.css,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
 lwc/workOrderActions/workOrderActions.html," ",LightningComponentBundle workOrderActions/workOrderActions.html,M,,log,📰
 lwc/workOrderActions/workOrderActions.js," ",LightningComponentBundle workOrderActions/workOrderActions.js,M,,log,📰
-objects/ATAK_Project_Financial_Account__c/ATAK_Project_Financial_Account__c.object-meta.xml,A,CustomObject ATAK_Project_Financial_Account__c/ATAK_Project_Financial_Account__c,,,log,📰
-objects/ATAK_Project_Financial_Account__c/fields/ATAK_Project_Code__c.field-meta.xml,A,CustomField ATAK_Project_Code__c,,,log,📰
-objects/ATAK_Project_Financial_Account__c/fields/ATAK_Project__c.field-meta.xml,A,CustomField ATAK_Project__c,,,log,📰
-objects/ATAK_Project_Financial_Account__c/fields/Account__c.field-meta.xml,A,CustomField Account__c,,,log,📰
-objects/ATAK_Project_Financial_Account__c/fields/External_Id__c.field-meta.xml,A,CustomField External_Id__c,,,log,📰
-objects/Account/fields/Financial_External_Id__c.field-meta.xml,A,CustomField Financial_External_Id__c,,,log,📰
-objects/Opportunity/recordTypes/B2B_Tender.recordType-meta.xml," ",RecordType B2B_Tender,M,,log,📰
-objects/Opportunity/recordTypes/Public_Tender.recordType-meta.xml," ",RecordType Public_Tender,M,,log,📰
-objects/Opportunity/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
-objects/Quote/fields/ATAK_Project__c.field-meta.xml,A,CustomField ATAK_Project__c,,,log,📰
-objects/Quote/validationRules/ATAK_Project_needed_for_Closed.validationRule-meta.xml,A,ValidationRule ATAK_Project_needed_for_Closed,,,log,📰
-objects/ResourceAbsence/recordTypes/FSL__Break.recordType-meta.xml," ",RecordType FSL__Break,M,,log,📰
-objects/ResourceAbsence/recordTypes/FSL__Non_Availability.recordType-meta.xml," ",RecordType FSL__Non_Availability,M,,log,📰
-objects/ResourceAbsence/recordTypes/Internal_Meeting.recordType-meta.xml," ",RecordType Internal_Meeting,M,,log,📰
-objects/ResourceAbsence/recordTypes/Physical_Check_up.recordType-meta.xml," ",RecordType Physical_Check_up,M,,log,📰
-objects/ResourceAbsence/recordTypes/Training.recordType-meta.xml," ",RecordType Training,M,,log,📰
-objects/WorkOrder/fields/Checkin_Deviation_KM__c.field-meta.xml,A,CustomField Checkin_Deviation_KM__c,,,log,📰
-permissionsets/Query_All_Files.permissionset-meta.xml," ",PermissionSet Query_All_Files,M,,log,📰
+objects/Location_Visit__c/fields/Location_Visit_Type__c.field-meta.xml," ",CustomField Location_Visit_Type__c,M,,log,📰
+objects/Location_Visit__c/validationRules/Internal_Visitor_Mandatory.validationRule-meta.xml,A,ValidationRule Internal_Visitor_Mandatory,,,log,📰
+objects/Location_Visit__c/validationRules/Planned_Date.validationRule-meta.xml,A,ValidationRule Planned_Date,,,log,📰
+objects/ProductItem/fields/Is_Temporary__c.field-meta.xml,A,CustomField Is_Temporary__c,,,log,📰
+objects/ProductRequired/ProductRequired.object-meta.xml,A,CustomObject ProductRequired/ProductRequired,,,log,📰
+objects/ProductRequired/fields/ATAK_Code__c.field-meta.xml,A,CustomField ATAK_Code__c,,,log,📰
+objects/ProductRequired/fields/Action_Required__c.field-meta.xml,A,CustomField Action_Required__c,,,log,📰
+objects/ProductRequired/fields/Material_Item__c.field-meta.xml,A,CustomField Material_Item__c,,,log,📰
+objects/ServiceAppointment/fields/Work_Type_Name__c.field-meta.xml,A,CustomField Work_Type_Name__c,,,log,📰
+objects/ServiceResource/fields/Work_Schedule__c.field-meta.xml,A,CustomField Work_Schedule__c,,,log,📰
+objects/TimeSheetEntry/fields/Work_Type__c.field-meta.xml,A,CustomField Work_Type__c,,,log,📰
+objects/Work_Schedule_Day__c/fields/Day_of_Week_Number__c.field-meta.xml," ",CustomField Day_of_Week_Number__c,M,,log,📰
+objects/Work_Schedule_Day__c/fields/Day_of_Week__c.field-meta.xml," ",CustomField Day_of_Week__c,M,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -102,13 +83,10 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-reportTypes/Work_Orders.reportType-meta.xml," ",ReportType Work_Orders,M,,log,📰
-settings/Opportunity.settings-meta.xml," ",Settings Opportunity,M,,log,📰
-settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
-sharingRules/SocialPersonaFieldBackup.sharingRules-meta.xml,A,SharingRules SocialPersonaFieldBackup,,,log,📰
-standardValueSets/OpportunityType.standardValueSet-meta.xml," ",StandardValueSet OpportunityType,M,,log,📰
-topicsForObjects/ATAK_Project_Financial_Account__c.topicsForObjects-meta.xml,A,TopicsForObjects ATAK_Project_Financial_Account__c,,,log,📰
-triggers/AccountTrigger.trigger,A,ApexTrigger AccountTrigger,,,log,📰
-triggers/AccountTrigger.trigger-meta.xml,A,ApexTrigger AccountTrigger,,,log,📰
+quickActions/WorkStep.Material_Pickup.quickAction-meta.xml,A,QuickAction WorkStep.Material_Pickup,,,log,📰
+reportTypes/Service_Appointments.reportType-meta.xml," ",ReportType Service_Appointments,M,,log,📰
+reportTypes/Service_Appointments_with_Service_Resources.reportType-meta.xml," ",ReportType Service_Appointments_with_Service_Resources,M,,log,📰
+reportTypes/Vans_with_Material_Items.reportType-meta.xml," ",ReportType Vans_with_Material_Items,M,,log,📰
+workflows/Quote.workflow-meta.xml,A,Workflow Quote,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

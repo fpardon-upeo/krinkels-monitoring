@@ -7,6 +7,7 @@ export default class WorkOrderActions extends LightningElement {
   @track showLogSpecialEquipment = false;
   @track showLogEditTasks = false;
   @track showInitialScreen = true;
+  @track showImageCapture = false;
   @api recordId;
   @track imagePreview;
   @track base64Image = "";
@@ -39,6 +40,7 @@ export default class WorkOrderActions extends LightningElement {
     this.showLogSpecialEquipment = false;
     this.showLogEditTasks = false;
     this.showInitialScreen = true;
+    this.showImageCapture = false;
   }
 
   closeAction() {
@@ -50,15 +52,20 @@ export default class WorkOrderActions extends LightningElement {
 
     this.closeModal();
 
-    const evt = new ShowToastEvent({
-      title: "Success",
-      message: "Record updated successfully",
-      variant: "success"
-    });
+    // const evt = new ShowToastEvent({
+    //   title: "Success",
+    //   message: "Record updated successfully",
+    //   variant: "success"
+    // });
 
-    this.dispatchEvent(evt);
+    // this.dispatchEvent(evt);
 
     this.dispatchEvent(new CloseActionScreenEvent());
+  }
+
+  handleSuccessShopVisit() {
+    this.closeModal();
+    this.showImageCapture = true;
   }
 
   handleUploadFinished(event) {

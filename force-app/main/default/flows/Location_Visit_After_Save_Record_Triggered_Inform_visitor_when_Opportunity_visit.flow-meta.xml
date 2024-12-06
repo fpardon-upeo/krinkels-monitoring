@@ -1,6 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>New_Location_Visit_Notification</name>
+        <label>New Location Visit Notification</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>Update</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>VisitorId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>NewVisitTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>NewVisitBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Planned_Location_Visit_Notification</name>
+        <label>Planned Location Visit Notification</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>Update</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>VisitorId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>VisitPlannedTitle</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>VisitPlannedBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Visitor_ID</name>
+        <label>Visitor ID</label>
+        <locationX>380</locationX>
+        <locationY>323</locationY>
+        <assignmentItems>
+            <assignToReference>VisitorId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Visitor_Internal__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Visitor_Filled_In</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Location_Visit_Planned</name>
+        <label>Location Visit Planned ?</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>New_Location_Visit_Notification</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Fixed_date_Already_planned__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Planned_Location_Visit_Notification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Visitor_Filled_In</name>
+        <label>Visitor Filled In ?</label>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Visitor_Filled_In</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VisitorId</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Notification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
     <description>Send a notification to the expected visitor that they are expected to do a visit</description>
     <environments>Default</environments>
     <interviewLabel>[Location Visit][After-Save][Record-Triggered] Inform visitor when Opportunity visit {!$Flow.CurrentDateTime}</interviewLabel>
@@ -27,9 +180,12 @@
     <recordLookups>
         <name>Get_Notification</name>
         <label>Get Notification</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Location_Visit_Planned</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
@@ -42,18 +198,69 @@
         <object>CustomNotificationType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update</name>
+        <label>Update</label>
+        <locationX>182</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Visitor_Internal__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Notification</targetReference>
+            <targetReference>Visitor_ID</targetReference>
         </connector>
-        <filterFormula>(ISNEW() &amp;&amp; NOT(ISNULL( {!$Record.Visitor_Internal__c})))
-||
-(ISCHANGED({!$Record.Visitor_Internal__c})&amp;&amp;NOT(ISNULL( {!$Record.Visitor_Internal__c})))</filterFormula>
+        <filterFormula>AND(
+    NOT(ISBLANK({!$Record.Visitor_Internal__c})),
+    OR(
+        ISNEW(),
+        ISCHANGED({!$Record.Visitor_Internal__c})
+    )
+)</filterFormula>
         <object>Location_Visit__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <textTemplates>
+        <name>NewVisitBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A(n) {!$Record.Location_Visit_Type__c} visit has been assigned to you by {!$Record.CreatedBy.FirstName} {!$Record.CreatedBy.LastName}. Please plan a visit.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NewVisitTitle</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New Location Visit</text>
+    </textTemplates>
+    <textTemplates>
+        <name>VisitPlannedBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A(n) {!$Record.Location_Visit_Type__c} visit has been scheduled for {!$Record.Visit_Date__c} by {!$Record.CreatedBy.FirstName} {!$Record.CreatedBy.LastName}.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>VisitPlannedTitle</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Location Visit Planned</text>
+    </textTemplates>
+    <variables>
+        <name>CreatorName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VisitorId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

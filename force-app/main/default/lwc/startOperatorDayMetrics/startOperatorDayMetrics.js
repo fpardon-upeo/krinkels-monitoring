@@ -219,6 +219,7 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
   }
 
   calculateAppointmentsMetrics() {
+    console.log('calculateAppointmentsMetrics')
     this.totalAppointments = this.serviceAppointments.length;
     const completedStatuses = ["Completed", "Canceled", "Cannot Complete"];
     this.completedAppointments = this.serviceAppointments.filter(

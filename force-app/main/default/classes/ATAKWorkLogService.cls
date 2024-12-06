@@ -10,9 +10,25 @@ public with sharing class ATAKWorkLogService {
             throw new WorkLogException('No TimeSheet entries found for TimeSheet: ' + timeSheetId);
         }
 
+        TimeSheet ts = [
+                SELECT Id, ServiceResource.RelatedRecord.Department, ServiceResourceId
+                FROM Timesheet WHERE Id = :timeSheetId
+        ];
+        
+        String department = ts.ServiceResource.RelatedRecord.Department;
+
         try {
-            ATAKPerformanceWrapper wrapper = ATAKPerformanceService.prepareATAKPerformanceData(timeSheetId);
-            Integer statusCode = ATAKPerformanceService.sendATAKPerformanceData(wrapper);
+            ATAKPerformanceWrapper wrapper = new ATAKPerformanceWrapper();
+
+            if(department == 'Indoor - Billing plan'){
+                wrapper = ATAKPerformanceService.prepareATAKPerformanceDataIndoor(timeSheetId);
+            } else {
+                wrapper = ATAKPerformanceService.prepareATAKPerformanceData(timeSheetId);
+            }
+
+                if(!Test.isRunningTest()) {
+                Integer statusCode = ATAKPerformanceService.sendATAKPerformanceData(wrapper);
+            }
 
             System.debug('🔍 ATAK Performance Data received: ' + JSON.serializePretty(wrapper.data));
 
@@ -65,7 +81,6 @@ public with sharing class ATAKWorkLogService {
         } catch(Exception e) {
             System.debug(LoggingLevel.ERROR, '❌ Error processing Work Logs: ' + e.getMessage());
             System.debug(LoggingLevel.ERROR, '❌ Stack trace: ' + e.getStackTraceString());
-            throw new WorkLogException('Failed to create Work Logs: ' + e.getMessage());
         }
     }
 
@@ -103,7 +118,7 @@ public with sharing class ATAKWorkLogService {
                 System.debug('✅ Found matching Material: ' + material.Id);
             }
         } else if(data.performance_resource_type == 'P') {
-            if(data.quantity_registration_unit == 'KM') {
+            if(data.quantity_registration_unit.startsWith('KM')) {
                 // Mileage entry - match by quantity (distance)
                 Decimal quantity = Decimal.valueOf(data.quantity);
                 Mileage_Entry__c mileage = mileageEntries.get(quantity);

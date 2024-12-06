@@ -215,6 +215,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MaterialPickupController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MileageEntryProjectLinkService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -380,6 +384,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetProjectLinkServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ValidationService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1979,7 +1987,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ProductItem.Is_Temporary__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ProductItem.Van_Crew__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRequired.ATAK_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRequired.Action_Required__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRequired.Material_Item__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2424,6 +2452,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ServiceAppointment.Work_Type_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ServiceContract.Accepted__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2605,6 +2638,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ServiceResource.Service_Resource_Is_Van__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceResource.Work_Schedule__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2856,6 +2894,11 @@
         <editable>true</editable>
         <field>TimeSheetEntry.Urgent_Intervention__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Work_Type__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -3269,6 +3312,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>ResourceAbsence_After_Save_Break_Time</flow>
     </flowAccesses>
     <flowAccesses>
@@ -3310,6 +3357,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Service_Appointment_Time_Sheet_Automations</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

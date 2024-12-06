@@ -8,10 +8,12 @@ import submitTimeSheet from "@salesforce/apex/TimeSheetController.submitTimeShee
 import getBreakRecordTypeId from "@salesforce/apex/TimeSheetController.getBreakRecordTypeId";
 import getTimeSheetByResourceAndDate from "@salesforce/apex/TimeSheetController.getTimeSheetByResourceAndDate";
 import getUserSettings from "@salesforce/apex/TimeSheetController.getUserSettings";
+import getWorkSchedule from "@salesforce/apex/TimeSheetController.getWorkSchedule";
 import updateUserSettings from "@salesforce/apex/TimeSheetController.updateUserSettings";
 import createUserSettings from "@salesforce/apex/TimeSheetController.createUserSettings";
 import { getRecordNotifyChange } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
+
 //Import labels
 import Calendar_User_Settings_Start_Time from "@salesforce/label/c.Calendar_User_Settings_Start_Time";
 import Calendar_User_Settings_End_Time from "@salesforce/label/c.Calendar_User_Settings_End_Time";
@@ -83,8 +85,10 @@ export default class TimeSheetCalendar extends LightningElement {
   @track date;
 
   @track user = {};
+  @track userWorkSchedule = [];
 
   // TimeSheet amount variables
+  @track expectedWorkHours = 0;
   @track workHours = 0;
   @track breakHours = 0;
   @track kmAmount = 0;
@@ -172,192 +176,207 @@ export default class TimeSheetCalendar extends LightningElement {
       loadStyle(this, FullCalendarJS + "/lib/main.css"),
       loadScript(this, FullCalendarJS + "/lib/main.min.js"),
       loadStyle(this, FullCalendarJS + "/lib/custom.css"),
-      getUserSettings({ userId: this.resourceId })
+      getUserSettings({ userId: this.resourceId }),
+      getWorkSchedule({ resourceId: this.resourceId }),
+      getTimeSheet({ recordId: this.recordId })
     ])
-      .then(([css1, js, css2, userSettings]) => {
-        console.log("userSettings before:", userSettings);
-        console.log("resourceId:", this.resourceId);
+      .then(([css1, js, css2, userSettings, workSchedule, timeSheet]) => {
         // Set user settings first
-        if (
-          userSettings &&
-          userSettings.Start_Time__c &&
-          userSettings.End_Time__c
-        ) {
-          console.log("userSettings:", userSettings);
-
+        if (userSettings) {
           this.user = userSettings;
           this.minValue = userSettings.Start_Time__c / (1000 * 60 * 60);
           this.maxValue = userSettings.End_Time__c / (1000 * 60 * 60);
+
+          console.log("user:", JSON.stringify(this.user));
         }
 
-        // Then get TimeSheet data
-        return getTimeSheet({ recordId: this.recordId });
-      })
-      .then((result) => {
-        // Check if the TimeSheet is submitted or approved
-        if (
-          result.timeSheet.Status === "Submitted" ||
-          result.timeSheet.Status === "Approved"
-        ) {
-          this.isTimeSheetSubmittedOrApproved = true;
+        // Populate user workSchedule
+        if (workSchedule) {
+          workSchedule.Work_Schedule_Days__r.forEach((day) => {
+            let obj = {
+              id: day.Id,
+              day: day.Day_of_Week__c,
+              dayNumber: day.Day_of_Week_Number__c,
+              hours: day.Hours__c
+            };
+
+            this.userWorkSchedule.push(obj);
+          });
+
+          const todayNumber = new Date().getDay();
+          this.expectedWorkHours = this.handleWorkScheduleDayHours(todayNumber);
         }
 
-        // Check if there are no entries or breaks and display the modal and not the calendar
-        if (
-          !result?.timeSheet?.TimeSheetEntries &&
-          result.resourceAbsences.length === 0
-        ) {
-          this.isLoading = false;
-          this.showNoEntriesModal = true;
-          this.isTimeSheetSubmittedOrApproved = true;
+        if (timeSheet) {
+          // Check if the TimeSheet is submitted or approved
+          if (
+            timeSheet.timeSheet.Status === "Submitted" ||
+            timeSheet.timeSheet.Status === "Approved"
+          ) {
+            this.isTimeSheetSubmittedOrApproved = true;
+          }
 
-          const calendarEl = this.template.querySelector("div.fullcalendar");
+          // Check if there are no entries or breaks and display the modal and not the calendar
+          if (
+            timeSheet.timeSheet.TimeSheetEntries &&
+            timeSheet.resourceAbsences.length === 0
+          ) {
+            console.log("no entries");
+            this.isLoading = false;
+            this.showNoEntriesModal = true;
+            this.isTimeSheetSubmittedOrApproved = false;
 
-          calendarEl.classList.add("hide");
-        }
+            const calendarEl = this.template.querySelector("div.fullcalendar");
 
-        if (result.timeSheet) {
-          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
-          this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
-          this.kmAmount = result.timeSheet.Total_KM__c || 0;
-          this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours =
-            parseFloat(
-              (result.timeSheet.Total_Break_Time__c / 60).toFixed(2)
-            ) || 0;
-        }
+            calendarEl.classList.add("hide");
+          }
 
-        // Get the Break record type ID
-        if (result.resourceAbsences[0]?.RecordTypeId) {
-          this.breakRecordTypeId = result.resourceAbsences[0].RecordTypeId;
-        } else {
-          getBreakRecordTypeId()
-            .then((result) => {
-              console.log("breakRecordTypeId", result);
-              this.breakRecordTypeId = result;
-            })
-            .catch((error) => {
-              console.error("Error:", error);
+          if (timeSheet.timeSheet) {
+            this.workHours = timeSheet.timeSheet.Total_Normal_Hours__c || 0;
+            this.travelHours = timeSheet.timeSheet.Total_Travel_Time__c || 0;
+            this.kmAmount = timeSheet.timeSheet.Total_KM__c || 0;
+            this.totalHours = timeSheet.timeSheet.Total_Hours__c || 0;
+            this.totalBreakHours =
+              Number(
+                (timeSheet.timeSheet.Total_Break_Time__c / 60).toFixed(2)
+              ) || 0;
+          }
+
+          // Get the Break record type ID
+          if (timeSheet.resourceAbsences[0]?.RecordTypeId) {
+            this.breakRecordTypeId = timeSheet.resourceAbsences[0].RecordTypeId;
+          } else {
+            getBreakRecordTypeId()
+              .then((result) => {
+                console.log("breakRecordTypeId", result);
+                this.breakRecordTypeId = result;
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          }
+
+          if (timeSheet.timeSheet?.StartDate) {
+            this.startDate = timeSheet.timeSheet.StartDate;
+          }
+
+          if (timeSheet.timeSheet?.EndDate) {
+            this.endDate = timeSheet.timeSheet.EndDate;
+
+            // Convert to a Date object
+            let dateObj = new Date(this.endDate);
+
+            // Extract day, month, and year
+            let day = dateObj.getDate();
+            let month = dateObj.getMonth() + 1;
+            let year = dateObj.getFullYear();
+
+            this.date = `${day}-${month}-${year}`;
+
+            //Get today's date in DD-MM-YYYY format
+            const today = new Date();
+            const todayDay = today.getDate();
+            const todayMonth = today.getMonth() + 1;
+            const todayYear = today.getFullYear();
+            this.todayFormatted = `${todayDay}-${todayMonth}-${todayYear}`;
+
+            if (this.date === this.todayFormatted) {
+              this.isFurtherButtonDisabled = true;
+            }
+          }
+
+          // Initialize back button state
+          if (this.date) {
+            let [day, month, year] = this.date.split("-");
+            const currentDate = new Date(year, month - 1, day);
+            const today = new Date();
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(today.getDate() - 30);
+
+            if (currentDate <= thirtyDaysAgo) {
+              this.isBackButtonDisabled = true;
+            }
+          }
+
+          if (timeSheet.timeSheet?.Mileage_Entries__r) {
+            this.mileageEntries = [...timeSheet.timeSheet.Mileage_Entries__r];
+
+            // Reset arrays before populating
+            this.inMileageEntries = [];
+            this.outMileageEntries = [];
+            this.otherMileageEntries = [];
+
+            this.mileageEntries.forEach((entry) => {
+              // Out mileage: Starting at Customer OR Ending at Home
+              if (
+                entry.Starting_Location_Type__c === "Customer" ||
+                entry.Ending_Location_Type__c === "Home"
+              ) {
+                this.outMileageEntries.push(entry);
+              }
+              // In mileage: Starting at Home OR Ending at Customer
+              else if (
+                entry.Starting_Location_Type__c === "Home" ||
+                entry.Ending_Location_Type__c === "Customer"
+              ) {
+                this.inMileageEntries.push(entry);
+              }
+              // Other mileage: Both locations are Depot/Other
+              else if (
+                (entry.Starting_Location_Type__c === "Depot" ||
+                  entry.Starting_Location_Type__c === "Other") &&
+                (entry.Ending_Location_Type__c === "Depot" ||
+                  entry.Ending_Location_Type__c === "Other")
+              ) {
+                this.otherMileageEntries.push(entry);
+              }
             });
-        }
-
-        if (result.timeSheet?.StartDate) {
-          this.startDate = result.timeSheet.StartDate;
-        }
-
-        if (result.timeSheet?.EndDate) {
-          this.endDate = result.timeSheet.EndDate;
-
-          // Convert to a Date object
-          let dateObj = new Date(this.endDate);
-
-          // Extract day, month, and year
-          let day = dateObj.getDate();
-          let month = dateObj.getMonth() + 1;
-          let year = dateObj.getFullYear();
-
-          this.date = `${day}-${month}-${year}`;
-
-          //Get today's date in DD-MM-YYYY format
-          const today = new Date();
-          const todayDay = today.getDate();
-          const todayMonth = today.getMonth() + 1;
-          const todayYear = today.getFullYear();
-          this.todayFormatted = `${todayDay}-${todayMonth}-${todayYear}`;
-
-          if (this.date === this.todayFormatted) {
-            this.isFurtherButtonDisabled = true;
           }
-        }
 
-        // Initialize back button state
-        if (this.date) {
-          let [day, month, year] = this.date.split("-");
-          const currentDate = new Date(year, month - 1, day);
-          const today = new Date();
-          const thirtyDaysAgo = new Date();
-          thirtyDaysAgo.setDate(today.getDate() - 30);
+          if (timeSheet.timeSheet?.TimeSheetEntries) {
+            // Get the end date from the TimeSheet
+            const endDate = timeSheet.timeSheet.EndDate;
 
-          if (currentDate <= thirtyDaysAgo) {
-            this.isBackButtonDisabled = true;
+            // Track earliest and latest times
+            let earliestTime = null;
+            let latestTime = null;
+
+            timeSheet.timeSheet.TimeSheetEntries.forEach((entry) => {
+              //Get the date from each timesheet entry and compare to the TimeSheet's end date
+              const entryEndDate = new Date(entry.EndTime);
+              const onlyDate = entryEndDate.toISOString().split("T")[0];
+
+              if (onlyDate === endDate) {
+                // Add the entry to the timeSheetEntries array as the end date matches the TimeSheet's end date
+                this.timeSheetEntries.push(entry);
+
+                // Track earliest and latest times
+                const startTime = new Date(entry.StartTime);
+                const endTime = new Date(entry.EndTime);
+
+                if (!earliestTime || startTime < earliestTime) {
+                  earliestTime = startTime;
+                }
+                if (!latestTime || endTime > latestTime) {
+                  latestTime = endTime;
+                }
+              }
+            });
           }
+
+          if (
+            timeSheet.resourceAbsences &&
+            timeSheet.resourceAbsences.length > 0
+          ) {
+            this.resourceAbsences = [...timeSheet.resourceAbsences];
+          }
+
+          this.initializeCalendar();
+          this.isLoading = false;
         }
-
-        if (result.timeSheet?.Mileage_Entries__r) {
-          this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
-
-          // Reset arrays before populating
-          this.inMileageEntries = [];
-          this.outMileageEntries = [];
-          this.otherMileageEntries = [];
-
-          this.mileageEntries.forEach((entry) => {
-            // Out mileage: Starting at Customer OR Ending at Home
-            if (
-              entry.Starting_Location_Type__c === "Customer" ||
-              entry.Ending_Location_Type__c === "Home"
-            ) {
-              this.outMileageEntries.push(entry);
-            }
-            // In mileage: Starting at Home OR Ending at Customer
-            else if (
-              entry.Starting_Location_Type__c === "Home" ||
-              entry.Ending_Location_Type__c === "Customer"
-            ) {
-              this.inMileageEntries.push(entry);
-            }
-            // Other mileage: Both locations are Depot/Other
-            else if (
-              (entry.Starting_Location_Type__c === "Depot" ||
-                entry.Starting_Location_Type__c === "Other") &&
-              (entry.Ending_Location_Type__c === "Depot" ||
-                entry.Ending_Location_Type__c === "Other")
-            ) {
-              this.otherMileageEntries.push(entry);
-            }
-          });
-        }
-
-        if (result.timeSheet?.TimeSheetEntries) {
-          // Get the end date from the TimeSheet
-          const endDate = result.timeSheet.EndDate;
-
-          // Track earliest and latest times
-          let earliestTime = null;
-          let latestTime = null;
-
-          result.timeSheet.TimeSheetEntries.forEach((entry) => {
-            //Get the date from each timesheet entry and compare to the TimeSheet's end date
-            const entryEndDate = new Date(entry.EndTime);
-            const onlyDate = entryEndDate.toISOString().split("T")[0];
-
-            if (onlyDate === endDate) {
-              // Add the entry to the timeSheetEntries array as the end date matches the TimeSheet's end date
-              this.timeSheetEntries.push(entry);
-
-              // Track earliest and latest times
-              const startTime = new Date(entry.StartTime);
-              const endTime = new Date(entry.EndTime);
-
-              if (!earliestTime || startTime < earliestTime) {
-                earliestTime = startTime;
-              }
-              if (!latestTime || endTime > latestTime) {
-                latestTime = endTime;
-              }
-            }
-          });
-        }
-
-        if (result.resourceAbsences && result.resourceAbsences.length > 0) {
-          this.resourceAbsences = [...result.resourceAbsences];
-        }
-
-        this.initializeCalendar();
-        this.isLoading = false;
       })
       .catch((error) => {
-        console.error("Error:", error.message);
+        console.log("error:", JSON.stringify(error.message));
         this.isLoading = false;
       });
   }
@@ -788,10 +807,10 @@ export default class TimeSheetCalendar extends LightningElement {
     // Remove all existing events
     this.calendar.removeAllEvents();
 
-    //Get todays date in DD-MM-YYYY format
+    //Get todays date in DD-MM-YYYY format with consistent padding
     const today = new Date();
-    const dayToday = today.getDate();
-    const monthToday = today.getMonth() + 1;
+    const dayToday = today.getDate().toString().padStart(2, "0");
+    const monthToday = (today.getMonth() + 1).toString().padStart(2, "0");
     const yearToday = today.getFullYear();
     const todayFormatted = `${dayToday}-${monthToday}-${yearToday}`;
 
@@ -802,7 +821,7 @@ export default class TimeSheetCalendar extends LightningElement {
     // Add one day
     dateObj.setDate(dateObj.getDate() + 1);
 
-    // Format back to DD-MM-YYYY string
+    // Format back to DD-MM-YYYY string with consistent padding
     let newDay = dateObj.getDate().toString().padStart(2, "0");
     let newMonth = (dateObj.getMonth() + 1).toString().padStart(2, "0");
     let newYear = dateObj.getFullYear();
@@ -922,6 +941,10 @@ export default class TimeSheetCalendar extends LightningElement {
         calendarEl.classList.add("hide");
         this.isTimeSheetSubmittedOrApproved = true;
       });
+
+    // Get the day number (0-6) of the new date
+    const dateNumber = dateObj.getDay();
+    this.expectedWorkHours = this.handleWorkScheduleDayHours(dateNumber);
   }
 
   /**
@@ -936,6 +959,7 @@ export default class TimeSheetCalendar extends LightningElement {
     this.resourceAbsences = [];
     this.mileageEntries = [];
 
+    this.expectedWorkHours = 0;
     this.workHours = 0;
     this.travelHours = 0;
     this.kmAmount = 0;
@@ -952,51 +976,28 @@ export default class TimeSheetCalendar extends LightningElement {
     let [day, month, year] = this.date.split("-");
     let dateObj = new Date(year, month - 1, day);
 
-    // Get today's date
-    const today = new Date();
-
-    // Calculate the date 30 days ago
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(today.getDate() - 30);
-
-    // Check if going back one more day would exceed the 30-day limit
-    const nextDate = new Date(dateObj);
-    nextDate.setDate(nextDate.getDate() - 1);
-
-    if (nextDate < thirtyDaysAgo) {
-      // Don't allow going back further than 30 days
-      this.isBackButtonDisabled = true;
-      this.isLoading = false;
-    }
-
     // Subtract one day
     dateObj.setDate(dateObj.getDate() - 1);
 
-    // Format back to DD-MM-YYYY string
+    // Format back to DD-MM-YYYY string with consistent padding
     let newDay = dateObj.getDate().toString().padStart(2, "0");
     let newMonth = (dateObj.getMonth() + 1).toString().padStart(2, "0");
     let newYear = dateObj.getFullYear();
 
     this.date = `${newDay}-${newMonth}-${newYear}`;
 
-    // Check if we're at today's date (for further button)
-    const dayToday = today.getDate();
-    const monthToday = today.getMonth() + 1;
+    // Get today's date in DD-MM-YYYY format with consistent padding
+    const today = new Date();
+    const dayToday = today.getDate().toString().padStart(2, "0");
+    const monthToday = (today.getMonth() + 1).toString().padStart(2, "0");
     const yearToday = today.getFullYear();
     const todayFormatted = `${dayToday}-${monthToday}-${yearToday}`;
 
+    // Check if we're at today's date (for further button)
     if (this.date === todayFormatted) {
       this.isFurtherButtonDisabled = true;
     } else {
       this.isFurtherButtonDisabled = false;
-    }
-
-    // Check if we're approaching the 30-day limit
-    const currentDate = new Date(newYear, newMonth - 1, newDay);
-    if (currentDate <= thirtyDaysAgo) {
-      this.isBackButtonDisabled = true;
-    } else {
-      this.isBackButtonDisabled = false;
     }
 
     getTimeSheetByResourceAndDate({
@@ -1109,6 +1110,10 @@ export default class TimeSheetCalendar extends LightningElement {
         calendarEl.classList.add("hide");
         this.isTimeSheetSubmittedOrApproved = true;
       });
+
+    console.log("this.date:", this.date);
+    console.log("todayFormatted:", todayFormatted);
+    this.expectedWorkHours = this.handleWorkScheduleDayHours(dateObj.getDay());
   }
 
   ////////////////////////////////////////////////////////////////
@@ -1481,7 +1486,8 @@ export default class TimeSheetCalendar extends LightningElement {
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+          this.totalBreakHours =
+            Number((result.timeSheet.Total_Break_Time__c / 60).toFixed(2)) || 0;
         }
 
         // Re-populate all data arrays
@@ -1636,6 +1642,20 @@ export default class TimeSheetCalendar extends LightningElement {
 
   handleMaxChange(event) {
     this.maxValue = parseFloat(event.target.value);
+  }
+
+  handleWorkScheduleDayHours(dateNumber) {
+    const todayNumber = dateNumber;
+
+    const today = this.userWorkSchedule.find(
+      (day) => day.dayNumber === todayNumber
+    );
+
+    if (today) {
+      return today.hours;
+    }
+
+    return 0;
   }
 
   // Getters for displaying selected times

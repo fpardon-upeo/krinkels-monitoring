@@ -55,6 +55,15 @@
         <fields>NAME</fields>
         <relatedList>Work_Schedule_Day__c.Work_Schedule__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>RelatedRecord</fields>
+        <fields>ResourceType</fields>
+        <fields>IsActive</fields>
+        <fields>LastModifiedBy</fields>
+        <fields>LastModifiedDate</fields>
+        <relatedList>ServiceResource.Work_Schedule__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

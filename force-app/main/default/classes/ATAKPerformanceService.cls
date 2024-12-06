@@ -1,6 +1,49 @@
 /**
- * Created by fpardon on 18/11/2024.
- */
+* ATAKPerformanceService handles the preparation and sending of performance data to ATAK.
+* The following business rules are applied:
+*
+* TIMESHEET ENTRY FILTERING RULES:
+* 1. Depot Visits:
+*    - Depot work at start of day: Filtered out until first production work
+*    - Depot work in middle of day: Treated as normal work and included
+*    - Depot work at end of day: Filtered out after last production work
+*
+* 2. Travel Time (RT):
+*    - First travel to first customer: Included
+*    - Travel between customers: Included
+*    - Travel between customer and depot (mid-day): Included
+*    - Travel from last customer: Filtered out
+*
+* 3. Work Time (HR):
+*    - All production work: Included
+*    - Depot work before first customer: Filtered out
+*    - Depot work between customers: Included
+*    - Depot work after last customer: Filtered out
+*
+* 4. Winter Service:
+*    - When Starting_Allowance_Winter_Service__c = true on an entry:
+*      - Original entry included with original code (HR/RT)
+*      - Additional entry created with code 'P'
+*    - Requires Work Order's Asset to be linked to 'Winter Maintenance' Product
+*
+* MILEAGE RULES:
+* - All mileage entries are included
+* - Mileage is linked to customer project (not depot)
+* - Starting mileage linked to first customer project
+* - Ending mileage linked to last customer project
+*
+* MATERIAL CONSUMPTION RULES:
+* - All material entries included
+* - Uses type 'E' for equipment
+* - Uses 'MU' as quantity registration unit
+* - Quantities formatted with 2 decimal places
+*
+* DATA TRANSFORMATION:
+* - Dates formatted as: YYYYMMDD
+* - Timestamps formatted as: YYYYMMDDHHmmss
+* - Quantities for 'P' code are always '1'
+* - Project codes taken from Asset.ATAK_Project__r.SubProject_ATAK__c
+*/
 
 public with sharing class ATAKPerformanceService {
 
@@ -14,9 +57,81 @@ public with sharing class ATAKPerformanceService {
     **/
 
     public static Integer syncATAKPerformanceData(String tsId) {
-        ATAKPerformanceWrapper wrapper = prepareATAKPerformanceData(tsId);
-        Integer statusCode = sendATAKPerformanceData(wrapper);
-        return statusCode;
+        TimeSheet ts = [
+                SELECT Id, ServiceResourceId, ServiceResource.RelatedRecord.Department
+                FROM Timesheet WHERE Id = :tsId
+        ];
+
+        String department = ts.ServiceResource.RelatedRecord.Department;
+
+        if(department == 'Indoor - Billing plan'){
+            ATAKPerformanceWrapper wrapper = prepareATAKPerformanceDataIndoor(tsId);
+            Integer statusCode = sendATAKPerformanceData(wrapper);
+            return statusCode;
+        } else {
+            ATAKPerformanceWrapper wrapper = prepareATAKPerformanceData(tsId);
+            Integer statusCode = sendATAKPerformanceData(wrapper);
+            return statusCode;
+        }
+    }
+
+
+    /**
+     * @description: This method prepares the ATAK performance data for a timesheet
+     * @param tsId - TimeSheet record Id
+     * @return ATAKPerformanceWrapper object
+     */
+
+    public static ATAKPerformanceWrapper prepareATAKPerformanceDataIndoor(String tsId) {
+
+        TimeSheet ts = [
+                SELECT Id, ServiceResource.RelatedRecord.ATAK_Code__c, ServiceResourceId
+                FROM Timesheet WHERE Id = :tsId
+        ];
+
+        List<TimeSheetEntry> tsEntries = [
+                SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
+                        WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
+                        Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
+                FROM TimeSheetEntry WHERE TimesheetId = :tsId
+                ORDER BY StartTime ASC
+        ];
+
+        ATAKPerformanceWrapper wrapper = new ATAKPerformanceWrapper();
+        wrapper.personnelcode_writer = ts.ServiceResource.RelatedRecord.ATAK_Code__c; //The one who writes the timesheet, can log for other users
+        List<ATAKPerformanceWrapper.Data> dataList = new List<ATAKPerformanceWrapper.Data>();
+
+        // Create a list of work order ids so we can get the subproject of the first and last work order
+        // We also need this list to get the materials
+        List<String> workOrderIds = new List<String>();
+
+        // Loop through the timesheet entries and add them to the data list
+        for(TimeSheetEntry timeSheetEntry : tsEntries){
+            ATAKPerformanceWrapper.Data data = personnelTimesheetToATAKPerformance(timeSheetEntry);
+            dataList.add(data);
+            workOrderIds.add(timeSheetEntry.WorkOrderId);
+            if(timeSheetEntry.Starting_Allowance_Winter_Service__c == true){
+                //Add a second entry for the winter service, Code_ATAK_Limbus__c = "P"
+                timeSheetEntry.Code_ATAK_Limbus__c = 'P';
+                ATAKPerformanceWrapper.Data dataWinter = personnelTimesheetToATAKPerformance(timeSheetEntry);
+                dataList.add(dataWinter);
+            }
+        }
+
+        List<ProductConsumed> materials = [
+                SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
+                FROM ProductConsumed WHERE WorkOrderId IN :workOrderIds
+        ];
+
+        // Loop through the materials and add them to the data list
+        for(ProductConsumed material : materials){
+            ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
+            dataList.add(data);
+        }
+
+        wrapper.data = dataList;
+        return wrapper;
+
     }
 
 
@@ -49,20 +164,36 @@ public with sharing class ATAKPerformanceService {
         //Loop through the entries from first to last. The first entries with Work Type "Internal Depot" before we get to a work type with "Production Time" need to be removed
 
         Boolean foundProductionTime = false;
+        Boolean firstTravelSkipped = false;
         List<TimeSheetEntry> tsEntriesFiltered = new List<TimeSheetEntry>();
+        TimeSheetEntry lastTravelEntry = null;
+
+        // First pass - filter from start and identify last travel
         for(TimeSheetEntry tsEntry : tsEntries){
             if(tsEntry.WorkOrder.WorkType.Name == 'Production Work'){
                 foundProductionTime = true;
+
+                // If this is our first RT after finding production work, skip it
+                if(!firstTravelSkipped && tsEntry.Code_ATAK_Limbus__c == 'RT'){
+                    firstTravelSkipped = true;
+                    continue;
+                }
+
+                // Track potential last travel entry
+                if(tsEntry.Code_ATAK_Limbus__c == 'RT'){
+                    lastTravelEntry = tsEntry;
+                } else {
+                    // If we found a non-travel entry, clear the last travel
+                    lastTravelEntry = null;
+                }
             }
+
             if(foundProductionTime == true){
                 tsEntriesFiltered.add(tsEntry);
             }
         }
 
-        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntriesFiltered: ' + tsEntriesFiltered);
-        System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntriesFiltered: ' + tsEntriesFiltered.size());
-
-        //Now we need to tsEntriesFiltered from last to first. The first entries with Work Type "Internal Depot" before we get to a work type with "Production Time" need to be removed
+        //Second pass - filter from end
         foundProductionTime = false;
         List<TimeSheetEntry> tsEntriesFilteredFinal = new List<TimeSheetEntry>();
         for(Integer i = tsEntriesFiltered.size() - 1; i >= 0; i--){
@@ -73,6 +204,12 @@ public with sharing class ATAKPerformanceService {
             if(foundProductionTime == true){
                 tsEntriesFilteredFinal.add(tsEntry);
             }
+        }
+
+        // Now handle last travel time
+        TimeSheetEntry lastEntry = tsEntriesFilteredFinal.isEmpty() ? null : tsEntriesFilteredFinal[0];
+        if(lastEntry != null && lastEntry.Code_ATAK_Limbus__c == 'RT') {
+            tsEntriesFilteredFinal.remove(0);
         }
 
         System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntriesFilteredFinal: ' + tsEntriesFilteredFinal);

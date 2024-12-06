@@ -54,6 +54,7 @@
         <members>MapsGeoCodeService</members>
         <members>MapsGeoCodeWrapper</members>
         <members>MapsGeoCodeWrapperTest</members>
+        <members>MaterialPickupController</members>
         <members>MileageEntryProjectLinkService</members>
         <members>MileageEntryProjectLinkServiceTest</members>
         <members>MultiSelectFlowValues</members>
@@ -97,6 +98,7 @@
         <members>TimeSheetMapController</members>
         <members>TimeSheetProjectLinkService</members>
         <members>TimeSheetProjectLinkServiceTest</members>
+        <members>ValidationService</members>
         <members>WeatherService</members>
         <members>WorkOrderLocationBatch</members>
         <members>WorkOrderLocationQueueable</members>
@@ -143,6 +145,7 @@
         <name>AppMenu</name>
     </types>
     <types>
+        <members>Quote.Approval_Process_Quote_Over_5000</members>
         <members>TimeSheet.Time_Sheet_Approval_Process</members>
         <name>ApprovalProcess</name>
     </types>
@@ -580,7 +583,11 @@
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
         <members>ProductConsumed.Van_Crew__c</members>
+        <members>ProductItem.Is_Temporary__c</members>
         <members>ProductItem.Van_Crew__c</members>
+        <members>ProductRequired.ATAK_Code__c</members>
+        <members>ProductRequired.Action_Required__c</members>
+        <members>ProductRequired.Material_Item__c</members>
         <members>Quote.ATAK_Project__c</members>
         <members>Quote.Amount__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
@@ -669,6 +676,7 @@
         <members>ServiceAppointment.Recurrence__c</members>
         <members>ServiceAppointment.Scheduling_Notification_Send__c</members>
         <members>ServiceAppointment.Travel_is_Done__c</members>
+        <members>ServiceAppointment.Work_Type_Name__c</members>
         <members>ServiceContract.Accepted__c</members>
         <members>ServiceContract.Additional_Work_in_scope_contract__c</members>
         <members>ServiceContract.Allocation_Key__c</members>
@@ -712,6 +720,7 @@
         <members>ServiceResource.FSL__Priority__c</members>
         <members>ServiceResource.FSL__Travel_Speed__c</members>
         <members>ServiceResource.Service_Resource_Is_Van__c</members>
+        <members>ServiceResource.Work_Schedule__c</members>
         <members>ServiceResourceCapacity.FSL__HoursInUse__c</members>
         <members>ServiceResourceCapacity.FSL__Last_Updated_Epoch__c</members>
         <members>ServiceResourceCapacity.FSL__MinutesUsed__c</members>
@@ -760,6 +769,7 @@
         <members>TimeSheetEntry.Total_Hours_Minus_Pauses__c</members>
         <members>TimeSheetEntry.Total_Hours__c</members>
         <members>TimeSheetEntry.Urgent_Intervention__c</members>
+        <members>TimeSheetEntry.Work_Type__c</members>
         <members>TimeSheetEntry.Working_Time__c</members>
         <members>TimeSlot.FSL__Designated_Work_Boolean_Fields__c</members>
         <members>TimeSlot.FSL__Slot_Color__c</members>
@@ -1093,6 +1103,7 @@
         <members>unfiled$public/Email_First_Response</members>
         <members>unfiled$public/LeadsNewassignmentnotificationSAMPLE</members>
         <members>unfiled$public/LeadsWebtoLeademailresponseSAMPLE</members>
+        <members>unfiled$public/Quote_Approval_EN_1733415638553</members>
         <members>unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE</members>
         <members>unfiled$public/SUPPORTCaseescalationnotificationSAMPLE</members>
         <members>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</members>
@@ -1242,6 +1253,7 @@
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
+        <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1255,6 +1267,7 @@
         <members>Service_Appointment_Scheduled_Customer_Notification</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Appointment_Time_Sheet_Automations</members>
+        <members>Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
@@ -1313,6 +1326,7 @@
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
+        <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1326,6 +1340,7 @@
         <members>Service_Appointment_Scheduled_Customer_Notification</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Appointment_Time_Sheet_Automations</members>
+        <members>Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
@@ -1727,6 +1742,7 @@
         <members>locationMonitor</members>
         <members>locationPassport</members>
         <members>locationServiceUtil</members>
+        <members>materialPickup</members>
         <members>nextAppointmentPicker</members>
         <members>prepareContractForNextYear</members>
         <members>readyForValidation</members>
@@ -2064,6 +2080,7 @@
         <members>WorkOrderLineItem.SendEmail</members>
         <members>WorkStep.Check_In</members>
         <members>WorkStep.Checkout</members>
+        <members>WorkStep.Material_Pickup</members>
         <members>WorkStep.Set_Service_Status</members>
         <members>WorkStep.Take_After_Work_Photos</members>
         <members>WorkStep.Take_Before_Work_Photos</members>
@@ -2782,6 +2799,8 @@
         <name>UiFormatSpecificationSet</name>
     </types>
     <types>
+        <members>Location_Visit__c.Internal_Visitor_Mandatory</members>
+        <members>Location_Visit__c.Planned_Date</members>
         <members>Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start</members>
         <members>Opportunity.Maximum_Value_for_Quick_Quote</members>
         <members>Quote.ATAK_Project_needed_for_Closed</members>
@@ -2822,15 +2841,20 @@
     </types>
     <types>
         <members>Case</members>
+        <members>Quote</members>
         <members>TimeSheet</members>
         <name>Workflow</name>
     </types>
     <types>
+        <members>Quote.Quote_Approval_Email_Notification</members>
         <members>TimeSheet.Time_Sheet_Not_Approved_Notification</members>
         <name>WorkflowAlert</name>
     </types>
     <types>
         <members>Case.ChangePriorityToHigh</members>
+        <members>Quote.Quote_Approved</members>
+        <members>Quote.Quote_In_Review</members>
+        <members>Quote.Quote_Rejected</members>
         <members>TimeSheet.Flag_as_Review_Needed</members>
         <members>TimeSheet.Update_to_Approved</members>
         <members>TimeSheet.Update_to_Needs_Review</members>

@@ -2,9 +2,9 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 2681
+Metadatas: 2705
 
-<details><summary>ApexClass (104)</summary>
+<details><summary>ApexClass (106)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -56,6 +56,7 @@ Metadatas: 2681
   • MapsGeoCodeService<br/>
   • MapsGeoCodeWrapper<br/>
   • MapsGeoCodeWrapperTest<br/>
+  • MaterialPickupController<br/>
   • MileageEntryProjectLinkService<br/>
   • MileageEntryProjectLinkServiceTest<br/>
   • MultiSelectFlowValues<br/>
@@ -98,6 +99,7 @@ Metadatas: 2681
   • TimeSheetMapController<br/>
   • TimeSheetProjectLinkService<br/>
   • TimeSheetProjectLinkServiceTest<br/>
+  • ValidationService<br/>
   • WeatherService<br/>
   • WorkOrderLocationBatch<br/>
   • WorkOrderLocationQueueable<br/>
@@ -143,7 +145,8 @@ Metadatas: 2681
   • Salesforce1<br/>
 </details>
 
-<details><summary>ApprovalProcess (1)</summary>
+<details><summary>ApprovalProcess (2)</summary>
+  • Quote.Approval_Process_Quote_Over_5000<br/>
   • TimeSheet.Time_Sheet_Approval_Process<br/>
 </details>
 
@@ -236,7 +239,7 @@ Metadatas: 2681
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (588)</summary>
+<details><summary>CustomField (595)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -581,7 +584,11 @@ Metadatas: 2681
   • Product2.Service_Package_Product__c<br/>
   • Product2.Work_Type__c<br/>
   • ProductConsumed.Van_Crew__c<br/>
+  • ProductItem.Is_Temporary__c<br/>
   • ProductItem.Van_Crew__c<br/>
+  • ProductRequired.ATAK_Code__c<br/>
+  • ProductRequired.Action_Required__c<br/>
+  • ProductRequired.Material_Item__c<br/>
   • Quote.ATAK_Project__c<br/>
   • Quote.Amount__c<br/>
   • Reorder_Work_Step__e.Next_Number__c<br/>
@@ -670,6 +677,7 @@ Metadatas: 2681
   • ServiceAppointment.Recurrence__c<br/>
   • ServiceAppointment.Scheduling_Notification_Send__c<br/>
   • ServiceAppointment.Travel_is_Done__c<br/>
+  • ServiceAppointment.Work_Type_Name__c<br/>
   • ServiceContract.Accepted__c<br/>
   • ServiceContract.Additional_Work_in_scope_contract__c<br/>
   • ServiceContract.Allocation_key__c<br/>
@@ -707,6 +715,7 @@ Metadatas: 2681
   • ServiceResource.FSL__Priority__c<br/>
   • ServiceResource.FSL__Travel_Speed__c<br/>
   • ServiceResource.Service_Resource_Is_Van__c<br/>
+  • ServiceResource.Work_Schedule__c<br/>
   • ServiceResourceCapacity.FSL__HoursInUse__c<br/>
   • ServiceResourceCapacity.FSL__Last_Updated_Epoch__c<br/>
   • ServiceResourceCapacity.FSL__MinutesUsed__c<br/>
@@ -755,6 +764,7 @@ Metadatas: 2681
   • TimeSheetEntry.Total_Hours_Minus_Pauses__c<br/>
   • TimeSheetEntry.Total_Hours__c<br/>
   • TimeSheetEntry.Urgent_Intervention__c<br/>
+  • TimeSheetEntry.Work_Type__c<br/>
   • TimeSheetEntry.Working_Time__c<br/>
   • TimeSlot.FSL__Designated_Work_Boolean_Fields__c<br/>
   • TimeSlot.FSL__Slot_Color__c<br/>
@@ -1209,7 +1219,7 @@ Metadatas: 2681
   • EmailToSalesforce<br/>
 </details>
 
-<details><summary>EmailTemplate (38)</summary>
+<details><summary>EmailTemplate (39)</summary>
   • CustomerNotifications<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215<br/>
@@ -1224,6 +1234,7 @@ Metadatas: 2681
   • unfiled$public/Email_First_Response<br/>
   • unfiled$public/LeadsNewassignmentnotificationSAMPLE<br/>
   • unfiled$public/LeadsWebtoLeademailresponseSAMPLE<br/>
+  • unfiled$public/Quote_Approval_EN_1733415638553<br/>
   • unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE<br/>
   • unfiled$public/SUPPORTCaseescalationnotificationSAMPLE<br/>
   • unfiled$public/SUPPORTNewassignmentnotificationSAMPLE<br/>
@@ -1354,7 +1365,7 @@ Metadatas: 2681
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (62)</summary>
+<details><summary>Flow (64)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1370,6 +1381,7 @@ Metadatas: 2681
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
+  • Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1381,6 +1393,7 @@ Metadatas: 2681
   • Service_Appointment_Scheduled_Customer_Notification<br/>
   • Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Service_Appointment_Time_Sheet_Automations<br/>
+  • Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related<br/>
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
@@ -1419,7 +1432,7 @@ Metadatas: 2681
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (62)</summary>
+<details><summary>FlowDefinition (64)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1435,6 +1448,7 @@ Metadatas: 2681
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
+  • Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1446,6 +1460,7 @@ Metadatas: 2681
   • Service_Appointment_Scheduled_Customer_Notification<br/>
   • Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue<br/>
   • Service_Appointment_Time_Sheet_Automations<br/>
+  • Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related<br/>
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
@@ -1764,7 +1779,7 @@ Metadatas: 2681
   • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (102)</summary>
+<details><summary>LightningComponentBundle (103)</summary>
   • addressSearch<br/>
   • checkIn<br/>
   • colorsPicker<br/>
@@ -1841,6 +1856,7 @@ Metadatas: 2681
   • locationMonitor<br/>
   • locationPassport<br/>
   • locationServiceUtil<br/>
+  • materialPickup<br/>
   • nextAppointmentPicker<br/>
   • prepareContractForNextYear<br/>
   • readyForValidation<br/>
@@ -2004,7 +2020,7 @@ Metadatas: 2681
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (164)</summary>
+<details><summary>QuickAction (165)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -2165,6 +2181,7 @@ Metadatas: 2681
   • WorkOrderLineItem.SendEmail<br/>
   • WorkStep.Check_In<br/>
   • WorkStep.Checkout<br/>
+  • WorkStep.Material_Pickup<br/>
   • WorkStep.Set_Service_Status<br/>
   • WorkStep.Take_After_Work_Photos<br/>
   • WorkStep.Take_Before_Work_Photos<br/>
@@ -2879,7 +2896,9 @@ Metadatas: 2681
   • Type<br/>
 </details>
 
-<details><summary>ValidationRule (22)</summary>
+<details><summary>ValidationRule (24)</summary>
+  • Location_Visit__c.Internal_Visitor_Mandatory<br/>
+  • Location_Visit__c.Planned_Date<br/>
   • Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start<br/>
   • Opportunity.Maximum_Value_for_Quick_Quote<br/>
   • Quote.ATAK_Project_needed_for_Closed<br/>
@@ -2918,17 +2937,22 @@ Metadatas: 2681
   • WorkOrder.Waste_Depot_Visit<br/>
 </details>
 
-<details><summary>Workflow (2)</summary>
+<details><summary>Workflow (3)</summary>
   • Case<br/>
+  • Quote<br/>
   • TimeSheet<br/>
 </details>
 
-<details><summary>WorkflowAlert (1)</summary>
+<details><summary>WorkflowAlert (2)</summary>
+  • Quote.Quote_Approval_Email_Notification<br/>
   • TimeSheet.Time_Sheet_Not_Approved_Notification<br/>
 </details>
 
-<details><summary>WorkflowFieldUpdate (4)</summary>
+<details><summary>WorkflowFieldUpdate (7)</summary>
   • Case.ChangePriorityToHigh<br/>
+  • Quote.Quote_Approved<br/>
+  • Quote.Quote_In_Review<br/>
+  • Quote.Quote_Rejected<br/>
   • TimeSheet.Flag_as_Review_Needed<br/>
   • TimeSheet.Update_to_Approved<br/>
   • TimeSheet.Update_to_Needs_Review<br/>

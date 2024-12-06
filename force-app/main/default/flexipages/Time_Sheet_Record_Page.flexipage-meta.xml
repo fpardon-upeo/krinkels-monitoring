@@ -106,9 +106,6 @@
                             <value>Code_ATAK_Limbus__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Total_Hours__c</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Total_Hours_Minus_Breaks_and_Pauses__c</value>
                         </valueListItems>
                         <valueListItems>
@@ -116,6 +113,9 @@
                         </valueListItems>
                         <valueListItems>
                             <value>WorkOrder</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Work_Type__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

@@ -19,6 +19,10 @@
                 <behavior>Edit</behavior>
                 <field>SerialNumber</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Is_Temporary__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

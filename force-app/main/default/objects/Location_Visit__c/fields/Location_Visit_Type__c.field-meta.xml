@@ -11,14 +11,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Contract opportunity visit</fullName>
+                <fullName>Contract opportunity</fullName>
                 <default>false</default>
-                <label>Contract opportunity visit</label>
+                <label>Contract opportunity</label>
             </value>
             <value>
-                <fullName>Additional work opportunity visit</fullName>
+                <fullName>Additional work opportunity</fullName>
                 <default>false</default>
-                <label>Additional work opportunity visit</label>
+                <label>Additional work opportunity</label>
             </value>
             <value>
                 <fullName>Baseline measurement</fullName>
