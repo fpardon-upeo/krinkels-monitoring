@@ -90,6 +90,11 @@ public with sharing class TimeSheetController {
   @AuraEnabled
   public static Work_Schedule__c getWorkSchedule(String resourceId) {
     try {
+      // Validate input
+      if (String.isBlank(resourceId)) {
+        return null;
+      }
+
       List<ServiceResource> resources = [
         SELECT Work_Schedule__c
         FROM ServiceResource
@@ -113,7 +118,10 @@ public with sharing class TimeSheetController {
         WHERE Id = :resources[0].Work_Schedule__c
       ];
     } catch (Exception e) {
-      throw new AuraHandledException(e.getMessage());
+      // Log the error for debugging
+      System.debug('Error in getWorkSchedule: ' + e.getMessage());
+      // Return null instead of throwing exception
+      return null;
     }
   }
 
@@ -206,7 +214,8 @@ public with sharing class TimeSheetController {
               Ending_Mileage__c,
               Starting_Location_Type__c,
               Ending_Location_Type__c,
-              Calculated_Mileage__c
+              Calculated_Mileage__c,
+              Type__c
             FROM Mileage_Entries__r
           )
         FROM TimeSheet

@@ -4,6 +4,15 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Lookup to the operational account that was visited</description>
     <label>Operational Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Operational_Account</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Location Visits</relationshipLabel>
     <relationshipName>Location_Visits</relationshipName>

@@ -1,6 +1,5 @@
 import { LightningElement, api, track } from "lwc";
 import getMileageEntries from "@salesforce/apex/TimeSheetController.getMileageEntries";
-import getResourceId from "@salesforce/apex/TimeSheetController.getResourceId";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class ShowMileageScreen extends LightningElement {
@@ -10,7 +9,6 @@ export default class ShowMileageScreen extends LightningElement {
   @track mileageEntries = [];
   @track inMileageEntries = [];
   @track outMileageEntries = [];
-  @track otherMileageEntries = [];
   @track mileageEntryIdBeingHandled;
 
   // Modal states
@@ -48,14 +46,6 @@ export default class ShowMileageScreen extends LightningElement {
         );
       });
 
-    getResourceId({ timeSheetId: this.recordId })
-      .then((result) => {
-        console.log("result of resourceId", result);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-
     // Automatically show the mileage info modal
     this.showMileageInfoModal = true;
   }
@@ -64,26 +54,12 @@ export default class ShowMileageScreen extends LightningElement {
     // Reset arrays before populating
     this.inMileageEntries = [];
     this.outMileageEntries = [];
-    this.otherMileageEntries = [];
 
     this.mileageEntries.forEach((entry) => {
-      if (
-        entry.Starting_Location_Type__c === "Customer" ||
-        entry.Ending_Location_Type__c === "Home"
-      ) {
-        this.outMileageEntries.push(entry);
-      } else if (
-        entry.Starting_Location_Type__c === "Home" ||
-        entry.Ending_Location_Type__c === "Customer"
-      ) {
+      if (entry.Type__c === "Starting") {
         this.inMileageEntries.push(entry);
-      } else if (
-        (entry.Starting_Location_Type__c === "Depot" ||
-          entry.Starting_Location_Type__c === "Other") &&
-        (entry.Ending_Location_Type__c === "Depot" ||
-          entry.Ending_Location_Type__c === "Other")
-      ) {
-        this.otherMileageEntries.push(entry);
+      } else if (entry.Type__c === "Ending") {
+        this.outMileageEntries.push(entry);
       }
     });
   }
@@ -142,7 +118,6 @@ export default class ShowMileageScreen extends LightningElement {
   }
 
   handleSuccessMileageEntryNew(event) {
-
     console.log("event.detail", event.detail);
     console.log("event", event);
 

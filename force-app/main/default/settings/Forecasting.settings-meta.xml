@@ -245,6 +245,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -277,12 +301,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -349,6 +385,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -357,8 +399,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -525,6 +570,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -557,12 +626,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -629,6 +710,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -637,8 +724,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -809,6 +899,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -841,12 +955,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -914,6 +1040,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -922,8 +1054,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1090,6 +1225,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1122,12 +1281,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -1194,6 +1365,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1202,8 +1379,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1374,6 +1554,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1406,12 +1610,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -1479,6 +1695,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1487,8 +1709,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1655,6 +1880,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1687,12 +1936,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -1759,6 +2020,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -1767,8 +2034,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1939,6 +2209,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1971,12 +2265,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2044,6 +2350,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2052,8 +2364,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2220,6 +2535,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2252,12 +2591,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2324,6 +2675,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2332,8 +2689,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2504,6 +2864,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2536,12 +2920,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2609,6 +3005,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2617,8 +3019,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2785,6 +3190,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2817,12 +3246,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2889,6 +3330,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -2897,8 +3344,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3069,6 +3519,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -3101,12 +3575,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -3174,6 +3660,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -3182,8 +3674,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3350,6 +3845,30 @@
             <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9q</field>
+            <label>ATAK Project</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9g</field>
+            <label>ATAK Project Needed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9W</field>
+            <label>ATAK Project Request Comment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9l</field>
+            <label>ATAK Project Request Priority</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9R</field>
+            <label>ATAK Project Request Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9M</field>
+            <label>ATAK Project Suggested  Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -3382,12 +3901,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U8i</field>
+            <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cGh</field>
             <label>Service Contract</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7SEJ</field>
+            <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7U9H</field>
+            <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -3454,6 +3985,12 @@
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NKF00000Q75fP</field>
+            <field>00NKF00000Q7U9q</field>
+            <field>00NKF00000Q7U9g</field>
+            <field>00NKF00000Q7U9W</field>
+            <field>00NKF00000Q7U9l</field>
+            <field>00NKF00000Q7U9R</field>
+            <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
             <field>00N07000002R5Hu</field>
             <field>00N07000002R5Hw</field>
@@ -3462,8 +3999,11 @@
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00NKF00000Q7U8i</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
+            <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>

@@ -72,6 +72,33 @@
               class="action-button brand"
               ontouchstart={handleTouchStart}
               ontouchend={handleTouchEnd}
+              onclick={handleSimplyClose}
+            >
+              <span class="button-icon">
+                <lightning-icon
+                  icon-name="utility:check"
+                  size="medium"
+                  class="slds-m-bottom_small"
+                >
+                </lightning-icon>
+              </span>
+              <span class="button-text">
+                <span class="button-label">
+                  {labels.AppointmentPicker_Simple_Checkout_Button_Text}
+                </span>
+                <span class="button-description">
+                  {labels.AppointmentPicker_Simple_Checkout_Button_Sub_Text}
+                </span>
+              </span>
+            </button>
+          </div>
+          <div
+            class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons"
+          >
+            <button
+              class="action-button brand"
+              ontouchstart={handleTouchStart}
+              ontouchend={handleTouchEnd}
               onclick={handleTakeBreakClicked}
             >
               <span class="button-icon">

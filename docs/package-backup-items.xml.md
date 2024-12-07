@@ -2,7 +2,7 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 2705
+Metadatas: 2743
 
 <details><summary>ApexClass (106)</summary>
   • ATAKMaterialService<br/>
@@ -171,6 +171,10 @@ Metadatas: 2705
   • LEXTHEMINGKrinkelsTheme<br/>
 </details>
 
+<details><summary>BriefcaseDefinition (1)</summary>
+  • SFS<br/>
+</details>
+
 <details><summary>BusinessProcess (3)</summary>
   • Opportunity.B2B Tender<br/>
   • Opportunity.Public Tender<br/>
@@ -187,7 +191,7 @@ Metadatas: 2705
   • Internal Community<br/>
 </details>
 
-<details><summary>CompactLayout (21)</summary>
+<details><summary>CompactLayout (22)</summary>
   • ATAK_Personnel__c.Custom_Compact_Layout<br/>
   • Account.Account_Compact_Layout<br/>
   • Account.Commercial_Account<br/>
@@ -202,6 +206,7 @@ Metadatas: 2705
   • Location_Visit__c.Location_Visit<br/>
   • Opportunity.Opportunity<br/>
   • ProductConsumed.Product_Consumed_Compact_Layout<br/>
+  • Quote.Quote_Compact_Layout<br/>
   • SD_Import__c.Custom_Compact_Layout<br/>
   • ServiceAppointment.Service_Appointment_Compact_Layout<br/>
   • ServiceContract.Service_Contract<br/>
@@ -239,7 +244,7 @@ Metadatas: 2705
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (595)</summary>
+<details><summary>CustomField (606)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -544,6 +549,12 @@ Metadatas: 2705
   • Mileage_Entry__c.Type__c<br/>
   • Mileage_Entry__c.Work_Order__c<br/>
   • Operator_Created_Event__e.User_Id__c<br/>
+  • Opportunity.ATAK_Project_Needed__c<br/>
+  • Opportunity.ATAK_Project_Request_Comment__c<br/>
+  • Opportunity.ATAK_Project_Request_Priority__c<br/>
+  • Opportunity.ATAK_Project_Request_Status__c<br/>
+  • Opportunity.ATAK_Project_Suggested_Name__c<br/>
+  • Opportunity.ATAK_Projectx__c<br/>
   • Opportunity.Amount__c<br/>
   • Opportunity.Budget_Confirmed__c<br/>
   • Opportunity.Discovery_Completed__c<br/>
@@ -553,8 +564,11 @@ Metadatas: 2705
   • Opportunity.Price_Request_Priority__c<br/>
   • Opportunity.Price_Request_Status__c<br/>
   • Opportunity.Pricing_Request_Needed__c<br/>
+  • Opportunity.Quick_Quote__c<br/>
   • Opportunity.ROI_Analysis_Completed__c<br/>
   • Opportunity.Service_Contract__c<br/>
+  • Opportunity.Service_Package__c<br/>
+  • Opportunity.Type_Code__c<br/>
   • Opportunity.Work_Size__c<br/>
   • Opportunity__hd.Amount__c<br/>
   • Opportunity__hd.CloseDate__c<br/>
@@ -589,7 +603,6 @@ Metadatas: 2705
   • ProductRequired.ATAK_Code__c<br/>
   • ProductRequired.Action_Required__c<br/>
   • ProductRequired.Material_Item__c<br/>
-  • Quote.ATAK_Project__c<br/>
   • Quote.Amount__c<br/>
   • Reorder_Work_Step__e.Next_Number__c<br/>
   • Reorder_Work_Step__e.Work_Order_Id__c<br/>
@@ -691,6 +704,8 @@ Metadatas: 2705
   • ServiceContract.Indexation_Date__c<br/>
   • ServiceContract.Indexation_Formula__c<br/>
   • ServiceContract.Indexation_Needed__c<br/>
+  • ServiceContract.Invoice_Type_MS__c<br/>
+  • ServiceContract.Invoice_Type__c<br/>
   • ServiceContract.Is_New__c<br/>
   • ServiceContract.Link_contract__c<br/>
   • ServiceContract.Location_Type__c<br/>
@@ -781,6 +796,7 @@ Metadatas: 2705
   • User_Settings__c.Time_Frame__c<br/>
   • WorkOrder.After_Work_Comments__c<br/>
   • WorkOrder.Before_Work_Comments__c<br/>
+  • WorkOrder.Billed__c<br/>
   • WorkOrder.Check_In_At_Work_Reference__c<br/>
   • WorkOrder.Check_In_At_Work_Required__c<br/>
   • WorkOrder.Checkin_Deviation_KM__c<br/>
@@ -1219,8 +1235,10 @@ Metadatas: 2705
   • EmailToSalesforce<br/>
 </details>
 
-<details><summary>EmailTemplate (39)</summary>
+<details><summary>EmailTemplate (43)</summary>
+  • Approvals<br/>
   • CustomerNotifications<br/>
+  • CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215<br/>
   • CustomerNotifications/Notification_Planned_WO_NL_1731941363446<br/>
@@ -1234,7 +1252,10 @@ Metadatas: 2705
   • unfiled$public/Email_First_Response<br/>
   • unfiled$public/LeadsNewassignmentnotificationSAMPLE<br/>
   • unfiled$public/LeadsWebtoLeademailresponseSAMPLE<br/>
-  • unfiled$public/Quote_Approval_EN_1733415638553<br/>
+  • unfiled$public/Quote_Approval_Email<br/>
+  • unfiled$public/Quote_Approval_Request_Email<br/>
+  • unfiled$public/Quote_Rejection_Email<br/>
+  • unfiled$public/Quote_Submission_Confirmation_Email<br/>
   • unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE<br/>
   • unfiled$public/SUPPORTCaseescalationnotificationSAMPLE<br/>
   • unfiled$public/SUPPORTNewassignmentnotificationSAMPLE<br/>
@@ -1257,7 +1278,6 @@ Metadatas: 2705
   • unfiled$public/Sample_Promotion<br/>
   • unfiled$public/Sample_Reconnecting<br/>
   • unfiled$public/Sample_ScheduleMeeting<br/>
-  • unfiled$public/Service_Report_Email_1731064851557<br/>
   • unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354<br/>
 </details>
 
@@ -1365,10 +1385,11 @@ Metadatas: 2705
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (64)</summary>
+<details><summary>Flow (65)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
+  • Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • ContractLineItem_After_Save_Add_Default_Financial_Accounts<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
@@ -1378,10 +1399,10 @@ Metadatas: 2705
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote<br/>
+  • Opportunity_Screen_Flow_ATAK_Project_Request<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
-  • Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1432,10 +1453,11 @@ Metadatas: 2705
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (64)</summary>
+<details><summary>FlowDefinition (65)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
+  • Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • ContractLineItem_After_Save_Add_Default_Financial_Accounts<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
@@ -1445,10 +1467,10 @@ Metadatas: 2705
   • Mileage_Entry_Before_Save<br/>
   • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote<br/>
+  • Opportunity_Screen_Flow_ATAK_Project_Request<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
-  • Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1514,13 +1536,15 @@ Metadatas: 2705
   • OpportunityRevenueScheduleDate<br/>
 </details>
 
-<details><summary>GlobalValueSet (9)</summary>
+<details><summary>GlobalValueSet (11)</summary>
   • Codes_ATAK_Limbus<br/>
+  • Invoice_Type<br/>
   • LMRA_Type<br/>
   • Language<br/>
   • Mileage_Location_Type<br/>
   • Priority<br/>
   • Region<br/>
+  • Request_Status<br/>
   • Service_package_type<br/>
   • Type_of_Waste<br/>
   • Work_Type<br/>
@@ -2020,7 +2044,7 @@ Metadatas: 2705
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (165)</summary>
+<details><summary>QuickAction (166)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -2049,6 +2073,7 @@ Metadatas: 2705
   • NewOpportunity<br/>
   • NewTask<br/>
   • Opportunity.Price_Request<br/>
+  • Opportunity.Request_ATAK_Project<br/>
   • Quote.SendEmail<br/>
   • ServiceAppointment.Check_Out<br/>
   • ServiceAppointment.FSL__Change_Status<br/>
@@ -2225,7 +2250,7 @@ Metadatas: 2705
   • bpost<br/>
 </details>
 
-<details><summary>Report (127)</summary>
+<details><summary>Report (134)</summary>
   • DashboardReportsAdoption/<br/>
   • DashboardReportsAdoption/UsageActivitiesCompleted<br/>
   • EBotR_v3/<br/>
@@ -2233,6 +2258,13 @@ Metadatas: 2705
   • EBotR_v5/<br/>
   • EinsteinBotReports/<br/>
   • EinsteinBotReports_v2/<br/>
+  • InvoicingDashboard/<br/>
+  • InvoicingDashboard/Subscription_All_Current_Month_EzP<br/>
+  • InvoicingDashboard/Subscription_All_Last_0oH<br/>
+  • InvoicingDashboard/Subscription_Completed_Previous_Month_xfG<br/>
+  • InvoicingDashboard/Subscription_Invoicing_WDx<br/>
+  • InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa<br/>
+  • InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE<br/>
   • Sales_Marketing_Reports/<br/>
   • Sales_Marketing_Reports/Closed_Lost_by_Reason<br/>
   • Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner<br/>
@@ -2355,11 +2387,14 @@ Metadatas: 2705
   • unfiled$public/flow_screen_prebuilt_report<br/>
 </details>
 
-<details><summary>ReportType (12)</summary>
+<details><summary>ReportType (15)</summary>
+  • Accounts_with_Work_Orders<br/>
+  • Assets_with_Work_Orders_and_Service_Appointments<br/>
   • Maintenance_Plans_with_Maintenance_Assets<br/>
   • Opportunities_with_Historical_Trending<br/>
   • Service_Appointments<br/>
   • Service_Appointments_with_Service_Resources<br/>
+  • Service_Contracts_with_Work_Orders<br/>
   • Vans_with_Material_Items<br/>
   • Work_Orders<br/>
   • flow_orchestration_log_ootb_crt_two_four_eight<br/>
@@ -2896,12 +2931,13 @@ Metadatas: 2705
   • Type<br/>
 </details>
 
-<details><summary>ValidationRule (24)</summary>
+<details><summary>ValidationRule (25)</summary>
   • Location_Visit__c.Internal_Visitor_Mandatory<br/>
   • Location_Visit__c.Planned_Date<br/>
   • Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start<br/>
   • Opportunity.Maximum_Value_for_Quick_Quote<br/>
   • Quote.ATAK_Project_needed_for_Closed<br/>
+  • Quote.Maximum_Value_for_Quick_Quote<br/>
   • ResourceAbsence.FSL__Absence_Color_HEX_Format<br/>
   • ResourceAbsence.FSL__startShouldPrecedeEnd<br/>
   • ServiceAppointment.FSL__Dont_allow_scheduled_or_dispatched<br/>
@@ -2943,13 +2979,18 @@ Metadatas: 2705
   • TimeSheet<br/>
 </details>
 
-<details><summary>WorkflowAlert (2)</summary>
-  • Quote.Quote_Approval_Email_Notification<br/>
+<details><summary>WorkflowAlert (4)</summary>
+  • Quote.Quote_Approval_Notification<br/>
+  • Quote.Quote_Rejection_Notification<br/>
+  • Quote.Quote_Submission_Confirmation_Notification<br/>
   • TimeSheet.Time_Sheet_Not_Approved_Notification<br/>
 </details>
 
-<details><summary>WorkflowFieldUpdate (7)</summary>
+<details><summary>WorkflowFieldUpdate (10)</summary>
   • Case.ChangePriorityToHigh<br/>
+  • Quote.QuoteApproved<br/>
+  • Quote.QuoteInReview<br/>
+  • Quote.QuoteRejected<br/>
   • Quote.Quote_Approved<br/>
   • Quote.Quote_In_Review<br/>
   • Quote.Quote_Rejected<br/>

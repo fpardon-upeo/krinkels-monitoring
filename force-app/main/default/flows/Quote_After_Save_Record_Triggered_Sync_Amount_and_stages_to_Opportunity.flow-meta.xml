@@ -190,9 +190,15 @@
         </connector>
         <filterFormula>{!$Record.IsSyncing} = True
 &amp;&amp;
-(ISNEW()
+(
+ISNEW()
 ||
-(ISCHANGED({!$Record.Amount__c})||ISCHANGED({!$Record.Status})))</filterFormula>
+(
+ISCHANGED({!$Record.Amount__c})
+||
+ISCHANGED({!$Record.Status})
+)
+)</filterFormula>
         <object>Quote</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

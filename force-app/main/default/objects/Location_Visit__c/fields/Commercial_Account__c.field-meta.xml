@@ -4,6 +4,15 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Lookup to the Commmercial account that requested this site visit for a potential customer</description>
     <label>Commercial Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Commercial_Account</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Location Visits</relationshipLabel>
     <relationshipName>Location_Visits1</relationshipName>

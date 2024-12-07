@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BriefcaseDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <briefcaseRules>
+        <briefcaseRuleFilters>
+            <filterOperator>g</filterOperator>
+            <filterSeqNumber>1</filterSeqNumber>
+            <filterValue>2024-10-31T23:00:00Z</filterValue>
+            <targetEntityField>CreatedDate</targetEntityField>
+        </briefcaseRuleFilters>
+        <filterLogic>1</filterLogic>
+        <isAscendingOrder>false</isAscendingOrder>
+        <orderBy>SystemModstamp</orderBy>
+        <queryScope>Everything</queryScope>
+        <recordLimit>500</recordLimit>
+        <relatedRules>
+            <briefcaseRuleFilters>
+                <filterOperator>g</filterOperator>
+                <filterSeqNumber>1</filterSeqNumber>
+                <filterValue>2024-10-31T23:00:00Z</filterValue>
+                <targetEntityField>CreatedDate</targetEntityField>
+            </briefcaseRuleFilters>
+            <filterLogic>1</filterLogic>
+            <isAscendingOrder>false</isAscendingOrder>
+            <queryScope>Everything</queryScope>
+            <recordLimit>500</recordLimit>
+            <relationshipField>Work_Schedule__c</relationshipField>
+            <relationshipType>ParentToChild</relationshipType>
+            <targetEntity>Work_Schedule_Day__c</targetEntity>
+        </relatedRules>
+        <targetEntity>Work_Schedule__c</targetEntity>
+    </briefcaseRules>
+    <isActive>true</isActive>
+    <masterLabel>SFS</masterLabel>
+</BriefcaseDefinition>

@@ -168,6 +168,10 @@
         <name>BrandingSet</name>
     </types>
     <types>
+        <members>SFS</members>
+        <name>BriefcaseDefinition</name>
+    </types>
+    <types>
         <members>Opportunity.B2B Tender</members>
         <members>Opportunity.Public Tender</members>
         <members>Opportunity.Quick Quote</members>
@@ -198,6 +202,7 @@
         <members>Location_Visit__c.Location_Visit</members>
         <members>Opportunity.Opportunity</members>
         <members>ProductConsumed.Product_Consumed_Compact_Layout</members>
+        <members>Quote.Quote_Compact_Layout</members>
         <members>SD_Import__c.Custom_Compact_Layout</members>
         <members>ServiceAppointment.Service_Appointment_Compact_Layout</members>
         <members>ServiceContract.Service_Contract</members>
@@ -540,6 +545,12 @@
         <members>Mileage_Entry__c.Type__c</members>
         <members>Mileage_Entry__c.Work_Order__c</members>
         <members>Operator_Created_Event__e.User_Id__c</members>
+        <members>Opportunity.ATAK_Project_Needed__c</members>
+        <members>Opportunity.ATAK_Project_Request_Comment__c</members>
+        <members>Opportunity.ATAK_Project_Request_Priority__c</members>
+        <members>Opportunity.ATAK_Project_Request_Status__c</members>
+        <members>Opportunity.ATAK_Project_Suggested_Name__c</members>
+        <members>Opportunity.ATAK_Projectx__c</members>
         <members>Opportunity.Amount__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
@@ -549,8 +560,11 @@
         <members>Opportunity.Price_Request_Priority__c</members>
         <members>Opportunity.Price_Request_Status__c</members>
         <members>Opportunity.Pricing_Request_Needed__c</members>
+        <members>Opportunity.Quick_Quote__c</members>
         <members>Opportunity.ROI_Analysis_Completed__c</members>
         <members>Opportunity.Service_Contract__c</members>
+        <members>Opportunity.Service_Package__c</members>
+        <members>Opportunity.Type_Code__c</members>
         <members>Opportunity.Work_Size__c</members>
         <members>Opportunity__hd.Amount__c</members>
         <members>Opportunity__hd.CloseDate__c</members>
@@ -585,7 +599,6 @@
         <members>ProductRequired.ATAK_Code__c</members>
         <members>ProductRequired.Action_Required__c</members>
         <members>ProductRequired.Material_Item__c</members>
-        <members>Quote.ATAK_Project__c</members>
         <members>Quote.Amount__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
         <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
@@ -687,6 +700,8 @@
         <members>ServiceContract.Indexation_Date__c</members>
         <members>ServiceContract.Indexation_Formula__c</members>
         <members>ServiceContract.Indexation_Needed__c</members>
+        <members>ServiceContract.Invoice_Type_MS__c</members>
+        <members>ServiceContract.Invoice_Type__c</members>
         <members>ServiceContract.Is_New__c</members>
         <members>ServiceContract.Link_contract__c</members>
         <members>ServiceContract.Location_Type__c</members>
@@ -777,6 +792,7 @@
         <members>User_Settings__c.Time_Frame__c</members>
         <members>WorkOrder.After_Work_Comments__c</members>
         <members>WorkOrder.Before_Work_Comments__c</members>
+        <members>WorkOrder.Billed__c</members>
         <members>WorkOrder.Check_In_At_Work_Reference__c</members>
         <members>WorkOrder.Check_In_At_Work_Required__c</members>
         <members>WorkOrder.Checkin_Deviation_KM__c</members>
@@ -1216,7 +1232,9 @@
         <name>EmailServicesFunction</name>
     </types>
     <types>
+        <members>Approvals</members>
         <members>CustomerNotifications</members>
+        <members>CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917</members>
         <members>CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179</members>
         <members>CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215</members>
         <members>CustomerNotifications/Notification_Planned_WO_NL_1731941363446</members>
@@ -1230,7 +1248,10 @@
         <members>unfiled$public/Email_First_Response</members>
         <members>unfiled$public/LeadsNewassignmentnotificationSAMPLE</members>
         <members>unfiled$public/LeadsWebtoLeademailresponseSAMPLE</members>
-        <members>unfiled$public/Quote_Approval_EN_1733415638553</members>
+        <members>unfiled$public/Quote_Approval_Email</members>
+        <members>unfiled$public/Quote_Approval_Request_Email</members>
+        <members>unfiled$public/Quote_Rejection_Email</members>
+        <members>unfiled$public/Quote_Submission_Confirmation_Email</members>
         <members>unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE</members>
         <members>unfiled$public/SUPPORTCaseescalationnotificationSAMPLE</members>
         <members>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</members>
@@ -1253,7 +1274,6 @@
         <members>unfiled$public/Sample_Promotion</members>
         <members>unfiled$public/Sample_Reconnecting</members>
         <members>unfiled$public/Sample_ScheduleMeeting</members>
-        <members>unfiled$public/Service_Report_Email_1731064851557</members>
         <members>unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354</members>
         <name>EmailTemplate</name>
     </types>
@@ -1365,6 +1385,7 @@
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Account_Screen_Flow_Add_Extra_Work</members>
+        <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
@@ -1374,10 +1395,10 @@
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
+        <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
-        <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1432,6 +1453,7 @@
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Account_Screen_Flow_Add_Extra_Work</members>
+        <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
@@ -1441,10 +1463,10 @@
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
+        <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
-        <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1512,11 +1534,13 @@
     </types>
     <types>
         <members>Codes_ATAK_Limbus</members>
+        <members>Invoice_Type</members>
         <members>LMRA_Type</members>
         <members>Language</members>
         <members>Mileage_Location_Type</members>
         <members>Priority</members>
         <members>Region</members>
+        <members>Request_Status</members>
         <members>Service_package_type</members>
         <members>Type_of_Waste</members>
         <members>Work_Type</members>
@@ -2045,6 +2069,7 @@
         <members>NewOpportunity</members>
         <members>NewTask</members>
         <members>Opportunity.Price_Request</members>
+        <members>Opportunity.Request_ATAK_Project</members>
         <members>Quote.SendEmail</members>
         <members>ServiceAppointment.Check_Out</members>
         <members>ServiceAppointment.FSL__Change_Status</members>
@@ -2229,6 +2254,13 @@
         <members>EBotR_v5/</members>
         <members>EinsteinBotReports/</members>
         <members>EinsteinBotReports_v2/</members>
+        <members>InvoicingDashboard/</members>
+        <members>InvoicingDashboard/Subscription_All_Current_Month_EzP</members>
+        <members>InvoicingDashboard/Subscription_All_Last_0oH</members>
+        <members>InvoicingDashboard/Subscription_Completed_Previous_Month_xfG</members>
+        <members>InvoicingDashboard/Subscription_Invoicing_WDx</members>
+        <members>InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa</members>
+        <members>InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE</members>
         <members>Sales_Marketing_Reports/</members>
         <members>Sales_Marketing_Reports/Closed_Lost_by_Reason</members>
         <members>Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner</members>
@@ -2352,10 +2384,13 @@
         <name>Report</name>
     </types>
     <types>
+        <members>Accounts_with_Work_Orders</members>
+        <members>Assets_with_Work_Orders_and_Service_Appointments</members>
         <members>Maintenance_Plans_with_Maintenance_Assets</members>
         <members>Opportunities_with_Historical_Trending</members>
         <members>Service_Appointments</members>
         <members>Service_Appointments_with_Service_Resources</members>
+        <members>Service_Contracts_with_Work_Orders</members>
         <members>Vans_with_Material_Items</members>
         <members>Work_Orders</members>
         <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
@@ -2898,6 +2933,7 @@
         <members>Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start</members>
         <members>Opportunity.Maximum_Value_for_Quick_Quote</members>
         <members>Quote.ATAK_Project_needed_for_Closed</members>
+        <members>Quote.Maximum_Value_for_Quick_Quote</members>
         <members>ResourceAbsence.FSL__Absence_Color_HEX_Format</members>
         <members>ResourceAbsence.FSL__startShouldPrecedeEnd</members>
         <members>ServiceAppointment.FSL__Dont_allow_scheduled_or_dispatched</members>
@@ -2940,12 +2976,17 @@
         <name>Workflow</name>
     </types>
     <types>
-        <members>Quote.Quote_Approval_Email_Notification</members>
+        <members>Quote.Quote_Approval_Notification</members>
+        <members>Quote.Quote_Rejection_Notification</members>
+        <members>Quote.Quote_Submission_Confirmation_Notification</members>
         <members>TimeSheet.Time_Sheet_Not_Approved_Notification</members>
         <name>WorkflowAlert</name>
     </types>
     <types>
         <members>Case.ChangePriorityToHigh</members>
+        <members>Quote.QuoteApproved</members>
+        <members>Quote.QuoteInReview</members>
+        <members>Quote.QuoteRejected</members>
         <members>Quote.Quote_Approved</members>
         <members>Quote.Quote_In_Review</members>
         <members>Quote.Quote_Rejected</members>

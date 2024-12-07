@@ -3,8 +3,8 @@
     <fullName>Maximum_Value_for_Quick_Quote</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-RecordType.DeveloperName=&apos;Quick_Quote&apos;  ,
-Amount &gt; 5000
+ RecordType.DeveloperName= &apos;Quick_Quote&apos;    ,
+ Amount__c  &gt; 5000
 )</errorConditionFormula>
     <errorDisplayField>Amount</errorDisplayField>
     <errorMessage>You can&apos;t make a quick quote with a value superior to 5000€</errorMessage>

@@ -7,23 +7,6 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>Requested</fullName>
-                <default>false</default>
-                <label>Requested</label>
-            </value>
-            <value>
-                <fullName>Ongoing</fullName>
-                <default>false</default>
-                <label>Ongoing</label>
-            </value>
-            <value>
-                <fullName>Delivered</fullName>
-                <default>false</default>
-                <label>Delivered</label>
-            </value>
-        </valueSetDefinition>
+        <valueSetName>Request_Status</valueSetName>
     </valueSet>
 </CustomField>

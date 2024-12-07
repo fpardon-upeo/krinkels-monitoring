@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Notification - Crew on its way (ENG)</name>
+    <pageDevName>Notification_Crew_on_its_way_ENG</pageDevName>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>Our team is on its way!</subject>
+    <textOnly>Dear customer,
+
+Good news! Our operators are on their way to [Address/Location] to carry out your planned intervention. Today we are picking up the following work for you:
+
+ - {{{WorkOrder.Product__c}}}
+
+ - Location: 
+ - {{{WorkOrder.Address}}}
+
+Do you have any questions or is there anything we need to know beforehand? Feel free to let us know via the contact details in the email signature below.
+
+Kind regards
+
+{{{WorkOrder.Name_Contract_Manager__c}}}
+
+{{{WorkOrder.Mobile_Contract_Manager__c}}}
+
+Please consider the environment before printing this email
+
+Krinkels nv-RPR Brussel – BE0821 547 933 - Rue Emile Pathéstraat 410 1190 Bruxelles/Brussel</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

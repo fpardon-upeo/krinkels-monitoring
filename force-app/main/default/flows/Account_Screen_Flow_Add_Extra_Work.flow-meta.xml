@@ -202,6 +202,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Amount__c</field>
+            <value>
+                <elementReference>Unit_Price</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>CloseDate</field>
             <value>
                 <elementReference>Expected_Work_Date</elementReference>
@@ -264,6 +270,12 @@
             <field>AccountId</field>
             <value>
                 <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Amount__c</field>
+            <value>
+                <elementReference>Unit_Price</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

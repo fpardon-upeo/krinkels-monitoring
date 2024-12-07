@@ -3,22 +3,25 @@
     <active>true</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
-        <type>creator</type>
-    </allowedSubmitters>
-    <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
+        <field>QuoteNumber</field>
         <field>Name</field>
         <field>Amount__c</field>
-        <field>Opportunity</field>
+        <field>Account</field>
         <field>Description</field>
+        <field>Opportunity</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
         <approvalActions>
             <action>
-                <name>Quote_Approved</name>
+                <name>Quote_Approval_Notification</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>QuoteApproved</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -29,29 +32,21 @@
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Quote.Amount__c</field>
-                <operation>greaterThan</operation>
-                <value>€7,000.00</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Quote.Status</field>
-                <operation>equals</operation>
-                <value>Draft,Needs Review,In Review</value>
-            </criteriaItems>
-        </entryCriteria>
-        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
-        <label>Submit Quote</label>
-        <name>Submit_Quote</name>
+        <label>Step 1</label>
+        <name>Step_1</name>
         <rejectionActions>
             <action>
-                <name>Quote_Rejected</name>
+                <name>Quote_Rejection_Notification</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>QuoteRejected</name>
                 <type>FieldUpdate</type>
             </action>
         </rejectionActions>
     </approvalStep>
-    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <emailTemplate>unfiled$public/Quote_Approval_Request_Email</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>
             <field>Quote.Amount__c</field>
@@ -59,20 +54,20 @@
             <value>5000</value>
         </criteriaItems>
         <criteriaItems>
-            <field>Quote.Status</field>
+            <field>Opportunity.Quick_Quote__c</field>
             <operation>equals</operation>
-            <value>Needs Review</value>
+            <value>False</value>
         </criteriaItems>
     </entryCriteria>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>Quote_Approval_Email_Notification</name>
+            <name>Quote_Submission_Confirmation_Notification</name>
             <type>Alert</type>
         </action>
         <action>
-            <name>Quote_In_Review</name>
+            <name>QuoteInReview</name>
             <type>FieldUpdate</type>
         </action>
     </initialSubmissionActions>

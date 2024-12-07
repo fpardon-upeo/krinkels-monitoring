@@ -1,16 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
-        <fullName>Quote_Approval_Email_Notification</fullName>
-        <description>Quote Approval Email Notification</description>
+        <fullName>Quote_Approval_Notification</fullName>
+        <description>Quote Approval Notification</description>
         <protected>false</protected>
         <recipients>
-            <recipient>gael.butereli@krinkels.be</recipient>
-            <type>user</type>
+            <type>creator</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Quote_Approval_EN_1733415638553</template>
+        <template>unfiled$public/Quote_Approval_Email</template>
     </alerts>
+    <alerts>
+        <fullName>Quote_Rejection_Notification</fullName>
+        <description>Quote Rejection Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Rejection_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Submission_Confirmation_Notification</fullName>
+        <description>Quote Submission Confirmation Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_Submission_Confirmation_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>QuoteApproved</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Quote Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>QuoteInReview</fullName>
+        <field>Status</field>
+        <literalValue>In Review</literalValue>
+        <name>Quote In Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>QuoteRejected</fullName>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>Quote Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <fieldUpdates>
         <fullName>Quote_Approved</fullName>
         <field>Status</field>

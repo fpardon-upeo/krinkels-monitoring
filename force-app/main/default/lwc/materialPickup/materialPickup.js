@@ -250,5 +250,17 @@ export default class MaterialPickup extends LightningElement {
     this.dispatchEvent(closeAction);
   }
 
+  get disableSave(){
+    return this.materialPickupItems.length === 0;
+  }
+
+  get disableMaterialReturnPicklist(){
+    return this.temporaryMaterialsInVanOptions.length === 0;
+  }
+
+  get materialPlaceholder(){
+    return this.temporaryMaterialsInVanOptions.length === 0 ? 'No materials available' : 'Select material';
+  }
+
 
 }

@@ -192,8 +192,25 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ApprovalStatus</fieldItem>
-                <identifier>RecordApprovalStatusField</identifier>
+                <fieldItem>Record.Invoice_Type_MS__c</fieldItem>
+                <identifier>RecordInvoice_Type_MS_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Invoice_Type__c</fieldItem>
+                <identifier>RecordInvoice_Type_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
@@ -267,6 +284,23 @@
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Master Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ApprovalStatus</fieldItem>
+                <identifier>RecordApprovalStatusField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Service Contract</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>

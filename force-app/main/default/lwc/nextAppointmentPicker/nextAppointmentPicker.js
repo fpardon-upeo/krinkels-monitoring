@@ -36,6 +36,8 @@ import StartDay_Internal_Button_Text from "@salesforce/label/c.StartDay_Internal
 import AppointmentPicker_Cancel_Button from "@salesforce/label/c.AppointmentPicker_Cancel_Button";
 import AppointmentPicker_Last_Depot_Text from "@salesforce/label/c.AppointmentPicker_Last_Depot_Text";
 import AppointmentPicker_Last_Depot_Sub_Text from "@salesforce/label/c.AppointmentPicker_Last_Depot_Sub_Text";
+import AppointmentPicker_Simple_Checkout_Button_Text from "@salesforce/label/c.AppointmentPicker_Simple_Checkout_Button_Text";
+import AppointmentPicker_Simple_Checkout_Button_Sub_Text from "@salesforce/label/c.AppointmentPicker_Simple_Checkout_Button_Sub_Text";
 import { NavigationMixin } from "lightning/navigation";
 import { ToastTypes } from "c/utilsImageCapture";
 
@@ -111,7 +113,9 @@ export default class NextAppointmentPicker extends NavigationMixin(
     StartDay_Internal_Button_Text,
     AppointmentPicker_Cancel_Button,
     AppointmentPicker_Last_Depot_Text,
-    AppointmentPicker_Last_Depot_Sub_Text
+    AppointmentPicker_Last_Depot_Sub_Text,
+    AppointmentPicker_Simple_Checkout_Button_Text,
+    AppointmentPicker_Simple_Checkout_Button_Sub_Text
   };
 
   columns = [
@@ -468,6 +472,22 @@ export default class NextAppointmentPicker extends NavigationMixin(
     console.log("Take break clicked");
     this.showInitialScreen = false;
     this.showBreakForm = true;
+  }
+
+  handleSimplyClose() {
+    console.log("Simply close clicked");
+    this.setWorkStepStatus();
+    this.setCurrentServiceAppointStatus();
+    this.setParentWorkOrderStatus();
+    setTimeout(() => {
+      this[NavigationMixin.Navigate]({
+        type: "standard__webPage",
+        attributes: {
+          url: `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}`
+        }
+      });
+    }, 500);
+
   }
 
   handleSetAppointmentClicked() {

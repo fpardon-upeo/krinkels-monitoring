@@ -75,7 +75,6 @@ export default class TimeSheetCalendar extends LightningElement {
   @track mileageEntries = [];
   @track inMileageEntries = [];
   @track outMileageEntries = [];
-  @track otherMileageEntries = [];
 
   @track startDate;
   @track endDate;
@@ -112,6 +111,7 @@ export default class TimeSheetCalendar extends LightningElement {
   @track showMileageEntryEditForm = false;
   @track settingsEditModal = false;
   @track settingsNewModal = false;
+  @track showCalendar = true;
 
   @track submitTimeSheetMessage = false;
   @track showNoEntriesModal = false;
@@ -171,42 +171,45 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   connectedCallback() {
-    // Wait for DOM to be ready
+    // First load the required styles and scripts
     Promise.all([
       loadStyle(this, FullCalendarJS + "/lib/main.css"),
       loadScript(this, FullCalendarJS + "/lib/main.min.js"),
-      loadStyle(this, FullCalendarJS + "/lib/custom.css"),
-      getUserSettings({ userId: this.resourceId }),
-      getWorkSchedule({ resourceId: this.resourceId }),
-      getTimeSheet({ recordId: this.recordId })
+      loadStyle(this, FullCalendarJS + "/lib/custom.css")
     ])
-      .then(([css1, js, css2, userSettings, workSchedule, timeSheet]) => {
-        // Set user settings first
-        if (userSettings) {
-          this.user = userSettings;
-          this.minValue = userSettings.Start_Time__c / (1000 * 60 * 60);
-          this.maxValue = userSettings.End_Time__c / (1000 * 60 * 60);
+      .then(() => {
+        // Now load all data in parallel
+        return Promise.all([
+          getUserSettings({ userId: this.resourceId }),
+          getWorkSchedule({ resourceId: this.resourceId }),
+          getTimeSheet({ recordId: this.recordId })
+        ]);
+      })
 
-          console.log("user:", JSON.stringify(this.user));
+      .then(([settings, workSchedule, timeSheet]) => {
+        // Process user settings
+        if (settings) {
+          this.user = settings;
+          this.minValue = settings.Start_Time__c / (1000 * 60 * 60);
+          this.maxValue = settings.End_Time__c / (1000 * 60 * 60);
         }
 
-        // Populate user workSchedule
+        // Process work schedule
         if (workSchedule) {
           workSchedule.Work_Schedule_Days__r.forEach((day) => {
-            let obj = {
+            this.userWorkSchedule.push({
               id: day.Id,
               day: day.Day_of_Week__c,
               dayNumber: day.Day_of_Week_Number__c,
               hours: day.Hours__c
-            };
-
-            this.userWorkSchedule.push(obj);
+            });
           });
 
           const todayNumber = new Date().getDay();
           this.expectedWorkHours = this.handleWorkScheduleDayHours(todayNumber);
         }
 
+        // Process timesheet data
         if (timeSheet) {
           // Check if the TimeSheet is submitted or approved
           if (
@@ -218,13 +221,12 @@ export default class TimeSheetCalendar extends LightningElement {
 
           // Check if there are no entries or breaks and display the modal and not the calendar
           if (
-            timeSheet.timeSheet.TimeSheetEntries &&
+            !timeSheet.timeSheet.TimeSheetEntries &&
             timeSheet.resourceAbsences.length === 0
           ) {
-            console.log("no entries");
             this.isLoading = false;
-            this.showNoEntriesModal = true;
             this.isTimeSheetSubmittedOrApproved = false;
+            this.showNoEntriesModal = true;
 
             const calendarEl = this.template.querySelector("div.fullcalendar");
 
@@ -237,9 +239,7 @@ export default class TimeSheetCalendar extends LightningElement {
             this.kmAmount = timeSheet.timeSheet.Total_KM__c || 0;
             this.totalHours = timeSheet.timeSheet.Total_Hours__c || 0;
             this.totalBreakHours =
-              Number(
-                (timeSheet.timeSheet.Total_Break_Time__c / 60).toFixed(2)
-              ) || 0;
+              (timeSheet.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
           }
 
           // Get the Break record type ID
@@ -267,16 +267,18 @@ export default class TimeSheetCalendar extends LightningElement {
             let dateObj = new Date(this.endDate);
 
             // Extract day, month, and year
-            let day = dateObj.getDate();
-            let month = dateObj.getMonth() + 1;
+            let day = dateObj.getDate().toString().padStart(2, "0");
+            let month = (dateObj.getMonth() + 1).toString().padStart(2, "0");
             let year = dateObj.getFullYear();
 
             this.date = `${day}-${month}-${year}`;
 
             //Get today's date in DD-MM-YYYY format
             const today = new Date();
-            const todayDay = today.getDate();
-            const todayMonth = today.getMonth() + 1;
+            const todayDay = today.getDate().toString().padStart(2, "0");
+            const todayMonth = (today.getMonth() + 1)
+              .toString()
+              .padStart(2, "0");
             const todayYear = today.getFullYear();
             this.todayFormatted = `${todayDay}-${todayMonth}-${todayYear}`;
 
@@ -301,36 +303,7 @@ export default class TimeSheetCalendar extends LightningElement {
           if (timeSheet.timeSheet?.Mileage_Entries__r) {
             this.mileageEntries = [...timeSheet.timeSheet.Mileage_Entries__r];
 
-            // Reset arrays before populating
-            this.inMileageEntries = [];
-            this.outMileageEntries = [];
-            this.otherMileageEntries = [];
-
-            this.mileageEntries.forEach((entry) => {
-              // Out mileage: Starting at Customer OR Ending at Home
-              if (
-                entry.Starting_Location_Type__c === "Customer" ||
-                entry.Ending_Location_Type__c === "Home"
-              ) {
-                this.outMileageEntries.push(entry);
-              }
-              // In mileage: Starting at Home OR Ending at Customer
-              else if (
-                entry.Starting_Location_Type__c === "Home" ||
-                entry.Ending_Location_Type__c === "Customer"
-              ) {
-                this.inMileageEntries.push(entry);
-              }
-              // Other mileage: Both locations are Depot/Other
-              else if (
-                (entry.Starting_Location_Type__c === "Depot" ||
-                  entry.Starting_Location_Type__c === "Other") &&
-                (entry.Ending_Location_Type__c === "Depot" ||
-                  entry.Ending_Location_Type__c === "Other")
-              ) {
-                this.otherMileageEntries.push(entry);
-              }
-            });
+            this.processMileageEntries();
           }
 
           if (timeSheet.timeSheet?.TimeSheetEntries) {
@@ -370,13 +343,23 @@ export default class TimeSheetCalendar extends LightningElement {
           ) {
             this.resourceAbsences = [...timeSheet.resourceAbsences];
           }
-
-          this.initializeCalendar();
-          this.isLoading = false;
         }
+
+        if (timeSheet.resourceAbsences?.length > 0) {
+          this.resourceAbsences = [...timeSheet.resourceAbsences];
+        }
+
+        if (timeSheet.timeSheet?.Mileage_Entries__r) {
+          this.mileageEntries = [...timeSheet.timeSheet.Mileage_Entries__r];
+          this.processMileageEntries();
+        }
+
+        // Initialize calendar only after all data is processed
+        this.initializeCalendar();
+        this.isLoading = false;
       })
       .catch((error) => {
-        console.log("error:", JSON.stringify(error.message));
+        console.error("Error in connectedCallback:", error);
         this.isLoading = false;
       });
   }
@@ -774,6 +757,8 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   handleOpenSettings() {
+    this.handleCloseForm();
+
     if (this.user.Id) {
       this.settingsEditModal = true;
     } else {
@@ -854,7 +839,8 @@ export default class TimeSheetCalendar extends LightningElement {
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+          this.totalBreakHours =
+            (result.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
         }
 
         // Handle mileage entries
@@ -868,10 +854,13 @@ export default class TimeSheetCalendar extends LightningElement {
           !result.timeSheet?.TimeSheetEntries &&
           result.resourceAbsences.length === 0
         ) {
-          this.showNoEntriesModal = true;
           this.isLoading = false;
-          calendarEl.classList.add("hide");
+          this.showNoEntriesModal = true;
           this.isTimeSheetSubmittedOrApproved = true;
+
+          const calendarEl = this.template.querySelector("div.fullcalendar");
+
+          calendarEl.classList.add("hide");
           return;
         }
 
@@ -1022,7 +1011,8 @@ export default class TimeSheetCalendar extends LightningElement {
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours = result.timeSheet.Total_Break_Time__c / 60 || 0;
+          this.totalBreakHours =
+            (result.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
         }
 
         // Handle mileage entries
@@ -1039,6 +1029,7 @@ export default class TimeSheetCalendar extends LightningElement {
         ) {
           this.showNoEntriesModal = true;
           this.isLoading = false;
+
           calendarEl.classList.add("hide");
           this.isTimeSheetSubmittedOrApproved = true;
           return;
@@ -1111,8 +1102,6 @@ export default class TimeSheetCalendar extends LightningElement {
         this.isTimeSheetSubmittedOrApproved = true;
       });
 
-    console.log("this.date:", this.date);
-    console.log("todayFormatted:", todayFormatted);
     this.expectedWorkHours = this.handleWorkScheduleDayHours(dateObj.getDay());
   }
 
@@ -1256,36 +1245,7 @@ export default class TimeSheetCalendar extends LightningElement {
         if (result.timeSheet.Mileage_Entries__r) {
           this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
 
-          // Reset arrays before populating
-          this.inMileageEntries = [];
-          this.outMileageEntries = [];
-          this.otherMileageEntries = [];
-
-          this.mileageEntries.forEach((entry) => {
-            // Out mileage: Starting at Customer OR Ending at Home
-            if (
-              entry.Starting_Location_Type__c === "Customer" ||
-              entry.Ending_Location_Type__c === "Home"
-            ) {
-              this.outMileageEntries.push(entry);
-            }
-            // In mileage: Starting at Home OR Ending at Customer
-            else if (
-              entry.Starting_Location_Type__c === "Home" ||
-              entry.Ending_Location_Type__c === "Customer"
-            ) {
-              this.inMileageEntries.push(entry);
-            }
-            // Other mileage: Both locations are Depot/Other
-            else if (
-              (entry.Starting_Location_Type__c === "Depot" ||
-                entry.Starting_Location_Type__c === "Other") &&
-              (entry.Ending_Location_Type__c === "Depot" ||
-                entry.Ending_Location_Type__c === "Other")
-            ) {
-              this.otherMileageEntries.push(entry);
-            }
-          });
+          this.processMileageEntries();
         }
       })
       .catch((error) => {
@@ -1311,36 +1271,7 @@ export default class TimeSheetCalendar extends LightningElement {
         if (result.timeSheet.Mileage_Entries__r) {
           this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
 
-          // Reset arrays before populating
-          this.inMileageEntries = [];
-          this.outMileageEntries = [];
-          this.otherMileageEntries = [];
-
-          this.mileageEntries.forEach((entry) => {
-            // Out mileage: Starting at Customer OR Ending at Home
-            if (
-              entry.Starting_Location_Type__c === "Customer" ||
-              entry.Ending_Location_Type__c === "Home"
-            ) {
-              this.outMileageEntries.push(entry);
-            }
-            // In mileage: Starting at Home OR Ending at Customer
-            else if (
-              entry.Starting_Location_Type__c === "Home" ||
-              entry.Ending_Location_Type__c === "Customer"
-            ) {
-              this.inMileageEntries.push(entry);
-            }
-            // Other mileage: Both locations are Depot/Other
-            else if (
-              (entry.Starting_Location_Type__c === "Depot" ||
-                entry.Starting_Location_Type__c === "Other") &&
-              (entry.Ending_Location_Type__c === "Depot" ||
-                entry.Ending_Location_Type__c === "Other")
-            ) {
-              this.otherMileageEntries.push(entry);
-            }
-          });
+          this.processMileageEntries();
         }
       })
       .catch((error) => {
@@ -1362,6 +1293,40 @@ export default class TimeSheetCalendar extends LightningElement {
     // Convert slider values to Time format
     const startTime = this.convertToTime(this.minValue);
     const endTime = this.convertToTime(this.maxValue);
+
+    if (startTime === endTime) {
+      const toastEvent = new ShowToastEvent({
+        title: "Error",
+        message: "Start time and end time cannot be the same.",
+        variant: "error"
+      });
+
+      this.dispatchEvent(toastEvent);
+      return;
+    }
+
+    if (startTime > endTime) {
+      const toastEvent = new ShowToastEvent({
+        title: "Error",
+        message: "Start time cannot be greater than end time.",
+        variant: "error"
+      });
+
+      this.dispatchEvent(toastEvent);
+      return;
+    }
+
+    if (!startTime || !endTime) {
+      const toastEvent = new ShowToastEvent({
+        title: "Error",
+        message: "Start time and end time are required.",
+        variant: "error"
+      });
+
+      this.dispatchEvent(toastEvent);
+
+      return;
+    }
 
     if (type === "new") {
       createUserSettings({
@@ -1487,7 +1452,7 @@ export default class TimeSheetCalendar extends LightningElement {
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
           this.totalBreakHours =
-            Number((result.timeSheet.Total_Break_Time__c / 60).toFixed(2)) || 0;
+            (result.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
         }
 
         // Re-populate all data arrays
@@ -1573,26 +1538,12 @@ export default class TimeSheetCalendar extends LightningElement {
     //Reset mileage arrays
     this.inMileageEntries = [];
     this.outMileageEntries = [];
-    this.otherMileageEntries = [];
 
     this.mileageEntries.forEach((entry) => {
-      if (
-        entry.Starting_Location_Type__c === "Customer" ||
-        entry.Ending_Location_Type__c === "Home"
-      ) {
-        this.outMileageEntries.push(entry);
-      } else if (
-        entry.Starting_Location_Type__c === "Home" ||
-        entry.Ending_Location_Type__c === "Customer"
-      ) {
+      if (entry.Type__c === "Starting") {
         this.inMileageEntries.push(entry);
-      } else if (
-        (entry.Starting_Location_Type__c === "Depot" ||
-          entry.Starting_Location_Type__c === "Other") &&
-        (entry.Ending_Location_Type__c === "Depot" ||
-          entry.Ending_Location_Type__c === "Other")
-      ) {
-        this.otherMileageEntries.push(entry);
+      } else if (entry.Type__c === "Ending") {
+        this.outMileageEntries.push(entry);
       }
     });
   }

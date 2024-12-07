@@ -13,6 +13,32 @@
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Submit</value>
+                            <visibilityRule>
+                                <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.Opportunity.Quick_Quote__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Amount__c}</leftValue>
+                                    <operator>GT</operator>
+                                    <rightValue>5000</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Accepted</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Denied</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>SyncQuote</value>
                         </valueListItems>
                     </valueList>
@@ -107,12 +133,8 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.ATAK_Project__c</fieldItem>
-                <identifier>RecordATAK_Project__cField</identifier>
+                <fieldItem>Record.Opportunity.ATAK_Projectx__c</fieldItem>
+                <identifier>RecordOpportunityATAK_Projectx_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-6b21543c-915e-47c2-a784-e5e66cefff7e</name>
