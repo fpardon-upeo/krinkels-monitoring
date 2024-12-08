@@ -1,71 +1,16 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-approvalProcesses/Quote.Approval_Process_Quote_Over_5000.approvalProcess-meta.xml," ",ApprovalProcess Quote.Approval_Process_Quote_Over_5000,M,,log,📰
-briefcaseDefinitions/SFS.briefcaseDefinition-meta.xml,A,briefcaseDefinitions/SFS.briefcaseDefinition-meta.xml,,,log,📰
-classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
-email/Approvals.emailFolder-meta.xml,A,EmailTemplate ApprovalsFolder-meta.xml,,,log,📰
-email/CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917.email,A,EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917,,,log,📰
-email/CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917.email-meta.xml,A,EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917,,,log,📰
-email/unfiled$public/Quote_Approval_Email.email,A,EmailTemplate unfiled$public/Quote_Approval_Email,,,log,📰
-email/unfiled$public/Quote_Approval_Email.email-meta.xml,A,EmailTemplate unfiled$public/Quote_Approval_Email,,,log,📰
-email/unfiled$public/Quote_Approval_Request_Email.email,A,EmailTemplate unfiled$public/Quote_Approval_Request_Email,,,log,📰
-email/unfiled$public/Quote_Approval_Request_Email.email-meta.xml,A,EmailTemplate unfiled$public/Quote_Approval_Request_Email,,,log,📰
-email/unfiled$public/Quote_Rejection_Email.email,A,EmailTemplate unfiled$public/Quote_Rejection_Email,,,log,📰
-email/unfiled$public/Quote_Rejection_Email.email-meta.xml,A,EmailTemplate unfiled$public/Quote_Rejection_Email,,,log,📰
-email/unfiled$public/Quote_Submission_Confirmation_Email.email,A,EmailTemplate unfiled$public/Quote_Submission_Confirmation_Email,,,log,📰
-email/unfiled$public/Quote_Submission_Confirmation_Email.email-meta.xml,A,EmailTemplate unfiled$public/Quote_Submission_Confirmation_Email,,,log,📰
-flexipages/Home_Page_Default.flexipage-meta.xml," ",FlexiPage Home_Page_Default,M,,log,📰
-flexipages/Location_Visit_Record_Page.flexipage-meta.xml," ",FlexiPage Location_Visit_Record_Page,M,,log,📰
-flexipages/Quick_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Quick_Opportunity_Record_Page,M,,log,📰
-flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
-flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
-flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
-flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
-flowDefinitions/Account_Screen_Flow_Add_Extra_Work.flowDefinition-meta.xml," ",FlowDefinition Account_Screen_Flow_Add_Extra_Work,M,,log,📰
-flowDefinitions/Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request.flowDefinition-meta.xml,A,FlowDefinition Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request,,,log,📰
-flowDefinitions/Opportunity_Screen_Flow_ATAK_Project_Request.flowDefinition-meta.xml,A,FlowDefinition Opportunity_Screen_Flow_ATAK_Project_Request,,,log,📰
-flowDefinitions/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flowDefinition-meta.xml," ",FlowDefinition Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,M,,log,📰
-flows/Account_Screen_Flow_Add_Extra_Work.flow-meta.xml," ",Flow Account_Screen_Flow_Add_Extra_Work,M,,log,📰
-flows/Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request.flow-meta.xml,A,Flow Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request,,,log,📰
-flows/Opportunity_Screen_Flow_ATAK_Project_Request.flow-meta.xml,A,Flow Opportunity_Screen_Flow_ATAK_Project_Request,,,log,📰
-flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flow-meta.xml," ",Flow Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,M,,log,📰
-globalValueSets/Invoice_Type.globalValueSet-meta.xml,A,GlobalValueSet Invoice_Type,,,log,📰
-globalValueSets/Request_Status.globalValueSet-meta.xml,A,GlobalValueSet Request_Status,,,log,📰
-layouts/Account-Commercial Account Layout.layout-meta.xml," ",Layout Account-Commercial Account Layout,M,,log,📰
-layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
+applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
+cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+dashboards/BusinessSupport.dashboardFolder-meta.xml,A,Dashboard BusinessSupportFolder-meta.xml,,,log,📰
+dashboards/BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH.dashboard-meta.xml,A,Dashboard BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH,,,log,📰
+dashboards/ContractManager.dashboardFolder-meta.xml,A,Dashboard ContractManagerFolder-meta.xml,,,log,📰
+dashboards/ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH.dashboard-meta.xml,A,Dashboard ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH,,,log,📰
+dashboards/InvoicingDashboard.dashboardFolder-meta.xml,A,Dashboard InvoicingDashboardFolder-meta.xml,,,log,📰
+dashboards/InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI.dashboard-meta.xml,A,Dashboard InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI,,,log,📰
 layouts/Opportunity-Opportunity Layout.layout-meta.xml," ",Layout Opportunity-Opportunity Layout,M,,log,📰
-layouts/Quote-Quote Layout.layout-meta.xml," ",Layout Quote-Quote Layout,M,,log,📰
 layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-lwc/materialPickup/materialPickup.html," ",LightningComponentBundle materialPickup/materialPickup.html,M,,log,📰
-lwc/materialPickup/materialPickup.js," ",LightningComponentBundle materialPickup/materialPickup.js,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.html," ",LightningComponentBundle showMileageScreen/showMileageScreen.html,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.js," ",LightningComponentBundle showMileageScreen/showMileageScreen.js,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-objects/Location_Visit__c/fields/Commercial_Account__c.field-meta.xml," ",CustomField Commercial_Account__c,M,,log,📰
-objects/Location_Visit__c/fields/Operational_Account__c.field-meta.xml," ",CustomField Operational_Account__c,M,,log,📰
-objects/Location_Visit__c/fields/Status__c.field-meta.xml," ",CustomField Status__c,M,,log,📰
-objects/Opportunity/fields/ATAK_Project_Needed__c.field-meta.xml,A,CustomField ATAK_Project_Needed__c,,,log,📰
-objects/Opportunity/fields/ATAK_Project_Request_Comment__c.field-meta.xml,A,CustomField ATAK_Project_Request_Comment__c,,,log,📰
-objects/Opportunity/fields/ATAK_Project_Request_Priority__c.field-meta.xml,A,CustomField ATAK_Project_Request_Priority__c,,,log,📰
-objects/Opportunity/fields/ATAK_Project_Request_Status__c.field-meta.xml,A,CustomField ATAK_Project_Request_Status__c,,,log,📰
-objects/Opportunity/fields/ATAK_Project_Suggested_Name__c.field-meta.xml,A,CustomField ATAK_Project_Suggested_Name__c,,,log,📰
-objects/Opportunity/fields/ATAK_Projectx__c.field-meta.xml,A,CustomField ATAK_Projectx__c,,,log,📰
-objects/Opportunity/fields/Price_Request_Status__c.field-meta.xml," ",CustomField Price_Request_Status__c,M,,log,📰
-objects/Opportunity/fields/Quick_Quote__c.field-meta.xml,A,CustomField Quick_Quote__c,,,log,📰
-objects/Opportunity/fields/Service_Package__c.field-meta.xml,A,CustomField Service_Package__c,,,log,📰
-objects/Opportunity/fields/Type_Code__c.field-meta.xml,A,CustomField Type_Code__c,,,log,📰
-objects/Opportunity/recordTypes/B2B_Tender.recordType-meta.xml," ",RecordType B2B_Tender,M,,log,📰
-objects/Opportunity/recordTypes/Public_Tender.recordType-meta.xml," ",RecordType Public_Tender,M,,log,📰
-objects/Opportunity/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
-objects/Opportunity/validationRules/Maximum_Value_for_Quick_Quote.validationRule-meta.xml," ",ValidationRule Maximum_Value_for_Quick_Quote,M,,log,📰
-objects/Quote/compactLayouts/Quote_Compact_Layout.compactLayout-meta.xml,A,CompactLayout Quote_Compact_Layout,,,log,📰
-objects/Quote/validationRules/ATAK_Project_needed_for_Closed.validationRule-meta.xml," ",ValidationRule ATAK_Project_needed_for_Closed,M,,log,📰
-objects/Quote/validationRules/Maximum_Value_for_Quick_Quote.validationRule-meta.xml,A,ValidationRule Maximum_Value_for_Quick_Quote,,,log,📰
-objects/ServiceContract/fields/Invoice_Type_MS__c.field-meta.xml,A,CustomField Invoice_Type_MS__c,,,log,📰
-objects/ServiceContract/fields/Invoice_Type__c.field-meta.xml,A,CustomField Invoice_Type__c,,,log,📰
-objects/WorkOrder/fields/Billed__c.field-meta.xml,A,CustomField Billed__c,,,log,📰
+objects/WorkOrder/fields/Invoicing_Remarks__c.field-meta.xml,A,CustomField Invoicing_Remarks__c,,,log,📰
+objects/WorkOrder/fields/Opportunity__c.field-meta.xml,A,CustomField Opportunity__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -91,22 +36,27 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/Opportunity.Request_ATAK_Project.quickAction-meta.xml,A,QuickAction Opportunity.Request_ATAK_Project,,,log,📰
-reportTypes/Accounts_with_Work_Orders.reportType-meta.xml,A,ReportType Accounts_with_Work_Orders,,,log,📰
-reportTypes/Assets_with_Work_Orders_and_Service_Appointments.reportType-meta.xml,A,ReportType Assets_with_Work_Orders_and_Service_Appointments,,,log,📰
-reportTypes/Opportunities_with_Historical_Trending.reportType-meta.xml," ",ReportType Opportunities_with_Historical_Trending,M,,log,📰
-reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml,A,ReportType Service_Contracts_with_Work_Orders,,,log,📰
+reportTypes/Accounts_with_Work_Orders.reportType-meta.xml," ",ReportType Accounts_with_Work_Orders,M,,log,📰
+reportTypes/Assets_with_Work_Orders_and_Service_Appointments.reportType-meta.xml," ",ReportType Assets_with_Work_Orders_and_Service_Appointments,M,,log,📰
+reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml," ",ReportType Service_Contracts_with_Work_Orders,M,,log,📰
+reportTypes/Work_Order_W_SA_and_Service_Resource.reportType-meta.xml,A,ReportType Work_Order_W_SA_and_Service_Resource,,,log,📰
 reportTypes/Work_Orders.reportType-meta.xml," ",ReportType Work_Orders,M,,log,📰
-reports/InvoicingDashboard.reportFolder-meta.xml,A,Report InvoicingDashboardFolder-meta.xml,,,log,📰
-reports/InvoicingDashboard/Subscription_All_Current_Month_EzP.report-meta.xml,A,Report InvoicingDashboard/Subscription_All_Current_Month_EzP,,,log,📰
-reports/InvoicingDashboard/Subscription_All_Last_0oH.report-meta.xml,A,Report InvoicingDashboard/Subscription_All_Last_0oH,,,log,📰
-reports/InvoicingDashboard/Subscription_Completed_Previous_Month_xfG.report-meta.xml,A,Report InvoicingDashboard/Subscription_Completed_Previous_Month_xfG,,,log,📰
-reports/InvoicingDashboard/Subscription_Invoicing_WDx.report-meta.xml,A,Report InvoicingDashboard/Subscription_Invoicing_WDx,,,log,📰
-reports/InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa.report-meta.xml,A,Report InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa,,,log,📰
-reports/InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE.report-meta.xml,A,Report InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE,,,log,📰
-settings/Forecasting.settings-meta.xml," ",Settings Forecasting,M,,log,📰
-settings/ForecastingObjectList.settings-meta.xml," ",Settings ForecastingObjectList,M,,log,📰
-standardValueSets/OpportunityType.standardValueSet-meta.xml," ",StandardValueSet OpportunityType,M,,log,📰
-workflows/Quote.workflow-meta.xml," ",Workflow Quote,M,,log,📰
+reports/BusienssSupport.reportFolder-meta.xml,A,Report BusienssSupportFolder-meta.xml,,,log,📰
+reports/BusienssSupport/Lopende_Prijscalculatie_rxn.report-meta.xml,A,Report BusienssSupport/Lopende_Prijscalculatie_rxn,,,log,📰
+reports/BusienssSupport/Meerwerk_Opportuniy_Open_k8u.report-meta.xml,A,Report BusienssSupport/Meerwerk_Opportuniy_Open_k8u,,,log,📰
+reports/BusienssSupport/New_Price_Requests_wDh.report-meta.xml,A,Report BusienssSupport/New_Price_Requests_wDh,,,log,📰
+reports/BusienssSupport/New_Report_Pxg.report-meta.xml,A,Report BusienssSupport/New_Report_Pxg,,,log,📰
+reports/BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp.report-meta.xml,A,Report BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp,,,log,📰
+reports/InvoicingDashboard/Kleine_werken_WO_Afgerond_Deze_Maand_f82.report-meta.xml,A,Report InvoicingDashboard/Kleine_werken_WO_Afgerond_Deze_Maand_f82,,,log,📰
+reports/InvoicingDashboard/Meerwerk_Work_Order_ytk.report-meta.xml,A,Report InvoicingDashboard/Meerwerk_Work_Order_ytk,,,log,📰
+reports/InvoicingDashboard/Subscription_All_Current_Month_EzP.report-meta.xml," ",Report InvoicingDashboard/Subscription_All_Current_Month_EzP,M,,log,📰
+reports/InvoicingDashboard/Subscription_All_Last_0oH.report-meta.xml," ",Report InvoicingDashboard/Subscription_All_Last_0oH,M,,log,📰
+reports/InvoicingDashboard/Subscription_Completed_Previous_Month_xfG.report-meta.xml," ",Report InvoicingDashboard/Subscription_Completed_Previous_Month_xfG,M,,log,📰
+reports/InvoicingDashboard/Subscription_Invoicing_WDx.report-meta.xml," ",Report InvoicingDashboard/Subscription_Invoicing_WDx,M,,log,📰
+reports/InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa.report-meta.xml," ",Report InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa,M,,log,📰
+reports/InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE.report-meta.xml," ",Report InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE,M,,log,📰
+reports/InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM.report-meta.xml,A,Report InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM,,,log,📰
+reports/InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT.report-meta.xml,A,Report InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT,,,log,📰
+reports/InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM.report-meta.xml,A,Report InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

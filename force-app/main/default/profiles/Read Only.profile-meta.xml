@@ -3112,6 +3112,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkOrder.Invoicing_Remarks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkOrder.Is_First_of_Day__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3148,6 +3153,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Operating_Hours__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

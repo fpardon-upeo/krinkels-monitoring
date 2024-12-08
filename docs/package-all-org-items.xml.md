@@ -2,7 +2,7 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 12846
+Metadatas: 12863
 
 <details><summary>ApexClass (801)</summary>
   • ATAKMaterialService<br/>
@@ -1194,7 +1194,7 @@ Metadatas: 12846
   • standard__ServiceConsole<br/>
 </details>
 
-<details><summary>CustomField (1270)</summary>
+<details><summary>CustomField (1272)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -2408,6 +2408,7 @@ Metadatas: 12846
   • WorkOrder.FSL__Scheduling_Priority__c<br/>
   • WorkOrder.FSL__VisitingHours__c<br/>
   • WorkOrder.Goodwill_Tasks__c<br/>
+  • WorkOrder.Invoicing_Remarks__c<br/>
   • WorkOrder.Is_First_of_Day__c<br/>
   • WorkOrder.LMRA_Done__c<br/>
   • WorkOrder.LMRA_Type_formula__c<br/>
@@ -2416,6 +2417,7 @@ Metadatas: 12846
   • WorkOrder.Name_Commercial_Contract__c<br/>
   • WorkOrder.Name_Contract_Manager__c<br/>
   • WorkOrder.Operating_Hours__c<br/>
+  • WorkOrder.Opportunity__c<br/>
   • WorkOrder.Pick_Up_Items__c<br/>
   • WorkOrder.Product__c<br/>
   • WorkOrder.Production_Work__c<br/>
@@ -9996,13 +9998,19 @@ Metadatas: 12846
   • mobileLanding__Non_Mobile_Landing<br/>
 </details>
 
-<details><summary>Dashboard (17)</summary>
+<details><summary>Dashboard (23)</summary>
+  • BusinessSupport/<br/>
+  • BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH<br/>
+  • ContractManager/<br/>
+  • ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH<br/>
   • FSL__FieldServiceCopilotDashboards/<br/>
   • FSL__FieldServiceCopilotDashboards/FSL__CopilotSummaryOfSchedulingIssues<br/>
   • FSL__FieldServiceWorkCapacityDashboards/<br/>
   • FSL__FieldServiceWorkCapacityDashboards/FSL__FieldServiceWorkCapacityDashboards<br/>
   • FSL__FieldServiceWorkCapacityDashboards/FSL__RRYSGLHrmcRLDBGKUxngyrueoGIwXW1<br/>
   • FSL__FieldServiceWorkCapacityDashboards/FSL__vwfpkAEnvconLBZYbbJkPTWzLlVfrb<br/>
+  • InvoicingDashboard/<br/>
+  • InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI<br/>
   • Sales_and_Marketing_Dashboards/<br/>
   • Sales_and_Marketing_Dashboards/AdoptionDashboard<br/>
   • Sales_and_Marketing_Dashboards/Best_Practice_Leads_Dashboard<br/>
@@ -11891,14 +11899,17 @@ Metadatas: 12846
   • sf_fieldservice__FSL_Google_Maps_API<br/>
 </details>
 
-<details><summary>Report (148)</summary>
+<details><summary>Report (156)</summary>
+  • BusienssSupport/<br/>
+  • BusienssSupport/Lopende_Prijscalculatie_rxn<br/>
+  • BusienssSupport/Meerwerk_Opportuniy_Open_k8u<br/>
+  • BusienssSupport/New_Price_Requests_wDh<br/>
+  • BusienssSupport/New_Report_Pxg<br/>
+  • BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp<br/>
   • DashboardReportsAdoption/<br/>
   • DashboardReportsAdoption/UsageActivitiesCompleted<br/>
   • EBotR_v3/<br/>
   • EBotR_v4/<br/>
-  • EBotR_v5/<br/>
-  • EinsteinBotReports/<br/>
-  • EinsteinBotReports_v2/<br/>
   • FSL__FieldServiceCopilotReports/<br/>
   • FSL__FieldServiceCopilotReports/FSL__Emergencies<br/>
   • FSL__FieldServiceCopilotReports/FSL__Injeopardy_Appointments<br/>
@@ -11914,12 +11925,17 @@ Metadatas: 12846
   • FSL__FieldServiceWorkCapacityReports/Service_Appointment_Scheduling_Status_NL3<br/>
   • FSL__Field_Service_Reports/<br/>
   • InvoicingDashboard/<br/>
+  • InvoicingDashboard/Kleine_werken_WO_Afgerond_Deze_Maand_f82<br/>
+  • InvoicingDashboard/Meerwerk_Work_Order_ytk<br/>
   • InvoicingDashboard/Subscription_All_Current_Month_EzP<br/>
   • InvoicingDashboard/Subscription_All_Last_0oH<br/>
   • InvoicingDashboard/Subscription_Completed_Previous_Month_xfG<br/>
   • InvoicingDashboard/Subscription_Invoicing_WDx<br/>
   • InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa<br/>
   • InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE<br/>
+  • InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM<br/>
+  • InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT<br/>
+  • InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM<br/>
   • Sales_Marketing_Reports/<br/>
   • Sales_Marketing_Reports/Closed_Lost_by_Reason<br/>
   • Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner<br/>
@@ -12042,7 +12058,7 @@ Metadatas: 12846
   • unfiled$public/flow_screen_prebuilt_report<br/>
 </details>
 
-<details><summary>ReportType (18)</summary>
+<details><summary>ReportType (19)</summary>
   • Accounts_with_Work_Orders<br/>
   • Assets_with_Work_Orders_and_Service_Appointments<br/>
   • FSL__Service_Appointments_with_Scheduling_Issues<br/>
@@ -12054,6 +12070,7 @@ Metadatas: 12846
   • Service_Appointments_with_Service_Resources<br/>
   • Service_Contracts_with_Work_Orders<br/>
   • Vans_with_Material_Items<br/>
+  • Work_Order_W_SA_and_Service_Resource<br/>
   • Work_Orders<br/>
   • flow_orchestration_log_ootb_crt_two_four_eight<br/>
   • flow_orchestration_run_ootb_crt_two_four_eight<br/>

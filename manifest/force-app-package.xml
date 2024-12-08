@@ -816,6 +816,7 @@
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
         <members>WorkOrder.Goodwill_Tasks__c</members>
+        <members>WorkOrder.Invoicing_Remarks__c</members>
         <members>WorkOrder.Is_First_of_Day__c</members>
         <members>WorkOrder.LMRA_Done__c</members>
         <members>WorkOrder.LMRA_Type_formula__c</members>
@@ -824,6 +825,7 @@
         <members>WorkOrder.Name_Commercial_Contract__c</members>
         <members>WorkOrder.Name_Contract_Manager__c</members>
         <members>WorkOrder.Operating_Hours__c</members>
+        <members>WorkOrder.Opportunity__c</members>
         <members>WorkOrder.Pick_Up_Items__c</members>
         <members>WorkOrder.Product__c</members>
         <members>WorkOrder.Production_Work__c</members>
@@ -1065,6 +1067,12 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>BusinessSupport/</members>
+        <members>BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH</members>
+        <members>ContractManager/</members>
+        <members>ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH</members>
+        <members>InvoicingDashboard/</members>
+        <members>InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI</members>
         <members>Sales_and_Marketing_Dashboards/</members>
         <members>Sales_and_Marketing_Dashboards/AdoptionDashboard</members>
         <members>Sales_and_Marketing_Dashboards/Best_Practice_Leads_Dashboard</members>
@@ -2153,6 +2161,12 @@
         <name>RemoteSiteSetting</name>
     </types>
     <types>
+        <members>BusienssSupport/</members>
+        <members>BusienssSupport/Lopende_Prijscalculatie_rxn</members>
+        <members>BusienssSupport/Meerwerk_Opportuniy_Open_k8u</members>
+        <members>BusienssSupport/New_Price_Requests_wDh</members>
+        <members>BusienssSupport/New_Report_Pxg</members>
+        <members>BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp</members>
         <members>DashboardReportsAdoption/</members>
         <members>DashboardReportsAdoption/UsageActivitiesCompleted</members>
         <members>EBotR_v3/</members>
@@ -2161,12 +2175,17 @@
         <members>EinsteinBotReports/</members>
         <members>EinsteinBotReports_v2/</members>
         <members>InvoicingDashboard/</members>
+        <members>InvoicingDashboard/Kleine_werken_WO_Afgerond_Deze_Maand_f82</members>
+        <members>InvoicingDashboard/Meerwerk_Work_Order_ytk</members>
         <members>InvoicingDashboard/Subscription_All_Current_Month_EzP</members>
         <members>InvoicingDashboard/Subscription_All_Last_0oH</members>
         <members>InvoicingDashboard/Subscription_Completed_Previous_Month_xfG</members>
         <members>InvoicingDashboard/Subscription_Invoicing_WDx</members>
         <members>InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa</members>
         <members>InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE</members>
+        <members>InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM</members>
+        <members>InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT</members>
+        <members>InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM</members>
         <members>Sales_Marketing_Reports/</members>
         <members>Sales_Marketing_Reports/Closed_Lost_by_Reason</members>
         <members>Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner</members>
@@ -2297,6 +2316,7 @@
         <members>Service_Appointments_with_Service_Resources</members>
         <members>Service_Contracts_with_Work_Orders</members>
         <members>Vans_with_Material_Items</members>
+        <members>Work_Order_W_SA_and_Service_Resource</members>
         <members>Work_Orders</members>
         <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_run_ootb_crt_two_four_eight</members>

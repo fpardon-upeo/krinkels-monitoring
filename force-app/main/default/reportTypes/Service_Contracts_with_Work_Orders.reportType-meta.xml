@@ -937,6 +937,16 @@
             <field>Billed__c</field>
             <table>ServiceContract.WorkOrders</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Invoicing_Remarks__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>

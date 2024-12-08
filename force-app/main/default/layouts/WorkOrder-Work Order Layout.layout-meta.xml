@@ -67,6 +67,10 @@
                 <behavior>Edit</behavior>
                 <field>ServiceReportTemplateId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Opportunity__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
