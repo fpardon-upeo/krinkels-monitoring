@@ -1,62 +1,10 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-dashboards/BusinessSupport.dashboardFolder-meta.xml,A,Dashboard BusinessSupportFolder-meta.xml,,,log,📰
-dashboards/BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH.dashboard-meta.xml,A,Dashboard BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH,,,log,📰
-dashboards/ContractManager.dashboardFolder-meta.xml,A,Dashboard ContractManagerFolder-meta.xml,,,log,📰
-dashboards/ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH.dashboard-meta.xml,A,Dashboard ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH,,,log,📰
-dashboards/InvoicingDashboard.dashboardFolder-meta.xml,A,Dashboard InvoicingDashboardFolder-meta.xml,,,log,📰
-dashboards/InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI.dashboard-meta.xml,A,Dashboard InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI,,,log,📰
-layouts/Opportunity-Opportunity Layout.layout-meta.xml," ",Layout Opportunity-Opportunity Layout,M,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-objects/WorkOrder/fields/Invoicing_Remarks__c.field-meta.xml,A,CustomField Invoicing_Remarks__c,,,log,📰
-objects/WorkOrder/fields/Opportunity__c.field-meta.xml,A,CustomField Opportunity__c,,,log,📰
-profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
-profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
-profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
-profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
-profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
-profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
-profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
-profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
-profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
-profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
-profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
-profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
-profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
-profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
-profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
-profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
-profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
-profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
-profiles/Operator.profile-meta.xml," ",Profile Operator,M,,log,📰
-profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
-profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
-profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
-profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
-profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
-profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-reportTypes/Accounts_with_Work_Orders.reportType-meta.xml," ",ReportType Accounts_with_Work_Orders,M,,log,📰
-reportTypes/Assets_with_Work_Orders_and_Service_Appointments.reportType-meta.xml," ",ReportType Assets_with_Work_Orders_and_Service_Appointments,M,,log,📰
-reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml," ",ReportType Service_Contracts_with_Work_Orders,M,,log,📰
-reportTypes/Work_Order_W_SA_and_Service_Resource.reportType-meta.xml,A,ReportType Work_Order_W_SA_and_Service_Resource,,,log,📰
-reportTypes/Work_Orders.reportType-meta.xml," ",ReportType Work_Orders,M,,log,📰
-reports/BusienssSupport.reportFolder-meta.xml,A,Report BusienssSupportFolder-meta.xml,,,log,📰
-reports/BusienssSupport/Lopende_Prijscalculatie_rxn.report-meta.xml,A,Report BusienssSupport/Lopende_Prijscalculatie_rxn,,,log,📰
-reports/BusienssSupport/Meerwerk_Opportuniy_Open_k8u.report-meta.xml,A,Report BusienssSupport/Meerwerk_Opportuniy_Open_k8u,,,log,📰
-reports/BusienssSupport/New_Price_Requests_wDh.report-meta.xml,A,Report BusienssSupport/New_Price_Requests_wDh,,,log,📰
-reports/BusienssSupport/New_Report_Pxg.report-meta.xml,A,Report BusienssSupport/New_Report_Pxg,,,log,📰
-reports/BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp.report-meta.xml,A,Report BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp,,,log,📰
-reports/InvoicingDashboard/Kleine_werken_WO_Afgerond_Deze_Maand_f82.report-meta.xml,A,Report InvoicingDashboard/Kleine_werken_WO_Afgerond_Deze_Maand_f82,,,log,📰
-reports/InvoicingDashboard/Meerwerk_Work_Order_ytk.report-meta.xml,A,Report InvoicingDashboard/Meerwerk_Work_Order_ytk,,,log,📰
-reports/InvoicingDashboard/Subscription_All_Current_Month_EzP.report-meta.xml," ",Report InvoicingDashboard/Subscription_All_Current_Month_EzP,M,,log,📰
-reports/InvoicingDashboard/Subscription_All_Last_0oH.report-meta.xml," ",Report InvoicingDashboard/Subscription_All_Last_0oH,M,,log,📰
-reports/InvoicingDashboard/Subscription_Completed_Previous_Month_xfG.report-meta.xml," ",Report InvoicingDashboard/Subscription_Completed_Previous_Month_xfG,M,,log,📰
-reports/InvoicingDashboard/Subscription_Invoicing_WDx.report-meta.xml," ",Report InvoicingDashboard/Subscription_Invoicing_WDx,M,,log,📰
-reports/InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa.report-meta.xml," ",Report InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa,M,,log,📰
-reports/InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE.report-meta.xml," ",Report InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE,M,,log,📰
-reports/InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM.report-meta.xml,A,Report InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM,,,log,📰
-reports/InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT.report-meta.xml,A,Report InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT,,,log,📰
-reports/InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM.report-meta.xml,A,Report InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM,,,log,📰
+flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
+lwc/importCLI/importCLI.html,A,LightningComponentBundle importCLI/importCLI.html,,,log,📰
+lwc/importCLI/importCLI.js,A,LightningComponentBundle importCLI/importCLI.js,,,log,📰
+lwc/importCLI/importCLI.js-meta.xml,A,LightningComponentBundle importCLI/importCLI.js-meta.xml,,,log,📰
+quickActions/ServiceContract.Import_CLI.quickAction-meta.xml,A,QuickAction ServiceContract.Import_CLI,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

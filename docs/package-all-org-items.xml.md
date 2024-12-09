@@ -2,7 +2,7 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 12863
+Metadatas: 12865
 
 <details><summary>ApexClass (801)</summary>
   • ATAKMaterialService<br/>
@@ -10777,7 +10777,7 @@ Metadatas: 12863
   • bmpyrckt__Timeline_Configuration__mdt-Timeline Configuration Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (192)</summary>
+<details><summary>LightningComponentBundle (193)</summary>
   • FSL__animation<br/>
   • FSL__baseAttribute<br/>
   • FSL__baseAxis<br/>
@@ -10937,6 +10937,7 @@ Metadatas: 12863
   • imagePainter<br/>
   • imageSelector<br/>
   • imageTextEditor<br/>
+  • importCLI<br/>
   • infoEditorPrompt<br/>
   • internalWorkOrderForm<br/>
   • loadingSpinner<br/>
@@ -11621,7 +11622,7 @@ Metadatas: 12863
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (166)</summary>
+<details><summary>QuickAction (167)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -11660,6 +11661,7 @@ Metadatas: 12863
   • ServiceContract.Create_Service_Contract<br/>
   • ServiceContract.Export_Lines<br/>
   • ServiceContract.Generate_Maintenance_Plan<br/>
+  • ServiceContract.Import_CLI<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
   • Start_Day<br/>

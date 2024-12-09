@@ -2,7 +2,7 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 2760
+Metadatas: 2762
 
 <details><summary>ApexClass (106)</summary>
   • ATAKMaterialService<br/>
@@ -1811,7 +1811,7 @@ Metadatas: 2760
   • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (103)</summary>
+<details><summary>LightningComponentBundle (104)</summary>
   • addressSearch<br/>
   • checkIn<br/>
   • colorsPicker<br/>
@@ -1882,6 +1882,7 @@ Metadatas: 2760
   • imagePainter<br/>
   • imageSelector<br/>
   • imageTextEditor<br/>
+  • importCLI<br/>
   • infoEditorPrompt<br/>
   • internalWorkOrderForm<br/>
   • loadingSpinner<br/>
@@ -2052,7 +2053,7 @@ Metadatas: 2760
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (166)</summary>
+<details><summary>QuickAction (167)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -2091,6 +2092,7 @@ Metadatas: 2760
   • ServiceContract.Create_Service_Contract<br/>
   • ServiceContract.Export_Lines<br/>
   • ServiceContract.Generate_Maintenance_Plan<br/>
+  • ServiceContract.Import_CLI<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
   • Start_Day<br/>

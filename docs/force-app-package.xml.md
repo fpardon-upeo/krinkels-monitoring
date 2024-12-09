@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2665
+Metadatas: 2667
 
 <details><summary>ApexClass (109)</summary>
   • ATAKMaterialService<br/>
@@ -1703,7 +1703,7 @@ Metadatas: 2665
   • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (103)</summary>
+<details><summary>LightningComponentBundle (104)</summary>
   • addressSearch<br/>
   • checkIn<br/>
   • colorsPicker<br/>
@@ -1774,6 +1774,7 @@ Metadatas: 2665
   • imagePainter<br/>
   • imageSelector<br/>
   • imageTextEditor<br/>
+  • importCLI<br/>
   • infoEditorPrompt<br/>
   • internalWorkOrderForm<br/>
   • loadingSpinner<br/>
@@ -1959,7 +1960,7 @@ Metadatas: 2665
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (164)</summary>
+<details><summary>QuickAction (165)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -1995,6 +1996,7 @@ Metadatas: 2665
   • ServiceContract.Create_Service_Contract<br/>
   • ServiceContract.Export_Lines<br/>
   • ServiceContract.Generate_Maintenance_Plan<br/>
+  • ServiceContract.Import_CLI<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
   • Start_Day<br/>

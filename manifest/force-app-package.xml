@@ -1770,6 +1770,7 @@
         <members>imagePainter</members>
         <members>imageSelector</members>
         <members>imageTextEditor</members>
+        <members>importCLI</members>
         <members>infoEditorPrompt</members>
         <members>internalWorkOrderForm</members>
         <members>loadingSpinner</members>
@@ -1991,6 +1992,7 @@
         <members>ServiceContract.Create_Service_Contract</members>
         <members>ServiceContract.Export_Lines</members>
         <members>ServiceContract.Generate_Maintenance_Plan</members>
+        <members>ServiceContract.Import_CLI</members>
         <members>ServiceContract.Prepare_for_Next_Year</members>
         <members>ServiceContract.Ready_for_Validation</members>
         <members>Start_Day</members>
