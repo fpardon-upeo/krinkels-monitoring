@@ -280,19 +280,19 @@
     <picklistValues>
         <picklist>Region__c</picklist>
         <values>
-            <fullName>Antwerpen</fullName>
+            <fullName>Antwerp</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Antwerpen Centrum</fullName>
+            <fullName>Antwerp Centre</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Antwerpen Noord %26 Oost</fullName>
+            <fullName>Antwerp North %26 East</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Antwerpen Zuid %26 West</fullName>
+            <fullName>Antwerp South %26 West</fullName>
             <default>false</default>
         </values>
         <values>
@@ -300,7 +300,15 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Henegouwen</fullName>
+            <fullName>East Flanders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flemish Brabant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hainaut</fullName>
             <default>false</default>
         </values>
         <values>
@@ -324,23 +332,15 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Niet gevonden</fullName>
+            <fullName>Not Found</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Oost-Vlaanderen</fullName>
+            <fullName>Walloon Brabant</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Vlaams-Brabant</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Waals-Brabant</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>West-Vlaanderen</fullName>
+            <fullName>West Flanders</fullName>
             <default>false</default>
         </values>
     </picklistValues>

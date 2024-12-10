@@ -22,7 +22,7 @@
     <columns>
         <field>Opportunity.Price_Request_Demand_Comments__c</field>
     </columns>
-    <description>Opportunities met prijsaanvraag status = New</description>
+    <description>Opportunities with Price Request status = New</description>
     <filter>
         <criteriaItems>
             <column>Opportunity.Price_Request_Status__c</column>
@@ -39,7 +39,7 @@
         <field>Opportunity.Price_Request_Priority__c</field>
         <sortOrder>Desc</sortOrder>
     </groupingsDown>
-    <name>Aanvraag Prijscalculatie</name>
+    <name>Open Price Requests</name>
     <params>
         <name>open</name>
         <value>all</value>

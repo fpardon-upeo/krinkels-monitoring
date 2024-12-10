@@ -32,7 +32,7 @@
         <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>To_Draft</name>
+            <name>To_Pricing</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.StageName</leftValueReference>
@@ -58,7 +58,7 @@
             <connector>
                 <targetReference>Update_Quote_to_Draft</targetReference>
             </connector>
-            <label>To Draft</label>
+            <label>To Pricing</label>
         </rules>
         <rules>
             <name>To_Presented</name>
@@ -240,7 +240,7 @@
         <inputAssignments>
             <field>Status</field>
             <value>
-                <stringValue>Draft</stringValue>
+                <stringValue>Pricing</stringValue>
             </value>
         </inputAssignments>
         <object>Quote</object>

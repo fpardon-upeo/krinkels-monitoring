@@ -65,9 +65,13 @@ export default class ServiceBuilder extends LightningElement {
   };
 
   //TODO: Add filterOptions to filter out Product RecordType (only need 'Service' and 'Service Package')
-    // Filter Options
+  // Filter Options
 
   ///////////////////////////////Getters/////////////////////////////
+
+  get contractLinesArrayLength() {
+    return this.contractLines.length > 0 ? false : true;
+  }
 
   /**
    * @description Getter to retrieve the finCustomers for a line based on the selectedLineItemId. Returns an empty array if undefined or null.
@@ -589,7 +593,8 @@ export default class ServiceBuilder extends LightningElement {
       IsNew: true,
       ServiceContractId: this.recordId,
       FinCustomers: [],
-      Index: this.contractLines.length
+      Index: this.contractLines.length,
+      Recurrence_Pattern__c: "FREQ=WEEKLY;INTERVAL=2"
     };
 
     if (this.filterResults.length > 0) {
@@ -892,118 +897,4 @@ export default class ServiceBuilder extends LightningElement {
       this.contractLines = [...deepClone];
     }
   }
-
-  // /**
-  //  * @description Handles navigation to the previous record
-  //  * @param {Event} event - The event object
-  //  */
-  // handlePrevious(event) {
-  //   let currentIndex =
-  //     this.filterResults.length > 0
-  //       ? this.filterResults.findIndex(
-  //           (line) => line.Id === this.selectedLineItemId
-  //         )
-  //       : this.contractLines.findIndex(
-  //           (line) => line.Id === this.selectedLineItemId
-  //         );
-
-  //   let previousIndex = currentIndex - 1;
-
-  //   // Loop to find the previous valid index
-  //   while (previousIndex !== currentIndex) {
-  //     if (previousIndex < 0) {
-  //       previousIndex = this.contractLines.length - 1;
-  //     }
-
-  //     const previousLine =
-  //       this.filterResults.length > 0
-  //         ? this.filterResults[previousIndex]
-  //         : this.contractLines[previousIndex];
-
-  //     if (previousLine && previousLine.Id) {
-  //       break;
-  //     }
-
-  //     previousIndex--;
-  //   }
-
-  //   this.selectedLineItemId =
-  //     this.filterResults.length > 0
-  //       ? this.filterResults[previousIndex].Id
-  //       : this.contractLines[previousIndex].Id;
-
-  //   event.target.dataset.id = this.selectedLineItemId;
-  //   event.target.dataset.index = previousIndex;
-  //   this.setOtherRowOpacity(event);
-
-  //   // Populate the lightning picker with the financial accounts of the previous line
-  //   this.populateLightningPickerWithExistingFinancialAccountsOfContractLine(
-  //     previousIndex
-  //   );
-  // }
-
-  // /**
-  //  * @description Handles navigation to the next record
-  //  * @param {Event} event - The event object
-  //  */
-  // handleNext(event) {
-  //   let currentIndex =
-  //     this.filterResults.length > 0
-  //       ? this.filterResults.findIndex(
-  //           (line) => line.Id === this.selectedLineItemId
-  //         )
-  //       : this.contractLines.findIndex(
-  //           (line) => line.Id === this.selectedLineItemId
-  //         );
-
-  //   let nextIndex = currentIndex + 1;
-
-  //   // Loop to find the next valid index
-  //   while (nextIndex !== currentIndex) {
-  //     if (nextIndex >= this.contractLines.length) {
-  //       nextIndex = 0; // Wrap around to the start
-  //     }
-
-  //     const nextLine =
-  //       this.filterResults.length > 0
-  //         ? this.filterResults[nextIndex]
-  //         : this.contractLines[nextIndex];
-
-  //     if (nextLine && nextLine.Id) {
-  //       // Found a valid line
-  //       break;
-  //     }
-
-  //     nextIndex++;
-  //   }
-
-  //   this.selectedLineItemId =
-  //     this.filterResults.length > 0
-  //       ? this.filterResults[nextIndex].Id
-  //       : this.contractLines[nextIndex].Id;
-
-  //   event.target.dataset.id = this.selectedLineItemId;
-  //   event.target.dataset.index = nextIndex;
-  //   this.setOtherRowOpacity(event);
-
-  //   //testing this out
-  //   // Select the lightning-record-edit-form element
-  //   const form = this.template.querySelector("lightning-record-edit-form");
-  //   // Check if the form was found
-  //   if (form) {
-  //     console.log("form found ");
-  //     // Find all lightning-input-field components within this form
-  //     const inputFields = form.querySelectorAll("lightning-input-field");
-  //     // Reset each input field to its original value
-  //     inputFields.forEach((field) => {
-  //       console.log("resetting field");
-  //       field.reset();
-  //     });
-  //   }
-
-  //   // Populate the lightning picker with the financial accounts of the next line
-  //   this.populateLightningPickerWithExistingFinancialAccountsOfContractLine(
-  //     nextIndex
-  //   );
-  // }
 }

@@ -27,7 +27,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>ServiceContract.WorkOrders$Billed__c</field>
     </columns>
-    <description>Service Contract = Kleine werken / Geen meerwerk - Geen interne WO</description>
+    <description>Service Contract = Small works / No Additional work - No internal work</description>
     <filter>
         <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
         <criteriaItems>
@@ -83,7 +83,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Kleine werken WO Afgerond Deze Maand</name>
+    <name>&apos;Small works&apos; WO completed This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

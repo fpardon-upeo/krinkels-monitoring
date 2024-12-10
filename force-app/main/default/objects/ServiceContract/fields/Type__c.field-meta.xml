@@ -11,9 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Master Agreement</fullName>
+                <fullName>Commercial Agreement</fullName>
                 <default>false</default>
-                <label>Master Agreement</label>
+                <label>Commercial Agreement</label>
             </value>
             <value>
                 <fullName>Service Contract</fullName>

@@ -84,6 +84,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
   showWorkOrderScreen = false;
   showBreakForm = false;
   hasFirstWorkOrder = false;
+  notifyCustomer = false;
   selectedRows = [];
   mileageType = "";
   endingDayAtDepot = false;
@@ -460,6 +461,10 @@ export default class NextAppointmentPicker extends NavigationMixin(
 
   //--------------------------------------HANDLERS-------------------------------------//
 
+  handleBubbleNotification(event) {
+    this.notifyCustomer = event.detail.checked;
+  }
+
   handleRowSelection(event) {
     const selectedRows = event.detail.selectedRows;
     console.log("selectedRows", JSON.stringify(selectedRows));
@@ -661,8 +666,9 @@ export default class NextAppointmentPicker extends NavigationMixin(
     const fields = {};
     fields["Id"] = this.selectedRows[0].Id;
     fields["Status"] = "Travelling";
+    fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
     const recordInput = { fields };
-    console.log("recordInput", JSON.stringify(recordInput));
+    console.log("recordInput service appointment", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then(() => {
         console.log("Service Appointment status updated");
@@ -676,13 +682,14 @@ export default class NextAppointmentPicker extends NavigationMixin(
     const fields = {};
     fields["Id"] = this.nextWorkOrderId;
     fields["Status"] = "Travelling";
+    fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
     console.log("hasFirstWorkOrder", this.hasFirstWorkOrder);
     if(this.hasFirstWorkOrder === false) {
         console.log('setting first work order');
         fields["Is_First_of_Day__c"] = true;
     }
     const recordInput = { fields };
-    console.log("recordInput", JSON.stringify(recordInput));
+    console.log("recordInput work order", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then((result) => {
         console.log("Work Order status updated", result);

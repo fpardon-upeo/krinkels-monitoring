@@ -75,6 +75,7 @@ export default class StartOperatorDay extends NavigationMixin(
   showEndDayScreen = false;
   selectedRows = [];
   hasFirstWorkOrder = false;
+  notifyCustomer = false;
   labels = {
     StartDay_Start_Button_Text,
     StartDay_Start_Button_Sub_Text,
@@ -539,12 +540,18 @@ export default class StartOperatorDay extends NavigationMixin(
     }
   }
 
+  handleBubbleNotification(event) {
+    console.log("event", event.detail);
+    this.notifyCustomer = event.detail.checked;
+  }
+
   //--------------------------------------HELPERS--------------------------------------//
 
   setNextServiceAppointStatus() {
     const fields = {};
     fields["Id"] = this.selectedRows[0].Id;
     fields["Status"] = "Travelling";
+    fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
     const recordInput = { fields };
     console.log("recordInput sa", JSON.stringify(recordInput));
     updateRecord(recordInput)
@@ -561,6 +568,7 @@ export default class StartOperatorDay extends NavigationMixin(
     const fields = {};
     fields["Id"] = this.selectedRows[0].ParentRecordId;
     fields["Status"] = "Travelling";
+    fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
     fields["Is_First_of_Day__c"] = this.selectedRows[0].WorkOrderType === "Production Work";
     console.log("work order fields", JSON.stringify(fields));
     const recordInput = { fields };

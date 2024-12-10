@@ -3,7 +3,7 @@
     <fullName>Allowance_Type__c</fullName>
     <label>Allowance Type</label>
     <required>false</required>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>

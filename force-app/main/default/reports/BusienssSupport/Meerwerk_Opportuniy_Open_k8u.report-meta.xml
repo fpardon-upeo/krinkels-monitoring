@@ -42,7 +42,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Opportunity.Pricing_Request_Needed__c</field>
     </columns>
-    <description>Opportunities voor meer werk open</description>
+    <description>Opportunities for additional work that are not closed</description>
     <filter>
         <criteriaItems>
             <column>CLOSED</column>
@@ -54,7 +54,7 @@
         <language>en_US</language>
     </filter>
     <format>Tabular</format>
-    <name>Meerwerk Opportunity Open</name>
+    <name>Additional Work Opportunity Open</name>
     <params>
         <name>open</name>
         <value>all</value>

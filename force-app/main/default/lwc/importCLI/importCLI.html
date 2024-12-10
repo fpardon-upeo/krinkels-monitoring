@@ -1,11 +1,13 @@
 <template>
-  <lightning-card title="Import CSV">
-    <lightning-input
-      type="file"
-      label="Upload CSV File"
-      accept=".csv"
-      onchange={handleFileUpload}
-    >
-    </lightning-input>
-  </lightning-card>
+  <lightning-quick-action-panel header="Import Contract Line Items">
+    <div class="slds-m-around_medium slds-align_absolute-center">
+      <lightning-input
+        type="file"
+        label="Upload CSV File"
+        accept=".csv"
+        onchange={handleFileUpload}
+      >
+      </lightning-input>
+    </div>
+  </lightning-quick-action-panel>
 </template>

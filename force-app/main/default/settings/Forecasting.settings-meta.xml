@@ -273,12 +273,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -315,6 +331,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -392,8 +412,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -403,6 +427,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -598,12 +623,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -640,6 +681,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -717,8 +762,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -728,6 +777,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -927,12 +977,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -969,6 +1035,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -1047,8 +1117,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -1058,6 +1132,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -1253,12 +1328,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -1295,6 +1386,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -1372,8 +1467,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -1383,6 +1482,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -1582,12 +1682,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -1624,6 +1740,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -1702,8 +1822,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -1713,6 +1837,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -1908,12 +2033,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -1950,6 +2091,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -2027,8 +2172,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -2038,6 +2187,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -2237,12 +2387,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -2279,6 +2445,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -2357,8 +2527,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -2368,6 +2542,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -2563,12 +2738,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -2605,6 +2796,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -2682,8 +2877,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -2693,6 +2892,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -2892,12 +3092,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -2934,6 +3150,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -3012,8 +3232,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -3023,6 +3247,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -3218,12 +3443,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -3260,6 +3501,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -3337,8 +3582,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -3348,6 +3597,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -3547,12 +3797,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -3589,6 +3855,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -3667,8 +3937,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -3678,6 +3952,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -3873,12 +4148,28 @@
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD8</field>
+            <label>Customer Reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fCj</field>
+            <label>Language</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hw</field>
             <label>Loss Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7f6Q</field>
+            <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fD3</field>
+            <label>Our Reference</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -3915,6 +4206,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7SEJ</field>
             <label>Service Package Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00NKF00000Q7fDD</field>
+            <label>Subject</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -3992,8 +4287,12 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
+            <field>00NKF00000Q7f6Q</field>
+            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -4003,6 +4302,7 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>

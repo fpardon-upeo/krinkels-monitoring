@@ -9,6 +9,7 @@ export default class ShowMileageScreen extends LightningElement {
   @track mileageEntries = [];
   @track inMileageEntries = [];
   @track outMileageEntries = [];
+  @track ownMileageEntries = [];
   @track mileageEntryIdBeingHandled;
 
   // Modal states
@@ -18,7 +19,7 @@ export default class ShowMileageScreen extends LightningElement {
   @track showOutMileageEntryNewForm = false;
   @track showInMileageEntryNewForm = false;
   @track showMileageEntryEditForm = false;
-
+  @track showOwnMileageMessage = false;
   connectedCallback() {
     this.loadMileageData();
   }
@@ -26,7 +27,6 @@ export default class ShowMileageScreen extends LightningElement {
   loadMileageData() {
     getMileageEntries({ recordId: this.recordId })
       .then((result) => {
-        console.log("result of mileage entries", result);
         if (result) {
           this.kmAmount = result.Total_KM__c || 0;
           if (result.Mileage_Entries__r) {
@@ -54,12 +54,18 @@ export default class ShowMileageScreen extends LightningElement {
     // Reset arrays before populating
     this.inMileageEntries = [];
     this.outMileageEntries = [];
+    this.ownMileageEntries = [];
 
     this.mileageEntries.forEach((entry) => {
       if (entry.Type__c === "Starting") {
         this.inMileageEntries.push(entry);
       } else if (entry.Type__c === "Ending") {
         this.outMileageEntries.push(entry);
+      }
+
+      //Add to own mileage entries if allowance type is own vehicle
+      if (entry.Allowance_Type__c === "Own Vehicle") {
+        this.ownMileageEntries.push(entry);
       }
     });
   }
@@ -72,6 +78,7 @@ export default class ShowMileageScreen extends LightningElement {
     this.showOutMileageEntryNewForm = false;
     this.showInMileageEntryNewForm = false;
     this.showMileageEntryEditForm = false;
+    this.showOwnMileageMessage = false;
   }
 
   handleShowMileageInfo() {
@@ -98,6 +105,18 @@ export default class ShowMileageScreen extends LightningElement {
     } else {
       this.handleCloseForm();
       this.showOutMileageMessage = true;
+    }
+  }
+
+  handleOwnMileageEntries() {
+    this.handleCloseForm();
+
+    if (this.ownMileageEntries.length > 0) {
+      this.populateMileageEntries(this.ownMileageEntries);
+      this.showMileageEntries = true;
+    } else {
+      console.log("No Own mileage entries");
+      this.showOwnMileageMessage = true;
     }
   }
 
@@ -151,7 +170,8 @@ export default class ShowMileageScreen extends LightningElement {
       Ending_Mileage__c: entry.Ending_Mileage__c || "",
       Starting_Location_Type__c: entry.Starting_Location_Type__c || "",
       Ending_Location_Type__c: entry.Ending_Location_Type__c || "",
-      Allowance_Type__c: entry.Allowance_Type__c || ""
+      Allowance_Type__c: entry.Allowance_Type__c || "",
+      Type__c: entry.Type__c || ""
     }));
   }
 

@@ -6,9 +6,9 @@
         <label>Subscription</label>
     </customValue>
     <customValue>
-        <fullName>Statement of Claim</fullName>
+        <fullName>Progress Statement</fullName>
         <default>false</default>
-        <label>Statement of Claim</label>
+        <label>Progress Statement</label>
     </customValue>
     <customValue>
         <fullName>Small Works</fullName>

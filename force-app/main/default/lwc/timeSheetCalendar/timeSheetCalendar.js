@@ -43,6 +43,7 @@ import Calendar_Add_In_Mileage_Entry_Description from "@salesforce/label/c.Calen
 import Calendar_No_Out_Mileage_Entries_Description from "@salesforce/label/c.Calendar_No_Out_Mileage_Entries_Description";
 import Calendar_Add_Out_Mileage_Entry from "@salesforce/label/c.Calendar_Add_Out_Mileage_Entry";
 import Calendar_Add_Out_Mileage_Entry_Description from "@salesforce/label/c.Calendar_Add_Out_Mileage_Entry_Description";
+import Calendar_Mileage_Type from "@salesforce/label/c.Calendar_Mileage_Type";
 import Calendar_Submit_Time_Sheet from "@salesforce/label/c.Calendar_Submit_Time_Sheet";
 import Calendar_Warning_Submit_Timesheet from "@salesforce/label/c.Calendar_Warning_Submit_Timesheet";
 import Calendar_Submit from "@salesforce/label/c.Calendar_Submit";
@@ -163,7 +164,8 @@ export default class TimeSheetCalendar extends LightningElement {
     Calendar_User_Settings_End_Time,
     Calendar_Cancel,
     Calendar_Save,
-    Calendar_User_Settings_Time_Range
+    Calendar_User_Settings_Time_Range,
+    Calendar_Mileage_Type
   };
 
   @api refreshCalendar() {
@@ -171,6 +173,11 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   connectedCallback() {
+    if (!(this.recordId && this.resourceId)) {
+      console.log("No recordId or resourceId");
+      // Maybe show a modal (tbd later)
+    }
+
     // First load the required styles and scripts
     Promise.all([
       loadStyle(this, FullCalendarJS + "/lib/main.css"),
@@ -628,7 +635,8 @@ export default class TimeSheetCalendar extends LightningElement {
         Ending_Mileage__c: entry.Ending_Mileage__c || "",
         Starting_Location_Type__c: entry.Starting_Location_Type__c || "",
         Ending_Location_Type__c: entry.Ending_Location_Type__c || "",
-        Allowance_Type__c: entry.Allowance_Type__c || ""
+        Allowance_Type__c: entry.Allowance_Type__c || "",
+        Type__c: entry.Type__c || ""
       };
 
       // Add the object to the mileageEntries array as it's the one that will be displayed in the modal
@@ -1445,6 +1453,7 @@ export default class TimeSheetCalendar extends LightningElement {
         this.resourceAbsences = [];
         this.mileageEntries = [];
 
+        console.log("result refresh ", JSON.stringify(result));
         // Process the new data
         if (result.timeSheet) {
           this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;

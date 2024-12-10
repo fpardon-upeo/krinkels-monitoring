@@ -189,12 +189,14 @@
     </types>
     <types>
         <members>ATAK_Personnel__c.Custom_Compact_Layout</members>
+        <members>ATAK_Project__c.ATAK_Project_Compact_Layout</members>
         <members>Account.Account_Compact_Layout</members>
         <members>Account.Commercial_Account</members>
         <members>Account.Financial_Account</members>
         <members>Account.Group_Account</members>
         <members>Account.Operational_Account</members>
         <members>Account.Other_Compact_Layout</members>
+        <members>Asset.Asset_Compact_Layout</members>
         <members>Contact.Contact</members>
         <members>Knowledge__kav.Recommended_Compact_Layout</members>
         <members>Lead.Leads_Custom_Compact_Layout</members>
@@ -553,8 +555,12 @@
         <members>Opportunity.ATAK_Projectx__c</members>
         <members>Opportunity.Amount__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
+        <members>Opportunity.Customer_Reference__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
+        <members>Opportunity.Language__c</members>
         <members>Opportunity.Loss_Reason__c</members>
+        <members>Opportunity.Main_Contact__c</members>
+        <members>Opportunity.Our_Reference__c</members>
         <members>Opportunity.Price_Request_BS_Comments__c</members>
         <members>Opportunity.Price_Request_Demand_Comments__c</members>
         <members>Opportunity.Price_Request_Priority__c</members>
@@ -564,6 +570,7 @@
         <members>Opportunity.ROI_Analysis_Completed__c</members>
         <members>Opportunity.Service_Contract__c</members>
         <members>Opportunity.Service_Package__c</members>
+        <members>Opportunity.Subject__c</members>
         <members>Opportunity.Type_Code__c</members>
         <members>Opportunity.Work_Size__c</members>
         <members>Opportunity__hd.Amount__c</members>
@@ -600,6 +607,8 @@
         <members>ProductRequired.Action_Required__c</members>
         <members>ProductRequired.Material_Item__c</members>
         <members>Quote.Amount__c</members>
+        <members>Quote.Language_Code__c</members>
+        <members>Quote.Language__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
         <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
         <members>ResourceAbsence.Absence_Type__c</members>
@@ -686,6 +695,7 @@
         <members>ServiceAppointment.Recurrence__c</members>
         <members>ServiceAppointment.Scheduling_Notification_Send__c</members>
         <members>ServiceAppointment.Travel_is_Done__c</members>
+        <members>ServiceAppointment.Trigger_Notification_to_Customer__c</members>
         <members>ServiceAppointment.Work_Type_Name__c</members>
         <members>ServiceContract.Accepted__c</members>
         <members>ServiceContract.Additional_Work_in_scope_contract__c</members>
@@ -742,6 +752,7 @@
         <members>ServiceTerritory.FSL__TerritoryLevel__c</members>
         <members>ServiceTerritory.Main_Responsible_Atak_Code__c</members>
         <members>ServiceTerritory.Main_Responsible__c</members>
+        <members>ServiceTerritory.Owner_Name__c</members>
         <members>ServiceTerritoryMember.FSL__Internal_SLR_HomeAddress_Geolocation__c</members>
         <members>Service_Appointment_Status__c.New_Status__c</members>
         <members>Service_Appointment_Status__c.Previous_Status__c</members>
@@ -766,6 +777,7 @@
         <members>TimeSheetEntry.Break_Duration__c</members>
         <members>TimeSheetEntry.Break_Duration_in_Minutes__c</members>
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
+        <members>TimeSheetEntry.Invoice_Type__c</members>
         <members>TimeSheetEntry.Pause_Duration__c</members>
         <members>TimeSheetEntry.Resource_Absence__c</members>
         <members>TimeSheetEntry.Soccode__c</members>
@@ -832,6 +844,7 @@
         <members>WorkOrder.Shop_Visit_Start_Time__c</members>
         <members>WorkOrder.Signature_Required__c</members>
         <members>WorkOrder.Special_Equipment__c</members>
+        <members>WorkOrder.Trigger_Notification_to_Customer__c</members>
         <members>WorkOrder.Type__c</members>
         <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
         <members>WorkOrder.Waste_Visit_Done__c</members>
@@ -944,6 +957,8 @@
         <members>Calendar_Mileage_Starting_Location</members>
         <members>Calendar_Mileage_Starting_Mileage</members>
         <members>Calendar_Mileage_Starting_Mileage</members>
+        <members>Calendar_Mileage_Type</members>
+        <members>Calendar_Mileage_Type</members>
         <members>Calendar_New_Break_Entry</members>
         <members>Calendar_New_Break_Entry</members>
         <members>Calendar_New_In_Mileage_Entry</members>
@@ -1014,6 +1029,8 @@
         <members>LocationMonitor_ThresholdSliderLabel</members>
         <members>LocationMonitor_WithinThreshold</members>
         <members>LocationMonitor_WithinThreshold</members>
+        <members>NotifyCustomer_Toggle</members>
+        <members>NotifyCustomer_Toggle</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Text</members>
@@ -1197,10 +1214,15 @@
     <types>
         <members>BusinessSupport/</members>
         <members>BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH</members>
+        <members>BusinessSupport/WPkVzWwFbQSfsPROliTmMQzEFeIizc1</members>
         <members>ContractManager/</members>
+        <members>ContractManager/WPkVzWwFbQSfsPROliTmMQzEFeIizc</members>
         <members>ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH</members>
         <members>InvoicingDashboard/</members>
         <members>InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI</members>
+        <members>Management/</members>
+        <members>Management/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH1</members>
+        <members>Management/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH11</members>
         <members>Sales_and_Marketing_Dashboards/</members>
         <members>Sales_and_Marketing_Dashboards/AdoptionDashboard</members>
         <members>Sales_and_Marketing_Dashboards/Best_Practice_Leads_Dashboard</members>
@@ -1339,9 +1361,11 @@
     </types>
     <types>
         <members>ATAK_Personnel_Record_Page</members>
+        <members>ATAK_Project_Financial_Account_Record_Page</members>
         <members>ATAK_Project_Record_Page</members>
         <members>Asset_Record_Page</members>
         <members>Asset_Scheduler</members>
+        <members>B2B_Opportunity_Record_Page</members>
         <members>Case_Record_Page</members>
         <members>Case_Record_Page1</members>
         <members>Case_Record_Page2</members>
@@ -1363,6 +1387,9 @@
         <members>Location_Visit_Record_Page</members>
         <members>Maintenance_Asset_Record_Page</members>
         <members>Maintenance_Plan_Record_Page</members>
+        <members>Maintenance_Work_Rule_Record_Page</members>
+        <members>Mileage_Entry_Record_Page</members>
+        <members>Operating_Hours_Record_Page</members>
         <members>Operational_Account_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
         <members>Other_Record_Page</members>
@@ -1370,15 +1397,19 @@
         <members>Product_Consumed_Record_Page</members>
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
+        <members>Public_Tender_Opportunity_Record_Page</members>
         <members>Quick_Opportunity_Record_Page</members>
         <members>Quote_Record_Page</members>
+        <members>Resource_Absence_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
         <members>Scheduling_Policy_Record_Page</members>
+        <members>Service_Appointment</members>
         <members>Service_Appointment_Record_Page</members>
         <members>Service_Contract_Record_Page</members>
         <members>Service_Crew_Record_Page</members>
         <members>Service_Resource_Record_Page</members>
         <members>Service_Territory_Record_Page</members>
+        <members>Time_Sheet_Entry_Record_Page</members>
         <members>Time_Sheet_Record_Page</members>
         <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Line_Item_Record_Page</members>
@@ -1406,6 +1437,7 @@
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
@@ -1451,6 +1483,7 @@
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
         <members>Work_Order_Screen_Flow_Create_Rework_WO</members>
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
+        <members>Work_Order_Send_Customer_Notification_Crew_Inbound</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
@@ -1474,6 +1507,7 @@
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
@@ -1519,6 +1553,7 @@
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
         <members>Work_Order_Screen_Flow_Create_Rework_WO</members>
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
+        <members>Work_Order_Send_Customer_Notification_Crew_Inbound</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
@@ -1896,6 +1931,7 @@
         <members>sendBetterEmailAddNewMembers</members>
         <members>sendBetterEmailCPE</members>
         <members>sendBetterEmailUcModal</members>
+        <members>sendNotificationAction</members>
         <members>serviceBuilder</members>
         <members>servicesToSchedule</members>
         <members>showMileageScreen</members>
@@ -1967,6 +2003,7 @@
         <members>ATAK_Permissions</members>
         <members>Field_Service_Mobile_Custom_Permission_Set</members>
         <members>Lightning_Email_Template_Builder</members>
+        <members>PDF_Butler_Admin_Local</members>
         <members>Query_All_Files</members>
         <members>USF_Flow_Screen_Component_Custom_Objects</members>
         <members>cases_Permisssion_Set</members>
@@ -2088,7 +2125,7 @@
         <members>ServiceContract.Create_Service_Contract</members>
         <members>ServiceContract.Export_Lines</members>
         <members>ServiceContract.Generate_Maintenance_Plan</members>
-        <members>ServiceContract.Import_CLI</members>
+        <members>ServiceContract.Import_Lines</members>
         <members>ServiceContract.Prepare_for_Next_Year</members>
         <members>ServiceContract.Ready_for_Validation</members>
         <members>Start_Day</members>
@@ -2258,11 +2295,35 @@
     </types>
     <types>
         <members>BusienssSupport/</members>
+        <members>BusienssSupport/All_Mileage_Entries_this_Month_Tpl</members>
+        <members>BusienssSupport/All_Time_Sheets_this_Month_2Lf</members>
+        <members>BusienssSupport/All_Timesheets_This_Month_1gH</members>
+        <members>BusienssSupport/All_Timesheets_to_be_approved_5Y0</members>
         <members>BusienssSupport/Lopende_Prijscalculatie_rxn</members>
         <members>BusienssSupport/Meerwerk_Opportuniy_Open_k8u</members>
         <members>BusienssSupport/New_Price_Requests_wDh</members>
         <members>BusienssSupport/New_Report_Pxg</members>
+        <members>BusienssSupport/New_Service_Appointments_Report_TaJ</members>
+        <members>BusienssSupport/New_Time_Sheets_with_Mileage_Report_cMK</members>
         <members>BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp</members>
+        <members>BusienssSupport/Time_Sheets_to_Approve_hhh</members>
+        <members>ContractManager/</members>
+        <members>ContractManager/Mt_Teams_Mileage_Entries_This_Month_mza</members>
+        <members>ContractManager/Mt_Teams_Time_Sheets_to_Approve_LZJ</members>
+        <members>ContractManager/My_Crew_Members_Planning_Z7y</members>
+        <members>ContractManager/My_Real_Time_Work_Order_status_TODAY_sPR</members>
+        <members>ContractManager/My_TeamsTimesheets_This_Month_fhv</members>
+        <members>ContractManager/My_Teams_Mileage_Entries_to_Approvec_Hm7</members>
+        <members>ContractManager/My_Teams_Time_Sheets_this_Months_0RB</members>
+        <members>ContractManager/My_Teams_Timesheets_this_Month_jML</members>
+        <members>ContractManager/My_Teams_Unscheduled_Work_next_14_days_zvy</members>
+        <members>ContractManager/My_Teams_Vans_with_Material_mOX</members>
+        <members>ContractManager/My_Teams_overview_TODAY_Open_Sq8</members>
+        <members>ContractManager/New_Mileage_Entry_History_Report_T1m</members>
+        <members>ContractManager/New_Times_Sheets_with_Entries_Report_yLE</members>
+        <members>ContractManager/Overview_TODAY_Open_qmI</members>
+        <members>ContractManager/Real_Time_Work_Order_status_8FR</members>
+        <members>ContractManager/Schedule_next_2_weeks_All_Operators_aiH</members>
         <members>DashboardReportsAdoption/</members>
         <members>DashboardReportsAdoption/UsageActivitiesCompleted</members>
         <members>EBotR_v3/</members>
@@ -2270,15 +2331,25 @@
         <members>InvoicingDashboard/</members>
         <members>InvoicingDashboard/Kleine_werken_WO_Afgerond_Deze_Maand_f82</members>
         <members>InvoicingDashboard/Meerwerk_Work_Order_ytk</members>
-        <members>InvoicingDashboard/Subscription_All_Current_Month_EzP</members>
-        <members>InvoicingDashboard/Subscription_All_Last_0oH</members>
-        <members>InvoicingDashboard/Subscription_Completed_Previous_Month_xfG</members>
         <members>InvoicingDashboard/Subscription_Invoicing_WDx</members>
-        <members>InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa</members>
+        <members>InvoicingDashboard/Subscription_WO_Completed_Last_Month_wPW</members>
+        <members>InvoicingDashboard/Subscription_WO_Last_Month_SZs</members>
+        <members>InvoicingDashboard/Subscription_WO_Open_Last_Month_XCp</members>
+        <members>InvoicingDashboard/Subscription_WO_This_Month_0nX</members>
         <members>InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE</members>
         <members>InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM</members>
         <members>InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT</members>
         <members>InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM</members>
+        <members>InvoicingDashboard/WO_not_invoiced_yet_Last_Month_9Af</members>
+        <members>Management/</members>
+        <members>Management/Average_Travel_time_This_Year_Et7</members>
+        <members>Management/New_Times_Sheets_with_Entries_Report_K1Q</members>
+        <members>Management/New_Work_Orders_Report_dsD</members>
+        <members>Management/New_Work_Orders_Report_myy</members>
+        <members>Management/Rework_vs_Total_Work_This_Year_XhO</members>
+        <members>Management/Travel_Time_Vs_Working_Time_This_Month_Wx3</members>
+        <members>Management/Travel_Time_Vs_Working_Time_This_Year_mWa</members>
+        <members>Management/Work_Orders_per_CM_This_Year_YNg</members>
         <members>Sales_Marketing_Reports/</members>
         <members>Sales_Marketing_Reports/Closed_Lost_by_Reason</members>
         <members>Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner</members>
@@ -2409,6 +2480,9 @@
         <members>Service_Appointments</members>
         <members>Service_Appointments_with_Service_Resources</members>
         <members>Service_Contracts_with_Work_Orders</members>
+        <members>TimeSheets</members>
+        <members>Time_Sheets_with_Mileage</members>
+        <members>Times_Sheets_with_Entries</members>
         <members>Vans_with_Material_Items</members>
         <members>Work_Order_W_SA_and_Service_Resource</members>
         <members>Work_Orders</members>
@@ -2419,6 +2493,12 @@
         <members>flow_orchestration_work_item_ootb_crt_two_four_eight</members>
         <members>screen_flows_prebuilt_crt</members>
         <name>ReportType</name>
+    </types>
+    <types>
+        <members>Contract_Manager_X</members>
+        <members>Management_Business_Support</members>
+        <members>Operator_Territory_X</members>
+        <name>Role</name>
     </types>
     <types>
         <members>caseChannel</members>

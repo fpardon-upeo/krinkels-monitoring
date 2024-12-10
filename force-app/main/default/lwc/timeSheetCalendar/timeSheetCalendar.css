@@ -195,7 +195,7 @@
   padding: 16px;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  background: white;
+  background: rgba(68, 159, 3, 0.2);
   text-align: left;
   transition: background-color 0.2s;
 }

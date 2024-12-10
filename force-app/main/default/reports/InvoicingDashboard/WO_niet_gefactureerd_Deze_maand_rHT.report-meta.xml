@@ -89,7 +89,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>WO niet gefactureerd Deze maand</name>
+    <name>WO not invoiced yet This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

@@ -1857,12 +1857,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Customer_Reference__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Discovery_Completed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Language__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Loss_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Main_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Our_Reference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1908,6 +1928,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Service_Package__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Subject__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2058,6 +2083,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Quote.Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Language_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Language__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2492,6 +2527,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ServiceAppointment.Trigger_Notification_to_Customer__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ServiceAppointment.Work_Type_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2772,6 +2812,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ServiceTerritory.Owner_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ServiceTerritoryMember.FSL__Internal_SLR_HomeAddress_Geolocation__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2898,6 +2943,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheetEntry.Code_ATAK_Limbus__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Invoice_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3232,6 +3282,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.Trigger_Notification_to_Customer__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3378,6 +3433,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Platform_Event_Reorder_Work_Steps</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Quote_After_Save_Create_Work_Order_on_Acceptance</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -3558,6 +3617,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Send_Customer_Notification_Crew_Inbound</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

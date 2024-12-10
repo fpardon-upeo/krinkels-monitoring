@@ -5,6 +5,7 @@
     <label>Geolocation</label>
     <required>false</required>
     <scale>5</scale>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Location</type>
 </CustomField>

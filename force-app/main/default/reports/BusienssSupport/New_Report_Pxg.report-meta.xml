@@ -25,7 +25,7 @@
     <columns>
         <field>WorkOrder.ServiceAppointments.ServiceResources$ServiceResource</field>
     </columns>
-    <description>All WOs huidige maand met Check-in at work verplicht</description>
+    <description>All WOs current month with &quot;Check-in at work&quot; required</description>
     <filter>
         <criteriaItems>
             <column>WorkOrder$Check_In_At_Work_Required__c</column>
@@ -44,7 +44,7 @@
         <language>en_US</language>
     </filter>
     <format>Tabular</format>
-    <name>Check-in At Work Deze Maand</name>
+    <name>Check-in At Work This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

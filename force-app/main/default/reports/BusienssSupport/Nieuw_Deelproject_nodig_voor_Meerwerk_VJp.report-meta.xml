@@ -25,7 +25,7 @@
     <columns>
         <field>Opportunity.ATAK_Project_Request_Comment__c</field>
     </columns>
-    <description>Opportunities met Atak Prject aanvraag open</description>
+    <description>Opportunities with Deelproject request open</description>
     <filter>
         <criteriaItems>
             <column>Opportunity.ATAK_Project_Request_Status__c</column>
@@ -42,7 +42,7 @@
         <field>Opportunity.ATAK_Project_Request_Priority__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Nieuw Deelproject nodig voor Meerwerk</name>
+    <name>New &apos;Deelproject&apos; needed additional work</name>
     <params>
         <name>open</name>
         <value>all</value>

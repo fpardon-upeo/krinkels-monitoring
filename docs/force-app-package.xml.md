@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 2667
+Metadatas: 2747
 
 <details><summary>ApexClass (109)</summary>
   • ATAKMaterialService<br/>
@@ -195,14 +195,16 @@ Metadatas: 2667
   • Internal Community<br/>
 </details>
 
-<details><summary>CompactLayout (22)</summary>
+<details><summary>CompactLayout (24)</summary>
   • ATAK_Personnel__c.Custom_Compact_Layout<br/>
+  • ATAK_Project__c.ATAK_Project_Compact_Layout<br/>
   • Account.Account_Compact_Layout<br/>
   • Account.Commercial_Account<br/>
   • Account.Financial_Account<br/>
   • Account.Group_Account<br/>
   • Account.Operational_Account<br/>
   • Account.Other_Compact_Layout<br/>
+  • Asset.Asset_Compact_Layout<br/>
   • Contact.Contact<br/>
   • Lead.Leads_Custom_Compact_Layout<br/>
   • Location.Van_Compact_Layout<br/>
@@ -248,7 +250,7 @@ Metadatas: 2667
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (612)</summary>
+<details><summary>CustomField (623)</summary>
   • ATAK_Personnel__c.Code__c<br/>
   • ATAK_Personnel__c.Create_Service_Resource__c<br/>
   • ATAK_Personnel__c.Department_Code__c<br/>
@@ -563,8 +565,12 @@ Metadatas: 2667
   • Opportunity.ATAK_Projectx__c<br/>
   • Opportunity.Amount__c<br/>
   • Opportunity.Budget_Confirmed__c<br/>
+  • Opportunity.Customer_Reference__c<br/>
   • Opportunity.Discovery_Completed__c<br/>
+  • Opportunity.Language__c<br/>
   • Opportunity.Loss_Reason__c<br/>
+  • Opportunity.Main_Contact__c<br/>
+  • Opportunity.Our_Reference__c<br/>
   • Opportunity.Price_Request_BS_Comments__c<br/>
   • Opportunity.Price_Request_Demand_Comments__c<br/>
   • Opportunity.Price_Request_Priority__c<br/>
@@ -574,6 +580,7 @@ Metadatas: 2667
   • Opportunity.ROI_Analysis_Completed__c<br/>
   • Opportunity.Service_Contract__c<br/>
   • Opportunity.Service_Package__c<br/>
+  • Opportunity.Subject__c<br/>
   • Opportunity.Type_Code__c<br/>
   • Opportunity.Work_Size__c<br/>
   • Outbound_Log__c.Error_Message__c<br/>
@@ -605,6 +612,8 @@ Metadatas: 2667
   • ProductRequired.Material_Item__c<br/>
   • Quote.ATAK_Project__c<br/>
   • Quote.Amount__c<br/>
+  • Quote.Language_Code__c<br/>
+  • Quote.Language__c<br/>
   • Reorder_Work_Step__e.Next_Number__c<br/>
   • Reorder_Work_Step__e.Work_Order_Id__c<br/>
   • ResourceAbsence.Absence_Type__c<br/>
@@ -691,6 +700,7 @@ Metadatas: 2667
   • ServiceAppointment.Recurrence__c<br/>
   • ServiceAppointment.Scheduling_Notification_Send__c<br/>
   • ServiceAppointment.Travel_is_Done__c<br/>
+  • ServiceAppointment.Trigger_Notification_to_Customer__c<br/>
   • ServiceAppointment.Work_Type_Name__c<br/>
   • ServiceContract.Accepted__c<br/>
   • ServiceContract.Additional_Work_in_scope_contract__c<br/>
@@ -753,6 +763,7 @@ Metadatas: 2667
   • ServiceTerritory.FSL__TerritoryLevel__c<br/>
   • ServiceTerritory.Main_Responsible_Atak_Code__c<br/>
   • ServiceTerritory.Main_Responsible__c<br/>
+  • ServiceTerritory.Owner_Name__c<br/>
   • ServiceTerritoryMember.FSL__Internal_SLR_HomeAddress_Geolocation__c<br/>
   • Service_Appointment_Status__c.New_Status__c<br/>
   • Service_Appointment_Status__c.Previous_Status__c<br/>
@@ -777,6 +788,7 @@ Metadatas: 2667
   • TimeSheetEntry.Break_Duration__c<br/>
   • TimeSheetEntry.Break_Duration_in_Minutes__c<br/>
   • TimeSheetEntry.Code_ATAK_Limbus__c<br/>
+  • TimeSheetEntry.Invoice_Type__c<br/>
   • TimeSheetEntry.Pause_Duration__c<br/>
   • TimeSheetEntry.Resource_Absence__c<br/>
   • TimeSheetEntry.Soccode__c<br/>
@@ -844,6 +856,7 @@ Metadatas: 2667
   • WorkOrder.Shop_Visit_Start_Time__c<br/>
   • WorkOrder.Signature_Required__c<br/>
   • WorkOrder.Special_Equipment__c<br/>
+  • WorkOrder.Trigger_Notification_to_Customer__c<br/>
   • WorkOrder.Type__c<br/>
   • WorkOrder.WO_with_Goodwill_Tasks__c<br/>
   • WorkOrder.Waste_Visit_Done__c<br/>
@@ -863,7 +876,7 @@ Metadatas: 2667
   • Work_Schedule__c.Total_Weekly_Hours__c<br/>
 </details>
 
-<details><summary>CustomLabel (141)</summary>
+<details><summary>CustomLabel (143)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Break_Button_Sub_Text<br/>
   • AppointmentPicker_Break_Button_Text<br/>
@@ -910,6 +923,7 @@ Metadatas: 2667
   • Calendar_Mileage_Options<br/>
   • Calendar_Mileage_Starting_Location<br/>
   • Calendar_Mileage_Starting_Mileage<br/>
+  • Calendar_Mileage_Type<br/>
   • Calendar_New_Break_Entry<br/>
   • Calendar_New_In_Mileage_Entry<br/>
   • Calendar_New_Out_Mileage_Entry<br/>
@@ -945,6 +959,7 @@ Metadatas: 2667
   • LocationMonitor_NoWorkOrderLocation<br/>
   • LocationMonitor_ThresholdSliderLabel<br/>
   • LocationMonitor_WithinThreshold<br/>
+  • NotifyCustomer_Toggle<br/>
   • StartDay_End_Button_Sub_Text<br/>
   • StartDay_End_Button_Text<br/>
   • StartDay_End_Day_Button_Sub_Text<br/>
@@ -1070,10 +1085,15 @@ Metadatas: 2667
   • Work_Schedule__c<br/>
 </details>
 
-<details><summary>Dashboard (17)</summary>
+<details><summary>Dashboard (22)</summary>
   • BusinessSupport/<br/>
   • BusinessSupport/NFDcAwKoPdhAySgtggWJppriXTIuEH<br/>
+  • BusinessSupport/WPkVzWwFbQSfsPROliTmMQzEFeIizc1<br/>
   • ContractManager/<br/>
+  • ContractManager/Management/<br/>
+  • ContractManager/Management/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH1<br/>
+  • ContractManager/Management/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH11<br/>
+  • ContractManager/WPkVzWwFbQSfsPROliTmMQzEFeIizc<br/>
   • ContractManager/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH<br/>
   • InvoicingDashboard/<br/>
   • InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI<br/>
@@ -1214,12 +1234,14 @@ Metadatas: 2667
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (51)</summary>
+<details><summary>FlexiPage (60)</summary>
   • ATAK_Personnel_Record_Page<br/>
+  • ATAK_Project_Financial_Account_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
   • Account_Record_Page<br/>
   • Asset_Record_Page<br/>
   • Asset_Scheduler<br/>
+  • B2B_Opportunity_Record_Page<br/>
   • Case_Record_Page<br/>
   • Case_Record_Page1<br/>
   • Case_Record_Page2<br/>
@@ -1241,6 +1263,9 @@ Metadatas: 2667
   • Location_Visit_Record_Page<br/>
   • Maintenance_Asset_Record_Page<br/>
   • Maintenance_Plan_Record_Page<br/>
+  • Maintenance_Work_Rule_Record_Page<br/>
+  • Mileage_Entry_Record_Page<br/>
+  • Operating_Hours_Record_Page<br/>
   • Operational_Account_Record_Page<br/>
   • Opportunity_Product_Record_Page<br/>
   • Opportunity_Record_Page<br/>
@@ -1249,15 +1274,19 @@ Metadatas: 2667
   • Product_Consumed_Record_Page<br/>
   • Product_Item_Record_Page<br/>
   • Product_Record_Page<br/>
+  • Public_Tender_Opportunity_Record_Page<br/>
   • Quick_Opportunity_Record_Page<br/>
   • Quote_Record_Page<br/>
+  • Resource_Absence_Record_Page<br/>
   • SalesCloudMobile_UtilityBar<br/>
   • Scheduling_Policy_Record_Page<br/>
+  • Service_Appointment<br/>
   • Service_Appointment_Record_Page<br/>
   • Service_Contract_Record_Page<br/>
   • Service_Crew_Record_Page<br/>
   • Service_Resource_Record_Page<br/>
   • Service_Territory_Record_Page<br/>
+  • Time_Sheet_Entry_Record_Page<br/>
   • Time_Sheet_Record_Page<br/>
   • Van_Crew_Member_Record_Page<br/>
   • Work_Order_Line_Item_Record_Page<br/>
@@ -1268,7 +1297,7 @@ Metadatas: 2667
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (72)</summary>
+<details><summary>Flow (74)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1286,6 +1315,7 @@ Metadatas: 2667
   • Opportunity_Screen_Flow_ATAK_Project_Request<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
+  • Quote_After_Save_Create_Work_Order_on_Acceptance<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
   • Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
@@ -1337,13 +1367,14 @@ Metadatas: 2667
   • Work_Order_Screen_Flow_Create_Depot_Visit<br/>
   • Work_Order_Screen_Flow_Create_Rework_WO<br/>
   • Work_Order_Screen_Flow_Create_Waste_Depot_Visit<br/>
+  • Work_Order_Send_Customer_Notification_Crew_Inbound<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (72)</summary>
+<details><summary>FlowDefinition (74)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1361,6 +1392,7 @@ Metadatas: 2667
   • Opportunity_Screen_Flow_ATAK_Project_Request<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
+  • Quote_After_Save_Create_Work_Order_on_Acceptance<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
   • Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
@@ -1412,6 +1444,7 @@ Metadatas: 2667
   • Work_Order_Screen_Flow_Create_Depot_Visit<br/>
   • Work_Order_Screen_Flow_Create_Rework_WO<br/>
   • Work_Order_Screen_Flow_Create_Waste_Depot_Visit<br/>
+  • Work_Order_Send_Customer_Notification_Crew_Inbound<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
@@ -1703,7 +1736,7 @@ Metadatas: 2667
   • Work_Schedule__c-Work Schedule Layout<br/>
 </details>
 
-<details><summary>LightningComponentBundle (104)</summary>
+<details><summary>LightningComponentBundle (105)</summary>
   • addressSearch<br/>
   • checkIn<br/>
   • colorsPicker<br/>
@@ -1792,6 +1825,7 @@ Metadatas: 2667
   • sendBetterEmailAddNewMembers<br/>
   • sendBetterEmailCPE<br/>
   • sendBetterEmailUcModal<br/>
+  • sendNotificationAction<br/>
   • serviceBuilder<br/>
   • servicesToSchedule<br/>
   • showMileageScreen<br/>
@@ -1873,10 +1907,11 @@ Metadatas: 2667
   • Default_Opportunity<br/>
 </details>
 
-<details><summary>PermissionSet (9)</summary>
+<details><summary>PermissionSet (10)</summary>
   • ATAK_Permissions<br/>
   • Field_Service_Mobile_Custom_Permission_Set<br/>
   • Lightning_Email_Template_Builder<br/>
+  • PDF_Butler_Admin_Local<br/>
   • Query_All_Files<br/>
   • USF_Flow_Screen_Component_Custom_Objects<br/>
   • cases_Permisssion_Set<br/>
@@ -1960,7 +1995,7 @@ Metadatas: 2667
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (165)</summary>
+<details><summary>QuickAction (166)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -1997,6 +2032,7 @@ Metadatas: 2667
   • ServiceContract.Export_Lines<br/>
   • ServiceContract.Generate_Maintenance_Plan<br/>
   • ServiceContract.Import_CLI<br/>
+  • ServiceContract.Import_Lines<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
   • Start_Day<br/>
@@ -2166,13 +2202,37 @@ Metadatas: 2667
   • bpost<br/>
 </details>
 
-<details><summary>Report (144)</summary>
+<details><summary>Report (182)</summary>
   • BusienssSupport/<br/>
+  • BusienssSupport/All_Mileage_Entries_this_Month_Tpl<br/>
+  • BusienssSupport/All_Time_Sheets_this_Month_2Lf<br/>
+  • BusienssSupport/All_Timesheets_This_Month_1gH<br/>
+  • BusienssSupport/All_Timesheets_to_be_approved_5Y0<br/>
   • BusienssSupport/Lopende_Prijscalculatie_rxn<br/>
   • BusienssSupport/Meerwerk_Opportuniy_Open_k8u<br/>
   • BusienssSupport/New_Price_Requests_wDh<br/>
   • BusienssSupport/New_Report_Pxg<br/>
+  • BusienssSupport/New_Service_Appointments_Report_TaJ<br/>
+  • BusienssSupport/New_Time_Sheets_with_Mileage_Report_cMK<br/>
   • BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp<br/>
+  • BusienssSupport/Time_Sheets_to_Approve_hhh<br/>
+  • ContractManager/<br/>
+  • ContractManager/Mt_Teams_Mileage_Entries_This_Month_mza<br/>
+  • ContractManager/Mt_Teams_Time_Sheets_to_Approve_LZJ<br/>
+  • ContractManager/My_Crew_Members_Planning_Z7y<br/>
+  • ContractManager/My_Real_Time_Work_Order_status_TODAY_sPR<br/>
+  • ContractManager/My_TeamsTimesheets_This_Month_fhv<br/>
+  • ContractManager/My_Teams_Mileage_Entries_to_Approvec_Hm7<br/>
+  • ContractManager/My_Teams_Time_Sheets_this_Months_0RB<br/>
+  • ContractManager/My_Teams_Timesheets_this_Month_jML<br/>
+  • ContractManager/My_Teams_Unscheduled_Work_next_14_days_zvy<br/>
+  • ContractManager/My_Teams_Vans_with_Material_mOX<br/>
+  • ContractManager/My_Teams_overview_TODAY_Open_Sq8<br/>
+  • ContractManager/New_Mileage_Entry_History_Report_T1m<br/>
+  • ContractManager/New_Times_Sheets_with_Entries_Report_yLE<br/>
+  • ContractManager/Overview_TODAY_Open_qmI<br/>
+  • ContractManager/Real_Time_Work_Order_status_8FR<br/>
+  • ContractManager/Schedule_next_2_weeks_All_Operators_aiH<br/>
   • DashboardReportsAdoption/<br/>
   • DashboardReportsAdoption/UsageActivitiesCompleted<br/>
   • EBotR_v3/<br/>
@@ -2188,10 +2248,24 @@ Metadatas: 2667
   • InvoicingDashboard/Subscription_Completed_Previous_Month_xfG<br/>
   • InvoicingDashboard/Subscription_Invoicing_WDx<br/>
   • InvoicingDashboard/Subscription_Not_Completed_Prev_Month_VSa<br/>
+  • InvoicingDashboard/Subscription_WO_Completed_Last_Month_wPW<br/>
+  • InvoicingDashboard/Subscription_WO_Last_Month_SZs<br/>
+  • InvoicingDashboard/Subscription_WO_Open_Last_Month_XCp<br/>
+  • InvoicingDashboard/Subscription_WO_This_Month_0nX<br/>
   • InvoicingDashboard/Vorderingst_Completed_Current_Month_oUE<br/>
   • InvoicingDashboard/WO_Afgerond_Deze_Maand_PKM<br/>
   • InvoicingDashboard/WO_niet_gefactureerd_Deze_maand_rHT<br/>
   • InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM<br/>
+  • InvoicingDashboard/WO_not_invoiced_yet_Last_Month_9Af<br/>
+  • Management/<br/>
+  • Management/Average_Travel_time_This_Year_Et7<br/>
+  • Management/New_Times_Sheets_with_Entries_Report_K1Q<br/>
+  • Management/New_Work_Orders_Report_dsD<br/>
+  • Management/New_Work_Orders_Report_myy<br/>
+  • Management/Rework_vs_Total_Work_This_Year_XhO<br/>
+  • Management/Travel_Time_Vs_Working_Time_This_Month_Wx3<br/>
+  • Management/Travel_Time_Vs_Working_Time_This_Year_mWa<br/>
+  • Management/Work_Orders_per_CM_This_Year_YNg<br/>
   • Sales_Marketing_Reports/<br/>
   • Sales_Marketing_Reports/Closed_Lost_by_Reason<br/>
   • Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner<br/>
@@ -2313,7 +2387,7 @@ Metadatas: 2667
   • unfiled$public/flow_screen_prebuilt_report<br/>
 </details>
 
-<details><summary>ReportType (16)</summary>
+<details><summary>ReportType (19)</summary>
   • Accounts_with_Work_Orders<br/>
   • Assets_with_Work_Orders_and_Service_Appointments<br/>
   • Maintenance_Plans_with_Maintenance_Assets<br/>
@@ -2321,6 +2395,9 @@ Metadatas: 2667
   • Service_Appointments<br/>
   • Service_Appointments_with_Service_Resources<br/>
   • Service_Contracts_with_Work_Orders<br/>
+  • TimeSheets<br/>
+  • Time_Sheets_with_Mileage<br/>
+  • Times_Sheets_with_Entries<br/>
   • Vans_with_Material_Items<br/>
   • Work_Order_W_SA_and_Service_Resource<br/>
   • Work_Orders<br/>
@@ -2330,6 +2407,12 @@ Metadatas: 2667
   • flow_orchestration_step_run_ootb_crt_two_four_eight<br/>
   • flow_orchestration_work_item_ootb_crt_two_four_eight<br/>
   • screen_flows_prebuilt_crt<br/>
+</details>
+
+<details><summary>Role (3)</summary>
+  • Contract_Manager_X<br/>
+  • Management_Business_Support<br/>
+  • Operator_Territory_X<br/>
 </details>
 
 <details><summary>ServiceChannel (3)</summary>

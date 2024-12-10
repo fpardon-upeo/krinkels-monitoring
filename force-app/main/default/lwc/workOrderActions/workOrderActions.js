@@ -63,11 +63,6 @@ export default class WorkOrderActions extends LightningElement {
     this.dispatchEvent(new CloseActionScreenEvent());
   }
 
-  handleSuccessShopVisit() {
-    this.closeModal();
-    this.showImageCapture = true;
-  }
-
   handleUploadFinished(event) {
     //Add on toastEvent file Id to the message
     console.log("handleUploadFinished", event.detail.files);

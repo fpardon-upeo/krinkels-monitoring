@@ -27,7 +27,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>ServiceContract.WorkOrders$Billed__c</field>
     </columns>
-    <description>Service Contract = Abonnement / Geen meerwerk - Geen interne WO</description>
+    <description>Service Contract = Subscription /No Addition or Internal WO</description>
     <filter>
         <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
         <criteriaItems>
@@ -83,7 +83,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Abonnement WO Afgerond Deze Maand</name>
+    <name>Subscription WO Completed This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

@@ -71,9 +71,12 @@ public without sharing class InternalWorkOrderController {
         //The Service Crew Member record Service Resource ID needs to be the same as the Service Resource ID
 
         ServiceCrewMember serviceCrewMember = null;
+        ServiceResource serviceCrewResource = null;
 
         try {
             serviceCrewMember = [SELECT Id, ServiceCrewId FROM ServiceCrewMember WHERE ServiceResourceId = :serviceResourceId AND StartDate <= TODAY AND (EndDate = NULL OR EndDate >= TODAY) LIMIT 1];
+            //Get the ServiceResource of type C from the ServiceCrewMember.ServiceCrewId
+            serviceCrewResource  = [SELECT Id FROM ServiceResource WHERE ServiceCrewId =: serviceCrewMember.ServiceCrewId AND ResourceType = 'C' LIMIT 1];
         } catch (QueryException e) {
             System.debug('No Service Crew Member found');
         }
@@ -90,11 +93,14 @@ public without sharing class InternalWorkOrderController {
         assignedResource.ServiceAppointmentId = serviceAppointment.Id;
 
         if(serviceCrewMember != null && serviceCrewMember.ServiceCrewId != null) {
-            assignedResource.ServiceCrewId = serviceCrewMember.ServiceCrewId;
-            assignedResource.ServiceResourceId = serviceResourceId;
+            System.debug('Assigning Service Crew Member');
+            //assignedResource.ServiceCrewId = serviceCrewMember.ServiceCrewId;
+            assignedResource.ServiceResourceId = serviceCrewResource.Id;
         } else {
             assignedResource.ServiceResourceId = serviceResourceId;
         }
+
+        System.debug('assignedResource: ' + assignedResource);
 
         insert assignedResource;
 

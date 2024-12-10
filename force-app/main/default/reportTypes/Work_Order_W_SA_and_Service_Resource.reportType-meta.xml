@@ -574,6 +574,11 @@
             <field>Invoicing_Remarks__c</field>
             <table>WorkOrder</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Trigger_Notification_to_Customer__c</field>
+            <table>WorkOrder</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>
@@ -1015,6 +1020,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Work_Type_Name__c</field>
+            <table>WorkOrder.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Trigger_Notification_to_Customer__c</field>
             <table>WorkOrder.ServiceAppointments</table>
         </columns>
         <masterLabel>Service Appointments</masterLabel>

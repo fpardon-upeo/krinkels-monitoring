@@ -26,4 +26,9 @@
         <default>false</default>
         <label>Subscription</label>
     </standardValue>
+    <standardValue>
+        <fullName>Winter Service</fullName>
+        <default>false</default>
+        <label>Winter Service</label>
+    </standardValue>
 </StandardValueSet>

@@ -33,7 +33,7 @@
     <columns>
         <field>ServiceContract$Invoice_Type__c</field>
     </columns>
-    <description>WO met status completed</description>
+    <description>WO with status completed</description>
     <filter>
         <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
         <criteriaItems>
@@ -82,7 +82,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Work_Type_Name__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>WO Afgerond Deze Maand</name>
+    <name>WO Completed This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

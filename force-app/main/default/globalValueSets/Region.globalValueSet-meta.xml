@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
-        <fullName>Antwerpen Centrum</fullName>
+        <fullName>Antwerp Centre</fullName>
         <default>false</default>
-        <label>Antwerpen Centrum</label>
+        <label>Antwerp Centre</label>
     </customValue>
     <customValue>
-        <fullName>Antwerpen Noord &amp; Oost</fullName>
+        <fullName>Antwerp North &amp; East</fullName>
         <default>false</default>
-        <label>Antwerpen Noord &amp; Oost</label>
+        <label>Antwerp North &amp; East</label>
     </customValue>
     <customValue>
-        <fullName>Antwerpen Zuid &amp; West</fullName>
+        <fullName>Antwerp South &amp; West</fullName>
         <default>false</default>
-        <label>Antwerpen Zuid &amp; West</label>
+        <label>Antwerp South &amp; West</label>
     </customValue>
     <customValue>
-        <fullName>Henegouwen</fullName>
+        <fullName>Hainaut</fullName>
         <default>false</default>
-        <label>Henegouwen</label>
+        <label>Hainaut</label>
     </customValue>
     <customValue>
         <fullName>Leuven-Mechelen-Willebroek</fullName>
@@ -31,14 +31,14 @@
         <label>Limburg</label>
     </customValue>
     <customValue>
-        <fullName>Oost-Vlaanderen</fullName>
+        <fullName>East Flanders</fullName>
         <default>false</default>
-        <label>Oost-Vlaanderen</label>
+        <label>East Flanders</label>
     </customValue>
     <customValue>
-        <fullName>West-Vlaanderen</fullName>
+        <fullName>West Flanders</fullName>
         <default>false</default>
-        <label>West-Vlaanderen</label>
+        <label>West Flanders</label>
     </customValue>
     <customValue>
         <fullName>Brussels Hoofdstedelijk Gewest</fullName>
@@ -51,14 +51,14 @@
         <label>Namen</label>
     </customValue>
     <customValue>
-        <fullName>Niet gevonden</fullName>
+        <fullName>Not Found</fullName>
         <default>false</default>
-        <label>Niet gevonden</label>
+        <label>Not Found</label>
     </customValue>
     <customValue>
-        <fullName>Vlaams-Brabant</fullName>
+        <fullName>Flemish Brabant</fullName>
         <default>false</default>
-        <label>Vlaams-Brabant</label>
+        <label>Flemish Brabant</label>
     </customValue>
     <customValue>
         <fullName>Luik</fullName>
@@ -66,14 +66,14 @@
         <label>Luik</label>
     </customValue>
     <customValue>
-        <fullName>Waals-Brabant</fullName>
+        <fullName>Walloon Brabant</fullName>
         <default>false</default>
-        <label>Waals-Brabant</label>
+        <label>Walloon Brabant</label>
     </customValue>
     <customValue>
-        <fullName>Antwerpen</fullName>
+        <fullName>Antwerp</fullName>
         <default>false</default>
-        <label>Antwerpen</label>
+        <label>Antwerp</label>
     </customValue>
     <customValue>
         <fullName>Luxemburg</fullName>

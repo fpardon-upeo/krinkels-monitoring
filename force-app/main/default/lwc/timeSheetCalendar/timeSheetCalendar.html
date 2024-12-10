@@ -278,6 +278,20 @@
             <div class="MileageEntryContainer" key={entry.Id}>
               <div class="form-element">
                 <label class="slds-form-element__label"
+                  >{labels.Calendar_Mileage_Type}</label
+                >
+                <div class="slds-form-element__control">
+                  <input
+                    type="text"
+                    readonly
+                    class="slds-input"
+                    value={entry.Type__c}
+                  />
+                </div>
+              </div>
+
+              <div class="form-element">
+                <label class="slds-form-element__label"
                   >{labels.Calendar_Mileage_Starting_Location}</label
                 >
                 <div class="slds-form-element__control">
@@ -347,18 +361,22 @@
               </div>
 
               <div class="button-mileage-container">
-                <button class="cancel-button" onclick={handleCloseForm}>
+                <button
+                  class="cancel-button"
+                  type="button"
+                  onclick={handleCloseForm}
+                >
                   {labels.Calendar_Cancel}
                 </button>
-                <template if:false={showNoEntriesModal}>
-                  <button
-                    class="submit-button"
-                    onclick={handleMileageEntryEdit}
-                    data-id={entry.Id}
-                  >
-                    {labels.Calendar_Edit}
-                  </button>
-                </template>
+                <!-- <template if:false={showNoEntriesModal}> -->
+                <button
+                  class="submit-button"
+                  onclick={handleMileageEntryEdit}
+                  data-id={entry.Id}
+                >
+                  {labels.Calendar_Edit}
+                </button>
+                <!-- </template> -->
               </div>
             </div>
           </template>
@@ -415,29 +433,22 @@
       </div>
       <div class="bottom-sheet-content">
         <div class="action-buttons">
-          <template if:false={showNoEntriesModal}>
-            <button onclick={handleNewOutMileageEntry} class="action-button">
-              <span class="button-icon">
-                <lightning-icon
-                  icon-name="utility:travel_and_places"
-                  size="small"
-                ></lightning-icon>
-              </span>
-              <span class="button-text">
-                <span class="button-label"
-                  >{labels.Calendar_Add_Out_Mileage_Entry}</span
-                >
-                <span class="button-description"
-                  >{labels.Calendar_Add_Out_Mileage_Entry_Description}</span
-                >
-              </span>
-            </button>
-          </template>
-          <template if:true={showNoEntriesModal}>
-            <p class="no-entries-text">
-              {labels.Calendar_No_Out_Mileage_Entries_Description}
-            </p>
-          </template>
+          <button onclick={handleNewOutMileageEntry} class="action-button">
+            <span class="button-icon">
+              <lightning-icon
+                icon-name="utility:travel_and_places"
+                size="small"
+              ></lightning-icon>
+            </span>
+            <span class="button-text">
+              <span class="button-label"
+                >{labels.Calendar_Add_Out_Mileage_Entry}</span
+              >
+              <span class="button-description"
+                >{labels.Calendar_Add_Out_Mileage_Entry_Description}</span
+              >
+            </span>
+          </button>
         </div>
         <button class="cancel-button" onclick={handleCloseForm}>
           {labels.Calendar_Cancel}
@@ -824,7 +835,11 @@
           </div>
 
           <div class="button-group">
-            <button class="cancel-button" onclick={handleCloseForm}>
+            <button
+              class="cancel-button"
+              type="button"
+              onclick={handleCloseForm}
+            >
               {labels.Calendar_Cancel}
             </button>
             <button class="submit-button" type="submit">

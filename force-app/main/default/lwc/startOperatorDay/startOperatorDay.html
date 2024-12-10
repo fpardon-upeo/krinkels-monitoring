@@ -328,6 +328,9 @@
 
       <template if:true={showAppointmentScreen}>
         <div class="table-container">
+          <div class="slds-m-top_small slds-m-bottom_small">
+            <c-send-notification-action onbubble={handleBubbleNotification}></c-send-notification-action>
+          </div>
           <div class="datatable-wrapper">
             <lightning-datatable
               class="slds-table_striped slds-cell-wrap"

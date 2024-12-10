@@ -41,7 +41,7 @@
         </span>
       </button>
 
-      <button onclick={handleInMileageEntries} class="action-button">
+      <button onclick={handleOwnMileageEntries} class="action-button">
         <span class="button-icon">
           <lightning-icon
             icon-name="utility:travel_and_places"
@@ -87,9 +87,6 @@
                 <label class="slds-form-element__label"
                   >Starting Location</label
                 >
-              </div>
-
-              <div class="form-element">
                 <div class="slds-form-element__control">
                   <input
                     type="text"
@@ -330,7 +327,11 @@
             ></lightning-input-field>
           </div>
           <div class="button-group">
-            <button class="cancel-button" onclick={handleCloseForm}>
+            <button
+              class="cancel-button"
+              type="button"
+              onclick={handleCloseForm}
+            >
               Cancel
             </button>
             <button class="submit-button" type="submit">Save</button>
@@ -390,6 +391,30 @@
               <span class="button-description">Record your out mileage</span>
             </span>
           </button>
+        </div>
+        <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Own Mileage Message Modal (No entries) -->
+  <template if:true={showOwnMileageMessage}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">Own Mileage Entries</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <div class="warning-container">
+          <div class="warning-icon">
+            <lightning-icon
+              icon-name="utility:warning"
+              size="small"
+              variant="warning"
+            ></lightning-icon>
+          </div>
+          <p class="warning-text">You have no own vehicle mileage entries.</p>
         </div>
         <button class="cancel-button" onclick={handleCloseForm}>Cancel</button>
       </div>

@@ -1126,4 +1126,20 @@
         <shortDescription>Within Threshold Message</shortDescription>
         <value>Within Threshold</value>
     </labels>
+    <labels>
+        <fullName>Calendar_Mileage_Type</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_Mileage_Type</shortDescription>
+        <value>Mileage Type</value>
+    </labels>
+    <labels>
+        <fullName>NotifyCustomer_Toggle</fullName>
+        <categories>NotifyCustomer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NotifyCustomer_Toggle</shortDescription>
+        <value>Notify next customer</value>
+    </labels>
 </CustomLabels>

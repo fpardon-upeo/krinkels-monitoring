@@ -9,6 +9,7 @@ an integer between 1 and 12 if FREQ=MONTHLY</inlineHelpText>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Number</type>
     <unique>false</unique>

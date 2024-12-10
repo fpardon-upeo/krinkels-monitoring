@@ -18,7 +18,7 @@
                                 <criteria>
                                     <leftValue>{!Record.Type__c}</leftValue>
                                     <operator>EQUAL</operator>
-                                    <rightValue>Master Agreement</rightValue>
+                                    <rightValue>Commercial Agreement</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -69,7 +69,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ServiceContract.Import_CLI</value>
+                            <value>ServiceContract.Import_Lines</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -133,7 +133,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>NE</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -167,7 +167,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -184,7 +184,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -201,7 +201,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -286,7 +286,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -358,7 +358,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -379,7 +379,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -396,7 +396,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -430,7 +430,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -495,7 +495,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -512,7 +512,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -560,7 +560,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -839,7 +839,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -864,7 +864,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1312,7 +1312,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1333,7 +1333,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1354,7 +1354,7 @@
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Master Agreement</rightValue>
+                        <rightValue>Commercial Agreement</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

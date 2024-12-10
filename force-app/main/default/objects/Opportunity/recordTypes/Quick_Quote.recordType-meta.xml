@@ -58,6 +58,21 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Language__c</picklist>
+        <values>
+            <fullName>Dutch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>LeadSource</picklist>
         <values>
             <fullName>Campaign</fullName>

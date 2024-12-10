@@ -9,6 +9,14 @@
         <picklistField>Price_Request_Priority__c</picklistField>
         <picklistObject>Opportunity</picklistObject>
     </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>ServicePackageType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Service_Package__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>[Opportunity][Screen-Flow] ATAK Project Request {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Opportunity][Screen-Flow] ATAK Project Request</label>
@@ -95,6 +103,16 @@
             </defaultValue>
             <fieldText>Priority</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Service_Package_Type</name>
+            <choiceReferences>ServicePackageType</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Service Package Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <helpText>&lt;p&gt;Used to generate a suggested project name&lt;/p&gt;</helpText>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>

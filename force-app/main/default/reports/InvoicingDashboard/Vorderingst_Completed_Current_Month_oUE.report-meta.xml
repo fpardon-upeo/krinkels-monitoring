@@ -27,7 +27,7 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>ServiceContract.WorkOrders$Billed__c</field>
     </columns>
-    <description>Service Contract = Vorderingstaat / Geen meerwerk</description>
+    <description>Service Contract = Vorderingstaat / No Addiotnal work - No Internal Work</description>
     <filter>
         <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
         <criteriaItems>
@@ -35,7 +35,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Statement of Claim</value>
+            <value></value>
         </criteriaItems>
         <criteriaItems>
             <column>ServiceContract.WorkOrders.ServiceAppointments$Status</column>
@@ -83,7 +83,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Vorderingst WO Afgerond Deze Maand</name>
+    <name>&apos;Vorderingst&apos; WO Completed This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

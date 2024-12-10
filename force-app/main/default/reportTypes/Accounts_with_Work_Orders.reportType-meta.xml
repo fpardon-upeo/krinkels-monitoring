@@ -963,6 +963,11 @@
             <field>Invoicing_Remarks__c</field>
             <table>Account.WorkOrders</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Trigger_Notification_to_Customer__c</field>
+            <table>Account.WorkOrders</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
 </ReportType>

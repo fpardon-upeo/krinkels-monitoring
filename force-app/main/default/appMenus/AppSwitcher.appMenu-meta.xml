@@ -160,4 +160,40 @@
         <name>Salesforce1_for_Windows</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>cadmus_core__CadmusClassic</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>cadmus_core__PDFButler</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>PDF_Butler_APAC1</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>PDF_Butler_CA1</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>PDF_Butler_EU1</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>PDF_Butler_MV_APAC1</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>PDF_Butler_MV_EU1</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>PDF_Butler_MV_US1</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>PDF_Butler_US1</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>
