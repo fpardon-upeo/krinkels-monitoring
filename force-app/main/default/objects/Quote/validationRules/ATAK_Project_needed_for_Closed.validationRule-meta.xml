@@ -3,7 +3,7 @@
     <fullName>ATAK_Project_needed_for_Closed</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
- ISBLANK( Opportunity.ATAK_Projectx__c ),
+ ISBLANK(ATAK_Project__c ),
  ISPICKVAL(Status, &apos;Accepted&apos;) 
 )</errorConditionFormula>
     <errorMessage>Please reference an ATAK Project on the Opportunity before marking this Quote as Accepted.</errorMessage>

@@ -106,6 +106,12 @@
         <members>WorkOrderTriggerHandler</members>
         <members>WorkStepSignatureController</members>
         <members>WorkStepSignatureControllerTest</members>
+        <members>ers_DatatableController</members>
+        <members>ers_DatatableControllerTest</members>
+        <members>ers_EncodeDecodeURL</members>
+        <members>ers_EncodeDecodeURLTest</members>
+        <members>ers_QueryNRecords</members>
+        <members>ers_QueryNRecordsTest</members>
         <members>fsl_Console_AccountController</members>
         <name>ApexClass</name>
     </types>
@@ -155,6 +161,7 @@
         <members>CustomAccountLightboxApp</members>
         <members>fsc_openUrl</members>
         <members>fsc_screenFlowApp</members>
+        <members>openRecordFlow</members>
         <members>showToast</members>
         <name>AuraDefinitionBundle</name>
     </types>
@@ -220,6 +227,7 @@
         <members>Krinkels_Banner2</members>
         <members>Krinkels_Banner4</members>
         <members>Krinkels_Logo1</members>
+        <members>Krinkels_Logo3</members>
         <members>Krinkels_Signaturepng</members>
         <members>Krinkels_logo2</members>
         <members>Untitled</members>
@@ -238,6 +246,7 @@
         <name>CspTrustedSite</name>
     </types>
     <types>
+        <members>Krinkels_Admin</members>
         <members>Krinkels_Field_Service</members>
         <members>Sales</members>
         <name>CustomApplication</name>
@@ -348,6 +357,7 @@
         <members>Activity.FSL__Count_of_Events__c</members>
         <members>Activity.FSL__Count_of_Tasks__c</members>
         <members>Activity.FSL__Event_Type__c</members>
+        <members>Asset.ATAK_Project_Code__c</members>
         <members>Asset.ATAK_Project__c</members>
         <members>Asset.Contract_Line_Item__c</members>
         <members>Asset.Default_Duration_in_Minutes__c</members>
@@ -470,6 +480,10 @@
         <members>LMRA__c.Surrounding_Risks__c</members>
         <members>LMRA__c.Tasks_of_the_Day__c</members>
         <members>LMRA__c.Work_Order__c</members>
+        <members>Lead.Client_Sector__c</members>
+        <members>Lead.Contract_Type__c</members>
+        <members>Lead.Entreprise_Number__c</members>
+        <members>Lead.Industry_Type__c</members>
         <members>Linked_Operator__c.Location_Visit__c</members>
         <members>Linked_Operator__c.Operator__c</members>
         <members>Location.Account__c</members>
@@ -534,6 +548,8 @@
         <members>MaintenanceAsset.Number_of_Work_Orders__c</members>
         <members>MaintenanceAsset.Service_Territory__c</members>
         <members>MaintenanceAsset.Total_Minutes_of_Work__c</members>
+        <members>MaintenancePlan.Service_Appointments_Color_on_Gantt__c</members>
+        <members>MaintenancePlan.Service_Appointments_Icon_on_Gantt__c</members>
         <members>Mileage_Entry__c.Allowance_Type__c</members>
         <members>Mileage_Entry__c.Calculated_Mileage__c</members>
         <members>Mileage_Entry__c.Codes_ATAK_Limbus__c</members>
@@ -555,12 +571,11 @@
         <members>Opportunity.ATAK_Projectx__c</members>
         <members>Opportunity.Amount__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
-        <members>Opportunity.Customer_Reference__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
+        <members>Opportunity.Extra_Work_Description__c</members>
         <members>Opportunity.Language__c</members>
         <members>Opportunity.Loss_Reason__c</members>
         <members>Opportunity.Main_Contact__c</members>
-        <members>Opportunity.Our_Reference__c</members>
         <members>Opportunity.Price_Request_BS_Comments__c</members>
         <members>Opportunity.Price_Request_Demand_Comments__c</members>
         <members>Opportunity.Price_Request_Priority__c</members>
@@ -570,8 +585,8 @@
         <members>Opportunity.ROI_Analysis_Completed__c</members>
         <members>Opportunity.Service_Contract__c</members>
         <members>Opportunity.Service_Package__c</members>
-        <members>Opportunity.Subject__c</members>
         <members>Opportunity.Type_Code__c</members>
+        <members>Opportunity.Weighted_Amount__c</members>
         <members>Opportunity.Work_Size__c</members>
         <members>Opportunity__hd.Amount__c</members>
         <members>Opportunity__hd.CloseDate__c</members>
@@ -597,6 +612,8 @@
         <members>Product2.Means_Category__c</members>
         <members>Product2.Means_Code__c</members>
         <members>Product2.Means_Description__c</members>
+        <members>Product2.Product_Name_FR__c</members>
+        <members>Product2.Product_Name_NL__c</members>
         <members>Product2.Rate__c</members>
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
@@ -606,9 +623,37 @@
         <members>ProductRequired.ATAK_Code__c</members>
         <members>ProductRequired.Action_Required__c</members>
         <members>ProductRequired.Material_Item__c</members>
+        <members>Quote.ATAK_Project_Needed__c</members>
+        <members>Quote.ATAK_Project_Request_Comment__c</members>
+        <members>Quote.ATAK_Project_Request_Priority__c</members>
+        <members>Quote.ATAK_Project_Request_Status__c</members>
+        <members>Quote.ATAK_Project_Suggested_Name__c</members>
+        <members>Quote.ATAK_Project__c</members>
+        <members>Quote.Additional_Remarks__c</members>
+        <members>Quote.Adjustable_Price__c</members>
+        <members>Quote.Adjustment_Period__c</members>
         <members>Quote.Amount__c</members>
+        <members>Quote.Contract_Duration_in_years__c</members>
+        <members>Quote.Contract_Resiliation_Time__c</members>
+        <members>Quote.Customer_Reference__c</members>
+        <members>Quote.Document_Language__c</members>
         <members>Quote.Language_Code__c</members>
         <members>Quote.Language__c</members>
+        <members>Quote.Offer_Valid_For__c</members>
+        <members>Quote.Our_Reference__c</members>
+        <members>Quote.Payment_Term__c</members>
+        <members>Quote.Price_Request_BS_Comments__c</members>
+        <members>Quote.Price_Request_Demand_Comments__c</members>
+        <members>Quote.Price_Request_Priority__c</members>
+        <members>Quote.Price_Request_Status__c</members>
+        <members>Quote.Pricing_Request_Needed__c</members>
+        <members>Quote.Service_Contract__c</members>
+        <members>Quote.Service_Package_Type__c</members>
+        <members>Quote.Smartscape_SLAs__c</members>
+        <members>Quote.Subject__c</members>
+        <members>Quote.Tacit_Contract__c</members>
+        <members>Quote.Type_Code__c</members>
+        <members>Quote.Type__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
         <members>Reorder_Work_Step__e.Work_Order_Id__c</members>
         <members>ResourceAbsence.Absence_Type__c</members>
@@ -657,6 +702,7 @@
         <members>SD_Import__c.Werkschema__c</members>
         <members>ServiceAppointment.ATAK_Code__c</members>
         <members>ServiceAppointment.Asset__c</members>
+        <members>ServiceAppointment.Billing_Type__c</members>
         <members>ServiceAppointment.Day_Pause_Duration__c</members>
         <members>ServiceAppointment.Due_Date_in_the_Past__c</members>
         <members>ServiceAppointment.FSL__Appointment_Grade__c</members>
@@ -687,9 +733,11 @@
         <members>ServiceAppointment.FSL__UpdatedByOptimization__c</members>
         <members>ServiceAppointment.FSL__Use_Async_Logic__c</members>
         <members>ServiceAppointment.FSL__Virtual_Service_For_Chatter_Action__c</members>
+        <members>ServiceAppointment.Financial_Accounts_Billing__c</members>
         <members>ServiceAppointment.Intervention_Registration__c</members>
         <members>ServiceAppointment.Night_Pause_Duration__c</members>
         <members>ServiceAppointment.Notification_Day__c</members>
+        <members>ServiceAppointment.Optimize__c</members>
         <members>ServiceAppointment.Overdue_Reminder_Send__c</members>
         <members>ServiceAppointment.Previous_Status__c</members>
         <members>ServiceAppointment.Recurrence__c</members>
@@ -813,6 +861,7 @@
         <members>WorkOrder.Contract_Manager__c</members>
         <members>WorkOrder.Customer_Reference__c</members>
         <members>WorkOrder.Depot_Visit_Comments__c</members>
+        <members>WorkOrder.Depot_Visit_Planned__c</members>
         <members>WorkOrder.Drop_Off_Items__c</members>
         <members>WorkOrder.Excecution_Week__c</members>
         <members>WorkOrder.FSL__IsFillInCandidate__c</members>
@@ -833,11 +882,14 @@
         <members>WorkOrder.Pick_Up_Items__c</members>
         <members>WorkOrder.Product__c</members>
         <members>WorkOrder.Production_Work__c</members>
+        <members>WorkOrder.Quote__c</members>
+        <members>WorkOrder.Rework_Planned__c</members>
         <members>WorkOrder.Rework_for_Work_Order__c</members>
         <members>WorkOrder.Rework_reasons__c</members>
         <members>WorkOrder.Scheduled_Date__c</members>
         <members>WorkOrder.Shop_Name__c</members>
         <members>WorkOrder.Shop_Visit_Date__c</members>
+        <members>WorkOrder.Shop_Visit_Done__c</members>
         <members>WorkOrder.Shop_Visit_Duration__c</members>
         <members>WorkOrder.Shop_Visit_End_Time__c</members>
         <members>WorkOrder.Shop_Visit_Reviewed_Approved__c</members>
@@ -848,6 +900,7 @@
         <members>WorkOrder.Type__c</members>
         <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
         <members>WorkOrder.Waste_Visit_Done__c</members>
+        <members>WorkOrder.Waste_Visit_Planned__c</members>
         <members>WorkOrder.Waste_to_Drop_Off__c</members>
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
@@ -862,6 +915,20 @@
         <members>Work_Schedule_Day__c.Hours__c</members>
         <members>Work_Schedule_Day__c.Work_Schedule__c</members>
         <members>Work_Schedule__c.Total_Weekly_Hours__c</members>
+        <members>ers_datatableConfig__c.Active__c</members>
+        <members>ers_datatableConfig__c.Alignments__c</members>
+        <members>ers_datatableConfig__c.Cell_Attributes__c</members>
+        <members>ers_datatableConfig__c.Edits__c</members>
+        <members>ers_datatableConfig__c.Field_API_Names__c</members>
+        <members>ers_datatableConfig__c.Filters__c</members>
+        <members>ers_datatableConfig__c.Icons__c</members>
+        <members>ers_datatableConfig__c.Labels__c</members>
+        <members>ers_datatableConfig__c.Object_API_Name__c</members>
+        <members>ers_datatableConfig__c.Other_Attributes__c</members>
+        <members>ers_datatableConfig__c.Selection_Method__c</members>
+        <members>ers_datatableConfig__c.Type_Attributes__c</members>
+        <members>ers_datatableConfig__c.Widths__c</members>
+        <members>ers_datatableConfig__c.Wraps__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -939,6 +1006,16 @@
         <members>Calendar_Edit_Mileage_Entry</members>
         <members>Calendar_Edit_Time_Sheet_Entry</members>
         <members>Calendar_Edit_Time_Sheet_Entry</members>
+        <members>Calendar_ErrorToast_EditUserSettings_Message</members>
+        <members>Calendar_ErrorToast_EditUserSettings_Message</members>
+        <members>Calendar_ErrorToast_NewUserSettings_Message</members>
+        <members>Calendar_ErrorToast_NewUserSettings_Message</members>
+        <members>Calendar_ErrorToast_SubmitTimeSheet_Message</members>
+        <members>Calendar_ErrorToast_SubmitTimeSheet_Message</members>
+        <members>Calendar_ErrorToast_Title</members>
+        <members>Calendar_ErrorToast_Title</members>
+        <members>Calendar_ErrorToast_UserSettings_Message</members>
+        <members>Calendar_ErrorToast_UserSettings_Message</members>
         <members>Calendar_In_Mileage_Entries</members>
         <members>Calendar_In_Mileage_Entries</members>
         <members>Calendar_In_Mileage_Entries_Description</members>
@@ -985,6 +1062,34 @@
         <members>Calendar_Submit_For_Approval</members>
         <members>Calendar_Submit_Time_Sheet</members>
         <members>Calendar_Submit_Time_Sheet</members>
+        <members>Calendar_SuccessToast_CreatedMileageEntry_Message</members>
+        <members>Calendar_SuccessToast_CreatedMileageEntry_Message</members>
+        <members>Calendar_SuccessToast_CreatedResourceAbsence_Message</members>
+        <members>Calendar_SuccessToast_CreatedResourceAbsence_Message</members>
+        <members>Calendar_SuccessToast_CreatedTimeSheetEntry_Message</members>
+        <members>Calendar_SuccessToast_CreatedTimeSheetEntry_Message</members>
+        <members>Calendar_SuccessToast_NewUserSettings_Message</members>
+        <members>Calendar_SuccessToast_NewUserSettings_Message</members>
+        <members>Calendar_SuccessToast_SubmittedTimeSheet_Message</members>
+        <members>Calendar_SuccessToast_SubmittedTimeSheet_Message</members>
+        <members>Calendar_SuccessToast_Title</members>
+        <members>Calendar_SuccessToast_Title</members>
+        <members>Calendar_SuccessToast_UpdatedMileageEntry_Message</members>
+        <members>Calendar_SuccessToast_UpdatedMileageEntry_Message</members>
+        <members>Calendar_SuccessToast_UpdatedResourceAbsence_Message</members>
+        <members>Calendar_SuccessToast_UpdatedResourceAbsence_Message</members>
+        <members>Calendar_SuccessToast_UpdatedTimeSheetEntry_Message</members>
+        <members>Calendar_SuccessToast_UpdatedTimeSheetEntry_Message</members>
+        <members>Calendar_SuccessToast_UpdatedUserSettings_Message</members>
+        <members>Calendar_SuccessToast_UpdatedUserSettings_Message</members>
+        <members>Calendar_TotalBreak_Header</members>
+        <members>Calendar_TotalBreak_Header</members>
+        <members>Calendar_TotalHours_Header</members>
+        <members>Calendar_TotalHours_Header</members>
+        <members>Calendar_TotalKM_Header</members>
+        <members>Calendar_TotalKM_Header</members>
+        <members>Calendar_TravelHours_Header</members>
+        <members>Calendar_TravelHours_Header</members>
         <members>Calendar_User_Settings</members>
         <members>Calendar_User_Settings</members>
         <members>Calendar_User_Settings_End_Time</members>
@@ -995,8 +1100,38 @@
         <members>Calendar_User_Settings_Time_Range</members>
         <members>Calendar_Warning_Submit_Timesheet</members>
         <members>Calendar_Warning_Submit_Timesheet</members>
+        <members>Calendar_WorkHours_Header</members>
+        <members>Calendar_WorkHours_Header</members>
         <members>Checkin_Loading</members>
         <members>Checkin_Loading</members>
+        <members>ExportCLI_Error_Toast_Message</members>
+        <members>ExportCLI_Error_Toast_Message</members>
+        <members>ExportCLI_Error_Toast_Title</members>
+        <members>ExportCLI_Error_Toast_Title</members>
+        <members>ExportCLI_ExportButton</members>
+        <members>ExportCLI_ExportButton</members>
+        <members>ExportCLI_Header</members>
+        <members>ExportCLI_Header</members>
+        <members>ExportCLI_Success_Toast_Message</members>
+        <members>ExportCLI_Success_Toast_Message</members>
+        <members>ExportCLI_Success_Toast_Title</members>
+        <members>ExportCLI_Success_Toast_Title</members>
+        <members>Image_Selector_Upload</members>
+        <members>Image_Selector_Upload</members>
+        <members>ImportCLI_Error_Toast_Message</members>
+        <members>ImportCLI_Error_Toast_Message</members>
+        <members>ImportCLI_Error_Toast_Title</members>
+        <members>ImportCLI_Error_Toast_Title</members>
+        <members>ImportCLI_Header</members>
+        <members>ImportCLI_Header</members>
+        <members>ImportCLI_Success_Toast_Message</members>
+        <members>ImportCLI_Success_Toast_Message</members>
+        <members>ImportCLI_Success_Toast_Title</members>
+        <members>ImportCLI_Success_Toast_Title</members>
+        <members>ImportCLI_UploadButton</members>
+        <members>ImportCLI_UploadButton</members>
+        <members>ImportCLI_WrongFile_Message</members>
+        <members>ImportCLI_WrongFile_Message</members>
         <members>InternalWorkOrder_Depot_Button_Sub_Text</members>
         <members>InternalWorkOrder_Depot_Button_Sub_Text</members>
         <members>InternalWorkOrder_Depot_Button_Text</members>
@@ -1007,6 +1142,16 @@
         <members>InternalWorkOrder_No_Travel_Sub_Text</members>
         <members>InternalWorkOrder_No_Travel_Text</members>
         <members>InternalWorkOrder_No_Travel_Text</members>
+        <members>InternalWorkOrder_Save_Button</members>
+        <members>InternalWorkOrder_Save_Button</members>
+        <members>InternalWorkOrder_Select_Account_Text</members>
+        <members>InternalWorkOrder_Select_Account_Text</members>
+        <members>InternalWorkOrder_Select_Account_Warning_Text</members>
+        <members>InternalWorkOrder_Select_Account_Warning_Text</members>
+        <members>InternalWorkOrder_Select_WO_Text</members>
+        <members>InternalWorkOrder_Select_WO_Text</members>
+        <members>InternalWorkOrder_Select_WO_Warning_Text</members>
+        <members>InternalWorkOrder_Select_WO_Warning_Text</members>
         <members>InternalWorkOrder_Start_Travel_Sub_Text</members>
         <members>InternalWorkOrder_Start_Travel_Sub_Text</members>
         <members>InternalWorkOrder_Start_Travel_Text</members>
@@ -1029,8 +1174,92 @@
         <members>LocationMonitor_ThresholdSliderLabel</members>
         <members>LocationMonitor_WithinThreshold</members>
         <members>LocationMonitor_WithinThreshold</members>
+        <members>LocationPassport_Documents_Header</members>
+        <members>LocationPassport_Documents_Header</members>
+        <members>LocationPassport_Error_Toast_Message</members>
+        <members>LocationPassport_Error_Toast_Message</members>
+        <members>LocationPassport_Error_Toast_Title</members>
+        <members>LocationPassport_Error_Toast_Title</members>
+        <members>LocationPassport_Feedback_Header</members>
+        <members>LocationPassport_Feedback_Header</members>
+        <members>LocationPassport_Feedback_Label</members>
+        <members>LocationPassport_Feedback_Label</members>
+        <members>LocationPassport_Feedback_Submit_Button</members>
+        <members>LocationPassport_Feedback_Submit_Button</members>
+        <members>LocationPassport_General_Information_Account_AccessInformation_Header</members>
+        <members>LocationPassport_General_Information_Account_AccessInformation_Header</members>
+        <members>LocationPassport_General_Information_Account_AttentionPoints_Header</members>
+        <members>LocationPassport_General_Information_Account_AttentionPoints_Header</members>
+        <members>LocationPassport_General_Information_Account_Name_Header</members>
+        <members>LocationPassport_General_Information_Account_Name_Header</members>
+        <members>LocationPassport_General_Information_Header</members>
+        <members>LocationPassport_General_Information_Header</members>
+        <members>LocationPassport_Operating_Hours_Day_Header</members>
+        <members>LocationPassport_Operating_Hours_Day_Header</members>
+        <members>LocationPassport_Operating_Hours_End_Time_Header</members>
+        <members>LocationPassport_Operating_Hours_End_Time_Header</members>
+        <members>LocationPassport_Operating_Hours_Header</members>
+        <members>LocationPassport_Operating_Hours_Header</members>
+        <members>LocationPassport_Operating_Hours_Start_Time_Header</members>
+        <members>LocationPassport_Operating_Hours_Start_Time_Header</members>
+        <members>LocationPassport_Successfull_Toast_Message</members>
+        <members>LocationPassport_Successfull_Toast_Message</members>
+        <members>LocationPassport_Successfull_Toast_Title</members>
+        <members>LocationPassport_Successfull_Toast_Title</members>
+        <members>LocationPassport_View_Button</members>
+        <members>LocationPassport_View_Button</members>
+        <members>Mileage_Add_In_Entry</members>
+        <members>Mileage_Add_In_Entry</members>
+        <members>Mileage_Add_In_Entry_Description</members>
+        <members>Mileage_Add_In_Entry_Description</members>
+        <members>Mileage_Add_Out_Entry</members>
+        <members>Mileage_Add_Out_Entry</members>
+        <members>Mileage_Add_Out_Entry_Description</members>
+        <members>Mileage_Add_Out_Entry_Description</members>
+        <members>Mileage_Cancel_Button</members>
+        <members>Mileage_Cancel_Button</members>
+        <members>Mileage_Edit_Button</members>
+        <members>Mileage_Edit_Button</members>
+        <members>Mileage_Edit_Entry</members>
+        <members>Mileage_Edit_Entry</members>
+        <members>Mileage_Edit_Entry_Header</members>
+        <members>Mileage_Edit_Entry_Header</members>
+        <members>Mileage_End_day</members>
+        <members>Mileage_End_day</members>
+        <members>Mileage_Entries_Header</members>
+        <members>Mileage_Entries_Header</members>
+        <members>Mileage_Header</members>
+        <members>Mileage_Header</members>
+        <members>Mileage_In_Header</members>
+        <members>Mileage_In_Header</members>
+        <members>Mileage_New_In_Header</members>
+        <members>Mileage_New_In_Header</members>
+        <members>Mileage_New_Out_Header</members>
+        <members>Mileage_New_Out_Header</members>
+        <members>Mileage_Out_Header</members>
+        <members>Mileage_Out_Header</members>
+        <members>Mileage_Own</members>
+        <members>Mileage_Own</members>
+        <members>Mileage_Own_Header</members>
+        <members>Mileage_Own_Header</members>
+        <members>Mileage_Own_No_Entries_Message</members>
+        <members>Mileage_Own_No_Entries_Message</members>
+        <members>Mileage_Return_Button</members>
+        <members>Mileage_Return_Button</members>
+        <members>Mileage_Save_Button</members>
+        <members>Mileage_Save_Button</members>
+        <members>Mileage_Start_Day</members>
+        <members>Mileage_Start_Day</members>
+        <members>Mileage_View_Add_EndMileage</members>
+        <members>Mileage_View_Add_EndMileage</members>
+        <members>Mileage_View_Add_OwnMileage</members>
+        <members>Mileage_View_Add_OwnMileage</members>
+        <members>Mileage_View_Add_StartMileage</members>
+        <members>Mileage_View_Add_StartMileage</members>
         <members>NotifyCustomer_Toggle</members>
         <members>NotifyCustomer_Toggle</members>
+        <members>StartDay_Back_To_Menu_Button</members>
+        <members>StartDay_Back_To_Menu_Button</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Text</members>
@@ -1063,6 +1292,8 @@
         <members>StartDay_Next_Appointment_Button_Sub_Text</members>
         <members>StartDay_Next_Appointment_Button_Text</members>
         <members>StartDay_Next_Appointment_Button_Text</members>
+        <members>StartDay_Next_Button</members>
+        <members>StartDay_Next_Button</members>
         <members>StartDay_Open_Next_Appointment_Button_Text</members>
         <members>StartDay_Open_Next_Appointment_Button_Text</members>
         <members>StartDay_Start_Button_Sub_Text</members>
@@ -1077,8 +1308,84 @@
         <members>StartDay_Waste_Button_Sub_Text</members>
         <members>StartDay_Waste_Button_Text</members>
         <members>StartDay_Waste_Button_Text</members>
+        <members>TimeSheetEntryForm_BackButton</members>
+        <members>TimeSheetEntryForm_BackButton</members>
+        <members>TimeSheetEntryForm_CancelButton</members>
+        <members>TimeSheetEntryForm_CancelButton</members>
+        <members>TimeSheetEntryForm_ContinueButton</members>
+        <members>TimeSheetEntryForm_ContinueButton</members>
+        <members>TimeSheetEntryForm_Required_Label</members>
+        <members>TimeSheetEntryForm_Required_Label</members>
+        <members>TimeSheetEntryForm_SaveButton</members>
+        <members>TimeSheetEntryForm_SaveButton</members>
+        <members>TimeSheetEntryForm_SelectWork_Text</members>
+        <members>TimeSheetEntryForm_SelectWork_Text</members>
+        <members>TimeSheetEntryForm_WorkOrder_Text</members>
+        <members>TimeSheetEntryForm_WorkOrder_Text</members>
         <members>TimeSheet_Header_Title</members>
         <members>TimeSheet_Header_Title</members>
+        <members>WorkOrderActions_Cancel_Button</members>
+        <members>WorkOrderActions_Cancel_Button</members>
+        <members>WorkOrderActions_Edit_Tasks_Description</members>
+        <members>WorkOrderActions_Edit_Tasks_Description</members>
+        <members>WorkOrderActions_Edit_Tasks_Header</members>
+        <members>WorkOrderActions_Edit_Tasks_Header</members>
+        <members>WorkOrderActions_Header</members>
+        <members>WorkOrderActions_Header</members>
+        <members>WorkOrderActions_Save_Button</members>
+        <members>WorkOrderActions_Save_Button</members>
+        <members>WorkOrderActions_Shop_Visit_Description</members>
+        <members>WorkOrderActions_Shop_Visit_Description</members>
+        <members>WorkOrderActions_Shop_Visit_Header</members>
+        <members>WorkOrderActions_Shop_Visit_Header</members>
+        <members>WorkOrderActions_Special_Equipment_Description</members>
+        <members>WorkOrderActions_Special_Equipment_Description</members>
+        <members>WorkOrderActions_Special_Equipment_Header</members>
+        <members>WorkOrderActions_Special_Equipment_Header</members>
+        <members>ers_CancelButton</members>
+        <members>ers_CancelButton</members>
+        <members>ers_ClearFilterAction</members>
+        <members>ers_ClearFilterAction</members>
+        <members>ers_ClearFilterButton</members>
+        <members>ers_ClearFilterButton</members>
+        <members>ers_ClearSelectionButton</members>
+        <members>ers_ClearSelectionButton</members>
+        <members>ers_ColumnHeader</members>
+        <members>ers_ColumnHeader</members>
+        <members>ers_EmptyTableMessage</members>
+        <members>ers_EmptyTableMessage</members>
+        <members>ers_ErrorRequiredEntry</members>
+        <members>ers_ErrorRequiredEntry</members>
+        <members>ers_FilterHeader</members>
+        <members>ers_FilterHeader</members>
+        <members>ers_FirstButton</members>
+        <members>ers_FirstButton</members>
+        <members>ers_LabelHeader</members>
+        <members>ers_LabelHeader</members>
+        <members>ers_LastButton</members>
+        <members>ers_LastButton</members>
+        <members>ers_NextButton</members>
+        <members>ers_NextButton</members>
+        <members>ers_PreviousButton</members>
+        <members>ers_PreviousButton</members>
+        <members>ers_RecordsPerPage</members>
+        <members>ers_RecordsPerPage</members>
+        <members>ers_SaveButton</members>
+        <members>ers_SaveButton</members>
+        <members>ers_SearchPlaceholder</members>
+        <members>ers_SearchPlaceholder</members>
+        <members>ers_SetFilterAction</members>
+        <members>ers_SetFilterAction</members>
+        <members>ers_ShowingPageMiddle</members>
+        <members>ers_ShowingPageMiddle</members>
+        <members>ers_ShowingPagePrefix</members>
+        <members>ers_ShowingPagePrefix</members>
+        <members>ers_ShowingPageSuffix</members>
+        <members>ers_ShowingPageSuffix</members>
+        <members>ers_filterBlankHelpText</members>
+        <members>ers_filterBlankHelpText</members>
+        <members>ers_filterBlankLabel</members>
+        <members>ers_filterBlankLabel</members>
         <members>fsc_AccessLevel</members>
         <members>fsc_AccessLevel</members>
         <members>fsc_Back</members>
@@ -1191,6 +1498,7 @@
         <members>User_Settings__c</members>
         <members>Work_Schedule_Day__c</members>
         <members>Work_Schedule__c</members>
+        <members>ers_datatableConfig__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -1209,6 +1517,7 @@
         <members>User_Settings__c</members>
         <members>Work_Schedule_Day__c</members>
         <members>Work_Schedule__c</members>
+        <members>ers_datatableConfig__c</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -1221,19 +1530,20 @@
         <members>InvoicingDashboard/</members>
         <members>InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI</members>
         <members>Management/</members>
+        <members>Management/WbjXOxLtAszjfwgActqAXvzibNQtDN</members>
+        <members>Management/abJeXokmMSyeVggNqNYVSgBOzrpJCa</members>
         <members>Management/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH1</members>
         <members>Management/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH11</members>
+        <members>Management/hfEzHGWZsaFkWMGyEiUWyJoDLatDTH12</members>
         <members>Sales_and_Marketing_Dashboards/</members>
         <members>Sales_and_Marketing_Dashboards/AdoptionDashboard</members>
         <members>Sales_and_Marketing_Dashboards/Best_Practice_Leads_Dashboard</members>
         <members>Sales_and_Marketing_Dashboards/Best_Practices_Dashboard6</members>
         <members>Service_Dashboards/</members>
         <members>Service_Dashboards/Agent_Supervisor_Overview</members>
-        <members>Service_Dashboards/QglvVbUkcDZgjzwmRguwhqYLIVYhMn</members>
         <members>Service_Dashboards/Service_Exec_Overview</members>
         <members>Service_Dashboards/Service_KPIs</members>
         <members>VanInventory/</members>
-        <members>VanInventory/HcaOXDkPIDdAkjoIuxtNxFWGBNNyWL</members>
         <name>Dashboard</name>
     </types>
     <types>
@@ -1376,6 +1686,7 @@
         <members>FlowsApp_UtilityBar</members>
         <members>Group_Account_Record_Page</members>
         <members>Home_Page_Default</members>
+        <members>Krinkels_Admin_UtilityBar</members>
         <members>Krinkels_Field_Service_UtilityBar</members>
         <members>LMRA_Record_Page</members>
         <members>Lead_Record_Page</members>
@@ -1399,6 +1710,7 @@
         <members>Product_Record_Page</members>
         <members>Public_Tender_Opportunity_Record_Page</members>
         <members>Quick_Opportunity_Record_Page</members>
+        <members>Quote_Quick_Quote_Record_Page</members>
         <members>Quote_Record_Page</members>
         <members>Resource_Absence_Record_Page</members>
         <members>SalesCloudMobile_UtilityBar</members>
@@ -1414,6 +1726,7 @@
         <members>Van_Crew_Member_Record_Page</members>
         <members>Work_Order_Line_Item_Record_Page</members>
         <members>Work_Order_Record_Page</members>
+        <members>Work_Plan_Record_Page</members>
         <members>Work_Plan_Template_Entry_Record_Page</members>
         <members>Work_Plan_Template_Record_Page</members>
         <members>Work_Step_Record_Page</members>
@@ -1424,9 +1737,12 @@
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Account_Screen_Flow_Add_Extra_Work</members>
+        <members>Account_Screen_Flow_Add_Extra_Work_Quote</members>
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
+        <members>Datatable_Configuration_Wizard5</members>
+        <members>Lead_After_Save_Record_Triggered_Populate_Client_Sector_Industry_Type_on_Account</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
@@ -1447,6 +1763,8 @@
         <members>Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Appointment_Before_Save_Stamp_Actual_End_on_Completed</members>
+        <members>Service_Appointment_Before_Save_Stamp_Actual_Start_on_In_Progress</members>
         <members>Service_Appointment_Scheduled_Customer_Notification</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Appointment_Time_Sheet_Automations</members>
@@ -1494,9 +1812,12 @@
         <members>ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</members>
         <members>ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Account_Screen_Flow_Add_Extra_Work</members>
+        <members>Account_Screen_Flow_Add_Extra_Work_Quote</members>
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
+        <members>Datatable_Configuration_Wizard5</members>
+        <members>Lead_After_Save_Record_Triggered_Populate_Client_Sector_Industry_Type_on_Account</members>
         <members>Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information</members>
         <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
@@ -1517,6 +1838,8 @@
         <members>Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
+        <members>Service_Appointment_Before_Save_Stamp_Actual_End_on_Completed</members>
+        <members>Service_Appointment_Before_Save_Stamp_Actual_Start_on_In_Progress</members>
         <members>Service_Appointment_Scheduled_Customer_Notification</members>
         <members>Service_Appointment_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Service_Appointment_Time_Sheet_Automations</members>
@@ -1577,6 +1900,9 @@
     </types>
     <types>
         <members>Codes_ATAK_Limbus</members>
+        <members>Contract_Billing_Types</members>
+        <members>Contract_Type</members>
+        <members>Industry_Type</members>
         <members>Invoice_Type</members>
         <members>LMRA_Type</members>
         <members>Language</members>
@@ -1663,6 +1989,7 @@
         <members>ContactPointEmail-Contact Point Email Layout</members>
         <members>ContactPointPhone-Contact Point Phone Layout</members>
         <members>ContactPointTypeConsent-Contact Point Type Consent Layout</members>
+        <members>ContentAsset-Asset File Layout</members>
         <members>ContentVersion-Content Version</members>
         <members>Contract-Contract Layout</members>
         <members>ContractLineItem-Contract Line Item Layout</members>
@@ -1840,7 +2167,12 @@
         <members>WorkTypeGroup-Work Type Group Layout</members>
         <members>Work_Schedule_Day__c-Work Schedule Day Layout</members>
         <members>Work_Schedule__c-Work Schedule Layout</members>
+        <members>ers_datatableConfig__c-ers_datatableConfig Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>LeadConvertSettings</members>
+        <name>LeadConvertSettings</name>
     </types>
     <types>
         <members>addressSearch</members>
@@ -1848,6 +2180,7 @@
         <members>colorsPicker</members>
         <members>contractLineEditor</members>
         <members>darkInput</members>
+        <members>datatable</members>
         <members>debugPanel</members>
         <members>depotVisit</members>
         <members>df_combobox</members>
@@ -1855,6 +2188,10 @@
         <members>df_fieldSelector2</members>
         <members>df_objectFieldSelectorUtils</members>
         <members>df_objectSelector</members>
+        <members>ers_comboboxColumnType</members>
+        <members>ers_customLightningDatatable</members>
+        <members>ers_datatableCPE</members>
+        <members>ers_datatableUtils</members>
         <members>exportRecords</members>
         <members>fileUploadImproved</members>
         <members>fileUploadImprovedCPE</members>
@@ -2006,6 +2343,7 @@
         <members>PDF_Butler_Admin_Local</members>
         <members>Query_All_Files</members>
         <members>USF_Flow_Screen_Component_Custom_Objects</members>
+        <members>USF_Flow_Screen_Component_Datatable</members>
         <members>cases_Permisssion_Set</members>
         <members>fileUploadImproved</members>
         <members>sfdcInternalInt__sfdc_fieldservice</members>
@@ -2090,6 +2428,7 @@
         <members>ATAK_Personnel__c.Create_User</members>
         <members>Account.Add_Extra_Work</members>
         <members>Account.Child_Account</members>
+        <members>Account.Create_Quick_Quote</members>
         <members>Book_Appointment</members>
         <members>Campaign.Child_Campaign</members>
         <members>Candidates</members>
@@ -2115,6 +2454,7 @@
         <members>NewOpportunity</members>
         <members>NewTask</members>
         <members>Opportunity.Price_Request</members>
+        <members>Opportunity.Quote_Admin</members>
         <members>Opportunity.Request_ATAK_Project</members>
         <members>Quote.SendEmail</members>
         <members>ServiceAppointment.Check_Out</members>
@@ -2239,11 +2579,16 @@
         <members>Timesheet</members>
         <members>WorkOrder.Create_Depot_Visit</members>
         <members>WorkOrder.Create_Waste_Depot_Visit</members>
+        <members>WorkOrder.Depot_Visit_Card_Information</members>
+        <members>WorkOrder.Goodwill_Card_Information</members>
         <members>WorkOrder.Location_Passport</members>
         <members>WorkOrder.Log_Edit_Goodwill_Tasks</members>
         <members>WorkOrder.Rework</members>
+        <members>WorkOrder.Rework_Card_Information</members>
         <members>WorkOrder.SendEmail</members>
+        <members>WorkOrder.Shop_Visit_Card_Information</members>
         <members>WorkOrder.Start_Stop</members>
+        <members>WorkOrder.Waste_Visit_Card_Information</members>
         <members>WorkOrder.Work_Order_Actions</members>
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
@@ -2272,6 +2617,9 @@
         <members>Product2.Service</members>
         <members>Product2.Service_Package</members>
         <members>Product2.Vehicle</members>
+        <members>Quote.B2B_Tender</members>
+        <members>Quote.Public_Tender</members>
+        <members>Quote.Quick_Quote</members>
         <members>ResourceAbsence.FSL__Break</members>
         <members>ResourceAbsence.FSL__Non_Availability</members>
         <members>ResourceAbsence.Internal_Meeting</members>
@@ -2296,6 +2644,8 @@
     <types>
         <members>BusienssSupport/</members>
         <members>BusienssSupport/All_Mileage_Entries_this_Month_Tpl</members>
+        <members>BusienssSupport/All_TS_This_Month_Starting_Allowance_7BQ</members>
+        <members>BusienssSupport/All_TS_This_Month_Urgent_Intervention_eZH</members>
         <members>BusienssSupport/All_Time_Sheets_this_Month_2Lf</members>
         <members>BusienssSupport/All_Timesheets_This_Month_1gH</members>
         <members>BusienssSupport/All_Timesheets_to_be_approved_5Y0</members>
@@ -2342,14 +2692,28 @@
         <members>InvoicingDashboard/WO_niet_gefactureerd_Vorige_maand_OOM</members>
         <members>InvoicingDashboard/WO_not_invoiced_yet_Last_Month_9Af</members>
         <members>Management/</members>
+        <members>Management/Actual_Duration_vs_Time_Sheet_Entry_Kvt</members>
+        <members>Management/Actual_Duration_vs_Time_Sheet_Year_F7J</members>
         <members>Management/Average_Travel_time_This_Year_Et7</members>
+        <members>Management/Contract_Renewal_Overview_br2</members>
         <members>Management/New_Times_Sheets_with_Entries_Report_K1Q</members>
         <members>Management/New_Work_Orders_Report_dsD</members>
         <members>Management/New_Work_Orders_Report_myy</members>
+        <members>Management/Opportunities_close_Date_Next_12_Months_KRN</members>
         <members>Management/Rework_vs_Total_Work_This_Year_XhO</members>
+        <members>Management/Scheduled_Vs_Actual_Time_This_Month_4p4</members>
+        <members>Management/Scheduled_Vs_Actual_Time_This_Year_kOc</members>
+        <members>Management/Service_contract_Renewal_Next_90_days_H3Q</members>
+        <members>Management/Time_Logged_Per_client_This_Month_1FK</members>
+        <members>Management/Time_Logged_Per_client_This_Year_1Ks</members>
         <members>Management/Travel_Time_Vs_Working_Time_This_Month_Wx3</members>
         <members>Management/Travel_Time_Vs_Working_Time_This_Year_mWa</members>
+        <members>Management/Travel_Time_this_Minth_yH1</members>
+        <members>Management/Travel_Time_this_Year_skj</members>
+        <members>Management/Work_Orders_Next_12_Months_3uX</members>
         <members>Management/Work_Orders_per_CM_This_Year_YNg</members>
+        <members>Management/Work_Steps_not_done_This_Month_jvJ</members>
+        <members>Management/Work_Steps_not_done_This_Year_HM7</members>
         <members>Sales_Marketing_Reports/</members>
         <members>Sales_Marketing_Reports/Closed_Lost_by_Reason</members>
         <members>Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner</members>
@@ -2480,12 +2844,15 @@
         <members>Service_Appointments</members>
         <members>Service_Appointments_with_Service_Resources</members>
         <members>Service_Contracts_with_Work_Orders</members>
+        <members>Service_contracts</members>
         <members>TimeSheets</members>
         <members>Time_Sheets_with_Mileage</members>
         <members>Times_Sheets_with_Entries</members>
         <members>Vans_with_Material_Items</members>
         <members>Work_Order_W_SA_and_Service_Resource</members>
         <members>Work_Orders</members>
+        <members>Work_Orders_w_Time_Sheets_Entries</members>
+        <members>Work_Orders_with_Work_Plans_Steps</members>
         <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_run_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_stage_run_ootb_crt_two_four_eight</members>
@@ -2803,6 +3170,7 @@
         <members>WorkTypeGroup</members>
         <members>Work_Schedule_Day__c</members>
         <members>Work_Schedule__c</members>
+        <members>ers_datatableConfig__c</members>
         <name>SharingRules</name>
     </types>
     <types>
@@ -2910,6 +3278,7 @@
     <types>
         <members>FullCalendar</members>
         <members>FullCalendarV5</members>
+        <members>ers_customLightningDatatableStyles</members>
         <members>fsc_Quickchoice_Images</members>
         <members>signature_pad</members>
         <name>StaticResource</name>
@@ -3019,6 +3388,7 @@
         <members>WorkStepTemplate</members>
         <members>Work_Schedule_Day__c</members>
         <members>Work_Schedule__c</members>
+        <members>ers_datatableConfig__c</members>
         <name>TopicsForObjects</name>
     </types>
     <types>

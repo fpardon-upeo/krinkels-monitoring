@@ -1142,4 +1142,964 @@
         <shortDescription>NotifyCustomer_Toggle</shortDescription>
         <value>Notify next customer</value>
     </labels>
+    <labels>
+        <fullName>Calendar_ErrorToast_EditUserSettings_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_ErrorToast_EditUserSettings_Message</shortDescription>
+        <value>Error updating user settings.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_ErrorToast_NewUserSettings_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_ErrorToast_NewUserSettings_Message</shortDescription>
+        <value>Error creating new user settings.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_ErrorToast_SubmitTimeSheet_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_ErrorToast_SubmitTimeSheet_Message</shortDescription>
+        <value>Error submitting time sheet.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_ErrorToast_Title</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_ErrorToast_Title</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_ErrorToast_UserSettings_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_ErrorToast_UserSettings_Message</shortDescription>
+        <value>Start time and end time are required, cannot be the same and start time cannot be greater than or equal to end time.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_CreatedMileageEntry_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_CreatedMileageEntry_Message</shortDescription>
+        <value>Mileage entry created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_CreatedResourceAbsence_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_CreatedResourceAbsence_Message</shortDescription>
+        <value>Break created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_CreatedTimeSheetEntry_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_CreatedTimeSheetEntry_Message</shortDescription>
+        <value>Time Sheet entry created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_NewUserSettings_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_NewUserSettings_Message</shortDescription>
+        <value>User Settings created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_SubmittedTimeSheet_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_SubmittedTimeSheet_Message</shortDescription>
+        <value>Time Sheet submitted successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_Title</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_Title</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_UpdatedMileageEntry_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_UpdatedMileageEntry_Message</shortDescription>
+        <value>Mileage entry updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_UpdatedResourceAbsence_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_UpdatedResourceAbsence_Message</shortDescription>
+        <value>Break updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_UpdatedTimeSheetEntry_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_UpdatedTimeSheetEntry_Message</shortDescription>
+        <value>Time Sheet entry updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_SuccessToast_UpdatedUserSettings_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_SuccessToast_UpdatedUserSettings_Message</shortDescription>
+        <value>User settings updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_TotalBreak_Header</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_TotalBreak_Header</shortDescription>
+        <value>Total Break</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_TotalHours_Header</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_TotalHours_Header</shortDescription>
+        <value>Total Hours</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_TotalKM_Header</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_TotalKM_Header</shortDescription>
+        <value>Total KM</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_TravelHours_Header</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_TravelHours_Header</shortDescription>
+        <value>Travel Hours</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_WorkHours_Header</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_WorkHours_Header</shortDescription>
+        <value>Work Hours</value>
+    </labels>
+    <labels>
+        <fullName>ExportCLI_Error_Toast_Message</fullName>
+        <categories>ExportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportCLI_Error_Toast_Message</shortDescription>
+        <value>An error occurred while exporting records</value>
+    </labels>
+    <labels>
+        <fullName>ExportCLI_Error_Toast_Title</fullName>
+        <categories>ExportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportCLI_Error_Toast_Title</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>ExportCLI_ExportButton</fullName>
+        <categories>ExportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportCLI_ExportButton</shortDescription>
+        <value>Export to CSV</value>
+    </labels>
+    <labels>
+        <fullName>ExportCLI_Header</fullName>
+        <categories>ExportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportCLI_Header</shortDescription>
+        <value>Export Records</value>
+    </labels>
+    <labels>
+        <fullName>ExportCLI_Success_Toast_Message</fullName>
+        <categories>ExportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportCLI_Success_Toast_Message</shortDescription>
+        <value>Export completed successfully</value>
+    </labels>
+    <labels>
+        <fullName>ExportCLI_Success_Toast_Title</fullName>
+        <categories>ExportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportCLI_Success_Toast_Title</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>Image_Selector_Upload</fullName>
+        <categories>ImageSelector</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImageSelector_Upload</shortDescription>
+        <value>Upload image</value>
+    </labels>
+    <labels>
+        <fullName>ImportCLI_Error_Toast_Message</fullName>
+        <categories>ImportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImportCLI_Error_Toast_Message</shortDescription>
+        <value>Not all CLI were created or updated</value>
+    </labels>
+    <labels>
+        <fullName>ImportCLI_Error_Toast_Title</fullName>
+        <categories>ImportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImportCLI_Error_Toast_Title</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>ImportCLI_Header</fullName>
+        <categories>ImportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImportCLI_Header</shortDescription>
+        <value>Import Contract Line Items</value>
+    </labels>
+    <labels>
+        <fullName>ImportCLI_Success_Toast_Message</fullName>
+        <categories>ImportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImportCLI_Success_Toast_Message</shortDescription>
+        <value>All CLI were created or updated</value>
+    </labels>
+    <labels>
+        <fullName>ImportCLI_Success_Toast_Title</fullName>
+        <categories>ImportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImportCLI_Success_Toast_Title</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>ImportCLI_UploadButton</fullName>
+        <categories>ImportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImportCLI_UploadButton</shortDescription>
+        <value>Upload CSV File</value>
+    </labels>
+    <labels>
+        <fullName>ImportCLI_WrongFile_Message</fullName>
+        <categories>ImportCLI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImportCLI_WrongFile_Message</shortDescription>
+        <value>Invalid file type. Please upload a CSV file.</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Save_Button</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Save_Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Select_Account_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Select_Account_Text</shortDescription>
+        <value>Select Account</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Select_Account_Warning_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Select_Account_Warning_Text</shortDescription>
+        <value>Please select an Account</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Select_WO_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Select_WO_Text</shortDescription>
+        <value>Select Work Order</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Select_WO_Warning_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Select_WO_Warning_Text</shortDescription>
+        <value>Please select a Work Order</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Documents_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Documents_Header</shortDescription>
+        <value>Related Documents</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Error_Toast_Message</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Error_Toast_Message</shortDescription>
+        <value>Error submitting feedback</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Error_Toast_Title</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Error_Toast_Title</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Feedback_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Feedback_Header</shortDescription>
+        <value>Feedback</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Feedback_Label</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Feedback_Label</shortDescription>
+        <value>Provide Feedback or extra information:</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Feedback_Submit_Button</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Feedback_Submit_Button</shortDescription>
+        <value>Submit Feedback</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_General_Information_Account_AccessInformation_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_General_Information_Account_AccessInformation_Header</shortDescription>
+        <value>Access Information</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_General_Information_Account_AttentionPoints_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_General_Information_Account_AttentionPoints_Header</shortDescription>
+        <value>Attention Points</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_General_Information_Account_Name_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_General_Information_Account_Name_Header</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_General_Information_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_General_Information_Header</shortDescription>
+        <value>General Information</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Operating_Hours_Day_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Operating_Hours_Day_Header</shortDescription>
+        <value>WEEK DAY</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Operating_Hours_End_Time_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Operating_Hours_End_Time_Header</shortDescription>
+        <value>END TIME</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Operating_Hours_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Operating_Hours_Header</shortDescription>
+        <value>Operating Hours</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Operating_Hours_Start_Time_Header</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Operating_Hours_Start_Time_Header</shortDescription>
+        <value>START TIME</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Successfull_Toast_Message</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Successfull_Toast_Message</shortDescription>
+        <value>Feedback submitted successfully</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_Successfull_Toast_Title</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_Successfull_Toast_Title</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>LocationPassport_View_Button</fullName>
+        <categories>LocationPassport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocationPassport_View_Button</shortDescription>
+        <value>View</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Add_In_Entry</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Add_In_Entry</shortDescription>
+        <value>Add In Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Add_In_Entry_Description</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Add_In_Entry_Description</shortDescription>
+        <value>Record your in mileage</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Add_Out_Entry</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Add_Out_Entry</shortDescription>
+        <value>Add Out Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Add_Out_Entry_Description</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Add_Out_Entry_Description</shortDescription>
+        <value>Record your out mileage</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Cancel_Button</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Cancel_Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Edit_Button</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Edit_Button</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Edit_Entry</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Edit_Entry</shortDescription>
+        <value>Edit Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Edit_Entry_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Edit_Entry_Header</shortDescription>
+        <value>Edit Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_End_day</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_End_day</shortDescription>
+        <value>End of Day Kilometers</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Entries_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Entries_Header</shortDescription>
+        <value>Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Header</shortDescription>
+        <value>Review Your Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_In_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_In_Header</shortDescription>
+        <value>In Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_New_In_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_New_In_Header</shortDescription>
+        <value>New In Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_New_Out_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_New_Out_Header</shortDescription>
+        <value>New Out Mileage Entry</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Out_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Out_Header</shortDescription>
+        <value>Out Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Own</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Own</shortDescription>
+        <value>Own Vehicle Kilometers</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Own_Header</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Own_Header</shortDescription>
+        <value>Own Mileage Entries</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Own_No_Entries_Message</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Own_No_Entries_Message</shortDescription>
+        <value>You have no own vehicle mileage entries.</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Return_Button</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Return_Button</shortDescription>
+        <value>Return</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Save_Button</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Save_Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Start_Day</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Start_Day</shortDescription>
+        <value>Start of Day Kilometers</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_View_Add_EndMileage</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_View_Add_EndMileage</shortDescription>
+        <value>View or add ending mileage records</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_View_Add_OwnMileage</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_View_Add_OwnMileage</shortDescription>
+        <value>View or add own vehicle mileage records</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_View_Add_StartMileage</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_View_Add_StartMileage</shortDescription>
+        <value>View or add starting mileage records</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Back_To_Menu_Button</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Back_To_Menu_Button</shortDescription>
+        <value>Back to Main Menu</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_Next_Button</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_Next_Button</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>TimeSheetEntryForm_BackButton</fullName>
+        <categories>TimeSheetEntryForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheetEntryForm_BackButton</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>TimeSheetEntryForm_CancelButton</fullName>
+        <categories>TimeSheetEntryForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheetEntryForm_CancelButton</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>TimeSheetEntryForm_ContinueButton</fullName>
+        <categories>TimeSheetEntryForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheetEntryForm_ContinueButton</shortDescription>
+        <value>Continue</value>
+    </labels>
+    <labels>
+        <fullName>TimeSheetEntryForm_Required_Label</fullName>
+        <categories>TimeSheetEntryForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheetEntryForm_Required_Label</shortDescription>
+        <value>Required</value>
+    </labels>
+    <labels>
+        <fullName>TimeSheetEntryForm_SaveButton</fullName>
+        <categories>TimeSheetEntryForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheetEntryForm_SaveButton</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>TimeSheetEntryForm_SelectWork_Text</fullName>
+        <categories>TimeSheetEntryForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheetEntryForm_SelectWork_Text</shortDescription>
+        <value>Select Work Order</value>
+    </labels>
+    <labels>
+        <fullName>TimeSheetEntryForm_WorkOrder_Text</fullName>
+        <categories>TimeSheetEntryForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TimeSheetEntryForm_WorkOrder_Text</shortDescription>
+        <value>Work Order</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Cancel_Button</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Cancel_Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Edit_Tasks_Description</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Edit_Tasks_Description</shortDescription>
+        <value>Manage goodwill task entries</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Edit_Tasks_Header</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Edit_Tasks_Header</shortDescription>
+        <value>Log/Edit Goodwill Tasks</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Header</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Header</shortDescription>
+        <value>Work Order Actions</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Save_Button</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Save_Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Shop_Visit_Description</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Shop_Visit_Description</shortDescription>
+        <value>Record details of your shop visit</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Shop_Visit_Header</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Shop_Visit_Header</shortDescription>
+        <value>Log Shop Visit</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Special_Equipment_Description</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Special_Equipment_Description</shortDescription>
+        <value>Record special equipment usage</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Special_Equipment_Header</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Special_Equipment_Header</shortDescription>
+        <value>Log Special Equipment</value>
+    </labels>
+    <labels>
+        <fullName>ers_CancelButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Filter</shortDescription>
+        <value>Clear Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearFilterButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear All Filters</shortDescription>
+        <value>Clear All Filters</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearSelectionButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Selection</shortDescription>
+        <value>Clear Selection</value>
+    </labels>
+    <labels>
+        <fullName>ers_ColumnHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Column</shortDescription>
+        <value>Column</value>
+    </labels>
+    <labels>
+        <fullName>ers_EmptyTableMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty</shortDescription>
+        <value>This table currently has no data to display</value>
+    </labels>
+    <labels>
+        <fullName>ers_ErrorRequiredEntry</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Required</shortDescription>
+        <value>This is a required entry.  At least 1 row must be selected.</value>
+    </labels>
+    <labels>
+        <fullName>ers_FilterHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Filter</shortDescription>
+        <value>Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_FirstButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Page</shortDescription>
+        <value>First</value>
+    </labels>
+    <labels>
+        <fullName>ers_LabelHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label</shortDescription>
+        <value>Label</value>
+    </labels>
+    <labels>
+        <fullName>ers_LastButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Page</shortDescription>
+        <value>Last</value>
+    </labels>
+    <labels>
+        <fullName>ers_NextButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next Page</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>ers_PreviousButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous Page</shortDescription>
+        <value>Prev</value>
+    </labels>
+    <labels>
+        <fullName>ers_RecordsPerPage</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Records per Page input label</shortDescription>
+        <value>Records per Page</value>
+    </labels>
+    <labels>
+        <fullName>ers_SaveButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>ers_SearchPlaceholder</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Term</shortDescription>
+        <value>Enter search term ...</value>
+    </labels>
+    <labels>
+        <fullName>ers_SetFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Set Filter</shortDescription>
+        <value>Set Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_ShowingPageMiddle</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Showing Page x of y Pages input label middle</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>ers_ShowingPagePrefix</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Showing Page x of y Pages input label prefix</shortDescription>
+        <value>Showing Page</value>
+    </labels>
+    <labels>
+        <fullName>ers_ShowingPageSuffix</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Showing Page x of y Pages input label suffix</shortDescription>
+        <value>Pages</value>
+    </labels>
+    <labels>
+        <fullName>ers_filterBlankHelpText</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Help Text for Filter Blank Checkbox</shortDescription>
+        <value>Check here if you want to filter rows where the value in this column is blank</value>
+    </labels>
+    <labels>
+        <fullName>ers_filterBlankLabel</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label for Filter Blank Checkbox</shortDescription>
+        <value>Filter Blank Values?</value>
+    </labels>
 </CustomLabels>

@@ -465,6 +465,21 @@
             <field>Trigger_Notification_to_Customer__c</field>
             <table>ServiceAppointment</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Optimize__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Billing_Type__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Financial_Accounts_Billing__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
         <masterLabel>Service Appointments</masterLabel>
     </sections>
     <sections>

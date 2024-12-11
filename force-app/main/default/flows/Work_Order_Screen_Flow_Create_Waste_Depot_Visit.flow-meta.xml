@@ -155,6 +155,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>ParentWorkOrderId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>Waste Depot Visit</stringValue>
@@ -164,6 +170,12 @@
             <field>SuggestedMaintenanceDate</field>
             <value>
                 <elementReference>today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Waste_Visit_Planned__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -308,6 +320,12 @@
                 <name>columns</name>
                 <value>
                     <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-843d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Waste Depot&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Account Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Contract__c&quot;,&quot;guid&quot;:&quot;column-896c&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Contract&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;apiName&quot;:&quot;Type_of_Waste__c&quot;,&quot;guid&quot;:&quot;column-7260&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Type of Waste&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;ShippingPostalCode&quot;,&quot;guid&quot;:&quot;column-b534&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Shipping Zip/Postal Code&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;ShippingCity&quot;,&quot;guid&quot;:&quot;column-0ee8&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Shipping City&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isShowSearchBar</name>
+                <value>
+                    <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>

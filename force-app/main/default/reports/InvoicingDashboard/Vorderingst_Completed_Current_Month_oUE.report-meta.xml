@@ -35,7 +35,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value></value>
+            <value>Progress Statement</value>
         </criteriaItems>
         <criteriaItems>
             <column>ServiceContract.WorkOrders.ServiceAppointments$Status</column>

@@ -2,6 +2,30 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>62.0</apiVersion>
     <choices>
+        <name>High</name>
+        <choiceText>High</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>High</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Low</name>
+        <choiceText>Low</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Low</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Medium</name>
+        <choiceText>Medium</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Medium</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>No</name>
         <choiceText>No</choiceText>
         <dataType>String</dataType>
@@ -18,10 +42,50 @@
         </value>
     </choices>
     <decisions>
+        <name>ATAK_Project_Needed</name>
+        <label>ATAK Project Needed</label>
+        <locationX>314</locationX>
+        <locationY>1406</locationY>
+        <defaultConnector>
+            <targetReference>Create_Quote</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Project_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Existing_ATAK_Project.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_ATAK_Project</targetReference>
+            </connector>
+            <label>Project Selected</label>
+        </rules>
+        <rules>
+            <name>Project_Requested</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Existing_ATAK_Project.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_ATAK_Project_Requested</targetReference>
+            </connector>
+            <label>Project Requested</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Pricing</name>
         <label>Pricing</label>
         <locationX>314</locationX>
-        <locationY>1406</locationY>
+        <locationY>1814</locationY>
         <defaultConnector>
             <targetReference>Update_Opportunity_with_Sync_Quote</targetReference>
         </defaultConnector>
@@ -61,9 +125,9 @@
         <name>Pricing_Request_Needed</name>
         <label>Pricing Request Needed</label>
         <locationX>314</locationX>
-        <locationY>998</locationY>
+        <locationY>1106</locationY>
         <defaultConnector>
-            <targetReference>Create_Quote</targetReference>
+            <targetReference>ATAK_Project_Needed</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -103,6 +167,14 @@
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
         <picklistField>Price_Request_Priority__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>servicePackageType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Service_Package__c</picklistField>
         <picklistObject>Opportunity</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
@@ -149,7 +221,7 @@
         <name>Create_Empty_Quote_Product</name>
         <label>Create Empty Quote Product</label>
         <locationX>314</locationX>
-        <locationY>1514</locationY>
+        <locationY>1922</locationY>
         <connector>
             <targetReference>Update_Opportunity_with_Sync_Quote</targetReference>
         </connector>
@@ -190,10 +262,10 @@
         <name>Create_Opportunity</name>
         <label>Create Opportunity</label>
         <locationX>314</locationX>
-        <locationY>1106</locationY>
+        <locationY>1214</locationY>
         <assignRecordIdToReference>CreatedOpportunityId</assignRecordIdToReference>
         <connector>
-            <targetReference>Create_Quote</targetReference>
+            <targetReference>ATAK_Project_Needed</targetReference>
         </connector>
         <inputAssignments>
             <field>AccountId</field>
@@ -261,10 +333,10 @@
         <name>Create_Opportunity_Pricing</name>
         <label>Create Opportunity Pricing Request</label>
         <locationX>50</locationX>
-        <locationY>1106</locationY>
+        <locationY>1214</locationY>
         <assignRecordIdToReference>CreatedOpportunityId</assignRecordIdToReference>
         <connector>
-            <targetReference>Create_Quote</targetReference>
+            <targetReference>ATAK_Project_Needed</targetReference>
         </connector>
         <inputAssignments>
             <field>AccountId</field>
@@ -356,7 +428,7 @@
         <name>Create_Quote</name>
         <label>Create Quote</label>
         <locationX>314</locationX>
-        <locationY>1298</locationY>
+        <locationY>1706</locationY>
         <assignRecordIdToReference>CreatedQuoteId</assignRecordIdToReference>
         <connector>
             <targetReference>Pricing</targetReference>
@@ -385,13 +457,19 @@
                 <elementReference>Get_Price_Book.Id</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>QuoteAccountId</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
         <object>Quote</object>
     </recordCreates>
     <recordCreates>
         <name>Create_Quote_Products</name>
         <label>Create Quote Products</label>
         <locationX>50</locationX>
-        <locationY>1514</locationY>
+        <locationY>1922</locationY>
         <connector>
             <targetReference>Update_Opportunity_with_Sync_Quote</targetReference>
         </connector>
@@ -438,10 +516,10 @@
         <name>Get_Account_Details</name>
         <label>Get Account Details</label>
         <locationX>314</locationX>
-        <locationY>350</locationY>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Add_Extra_Work</targetReference>
+            <targetReference>Get_Service_Contracts</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -532,7 +610,7 @@
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Service_Contracts</targetReference>
+            <targetReference>Get_Account_Details</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -550,17 +628,17 @@
         <name>Get_Service_Contracts</name>
         <label>Get Service Contracts</label>
         <locationX>314</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Account_Details</targetReference>
+            <targetReference>Add_Extra_Work</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AccountId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Get_Account_Details.ParentId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -568,10 +646,82 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Set_ATAK_Project</name>
+        <label>Set ATAK Project</label>
+        <locationX>50</locationX>
+        <locationY>1514</locationY>
+        <connector>
+            <targetReference>Create_Quote</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CreatedOpportunityId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ATAK_Projectx__c</field>
+            <value>
+                <elementReference>Existing_ATAK_Project.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_ATAK_Project_Requested</name>
+        <label>Set ATAK Project Requested</label>
+        <locationX>314</locationX>
+        <locationY>1514</locationY>
+        <connector>
+            <targetReference>Create_Quote</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CreatedOpportunityId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ATAK_Project_Needed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ATAK_Project_Request_Comment__c</field>
+            <value>
+                <elementReference>Any_specific_comments_for_this_project_request</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ATAK_Project_Request_Priority__c</field>
+            <value>
+                <elementReference>Priority</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ATAK_Project_Request_Status__c</field>
+            <value>
+                <stringValue>Requested</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Service_Package__c</field>
+            <value>
+                <elementReference>Service_Package_Type</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Opportunity_with_Sync_Quote</name>
         <label>Update Opportunity with Sync Quote</label>
         <locationX>314</locationX>
-        <locationY>1706</locationY>
+        <locationY>2114</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -720,6 +870,179 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Atak_Project</name>
+        <label>Atak Project</label>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Pricing_Request_Needed</targetReference>
+        </connector>
+        <fields>
+            <name>Copy_1_of_ExtraWorkTitleScreen2</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Add Extra Work&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Select an existing ATAK Project or request a new ATAK Project creation&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Atak_Project_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Atak_Project_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Existing_ATAK_Project</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>ATAK_Projectx__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Existing ATAK Project</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Opportunity</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>disabled</name>
+                        <value>
+                            <elementReference>New_ATAK_Toggle.value</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>New_ATAK_Toggle</name>
+                    <extensionName>flowruntime:toggle</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Request New Project</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>messageToggleActive</name>
+                        <value>
+                            <elementReference>Yes</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>messageToggleInactive</name>
+                        <value>
+                            <elementReference>No</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Atak_Project_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Atak_Project_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Atak_Project_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Priority</name>
+                    <choiceReferences>Low</choiceReferences>
+                    <choiceReferences>Medium</choiceReferences>
+                    <choiceReferences>High</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Priority</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Any_specific_comments_for_this_project_request</name>
+                    <dataType>String</dataType>
+                    <fieldText>Any specific comments for this project request?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Atak_Project_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Service_Package_Type</name>
+                    <choiceReferences>servicePackageType</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Service Package Type</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <helpText>&lt;p&gt;Used to generate a suggested project name&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>New_ATAK_Toggle.value</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Create Extra Work</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>PricingScreen</name>
         <label>Pricing</label>
         <locationX>314</locationX>
@@ -728,7 +1051,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Pricing_Request_Needed</targetReference>
+            <targetReference>Atak_Project</targetReference>
         </connector>
         <fields>
             <name>ExtraWorkTitleScreen2</name>
@@ -875,7 +1198,7 @@
                 </conditions>
             </visibilityRule>
         </fields>
-        <nextOrFinishButtonLabel>Create Extra Work</nextOrFinishButtonLabel>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>

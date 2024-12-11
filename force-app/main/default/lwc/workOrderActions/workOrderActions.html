@@ -4,7 +4,7 @@
   <div class="mobile-bottom-sheet">
     <div class="bottom-sheet-header">
       <div class="drag-indicator"></div>
-      <h2 class="sheet-title">Work Order Actions</h2>
+      <h2 class="sheet-title">{labels.WorkOrderActions_Header}</h2>
     </div>
 
     <div class="bottom-sheet-content">
@@ -20,9 +20,11 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">Log Shop Visit</span>
+              <span class="button-label"
+                >{labels.WorkOrderActions_Shop_Visit_Header}</span
+              >
               <span class="button-description"
-                >Record details of your shop visit</span
+                >{labels.WorkOrderActions_Shop_Visit_Description}</span
               >
             </span>
           </button>
@@ -36,9 +38,11 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">Log Special Equipment</span>
+              <span class="button-label"
+                >{labels.WorkOrderActions_Special_Equipment_Header}</span
+              >
               <span class="button-description"
-                >Record special equipment usage</span
+                >{labels.WorkOrderActions_Special_Equipment_Description}</span
               >
             </span>
           </button>
@@ -52,16 +56,20 @@
               ></lightning-icon>
             </span>
             <span class="button-text">
-              <span class="button-label">Log/Edit Goodwill Tasks</span>
+              <span class="button-label"
+                >{labels.WorkOrderActions_Edit_Tasks_Header}</span
+              >
               <span class="button-description"
-                >Manage goodwill task entries</span
+                >{labels.WorkOrderActions_Edit_Tasks_Description}</span
               >
             </span>
           </button>
 
           <!-- Add cancel button -->
           <div class="button-container">
-            <button class="cancel-button" onclick={closeAction}>Cancel</button>
+            <button class="cancel-button" onclick={closeAction}>
+              {labels.WorkOrderActions_Cancel_Button}
+            </button>
           </div>
         </div>
       </template>
@@ -98,93 +106,72 @@
 
           <div class="button-group sticky-buttons">
             <button class="cancel-button" type="button" onclick={closeModal}>
-              Cancel
+              {labels.WorkOrderActions_Cancel_Button}
             </button>
-            <button class="submit-button" type="submit">Save</button>
+            <button class="submit-button" type="submit">
+              {labels.WorkOrderActions_Save_Button}
+            </button>
           </div>
         </lightning-record-edit-form>
       </template>
 
       <!-- Special Equipment Form -->
       <template if:true={showLogSpecialEquipment}>
-        <div class="mobile-bottom-sheet">
-          <div class="bottom-sheet-header">
-            <div class="drag-indicator"></div>
-            <h2 class="sheet-title">Log Special Equipment</h2>
+        <lightning-record-edit-form
+          object-api-name="WorkOrder"
+          record-id={recordId}
+          onsubmit={handleSubmit}
+          onsuccess={handleSuccess}
+        >
+          <div class="form-fields">
+            <lightning-input-field field-name="Special_Equipment__c" required>
+            </lightning-input-field>
           </div>
-          <div class="bottom-sheet-content">
-            <lightning-record-edit-form
-              object-api-name="WorkOrder"
-              record-id={recordId}
-              onsubmit={handleSubmit}
-              onsuccess={handleSuccess}
-            >
-              <div class="form-fields">
-                <lightning-input-field
-                  field-name="Special_Equipment__c"
-                  required
-                >
-                </lightning-input-field>
-              </div>
 
-              <div class="button-group">
-                <button
-                  class="cancel-button"
-                  type="button"
-                  onclick={closeModal}
-                >
-                  Cancel
-                </button>
-                <button class="submit-button" type="submit">Save</button>
-              </div>
-            </lightning-record-edit-form>
+          <div class="button-group">
+            <button class="cancel-button" type="button" onclick={closeModal}>
+              {labels.WorkOrderActions_Cancel_Button}
+            </button>
+            <button class="submit-button" type="submit">
+              {labels.WorkOrderActions_Save_Button}
+            </button>
           </div>
-        </div>
+        </lightning-record-edit-form>
       </template>
 
       <!-- Edit Tasks Form -->
       <template if:true={showLogEditTasks}>
-        <div class="mobile-bottom-sheet">
-          <div class="bottom-sheet-header">
-            <div class="drag-indicator"></div>
-            <h2 class="sheet-title">Log/Edit Tasks</h2>
-          </div>
-          <div class="bottom-sheet-content">
-            <lightning-record-edit-form
-              object-api-name="WorkOrder"
-              record-id={recordId}
-              onsuccess={handleSuccess}
+        <lightning-record-edit-form
+          object-api-name="WorkOrder"
+          record-id={recordId}
+          onsuccess={handleSuccess}
+        >
+          <div class="form-fields">
+            <lightning-input-field
+              field-name="WorkOrderNumber"
+              disabled
+              class="slds-hide"
             >
-              <div class="form-fields">
-                <lightning-input-field
-                  field-name="WorkOrderNumber"
-                  disabled
-                  class="slds-hide"
-                >
-                </lightning-input-field>
-                <lightning-input-field
-                  field-name="AccountId"
-                  disabled
-                  class="slds-hide"
-                >
-                </lightning-input-field>
-                <lightning-input-field field-name="Goodwill_Tasks__c" required>
-                </lightning-input-field>
-              </div>
-
-              <div class="button-group">
-                <button
-                  class="cancel-button"
-                  type="button"
-                  onclick={closeModal}
-                >
-                  Cancel
-                </button>
-                <button class="submit-button" type="submit">Save</button>
-              </div>
-            </lightning-record-edit-form>
+            </lightning-input-field>
+            <lightning-input-field
+              field-name="AccountId"
+              disabled
+              class="slds-hide"
+            >
+            </lightning-input-field>
+            <lightning-input-field field-name="Goodwill_Tasks__c" required>
+            </lightning-input-field>
           </div>
-        </div>
+
+          <div class="button-group">
+            <button class="cancel-button" type="button" onclick={closeModal}>
+              {labels.WorkOrderActions_Cancel_Button}
+            </button>
+            <button class="submit-button" type="submit">
+              {labels.WorkOrderActions_Save_Button}
+            </button>
+          </div>
+        </lightning-record-edit-form>
       </template>
     </div>
   </div>

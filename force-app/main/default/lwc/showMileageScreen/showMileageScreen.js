@@ -1,6 +1,29 @@
 import { LightningElement, api, track } from "lwc";
 import getMileageEntries from "@salesforce/apex/TimeSheetController.getMileageEntries";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import Mileage_Start_Day from "@salesforce/label/c.Mileage_Start_Day";
+import Mileage_End_Day from "@salesforce/label/c.Mileage_End_day";
+import Mileage_View_Add_StartMileage from "@salesforce/label/c.Mileage_View_Add_StartMileage";
+import Mileage_View_Add_EndMileage from "@salesforce/label/c.Mileage_View_Add_EndMileage";
+import Mileage_View_Add_OwnMileage from "@salesforce/label/c.Mileage_View_Add_OwnMileage";
+import Mileage_Own from "@salesforce/label/c.Mileage_Own";
+import Mileage_Entries_Header from "@salesforce/label/c.Mileage_Entries_Header";
+import Mileage_Return_Button from "@salesforce/label/c.Mileage_Return_Button";
+import Mileage_Cancel_Button from "@salesforce/label/c.Mileage_Cancel_Button";
+import Mileage_Edit_Button from "@salesforce/label/c.Mileage_Edit_Button";
+import Mileage_Save_Button from "@salesforce/label/c.Mileage_Save_Button";
+import Mileage_New_In_Header from "@salesforce/label/c.Mileage_New_In_Header";
+import Mileage_New_Out_Header from "@salesforce/label/c.Mileage_New_Out_Header";
+import Mileage_Edit_Entry_Header from "@salesforce/label/c.Mileage_Edit_Entry_Header";
+import Mileage_In_Header from "@salesforce/label/c.Mileage_In_Header";
+import Mileage_Out_Header from "@salesforce/label/c.Mileage_Out_Header";
+import Mileage_Own_Header from "@salesforce/label/c.Mileage_Own_Header";
+import Mileage_Add_In_Entry from "@salesforce/label/c.Mileage_Add_In_Entry";
+import Mileage_Add_In_Entry_Description from "@salesforce/label/c.Mileage_Add_In_Entry_Description";
+import Mileage_Add_Out_Entry from "@salesforce/label/c.Mileage_Add_Out_Entry";
+import Mileage_Add_Out_Entry_Description from "@salesforce/label/c.Mileage_Add_Out_Entry_Description";
+import Mileage_Own_No_Entries_Message from "@salesforce/label/c.Mileage_Own_No_Entries_Message";
+import Mileage_Header from "@salesforce/label/c.Mileage_Header";
 
 export default class ShowMileageScreen extends LightningElement {
   @api recordId;
@@ -20,6 +43,34 @@ export default class ShowMileageScreen extends LightningElement {
   @track showInMileageEntryNewForm = false;
   @track showMileageEntryEditForm = false;
   @track showOwnMileageMessage = false;
+
+  //Labels
+  labels = {
+    Mileage_Start_Day,
+    Mileage_View_Add_StartMileage,
+    Mileage_End_Day,
+    Mileage_View_Add_EndMileage,
+    Mileage_Own,
+    Mileage_View_Add_OwnMileage,
+    Mileage_Entries_Header,
+    Mileage_Return_Button,
+    Mileage_Cancel_Button,
+    Mileage_Edit_Button,
+    Mileage_Save_Button,
+    Mileage_New_In_Header,
+    Mileage_New_Out_Header,
+    Mileage_Edit_Entry_Header,
+    Mileage_In_Header,
+    Mileage_Out_Header,
+    Mileage_Own_Header,
+    Mileage_Add_In_Entry,
+    Mileage_Add_In_Entry_Description,
+    Mileage_Add_Out_Entry,
+    Mileage_Add_Out_Entry_Description,
+    Mileage_Own_No_Entries_Message,
+    Mileage_Header
+  };
+
   connectedCallback() {
     this.loadMileageData();
   }
@@ -30,7 +81,12 @@ export default class ShowMileageScreen extends LightningElement {
         if (result) {
           this.kmAmount = result.Total_KM__c || 0;
           if (result.Mileage_Entries__r) {
+            console.log("result.Mileage_Entries__r", result);
             this.mileageEntries = [...result.Mileage_Entries__r];
+            console.log(
+              "this.mileageEntries",
+              JSON.stringify(this.mileageEntries)
+            );
             this.categorizeMileageEntries();
           }
         }

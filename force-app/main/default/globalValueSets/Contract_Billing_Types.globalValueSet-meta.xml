@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Subscription</fullName>
+        <default>false</default>
+        <label>Subscription</label>
+    </customValue>
+    <customValue>
+        <fullName>Smartscape</fullName>
+        <default>false</default>
+        <label>Smartscape</label>
+    </customValue>
+    <customValue>
+        <fullName>Progress Statements</fullName>
+        <default>false</default>
+        <label>Progress Statements</label>
+    </customValue>
+    <customValue>
+        <fullName>Additional works</fullName>
+        <default>false</default>
+        <label>Additional works</label>
+    </customValue>
+    <customValue>
+        <fullName>Small works</fullName>
+        <default>false</default>
+        <label>Small works</label>
+    </customValue>
+    <masterLabel>Contract Billing Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

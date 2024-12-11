@@ -167,23 +167,23 @@
     <picklistValues>
         <picklist>Service_Package__c</picklist>
         <values>
-            <fullName>BuildingsMaintenance %28Building chores and maintenance%29</fullName>
+            <fullName>Building Maintenance %28Building Chores and Maintenance%29</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Environmental works %28Chores and maintenance around the building%29</fullName>
+            <fullName>Environmental Works %28Chores and Maintenance Around the Building%29</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>GreenCare %28Maintenance of organic material%29</fullName>
+            <fullName>Greencare %28Maintenance of Organic Material%29</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Interior planting</fullName>
+            <fullName>Interior Planting</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Maintenance of cleanliness %28Dirt cleaning%29</fullName>
+            <fullName>Maintenance of Cleanliness %28Dirt Cleaning%29</fullName>
             <default>false</default>
         </values>
         <values>

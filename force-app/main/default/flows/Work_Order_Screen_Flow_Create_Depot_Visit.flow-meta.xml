@@ -125,9 +125,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Depot_Visit_Comments__c</field>
+            <field>Depot_Visit_Planned__c</field>
             <value>
-                <elementReference>Depot_Visit_Comments</elementReference>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -291,13 +291,6 @@
         <fields>
             <name>Pick_Up_Items</name>
             <fieldText>Pick Up Items</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Depot_Visit_Comments</name>
-            <fieldText>Depot Visit Comments</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>

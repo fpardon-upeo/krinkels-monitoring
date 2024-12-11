@@ -39,7 +39,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Related_WO_Start_End_Date</targetReference>
+                <targetReference>Update_with_Scheduled_Times</targetReference>
             </connector>
             <label>Scheduled</label>
         </rules>
@@ -75,13 +75,23 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Copy_1_of_Update_Related_WO_Start_End_Date</targetReference>
+                <targetReference>Update_with_Actual_Times</targetReference>
             </connector>
             <label>Times</label>
         </rules>
     </decisions>
     <description>This flow updates the start date and end date fields on WO, based on the values of scheduled start and scheduled end fields on the related SA.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>NewDueDate</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE({!$Record.SchedEndTime} + 7)</expression>
+    </formulas>
+    <formulas>
+        <name>NewEarliestStartPermitted</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE({!$Record.SchedStartTime} - 7)</expression>
+    </formulas>
     <interviewLabel>[Service Appointment][After-Save][Record-Triggered] Populate Start/End Date on WO {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Service Appointment][After-Save][Record-Triggered] Populate Start/End Date on WO</label>
     <processMetadataValues>
@@ -104,8 +114,27 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Copy_1_of_Update_Related_WO_Start_End_Date</name>
-        <label>Update Related WO Start/End Date</label>
+        <name>Update_Earliest_Start_Permitted_and_Due_date</name>
+        <label>Update Earliest Start Permitted and Due date</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>DueDate</field>
+            <value>
+                <elementReference>NewDueDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EarliestStartTime</field>
+            <value>
+                <elementReference>NewEarliestStartPermitted</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_with_Actual_Times</name>
+        <label>Update with Actual Times</label>
         <locationX>314</locationX>
         <locationY>431</locationY>
         <filterLogic>and</filterLogic>
@@ -131,10 +160,13 @@
         <object>WorkOrder</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Related_WO_Start_End_Date</name>
-        <label>Update Related WO Start/End Date</label>
+        <name>Update_with_Scheduled_Times</name>
+        <label>Update with Scheduled Times</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
+        <connector>
+            <targetReference>Update_Earliest_Start_Permitted_and_Due_date</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>

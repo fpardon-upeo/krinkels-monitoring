@@ -579,6 +579,31 @@
             <field>Trigger_Notification_to_Customer__c</field>
             <table>WorkOrder</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Depot_Visit_Planned__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Shop_Visit_Done__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Rework_Planned__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Waste_Visit_Planned__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote__c</field>
+            <table>WorkOrder</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>
@@ -1025,6 +1050,21 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Trigger_Notification_to_Customer__c</field>
+            <table>WorkOrder.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Optimize__c</field>
+            <table>WorkOrder.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Billing_Type__c</field>
+            <table>WorkOrder.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Financial_Accounts_Billing__c</field>
             <table>WorkOrder.ServiceAppointments</table>
         </columns>
         <masterLabel>Service Appointments</masterLabel>

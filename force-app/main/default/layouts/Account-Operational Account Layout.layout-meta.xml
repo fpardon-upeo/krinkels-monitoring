@@ -176,6 +176,16 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>8</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -210,16 +220,6 @@
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
         </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>8</sortOrder>
-        </platformActionListItems>
     </platformActionList>
     <quickActionList>
         <quickActionListItems>
@@ -245,6 +245,22 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
+        <fields>CONTACT.FULL_NAME</fields>
+        <fields>CONTACT.ACCOUNT_NAME</fields>
+        <fields>ACCCONRELATION.ROLES</fields>
+        <fields>CONTACT.TITLE</fields>
+        <fields>CONTACT.EMAIL</fields>
+        <fields>CONTACT.PHONE1</fields>
+        <relatedList>RelatedAccountContactRelationList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>Subject</fields>
+        <fields>Priority</fields>
+        <fields>Status</fields>
+        <relatedList>WorkOrders</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>ASSET.NAME</fields>
         <fields>ASSET.SERIAL_NUMBER</fields>
         <fields>ASSET.INSTALL_DATE</fields>
@@ -255,36 +271,18 @@
         <relatedList>RelatedAssetList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>OPPORTUNITY.STAGE_NAME</fields>
-        <fields>Amount__c</fields>
-        <fields>OPPORTUNITY.CLOSE_DATE</fields>
-        <relatedList>RelatedOpportunityList</relatedList>
+        <fields>NAME</fields>
+        <fields>Status__c</fields>
+        <fields>Location_Visit_Type__c</fields>
+        <fields>Visit_Date__c</fields>
+        <relatedList>Location_Visit__c.Operational_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>CONTACT.FULL_NAME</fields>
-        <fields>CONTACT.ACCOUNT_NAME</fields>
-        <fields>Operational_SPOC__c</fields>
-        <fields>ACCCONRELATION.ROLES</fields>
-        <fields>CONTACT.TITLE</fields>
-        <fields>CONTACT.EMAIL</fields>
-        <fields>CONTACT.PHONE1</fields>
-        <relatedList>RelatedAccountContactRelationList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CONTRACT.NAME</fields>
-        <fields>Type__c</fields>
-        <fields>CONTRACT.STARTDATE</fields>
-        <fields>CONTRACT.ENDDATE</fields>
-        <fields>CONTRACT.STATUS</fields>
-        <relatedList>RelatedServiceContractList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>Name</fields>
-        <fields>Subject</fields>
-        <fields>Priority</fields>
-        <fields>Status</fields>
-        <relatedList>WorkOrders</relatedList>
+        <fields>QUOTE.QUOTENUMBER</fields>
+        <fields>QUOTE.NAME</fields>
+        <fields>QUOTE.TOTALPRICE</fields>
+        <fields>QUOTE.EXPIRATIONDATE</fields>
+        <relatedList>RelatedQuoteList</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
@@ -312,18 +310,6 @@
         <fields>CORE.USERS.FULL_NAME</fields>
         <fields>TASK.WHAT_NAME</fields>
         <relatedList>RelatedHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>ATAK_Project__c.Financial_Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Location_Visit__c.Operational_Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Asset_Financial_Account__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

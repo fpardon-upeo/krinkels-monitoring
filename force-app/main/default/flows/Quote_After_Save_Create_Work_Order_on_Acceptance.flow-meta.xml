@@ -10,14 +10,14 @@
             <assignToReference>extraWorkOrder.AccountId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.AccountId</elementReference>
+                <elementReference>$Record.QuoteAccountId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>extraWorkOrder.ServiceContractId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity.Service_Contract__c</elementReference>
+                <elementReference>$Record.Service_Contract__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -28,10 +28,10 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>extraWorkOrder.Opportunity__c</assignToReference>
+            <assignToReference>extraWorkOrder.Quote__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.OpportunityId</elementReference>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -45,28 +45,28 @@
             <assignToReference>extraWorkOrder.Street</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity.Account.ShippingStreet</elementReference>
+                <elementReference>$Record.QuoteAccount.ShippingStreet</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>extraWorkOrder.City</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity.Account.ShippingCity</elementReference>
+                <elementReference>$Record.QuoteAccount.ShippingCity</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>extraWorkOrder.PostalCode</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity.Account.ShippingPostalCode</elementReference>
+                <elementReference>$Record.QuoteAccount.ShippingPostalCode</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>extraWorkOrder.Country</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity.Account.ShippingCountry</elementReference>
+                <elementReference>$Record.QuoteAccount.ShippingCountry</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -87,7 +87,7 @@
             <assignToReference>extraWorkOrder.ServiceTerritoryId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity.ATAK_Projectx__r.Service_Territory__c</elementReference>
+                <elementReference>$Record.ATAK_Project__r.Service_Territory__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -95,13 +95,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_Product_Work_Type.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>extraWorkOrder.SuggestedMaintenanceDate</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Opportunity.CloseDate</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -290,7 +283,7 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>assetId</name>
         <dataType>String</dataType>

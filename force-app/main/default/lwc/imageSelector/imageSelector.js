@@ -1,6 +1,7 @@
 import { LightningElement, api } from "lwc";
 import LightningConfirm from "lightning/confirm";
 import { debug, getComputedHeight } from "c/utilsImageCapture";
+import ImageSelector_Upload from "@salesforce/label/c.Image_Selector_Upload";
 
 export default class ImageSelector extends LightningElement {
   @api
@@ -8,6 +9,10 @@ export default class ImageSelector extends LightningElement {
 
   @api
   recordId;
+
+  labels = {
+    ImageSelector_Upload
+  };
 
   get totalSelectedImages() {
     return this.allImagesData.length;

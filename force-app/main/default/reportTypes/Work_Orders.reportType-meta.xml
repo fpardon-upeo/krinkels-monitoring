@@ -561,6 +561,31 @@
             <field>Trigger_Notification_to_Customer__c</field>
             <table>WorkOrder</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Depot_Visit_Planned__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Shop_Visit_Done__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Rework_Planned__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Waste_Visit_Planned__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote__c</field>
+            <table>WorkOrder</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
 </ReportType>

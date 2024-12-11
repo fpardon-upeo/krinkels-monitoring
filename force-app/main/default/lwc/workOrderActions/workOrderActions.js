@@ -1,6 +1,15 @@
 import { LightningElement, api, track } from "lwc";
 import { CloseActionScreenEvent } from "lightning/actions";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import WorkOrderActions_Header from "@salesforce/label/c.WorkOrderActions_Header";
+import WorkOrderActions_Shop_Visit_Header from "@salesforce/label/c.WorkOrderActions_Shop_Visit_Header";
+import WorkOrderActions_Special_Equipment_Header from "@salesforce/label/c.WorkOrderActions_Special_Equipment_Header";
+import WorkOrderActions_Edit_Tasks_Header from "@salesforce/label/c.WorkOrderActions_Edit_Tasks_Header";
+import WorkOrderActions_Shop_Visit_Description from "@salesforce/label/c.WorkOrderActions_Shop_Visit_Description";
+import WorkOrderActions_Special_Equipment_Description from "@salesforce/label/c.WorkOrderActions_Special_Equipment_Description";
+import WorkOrderActions_Edit_Tasks_Description from "@salesforce/label/c.WorkOrderActions_Edit_Tasks_Description";
+import WorkOrderActions_Cancel_Button from "@salesforce/label/c.WorkOrderActions_Cancel_Button";
+import WorkOrderActions_Save_Button from "@salesforce/label/c.WorkOrderActions_Save_Button";
 
 export default class WorkOrderActions extends LightningElement {
   @track showLogShopVisit = false;
@@ -11,6 +20,18 @@ export default class WorkOrderActions extends LightningElement {
   @api recordId;
   @track imagePreview;
   @track base64Image = "";
+
+  labels = {
+    WorkOrderActions_Header,
+    WorkOrderActions_Shop_Visit_Header,
+    WorkOrderActions_Special_Equipment_Header,
+    WorkOrderActions_Edit_Tasks_Header,
+    WorkOrderActions_Shop_Visit_Description,
+    WorkOrderActions_Special_Equipment_Description,
+    WorkOrderActions_Edit_Tasks_Description,
+    WorkOrderActions_Cancel_Button,
+    WorkOrderActions_Save_Button
+  };
 
   connectedCallback() {
     console.log("recordId:", this.recordId);
@@ -52,27 +73,6 @@ export default class WorkOrderActions extends LightningElement {
 
     this.closeModal();
 
-    // const evt = new ShowToastEvent({
-    //   title: "Success",
-    //   message: "Record updated successfully",
-    //   variant: "success"
-    // });
-
-    // this.dispatchEvent(evt);
-
     this.dispatchEvent(new CloseActionScreenEvent());
-  }
-
-  handleUploadFinished(event) {
-    //Add on toastEvent file Id to the message
-    console.log("handleUploadFinished", event.detail.files);
-
-    const toastEvent = new ShowToastEvent({
-      title: "Success",
-      message: JSON.stringify(event.detail.files),
-      variant: "success"
-    });
-
-    this.dispatchEvent(toastEvent);
   }
 }

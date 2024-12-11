@@ -196,4 +196,8 @@
         <name>PDF_Butler_US1</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>Krinkels_Admin</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

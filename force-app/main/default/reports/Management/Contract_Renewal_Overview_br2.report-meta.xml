@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ServiceContract$Name</field>
+    </columns>
+    <columns>
+        <field>ServiceContract$Account</field>
+    </columns>
+    <columns>
+        <field>ServiceContract$StartDate</field>
+    </columns>
+    <columns>
+        <field>ServiceContract$EndDate</field>
+    </columns>
+    <columns>
+        <field>ServiceContract$Type__c</field>
+    </columns>
+    <description>End Date less then 90 Days - Commercial agreement</description>
+    <filter>
+        <criteriaItems>
+            <column>ServiceContract$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Commercial Agreement</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ServiceContract$EndDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>NEXT_90_DAYS</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ServiceContract$Invoice_Type_MS__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Commercial Agreement Renewal Next 90Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Service_contracts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ServiceContract$ActivationDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

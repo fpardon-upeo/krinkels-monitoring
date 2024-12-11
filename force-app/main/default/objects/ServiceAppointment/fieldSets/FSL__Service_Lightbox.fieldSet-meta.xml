@@ -292,11 +292,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>ServiceTerritoryId</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>State</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -374,6 +369,11 @@
     </displayedFields>
     <displayedFields>
         <field>Asset__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>ServiceTerritoryId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

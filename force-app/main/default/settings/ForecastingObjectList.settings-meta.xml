@@ -58,6 +58,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -202,16 +206,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -246,20 +250,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -305,12 +301,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -320,8 +315,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -390,6 +385,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -534,16 +533,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -578,20 +577,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -637,12 +628,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -652,8 +642,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -722,6 +712,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -870,16 +864,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -914,20 +908,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -974,12 +960,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -989,8 +974,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1059,6 +1044,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -1203,16 +1192,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -1247,20 +1236,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1306,12 +1287,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -1321,8 +1301,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1391,6 +1371,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -1539,16 +1523,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -1583,20 +1567,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1643,12 +1619,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -1658,8 +1633,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1728,6 +1703,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -1872,16 +1851,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -1916,20 +1895,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1975,12 +1946,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -1990,8 +1960,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2060,6 +2030,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -2208,16 +2182,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -2252,20 +2226,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2312,12 +2278,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -2327,8 +2292,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2397,6 +2362,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -2541,16 +2510,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -2585,20 +2554,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2644,12 +2605,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -2659,8 +2619,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2729,6 +2689,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -2877,16 +2841,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -2921,20 +2885,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2981,12 +2937,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -2996,8 +2951,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3066,6 +3021,10 @@
             <label>Recent Activity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
@@ -3210,16 +3169,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -3254,20 +3213,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -3313,12 +3264,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -3328,8 +3278,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3396,6 +3346,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY_DAYS</field>
             <label>Recent Activity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
@@ -3546,16 +3500,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -3590,20 +3544,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -3650,12 +3596,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -3665,8 +3610,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3733,6 +3678,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY_DAYS</field>
             <label>Recent Activity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7tru</field>
+            <label>Extra Work Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
@@ -3879,16 +3828,16 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q7uAd</field>
+            <label>Weighted Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
             <label>ATAK Project Request Comment</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fDD</field>
-            <label>Subject</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -3923,20 +3872,12 @@
             <label>Account Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD3</field>
-            <label>Our Reference</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9g</field>
             <label>ATAK Project Needed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q7fD8</field>
-            <label>Customer Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -3982,12 +3923,11 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
-            <field>00NKF00000Q7fD8</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q7tru</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
-            <field>00NKF00000Q7fD3</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
@@ -3997,8 +3937,8 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
-            <field>00NKF00000Q7fDD</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>

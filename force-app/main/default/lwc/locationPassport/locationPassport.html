@@ -4,178 +4,189 @@
 
 <!-- Location Passport -->
 <template>
-  <lightning-card title="Location Passport" icon-name="standard:account">
+  <div class="mobile-wrapper">
     <!-- Account Details Section -->
-    <div if:true={dataLoaded} class="slds-p-around_medium">
-      <article class="slds-card slds-card_boundary">
-        <div class="slds-card__header slds-grid">
-          <header class="slds-media slds-media_center">
-            <div class="slds-media__figure">
-              <lightning-icon icon-name="standard:home" size="small"></lightning-icon>
-            </div>
-            <div class="slds-media__body">
-              <h2 class="slds-card__header-title">General Information</h2>
-            </div>
-          </header>
+    <div if:true={dataLoaded}>
+      <div class="mobile-card">
+        <div class="mobile-header">
+          <lightning-icon
+            icon-name="utility:home"
+            size="small"
+          ></lightning-icon>
+          <h2>{labels.LocationPassport_General_Information_Header}</h2>
         </div>
-        <div class="slds-card__body slds-card__body_inner">
-          <dl class="slds-list_horizontal slds-wrap">
-            <dt class="slds-item_label slds-text-color_weak slds-truncate">Name:</dt>
-            <dd class="slds-item_detail slds-truncate slds-text-heading_small">{accountData.Name}</dd>
-
-            <dt class="slds-item_label slds-text-color_weak slds-truncate">Access Information:</dt>
-            <dd class="slds-item_detail slds-truncate">{accountData.Access_Information__c}</dd>
-
-            <dt class="slds-item_label slds-text-color_weak slds-truncate">Attention Points:</dt>
-            <dd class="slds-item_detail slds-truncate">{accountData.Attention_points_for_execution__c}</dd>
-          </dl>
+        <div class="mobile-list">
+          <div class="mobile-list-item">
+            <span class="mobile-label"
+              >{labels.LocationPassport_General_Information_Account_Name_Header}</span
+            >
+            <span class="mobile-value">{accountData.Name}</span>
+          </div>
+          <div class="mobile-list-item">
+            <span class="mobile-label"
+              >{labels.LocationPassport_General_Information_Account_AccessInformation_Header}</span
+            >
+            <span class="mobile-value"
+              >{accountData.Access_Information__c}</span
+            >
+          </div>
+          <div class="mobile-list-item">
+            <span class="mobile-label"
+              >{labels.LocationPassport_General_Information_Account_AttentionPoints_Header}</span
+            >
+            <span class="mobile-value"
+              >{accountData.Attention_points_for_execution__c}</span
+            >
+          </div>
         </div>
-      </article>
+      </div>
     </div>
 
     <!-- Operating Hours Section -->
-    <div if:true={slotsLoaded} class="slds-p-around_medium">
-      <article class="slds-card slds-card_boundary">
-        <div class="slds-card__header slds-grid">
-          <header class="slds-media slds-media_center">
-            <div class="slds-media__figure">
-              <lightning-icon icon-name="standard:timesheet_entry" size="small"></lightning-icon>
-            </div>
-            <div class="slds-media__body">
-              <h2 class="slds-card__header-title">Operating Hours</h2>
-            </div>
-          </header>
+    <div if:true={slotsLoaded}>
+      <div class="mobile-card">
+        <div class="mobile-header">
+          <lightning-icon
+            icon-name="utility:clock"
+            size="small"
+          ></lightning-icon>
+          <h2>{labels.LocationPassport_Operating_Hours_Header}</h2>
         </div>
-        <div class="slds-card__body slds-card__body_inner">
+        <div class="mobile-table">
           <template if:true={timeSlots.data}>
             <div class="custom-datatable">
-              <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+              <table
+                class="slds-table slds-table_bordered slds-table_cell-buffer"
+              >
                 <thead>
-                <tr class="slds-line-height_reset">
-                  <th class="slds-text-title_caps" scope="col">
-                    <div class="slds-grid slds-grid_vertical-align-center">
-                      <lightning-icon icon-name="utility:dayview" size="x-small" class="slds-m-right_x-small"></lightning-icon>
-                      Day of Week
-                    </div>
-                  </th>
-                  <th class="slds-text-title_caps" scope="col">
-                    <div class="slds-grid slds-grid_vertical-align-center">
-                      <lightning-icon icon-name="utility:clock" size="x-small" class="slds-m-right_x-small"></lightning-icon>
-                      Start Time
-                    </div>
-                  </th>
-                  <th class="slds-text-title_caps" scope="col">
-                    <div class="slds-grid slds-grid_vertical-align-center">
-                      <lightning-icon icon-name="utility:clock" size="x-small" class="slds-m-right_x-small"></lightning-icon>
-                      End Time
-                    </div>
-                  </th>
-                </tr>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-title_caps" scope="col">
+                      <div class="slds-grid slds-grid_vertical-align-center">
+                        <lightning-icon
+                          icon-name="utility:dayview"
+                          size="x-small"
+                          class="slds-m-right_x-small"
+                        ></lightning-icon>
+                        {labels.LocationPassport_Operating_Hours_Day_Header}
+                      </div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                      <div class="slds-grid slds-grid_vertical-align-center">
+                        <lightning-icon
+                          icon-name="utility:clock"
+                          size="x-small"
+                          class="slds-m-right_x-small"
+                        ></lightning-icon>
+                        {labels.LocationPassport_Operating_Hours_Start_Time_Header}
+                      </div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                      <div class="slds-grid slds-grid_vertical-align-center">
+                        <lightning-icon
+                          icon-name="utility:clock"
+                          size="x-small"
+                          class="slds-m-right_x-small"
+                        ></lightning-icon>
+                        {labels.LocationPassport_Operating_Hours_End_Time_Header}
+                      </div>
+                    </th>
+                  </tr>
                 </thead>
                 <tbody>
-                <template for:each={timeSlots.data} for:item="slot">
-                  <tr key={slot.Id}>
-                    <td>{slot.DayOfWeek}</td>
-                    <td>{slot.formattedStartTime}</td>
-                    <td>{slot.formattedEndTime}</td>
-                  </tr>
-                </template>
+                  <template for:each={timeSlots.data} for:item="slot">
+                    <tr key={slot.Id}>
+                      <td>{slot.DayOfWeek}</td>
+                      <td>{slot.formattedStartTime}</td>
+                      <td>{slot.formattedEndTime}</td>
+                    </tr>
+                  </template>
                 </tbody>
               </table>
             </div>
           </template>
         </div>
-      </article>
+      </div>
     </div>
 
-    <!-- Content Documents Section -->
-    <div if:true={docsLoaded} class="slds-p-around_medium">
-      <article class="slds-card slds-card_boundary">
-        <div class="slds-card__header slds-grid">
-          <header class="slds-media slds-media_center">
-            <div class="slds-media__figure">
-              <lightning-icon icon-name="standard:document" size="small"></lightning-icon>
-            </div>
-            <div class="slds-media__body">
-              <h2 class="slds-card__header-title">Related Documents</h2>
-            </div>
-          </header>
+    <!-- Documents Section -->
+    <div if:true={docsLoaded}>
+      <div class="mobile-card">
+        <div class="mobile-header">
+          <lightning-icon
+            icon-name="utility:file"
+            size="small"
+          ></lightning-icon>
+          <h2>{labels.LocationPassport_Documents_Header}</h2>
         </div>
-        <div class="slds-card__body slds-card__body_inner">
-          <div class="slds-grid slds-wrap slds-gutters">
-            <template for:each={contentDocuments.data} for:item="doc">
-              <div key={doc.Id} class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
-                <article class="slds-card">
-                  <div class="slds-card__header slds-grid slds-grid_vertical-align-center">
-                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                      <div class="slds-media__figure">
-                        <lightning-icon
-                          icon-name={doc.iconName}
-                          size="small">
-                        </lightning-icon>
-                      </div>
-                      <div class="slds-media__body">
-                        <h3 class="slds-truncate" title={doc.Title}>
-                          {doc.Title}
-                        </h3>
-                      </div>
-                    </header>
-                  </div>
-                  <div class="slds-card__footer">
-                    <lightning-button
-                      variant="brand"
-                      label="View"
-                      icon-name="utility:preview"
-                      onclick={handleViewDocument}
-                      data-id={doc.Id}
-                      class="slds-m-left_x-small">
-                    </lightning-button>
-                  </div>
-                </article>
-              </div>
-            </template>
-          </div>
+        <div class="docs-grid">
+          <template for:each={contentDocuments.data} for:item="doc">
+            <div
+              key={doc.Id}
+              class="slds-col slds-size_1-of-3 slds-p-around_xx-small"
+            >
+              <article class="slds-card">
+                <div
+                  class="slds-card__header slds-grid slds-grid_vertical-align-center"
+                >
+                  <header
+                    class="slds-media slds-media_center slds-has-flexi-truncate"
+                  >
+                    <div class="slds-media__figure">
+                      <lightning-icon icon-name={doc.iconName} size="small">
+                      </lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                      <h3 class="slds-truncate" title={doc.Title}>
+                        {doc.Title}
+                      </h3>
+                    </div>
+                  </header>
+                </div>
+                <div class="slds-card__footer">
+                  <lightning-button
+                    variant="brand"
+                    label={labels.LocationPassport_View_Button}
+                    icon-name="utility:preview"
+                    onclick={handleViewDocument}
+                    data-id={doc.Id}
+                    class="slds-m-left_x-small"
+                  >
+                  </lightning-button>
+                </div>
+              </article>
+            </div>
+          </template>
         </div>
-      </article>
+      </div>
     </div>
 
     <!-- Feedback Section -->
-    <div class="slds-p-around_medium">
-      <article class="slds-card slds-card_boundary">
-        <div class="slds-card__header slds-grid">
-          <header class="slds-media slds-media_center">
-            <div class="slds-media__figure">
-              <lightning-icon icon-name="standard:feedback" size="small"></lightning-icon>
-            </div>
-            <div class="slds-media__body">
-              <h2 class="slds-card__header-title">Feedback for Contract Manager</h2>
-            </div>
-          </header>
+    <div class="mobile-card">
+      <div class="mobile-header">
+        <lightning-icon
+          icon-name="utility:comments"
+          size="small"
+        ></lightning-icon>
+        <h2>{labels.LocationPassport_Feedback_Header}</h2>
+      </div>
+      <div class="feedback-container">
+        <lightning-textarea
+          name="feedback"
+          label={labels.LocationPassport_Feedback_Label}
+          value={feedbackText}
+          onchange={handleFeedbackChange}
+        >
+        </lightning-textarea>
+        <div class="button-container">
+          <button
+            onclick={handlePostFeedback}
+            disabled={isPostDisabled}
+            class="slds-m-top_small post-feedback-button"
+          >
+            {labels.LocationPassport_Feedback_Submit_Button}
+          </button>
         </div>
-        <div class="slds-card__body slds-card__body_inner">
-          <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
-            <div class="slds-col slds-size_3-of-4">
-              <lightning-textarea
-                name="feedback"
-                label="Feedback for Contract Manager"
-                value={feedbackText}
-                onchange={handleFeedbackChange}>
-              </lightning-textarea>
-            </div>
-            <div class="slds-col slds-size_1-of-4 slds-p-top_medium">
-              <lightning-button
-                label="Post"
-                variant="brand"
-                icon-name="utility:share_post"
-                onclick={handlePostFeedback}
-                disabled={isPostDisabled}
-                class="slds-m-left_x-small">
-              </lightning-button>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
-
-  </lightning-card>
+  </div>
 </template>

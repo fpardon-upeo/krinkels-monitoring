@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjustment_Period__c</fullName>
+    <label>Adjustment Period</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>At Invoicing</fullName>
+                <default>false</default>
+                <label>At Invoicing</label>
+            </value>
+            <value>
+                <fullName>Yearly on Contract Date</fullName>
+                <default>false</default>
+                <label>Yearly on Contract Date</label>
+            </value>
+            <value>
+                <fullName>Yearly on January 1st</fullName>
+                <default>false</default>
+                <label>Yearly on January 1st</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

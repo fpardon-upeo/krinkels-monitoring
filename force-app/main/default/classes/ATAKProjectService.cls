@@ -38,6 +38,7 @@ public with sharing class ATAKProjectService {
         System.debug('ATAKProjectService.createATAKProject');
         System.debug('projectData: ' + projectData.projectcode);
         ATAK_Project__c atakProject = new ATAK_Project__c();
+        atakProject.Name = projectData.projectcode;
         atakProject.Subproject_Name__c = projectData.project_description;
         atakProject.SubProject_ATAK__c = projectData.projectcode;
         atakProject.Cost_centre_Atak_Id__c = projectData.costcenter_code;

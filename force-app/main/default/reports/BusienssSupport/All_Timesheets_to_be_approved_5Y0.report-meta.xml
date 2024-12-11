@@ -22,14 +22,14 @@
         <field>TimeSheet.TimeSheetEntries$Urgent_Intervention__c</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>TimeSheet.TimeSheetEntries$Starting_Allowance_Winter_Service__c</field>
+    </columns>
+    <columns>
         <field>TimeSheet.TimeSheetEntries$WorkOrder</field>
     </columns>
     <columns>
         <field>TimeSheet$Status</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>TimeSheet.TimeSheetEntries$Starting_Allowance_Winter_Service__c</field>
     </columns>
     <description>All Timesheets that are submitted but nog approved yet</description>
     <filter>

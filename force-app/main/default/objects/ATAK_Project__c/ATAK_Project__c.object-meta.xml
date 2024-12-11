@@ -161,12 +161,14 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>ATAK Project</label>
     <nameField>
-        <displayFormat>AP-{000000000}</displayFormat>
         <label>ATAK Projects Number</label>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>ATAK Projects</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Subproject_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SubProject_ATAK__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

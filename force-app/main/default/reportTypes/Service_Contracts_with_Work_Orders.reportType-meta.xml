@@ -952,6 +952,66 @@
             <field>Trigger_Notification_to_Customer__c</field>
             <table>ServiceContract.WorkOrders</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Asset.ATAK_Project__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Asset.ATAK_Project__c.Name</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Asset.ATAK_Project__c.Cost_centre_Atak_Id__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Asset.ATAK_Project__c.Cost_Centre_Atak_Name__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Asset.ATAK_Project__c.SubProject_ATAK__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Asset.ATAK_Project__c.Subproject_Name__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Asset.ATAK_Project__c.Subproject_Description__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Depot_Visit_Planned__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Shop_Visit_Done__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Rework_Planned__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Waste_Visit_Planned__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>
@@ -1398,6 +1458,21 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Trigger_Notification_to_Customer__c</field>
+            <table>ServiceContract.WorkOrders.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Optimize__c</field>
+            <table>ServiceContract.WorkOrders.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Billing_Type__c</field>
+            <table>ServiceContract.WorkOrders.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Financial_Accounts_Billing__c</field>
             <table>ServiceContract.WorkOrders.ServiceAppointments</table>
         </columns>
         <masterLabel>Service Appointments</masterLabel>

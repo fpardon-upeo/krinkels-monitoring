@@ -18,7 +18,7 @@
     <div if:true={showTimesheetScreen} class="top-nav">
       <div class="nav-content">
         <lightning-button
-          label="Back to Main Menu"
+          label={labels.StartDay_Back_To_Menu_Button}
           icon-name="utility:home"
           variant="brand"
           onclick={handleBack}
@@ -329,7 +329,9 @@
       <template if:true={showAppointmentScreen}>
         <div class="table-container">
           <div class="slds-m-top_small slds-m-bottom_small">
-            <c-send-notification-action onbubble={handleBubbleNotification}></c-send-notification-action>
+            <c-send-notification-action
+              onbubble={handleBubbleNotification}
+            ></c-send-notification-action>
           </div>
           <div class="datatable-wrapper">
             <lightning-datatable
@@ -369,7 +371,9 @@
                 variant="inverse"
               ></lightning-icon>
             </span>
-            <span class="button-text">Back to Main Menu</span>
+            <span class="button-text"
+              >{labels.StartDay_Back_To_Menu_Button}</span
+            >
           </button>
           <template if:true={showAppointmentScreen}>
             <button
@@ -384,7 +388,7 @@
                   variant="inverse"
                 ></lightning-icon>
               </span>
-              <span class="button-text">Next</span>
+              <span class="button-text">{labels.StartDay_Next_Button}</span>
             </button>
             <button
               if:false={disableNextButton}
@@ -398,7 +402,7 @@
                   variant="inverse"
                 ></lightning-icon>
               </span>
-              <span class="button-text">Next</span>
+              <span class="button-text">{labels.StartDay_Next_Button}</span>
             </button>
           </template>
           <!--

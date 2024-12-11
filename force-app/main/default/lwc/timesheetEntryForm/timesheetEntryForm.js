@@ -6,6 +6,13 @@ import { LightningElement, wire, api } from "lwc";
 import ID from "@salesforce/user/Id";
 import { gql, graphql } from "lightning/uiGraphQLApi";
 import AppointmentPicker_Appointments_Header from "@salesforce/label/c.AppointmentPicker_Appointments_Header";
+import TimeSheetEntryForm_BackButton from "@salesforce/label/c.TimeSheetEntryForm_BackButton";
+import TimeSheetEntryForm_SelectWork_Text from "@salesforce/label/c.TimeSheetEntryForm_SelectWork_Text";
+import TimeSheetEntryForm_ContinueButton from "@salesforce/label/c.TimeSheetEntryForm_ContinueButton";
+import TimeSheetEntryForm_CancelButton from "@salesforce/label/c.TimeSheetEntryForm_CancelButton";
+import TimeSheetEntryForm_SaveButton from "@salesforce/label/c.TimeSheetEntryForm_SaveButton";
+import TimeSheetEntryForm_WorkOrder_Text from "@salesforce/label/c.TimeSheetEntryForm_WorkOrder_Text";
+import TimeSheetEntryForm_Required_Label from "@salesforce/label/c.TimeSheetEntryForm_Required_Label";
 
 export default class TimesheetEntryForm extends LightningElement {
   @api timesheetEntryId;
@@ -15,6 +22,16 @@ export default class TimesheetEntryForm extends LightningElement {
   @api serviceResourceId;
   @api startDateAndHours;
   @api endDateAndHours;
+
+  labels = {
+    TimeSheetEntryForm_BackButton,
+    TimeSheetEntryForm_SelectWork_Text,
+    TimeSheetEntryForm_ContinueButton,
+    TimeSheetEntryForm_CancelButton,
+    TimeSheetEntryForm_SaveButton,
+    TimeSheetEntryForm_WorkOrder_Text,
+    TimeSheetEntryForm_Required_Label
+  };
 
   connectedCallback() {
     //check the api variables and set them to "" if they are undefined

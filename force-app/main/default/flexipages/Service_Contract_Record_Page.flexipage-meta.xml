@@ -70,6 +70,13 @@
                         </valueListItems>
                         <valueListItems>
                             <value>ServiceContract.Import_Lines</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Type__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Service Contract</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

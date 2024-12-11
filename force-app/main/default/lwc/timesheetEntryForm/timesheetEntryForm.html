@@ -18,14 +18,16 @@
 
   <div if:true={showBottomFooter} class="footer">
     <div class="button-group">
-      <button class="cancel-button" onclick={handleBack}>Back</button>
+      <button class="cancel-button" onclick={handleBack}>
+        {labels.TimeSheetEntryForm_BackButton}
+      </button>
       <button
         if:true={showAppointmentScreen}
         class="grey-button"
         onclick={handleSelect}
         disabled={disableNextButton}
       >
-        Continue
+        {labels.TimeSheetEntryForm_ContinueButton}
       </button>
     </div>
   </div>
@@ -43,8 +45,12 @@
             class="slds-form-element slds-m-top_medium slds-m-bottom_x-small"
           >
             <label class="slds-form-element__label">
-              <abbr class="slds-required" title="required">*</abbr>
-              Work Order
+              <abbr
+                class="slds-required"
+                title={labels.TimeSheetEntryForm_Required_Label}
+                >*</abbr
+              >
+              {labels.TimeSheetEntryForm_WorkOrder_Text}
             </label>
             <div class="slds-form-element__control">
               <div
@@ -63,7 +69,7 @@
                       class="slds-m-right_xx-small"
                     >
                     </lightning-icon>
-                    Select Work Order
+                    {labels.TimeSheetEntryForm_SelectWorkOrder_Text}
                   </button>
                 </div>
                 <div class="slds-col slds-size_2-of-4">
@@ -117,8 +123,12 @@
         </div>
       </div>
       <div class="button-group">
-        <button class="cancel-button" onclick={handleCancel}>Cancel</button>
-        <button class="submit-button" type="submit">Save</button>
+        <button class="cancel-button" onclick={handleCancel}>
+          {labels.TimeSheetEntryForm_CancelButton}
+        </button>
+        <button class="submit-button" type="submit">
+          {labels.TimeSheetEntryForm_SaveButton}
+        </button>
       </div>
     </lightning-record-edit-form>
   </template>

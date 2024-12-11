@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Administration</fullName>
+        <default>false</default>
+        <label>Administration</label>
+    </customValue>
+    <customValue>
+        <fullName>Construction</fullName>
+        <default>false</default>
+        <label>Construction</label>
+    </customValue>
+    <customValue>
+        <fullName>Culture &amp; Recreation</fullName>
+        <default>false</default>
+        <label>Culture &amp; Recreation</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Energie &amp; Public services</fullName>
+        <default>false</default>
+        <label>Energie &amp; Public services</label>
+    </customValue>
+    <customValue>
+        <fullName>Financial Services</fullName>
+        <default>false</default>
+        <label>Financial Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Health</fullName>
+        <default>false</default>
+        <label>Health</label>
+    </customValue>
+    <customValue>
+        <fullName>Horeca</fullName>
+        <default>false</default>
+        <label>Horeca</label>
+    </customValue>
+    <customValue>
+        <fullName>Logistics &amp; Transportation</fullName>
+        <default>false</default>
+        <label>Logistics &amp; Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Patrimonium</fullName>
+        <default>false</default>
+        <label>Patrimonium</label>
+    </customValue>
+    <customValue>
+        <fullName>Production</fullName>
+        <default>false</default>
+        <label>Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail - Food</fullName>
+        <default>false</default>
+        <label>Retail - Food</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail - Non Food</fullName>
+        <default>false</default>
+        <label>Retail - Non Food</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology &amp; Research</fullName>
+        <default>false</default>
+        <label>Technology &amp; Research</label>
+    </customValue>
+    <customValue>
+        <fullName>Utilities</fullName>
+        <default>false</default>
+        <label>Utilities</label>
+    </customValue>
+    <masterLabel>Industry Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

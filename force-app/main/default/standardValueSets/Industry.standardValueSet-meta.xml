@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <sorted>false</sorted>
-    <standardValue>
-        <fullName>Utilities</fullName>
-        <default>false</default>
-        <label>Utilities</label>
-    </standardValue>
+    <sorted>true</sorted>
     <standardValue>
         <fullName>Administration</fullName>
         <default>false</default>
         <label>Administration</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Production</fullName>
-        <default>false</default>
-        <label>Production</label>
     </standardValue>
     <standardValue>
         <fullName>Construction</fullName>
@@ -22,39 +12,24 @@
         <label>Construction</label>
     </standardValue>
     <standardValue>
-        <fullName>Energie &amp; Public services</fullName>
+        <fullName>Culture &amp; Recreation</fullName>
         <default>false</default>
-        <label>Energie &amp; Public services</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Retail - Food</fullName>
-        <default>false</default>
-        <label>Retail - Food</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Retail - Non Food</fullName>
-        <default>false</default>
-        <label>Retail - Non Food</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Logistics &amp; Transportation</fullName>
-        <default>false</default>
-        <label>Logistics &amp; Transportation</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Financial Services</fullName>
-        <default>false</default>
-        <label>Financial Services</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Professional Services</fullName>
-        <default>false</default>
-        <label>Professional Services</label>
+        <label>Culture &amp; Recreation</label>
     </standardValue>
     <standardValue>
         <fullName>Education</fullName>
         <default>false</default>
         <label>Education</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Energie &amp; Public services</fullName>
+        <default>false</default>
+        <label>Energie &amp; Public services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Financial Services</fullName>
+        <default>false</default>
+        <label>Financial Services</label>
     </standardValue>
     <standardValue>
         <fullName>Health</fullName>
@@ -67,18 +42,43 @@
         <label>Horeca</label>
     </standardValue>
     <standardValue>
-        <fullName>Technology &amp; Research</fullName>
+        <fullName>Logistics &amp; Transportation</fullName>
         <default>false</default>
-        <label>Technology &amp; Research</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Culture &amp; Recreation</fullName>
-        <default>false</default>
-        <label>Culture &amp; Recreation</label>
+        <label>Logistics &amp; Transportation</label>
     </standardValue>
     <standardValue>
         <fullName>Patrimonium</fullName>
         <default>false</default>
         <label>Patrimonium</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Production</fullName>
+        <default>false</default>
+        <label>Production</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Retail - Food</fullName>
+        <default>false</default>
+        <label>Retail - Food</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Retail - Non Food</fullName>
+        <default>false</default>
+        <label>Retail - Non Food</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Technology &amp; Research</fullName>
+        <default>false</default>
+        <label>Technology &amp; Research</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Utilities</fullName>
+        <default>false</default>
+        <label>Utilities</label>
     </standardValue>
 </StandardValueSet>

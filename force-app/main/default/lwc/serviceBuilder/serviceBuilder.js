@@ -844,6 +844,8 @@ export default class ServiceBuilder extends LightningElement {
 
     this.isModalOpen = true;
 
+    console.log("Index in handleOpenEditModal", index);
+
     this.populateLightningPickerWithExistingFinancialAccountsOfContractLine(
       index
     );
@@ -856,12 +858,16 @@ export default class ServiceBuilder extends LightningElement {
   populateLightningPickerWithExistingFinancialAccountsOfContractLine(index) {
     this.selectedLineItemId = this.contractLines[index].Id;
 
+    console.log("Selected Line Item Id", this.selectedLineItemId);
+
     // Get the financial accounts of the contract line
     const financialAccounts =
       this.contractLines[index].Contract_Line_Financial_Accounts__r;
 
+    console.log("Financial Accounts", financialAccounts);
+
     // Loop through the financial accounts and add them to the FinCustomers array if they don't already exist
-    if (financialAccounts.length > 0) {
+    if (financialAccounts !== undefined && financialAccounts.length > 0) {
       financialAccounts.forEach((account) => {
         const financialAccountInfo = {
           type: "icon",

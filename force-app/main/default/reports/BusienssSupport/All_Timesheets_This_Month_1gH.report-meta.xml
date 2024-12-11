@@ -25,11 +25,11 @@
         <field>TimeSheet.TimeSheetEntries$Urgent_Intervention__c</field>
     </columns>
     <columns>
-        <field>TimeSheet.TimeSheetEntries$WorkOrder</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>TimeSheet.TimeSheetEntries$Starting_Allowance_Winter_Service__c</field>
+    </columns>
+    <columns>
+        <field>TimeSheet.TimeSheetEntries$WorkOrder</field>
     </columns>
     <description>All Timesheets  for this month</description>
     <filter>

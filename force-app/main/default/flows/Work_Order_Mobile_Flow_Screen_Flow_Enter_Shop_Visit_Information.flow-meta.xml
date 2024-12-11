@@ -76,6 +76,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Shop_Visit_Done__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Shop_Visit_End_Time__c</field>
             <value>
                 <elementReference>Shop_Visit_End_Time</elementReference>

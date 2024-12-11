@@ -7,19 +7,7 @@
     <type>MultiselectPicklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>Indoor</fullName>
-                <default>false</default>
-                <label>Indoor</label>
-            </value>
-            <value>
-                <fullName>Outdoor</fullName>
-                <default>false</default>
-                <label>Outdoor</label>
-            </value>
-        </valueSetDefinition>
+        <valueSetName>Contract_Type</valueSetName>
     </valueSet>
     <visibleLines>3</visibleLines>
 </CustomField>

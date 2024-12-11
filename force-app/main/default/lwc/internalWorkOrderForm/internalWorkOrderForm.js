@@ -16,6 +16,12 @@ import InternalWorkOrder_Waste_Button_Text from "@salesforce/label/c.InternalWor
 import InternalWorkOrder_Waste_Button_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Waste_Button_Sub_Text";
 import InternalWorkOrder_Depot_Button_Text from "@salesforce/label/c.InternalWorkOrder_Depot_Button_Text";
 import InternalWorkOrder_Depot_Button_Sub_Text from "@salesforce/label/c.InternalWorkOrder_Depot_Button_Sub_Text";
+import InternalWorkOrder_Select_WO_Text from "@salesforce/label/c.InternalWorkOrder_Select_WO_Text";
+import InternalWorkOrder_Select_WO_Warning_Text from "@salesforce/label/c.InternalWorkOrder_Select_WO_Warning_Text";
+import InternalWorkOrder_Select_Account_Text from "@salesforce/label/c.InternalWorkOrder_Select_Account_Text";
+import InternalWorkOrder_Select_Account_Warning_Text from "@salesforce/label/c.InternalWorkOrder_Select_Account_Warning_Text";
+import InternalWorkOrder_Save_Button from "@salesforce/label/c.InternalWorkOrder_Save_Button";
+
 import { NavigationMixin } from "lightning/navigation";
 
 import createInternalWorkOrder from "@salesforce/apex/InternalWorkOrderController.createInternalWorkOrder";
@@ -68,7 +74,12 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     InternalWorkOrder_Waste_Button_Text,
     InternalWorkOrder_Waste_Button_Sub_Text,
     InternalWorkOrder_Depot_Button_Text,
-    InternalWorkOrder_Depot_Button_Sub_Text
+    InternalWorkOrder_Depot_Button_Sub_Text,
+    InternalWorkOrder_Select_WO_Text,
+    InternalWorkOrder_Select_WO_Warning_Text,
+    InternalWorkOrder_Select_Account_Text,
+    InternalWorkOrder_Select_Account_Warning_Text,
+    InternalWorkOrder_Save_Button
   };
 
   workOrderTypeOptions = [

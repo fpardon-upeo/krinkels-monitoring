@@ -12,8 +12,6 @@ public with sharing class ServiceAppointmentTriggerHandler {
      */
 
     public void afterInsert(List<ServiceAppointment> newServiceAppointments) {
-        //Check the ParentRecordId, if it is a WorkOrder, then get the Service_Territory__c from the WorkOrder.Asset
-
         List<ServiceAppointment> serviceAppointmentsToUpdate = new List<ServiceAppointment>();
         List<String> workOrderIds = new List<String>();
         for(ServiceAppointment sa : newServiceAppointments){
@@ -24,7 +22,40 @@ public with sharing class ServiceAppointmentTriggerHandler {
         }
 
         if(serviceAppointmentsToUpdate.size() > 0){
-            Map<Id, WorkOrder> workOrders = new Map<Id, WorkOrder>([SELECT Id, AssetId, ServiceTerritoryId, ServiceContract.Account.Alias_commercial_customer_name__c,  Asset.Service_Territory__c, Longitude, Latitude FROM WorkOrder WHERE Id IN :workOrderIds]);
+            // Get Work Orders first
+            Map<Id, WorkOrder> workOrders = new Map<Id, WorkOrder>([
+                    SELECT Id, AssetId, ServiceTerritoryId, MaintenancePlanId,
+                            MaintenancePlan.ServiceContract.Contract_type__c,
+                            MaintenancePlan.Service_Appointments_Icon_on_Gantt__c,
+                            MaintenancePlan.Service_Appointments_Color_on_Gantt__c,
+                            ServiceContract.Account.Alias_commercial_customer_name__c,
+                            Asset.Service_Territory__c,
+                            Asset.Name,
+                            Longitude, Latitude
+                    FROM WorkOrder
+                    WHERE Id IN :workOrderIds
+            ]);
+
+            // Get set of Asset IDs
+            Set<Id> assetIds = new Set<Id>();
+            for(WorkOrder wo : workOrders.values()) {
+                if(wo.AssetId != null) {
+                    assetIds.add(wo.AssetId);
+                }
+            }
+
+            // Query Asset Financial Accounts
+            Map<Id, List<String>> assetToFinancialAccounts = new Map<Id, List<String>>();
+            for(Asset ast : [SELECT Id, (SELECT Name FROM Asset_Financial_Accounts__r)
+            FROM Asset
+            WHERE Id IN :assetIds]) {
+                List<String> accountNames = new List<String>();
+                for(Asset_Financial_Account__c acc : ast.Asset_Financial_Accounts__r) {
+                    accountNames.add(acc.Name);
+                }
+                assetToFinancialAccounts.put(ast.Id, accountNames);
+            }
+
             List<ServiceAppointment> appointments = new List<ServiceAppointment>();
             for(ServiceAppointment sa : serviceAppointmentsToUpdate){
                 WorkOrder wo = workOrders.get(sa.ParentRecordId);
@@ -32,7 +63,18 @@ public with sharing class ServiceAppointmentTriggerHandler {
                     ServiceAppointment appointment = new ServiceAppointment();
                     appointment.Id = sa.Id;
                     appointment.Asset__c = wo.AssetId;
-                    //appointment.FSL__GanttLabel__c = wo.ServiceContract.Account.Alias_commercial_customer_name__c + ' - ' + sa.Street;
+
+                    // Get financial accounts from our map
+                    List<String> accountNames = assetToFinancialAccounts.get(wo.AssetId);
+                    if(accountNames != null && !accountNames.isEmpty()) {
+                        appointment.Financial_Accounts_Billing__c = String.join(accountNames, ', ');
+                    }
+
+                    if(wo.MaintenancePlanId != null){
+                        appointment.FSL__GanttColor__c = wo.MaintenancePlan.Service_Appointments_Color_on_Gantt__c;
+                        appointment.FSL__GanttIcon__c = wo.MaintenancePlan.Service_Appointments_Icon_on_Gantt__c;
+                        appointment.Billing_Type__c = wo.MaintenancePlan.ServiceContract.Contract_type__c;
+                    }
                     appointments.add(appointment);
                 }
             }

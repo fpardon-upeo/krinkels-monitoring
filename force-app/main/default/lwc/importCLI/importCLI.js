@@ -4,8 +4,20 @@ import { updateRecord } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import { CloseActionScreenEvent } from "lightning/actions";
 import CONTRACT_LINE_ITEM_OBJECT from "@salesforce/schema/ContractLineItem";
+import ImportCLI_WrongFile_Message from "@salesforce/label/c.ImportCLI_WrongFile_Message";
+import ImportCLI_Error_Toast_Title from "@salesforce/label/c.ImportCLI_Error_Toast_Title";
+import ImportCLI_Error_Toast_Message from "@salesforce/label/c.ImportCLI_Error_Toast_Message";
+import ImportCLI_Success_Toast_Title from "@salesforce/label/c.ImportCLI_Success_Toast_Title";
+import ImportCLI_Success_Toast_Message from "@salesforce/label/c.ImportCLI_Success_Toast_Message";
+import ImportCLI_Header from "@salesforce/label/c.ImportCLI_Header";
+import ImportCLI_UploadButton from "@salesforce/label/c.ImportCLI_UploadButton";
 
 export default class ImportCsv extends LightningElement {
+  labels = {
+    ImportCLI_Header,
+    ImportCLI_UploadButton
+  };
+
   handleFileUpload(event) {
     const file = event.target.files[0];
 
@@ -15,8 +27,8 @@ export default class ImportCsv extends LightningElement {
         console.error("Invalid file type. Please upload a CSV file.");
 
         const event = new ShowToastEvent({
-          title: "Error",
-          message: "Please upload a CSV file.",
+          title: ImportCLI_Error_Toast_Title,
+          message: ImportCLI_WrongFile_Message,
           variant: "error"
         });
 
@@ -58,16 +70,16 @@ export default class ImportCsv extends LightningElement {
           });
 
           const event = new ShowToastEvent({
-            title: "Success",
-            message: "All CLI were created or updated",
+            title: ImportCLI_Success_Toast_Title,
+            message: ImportCLI_Success_Toast_Message,
             variant: "success"
           });
 
           this.dispatchEvent(event);
         } catch (error) {
           const event = new ShowToastEvent({
-            title: "Error",
-            message: "Not all CLI were created or updated",
+            title: ImportCLI_Error_Toast_Title,
+            message: ImportCLI_Error_Toast_Message,
             variant: "error"
           });
 

@@ -1,4 +1,4 @@
-<apex:page showHeader="false" sidebar="false" standardController="ServiceAppointment">
+<apex:page showHeader="false" sidebar="false" standardController="Account">
     <apex:includeLightning />
     <div id="lightbox"></div> 
     <script>
@@ -6,7 +6,7 @@
             $Lightning.createComponent(
                 "c:fslConsoleAccount", 
                 { 
-                    recordId: "{!serviceappointment.Id}"
+                    recordId: "{!account.Id}"
                 },
                 "lightbox",
                 function() {

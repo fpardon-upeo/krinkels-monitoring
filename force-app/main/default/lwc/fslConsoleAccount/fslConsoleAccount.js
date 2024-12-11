@@ -8,7 +8,8 @@ export default class FSL_Console_Account_Tab extends LightningElement {
     fields = []; // Fields retrieved from the field set
 
     connectedCallback() {
-        this.fetchAccountId();
+        console.log('recordId:', this.recordId);
+        this.accountId = this.recordId; // Set the AccountId to the ServiceAppointment Id
         this.fetchFieldSetFields();
     }
 
@@ -27,6 +28,8 @@ export default class FSL_Console_Account_Tab extends LightningElement {
     fetchFieldSetFields() {
         getFieldSetFields({ fieldSetName: 'FSL__Gantt_Lightbox', objectName: 'Account' })
             .then((fields) => {
+                console.log('fields:', fields);
+                console.log('fields:', JSON.stringify(fields));
                 this.fields = fields; // Assign the fields
             })
             .catch((error) => {

@@ -33,6 +33,8 @@ import StartDay_Waste_Button_Text from "@salesforce/label/c.StartDay_Waste_Butto
 import StartDay_Waste_Button_Sub_Text from "@salesforce/label/c.StartDay_Waste_Button_Sub_Text";
 import StartDay_Internal_Button_Text from "@salesforce/label/c.StartDay_Internal_Button_Text";
 import StartDay_Internal_Button_Sub_Text from "@salesforce/label/c.StartDay_Internal_Button_Sub_Text";
+import StartDay_Back_To_Menu_Button from "@salesforce/label/c.StartDay_Back_To_Menu_Button";
+import StartDay_Next_Button from "@salesforce/label/c.StartDay_Next_Button";
 
 import { NavigationMixin } from "lightning/navigation";
 import { ToastTypes } from "c/utilsImageCapture";
@@ -76,6 +78,7 @@ export default class StartOperatorDay extends NavigationMixin(
   selectedRows = [];
   hasFirstWorkOrder = false;
   notifyCustomer = false;
+
   labels = {
     StartDay_Start_Button_Text,
     StartDay_Start_Button_Sub_Text,
@@ -102,7 +105,9 @@ export default class StartOperatorDay extends NavigationMixin(
     StartDay_Waste_Button_Text,
     StartDay_Waste_Button_Sub_Text,
     StartDay_Internal_Button_Text,
-    StartDay_Internal_Button_Sub_Text
+    StartDay_Internal_Button_Sub_Text,
+    StartDay_Back_To_Menu_Button,
+    StartDay_Next_Button
   };
 
   milesEntryFields = [
@@ -569,7 +574,8 @@ export default class StartOperatorDay extends NavigationMixin(
     fields["Id"] = this.selectedRows[0].ParentRecordId;
     fields["Status"] = "Travelling";
     fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
-    fields["Is_First_of_Day__c"] = this.selectedRows[0].WorkOrderType === "Production Work";
+    fields["Is_First_of_Day__c"] =
+      this.selectedRows[0].WorkOrderType === "Production Work";
     console.log("work order fields", JSON.stringify(fields));
     const recordInput = { fields };
     console.log("recordInput wo", JSON.stringify(recordInput));

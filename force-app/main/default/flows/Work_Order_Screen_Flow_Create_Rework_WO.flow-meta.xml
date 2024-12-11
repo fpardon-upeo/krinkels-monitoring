@@ -134,7 +134,7 @@
     </choices>
     <choices>
         <name>Redo_tasks_from_the_previous_work_order</name>
-        <choiceText>Redo tasks from the previous work order</choiceText>
+        <choiceText>Tasks from previous work order</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>Redo tasks from the previous work order</stringValue>
@@ -239,6 +239,18 @@
             <field>MaintenancePlanId</field>
             <value>
                 <elementReference>Get_Work_Order_Information.MaintenancePlanId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentWorkOrderId</field>
+            <value>
+                <elementReference>Get_Work_Order_Information.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rework_Planned__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>

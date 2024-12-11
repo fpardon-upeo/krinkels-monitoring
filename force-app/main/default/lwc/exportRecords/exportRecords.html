@@ -4,22 +4,28 @@
 
 <!-- Export Records -->
 <template>
-  <lightning-quick-action-panel header="Export Records">
+  <lightning-quick-action-panel header={labels.ExportCLI_Header}>
     <div class="slds-m-around_medium">
       <template if:true={loading}>
-        <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+        <lightning-spinner
+          alternative-text="Loading..."
+          size="small"
+        ></lightning-spinner>
       </template>
       <template if:true={error}>
-        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error">
+        <div
+          class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+        >
           {error}
         </div>
       </template>
       <div class="slds-align_absolute-center">
         <lightning-button
-          label="Export to CSV"
+          label={labels.ExportCLI_ExportButton}
           onclick={handleExport}
           variant="brand"
-          class="slds-m-around_medium">
+          class="slds-m-around_medium"
+        >
         </lightning-button>
       </div>
     </div>

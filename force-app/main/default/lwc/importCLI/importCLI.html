@@ -1,9 +1,9 @@
 <template>
-  <lightning-quick-action-panel header="Import Contract Line Items">
+  <lightning-quick-action-panel header={labels.ImportCLI_Header}>
     <div class="slds-m-around_medium slds-align_absolute-center">
       <lightning-input
         type="file"
-        label="Upload CSV File"
+        label={labels.ImportCLI_UploadButton}
         accept=".csv"
         onchange={handleFileUpload}
       >

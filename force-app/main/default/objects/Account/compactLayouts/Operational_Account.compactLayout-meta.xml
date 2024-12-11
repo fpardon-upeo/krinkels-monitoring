@@ -3,7 +3,8 @@
     <fullName>Operational_Account</fullName>
     <fields>Name</fields>
     <fields>ParentId</fields>
-    <fields>Type</fields>
+    <fields>Priority__c</fields>
     <fields>RecordTypeId</fields>
+    <fields>OwnerId</fields>
     <label>Operational Account</label>
 </CompactLayout>

@@ -10,12 +10,31 @@ import { NavigationMixin } from "lightning/navigation";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import createFeedbackPost from "@salesforce/apex/AccountDetailsController.createFeedbackPost";
 
+import LocationPassport_General_Information_Header from "@salesforce/label/c.LocationPassport_General_Information_Header";
+import LocationPassport_General_Information_Account_Name_Header from "@salesforce/label/c.LocationPassport_General_Information_Account_Name_Header";
+import LocationPassport_General_Information_Account_AccessInformation_Header from "@salesforce/label/c.LocationPassport_General_Information_Account_AccessInformation_Header";
+import LocationPassport_General_Information_Account_AttentionPoints_Header from "@salesforce/label/c.LocationPassport_General_Information_Account_AttentionPoints_Header";
+import LocationPassport_Operating_Hours_Header from "@salesforce/label/c.LocationPassport_Operating_Hours_Header";
+import LocationPassport_Operating_Hours_Day_Header from "@salesforce/label/c.LocationPassport_Operating_Hours_Day_Header";
+import LocationPassport_Operating_Hours_Start_Time_Header from "@salesforce/label/c.LocationPassport_Operating_Hours_Start_Time_Header";
+import LocationPassport_Operating_Hours_End_Time_Header from "@salesforce/label/c.LocationPassport_Operating_Hours_End_Time_Header";
+import LocationPassport_Feedback_Header from "@salesforce/label/c.LocationPassport_Feedback_Header";
+import LocationPassport_Feedback_Label from "@salesforce/label/c.LocationPassport_Feedback_Label";
+import LocationPassport_Feedback_Submit_Button from "@salesforce/label/c.LocationPassport_Feedback_Submit_Button";
+import LocationPassport_Documents_Header from "@salesforce/label/c.LocationPassport_Documents_Header";
+import LocationPassport_Successfull_Toast_Title from "@salesforce/label/c.LocationPassport_Successfull_Toast_Title";
+import LocationPassport_Successfull_Toast_Message from "@salesforce/label/c.LocationPassport_Successfull_Toast_Message";
+import LocationPassport_Error_Toast_Title from "@salesforce/label/c.LocationPassport_Error_Toast_Title";
+import LocationPassport_Error_Toast_Message from "@salesforce/label/c.LocationPassport_Error_Toast_Message";
+import LocationPassport_View_Button from "@salesforce/label/c.LocationPassport_View_Button";
+
 const FIELDS = [
   "Account.Name",
   "Account.Access_Information__c",
   "Account.Attention_points_for_execution__c",
   "Account.OperatingHoursId"
 ];
+
 const WORKORDER_FIELDS = ["WorkOrder.AccountId"];
 
 export default class LocationPassport extends NavigationMixin(
@@ -40,6 +59,23 @@ export default class LocationPassport extends NavigationMixin(
   feedbackText = "";
   isPosting = false;
   accountId;
+
+  //Labels
+  labels = {
+    LocationPassport_General_Information_Header,
+    LocationPassport_General_Information_Account_Name_Header,
+    LocationPassport_General_Information_Account_AccessInformation_Header,
+    LocationPassport_General_Information_Account_AttentionPoints_Header,
+    LocationPassport_Operating_Hours_Header,
+    LocationPassport_Operating_Hours_Day_Header,
+    LocationPassport_Operating_Hours_Start_Time_Header,
+    LocationPassport_Operating_Hours_End_Time_Header,
+    LocationPassport_Feedback_Header,
+    LocationPassport_Feedback_Label,
+    LocationPassport_Feedback_Submit_Button,
+    LocationPassport_Documents_Header,
+    LocationPassport_View_Button
+  };
 
   @wire(getRecord, { recordId: "$recordId", fields: WORKORDER_FIELDS })
   wiredRecord({ error, data }) {
@@ -164,8 +200,8 @@ export default class LocationPassport extends NavigationMixin(
       this.feedbackText = "";
       this.dispatchEvent(
         new ShowToastEvent({
-          title: "Success",
-          message: "Feedback posted successfully",
+          title: LocationPassport_Successfull_Toast_Title,
+          message: LocationPassport_Successfull_Toast_Message,
           variant: "success"
         })
       );
@@ -173,11 +209,13 @@ export default class LocationPassport extends NavigationMixin(
       // Show error message
       this.dispatchEvent(
         new ShowToastEvent({
-          title: "Error",
-          message: error.body?.message || "Error posting feedback",
+          title: LocationPassport_Error_Toast_Title,
+          message: LocationPassport_Error_Toast_Message,
           variant: "error"
         })
       );
+
+      console.error("Error posting feedback:", error);
     } finally {
       this.isPosting = false;
     }

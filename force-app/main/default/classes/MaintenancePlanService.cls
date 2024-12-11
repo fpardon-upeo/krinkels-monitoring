@@ -212,6 +212,7 @@ public with sharing class MaintenancePlanService {
                 }
             }
 
+            System.debug('Asset: ' + asset);
             assets.add(asset);
         }
 
@@ -236,7 +237,7 @@ public with sharing class MaintenancePlanService {
         List<Contract_Line_Financial_Account__c> clfas = [SELECT Id, Contract_Line_Item__c, Financial_Customer__c, Financial_Customer__r.Name FROM Contract_Line_Financial_Account__c WHERE Contract_Line_Item__c IN :cliIds];
 
         for(ContractLineItem cli : serviceLines){
-            String locationKey = serviceContract.Account.Name + '-' + cli.Location__Street__s + '-' + cli.Location__City__s;
+            String locationKey = serviceContract.Account.Id + '-' + cli.Location__Street__s + '-' + cli.Location__City__s;
             for(Contract_Line_Financial_Account__c clfa : clfas){
                 if(clfa.Contract_Line_Item__c == cli.Id){
                     Asset_Financial_Account__c afa = new Asset_Financial_Account__c();
@@ -280,6 +281,7 @@ public with sharing class MaintenancePlanService {
                 }
             }
         }
+        System.debug('Upserted Assets: ' + assetUpsertResults);
         return assets;
     }
 

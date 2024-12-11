@@ -5,8 +5,24 @@
         <formula>ServiceContract.AccountId</formula>
     </fieldOverrides>
     <fieldOverrides>
+        <field>Default_LMRA__c</field>
+        <formula>TEXT( ServiceContract.Default_LMRA__c )</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>ServiceContract.Account.Name &amp; &quot; - &quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
         <field>ParentServiceContractId</field>
         <formula>ServiceContract.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Priority__c</field>
+        <formula>TEXT( ServiceContract.Priority__c )</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Product__c</field>
+        <formula>ServiceContract.Product__c</formula>
     </fieldOverrides>
     <fieldOverrides>
         <field>StartDate</field>
