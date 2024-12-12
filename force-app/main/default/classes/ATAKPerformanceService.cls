@@ -85,7 +85,7 @@ public with sharing class ATAKPerformanceService {
     public static ATAKPerformanceWrapper prepareATAKPerformanceDataIndoor(String tsId) {
 
         TimeSheet ts = [
-                SELECT Id, ServiceResource.RelatedRecord.ATAK_Code__c, ServiceResourceId
+                SELECT Id, ServiceResource.RelatedRecord.ATAK_Code__c, ServiceResourceId, StartDate
                 FROM Timesheet WHERE Id = :tsId
         ];
 
@@ -157,7 +157,6 @@ public with sharing class ATAKPerformanceService {
                 FROM TimeSheetEntry WHERE TimesheetId = :tsId
                 ORDER BY StartTime ASC
         ];
-
         System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntries: ' + tsEntries);
         System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntries: ' + tsEntries.size());
 
@@ -240,6 +239,35 @@ public with sharing class ATAKPerformanceService {
         // Create a list of work order ids so we can get the subproject of the first and last work order
         // We also need this list to get the materials
         List<String> workOrderIds = new List<String>();
+
+        List<String> tseIds = new List<String>();
+        // Get the Ids currently in the list
+        for(TimeSheetEntry tse : reversedList){
+            tseIds.add(tse.Id);
+        }
+
+        //Get all TSEs from the Timesheet that are not in the list and where Code_ATAK_Limbus__c != 'RT' or != 'HR'
+        List<TimeSheetEntry> tses = [
+                SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
+                        WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
+                        Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
+                FROM TimeSheetEntry WHERE TimesheetId = :tsId AND Id NOT IN :tseIds AND Code_ATAK_Limbus__c != 'RT' AND Code_ATAK_Limbus__c != 'HR'
+                ORDER BY StartTime ASC
+        ];
+
+        //Check this list for missing ATAK codes. If there are any, we need to process them.
+        List<TimeSheetEntry> tsesToProcess = new List<TimeSheetEntry>();
+        for(TimeSheetEntry tse : tses){
+            if(tse.Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c == null){
+                tsesToProcess.add(tse);
+            }
+        }
+
+        //Add the new TSEs to the list
+        for(TimeSheetEntry tse : tses){
+            reversedList.add(tse);
+        }
+
 
         // Loop through the timesheet entries and add them to the data list
         for(TimeSheetEntry timeSheetEntry : reversedList){

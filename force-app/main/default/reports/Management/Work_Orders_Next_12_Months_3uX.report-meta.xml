@@ -13,7 +13,7 @@
         <field>WorkOrder$WorkType</field>
     </columns>
     <description>Due date This Month + next 12 months
-Status= Unschedled - Scheduled - Dispatched</description>
+Status= Unscheduled - Scheduled - Dispatched</description>
     <filter>
         <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
         <criteriaItems>

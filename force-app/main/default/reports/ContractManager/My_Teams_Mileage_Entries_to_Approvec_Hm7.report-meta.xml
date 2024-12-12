@@ -4,6 +4,9 @@
         <field>TimeSheet$StartDate</field>
     </columns>
     <columns>
+        <field>TimeSheet$Name</field>
+    </columns>
+    <columns>
         <field>TimeSheet.Mileage_Entries__r$Type__c</field>
     </columns>
     <columns>
@@ -27,6 +30,12 @@
     <columns>
         <field>TimeSheet.Mileage_Entries__r$Name</field>
     </columns>
+    <crossFilters>
+        <operation>with</operation>
+        <primaryTableColumn>TimeSheet$Id</primaryTableColumn>
+        <relatedTable>Mileage_Entry__c</relatedTable>
+        <relatedTableJoinColumn>Time_Sheet__c</relatedTableJoinColumn>
+    </crossFilters>
     <description>Overview of milage entries to approve - per team</description>
     <filter>
         <criteriaItems>
@@ -41,12 +50,7 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>TimeSheet$Name</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>TimeSheet.Mileage_Entries__r$Service_Resource__c</field>
+        <field>TimeSheet$ServiceResource</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>

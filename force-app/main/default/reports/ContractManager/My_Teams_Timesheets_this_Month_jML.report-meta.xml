@@ -5,7 +5,7 @@
         <field>TimeSheet.TimeSheetEntries$Total_Hours__c</field>
     </columns>
     <columns>
-        <field>TimeSheet$ServiceResource</field>
+        <field>TimeSheet$Name</field>
     </columns>
     <columns>
         <field>TimeSheet.TimeSheetEntries$StartTime</field>
@@ -45,17 +45,17 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>TimeSheet$Name</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>TimeSheet$Status</field>
+        <field>TimeSheet$ServiceResource</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>TimeSheet.TimeSheetEntries$Type</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TimeSheet$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>My Teams&apos; Timesheets this Month</name>

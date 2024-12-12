@@ -26,20 +26,13 @@
     </columns>
     <description>Service Contract = Subscription / No Additional Work - Not internal Work</description>
     <filter>
-        <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
         <criteriaItems>
             <column>ServiceContract$Invoice_Type__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Subscription</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>ServiceContract.WorkOrders.ServiceAppointments$Status</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Completed</value>
         </criteriaItems>
         <criteriaItems>
             <column>ServiceContract.WorkOrders.ServiceAppointments$Work_Type_Name__c</column>
@@ -80,7 +73,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Subscription WO Last Month</name>
+    <name>Subscription WO All Last Month</name>
     <params>
         <name>co</name>
         <value>1</value>

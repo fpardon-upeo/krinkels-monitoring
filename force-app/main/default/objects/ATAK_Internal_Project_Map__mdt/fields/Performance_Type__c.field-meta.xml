@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Performance_Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Performance Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Absent Hours</fullName>
+                <default>true</default>
+                <label>Absent Hours</label>
+            </value>
+            <value>
+                <fullName>Frost Delay</fullName>
+                <default>false</default>
+                <label>Frost Delay</label>
+            </value>
+            <value>
+                <fullName>Illness</fullName>
+                <default>false</default>
+                <label>Illness</label>
+            </value>
+            <value>
+                <fullName>Industrial Accident</fullName>
+                <default>false</default>
+                <label>Industrial Accident</label>
+            </value>
+            <value>
+                <fullName>Internal Meeting</fullName>
+                <default>false</default>
+                <label>Internal Meeting</label>
+            </value>
+            <value>
+                <fullName>Machine</fullName>
+                <default>false</default>
+                <label>Machine</label>
+            </value>
+            <value>
+                <fullName>Machine Maintenance</fullName>
+                <default>false</default>
+                <label>Machine Maintenance</label>
+            </value>
+            <value>
+                <fullName>Medical Examination</fullName>
+                <default>false</default>
+                <label>Medical Examination</label>
+            </value>
+            <value>
+                <fullName>Night Work</fullName>
+                <default>false</default>
+                <label>Night Work</label>
+            </value>
+            <value>
+                <fullName>Normal Hours</fullName>
+                <default>false</default>
+                <label>Normal Hours</label>
+            </value>
+            <value>
+                <fullName>Recup Overtime</fullName>
+                <default>false</default>
+                <label>Recup Overtime</label>
+            </value>
+            <value>
+                <fullName>Small Leave</fullName>
+                <default>false</default>
+                <label>Small Leave</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Travel Time</fullName>
+                <default>false</default>
+                <label>Travel Time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

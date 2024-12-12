@@ -76,7 +76,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Subscription WO This Month</name>
+    <name>Subscription WO All This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

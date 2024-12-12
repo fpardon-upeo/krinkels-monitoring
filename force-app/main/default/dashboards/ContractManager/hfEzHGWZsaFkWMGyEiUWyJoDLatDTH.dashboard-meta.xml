@@ -32,15 +32,15 @@
                     <axisBinding>y</axisBinding>
                     <column>RowCount</column>
                 </chartSummary>
-                <componentType>ColumnGrouped</componentType>
+                <componentType>BarStacked</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>ServiceAppointment$ServiceTerritory</groupingColumn>
                 <groupingColumn>ServiceAppointment$Status</groupingColumn>
+                <groupingColumn>ServiceAppointment.ServiceResources$ServiceResource</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -51,11 +51,11 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>My Real Time Work Order status TODAY</header>
+                <header>My Teams&apos; overview TODAY Open</header>
                 <legendPosition>Right</legendPosition>
-                <report>ContractManager/My_Real_Time_Work_Order_status_TODAY_sPR</report>
+                <report>ContractManager/My_Teams_overview_TODAY_Open_Sq8</report>
                 <showPercentage>false</showPercentage>
-                <showValues>true</showValues>
+                <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>

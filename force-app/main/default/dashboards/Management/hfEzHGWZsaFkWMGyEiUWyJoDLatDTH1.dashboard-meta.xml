@@ -32,7 +32,7 @@
                     <axisBinding>y</axisBinding>
                     <column>RowCount</column>
                 </chartSummary>
-                <componentType>BarGrouped</componentType>
+                <componentType>BarStacked</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
@@ -53,9 +53,9 @@
                 </groupingSortProperties>
                 <header>Real Time Work Order status TODAY</header>
                 <legendPosition>Right</legendPosition>
-                <report>ContractManager/Real_Time_Work_Order_status_8FR</report>
+                <report>Management/Real_Time_Work_Order_status_8FR</report>
                 <showPercentage>false</showPercentage>
-                <showValues>true</showValues>
+                <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
@@ -72,30 +72,25 @@
                     <axisBinding>y</axisBinding>
                     <column>RowCount</column>
                 </chartSummary>
-                <componentType>BarStacked</componentType>
+                <componentType>Funnel</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>ServiceAppointment$ServiceTerritory</groupingColumn>
                 <groupingColumn>ServiceAppointment$Status</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
-                    <groupingSorts>
-                        <groupingLevel>g2</groupingLevel>
-                        <sortOrder>a</sortOrder>
-                    </groupingSorts>
                 </groupingSortProperties>
-                <header>Overview TODAY Open</header>
+                <header>Real Time Work Order status TODAY</header>
                 <legendPosition>Right</legendPosition>
-                <report>ContractManager/Overview_TODAY_Open_qmI</report>
+                <report>Management/Real_Time_Work_Order_status_8FR</report>
                 <showPercentage>false</showPercentage>
-                <showValues>false</showValues>
+                <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>

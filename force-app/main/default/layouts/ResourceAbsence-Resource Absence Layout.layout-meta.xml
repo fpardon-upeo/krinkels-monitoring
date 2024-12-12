@@ -36,6 +36,10 @@
                 <behavior>Readonly</behavior>
                 <field>Absence_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Type_of_Absence__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

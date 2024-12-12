@@ -35,10 +35,10 @@
         <field>ServiceAppointment$ActualEndTime</field>
     </columns>
     <customDetailFormulas>
-        <calculatedFormula>ServiceAppointment.ActualDuration/ServiceAppointment.FSL__Duration_In_Minutes__c</calculatedFormula>
+        <calculatedFormula>ServiceAppointment.ActualDuration-ServiceAppointment.FSL__Duration_In_Minutes__c</calculatedFormula>
         <dataType>Double</dataType>
         <developerName>CDF1</developerName>
-        <label>Actuel Vs Scheduled Duration</label>
+        <label>Actuel - Scheduled Duration</label>
         <scale>2</scale>
     </customDetailFormulas>
     <description>Work Orders Completed - Only Production work</description>

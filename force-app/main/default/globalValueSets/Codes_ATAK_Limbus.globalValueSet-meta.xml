@@ -60,6 +60,26 @@
         <default>false</default>
         <label>RT</label>
     </customValue>
+    <customValue>
+        <fullName>DI</fullName>
+        <default>false</default>
+        <label>DI</label>
+    </customValue>
+    <customValue>
+        <fullName>A</fullName>
+        <default>false</default>
+        <label>A</label>
+    </customValue>
+    <customValue>
+        <fullName>Z</fullName>
+        <default>false</default>
+        <label>Z</label>
+    </customValue>
+    <customValue>
+        <fullName>AF</fullName>
+        <default>false</default>
+        <label>AF</label>
+    </customValue>
     <masterLabel>Codes ATAK/Limbus</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

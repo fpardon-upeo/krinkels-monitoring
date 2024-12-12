@@ -83,7 +83,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>&apos;Small works&apos; WO completed This Month</name>
+    <name>&apos;Small works&apos; WO Completed This Month</name>
     <params>
         <name>co</name>
         <value>1</value>

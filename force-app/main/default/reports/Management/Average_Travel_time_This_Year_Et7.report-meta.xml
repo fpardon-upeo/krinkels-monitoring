@@ -35,6 +35,11 @@
         <field>TimeSheet$ServiceResource</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TimeSheet.TimeSheetEntries$Type</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Average Travel time This Year</name>
     <params>
         <name>co</name>

@@ -1360,6 +1360,16 @@
             <field>Financial_Accounts_Billing__c</field>
             <table>Asset.WorkOrders.ServiceAppointments</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Number_of_Assigned_Resources__c</field>
+            <table>Asset.WorkOrders.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Priority__c</field>
+            <table>Asset.WorkOrders.ServiceAppointments</table>
+        </columns>
         <masterLabel>Service Appointments</masterLabel>
     </sections>
 </ReportType>

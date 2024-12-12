@@ -6,6 +6,18 @@
     <picklistValues>
         <picklist>Code_ATAK_Limbus__c</picklist>
         <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DI</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>HR</fullName>
             <default>false</default>
         </values>
@@ -51,6 +63,10 @@
         </values>
         <values>
             <fullName>VV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Z</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -111,6 +127,25 @@
         <values>
             <fullName>Standard</fullName>
             <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Absence__c</picklist>
+        <values>
+            <fullName>Internal Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machine Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Examination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
         </values>
     </picklistValues>
 </RecordType>

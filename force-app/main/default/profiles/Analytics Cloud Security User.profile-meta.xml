@@ -124,6 +124,18 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CreateChildWorkOrderController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateInternalWorkController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateInternalWorkOrderController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DateTimeRounder</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -289,6 +301,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SDWorxToResourceAbsenceService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SFS_WorkOrderCreatorController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -464,6 +480,31 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>false</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Internal_Project_Map__mdt.ATAK_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Internal_Project_Map__mdt.Performance_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Internal_Project_Map__mdt.Project_Code_Indoor__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Internal_Project_Map__mdt.Project_Code_Outdoor__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>ATAK_Personnel__c.Code__c</field>
@@ -2201,6 +2242,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Quote.Commissioning_and_Framing__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Quote.Contract_Duration_in_years__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2220,6 +2266,21 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.End_Period__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Extra_Work__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Implementation_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Quote.Language_Code__c</field>
         <readable>true</readable>
@@ -2227,6 +2288,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Quote.Language__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Manual_Snow_Removal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Mechanical_Unit_Placement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Mechanical_Unit_Use__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2240,8 +2316,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Quote.Payment_Term__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Permanence_Fee__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2271,6 +2357,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Quote.Salt_Delivery_and_Distribution__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Saturday_Night_Work_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Saturday_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Quote.Service_Contract__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2286,12 +2387,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Quote.Start_Period__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Quote.Subject__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Quote.Sunday_and_Holiday_Night_Work_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Sunday_and_Holiday_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Quote.Tacit_Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Travel_Allowance__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2302,6 +2423,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Quote.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Use_of_Mechanical_Snowplow__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Weekdays_Night_Work_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Winter_Service_Price_Adjustment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2427,6 +2563,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ResourceAbsence.Training_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ResourceAbsence.Type_of_Absence__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2720,6 +2861,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.Number_of_Assigned_Resources__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Optimize__c</field>
         <readable>true</readable>
@@ -2732,6 +2878,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Previous_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3060,6 +3211,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Service_Document_Ids__mdt.Service_Document_FR__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Service_Document_Ids__mdt.Service_Document_NL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Service_Document_Ids__mdt.Service_Document_Without_Signature_FR__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Service_Document_Ids__mdt.Service_Document_Without_Signature_NL__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Service_Item__c.Service_Item_Key__c</field>
         <readable>true</readable>
@@ -3113,6 +3284,11 @@
         <editable>false</editable>
         <field>Task.FSL__Event_Type__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheet.Current_User_is_CM__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3792,6 +3968,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Service_Appointment_Before_Save_Stamp_Actual_End_on_Completed</flow>
     </flowAccesses>
     <flowAccesses>
@@ -3936,6 +4116,14 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_Screen_Flow_Create_Depot_Visit_Console</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Screen_Flow_Create_Internal_Work</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_Screen_Flow_Create_Rework_WO</flow>
     </flowAccesses>
     <flowAccesses>
@@ -3962,6 +4150,9 @@
         <enabled>false</enabled>
         <flow>sendBetterEmail_Test_Create_Test_Templates_if_needed</flow>
     </flowAccesses>
+    <layoutAssignments>
+        <layout>ATAK_Internal_Project_Map__mdt-ATAK Internal Project Map Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>ATAK_Personnel__c-ATAK Personnel Layout</layout>
     </layoutAssignments>
@@ -4479,6 +4670,9 @@
         <layout>Service_Appointment_Status__c-Service Appointment Status Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Service_Document_Ids__mdt-Service Document Id Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Service_Item__c-Service Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4620,11 +4814,23 @@
         <layout>ers_datatableConfig__c-ers_datatableConfig Layout</layout>
     </layoutAssignments>
     <pageAccesses>
+        <apexPage>CreateChildWorkOrder</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CreateInternalWork</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>CustomAccountLightboxVfPage</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>NonEssentialsMobileLanding</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SFS_WorkOrderCreator</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>

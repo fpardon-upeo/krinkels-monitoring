@@ -4,7 +4,8 @@
     <active>true</active>
     <errorConditionFormula>AND(
  ISBLANK(ATAK_Project__c ),
- ISPICKVAL(Status, &apos;Accepted&apos;) 
+ ISPICKVAL(Status, &apos;Accepted&apos;) ,
+  Opportunity.RecordTypeId = &apos;012KF000003QSlNYAW&apos;
 )</errorConditionFormula>
     <errorMessage>Please reference an ATAK Project on the Opportunity before marking this Quote as Accepted.</errorMessage>
 </ValidationRule>

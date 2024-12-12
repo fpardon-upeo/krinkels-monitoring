@@ -15,6 +15,9 @@
     <columns>
         <field>ServiceAppointment$Work_Type_Name__c</field>
     </columns>
+    <columns>
+        <field>ServiceAppointment$ServiceTerritory</field>
+    </columns>
     <description>All work orders Today</description>
     <filter>
         <booleanFilter>1</booleanFilter>
@@ -30,7 +33,7 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ServiceAppointment$ServiceTerritory</field>
+        <field>ServiceAppointment.ServiceResources$ServiceResource</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
@@ -44,7 +47,7 @@
         <value>1</value>
     </params>
     <reportType>Service_Appointments_with_Service_Resources__c</reportType>
-    <scope>organization</scope>
+    <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>true</showSubTotals>

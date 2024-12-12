@@ -39,7 +39,7 @@
         <field>Opportunity.Price_Request_Priority__c</field>
         <sortOrder>Desc</sortOrder>
     </groupingsDown>
-    <name>Open Price Requests</name>
+    <name>New Price Requests (Opportunities)</name>
     <params>
         <name>open</name>
         <value>all</value>

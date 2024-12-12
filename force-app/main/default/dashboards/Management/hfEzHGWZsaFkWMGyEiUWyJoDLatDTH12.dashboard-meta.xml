@@ -9,27 +9,13 @@
     <dashboardColorPalette>unity</dashboardColorPalette>
     <dashboardGridLayout>
         <dashboardGridComponents>
-            <colSpan>10</colSpan>
+            <colSpan>9</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
                 <componentType>RichText</componentType>
                 <dashboardComponentContents>
                     <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#00b531\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Actual Vs Scheduled time\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
-                </dashboardComponentContents>
-                <groupingSortProperties/>
-            </dashboardComponent>
-            <rowIndex>0</rowIndex>
-            <rowSpan>2</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>2</colSpan>
-            <columnIndex>10</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
-                <componentType>RichText</componentType>
-                <dashboardComponentContents>
-                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#00b531\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Work Not excecuted\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
@@ -73,40 +59,15 @@
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <title>In Minutes</title>
+                <title>Production work Completed, In Minutes</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>2</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>2</colSpan>
+            <colSpan>5</colSpan>
             <columnIndex>4</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartSummary>
-                    <aggregate>Average</aggregate>
-                    <column>CDF1</column>
-                </chartSummary>
-                <componentType>Metric</componentType>
-                <decimalPrecision>-1</decimalPrecision>
-                <displayUnits>Auto</displayUnits>
-                <groupingSortProperties/>
-                <header>This Month: Actual duration / Scheduled Duration</header>
-                <indicatorBreakpoint1>-1.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>0.0</indicatorBreakpoint2>
-                <indicatorHighColor>#00716B</indicatorHighColor>
-                <indicatorLowColor>#C23934</indicatorLowColor>
-                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
-                <report>Management/Scheduled_Vs_Actual_Time_This_Month_4p4</report>
-                <showRange>false</showRange>
-            </dashboardComponent>
-            <rowIndex>2</rowIndex>
-            <rowSpan>4</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>4</colSpan>
-            <columnIndex>6</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -134,7 +95,7 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Scheduled Vs Actual Time This Year</header>
+                <header>Production work Completed, In Minutes</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Management/Scheduled_Vs_Actual_Time_This_Year_kOc</report>
                 <showPercentage>false</showPercentage>
@@ -148,43 +109,33 @@
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>2</colSpan>
-            <columnIndex>10</columnIndex>
+            <colSpan>4</colSpan>
+            <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartAxisRange>Auto</chartAxisRange>
                 <chartSummary>
-                    <axisBinding>y</axisBinding>
-                    <column>RowCount</column>
+                    <aggregate>Average</aggregate>
+                    <column>CDF1</column>
                 </chartSummary>
-                <componentType>Donut</componentType>
+                <componentType>Metric</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
-                <drillEnabled>false</drillEnabled>
-                <drillToDetailEnabled>false</drillToDetailEnabled>
-                <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
-                <groupingColumn>WorkOrder.WorkPlans.WorkSteps$Reason__c</groupingColumn>
-                <groupingSortProperties>
-                    <groupingSorts>
-                        <groupingLevel>g1</groupingLevel>
-                        <sortOrder>a</sortOrder>
-                    </groupingSorts>
-                </groupingSortProperties>
-                <header>This Year: Work Steps not done</header>
-                <legendPosition>Right</legendPosition>
-                <report>Management/Work_Steps_not_done_This_Year_HM7</report>
-                <showPercentage>false</showPercentage>
-                <showTotal>true</showTotal>
-                <showValues>true</showValues>
-                <sortBy>RowLabelAscending</sortBy>
-                <useReportChart>false</useReportChart>
+                <groupingSortProperties/>
+                <header>Total difference Actual - Scheduled This Month</header>
+                <indicatorBreakpoint1>-1.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>0.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>Production work Completed, In Minutes</metricLabel>
+                <report>Management/Scheduled_Vs_Actual_Time_This_Month_4p4</report>
+                <showRange>false</showRange>
             </dashboardComponent>
-            <rowIndex>2</rowIndex>
-            <rowSpan>8</rowSpan>
+            <rowIndex>10</rowIndex>
+            <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>2</colSpan>
+            <colSpan>5</colSpan>
             <columnIndex>4</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
@@ -196,20 +147,21 @@
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Integer</displayUnits>
                 <groupingSortProperties/>
-                <header>This YearActual duration / Scheduled Duration</header>
+                <header>Total difference Actual - Scheduled This Year</header>
                 <indicatorBreakpoint1>-1.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>0.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>Production work Completed, In Minutes</metricLabel>
                 <report>Management/Scheduled_Vs_Actual_Time_This_Year_kOc</report>
                 <showRange>false</showRange>
             </dashboardComponent>
-            <rowIndex>6</rowIndex>
+            <rowIndex>10</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>12</colSpan>
+            <colSpan>9</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
@@ -219,11 +171,11 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>10</rowIndex>
+            <rowIndex>14</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
+            <colSpan>9</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
@@ -258,15 +210,15 @@
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <title>In Minutes</title>
+                <title>Approved Timesheets, In Minutes</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>12</rowIndex>
+            <rowIndex>16</rowIndex>
             <rowSpan>7</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
-            <columnIndex>6</columnIndex>
+            <colSpan>9</colSpan>
+            <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -300,14 +252,14 @@
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <title>In Minutes</title>
+                <title>Approved Timesheets, In Minutes</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>12</rowIndex>
-            <rowSpan>7</rowSpan>
+            <rowIndex>23</rowIndex>
+            <rowSpan>6</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
+            <colSpan>3</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
@@ -317,12 +269,12 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>19</rowIndex>
+            <rowIndex>29</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
-            <columnIndex>6</columnIndex>
+            <colSpan>3</colSpan>
+            <columnIndex>3</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
                 <componentType>RichText</componentType>
@@ -331,7 +283,21 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>19</rowIndex>
+            <rowIndex>29</rowIndex>
+            <rowSpan>2</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>6</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+                <componentType>RichText</componentType>
+                <dashboardComponentContents>
+                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#00b531\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Work Not excecuted with reason\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
+                </dashboardComponentContents>
+                <groupingSortProperties/>
+            </dashboardComponent>
+            <rowIndex>29</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -366,53 +332,15 @@
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <title>Average In minutes</title>
+                <title>Production work Complete, Average in Min</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>21</rowIndex>
+            <rowIndex>31</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>3</colSpan>
             <columnIndex>3</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartAxisRange>Auto</chartAxisRange>
-                <chartSummary>
-                    <aggregate>Average</aggregate>
-                    <axisBinding>y</axisBinding>
-                    <column>WorkOrder.TimeSheetEntries$Working_Time__c</column>
-                </chartSummary>
-                <componentType>Bar</componentType>
-                <decimalPrecision>-1</decimalPrecision>
-                <displayUnits>Auto</displayUnits>
-                <drillEnabled>false</drillEnabled>
-                <drillToDetailEnabled>false</drillToDetailEnabled>
-                <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
-                <groupingColumn>WorkOrder$ServiceTerritory</groupingColumn>
-                <groupingSortProperties>
-                    <groupingSorts>
-                        <groupingLevel>g1</groupingLevel>
-                        <sortOrder>a</sortOrder>
-                    </groupingSorts>
-                </groupingSortProperties>
-                <header>Travel Time this Month Per Territory</header>
-                <legendPosition>Bottom</legendPosition>
-                <report>Management/Travel_Time_this_Year_skj</report>
-                <showPercentage>false</showPercentage>
-                <showPicturesOnCharts>false</showPicturesOnCharts>
-                <showValues>true</showValues>
-                <sortBy>RowLabelAscending</sortBy>
-                <title>Average in Minutes</title>
-                <useReportChart>false</useReportChart>
-            </dashboardComponent>
-            <rowIndex>21</rowIndex>
-            <rowSpan>9</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>3</colSpan>
-            <columnIndex>6</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -450,12 +378,86 @@
                 <title>Per Service Territory</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>21</rowIndex>
+            <rowIndex>31</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>3</colSpan>
-            <columnIndex>9</columnIndex>
+            <columnIndex>6</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <axisBinding>y</axisBinding>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Donut</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>WorkOrder.WorkPlans.WorkSteps$Reason__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>This Year: Work Steps not done</header>
+                <legendPosition>Right</legendPosition>
+                <report>Management/Work_Steps_not_done_This_Year_HM7</report>
+                <showPercentage>false</showPercentage>
+                <showTotal>true</showTotal>
+                <showValues>true</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>31</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Average</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>WorkOrder.TimeSheetEntries$Working_Time__c</column>
+                </chartSummary>
+                <componentType>Bar</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>WorkOrder$ServiceTerritory</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>Travel Time this Year Per Territory</header>
+                <legendPosition>Bottom</legendPosition>
+                <report>Management/Travel_Time_this_Year_skj</report>
+                <showPercentage>false</showPercentage>
+                <showPicturesOnCharts>false</showPicturesOnCharts>
+                <showValues>true</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>Production work Complete, Average in Min</title>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>40</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>3</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -493,10 +495,10 @@
                 <title>Per Service Territory</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>21</rowIndex>
+            <rowIndex>40</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
-        <numberOfColumns>12</numberOfColumns>
+        <numberOfColumns>9</numberOfColumns>
         <rowHeight>36</rowHeight>
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>

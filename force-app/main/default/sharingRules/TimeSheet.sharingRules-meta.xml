@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_with_BS_CM_Mgt</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share with BS/CM/Mgt</label>
+        <sharedTo>
+            <group>Time_Sheet_visibility</group>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

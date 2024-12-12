@@ -23,10 +23,10 @@
         <field>CDF1</field>
     </columns>
     <customDetailFormulas>
-        <calculatedFormula>TimeSheetEntry.Working_Time__c/WorkOrder.DurationInMinutes</calculatedFormula>
+        <calculatedFormula>TimeSheetEntry.Working_Time__c-WorkOrder.DurationInMinutes</calculatedFormula>
         <dataType>Double</dataType>
         <developerName>CDF1</developerName>
-        <label>Time Logged vs Actual duraction</label>
+        <label>Time Logged - Actual duraction</label>
         <scale>2</scale>
     </customDetailFormulas>
     <description>WO Completed, Timesheets submitted or approved</description>

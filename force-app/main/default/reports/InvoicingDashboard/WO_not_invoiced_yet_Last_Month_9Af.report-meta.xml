@@ -33,9 +33,9 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>ServiceContract.WorkOrders$Billed__c</field>
     </columns>
-    <description>WO = &apos;Completed&apos; - Billed = False</description>
+    <description>WO = &apos;Completed&apos; - Billed = False - NO REWORK</description>
     <filter>
-        <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
         <criteriaItems>
             <column>ServiceContract.WorkOrders.ServiceAppointments$Status</column>
             <columnToColumn>false</columnToColumn>
@@ -49,13 +49,6 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Production Work</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>ServiceContract.WorkOrders.ServiceAppointments$Work_Type_Name__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Rework</value>
         </criteriaItems>
         <criteriaItems>
             <column>ServiceContract.WorkOrders.ServiceAppointments$ActualStartTime</column>
@@ -89,7 +82,7 @@
         <field>ServiceContract.WorkOrders.ServiceAppointments$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>WO not invoiced yet- Last Month</name>
+    <name>WO not invoiced yet Last Month</name>
     <params>
         <name>co</name>
         <value>1</value>

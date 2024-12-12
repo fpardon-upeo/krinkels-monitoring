@@ -74,18 +74,18 @@
     <formulas>
         <name>CalculateATAKCode</name>
         <dataType>String</dataType>
-        <expression>IF($Record.Urgent_Intervention__c, &quot;URG&quot;, 
+        <expression>IF($Record.Urgent_Intervention__c, &quot;DI&quot;, 
   CASE($Record.Type, 
     &quot;Normal Hours&quot;, &quot;HR&quot;, 
     &quot;Travel Time&quot;, &quot;RT&quot;,
     &quot;Night Work&quot;, &quot;NW&quot;,
     &quot;Machines&quot;, &quot;MU&quot;,
     &quot;Frost Delay&quot;, &quot;VV&quot;, 
-    &quot;Industrial Accident&quot;, &quot;HR&quot;,
-    &quot;Illness&quot;,  &quot;HR&quot;,
+    &quot;Industrial Accident&quot;, &quot;A&quot;,
+    &quot;Illness&quot;,  &quot;Z&quot;,
     &quot;Recup Overtime&quot;, &quot;SP-&quot;,
-    &quot;Absent Hours&quot;, &quot;HR&quot;,
-    &quot;&quot;
+    &quot;Absent Hours&quot;, &quot;AF&quot;,
+    &quot;HR&quot;
   )
 )</expression>
     </formulas>

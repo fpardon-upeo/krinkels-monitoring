@@ -4,9 +4,6 @@
         <field>ServiceAppointment$Name</field>
     </columns>
     <columns>
-        <field>ServiceAppointment$SchedStartTime</field>
-    </columns>
-    <columns>
         <field>ServiceAppointment$SchedEndTime</field>
     </columns>
     <columns>
@@ -47,6 +44,11 @@
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>ServiceAppointment.ServiceResources$ServiceResource</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ServiceAppointment$SchedStartTime</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Schedule next 2 weeks - All Operators</name>

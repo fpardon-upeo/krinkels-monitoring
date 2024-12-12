@@ -1,0 +1,48 @@
+<apex:page lightningStylesheets="true">
+    <apex:includeLightning />
+
+    <div id="lwcContainer"></div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceId = urlParams.get('id');
+        const startDate = urlParams.get('start');
+        const endDate = urlParams.get('end');
+
+        // Convert single ID to array format if needed
+        const serviceIds = serviceId ? [serviceId] : [];
+
+        // Log the exact values we're working with
+        console.log('Raw parameters:', {
+            serviceId,
+            startDate,
+            endDate
+        });
+
+        // Initialize the Lightning component
+        $Lightning.use("c:SFS_WorkOrderCreatorApp", function() {
+            console.log('Creating component with params:', {
+                recordIds: serviceIds,
+                startDate: startDate,
+                endDate: endDate
+            });
+
+            $Lightning.createComponent(
+                "c:workOrderCreator",
+                {
+                    recordIds: serviceIds,
+                    startDate: startDate,
+                    endDate: endDate
+                },
+                "lwcContainer",
+                function(cmp, status, errorMessage) {
+                    console.log('Component creation status:', status);
+                    if (status === "ERROR") {
+                        console.error('Error details:', errorMessage);
+                    }
+                }
+            );
+        });
+    </script>
+</apex:page>

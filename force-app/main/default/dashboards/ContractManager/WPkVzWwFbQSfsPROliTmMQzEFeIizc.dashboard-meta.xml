@@ -101,33 +101,30 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
                 <chartSummary>
+                    <aggregate>Sum</aggregate>
                     <axisBinding>y</axisBinding>
-                    <column>RowCount</column>
+                    <column>TimeSheet.Mileage_Entries__r$Calculated_Mileage__c</column>
                 </chartSummary>
-                <componentType>BarStacked</componentType>
+                <componentType>Bar</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>TimeSheet.Mileage_Entries__r$Service_Resource__c</groupingColumn>
-                <groupingColumn>TimeSheet.Mileage_Entries__r$Allowance_Type__c</groupingColumn>
+                <groupingColumn>TimeSheet$ServiceResource</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
-                    <groupingSorts>
-                        <groupingLevel>g2</groupingLevel>
-                        <sortOrder>a</sortOrder>
-                    </groupingSorts>
                 </groupingSortProperties>
-                <header>My Teams&apos; Mileage Entries to Approve</header>
-                <legendPosition>Right</legendPosition>
-                <report>ContractManager/My_Teams_Mileage_Entries_to_Approvec_Hm7</report>
+                <header>My Teams&apos; Mileage Entries This Month</header>
+                <legendPosition>Bottom</legendPosition>
+                <report>ContractManager/Mt_Teams_Mileage_Entries_This_Month_mza</report>
                 <showPercentage>false</showPercentage>
-                <showValues>false</showValues>
+                <showPicturesOnCharts>false</showPicturesOnCharts>
+                <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
@@ -353,7 +350,7 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>TimeSheet.Mileage_Entries__r$Service_Resource__c</groupingColumn>
+                <groupingColumn>TimeSheet$ServiceResource</groupingColumn>
                 <groupingColumn>TimeSheet.Mileage_Entries__r$Allowance_Type__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>

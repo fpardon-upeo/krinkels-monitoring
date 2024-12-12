@@ -36,16 +36,9 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>ServiceContract.WorkOrders$Billed__c</field>
     </columns>
-    <description>Additional Work = Opportunity linked on WO</description>
+    <description>Additional Work = Quote linked on WO</description>
     <filter>
-        <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
-        <criteriaItems>
-            <column>ServiceContract.WorkOrders$Opportunity__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value></value>
-        </criteriaItems>
+        <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
         <criteriaItems>
             <column>ServiceContract.WorkOrders.ServiceAppointments$Status</column>
             <columnToColumn>false</columnToColumn>
@@ -73,6 +66,13 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>THIS_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ServiceContract.WorkOrders$Quote__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

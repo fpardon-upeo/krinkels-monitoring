@@ -131,6 +131,16 @@
                 <identifier>RecordAmount_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Extra_Work__c</fieldItem>
+                <identifier>RecordExtra_Work__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6b21543c-915e-47c2-a784-e5e66cefff7e</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -400,16 +410,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Payment_Term__c</fieldItem>
-                <identifier>RecordPayment_Term__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Our_Reference__c</fieldItem>
                 <identifier>RecordOur_Reference__cField</identifier>
             </fieldInstance>
@@ -424,16 +424,6 @@
                 <identifier>RecordCustomer_Reference__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Subject__c</fieldItem>
-                <identifier>RecordSubject__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-25c19d5c-21e7-4cf5-b574-5b2965555ead</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -444,18 +434,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Adjustable_Price__c</fieldItem>
-                <identifier>RecordAdjustable_Price__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Adjustment_Period__c</fieldItem>
-                <identifier>RecordAdjustment_Period__cField</identifier>
+                <fieldItem>Record.Subject__c</fieldItem>
+                <identifier>RecordSubject__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -503,6 +483,68 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-c48a6b04-c563-43e9-ac1b-5f6279cdf9c1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Adjustable_Price__c</fieldItem>
+                <identifier>RecordAdjustable_Price__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Adjustment_Period__c</fieldItem>
+                <identifier>RecordAdjustment_Period__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f3afc281-8010-4901-ad13-20616527aeca</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Payment_Term__c</fieldItem>
+                <identifier>RecordPayment_Term__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b4ef72d9-6d06-4ccd-84b7-4f049b829442</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f3afc281-8010-4901-ad13-20616527aeca</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b4ef72d9-6d06-4ccd-84b7-4f049b829442</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-38f8ce43-30ee-4872-b353-15641794d721</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -688,10 +730,28 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>PDF Merge Fields</value>
+                    <value>Administrative Details</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-38f8ce43-30ee-4872-b353-15641794d721</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Pricing Details</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

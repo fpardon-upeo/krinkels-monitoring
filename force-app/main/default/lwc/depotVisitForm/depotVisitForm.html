@@ -1,0 +1,77 @@
+<template>
+    <!-- Step Header -->
+    <div class="slds-page-header">
+        <h1 class="slds-page-header__title">Depot Visit</h1>
+    </div>
+
+    <div class="slds-p-around_medium">
+        <div class="slds-form">
+            <!-- Subject -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-input
+                        type="text"
+                        label="Subject"
+                        value={subject}
+                        onchange={handleSubjectChange}
+                        class="slds-m-bottom_medium">
+                </lightning-input>
+            </div>
+
+            <!-- Depot KGC -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-combobox
+                        name="depotKGC"
+                        label="Depot KGC"
+                        value={selectedDepotId}
+                        options={depotOptions}
+                        onchange={handleDepotChange}
+                        required
+                        class="slds-m-bottom_medium">
+                </lightning-combobox>
+            </div>
+
+            <!-- Drop Off Items -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-textarea
+                        name="dropOffItems"
+                        label="Drop Off Items"
+                        value={dropOffItems}
+                        onchange={handleDropOffItemsChange}
+                        class="slds-m-bottom_medium">
+                </lightning-textarea>
+            </div>
+
+            <!-- Pick Up Items -->
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-textarea
+                        name="pickUpItems"
+                        label="Pick Up Items"
+                        value={pickUpItems}
+                        onchange={handlePickUpItemsChange}
+                        class="slds-m-bottom_medium">
+                </lightning-textarea>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="slds-docked-form-footer">
+            <div class="slds-grid slds-grid_align-spread">
+                <lightning-button
+                        label="Back"
+                        onclick={handleBack}>
+                </lightning-button>
+                <lightning-button
+                        label="Create"
+                        variant="brand"
+                        onclick={handleCreate}
+                        disabled={isCreateDisabled}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+</template>

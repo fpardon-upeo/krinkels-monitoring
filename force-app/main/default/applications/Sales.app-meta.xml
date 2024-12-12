@@ -1432,6 +1432,38 @@
         <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Business_Support</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Business Support</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Contract_Manager</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Contract Manager (custom)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Contract_Manager</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Business_Support</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
         <actionName>View</actionName>
         <content>Quick_Opportunity_Record_Page</content>
         <formFactor>Large</formFactor>
@@ -1880,6 +1912,14 @@
         <recordType>Account.Other</recordType>
         <type>Flexipage</type>
         <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Management</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Manager</profile>
     </profileActionOverrides>
     <tabs>standard-home</tabs>
     <tabs>standard-Opportunity</tabs>

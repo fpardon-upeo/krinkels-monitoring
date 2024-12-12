@@ -115,6 +115,11 @@
             <field>Total_Break_Time__c</field>
             <table>TimeSheet</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Current_User_is_CM__c</field>
+            <table>TimeSheet</table>
+        </columns>
         <masterLabel>Time Sheets</masterLabel>
     </sections>
     <sections>

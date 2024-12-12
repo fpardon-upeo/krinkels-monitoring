@@ -7,6 +7,9 @@
         <field>ServiceAppointment$Subject</field>
     </columns>
     <columns>
+        <field>ServiceAppointment$Priority__c</field>
+    </columns>
+    <columns>
         <field>ServiceAppointment$WorkType</field>
     </columns>
     <columns>

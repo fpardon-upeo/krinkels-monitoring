@@ -21,7 +21,7 @@
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>WorkOrder$Contract_Manager__c</field>
-        <sortOrder>Asc</sortOrder>
+        <sortOrder>Desc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>

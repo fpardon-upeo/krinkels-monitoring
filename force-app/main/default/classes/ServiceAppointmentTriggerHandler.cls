@@ -30,6 +30,7 @@ public with sharing class ServiceAppointmentTriggerHandler {
                             MaintenancePlan.Service_Appointments_Color_on_Gantt__c,
                             ServiceContract.Account.Alias_commercial_customer_name__c,
                             Asset.Service_Territory__c,
+                            WorkType.Name,
                             Asset.Name,
                             Longitude, Latitude
                     FROM WorkOrder
@@ -75,6 +76,12 @@ public with sharing class ServiceAppointmentTriggerHandler {
                         appointment.FSL__GanttIcon__c = wo.MaintenancePlan.Service_Appointments_Icon_on_Gantt__c;
                         appointment.Billing_Type__c = wo.MaintenancePlan.ServiceContract.Contract_type__c;
                     }
+
+                    if(wo.WorkType.Name == 'Internal Production Work'){
+                        appointment.FSL__GanttColor__c = '#cc5027';
+                        appointment.FSL__GanttIcon__c = 'https://squarehub-production.s3.eu-west-3.amazonaws.com/profile_pictures/d8b262b0-5237-4826-a3bb-e101a5996d87?filename=logo_krinkels-landschapsaannemer.jpg';
+                    }
+
                     appointments.add(appointment);
                 }
             }

@@ -148,12 +148,12 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Start</field>
+        <field>ResourceId</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>ResourceId</field>
+        <field>Start</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
@@ -163,7 +163,7 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Absence_Type__c</field>
+        <field>Type_of_Absence__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

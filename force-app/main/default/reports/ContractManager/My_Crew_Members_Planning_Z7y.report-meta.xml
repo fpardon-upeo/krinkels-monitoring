@@ -4,9 +4,6 @@
         <field>ServiceAppointment$Name</field>
     </columns>
     <columns>
-        <field>ServiceAppointment$SchedStartTime</field>
-    </columns>
-    <columns>
         <field>ServiceAppointment$SchedEndTime</field>
     </columns>
     <columns>
@@ -49,7 +46,11 @@
         <field>ServiceAppointment.ServiceResources$ServiceResource</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Schedule next 2 weeks - my team</name>
+    <groupingsDown>
+        <field>ServiceAppointment$SchedStartTime</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>My Teams&apos; Schedule next 2 weeks</name>
     <params>
         <name>co</name>
         <value>1</value>

@@ -21,7 +21,7 @@
         <value>1</value>
     </params>
     <reportType>Vans_with_Material_Items__c</reportType>
-    <scope>user</scope>
+    <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>

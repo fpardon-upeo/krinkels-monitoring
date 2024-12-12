@@ -1,0 +1,112 @@
+<template>
+    <!-- Progress Indicator -->
+    <div class="slds-path">
+        <div class="slds-grid slds-path__track">
+            <div class="slds-grid slds-path__scroller-container">
+                <div class="slds-path__scroller">
+                    <div class="slds-path__scroller_inner">
+                        <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+                            <li class={stepOneClass} role="presentation">
+                                <a role="option" class="slds-path__link">
+                                    <span class="slds-path__stage">
+                                        <lightning-icon icon-name="utility:check" size="x-small"
+                                                        class={firstIconClass}></lightning-icon>
+                                    </span>
+                                    <span class="slds-path__title">Select Waste Types</span>
+                                </a>
+                            </li>
+                            <li class={stepTwoClass} role="presentation">
+                                <a role="option" class="slds-path__link">
+                                    <span class="slds-path__stage">
+                                        <lightning-icon icon-name="utility:check" size="x-small"
+                                                        class={secondIconClass}></lightning-icon>
+                                    </span>
+                                    <span class="slds-path__title">Choose Depot</span>
+                                </a>
+                            </li>
+                            <li class={stepThreeClass} role="presentation">
+                                <a role="option" class="slds-path__link">
+                                    <span class="slds-path__stage">
+                                        <lightning-icon icon-name="utility:check" size="x-small"
+                                                        class={thirdIconClass}></lightning-icon>
+                                    </span>
+                                    <span class="slds-path__title">Confirm Details</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-p-around_medium">
+        <!-- Step 1: Waste Type Selection -->
+        <template if:true={isStepOne}>
+            <div class="slds-form-element">
+                <div class="slds-text-heading_small slds-p-bottom_small">
+                    <span class="slds-text-color_error">*</span> Select Types of Waste to Drop Off
+                </div>
+                <lightning-dual-listbox
+                        name="wasteTypes"
+                        label=""
+                        source-label="Available Types"
+                        selected-label="Selected Types"
+                        options={wasteTypeOptions}
+                        value={selectedWasteTypes}
+                        onchange={handleWasteTypeChange}
+                        required>
+                </lightning-dual-listbox>
+            </div>
+        </template>
+
+        <!-- Step 2: Depot Selection -->
+        <template if:true={isStepTwo}>
+            <lightning-datatable
+                    key-field="Id"
+                    data={depots}
+                    columns={columns}
+                    onrowselection={handleDepotSelection}
+                    selected-rows={selectedRows}
+                    max-row-selection="1">
+            </lightning-datatable>
+        </template>
+
+        <!-- Step 3: Confirmation -->
+        <template if:true={isStepThree}>
+            <div class="slds-box slds-theme_default">
+                <dl class="slds-dl_horizontal">
+                    <dt class="slds-dl_horizontal__label slds-p-bottom_small">Selected Waste Types:</dt>
+                    <dd class="slds-dl_horizontal__detail slds-p-bottom_small">{formattedWasteTypes}</dd>
+
+                    <template if:true={selectedDepot}>
+                        <dt class="slds-dl_horizontal__label">Selected Depot:</dt>
+                        <dd class="slds-dl_horizontal__detail">{selectedDepot.Name}</dd>
+                    </template>
+                </dl>
+            </div>
+        </template>
+
+        <!-- Navigation Buttons -->
+        <div class="slds-p-top_medium">
+            <div class="slds-grid slds-grid_align-spread">
+                <lightning-button
+                        label="Back"
+                        onclick={handleBack}>
+                </lightning-button>
+                <lightning-button
+                        label={nextButtonLabel}
+                        variant="brand"
+                        onclick={handleNextOrCreate}
+                        disabled={isNextDisabled}
+                        class={nextButtonClass}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+</template>

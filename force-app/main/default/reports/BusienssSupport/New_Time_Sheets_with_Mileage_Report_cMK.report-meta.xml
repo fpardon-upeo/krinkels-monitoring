@@ -27,15 +27,14 @@
     <columns>
         <field>TimeSheet.Mileage_Entries__r$Name</field>
     </columns>
+    <crossFilters>
+        <operation>with</operation>
+        <primaryTableColumn>TimeSheet$Id</primaryTableColumn>
+        <relatedTable>Mileage_Entry__c</relatedTable>
+        <relatedTableJoinColumn>Time_Sheet__c</relatedTableJoinColumn>
+    </crossFilters>
     <description>Overview of all milage entries this month</description>
     <filter>
-        <criteriaItems>
-            <column>TimeSheet$Status</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Submitted,Needs Review</value>
-        </criteriaItems>
         <criteriaItems>
             <column>TimeSheet$StartDate</column>
             <columnToColumn>false</columnToColumn>

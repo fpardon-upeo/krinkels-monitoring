@@ -24,6 +24,9 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>WorkOrder.TimeSheetEntries$Pause_Duration__c</field>
     </columns>
+    <columns>
+        <field>WorkOrder$Type__c</field>
+    </columns>
     <description>Approved timesheets only</description>
     <filter>
         <criteriaItems>

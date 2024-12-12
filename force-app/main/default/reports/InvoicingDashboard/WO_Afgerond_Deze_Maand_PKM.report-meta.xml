@@ -33,7 +33,7 @@
     <columns>
         <field>ServiceContract$Invoice_Type__c</field>
     </columns>
-    <description>WO with status completed</description>
+    <description>WO with status completed (Work + Rework)</description>
     <filter>
         <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
         <criteriaItems>

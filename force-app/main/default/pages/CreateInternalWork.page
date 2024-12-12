@@ -1,0 +1,46 @@
+<apex:page controller="CreateInternalWorkController" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="true">
+  <apex:includeLightning />
+
+  <div id="flowContainer">
+  </div>
+
+  <script>
+    $Lightning.use("c:CreateInternalWorkApp", function() {
+      $Lightning.createComponent(
+        "lightning:flow",
+        {
+          onstatuschange: function(event) {
+            if (event.getParam("status") === "FINISHED") {
+              parent.postMessage('closeLightbox', '*');
+            }
+          }
+        },
+        "flowContainer",
+        function(component, status, errorMessage) {
+          if (status === "SUCCESS") {
+            component.startFlow("Work_Order_Screen_Flow_Create_Internal_Work", [
+              {
+                name: "resourceId",
+                type: "String",
+                value: '{!JSENCODE(resourceId)}'
+              },
+              {
+                name: "startDate",
+                type: "DateTime",
+                value: '{!JSENCODE(formattedStartDate)}'
+              },
+              {
+                name: "endDate",
+                type: "DateTime",
+                value: '{!JSENCODE(formattedEndDate)}'
+              }
+            ]);
+          } else if (status === "ERROR") {
+            document.getElementById('flowContainer').innerHTML =
+              '<div style="color: red; padding: 10px;">Error loading flow: ' + errorMessage + '</div>';
+          }
+        }
+      );
+    });
+  </script>
+</apex:page>
