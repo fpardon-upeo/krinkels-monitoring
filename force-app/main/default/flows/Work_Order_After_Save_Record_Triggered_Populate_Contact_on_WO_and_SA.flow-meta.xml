@@ -64,10 +64,10 @@
             </value>
         </filters>
         <filters>
-            <field>Operational_SPOC__c</field>
+            <field>Roles</field>
             <operator>EqualTo</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <stringValue>Operational</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>

@@ -4,7 +4,7 @@
         <name>Open_Quote</name>
         <label>Open Quote</label>
         <locationX>314</locationX>
-        <locationY>2114</locationY>
+        <locationY>1838</locationY>
         <actionName>c:openRecordFlow</actionName>
         <actionType>component</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -24,7 +24,7 @@
         <name>Set_Quote_Values_for_ATAK_Project_Req</name>
         <label>Set Quote Values for ATAK Project Req</label>
         <locationX>314</locationX>
-        <locationY>1514</locationY>
+        <locationY>1430</locationY>
         <assignmentItems>
             <assignToReference>quoteRecord.ATAK_Project_Needed__c</assignToReference>
             <operator>Assign</operator>
@@ -55,113 +55,6 @@
         </assignmentItems>
         <connector>
             <targetReference>Create_Quote</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_Quote_Values_for_Pricing_Req</name>
-        <label>Set Quote Values for Pricing Req</label>
-        <locationX>50</locationX>
-        <locationY>1214</locationY>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Name</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OpportunityNameCalculation</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.QuoteAccountId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.AccountId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Amount__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Unit_Price</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.ExpirationDate</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Expected_Work_Date</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Description</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Please_provide_a_description_of_the_extra_work</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Pricing_Request_Needed__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.ATAK_Project_Request_Priority__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Pricing_Request_Priority</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Price_Request_Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Requested</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Price_Request_Demand_Comments__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Pricing_Request_Comment</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Pricebook2Id</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Price_Book.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Pricing</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Service_Contract__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>ServiceContractTable.firstSelectedRow.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>quoteRecord.Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Extra Work</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>ATAK_Project_Needed</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -205,7 +98,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>quoteRecord.Description</assignToReference>
+            <assignToReference>quoteRecord.Extra_Work__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Please_provide_a_description_of_the_extra_work</elementReference>
@@ -239,6 +132,76 @@
                 <stringValue>Extra Work</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Document_Language__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Document_Language</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Contact.recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Offer_Valid_For__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Offer_Validity_in_months</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Our_Reference__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Our_Reference</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Customer_Reference__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Customer_Reference</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Subject__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Additional_Remarks__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Additional_Remarks</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Adjustable_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Adjustable_Price</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Adjustment_Period__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Adjustment_Period</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>quoteRecord.Payment_Term__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Payment_Term</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>ATAK_Project_Needed</targetReference>
         </connector>
@@ -247,7 +210,7 @@
         <name>Stamp_ATAK_Project</name>
         <label>Stamp ATAK Project</label>
         <locationX>50</locationX>
-        <locationY>1514</locationY>
+        <locationY>1430</locationY>
         <assignmentItems>
             <assignToReference>quoteRecord.ATAK_Project__c</assignToReference>
             <operator>Assign</operator>
@@ -303,7 +266,7 @@
         <name>ATAK_Project_Needed</name>
         <label>ATAK Project Needed</label>
         <locationX>314</locationX>
-        <locationY>1406</locationY>
+        <locationY>1322</locationY>
         <defaultConnector>
             <targetReference>Create_Quote</targetReference>
         </defaultConnector>
@@ -339,86 +302,22 @@
             <label>Project Requested</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Pricing</name>
-        <label>Pricing</label>
-        <locationX>314</locationX>
-        <locationY>1814</locationY>
-        <defaultConnector>
-            <targetReference>Open_Quote</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Defined</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>No</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Create_Quote_Products</targetReference>
-            </connector>
-            <label>Defined</label>
-        </rules>
-        <rules>
-            <name>Requested</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Yes</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Create_Empty_Quote_Product</targetReference>
-            </connector>
-            <label>Requested</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Pricing_Request_Needed</name>
-        <label>Pricing Request Needed</label>
-        <locationX>314</locationX>
-        <locationY>1106</locationY>
-        <defaultConnector>
-            <targetReference>ATAK_Project_Needed</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>yesPricingNeeded</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Yes</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Quote_Values_for_Pricing_Req</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-        <rules>
-            <name>NoPricingNotNeeded</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>No</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Quote_Values_no_Pricing_Req</targetReference>
-            </connector>
-            <label>No</label>
-        </rules>
-    </decisions>
+    <dynamicChoiceSets>
+        <name>AdjustmentPeriod</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Adjustment_Period__c</picklistField>
+        <picklistObject>Quote</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>LanguageChoice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Document_Language__c</picklistField>
+        <picklistObject>Quote</picklistObject>
+    </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>PricingRequestPriority</name>
         <dataType>Picklist</dataType>
@@ -449,11 +348,6 @@
         <dataType>String</dataType>
         <expression>{!Get_Account_Details.Name} &amp;&apos; - Extra Work&apos;&amp;&apos; - &apos;&amp;TEXT({!Expected_Work_Date})</expression>
     </formulas>
-    <formulas>
-        <name>PricingRequestStatus</name>
-        <dataType>String</dataType>
-        <expression>IF({!Request_Pricing_to_Business_Support_Choice}=&apos;Yes&apos;, &apos;Requested&apos;, &apos;&apos;)</expression>
-    </formulas>
     <interviewLabel>[Account][Screen-Flow] Add Extra Work Quote {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Account][Screen-Flow] Add Extra Work Quote</label>
     <processMetadataValues>
@@ -476,61 +370,20 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Create_Empty_Quote_Product</name>
-        <label>Create Empty Quote Product</label>
-        <locationX>314</locationX>
-        <locationY>1922</locationY>
-        <connector>
-            <targetReference>Open_Quote</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>PricebookEntryId</field>
-            <value>
-                <elementReference>Get_Price_Book_Entry.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Product2Id</field>
-            <value>
-                <elementReference>Get_Product.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Quantity</field>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>QuoteId</field>
-            <value>
-                <elementReference>quoteRecord.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>UnitPrice</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <object>QuoteLineItem</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
         <name>Create_Quote</name>
         <label>Create Quote</label>
         <locationX>314</locationX>
-        <locationY>1706</locationY>
+        <locationY>1622</locationY>
         <connector>
-            <targetReference>Pricing</targetReference>
+            <targetReference>Create_Quote_Products</targetReference>
         </connector>
         <inputReference>quoteRecord</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_Quote_Products</name>
         <label>Create Quote Products</label>
-        <locationX>50</locationX>
-        <locationY>1922</locationY>
+        <locationX>314</locationX>
+        <locationY>1730</locationY>
         <connector>
             <targetReference>Open_Quote</targetReference>
         </connector>
@@ -818,7 +671,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-5617&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Contract Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-996f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Contract_type__c&quot;,&quot;guid&quot;:&quot;column-efcd&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Contract type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Status&quot;,&quot;guid&quot;:&quot;column-d462&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-e2a7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;&quot;,&quot;guid&quot;:&quot;column-e54f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-5617&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Contract Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-996f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Contract_type__c&quot;,&quot;guid&quot;:&quot;column-efcd&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Contract type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Status&quot;,&quot;guid&quot;:&quot;column-d462&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Additional_Work_in_scope_contract__c&quot;,&quot;guid&quot;:&quot;column-e54f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Additional Work in scope contract&quot;,&quot;type&quot;:&quot;boolean&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -848,12 +701,12 @@
         <name>Atak_Project</name>
         <label>Atak Project</label>
         <locationX>314</locationX>
-        <locationY>998</locationY>
+        <locationY>1106</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Pricing_Request_Needed</targetReference>
+            <targetReference>Set_Quote_Values_no_Pricing_Req</targetReference>
         </connector>
         <fields>
             <name>Copy_1_of_ExtraWorkTitleScreen2</name>
@@ -866,6 +719,32 @@
             <fields>
                 <name>Atak_Project_Section1_Column1</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>New_ATAK_Toggle</name>
+                    <extensionName>flowruntime:toggle</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Request New Project</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>messageToggleActive</name>
+                        <value>
+                            <elementReference>Yes</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>messageToggleInactive</name>
+                        <value>
+                            <elementReference>No</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
                 <fields>
                     <name>Existing_ATAK_Project</name>
                     <extensionName>flowruntime:lookup</extensionName>
@@ -898,32 +777,6 @@
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
-                <fields>
-                    <name>New_ATAK_Toggle</name>
-                    <extensionName>flowruntime:toggle</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Request New Project</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>messageToggleActive</name>
-                        <value>
-                            <elementReference>Yes</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>messageToggleInactive</name>
-                        <value>
-                            <elementReference>No</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -935,6 +788,21 @@
             <fields>
                 <name>Atak_Project_Section1_Column2</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>warning</name>
+                    <fieldText>&lt;p&gt;The ATAK Project creation will be requested only &lt;/p&gt;&lt;p&gt;&lt;strong&gt;after the customer accepts the quote.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>New_ATAK_Toggle.value</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1027,7 +895,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Atak_Project</targetReference>
+            <targetReference>Quote_PDF_Administrion</targetReference>
         </connector>
         <fields>
             <name>ExtraWorkTitleScreen2</name>
@@ -1041,15 +909,17 @@
                 <name>PricingScreen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Request_Pricing_to_Business_Support_Choice</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultSelectedChoiceReference>No</defaultSelectedChoiceReference>
-                    <fieldText>Request Pricing to Business Support</fieldText>
-                    <fieldType>DropdownBox</fieldType>
+                    <name>Unit_Price</name>
+                    <dataType>Currency</dataType>
+                    <fieldText>Sales Price</fieldText>
+                    <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                    <scale>0</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;You can&apos;t make a quick quote with a value superior to 5000€.&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!Unit_Price}&lt;=5000</formulaExpression>
+                    </validationRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1063,44 +933,170 @@
                 <name>PricingScreen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Pricing_Request_Priority</name>
-                    <choiceReferences>PricingRequestPriority</choiceReferences>
+                    <name>Any_additional_comments</name>
                     <dataType>String</dataType>
-                    <defaultValue>
-                        <stringValue>Medium</stringValue>
-                    </defaultValue>
-                    <fieldText>Pricing Request Priority</fieldText>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <elementReference>Yes</elementReference>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>Pricing_Request_Comment</name>
-                    <dataType>String</dataType>
-                    <fieldText>Pricing Request Comment</fieldText>
+                    <fieldText>Any additional comments?</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <elementReference>Yes</elementReference>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Quote_PDF_Administrion</name>
+        <label>Quote PDF Administrion</label>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Atak_Project</targetReference>
+        </connector>
+        <fields>
+            <name>AdministrativeTitle</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Quote Document Details&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Define the necessary dynamic fields for the creation of the Quote PDF.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Quote_PDF_Administrion_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Quote_PDF_Administrion_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Document_Language</name>
+                    <choiceReferences>LanguageChoice</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <stringValue>Dutch</stringValue>
+                    </defaultValue>
+                    <fieldText>Document Language</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Quote_PDF_Administrion_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Contact</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>ContactId</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Quote Contact</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Quote</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Quote_PDF_Administrion_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Offer_Validity_in_months</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <numberValue>1.0</numberValue>
+                    </defaultValue>
+                    <fieldText>Offer Validity (in months)</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>AdministrativeDetailsTitle</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Administrative Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Quote_PDF_Administrion_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Quote_PDF_Administrion_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Our_Reference</name>
+                    <dataType>String</dataType>
+                    <fieldText>Our Reference</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Quote_PDF_Administrion_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Customer_Reference</name>
+                    <dataType>String</dataType>
+                    <fieldText>Customer Reference</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1114,15 +1110,79 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>PricingScreen_Section2</name>
+            <name>Subject</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>OpportunityNameCalculation</elementReference>
+            </defaultValue>
+            <fieldText>Subject</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Additional_Remarks</name>
+            <fieldText>Additional Remarks</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>PricingDetails</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Pricing Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Quote_PDF_Administrion_Section3</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>PricingScreen_Section2_Column1</name>
+                <name>Quote_PDF_Administrion_Section3_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Unit_Price</name>
-                    <dataType>Currency</dataType>
-                    <fieldText>Sales Price</fieldText>
+                    <name>Adjustable_Price</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Adjustable Price</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Adjustment_Period</name>
+                    <choiceReferences>AdjustmentPeriod</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Adjustment Period</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Adjustable_Price</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Quote_PDF_Administrion_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Payment_Term</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <numberValue>30.0</numberValue>
+                    </defaultValue>
+                    <fieldText>Payment Term</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
@@ -1136,49 +1196,9 @@
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
-            <fields>
-                <name>PricingScreen_Section2_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Any_additional_comments</name>
-                    <dataType>String</dataType>
-                    <fieldText>Any additional comments?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <elementReference>No</elementReference>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Request_Pricing_to_Business_Support_Choice</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>No</elementReference>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
         </fields>
-        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -1189,7 +1209,7 @@
             <targetReference>Get_Record_Type</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>CreatedOpportunityId</name>
         <dataType>String</dataType>

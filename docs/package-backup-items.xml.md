@@ -2,9 +2,9 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 3282
+Metadatas: 3295
 
-<details><summary>ApexClass (116)</summary>
+<details><summary>ApexClass (113)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -103,10 +103,7 @@ Metadatas: 3282
   • TimeSheetMapController<br/>
   • TimeSheetProjectLinkService<br/>
   • TimeSheetProjectLinkServiceTest<br/>
-  • ValidationService<br/>
   • WeatherService<br/>
-  • WorkOrderLocationBatch<br/>
-  • WorkOrderLocationQueueable<br/>
   • WorkOrderScheduler<br/>
   • WorkOrderSchedulerBatch<br/>
   • WorkOrderSchedulerController<br/>
@@ -267,7 +264,7 @@ Metadatas: 3282
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (709)</summary>
+<details><summary>CustomField (720)</summary>
   • ATAK_Internal_Project_Map__mdt.ATAK_Code__c<br/>
   • ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c<br/>
   • ATAK_Internal_Project_Map__mdt.Performance_Type__c<br/>
@@ -592,8 +589,14 @@ Metadatas: 3282
   • Opportunity.ATAK_Projectx__c<br/>
   • Opportunity.Amount__c<br/>
   • Opportunity.Budget_Confirmed__c<br/>
+  • Opportunity.Business_Type__c<br/>
+  • Opportunity.Channel_Partner__c<br/>
+  • Opportunity.Competitor_Information__c<br/>
+  • Opportunity.Contract_Type__c<br/>
   • Opportunity.Discovery_Completed__c<br/>
+  • Opportunity.Expected_Contract_Start_Date__c<br/>
   • Opportunity.Extra_Work_Description__c<br/>
+  • Opportunity.Initiative_Party__c<br/>
   • Opportunity.Language__c<br/>
   • Opportunity.Loss_Reason__c<br/>
   • Opportunity.Main_Contact__c<br/>
@@ -606,6 +609,9 @@ Metadatas: 3282
   • Opportunity.ROI_Analysis_Completed__c<br/>
   • Opportunity.Service_Contract__c<br/>
   • Opportunity.Service_Package__c<br/>
+  • Opportunity.Specification_Number__c<br/>
+  • Opportunity.Submission_Date_Due__c<br/>
+  • Opportunity.Submission_Method__c<br/>
   • Opportunity.Type_Code__c<br/>
   • Opportunity.Weighted_Amount__c<br/>
   • Opportunity.Work_Size__c<br/>
@@ -813,6 +819,8 @@ Metadatas: 3282
   • ServiceContract.Request_date_for_indexation__c<br/>
   • ServiceContract.SLA__c<br/>
   • ServiceContract.SPOC_Client__c<br/>
+  • ServiceContract.Service_Appointments_Color_on_Gantt__c<br/>
+  • ServiceContract.Service_Appointments_Icon_on_Gantt__c<br/>
   • ServiceContract.Service_Package_Type__c<br/>
   • ServiceContract.Status_custom__c<br/>
   • ServiceContract.Tender_Code__c<br/>
@@ -1793,7 +1801,7 @@ Metadatas: 3282
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (75)</summary>
+<details><summary>Flow (76)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1815,6 +1823,7 @@ Metadatas: 3282
   • Platform_Event_Reorder_Work_Steps<br/>
   • Quote_After_Save_Create_Work_Order_on_Acceptance<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
+  • Quote_After_Save_Update_Status_to_RfE<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -1871,7 +1880,7 @@ Metadatas: 3282
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (75)</summary>
+<details><summary>FlowDefinition (76)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1893,6 +1902,7 @@ Metadatas: 3282
   • Platform_Event_Reorder_Work_Steps<br/>
   • Quote_After_Save_Create_Work_Order_on_Acceptance<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
+  • Quote_After_Save_Update_Status_to_RfE<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -2411,25 +2421,28 @@ Metadatas: 3282
   • Default_Opportunity<br/>
 </details>
 
-<details><summary>PermissionSet (11)</summary>
+<details><summary>PermissionSet (13)</summary>
   • ATAK_Permissions<br/>
   • Field_Service_Mobile_Custom_Permission_Set<br/>
   • Lightning_Email_Template_Builder<br/>
   • PDF_Butler_Admin_Local<br/>
   • Query_All_Files<br/>
+  • Test_permission_set<br/>
   • USF_Flow_Screen_Component_Custom_Objects<br/>
   • USF_Flow_Screen_Component_Datatable<br/>
   • cases_Permisssion_Set<br/>
   • fileUploadImproved<br/>
   • sfdcInternalInt__sfdc_fieldservice<br/>
   • sfdcInternalInt__sfdc_scrt2<br/>
+  • test_permission<br/>
 </details>
 
-<details><summary>PermissionSetGroup (4)</summary>
+<details><summary>PermissionSetGroup (5)</summary>
   • Admin_Permission_Set_Group<br/>
   • Business_Support_Permission_Set_Group<br/>
   • Contract_Manager_Permission_Set_Group<br/>
   • Operator_Permission_Set_Group<br/>
+  • Test_Permission_set_group<br/>
 </details>
 
 <details><summary>PlatformEventChannelMember (2)</summary>

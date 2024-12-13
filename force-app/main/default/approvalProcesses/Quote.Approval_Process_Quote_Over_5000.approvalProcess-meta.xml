@@ -27,7 +27,7 @@
         </approvalActions>
         <assignedApprover>
             <approver>
-                <name>gael.butereli@krinkels.be</name>
+                <name>frederik.pardon@krinkels.be</name>
                 <type>user</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>

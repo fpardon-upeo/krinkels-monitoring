@@ -6,12 +6,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -22,8 +34,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -78,6 +98,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -94,8 +118,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -108,6 +140,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -301,8 +337,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -315,6 +357,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -333,12 +378,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -349,8 +406,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -405,6 +470,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -421,8 +490,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -435,6 +512,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -628,8 +709,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -642,6 +729,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -660,12 +750,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -676,8 +778,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -732,6 +842,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -752,8 +866,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -766,6 +888,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -960,8 +1086,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -974,6 +1106,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -992,12 +1127,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -1008,8 +1155,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -1064,6 +1219,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -1080,8 +1239,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -1094,6 +1261,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -1287,8 +1458,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -1301,6 +1478,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -1319,12 +1499,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -1335,8 +1527,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -1391,6 +1591,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -1411,8 +1615,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -1425,6 +1637,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -1619,8 +1835,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -1633,6 +1855,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -1651,12 +1876,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -1667,8 +1904,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -1723,6 +1968,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -1739,8 +1988,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -1753,6 +2010,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -1946,8 +2207,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -1960,6 +2227,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -1978,12 +2248,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -1994,8 +2276,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -2050,6 +2340,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -2070,8 +2364,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -2084,6 +2386,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -2278,8 +2584,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -2292,6 +2604,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -2310,12 +2625,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -2326,8 +2653,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -2382,6 +2717,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -2398,8 +2737,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -2412,6 +2759,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -2605,8 +2956,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -2619,6 +2976,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -2637,12 +2997,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -2653,8 +3025,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -2709,6 +3089,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -2729,8 +3113,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -2743,6 +3135,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -2937,8 +3333,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -2951,6 +3353,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -2969,12 +3374,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -2985,8 +3402,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -3041,6 +3466,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -3057,8 +3486,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -3071,6 +3508,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -3264,8 +3705,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -3278,6 +3725,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -3296,12 +3746,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -3312,8 +3774,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -3366,6 +3836,10 @@
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -3388,8 +3862,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -3402,6 +3884,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -3596,8 +4082,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -3610,6 +4102,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>
@@ -3628,12 +4123,24 @@
             <label>Created By Alias</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84J3</field>
+            <label>Channel Partner</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
             <label>Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OV</field>
+            <label>Submission Method</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
             <label>Close Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q84QV</field>
+            <label>Business Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7f6Q</field>
@@ -3644,8 +4151,16 @@
             <label>Service Package Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OQ</field>
+            <label>Submission Date Due</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
             <label>Expected Revenue</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OL</field>
+            <label>Specification Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -3700,6 +4215,10 @@
             <label>Price Request Demand Comments</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85O6</field>
+            <label>Contract Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
             <label>Price Request Priority</label>
         </forecastingObjectListLabelMappings>
@@ -3716,8 +4235,16 @@
             <label>Opportunity Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85Mj</field>
+            <label>Competitor Information</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OG</field>
+            <label>Initiative Party</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
@@ -3730,6 +4257,10 @@
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
             <label>Account Site</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00NKF00000Q85OB</field>
+            <label>Expected Contract Start Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
@@ -3923,8 +4454,14 @@
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
             <field>00N07000002R5Ht</field>
+            <field>00NKF00000Q84QV</field>
+            <field>00NKF00000Q84J3</field>
+            <field>00NKF00000Q85Mj</field>
+            <field>00NKF00000Q85O6</field>
             <field>00N07000002R5Hu</field>
+            <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00NKF00000Q85OG</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
@@ -3937,6 +4474,9 @@
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00NKF00000Q85OL</field>
+            <field>00NKF00000Q85OQ</field>
+            <field>00NKF00000Q85OV</field>
             <field>00NKF00000Q7U9H</field>
             <field>00NKF00000Q7uAd</field>
             <field>00NKF00000Q6cIx</field>

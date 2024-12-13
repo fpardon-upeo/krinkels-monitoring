@@ -169,7 +169,7 @@ public with sharing class ATAKPerformanceService {
 
         // First pass - filter from start and identify last travel
         for(TimeSheetEntry tsEntry : tsEntries){
-            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work'){
+            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work' || tsEntry.WorkOrder.WorkType.Name == 'Extra Work' ){
                 foundProductionTime = true;
 
                 // If this is our first RT after finding production work, skip it
@@ -197,7 +197,7 @@ public with sharing class ATAKPerformanceService {
         List<TimeSheetEntry> tsEntriesFilteredFinal = new List<TimeSheetEntry>();
         for(Integer i = tsEntriesFiltered.size() - 1; i >= 0; i--){
             TimeSheetEntry tsEntry = tsEntriesFiltered[i];
-            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work'){
+            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work' || tsEntry.WorkOrder.WorkType.Name == 'Extra Work' ){
                 foundProductionTime = true;
             }
             if(foundProductionTime == true){

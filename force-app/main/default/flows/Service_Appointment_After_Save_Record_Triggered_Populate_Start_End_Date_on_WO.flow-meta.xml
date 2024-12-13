@@ -114,25 +114,6 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_Earliest_Start_Permitted_and_Due_date</name>
-        <label>Update Earliest Start Permitted and Due date</label>
-        <locationX>50</locationX>
-        <locationY>539</locationY>
-        <inputAssignments>
-            <field>DueDate</field>
-            <value>
-                <elementReference>NewDueDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>EarliestStartTime</field>
-            <value>
-                <elementReference>NewEarliestStartPermitted</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_with_Actual_Times</name>
         <label>Update with Actual Times</label>
         <locationX>314</locationX>
@@ -164,9 +145,6 @@
         <label>Update with Scheduled Times</label>
         <locationX>50</locationX>
         <locationY>431</locationY>
-        <connector>
-            <targetReference>Update_Earliest_Start_Permitted_and_Due_date</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -256,5 +234,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
 </Flow>

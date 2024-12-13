@@ -594,9 +594,15 @@
         <members>Opportunity.ATAK_Projectx__c</members>
         <members>Opportunity.Amount__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
+        <members>Opportunity.Business_Type__c</members>
+        <members>Opportunity.Channel_Partner__c</members>
+        <members>Opportunity.Competitor_Information__c</members>
+        <members>Opportunity.Contract_Type__c</members>
         <members>Opportunity.Customer_Reference__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
+        <members>Opportunity.Expected_Contract_Start_Date__c</members>
         <members>Opportunity.Extra_Work_Description__c</members>
+        <members>Opportunity.Initiative_Party__c</members>
         <members>Opportunity.Language__c</members>
         <members>Opportunity.Loss_Reason__c</members>
         <members>Opportunity.Main_Contact__c</members>
@@ -610,7 +616,10 @@
         <members>Opportunity.ROI_Analysis_Completed__c</members>
         <members>Opportunity.Service_Contract__c</members>
         <members>Opportunity.Service_Package__c</members>
+        <members>Opportunity.Specification_Number__c</members>
         <members>Opportunity.Subject__c</members>
+        <members>Opportunity.Submission_Date_Due__c</members>
+        <members>Opportunity.Submission_Method__c</members>
         <members>Opportunity.Type_Code__c</members>
         <members>Opportunity.Weighted_Amount__c</members>
         <members>Opportunity.Work_Size__c</members>
@@ -818,6 +827,8 @@
         <members>ServiceContract.SLA__c</members>
         <members>ServiceContract.SPOC_Client__c</members>
         <members>ServiceContract.SPOC_KGC__c</members>
+        <members>ServiceContract.Service_Appointments_Color_on_Gantt__c</members>
+        <members>ServiceContract.Service_Appointments_Icon_on_Gantt__c</members>
         <members>ServiceContract.Service_Package_Type__c</members>
         <members>ServiceContract.Status_custom__c</members>
         <members>ServiceContract.Tender_Code__c</members>
@@ -1573,6 +1584,7 @@
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
+        <members>Quote_After_Save_Update_Status_to_RfE</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1658,6 +1670,7 @@
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
+        <members>Quote_After_Save_Update_Status_to_RfE</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -2205,12 +2218,14 @@
         <members>Lightning_Email_Template_Builder</members>
         <members>PDF_Butler_Admin_Local</members>
         <members>Query_All_Files</members>
+        <members>Test_permission_set</members>
         <members>USF_Flow_Screen_Component_Custom_Objects</members>
         <members>USF_Flow_Screen_Component_Datatable</members>
         <members>cases_Permisssion_Set</members>
         <members>fileUploadImproved</members>
         <members>sfdcInternalInt__sfdc_fieldservice</members>
         <members>sfdcInternalInt__sfdc_scrt2</members>
+        <members>test_permission</members>
         <name>PermissionSet</name>
     </types>
     <types>
@@ -2218,6 +2233,7 @@
         <members>Business_Support_Permission_Set_Group</members>
         <members>Contract_Manager_Permission_Set_Group</members>
         <members>Operator_Permission_Set_Group</members>
+        <members>Test_Permission_set_group</members>
         <name>PermissionSetGroup</name>
     </types>
     <types>

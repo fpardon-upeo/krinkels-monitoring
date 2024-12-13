@@ -34,6 +34,13 @@
             <operator>equals</operator>
             <value>Requested</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>Quote$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Accepted</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Summary</format>

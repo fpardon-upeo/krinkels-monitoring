@@ -39,6 +39,8 @@ public with sharing class ServiceAppointmentTriggerHandler {
 
             // Get set of Asset IDs
             Set<Id> assetIds = new Set<Id>();
+            // Get the WorkOrder Ids
+            Set<Id> workOrderIdsSet = workOrders.keySet();
             for(WorkOrder wo : workOrders.values()) {
                 if(wo.AssetId != null) {
                     assetIds.add(wo.AssetId);
@@ -86,8 +88,139 @@ public with sharing class ServiceAppointmentTriggerHandler {
                 }
             }
             update appointments;
+            copyAssignedResources(workOrderIdsSet);
+
         }
     }
+
+    /**
+     * @description This methods takes a set of work order ids. It queries them, and check whether they have a ParentWorkOrderId
+     * If they do, it get the ServiceAppointments that have the WorkOrder as ParentRecordId
+     * It then gets the AssignedResource records for those ServiceAppointments
+     * It then gets the ServiceAppointments that look up to the original WorkOrders
+     * For each of those ServiceAppointments, it creates a new the AssignedResource record based on the original AssignedResource record
+     * We won't always find matches, in that case we exit gracefully
+     * @param workOrderIds
+     */
+
+    public void copyAssignedResources(Set<Id> workOrderIds) {
+        // Query Work Orders with their Parent IDs
+        List<WorkOrder> workOrders = [
+                SELECT Id, ParentWorkOrderId
+                FROM WorkOrder
+                WHERE Id IN :workOrderIds
+                AND ParentWorkOrderId != null
+        ];
+
+        if (workOrders.isEmpty()) return;
+
+        // Get parent work order IDs
+        Set<Id> parentWorkOrderIds = new Set<Id>();
+        Map<Id, Id> childToParentMap = new Map<Id, Id>();
+        for (WorkOrder wo : workOrders) {
+            parentWorkOrderIds.add(wo.ParentWorkOrderId);
+            childToParentMap.put(wo.Id, wo.ParentWorkOrderId);
+        }
+
+        // First, query the Service Appointments with scheduling information
+        List<ServiceAppointment> parentServiceAppointments = [
+                SELECT Id, ParentRecordId, SchedStartTime, SchedEndTime, Duration
+                FROM ServiceAppointment
+                WHERE ParentRecordId IN :parentWorkOrderIds
+        ];
+
+        // Create a map of Service Appointment IDs and store in parent map
+        Map<Id, List<ServiceAppointment>> parentWOtoSAMap = new Map<Id, List<ServiceAppointment>>();
+        Set<Id> parentSAIds = new Set<Id>();
+        for(ServiceAppointment sa : parentServiceAppointments) {
+            parentSAIds.add(sa.Id);
+            if (!parentWOtoSAMap.containsKey(sa.ParentRecordId)) {
+                parentWOtoSAMap.put(sa.ParentRecordId, new List<ServiceAppointment>());
+            }
+            parentWOtoSAMap.get(sa.ParentRecordId).add(sa);
+        }
+
+        // Query AssignedResource records separately
+        Map<Id, List<AssignedResource>> saToAssignedResourcesMap = new Map<Id, List<AssignedResource>>();
+        for(AssignedResource ar : [
+                SELECT Id, ServiceAppointmentId, ServiceResourceId, ServiceResource.ResourceType
+                FROM AssignedResource
+                WHERE ServiceAppointmentId IN :parentSAIds
+                AND ServiceResource.ResourceType = 'C'
+        ]) {
+            if(!saToAssignedResourcesMap.containsKey(ar.ServiceAppointmentId)) {
+                saToAssignedResourcesMap.put(ar.ServiceAppointmentId, new List<AssignedResource>());
+            }
+            saToAssignedResourcesMap.get(ar.ServiceAppointmentId).add(ar);
+        }
+
+        // First update the Service Appointments with new scheduling times
+        List<ServiceAppointment> childServiceAppointmentsToUpdate = [
+                SELECT Id, ParentRecordId, SchedStartTime, SchedEndTime, Duration
+                FROM ServiceAppointment
+                WHERE ParentRecordId IN :workOrderIds
+        ];
+
+        if (childServiceAppointmentsToUpdate.isEmpty()) return;
+
+        // Update child SAs with new times
+        for (ServiceAppointment childSA : childServiceAppointmentsToUpdate) {
+            Id parentWorkOrderId = childToParentMap.get(childSA.ParentRecordId);
+            List<ServiceAppointment> parentSAs = parentWOtoSAMap.get(parentWorkOrderId);
+
+            if (parentSAs != null && !parentSAs.isEmpty()) {
+                ServiceAppointment parentSA = parentSAs[0]; // Take first parent SA as reference
+                childSA.SchedStartTime = parentSA.SchedEndTime;
+                childSA.SchedEndTime = parentSA.SchedEndTime.addMinutes((Integer)parentSA.Duration);
+            }
+        }
+
+        update childServiceAppointmentsToUpdate;
+
+        // Now create the AssignedResource records
+        List<AssignedResource> newAssignedResources = new List<AssignedResource>();
+
+        for (ServiceAppointment childSA : childServiceAppointmentsToUpdate) {
+            Id parentWorkOrderId = childToParentMap.get(childSA.ParentRecordId);
+            List<ServiceAppointment> parentSAs = parentWOtoSAMap.get(parentWorkOrderId);
+
+            if (parentSAs != null) {
+                for (ServiceAppointment parentSA : parentSAs) {
+                    List<AssignedResource> assignedResources = saToAssignedResourcesMap.get(parentSA.Id);
+                    if(assignedResources != null) {
+                        for (AssignedResource parentAR : assignedResources) {
+                            System.debug('parentAR: ' + parentAR.ServiceResourceId);
+                            System.debug('childSA: ' + childSA.Id);
+                            AssignedResource newAR = new AssignedResource(
+                                    ServiceAppointmentId = childSA.Id,
+                                    ServiceResourceId = parentAR.ServiceResourceId,
+                                    External_Id__c = childSA.Id + '-' +parentAR.ServiceResourceId
+                            );
+                            newAssignedResources.add(newAR);
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!newAssignedResources.isEmpty()) {
+            Schema.SObjectField externalIdField = AssignedResource.External_Id__c;
+            Database.UpsertResult[] results = Database.upsert(newAssignedResources, externalIdField, false);
+            for(Database.UpsertResult result : results) {
+                if (!result.isSuccess()) {
+                    for(Database.Error error : result.getErrors()) {
+                        System.debug('Error: ' + error.getMessage());
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
 
     /**
      * @description This method is called after the update of a list of ServiceAppointment records, it sets the work order status equal to the status of the service appointment

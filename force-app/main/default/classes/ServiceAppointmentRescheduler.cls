@@ -86,6 +86,7 @@ public without sharing class ServiceAppointmentRescheduler {
                     FROM ServiceAppointment
                     WHERE ParentRecordId IN (SELECT Id FROM WorkOrder WHERE AssetId = :wo.Asset.Id)
                     AND DueDate >= :sa.SchedStartTime
+                    AND Id != :sa.Id
                     ORDER BY DueDate];
 
             System.debug('Future Appointments: ' + futureAppointments.size());

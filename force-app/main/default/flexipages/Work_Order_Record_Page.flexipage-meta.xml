@@ -81,12 +81,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>workOrderCreator</componentName>
-                <identifier>c_workOrderCreator</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentName>force:detailPanel</componentName>
                 <identifier>force_detailPanel</identifier>
             </componentInstance>

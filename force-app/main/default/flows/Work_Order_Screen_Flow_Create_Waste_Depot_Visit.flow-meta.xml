@@ -161,6 +161,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>ServiceTerritoryId</field>
+            <value>
+                <elementReference>Get_Work_Order_Information.ServiceTerritoryId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>Waste Depot Visit</stringValue>

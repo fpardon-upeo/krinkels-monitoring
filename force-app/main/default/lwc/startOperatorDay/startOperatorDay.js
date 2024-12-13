@@ -556,15 +556,15 @@ export default class StartOperatorDay extends NavigationMixin(
     const fields = {};
     fields["Id"] = this.selectedRows[0].Id;
     fields["Status"] = "Travelling";
-    fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
     const recordInput = { fields };
     console.log("recordInput sa", JSON.stringify(recordInput));
     updateRecord(recordInput)
-      .then(() => {
-        console.log("Service Appointment status updated");
+      .then((result) => {
+        console.log("!!!!!!!!!!!!!! Service Appointment status updated");
+        console.log("result", JSON.stringify(result));
       })
       .catch((error) => {
-        console.log("Error updating service appointment status", error);
+        console.log("!!!!!!!!!!!!!! Error updating service appointment status", error);
       });
   }
 
@@ -578,7 +578,6 @@ export default class StartOperatorDay extends NavigationMixin(
       this.selectedRows[0].WorkOrderType === "Production Work";
     console.log("work order fields", JSON.stringify(fields));
     const recordInput = { fields };
-    console.log("recordInput wo", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then(() => {
         console.log("Work Order status updated");

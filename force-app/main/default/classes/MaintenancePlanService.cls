@@ -73,7 +73,7 @@ public with sharing class MaintenancePlanService {
      * @return ServiceContract The Service Contract.
      */
     private static ServiceContract getServiceContract(String serviceContractId) {
-        return [SELECT Id, AccountId, Account.Name, Status, StartDate, EndDate, Priority__c, Default_LMRA__c
+        return [SELECT Id, AccountId, Account.Name, Status, StartDate, EndDate, Priority__c, Default_LMRA__c, Service_Appointments_Icon_on_Gantt__c, Service_Appointments_Color_on_Gantt__c
         FROM ServiceContract WHERE Id = :serviceContractId LIMIT 1];
     }
 
@@ -365,6 +365,8 @@ public with sharing class MaintenancePlanService {
         maintenancePlan.MaintenanceWindowStartDays = 7;
         maintenancePlan.MaintenanceWindowEndDays = 7;
         maintenancePlan.NextSuggestedMaintenanceDate = serviceContract.StartDate;
+        maintenancePlan.Service_Appointments_Icon_on_Gantt__c = serviceContract.Service_Appointments_Icon_on_Gantt__c;
+        maintenancePlan.Service_Appointments_Color_on_Gantt__c = serviceContract.Service_Appointments_Color_on_Gantt__c;
         return maintenancePlan;
     }
 

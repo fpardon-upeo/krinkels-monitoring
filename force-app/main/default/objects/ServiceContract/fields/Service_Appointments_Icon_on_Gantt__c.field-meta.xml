@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Appointments_Icon_on_Gantt__c</fullName>
+    <inlineHelpText>You can enter an icon URL in the field that will be displayed for all resulting service appointments in the dispatcher console. The URL must end in an image suffix, such as .png or .gif. Images with a transparent background appear with a white background on the Gantt.
+
+For example, add an ice cream icon to an appointment that’s next to your favorite ice cream shop. Find a URL that leads to an ice cream icon, and paste the link in this field.</inlineHelpText>
+    <label>Service Appointments Icon on Gantt</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>

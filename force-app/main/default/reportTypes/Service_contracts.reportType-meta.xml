@@ -381,6 +381,16 @@
             <field>Status_custom__c</field>
             <table>ServiceContract</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Appointments_Color_on_Gantt__c</field>
+            <table>ServiceContract</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Service_Appointments_Icon_on_Gantt__c</field>
+            <table>ServiceContract</table>
+        </columns>
         <masterLabel>Service Contracts</masterLabel>
     </sections>
 </ReportType>

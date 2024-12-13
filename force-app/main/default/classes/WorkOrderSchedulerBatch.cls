@@ -46,15 +46,9 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
                     maFirstDate
             );
 
-            /*
-
-            Integer instanceCount = adjuster.calculateInstanceCount(
-                    mA.NextSuggestedMaintenanceDate,
-                    mA.LastSuggestedMaintenanceDate__c,
-                    recurrencePattern
-            );
-
-             */
+            System.debug('First date: ' + maFirstDate);
+            System.debug('Adjusted first date: ' + adjuster);
+            System.debug('Result: ' + result);
 
             Integer instanceCount = mA.Number_of_Work_Orders__c != null ? Integer.valueOf(mA.Number_of_Work_Orders__c) : 1;
 
@@ -78,6 +72,8 @@ public without sharing class WorkOrderSchedulerBatch implements Database.Batchab
             }
 
             System.debug('instanceCount: ' + instanceCount);
+
+            System.debug('result.newDates: ' + result.newDates);
 
             for(Integer i = 0; i < instanceCount; i++) {
                 WorkOrder wo = new WorkOrder();

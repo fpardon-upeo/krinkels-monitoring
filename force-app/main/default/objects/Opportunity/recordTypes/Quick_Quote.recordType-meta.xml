@@ -35,6 +35,28 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Business_Type__c</picklist>
+        <values>
+            <fullName>B2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B2G</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Type__c</picklist>
+        <values>
+            <fullName>Indoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>ForecastCategoryName</picklist>
         <values>
             <fullName>Best Case</fullName>
@@ -54,6 +76,17 @@
         </values>
         <values>
             <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initiative_Party__c</picklist>
+        <values>
+            <fullName>KGC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead%2FCustomer</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -192,6 +225,25 @@
         </values>
         <values>
             <fullName>Winter Maintenance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Submission_Method__c</picklist>
+        <values>
+            <fullName>Bosa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post</fullName>
             <default>false</default>
         </values>
     </picklistValues>
