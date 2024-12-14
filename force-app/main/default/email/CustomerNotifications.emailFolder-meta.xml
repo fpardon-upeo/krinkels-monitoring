@@ -6,6 +6,11 @@
         <sharedToType>Organization</sharedToType>
     </folderShares>
     <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>david.ducasteele@krinkels.be</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
         <accessLevel>Manage</accessLevel>
         <sharedTo>jasmijn.vanacken@krinkels.be</sharedTo>
         <sharedToType>User</sharedToType>

@@ -4,7 +4,7 @@
         <name>Set_Mileage_Values</name>
         <label>Set Mileage Values</label>
         <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>MileageEntryRecord.Starting_Mileage__c</assignToReference>
             <operator>Assign</operator>
@@ -17,6 +17,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Ending_Kilometers</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>MileageEntryRecord.Work_Order__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>WorkStepRecord.WorkOrderId</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -49,17 +56,24 @@
         <name>Get_Mileage_Entry</name>
         <label>Get Mileage Entry</label>
         <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Log_KM</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Work_Order__c</field>
+            <field>Type__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>WorkStepRecord.WorkOrderId</elementReference>
+                <stringValue>Starting</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Time_Sheet__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>timesheetId</elementReference>
             </value>
         </filters>
         <object>Mileage_Entry__c</object>
@@ -71,13 +85,43 @@
         <sortOrder>Desc</sortOrder>
     </recordLookups>
     <recordLookups>
+        <name>Get_Timesheet_Id</name>
+        <label>Get Timesheet Id</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Mileage_Entry</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>UserId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StartDate</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </filters>
+        <object>TimeSheet</object>
+        <outputAssignments>
+            <assignToReference>timesheetId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Work_Step</name>
         <label>Get Work Step</label>
         <locationX>176</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Mileage_Entry</targetReference>
+            <targetReference>Get_Timesheet_Id</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -96,7 +140,7 @@
         <name>Update_Kilometers</name>
         <label>Update Kilometers</label>
         <locationX>176</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Update_Work_Step</targetReference>
         </connector>
@@ -106,7 +150,7 @@
         <name>Update_Work_Step</name>
         <label>Update Work Step</label>
         <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -127,7 +171,7 @@
         <name>Log_KM</name>
         <label>Log KM</label>
         <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -184,6 +228,20 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Mileage_Entry__c</objectType>
+    </variables>
+    <variables>
+        <name>timesheetId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>UserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>WorkStepRecord</name>

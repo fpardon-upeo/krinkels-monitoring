@@ -390,7 +390,7 @@
         <inputAssignments>
             <field>Description</field>
             <value>
-                <elementReference>Any_additional_comments</elementReference>
+                <elementReference>Please_provide_a_description_of_the_extra_work</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -562,6 +562,13 @@
                 <elementReference>Get_Account_Details.ParentId</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Commercial Agreement</stringValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>ServiceContract</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -629,14 +636,6 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>Link_this_Extra_Work_to_a_Service_Contract</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Link this Extra Work to a Service Contract</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
             <name>ServiceContractTable</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
@@ -683,16 +682,6 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Link_this_Extra_Work_to_a_Service_Contract</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -741,6 +730,12 @@
                             <elementReference>No</elementReference>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -767,15 +762,19 @@
                             <stringValue>Opportunity</stringValue>
                         </value>
                     </inputParameters>
-                    <inputParameters>
-                        <name>disabled</name>
-                        <value>
-                            <elementReference>New_ATAK_Toggle.value</elementReference>
-                        </value>
-                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>New_ATAK_Toggle.value</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1209,7 +1208,7 @@
             <targetReference>Get_Record_Type</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>CreatedOpportunityId</name>
         <dataType>String</dataType>

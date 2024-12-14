@@ -120,6 +120,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CloneWorkOrderController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ContractLineItemTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1891,6 +1895,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Mileage_Entry__c.Starting_Mileage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Mileage_Entry__c.Timesheet_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3983,6 +3992,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Quote_Gantt_Action_Clone</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>ResourceAbsence_After_Save_Break_Time</flow>
     </flowAccesses>
     <flowAccesses>
@@ -5076,6 +5089,10 @@
         <object>ers_datatableConfig__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>CloneWorkOrder</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
         <apexPage>CreateChildWorkOrder</apexPage>
         <enabled>true</enabled>

@@ -1,0 +1,40 @@
+<!--
+ - Created by fpardon on 13/12/2024.
+ -->
+
+<apex:page controller="CloneWorkOrderController" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="true">
+    <apex:includeLightning />
+
+    <div id="flowContainer">
+    </div>
+
+    <script>
+        $Lightning.use("c:CreateInternalWorkApp", function() {
+            $Lightning.createComponent(
+                "lightning:flow",
+                {
+                    onstatuschange: function(event) {
+                        if (event.getParam("status") === "FINISHED") {
+                            parent.postMessage('closeLightbox', '*');
+                        }
+                    }
+                },
+                "flowContainer",
+                function(component, status, errorMessage) {
+                    if (status === "SUCCESS") {
+                        component.startFlow("Quote_Gantt_Action_Clone", [
+                            {
+                                name: "serviceAppointmentId",
+                                type: "String",
+                                value: '{!JSENCODE(resourceId)}'
+                            }
+                        ]);
+                    } else if (status === "ERROR") {
+                        document.getElementById('flowContainer').innerHTML =
+                            '<div style="color: red; padding: 10px;">Error loading flow: ' + errorMessage + '</div>';
+                    }
+                }
+            );
+        });
+    </script>
+</apex:page>

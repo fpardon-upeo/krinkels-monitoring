@@ -1,4 +1,4 @@
-import { LightningElement, wire, track } from 'lwc';
+import { LightningElement, wire, track, api } from 'lwc';
 import getTimesheetEntries from '@salesforce/apex/LocationMonitorController.getTimesheetEntries';
 import DASHBOARD_TITLE from '@salesforce/label/c.LocationMonitor_DashboardTitle';
 import THRESHOLD_SLIDER_LABEL from '@salesforce/label/c.LocationMonitor_ThresholdSliderLabel';
@@ -22,8 +22,9 @@ export default class LocationMonitor extends LightningElement {
 
   @track thresholdValue = 2.5;
   @track workOrders = [];
+  @api recordId;
 
-  @wire(getTimesheetEntries)
+  @wire(getTimesheetEntries, { recordId: '$recordId' })
   wiredEntries({ error, data }) {
     if (data) {
       const workOrderMap = new Map();

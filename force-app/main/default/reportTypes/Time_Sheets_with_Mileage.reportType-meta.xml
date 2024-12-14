@@ -208,6 +208,11 @@
             <field>Type__c</field>
             <table>TimeSheet.Mileage_Entries__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Timesheet_Date__c</field>
+            <table>TimeSheet.Mileage_Entries__r</table>
+        </columns>
         <masterLabel>Mileage Entries</masterLabel>
     </sections>
 </ReportType>

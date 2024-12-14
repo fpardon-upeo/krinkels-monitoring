@@ -168,7 +168,7 @@ public with sharing class ServiceAppointmentTriggerHandler {
             Id parentWorkOrderId = childToParentMap.get(childSA.ParentRecordId);
             List<ServiceAppointment> parentSAs = parentWOtoSAMap.get(parentWorkOrderId);
 
-            if (parentSAs != null && !parentSAs.isEmpty()) {
+            if (parentSAs != null && !parentSAs.isEmpty() && parentSAs[0].SchedStartTime != null && parentSAs[0].SchedEndTime != null && parentSAs[0].Duration != null) {
                 ServiceAppointment parentSA = parentSAs[0]; // Take first parent SA as reference
                 childSA.SchedStartTime = parentSA.SchedEndTime;
                 childSA.SchedEndTime = parentSA.SchedEndTime.addMinutes((Integer)parentSA.Duration);

@@ -754,7 +754,7 @@
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Operational_Account</recordType>
         <type>Flexipage</type>
-        <profile>Operator</profile>
+        <profile>Operator Indoor</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -916,7 +916,7 @@
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Group_Account</recordType>
         <type>Flexipage</type>
-        <profile>Operator</profile>
+        <profile>Operator Indoor</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -1069,7 +1069,7 @@
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <recordType>Opportunity.B2B_Tender</recordType>
         <type>Flexipage</type>
-        <profile>Operator</profile>
+        <profile>Operator Indoor</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -1366,7 +1366,7 @@
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <recordType>Opportunity.Public_Tender</recordType>
         <type>Flexipage</type>
-        <profile>Operator</profile>
+        <profile>Operator Indoor</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -1605,7 +1605,7 @@
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <recordType>Opportunity.Quick_Quote</recordType>
         <type>Flexipage</type>
-        <profile>Operator</profile>
+        <profile>Operator Indoor</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -1848,7 +1848,7 @@
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Other</recordType>
         <type>Flexipage</type>
-        <profile>Operator</profile>
+        <profile>Operator Indoor</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>

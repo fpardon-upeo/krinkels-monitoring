@@ -2,9 +2,9 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 14082
+Metadatas: 14101
 
-<details><summary>ApexClass (914)</summary>
+<details><summary>ApexClass (915)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -31,6 +31,7 @@ Metadatas: 14082
   • CallOut<br/>
   • CallOutHandler<br/>
   • CheckInService<br/>
+  • CloneWorkOrderController<br/>
   • ContractLineItemTriggerHandler<br/>
   • CreateChildWorkOrderController<br/>
   • CreateInternalWorkController<br/>
@@ -950,7 +951,8 @@ Metadatas: 14082
   • apexEmailNotifications<br/>
 </details>
 
-<details><summary>ApexPage (73)</summary>
+<details><summary>ApexPage (74)</summary>
+  • CloneWorkOrder<br/>
   • CreateChildWorkOrder<br/>
   • CreateInternalWork<br/>
   • CustomAccountLightboxVfPage<br/>
@@ -1236,7 +1238,7 @@ Metadatas: 14082
   • Opportunity.Quick Quote<br/>
 </details>
 
-<details><summary>CanvasMetadata (7)</summary>
+<details><summary>CanvasMetadata (8)</summary>
   • cadmus_core__PDF_Butler_APAC1_oauth_c4s__PDF_Butler_APAC1_oauth_c4sCanvas<br/>
   • cadmus_core__PDF_Butler_CA1_oauth_c4s__PDF_Butler_CA1_oauth_c4sCanvas<br/>
   • cadmus_core__PDF_Butler_EU1_oauth_c4s__PDF_Butler_EU1_oauth_c4sCanvas<br/>
@@ -1244,6 +1246,7 @@ Metadatas: 14082
   • cadmus_core__PDF_Butler_MV_EU1_oauth_c4s__PDF_Butler_MV_EU1_oauth_c4sCanvas<br/>
   • cadmus_core__PDF_Butler_MV_US1_oauth_c4s__PDF_Butler_MV_US1_oauth_c4sCanvas<br/>
   • cadmus_core__PDF_Butler_US1_oauth_c4s__PDF_Butler_US1_oauth_c4sCanvas<br/>
+  • mule__dataloaderio_v2_oauth_c4s__dataloaderio_v2_oauth_c4sCanvas<br/>
 </details>
 
 <details><summary>Certificate (1)</summary>
@@ -1352,7 +1355,7 @@ Metadatas: 14082
   • standard__ServiceConsole<br/>
 </details>
 
-<details><summary>CustomField (1471)</summary>
+<details><summary>CustomField (1472)</summary>
   • ATAK_Internal_Project_Map__mdt.ATAK_Code__c<br/>
   • ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c<br/>
   • ATAK_Internal_Project_Map__mdt.Performance_Type__c<br/>
@@ -2312,6 +2315,7 @@ Metadatas: 14082
   • Mileage_Entry__c.Starting_Location_Type__c<br/>
   • Mileage_Entry__c.Starting_Mileage__c<br/>
   • Mileage_Entry__c.Time_Sheet__c<br/>
+  • Mileage_Entry__c.Timesheet_Date__c<br/>
   • Mileage_Entry__c.Type__c<br/>
   • Mileage_Entry__c.Work_Order__c<br/>
   • Operator_Created_Event__e.User_Id__c<br/>
@@ -11289,7 +11293,7 @@ Metadatas: 14082
   • cadmus_core__PDF_Butler_Pack_Record_Page<br/>
 </details>
 
-<details><summary>Flow (78)</summary>
+<details><summary>Flow (79)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -11314,6 +11318,7 @@ Metadatas: 14082
   • Quote_After_Save_Create_Work_Order_on_Acceptance<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
   • Quote_After_Save_Update_Status_to_RfE<br/>
+  • Quote_Gantt_Action_Clone<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -11370,7 +11375,7 @@ Metadatas: 14082
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (78)</summary>
+<details><summary>FlowDefinition (79)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -11395,6 +11400,7 @@ Metadatas: 14082
   • Quote_After_Save_Create_Work_Order_on_Acceptance<br/>
   • Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity<br/>
   • Quote_After_Save_Update_Status_to_RfE<br/>
+  • Quote_Gantt_Action_Clone<br/>
   • ResourceAbsence_After_Save_Break_Time<br/>
   • ResourceAbsence_Before_Save_Set_Timesheet_Id<br/>
   • Resource_Absence_Before_Save<br/>
@@ -11512,13 +11518,14 @@ Metadatas: 14082
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<details><summary>InstalledPackage (10)</summary>
+<details><summary>InstalledPackage (11)</summary>
   • FSL<br/>
   • OIQ<br/>
   • SocialService<br/>
   • bmpyrckt<br/>
   • cadmus_core<br/>
   • mobileLanding<br/>
+  • mule<br/>
   • sf_chttr_apps<br/>
   • sf_com_apps<br/>
   • sf_fieldservice<br/>
@@ -12606,7 +12613,7 @@ Metadatas: 14082
   • Default_Opportunity<br/>
 </details>
 
-<details><summary>PermissionSet (29)</summary>
+<details><summary>PermissionSet (27)</summary>
   • ATAK_Permissions<br/>
   • FSL_Admin_License<br/>
   • FSL_Admin_Permissions<br/>
@@ -12625,7 +12632,6 @@ Metadatas: 14082
   • Lightning_Email_Template_Builder<br/>
   • PDF_Butler_Admin_Local<br/>
   • Query_All_Files<br/>
-  • Test_permission_set<br/>
   • USF_Flow_Screen_Component_Custom_Objects<br/>
   • USF_Flow_Screen_Component_Datatable<br/>
   • bmpyrckt__Timeline_User<br/>
@@ -12635,15 +12641,14 @@ Metadatas: 14082
   • fileUploadImproved<br/>
   • sfdcInternalInt__sfdc_fieldservice<br/>
   • sfdcInternalInt__sfdc_scrt2<br/>
-  • test_permission<br/>
 </details>
 
 <details><summary>PermissionSetGroup (5)</summary>
   • Admin_Permission_Set_Group<br/>
   • Business_Support_Permission_Set_Group<br/>
   • Contract_Manager_Permission_Set_Group<br/>
+  • Manager_Permission_Set_Group<br/>
   • Operator_Permission_Set_Group<br/>
-  • Test_Permission_set_group<br/>
 </details>
 
 <details><summary>PlatformEventChannelMember (2)</summary>
@@ -12661,7 +12666,7 @@ Metadatas: 14082
   • default_presence_config<br/>
 </details>
 
-<details><summary>Profile (25)</summary>
+<details><summary>Profile (26)</summary>
   • Admin<br/>
   • Analytics Cloud Integration User<br/>
   • Analytics Cloud Security User<br/>
@@ -12680,7 +12685,8 @@ Metadatas: 14082
   • MarketingProfile<br/>
   • Minimum Access - API Only Integrations<br/>
   • Minimum Access - Salesforce<br/>
-  • Operator<br/>
+  • Operator Indoor<br/>
+  • Operator Outdoor<br/>
   • Partner Community User<br/>
   • Read Only<br/>
   • Sales Insights Integration User<br/>
@@ -13031,7 +13037,7 @@ Metadatas: 14082
   • sf_fieldservice__FSL_Google_Maps_API<br/>
 </details>
 
-<details><summary>Report (206)</summary>
+<details><summary>Report (207)</summary>
   • BusienssSupport/<br/>
   • BusienssSupport/All_Mileage_Entries_this_Month_Tpl<br/>
   • BusienssSupport/All_TS_This_Month_Starting_Allowance_7BQ<br/>
@@ -13196,6 +13202,7 @@ Metadatas: 14082
   • Service_Dashboards_Reports/Trend_of_Cases_Closed<br/>
   • Service_Dashboards_Reports/Trend_of_Cases_Created<br/>
   • unfiled$public/<br/>
+  • unfiled$public/ALL_ATAK_PERSONEEL_IN1<br/>
   • unfiled$public/Crew_Members_Planning_oXN<br/>
   • unfiled$public/Goodwill_Tasks_Report_S7D<br/>
   • unfiled$public/Opportunity_Amount_by_Stage_Sample<br/>
@@ -13269,10 +13276,22 @@ Metadatas: 14082
   • screen_flows_prebuilt_crt<br/>
 </details>
 
-<details><summary>Role (3)</summary>
-  • Contract_Manager_X<br/>
+<details><summary>Role (15)</summary>
+  • Contract_Manager_Angelique_Moonen<br/>
+  • Contract_Manager_Arne_Hombroeckx<br/>
+  • Contract_Manager_Aur_lien_Wandels<br/>
+  • Contract_Manager_Gauthier_Verstraete<br/>
+  • Contract_Manager_Jimmy_Vandewalle<br/>
+  • Contract_Manager_Simon_Burggraeve<br/>
+  • Contract_Manager_Yentl_Pletinckx<br/>
   • Management_Business_Support<br/>
-  • Operator_Territory_X<br/>
+  • Operator_Territory_Angelique_Moonen<br/>
+  • Operator_Territory_Arne_Hombroeckx<br/>
+  • Operator_Territory_Aur_lien_Wandels<br/>
+  • Operator_Territory_Gauthier_Verstraete<br/>
+  • Operator_Territory_Jimmy_Vandewalle<br/>
+  • Operator_Territory_Simon_Burggraeve<br/>
+  • Operator_Territory_Yentl_Pletinckx<br/>
 </details>
 
 <details><summary>ServiceChannel (3)</summary>

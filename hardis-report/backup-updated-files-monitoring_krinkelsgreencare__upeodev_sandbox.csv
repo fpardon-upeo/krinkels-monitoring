@@ -1,61 +1,29 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-approvalProcesses/Quote.Approval_Process_Quote_Over_5000.approvalProcess-meta.xml," ",ApprovalProcess Quote.Approval_Process_Quote_Over_5000,M,,log,📰
-classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
-classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
-classes/MaintenancePlanServiceTest.cls," ",ApexClass MaintenancePlanServiceTest,M,,log,📰
-classes/ServiceAppointmentRescheduler.cls," ",ApexClass ServiceAppointmentRescheduler,M,,log,📰
+Canvases/mule__dataloaderio_v2_oauth_c4s__dataloaderio_v2_oauth_c4sCanvas.Canvas-meta.xml,A,CanvasMetadata mule__dataloaderio_v2_oauth_c4s__dataloaderio_v2_oauth_c4sCanvas,,,log,📰
+applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
+applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
+classes/CloneWorkOrderController.cls,A,ApexClass CloneWorkOrderController,,,log,📰
+classes/CloneWorkOrderController.cls-meta.xml,A,ApexClass CloneWorkOrderController,,,log,📰
+classes/LocationMonitorController.cls," ",ApexClass LocationMonitorController,M,,log,📰
 classes/ServiceAppointmentTriggerHandler.cls," ",ApexClass ServiceAppointmentTriggerHandler,M,,log,📰
-classes/WorkOrderSchedulerBatch.cls," ",ApexClass WorkOrderSchedulerBatch,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/B2B_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage B2B_Opportunity_Record_Page,M,,log,📰
-flexipages/Public_Tender_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Public_Tender_Opportunity_Record_Page,M,,log,📰
-flexipages/Quick_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Quick_Opportunity_Record_Page,M,,log,📰
-flexipages/Quote_Quick_Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Quick_Quote_Record_Page,M,,log,📰
-flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
-flexipages/Service_Appointment_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Appointment_Record_Page,M,,log,📰
-flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
-flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
+email/CustomerNotifications.emailFolder-meta.xml," ",EmailTemplate CustomerNotificationsFolder-meta.xml,M,,log,📰
 flowDefinitions/Account_Screen_Flow_Add_Extra_Work_Quote.flowDefinition-meta.xml," ",FlowDefinition Account_Screen_Flow_Add_Extra_Work_Quote,M,,log,📰
 flowDefinitions/Quote_After_Save_Create_Work_Order_on_Acceptance.flowDefinition-meta.xml," ",FlowDefinition Quote_After_Save_Create_Work_Order_on_Acceptance,M,,log,📰
-flowDefinitions/Quote_After_Save_Update_Status_to_RfE.flowDefinition-meta.xml,A,FlowDefinition Quote_After_Save_Update_Status_to_RfE,,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flowDefinitions/Work_Order_Screen_Flow_Create_Waste_Depot_Visit.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Screen_Flow_Create_Waste_Depot_Visit,M,,log,📰
+flowDefinitions/Quote_Gantt_Action_Clone.flowDefinition-meta.xml,A,FlowDefinition Quote_Gantt_Action_Clone,,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage,M,,log,📰
 flows/Account_Screen_Flow_Add_Extra_Work_Quote.flow-meta.xml," ",Flow Account_Screen_Flow_Add_Extra_Work_Quote,M,,log,📰
 flows/Quote_After_Save_Create_Work_Order_on_Acceptance.flow-meta.xml," ",Flow Quote_After_Save_Create_Work_Order_on_Acceptance,M,,log,📰
-flows/Quote_After_Save_Update_Status_to_RfE.flow-meta.xml,A,Flow Quote_After_Save_Update_Status_to_RfE,,,log,📰
-flows/Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO.flow-meta.xml," ",Flow Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO,M,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flows/Work_Order_Screen_Flow_Create_Waste_Depot_Visit.flow-meta.xml," ",Flow Work_Order_Screen_Flow_Create_Waste_Depot_Visit,M,,log,📰
-layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
-layouts/Opportunity-Opportunity Layout.layout-meta.xml," ",Layout Opportunity-Opportunity Layout,M,,log,📰
-layouts/Quote-Quote Layout.layout-meta.xml," ",Layout Quote-Quote Layout,M,,log,📰
-layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
-lwc/workOrderCreator/workOrderCreator.html," ",LightningComponentBundle workOrderCreator/workOrderCreator.html,M,,log,📰
-objects/Opportunity/fields/Business_Type__c.field-meta.xml,A,CustomField Business_Type__c,,,log,📰
-objects/Opportunity/fields/Channel_Partner__c.field-meta.xml,A,CustomField Channel_Partner__c,,,log,📰
-objects/Opportunity/fields/Competitor_Information__c.field-meta.xml,A,CustomField Competitor_Information__c,,,log,📰
-objects/Opportunity/fields/Contract_Type__c.field-meta.xml,A,CustomField Contract_Type__c,,,log,📰
-objects/Opportunity/fields/Expected_Contract_Start_Date__c.field-meta.xml,A,CustomField Expected_Contract_Start_Date__c,,,log,📰
-objects/Opportunity/fields/Initiative_Party__c.field-meta.xml,A,CustomField Initiative_Party__c,,,log,📰
-objects/Opportunity/fields/Specification_Number__c.field-meta.xml,A,CustomField Specification_Number__c,,,log,📰
-objects/Opportunity/fields/Submission_Date_Due__c.field-meta.xml,A,CustomField Submission_Date_Due__c,,,log,📰
-objects/Opportunity/fields/Submission_Method__c.field-meta.xml,A,CustomField Submission_Method__c,,,log,📰
-objects/Opportunity/recordTypes/B2B_Tender.recordType-meta.xml," ",RecordType B2B_Tender,M,,log,📰
-objects/Opportunity/recordTypes/Public_Tender.recordType-meta.xml," ",RecordType Public_Tender,M,,log,📰
-objects/Opportunity/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
-objects/Quote/compactLayouts/Quote_Compact_Layout.compactLayout-meta.xml," ",CompactLayout Quote_Compact_Layout,M,,log,📰
-objects/Quote/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
-objects/Quote/validationRules/Maximum_Value_for_Quick_Quote.validationRule-meta.xml," ",ValidationRule Maximum_Value_for_Quick_Quote,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Appointment_Expanded.fieldSet-meta.xml," ",FieldSet FSL__Service_Appointment_Expanded,M,,log,📰
-objects/ServiceAppointment/fieldSets/FSL__Service_Appointment_List_Columns.fieldSet-meta.xml," ",FieldSet FSL__Service_Appointment_List_Columns,M,,log,📰
-objects/ServiceContract/fields/Service_Appointments_Color_on_Gantt__c.field-meta.xml,A,CustomField Service_Appointments_Color_on_Gantt__c,,,log,📰
-objects/ServiceContract/fields/Service_Appointments_Icon_on_Gantt__c.field-meta.xml,A,CustomField Service_Appointments_Icon_on_Gantt__c,,,log,📰
-objects/WorkOrder/compactLayouts/Work_Order_Compact_Layout.compactLayout-meta.xml," ",CompactLayout Work_Order_Compact_Layout,M,,log,📰
-permissionsetgroups/Test_Permission_set_group.permissionsetgroup-meta.xml,A,PermissionSetGroup Test_Permission_set_group,,,log,📰
-permissionsets/Test_permission_set.permissionset-meta.xml,A,PermissionSet Test_permission_set,,,log,📰
-permissionsets/test_permission.permissionset-meta.xml,A,PermissionSet test_permission,,,log,📰
+flows/Quote_Gantt_Action_Clone.flow-meta.xml,A,Flow Quote_Gantt_Action_Clone,,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps,M,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage,M,,log,📰
+layouts/Mileage_Entry__c-Mileage Entry Layout.layout-meta.xml," ",Layout Mileage_Entry__c-Mileage Entry Layout,M,,log,📰
+lwc/locationMonitor/locationMonitor.js," ",LightningComponentBundle locationMonitor/locationMonitor.js,M,,log,📰
+objects/Mileage_Entry__c/fields/Timesheet_Date__c.field-meta.xml,A,CustomField Timesheet_Date__c,,,log,📰
+pages/CloneWorkOrder.page,A,ApexPage CloneWorkOrder,,,log,📰
+pages/CloneWorkOrder.page-meta.xml,A,ApexPage CloneWorkOrder,,,log,📰
+permissionsetgroups/Manager_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Manager_Permission_Set_Group,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -74,19 +42,30 @@ profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
 profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
 profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
 profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
-profiles/Operator.profile-meta.xml," ",Profile Operator,M,,log,📰
+profiles/Operator Indoor.profile-meta.xml,A,Profile Operator Indoor,,,log,📰
+profiles/Operator Outdoor.profile-meta.xml,A,Profile Operator Outdoor,,,log,📰
 profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
 profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
 profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-reportTypes/Opportunities_with_Historical_Trending.reportType-meta.xml," ",ReportType Opportunities_with_Historical_Trending,M,,log,📰
-reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml," ",ReportType Service_Contracts_with_Work_Orders,M,,log,📰
-reportTypes/Service_contracts.reportType-meta.xml," ",ReportType Service_contracts,M,,log,📰
-reports/Management/New_Deelproject_needed_additional_work_blh.report-meta.xml," ",Report Management/New_Deelproject_needed_additional_work_blh,M,,log,📰
-settings/Forecasting.settings-meta.xml," ",Settings Forecasting,M,,log,📰
-settings/ForecastingObjectList.settings-meta.xml," ",Settings ForecastingObjectList,M,,log,📰
-standardValueSets/QuoteStatus.standardValueSet-meta.xml," ",StandardValueSet QuoteStatus,M,,log,📰
+reportTypes/Time_Sheets_with_Mileage.reportType-meta.xml," ",ReportType Time_Sheets_with_Mileage,M,,log,📰
+reports/unfiled$public/ALL_ATAK_PERSONEEL_IN1.report-meta.xml,A,Report unfiled$public/ALL_ATAK_PERSONEEL_IN1,,,log,📰
+roles/Contract_Manager_Angelique_Moonen.role-meta.xml,A,Role Contract_Manager_Angelique_Moonen,,,log,📰
+roles/Contract_Manager_Arne_Hombroeckx.role-meta.xml,A,Role Contract_Manager_Arne_Hombroeckx,,,log,📰
+roles/Contract_Manager_Aur_lien_Wandels.role-meta.xml,A,Role Contract_Manager_Aur_lien_Wandels,,,log,📰
+roles/Contract_Manager_Gauthier_Verstraete.role-meta.xml,A,Role Contract_Manager_Gauthier_Verstraete,,,log,📰
+roles/Contract_Manager_Jimmy_Vandewalle.role-meta.xml,A,Role Contract_Manager_Jimmy_Vandewalle,,,log,📰
+roles/Contract_Manager_Simon_Burggraeve.role-meta.xml,A,Role Contract_Manager_Simon_Burggraeve,,,log,📰
+roles/Contract_Manager_Yentl_Pletinckx.role-meta.xml,A,Role Contract_Manager_Yentl_Pletinckx,,,log,📰
+roles/Operator_Territory_Angelique_Moonen.role-meta.xml,A,Role Operator_Territory_Angelique_Moonen,,,log,📰
+roles/Operator_Territory_Arne_Hombroeckx.role-meta.xml,A,Role Operator_Territory_Arne_Hombroeckx,,,log,📰
+roles/Operator_Territory_Aur_lien_Wandels.role-meta.xml,A,Role Operator_Territory_Aur_lien_Wandels,,,log,📰
+roles/Operator_Territory_Gauthier_Verstraete.role-meta.xml,A,Role Operator_Territory_Gauthier_Verstraete,,,log,📰
+roles/Operator_Territory_Jimmy_Vandewalle.role-meta.xml,A,Role Operator_Territory_Jimmy_Vandewalle,,,log,📰
+roles/Operator_Territory_Simon_Burggraeve.role-meta.xml,A,Role Operator_Territory_Simon_Burggraeve,,,log,📰
+roles/Operator_Territory_Yentl_Pletinckx.role-meta.xml,A,Role Operator_Territory_Yentl_Pletinckx,,,log,📰
+timeSheetTemplates/Default_Timesheet_Daily.timeSheetTemplate-meta.xml," ",TimeSheetTemplate Default_Timesheet_Daily,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

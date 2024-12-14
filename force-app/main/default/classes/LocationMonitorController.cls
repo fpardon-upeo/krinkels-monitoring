@@ -1,6 +1,6 @@
 public with sharing class LocationMonitorController {
     @AuraEnabled(cacheable=true)
-    public static List<TimesheetEntryWrapper> getTimesheetEntries() {
+    public static List<TimesheetEntryWrapper> getTimesheetEntries(String recordId) {
         List<TimesheetEntryWrapper> entries = new List<TimesheetEntryWrapper>();
 
         // Query TimeSheetEntries with their related WorkOrders
@@ -14,6 +14,7 @@ public with sharing class LocationMonitorController {
                 FROM TimeSheetEntry
                 WHERE TimeSheet.EndDate = LAST_N_DAYS:1
                 AND WorkOrder.Id != null
+                AND TimeSheetId = :recordId
                 ORDER BY StartTime DESC
         ];
 

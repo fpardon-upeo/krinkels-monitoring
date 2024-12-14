@@ -27,6 +27,7 @@
         <members>CallOut</members>
         <members>CallOutHandler</members>
         <members>CheckInService</members>
+        <members>CloneWorkOrderController</members>
         <members>ContractLineItemTriggerHandler</members>
         <members>CreateChildWorkOrderController</members>
         <members>CreateInternalWorkController</members>
@@ -121,6 +122,7 @@
         <name>ApexEmailNotifications</name>
     </types>
     <types>
+        <members>CloneWorkOrder</members>
         <members>CreateChildWorkOrder</members>
         <members>CreateInternalWork</members>
         <members>CustomAccountLightboxVfPage</members>
@@ -189,6 +191,10 @@
         <members>Opportunity.Public Tender</members>
         <members>Opportunity.Quick Quote</members>
         <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>mule__dataloaderio_v2_oauth_c4s__dataloaderio_v2_oauth_c4sCanvas</members>
+        <name>CanvasMetadata</name>
     </types>
     <types>
         <members>DataCloudCompanyMatch</members>
@@ -574,6 +580,7 @@
         <members>Mileage_Entry__c.Starting_Location_Type__c</members>
         <members>Mileage_Entry__c.Starting_Mileage__c</members>
         <members>Mileage_Entry__c.Time_Sheet__c</members>
+        <members>Mileage_Entry__c.Timesheet_Date__c</members>
         <members>Mileage_Entry__c.Type__c</members>
         <members>Mileage_Entry__c.Work_Order__c</members>
         <members>Operator_Created_Event__e.User_Id__c</members>
@@ -1820,6 +1827,7 @@
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Update_Status_to_RfE</members>
+        <members>Quote_Gantt_Action_Clone</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -1899,6 +1907,7 @@
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Update_Status_to_RfE</members>
+        <members>Quote_Gantt_Action_Clone</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
@@ -2015,6 +2024,10 @@
     <types>
         <members>IframeWhiteListUrlSettings</members>
         <name>IframeWhiteListUrlSettings</name>
+    </types>
+    <types>
+        <members>mule</members>
+        <name>InstalledPackage</name>
     </types>
     <types>
         <members>ATAK_Internal_Project_Map__mdt-ATAK Internal Project Map Layout</members>
@@ -2423,22 +2436,20 @@
         <members>Lightning_Email_Template_Builder</members>
         <members>PDF_Butler_Admin_Local</members>
         <members>Query_All_Files</members>
-        <members>Test_permission_set</members>
         <members>USF_Flow_Screen_Component_Custom_Objects</members>
         <members>USF_Flow_Screen_Component_Datatable</members>
         <members>cases_Permisssion_Set</members>
         <members>fileUploadImproved</members>
         <members>sfdcInternalInt__sfdc_fieldservice</members>
         <members>sfdcInternalInt__sfdc_scrt2</members>
-        <members>test_permission</members>
         <name>PermissionSet</name>
     </types>
     <types>
         <members>Admin_Permission_Set_Group</members>
         <members>Business_Support_Permission_Set_Group</members>
         <members>Contract_Manager_Permission_Set_Group</members>
+        <members>Manager_Permission_Set_Group</members>
         <members>Operator_Permission_Set_Group</members>
-        <members>Test_Permission_set_group</members>
         <name>PermissionSetGroup</name>
     </types>
     <types>
@@ -2475,7 +2486,8 @@
         <members>MarketingProfile</members>
         <members>Minimum Access - API Only Integrations</members>
         <members>Minimum Access - Salesforce</members>
-        <members>Operator</members>
+        <members>Operator Indoor</members>
+        <members>Operator Outdoor</members>
         <members>Partner Community User</members>
         <members>Read Only</members>
         <members>Sales Insights Integration User</members>
@@ -2877,6 +2889,7 @@
         <members>Service_Dashboards_Reports/Trend_of_Cases_Closed</members>
         <members>Service_Dashboards_Reports/Trend_of_Cases_Created</members>
         <members>unfiled$public/</members>
+        <members>unfiled$public/ALL_ATAK_PERSONEEL_IN1</members>
         <members>unfiled$public/Crew_Members_Planning_oXN</members>
         <members>unfiled$public/Goodwill_Tasks_Report_S7D</members>
         <members>unfiled$public/Opportunity_Amount_by_Stage_Sample</members>
@@ -2948,9 +2961,21 @@
         <name>ReportType</name>
     </types>
     <types>
-        <members>Contract_Manager_X</members>
+        <members>Contract_Manager_Angelique_Moonen</members>
+        <members>Contract_Manager_Arne_Hombroeckx</members>
+        <members>Contract_Manager_Aur_lien_Wandels</members>
+        <members>Contract_Manager_Gauthier_Verstraete</members>
+        <members>Contract_Manager_Jimmy_Vandewalle</members>
+        <members>Contract_Manager_Simon_Burggraeve</members>
+        <members>Contract_Manager_Yentl_Pletinckx</members>
         <members>Management_Business_Support</members>
-        <members>Operator_Territory_X</members>
+        <members>Operator_Territory_Angelique_Moonen</members>
+        <members>Operator_Territory_Arne_Hombroeckx</members>
+        <members>Operator_Territory_Aur_lien_Wandels</members>
+        <members>Operator_Territory_Gauthier_Verstraete</members>
+        <members>Operator_Territory_Jimmy_Vandewalle</members>
+        <members>Operator_Territory_Simon_Burggraeve</members>
+        <members>Operator_Territory_Yentl_Pletinckx</members>
         <name>Role</name>
     </types>
     <types>

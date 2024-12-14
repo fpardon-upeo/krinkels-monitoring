@@ -5,7 +5,7 @@
         <name>Increment_Order</name>
         <label>Increment Order</label>
         <locationX>138</locationX>
-        <locationY>1079</locationY>
+        <locationY>1379</locationY>
         <assignmentItems>
             <assignToReference>IncrementOrder</assignToReference>
             <operator>Add</operator>
@@ -18,10 +18,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Set_beforeExecutions</name>
+        <label>Set beforeExecutions</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>BeforePhotosOrder</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_WOL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Set_Values_for_Work_Steps</name>
         <label>Set Values for Work Steps</label>
         <locationX>138</locationX>
-        <locationY>971</locationY>
+        <locationY>1271</locationY>
         <assignmentItems>
             <assignToReference>WorkStepRecord.WorkOrderId</assignToReference>
             <operator>Assign</operator>
@@ -69,10 +85,35 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Check_beforeExectionsOrder</name>
+        <label>Check beforeExectionsOrder</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Get_WOL</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BeforePhotosOrder</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_beforeExecutions</targetReference>
+            </connector>
+            <label>Is Null</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>WOL_presents</name>
         <label>WOL presents ?</label>
         <locationX>182</locationX>
-        <locationY>755</locationY>
+        <locationY>1055</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_WOL_presents</name>
@@ -125,7 +166,7 @@
         <name>Loop_Through_WOL</name>
         <label>Loop Through WOL</label>
         <locationX>50</locationX>
-        <locationY>863</locationY>
+        <locationY>1163</locationY>
         <collectionReference>Get_WOL</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -158,7 +199,7 @@
         <name>Create_New_Work_Steps</name>
         <label>Create New Work Steps</label>
         <locationX>50</locationX>
-        <locationY>1271</locationY>
+        <locationY>1571</locationY>
         <connector>
             <targetReference>Create_Platform_Event_to_Reorder_Last_Steps</targetReference>
         </connector>
@@ -168,7 +209,7 @@
         <name>Create_Platform_Event_to_Reorder_Last_Steps</name>
         <label>Create Platform Event to Reorder Last Steps</label>
         <locationX>50</locationX>
-        <locationY>1379</locationY>
+        <locationY>1679</locationY>
         <inputAssignments>
             <field>Next_Number__c</field>
             <value>
@@ -191,7 +232,7 @@
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_WOL</targetReference>
+            <targetReference>Check_beforeExectionsOrder</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -218,7 +259,7 @@
         <name>Get_WOL</name>
         <label>Get WOL</label>
         <locationX>182</locationX>
-        <locationY>647</locationY>
+        <locationY>947</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>WOL_presents</targetReference>
