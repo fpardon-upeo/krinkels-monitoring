@@ -91,6 +91,7 @@ public with sharing class ATAKPerformanceService {
 
         List<TimeSheetEntry> tsEntries = [
                 SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
+                        WorkOrder.Asset.Name,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
                 FROM TimeSheetEntry WHERE TimesheetId = :tsId
@@ -152,6 +153,7 @@ public with sharing class ATAKPerformanceService {
 
         List<TimeSheetEntry> tsEntries = [
                 SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
+                        WorkOrder.Asset.Name,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
                 FROM TimeSheetEntry WHERE TimesheetId = :tsId
@@ -226,6 +228,7 @@ public with sharing class ATAKPerformanceService {
 
         List<Mileage_Entry__c> mileageEntries = [
                 SELECT Id, CreatedDate,
+                        Work_Order__r.Asset.Name,
                         Time_Sheet__r.StartDate, Codes_ATAK_Limbus__c, Type__c,
                         Calculated_Mileage__c, Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c, Service_Resource__r.RelatedRecord.ATAK_Code__c
                 FROM Mileage_Entry__c WHERE Time_Sheet__c = :tsId
@@ -249,6 +252,7 @@ public with sharing class ATAKPerformanceService {
         //Get all TSEs from the Timesheet that are not in the list and where Code_ATAK_Limbus__c != 'RT' or != 'HR'
         List<TimeSheetEntry> tses = [
                 SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
+                        WorkOrder.Asset.Name,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
                 FROM TimeSheetEntry WHERE TimesheetId = :tsId AND Id NOT IN :tseIds AND Code_ATAK_Limbus__c != 'RT' AND Code_ATAK_Limbus__c != 'HR'
@@ -359,7 +363,7 @@ public with sharing class ATAKPerformanceService {
         data.performance_resource_type = 'P'; //P for personnel
         data.projectcode = tsEntry.WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c;
         data.quantity_registration_unit = tsEntry.Code_ATAK_Limbus__c;
-        data.remarks = tsEntry.WorkOrder.Subject;
+        data.remarks = tsEntry.WorkOrder.Asset.Name;
 
         // If quantity_registration_unit is "P", then quantity is always 1
         if (data.quantity_registration_unit == 'P') {
@@ -390,10 +394,13 @@ public with sharing class ATAKPerformanceService {
         String atakProject = '';
 
         if(mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Starting'){
+            System.debug('is starting and no subproject');
             atakProject = firstSubProject;
         } else if(mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Ending'){
+            System.debug('is ending and no subproject');
             atakProject = lastSubProject;
         } else {
+            System.debug('is normal and has subproject');
             atakProject = mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c;
         }
 

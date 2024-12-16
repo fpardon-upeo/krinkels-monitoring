@@ -5,6 +5,7 @@
 import { api, LightningElement, track } from "lwc";
 import checkIn from '@salesforce/apex/CheckInService.checkIn';
 import { getLocationService } from "lightning/mobileCapabilities";
+import { updateRecord } from "lightning/uiRecordApi";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { NavigationMixin } from 'lightning/navigation';
 import { CloseActionScreenEvent } from 'lightning/actions';
@@ -42,8 +43,23 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
 
   connectedCallback() {
     console.log('connectedCallback');
+    this.updateWorkStepToCompleted();
     this.myLocationService = getLocationService();
     this.getLocation();
+  }
+
+  updateWorkStepToCompleted() {
+    const fields = {};
+    fields['Status'] = 'Completed';
+    fields['Id'] = this.recordId;
+    const recordInput = { fields };
+    updateRecord( recordInput )
+      .then(() => {
+        console.log('Record updated');
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   showToast(title, message, variant) {

@@ -96,6 +96,9 @@ export default class TimesheetEntryForm extends LightningElement {
                   }
                 ]
               }
+              orderBy: {
+                ServiceAppointment: { SchedStartTime: { order: ASC } }
+              }
             ) {
               edges {
                 node {
@@ -103,6 +106,12 @@ export default class TimesheetEntryForm extends LightningElement {
                     AppointmentNumber {
                       value
                       displayValue
+                    }
+                    Account {
+                      Name {
+                        value
+                        displayValue
+                      }
                     }
                     Id
                     Subject {
@@ -116,6 +125,11 @@ export default class TimesheetEntryForm extends LightningElement {
                     ParentRecordId {
                       value
                       displayValue
+                    }
+                    WorkType {
+                      Name {
+                        value
+                      }
                     }
                   }
                 }
@@ -133,13 +147,44 @@ export default class TimesheetEntryForm extends LightningElement {
         (edge) => edge.node.ServiceAppointment
       );
       this.serviceAppointments = this.data.map((appointment) => {
+        //Pretty schedule start time
+        let date = new Date(appointment.SchedStartTime.value);
+        //Use the date and the cleaned up hours and minutes, use 24h format
+        let dateFormatted =
+          date.getDate() +
+          "/" +
+          (date.getMonth() + 1) +
+          " " +
+          date.getHours() +
+          ":" +
+          date.getMinutes();
+        //Make sure we don't return things like 14:0, but 14:00
+        dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
+
+        let icon = "";
+        if (appointment.WorkType.Name.value === "Waste Management") {
+          icon = "🗑️";
+        } else if (appointment.WorkType.Name.value === "Internal Depot") {
+          icon = "🏭";
+        } else {
+          icon = "💲";
+        }
+
         return {
-          Appointment: appointment.Subject.value,
+          Appointment:
+            icon +
+            " " +
+            appointment.Account.Name.value +
+            " - " +
+            dateFormatted +
+            " - " +
+            appointment.WorkType.Name.value,
           AppointmentNumber: appointment.AppointmentNumber.value,
           Subject: appointment.Subject.value,
           Id: appointment.Id,
           SchedStartTime: appointment.SchedStartTime.value,
-          ParentRecordId: appointment.ParentRecordId.value
+          ParentRecordId: appointment.ParentRecordId.value,
+          WorkOrderType: appointment.WorkType.Name.value
         };
       });
       console.log(JSON.stringify(this.serviceAppointments));

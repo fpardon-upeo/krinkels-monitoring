@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Operator Outdoor Permission Set Group</label>
+    <permissionSets>FSL_Mobile_License</permissionSets>
+    <permissionSets>FSL_Resource_License</permissionSets>
+    <permissionSets>FSL_Resource_Permissions</permissionSets>
+    <permissionSets>Field_Service_Mobile_Custom_Permission_Set</permissionSets>
+    <permissionSets>fileUploadImproved</permissionSets>
+    <permissionSets>force__FieldServiceDocumentBuilderMobile</permissionSets>
+    <permissionSets>force__FieldServiceMobileStandardPermSet</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

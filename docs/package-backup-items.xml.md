@@ -2,7 +2,7 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 3314
+Metadatas: 3316
 
 <details><summary>ApexClass (114)</summary>
   • ATAKMaterialService<br/>
@@ -2448,12 +2448,14 @@ Metadatas: 3314
   • sfdcInternalInt__sfdc_scrt2<br/>
 </details>
 
-<details><summary>PermissionSetGroup (5)</summary>
+<details><summary>PermissionSetGroup (7)</summary>
   • Admin_Permission_Set_Group<br/>
   • Business_Support_Permission_Set_Group<br/>
   • Contract_Manager_Permission_Set_Group<br/>
+  • External_Operator_Permission_Set_Group<br/>
   • Manager_Permission_Set_Group<br/>
-  • Operator_Permission_Set_Group<br/>
+  • Operator_Indoor_Permission_Set_Group<br/>
+  • Operator_Outdoor_Permission_Set_Group<br/>
 </details>
 
 <details><summary>PlatformEventChannelMember (2)</summary>

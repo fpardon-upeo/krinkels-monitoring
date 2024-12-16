@@ -1,2 +1,19 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+flexipages/Maintenance_Plan_Record_Page.flexipage-meta.xml," ",FlexiPage Maintenance_Plan_Record_Page,M,,log,📰
+flowDefinitions/Quote_After_Save_Create_Work_Order_on_Acceptance.flowDefinition-meta.xml," ",FlowDefinition Quote_After_Save_Create_Work_Order_on_Acceptance,M,,log,📰
+flows/Quote_After_Save_Create_Work_Order_on_Acceptance.flow-meta.xml," ",Flow Quote_After_Save_Create_Work_Order_on_Acceptance,M,,log,📰
+lwc/checkIn/checkIn.js," ",LightningComponentBundle checkIn/checkIn.js,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.js," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,M,,log,📰
+permissionsetgroups/Admin_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Admin_Permission_Set_Group,M,,log,📰
+permissionsetgroups/Business_Support_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Business_Support_Permission_Set_Group,M,,log,📰
+permissionsetgroups/Contract_Manager_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Contract_Manager_Permission_Set_Group,M,,log,📰
+permissionsetgroups/External_Operator_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup External_Operator_Permission_Set_Group,,,log,📰
+permissionsetgroups/Manager_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Manager_Permission_Set_Group,M,,log,📰
+permissionsetgroups/Operator_Indoor_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Operator_Indoor_Permission_Set_Group,,,log,📰
+permissionsetgroups/Operator_Outdoor_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Operator_Outdoor_Permission_Set_Group,,,log,📰
+manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
+manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

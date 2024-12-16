@@ -5,7 +5,7 @@
         <name>Set_Work_Order_Initial_Values</name>
         <label>Set Work Order Initial Values</label>
         <locationX>176</locationX>
-        <locationY>971</locationY>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>extraWorkOrder.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -119,7 +119,7 @@
     <formulas>
         <name>assetName</name>
         <dataType>String</dataType>
-        <expression>&quot;Extra Work - &quot; +{!$Record.QuoteAccount.Parent.Alias_commercial_customer_name__c} +&quot; - &quot; + {!$Record.QuoteAccount.ShippingStreet}</expression>
+        <expression>{!$Record.Name}</expression>
     </formulas>
     <interviewLabel>[Quote] - [After-Save] - Create Work Order on Acceptance {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Quote] - [After-Save] - Create Work Order on Acceptance</label>
@@ -146,29 +146,14 @@
         <name>Create_Asset</name>
         <label>Create Asset</label>
         <locationX>176</locationX>
-        <locationY>863</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Set_Work_Order_Initial_Values</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>AccountId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record__Prior.QuoteAccountId</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Product2Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Extra_Work_Product.Id</elementReference>
-            </value>
-        </filters>
         <inputAssignments>
             <field>ATAK_Project__c</field>
             <value>
-                <elementReference>$Record.Opportunity.ATAK_Projectx__c</elementReference>
+                <elementReference>$Record.ATAK_Project__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -196,16 +181,13 @@
             </value>
         </inputAssignments>
         <object>Asset</object>
-        <operationMultMatchingRecords>UpdateLatestRecord</operationMultMatchingRecords>
-        <operationOneMatchingRecord>UpdateAllRecords</operationOneMatchingRecord>
-        <operationZeroMatchingRecords>AddRecord</operationZeroMatchingRecords>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <name>Create_Work_Order</name>
         <label>Create Work Order</label>
         <locationX>176</locationX>
-        <locationY>1079</locationY>
+        <locationY>971</locationY>
         <connector>
             <targetReference>Get_Quote_Line_Items</targetReference>
         </connector>
@@ -215,7 +197,7 @@
         <name>Create_Work_Order_Line</name>
         <label>Create Work Order Line</label>
         <locationX>176</locationX>
-        <locationY>1295</locationY>
+        <locationY>1187</locationY>
         <inputAssignments>
             <field>Description</field>
             <value>
@@ -238,41 +220,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Extra_Work_Asset_for_Operational_Account</name>
-        <label>Get Extra Work Asset for Operational Account</label>
-        <locationX>176</locationX>
-        <locationY>755</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Asset</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Product2Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Extra_Work_Product.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>AccountId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.AccountId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Asset</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Extra_Work_Product</name>
         <label>Get Extra Work Product</label>
         <locationX>176</locationX>
         <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Extra_Work_Asset_for_Operational_Account</targetReference>
+            <targetReference>Create_Asset</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -332,7 +286,7 @@
         <name>Get_Quote_Line_Items</name>
         <label>Get Quote Line Items</label>
         <locationX>176</locationX>
-        <locationY>1187</locationY>
+        <locationY>1079</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Work_Order_Line</targetReference>

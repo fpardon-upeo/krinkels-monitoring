@@ -2448,8 +2448,10 @@
         <members>Admin_Permission_Set_Group</members>
         <members>Business_Support_Permission_Set_Group</members>
         <members>Contract_Manager_Permission_Set_Group</members>
+        <members>External_Operator_Permission_Set_Group</members>
         <members>Manager_Permission_Set_Group</members>
-        <members>Operator_Permission_Set_Group</members>
+        <members>Operator_Indoor_Permission_Set_Group</members>
+        <members>Operator_Outdoor_Permission_Set_Group</members>
         <name>PermissionSetGroup</name>
     </types>
     <types>

@@ -2,15 +2,8 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Contract Manager Permission Set Group</label>
-    <permissionSets>FSL_Agent_License</permissionSets>
-    <permissionSets>FSL_Agent_Permissions</permissionSets>
     <permissionSets>FSL_Dispatcher_License</permissionSets>
     <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
-    <permissionSets>FSL_Mobile_License</permissionSets>
-    <permissionSets>FSL_Resource_License</permissionSets>
-    <permissionSets>FSL_Resource_Permissions</permissionSets>
     <permissionSets>force__FieldServiceDocumentBuilderDispatcher</permissionSets>
-    <permissionSets>force__FieldServiceDocumentBuilderMobile</permissionSets>
-    <permissionSets>force__FieldServiceDocumentBuilderStandard</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>

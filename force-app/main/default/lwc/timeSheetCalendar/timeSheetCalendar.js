@@ -57,26 +57,6 @@ import Calendar_Edit_Mileage_Entry from "@salesforce/label/c.Calendar_Edit_Milea
 import Calendar_User_Settings from "@salesforce/label/c.Calendar_User_Settings";
 import Calendar_No_Entries from "@salesforce/label/c.Calendar_No_Entries";
 import Calendar_User_Settings_Time_Range from "@salesforce/label/c.Calendar_User_Settings_Time_Range";
-import Calendar_ErrorToast_Title from "@salesforce/label/c.Calendar_ErrorToast_Title";
-import Calendar_ErrorToast_UserSettings_Message from "@salesforce/label/c.Calendar_ErrorToast_UserSettings_Message";
-import Calendar_ErrorToast_NewUserSettings_Message from "@salesforce/label/c.Calendar_ErrorToast_NewUserSettings_Message";
-import Calendar_ErrorToast_EditUserSettings_Message from "@salesforce/label/c.Calendar_ErrorToast_EditUserSettings_Message";
-import Calendar_ErrorToast_SubmitTimeSheet_Message from "@salesforce/label/c.Calendar_ErrorToast_SubmitTimeSheet_Message";
-import Calendar_SuccessToast_Title from "@salesforce/label/c.Calendar_SuccessToast_Title";
-import Calendar_SuccessToast_UpdatedTimeSheetEntry_Message from "@salesforce/label/c.Calendar_SuccessToast_UpdatedTimeSheetEntry_Message";
-import Calendar_SuccessToast_CreatedTimeSheetEntry_Message from "@salesforce/label/c.Calendar_SuccessToast_CreatedTimeSheetEntry_Message";
-import Calendar_SuccessToast_UpdatedResourceAbsence_Message from "@salesforce/label/c.Calendar_SuccessToast_UpdatedResourceAbsence_Message";
-import Calendar_SuccessToast_CreatedMileageEntry_Message from "@salesforce/label/c.Calendar_SuccessToast_CreatedMileageEntry_Message";
-import Calendar_SuccessToast_CreatedResourceAbsence_Message from "@salesforce/label/c.Calendar_SuccessToast_CreatedResourceAbsence_Message";
-import Calendar_SuccessToast_SubmittedTimeSheet_Message from "@salesforce/label/c.Calendar_SuccessToast_SubmittedTimeSheet_Message";
-import Calendar_SuccessToast_NewUserSettings_Message from "@salesforce/label/c.Calendar_SuccessToast_NewUserSettings_Message";
-import Calendar_SuccessToast_UpdatedUserSettings_Message from "@salesforce/label/c.Calendar_SuccessToast_UpdatedUserSettings_Message";
-import Calendar_SuccessToast_UpdatedMileageEntry_Message from "@salesforce/label/c.Calendar_SuccessToast_UpdatedMileageEntry_Message";
-import Calendar_WorkHours_Header from "@salesforce/label/c.Calendar_WorkHours_Header";
-import Calendar_TravelHours_Header from "@salesforce/label/c.Calendar_TravelHours_Header";
-import Calendar_TotalKM_Header from "@salesforce/label/c.Calendar_TotalKM_Header";
-import Calendar_TotalHours_Header from "@salesforce/label/c.Calendar_TotalHours_Header";
-import Calendar_TotalBreak_Header from "@salesforce/label/c.Calendar_TotalBreak_Header";
 
 export default class TimeSheetCalendar extends LightningElement {
   @api recordId;
@@ -185,12 +165,7 @@ export default class TimeSheetCalendar extends LightningElement {
     Calendar_Cancel,
     Calendar_Save,
     Calendar_User_Settings_Time_Range,
-    Calendar_Mileage_Type,
-    Calendar_WorkHours_Header,
-    Calendar_TravelHours_Header,
-    Calendar_TotalKM_Header,
-    Calendar_TotalHours_Header,
-    Calendar_TotalBreak_Header
+    Calendar_Mileage_Type
   };
 
   @api refreshCalendar() {
@@ -519,8 +494,11 @@ export default class TimeSheetCalendar extends LightningElement {
         const startTime = info.event.start.toISOString();
         const endTime = info.event.end.toISOString();
 
+        console.log('in event drop');
+
         // Only allow dragging if the TimeSheet is not submitted or approved
         if (!this.isTimeSheetSubmittedOrApproved) {
+          console.log('update time sheet entry after drag and drop')
           if (info.event.extendedProps.recordType === "TimeSheetEntry") {
             updateTimeSheetEntry({
               timeSheetEntryId: info.event.id,
@@ -1176,8 +1154,8 @@ export default class TimeSheetCalendar extends LightningElement {
         existingEvent.setProp("borderColor", color);
 
         const toastEvent = new ShowToastEvent({
-          title: Calendar_SuccessToast_Title,
-          message: Calendar_SuccessToast_UpdatedTimeSheetEntry_Message,
+          title: "Success",
+          message: "Time Sheet entry updated successfully.",
           variant: "success"
         });
 
@@ -1198,8 +1176,8 @@ export default class TimeSheetCalendar extends LightningElement {
         });
 
         const toastEvent = new ShowToastEvent({
-          title: Calendar_SuccessToast_Title,
-          message: Calendar_SuccessToast_CreatedTimeSheetEntry_Message,
+          title: "Success",
+          message: "Time Sheet entry created successfully.",
           variant: "success"
         });
 
@@ -1222,8 +1200,8 @@ export default class TimeSheetCalendar extends LightningElement {
         existingEvent.setProp("borderColor", "#c23934");
 
         const toastEvent = new ShowToastEvent({
-          title: Calendar_SuccessToast_Title,
-          message: Calendar_SuccessToast_UpdatedResourceAbsence_Message,
+          title: "Success",
+          message: "Break updated successfully.",
           variant: "success"
         });
 
@@ -1245,8 +1223,8 @@ export default class TimeSheetCalendar extends LightningElement {
         });
 
         const toastEvent = new ShowToastEvent({
-          title: Calendar_SuccessToast_Title,
-          message: Calendar_SuccessToast_CreatedResourceAbsence_Message,
+          title: "Success",
+          message: "Break created successfully.",
           variant: "success"
         });
 
@@ -1259,8 +1237,8 @@ export default class TimeSheetCalendar extends LightningElement {
 
   handleSuccessMileageEntryNew(event) {
     const toastEvent = new ShowToastEvent({
-      title: Calendar_SuccessToast_Title,
-      message: Calendar_SuccessToast_CreatedMileageEntry_Message,
+      title: "Success",
+      message: `Mileage entry created successfully.`,
       variant: "success"
     });
 
@@ -1312,8 +1290,8 @@ export default class TimeSheetCalendar extends LightningElement {
       });
 
     const toastEvent = new ShowToastEvent({
-      title: Calendar_SuccessToast_Title,
-      message: Calendar_SuccessToast_UpdatedMileageEntry_Message,
+      title: "Success",
+      message: "Mileage entry updated successfully.",
       variant: "success"
     });
 
@@ -1327,19 +1305,37 @@ export default class TimeSheetCalendar extends LightningElement {
     const startTime = this.convertToTime(this.minValue);
     const endTime = this.convertToTime(this.maxValue);
 
-    if (
-      startTime === endTime ||
-      !startTime ||
-      !endTime ||
-      startTime > endTime
-    ) {
+    if (startTime === endTime) {
       const toastEvent = new ShowToastEvent({
-        title: Calendar_ErrorToast_Title,
-        message: Calendar_ErrorToast_UserSettings_Message,
+        title: "Error",
+        message: "Start time and end time cannot be the same.",
         variant: "error"
       });
 
       this.dispatchEvent(toastEvent);
+      return;
+    }
+
+    if (startTime > endTime) {
+      const toastEvent = new ShowToastEvent({
+        title: "Error",
+        message: "Start time cannot be greater than end time.",
+        variant: "error"
+      });
+
+      this.dispatchEvent(toastEvent);
+      return;
+    }
+
+    if (!startTime || !endTime) {
+      const toastEvent = new ShowToastEvent({
+        title: "Error",
+        message: "Start time and end time are required.",
+        variant: "error"
+      });
+
+      this.dispatchEvent(toastEvent);
+
       return;
     }
 
@@ -1351,8 +1347,8 @@ export default class TimeSheetCalendar extends LightningElement {
       })
         .then(() => {
           const toastEvent = new ShowToastEvent({
-            title: Calendar_SuccessToast_Title,
-            message: Calendar_SuccessToast_NewUserSettings_Message,
+            title: "Success",
+            message: "Settings created successfully.",
             variant: "success"
           });
 
@@ -1371,8 +1367,8 @@ export default class TimeSheetCalendar extends LightningElement {
         })
         .catch((error) => {
           const toastEvent = new ShowToastEvent({
-            title: Calendar_ErrorToast_Title,
-            message: Calendar_ErrorToast_NewUserSettings_Message,
+            title: "Error",
+            message: "Error creating settings.",
             variant: "error"
           });
 
@@ -1387,8 +1383,8 @@ export default class TimeSheetCalendar extends LightningElement {
       })
         .then(() => {
           const toastEvent = new ShowToastEvent({
-            title: Calendar_SuccessToast_Title,
-            message: Calendar_SuccessToast_UpdatedUserSettings_Message,
+            title: "Success",
+            message: "Settings updated successfully.",
             variant: "success"
           });
 
@@ -1399,8 +1395,8 @@ export default class TimeSheetCalendar extends LightningElement {
           console.error("Error:", error);
 
           const toastEvent = new ShowToastEvent({
-            title: Calendar_ErrorToast_Title,
-            message: Calendar_ErrorToast_EditUserSettings_Message,
+            title: "Error",
+            message: "Error updating settings.",
             variant: "error"
           });
 
@@ -1426,8 +1422,8 @@ export default class TimeSheetCalendar extends LightningElement {
     submitTimeSheet({ timeSheetId: this.recordId })
       .then(() => {
         const toastEvent = new ShowToastEvent({
-          title: Calendar_SuccessToast_Title,
-          message: Calendar_SuccessToast_SubmittedTimeSheet_Message,
+          title: "Success",
+          message: "Time Sheet submitted successfully.",
           variant: "success"
         });
 
@@ -1435,8 +1431,8 @@ export default class TimeSheetCalendar extends LightningElement {
       })
       .catch((error) => {
         const toastEvent = new ShowToastEvent({
-          title: Calendar_ErrorToast_Title,
-          message: Calendar_ErrorToast_SubmitTimeSheet_Message,
+          title: "Error",
+          message: "Error submitting time sheet.",
           variant: "error"
         });
 

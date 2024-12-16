@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3123
+Metadatas: 3126
 
 <details><summary>ApexClass (120)</summary>
   • ATAKMaterialService<br/>
@@ -2241,11 +2241,14 @@ Metadatas: 3123
   • test_permission<br/>
 </details>
 
-<details><summary>PermissionSetGroup (6)</summary>
+<details><summary>PermissionSetGroup (9)</summary>
   • Admin_Permission_Set_Group<br/>
   • Business_Support_Permission_Set_Group<br/>
   • Contract_Manager_Permission_Set_Group<br/>
+  • External_Operator_Permission_Set_Group<br/>
   • Manager_Permission_Set_Group<br/>
+  • Operator_Indoor_Permission_Set_Group<br/>
+  • Operator_Outdoor_Permission_Set_Group<br/>
   • Operator_Permission_Set_Group<br/>
   • Test_Permission_set_group<br/>
 </details>

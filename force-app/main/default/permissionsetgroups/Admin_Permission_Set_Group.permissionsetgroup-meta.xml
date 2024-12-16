@@ -14,6 +14,7 @@
     <permissionSets>FSL_Mobile_License</permissionSets>
     <permissionSets>FSL_Resource_License</permissionSets>
     <permissionSets>FSL_Resource_Permissions</permissionSets>
+    <permissionSets>fileUploadImproved</permissionSets>
     <permissionSets>force__FieldServiceDocumentBuilderDispatcher</permissionSets>
     <permissionSets>force__FieldServiceDocumentBuilderMobile</permissionSets>
     <permissionSets>force__FieldServiceDocumentBuilderStandard</permissionSets>

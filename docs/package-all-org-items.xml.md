@@ -2,7 +2,7 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 14101
+Metadatas: 14103
 
 <details><summary>ApexClass (915)</summary>
   • ATAKMaterialService<br/>
@@ -12643,12 +12643,14 @@ Metadatas: 14101
   • sfdcInternalInt__sfdc_scrt2<br/>
 </details>
 
-<details><summary>PermissionSetGroup (5)</summary>
+<details><summary>PermissionSetGroup (7)</summary>
   • Admin_Permission_Set_Group<br/>
   • Business_Support_Permission_Set_Group<br/>
   • Contract_Manager_Permission_Set_Group<br/>
+  • External_Operator_Permission_Set_Group<br/>
   • Manager_Permission_Set_Group<br/>
-  • Operator_Permission_Set_Group<br/>
+  • Operator_Indoor_Permission_Set_Group<br/>
+  • Operator_Outdoor_Permission_Set_Group<br/>
 </details>
 
 <details><summary>PlatformEventChannelMember (2)</summary>
