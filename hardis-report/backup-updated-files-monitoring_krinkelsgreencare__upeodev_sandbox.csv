@@ -1,19 +1,71 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+appMenus/AppSwitcher.appMenu-meta.xml," ",AppMenu AppSwitcher,M,,log,📰
+applications/Bussiness_Support.app-meta.xml,A,CustomApplication Bussiness_Support,,,log,📰
+applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
+applications/Management.app-meta.xml,A,CustomApplication Management,,,log,📰
+approvalProcesses/Quote.Approval_Process_Quote_Over_5000.approvalProcess-meta.xml," ",ApprovalProcess Quote.Approval_Process_Quote_Over_5000,M,,log,📰
 classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
+classes/ATAKVehicleService.cls," ",ApexClass ATAKVehicleService,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/Maintenance_Plan_Record_Page.flexipage-meta.xml," ",FlexiPage Maintenance_Plan_Record_Page,M,,log,📰
-flowDefinitions/Quote_After_Save_Create_Work_Order_on_Acceptance.flowDefinition-meta.xml," ",FlowDefinition Quote_After_Save_Create_Work_Order_on_Acceptance,M,,log,📰
-flows/Quote_After_Save_Create_Work_Order_on_Acceptance.flow-meta.xml," ",Flow Quote_After_Save_Create_Work_Order_on_Acceptance,M,,log,📰
-lwc/checkIn/checkIn.js," ",LightningComponentBundle checkIn/checkIn.js,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-lwc/timesheetEntryForm/timesheetEntryForm.js," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,M,,log,📰
-permissionsetgroups/Admin_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Admin_Permission_Set_Group,M,,log,📰
-permissionsetgroups/Business_Support_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Business_Support_Permission_Set_Group,M,,log,📰
-permissionsetgroups/Contract_Manager_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Contract_Manager_Permission_Set_Group,M,,log,📰
-permissionsetgroups/External_Operator_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup External_Operator_Permission_Set_Group,,,log,📰
-permissionsetgroups/Manager_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Manager_Permission_Set_Group,M,,log,📰
-permissionsetgroups/Operator_Indoor_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Operator_Indoor_Permission_Set_Group,,,log,📰
-permissionsetgroups/Operator_Outdoor_Permission_Set_Group.permissionsetgroup-meta.xml,A,PermissionSetGroup Operator_Outdoor_Permission_Set_Group,,,log,📰
+flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
+flexipages/Business_Support_UtilityBar.flexipage-meta.xml,A,FlexiPage Business_Support_UtilityBar,,,log,📰
+flexipages/Management_UtilityBar.flexipage-meta.xml,A,FlexiPage Management_UtilityBar,,,log,📰
+flexipages/Product_Record_Page.flexipage-meta.xml," ",FlexiPage Product_Record_Page,M,,log,📰
+flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
+flowDefinitions/CrewMember_Save_Check_for_Crew_Leader.flowDefinition-meta.xml,A,FlowDefinition CrewMember_Save_Check_for_Crew_Leader,,,log,📰
+flowDefinitions/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed,,,log,📰
+flows/CrewMember_Save_Check_for_Crew_Leader.flow-meta.xml,A,Flow CrewMember_Save_Check_for_Crew_Leader,,,log,📰
+flows/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.flow-meta.xml,A,Flow Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed,,,log,📰
+layouts/ATAK_Project__c-ATAK Project Layout.layout-meta.xml," ",Layout ATAK_Project__c-ATAK Project Layout,M,,log,📰
+layouts/FlowRecord-Flow Layout.layout-meta.xml,A,Layout FlowRecord-Flow Layout,,,log,📰
+layouts/ProductItem-Material Item Layout.layout-meta.xml," ",Layout ProductItem-Material Item Layout,M,,log,📰
+layouts/ServiceCrew-Van Crew Layout.layout-meta.xml," ",Layout ServiceCrew-Van Crew Layout,M,,log,📰
+layouts/ServiceCrewMember-Van Crew Member Layout.layout-meta.xml," ",Layout ServiceCrewMember-Van Crew Member Layout,M,,log,📰
+objects/ATAK_Project__c/ATAK_Project__c.object-meta.xml," ",CustomObject ATAK_Project__c/ATAK_Project__c,M,,log,📰
+objects/ATAK_Project__c/fields/Active__c.field-meta.xml,A,CustomField Active__c,,,log,📰
+objects/ATAK_Project__c/listViews/Active_ATAK_Projects.listView-meta.xml,A,ListView Active_ATAK_Projects,,,log,📰
+objects/ATAK_Project__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
+objects/ProductItem/fields/External_Id__c.field-meta.xml,A,CustomField External_Id__c,,,log,📰
+objects/Quote/fields/Approval_Open__c.field-meta.xml,A,CustomField Approval_Open__c,,,log,📰
+objects/Quote/fields/Approval_Status__c.field-meta.xml,A,CustomField Approval_Status__c,,,log,📰
+objects/Quote/recordTypes/B2B_Tender.recordType-meta.xml," ",RecordType B2B_Tender,M,,log,📰
+objects/Quote/recordTypes/Public_Tender.recordType-meta.xml," ",RecordType Public_Tender,M,,log,📰
+objects/Quote/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
+objects/ServiceCrew/fields/Has_Leader__c.field-meta.xml,A,CustomField Has_Leader__c,,,log,📰
+objects/ServiceCrewMember/fields/Crew_Has_Leader__c.field-meta.xml,A,CustomField Crew_Has_Leader__c,,,log,📰
+objects/ServiceCrewMember/validationRules/Crew_Should_Have_Leader.validationRule-meta.xml,A,ValidationRule Crew_Should_Have_Leader,,,log,📰
+permissionsets/ATAK_Permissions.permissionset-meta.xml," ",PermissionSet ATAK_Permissions,M,,log,📰
+profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
+profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
+profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
+profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
+profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
+profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
+profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
+profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
+profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
+profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
+profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
+profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
+profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
+profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
+profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
+profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
+profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
+profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
+profiles/Operator Indoor.profile-meta.xml," ",Profile Operator Indoor,M,,log,📰
+profiles/Operator Outdoor.profile-meta.xml," ",Profile Operator Outdoor,M,,log,📰
+profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
+profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
+profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
+profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
+profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
+profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
+reportTypes/Quotes.reportType-meta.xml," ",ReportType Quotes,M,,log,📰
+reportTypes/Vans_with_Material_Items.reportType-meta.xml," ",ReportType Vans_with_Material_Items,M,,log,📰
+translations/en_US.translation-meta.xml,A,Translations en_US,,,log,📰
+translations/fr.translation-meta.xml,A,Translations fr,,,log,📰
+translations/nl_NL.translation-meta.xml,A,Translations nl_NL,,,log,📰
+workflows/Quote.workflow-meta.xml," ",Workflow Quote,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

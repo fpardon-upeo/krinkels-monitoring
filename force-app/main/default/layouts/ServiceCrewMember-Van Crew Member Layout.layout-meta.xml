@@ -19,6 +19,10 @@
                 <behavior>Required</behavior>
                 <field>ServiceCrewId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Crew_Has_Leader__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

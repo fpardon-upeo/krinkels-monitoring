@@ -31,6 +31,26 @@
         <template>unfiled$public/Quote_Submission_Confirmation_Email</template>
     </alerts>
     <fieldUpdates>
+        <fullName>Approval_Done</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval Done</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Approval rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>QuoteApproved</fullName>
         <field>Status</field>
         <literalValue>Approved</literalValue>
@@ -52,36 +72,6 @@
     </fieldUpdates>
     <fieldUpdates>
         <fullName>QuoteRejected</fullName>
-        <field>Status</field>
-        <literalValue>Rejected</literalValue>
-        <name>Quote Rejected</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Quote_Approved</fullName>
-        <field>Status</field>
-        <literalValue>Approved</literalValue>
-        <name>Quote Approved</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Quote_In_Review</fullName>
-        <field>Status</field>
-        <literalValue>In Review</literalValue>
-        <name>Quote In Review</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Quote_Rejected</fullName>
         <field>Status</field>
         <literalValue>Rejected</literalValue>
         <name>Quote Rejected</name>

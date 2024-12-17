@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Open__c</fullName>
+    <formula>Amount__c &gt; 5000
+&amp;&amp;
+TEXT( Approval_Status__c )&lt;&gt;&quot;Approved&quot;
+&amp;&amp; 
+TEXT( Approval_Status__c )&lt;&gt;&quot;Rejected&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Open</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

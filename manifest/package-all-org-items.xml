@@ -1326,10 +1326,12 @@
         <name>CspTrustedSite</name>
     </types>
     <types>
+        <members>Bussiness_Support</members>
         <members>FSL__FieldService</members>
         <members>FSL__FieldService_Admin</members>
         <members>Krinkels_Admin</members>
         <members>Krinkels_Field_Service</members>
+        <members>Management</members>
         <members>Sales</members>
         <members>cadmus_core__CadmusClassic</members>
         <members>cadmus_core__PDFButler</members>
@@ -1383,6 +1385,7 @@
         <members>ATAK_Project_Financial_Account__c.Account__c</members>
         <members>ATAK_Project_Financial_Account__c.External_Id__c</members>
         <members>ATAK_Project__c.ATAK_Creation_Date__c</members>
+        <members>ATAK_Project__c.Active__c</members>
         <members>ATAK_Project__c.Branche__c</members>
         <members>ATAK_Project__c.Client_Type__c</members>
         <members>ATAK_Project__c.Cost_Centre_Atak_Name__c</members>
@@ -2379,6 +2382,7 @@
         <members>Product2.Service_Package_Product__c</members>
         <members>Product2.Work_Type__c</members>
         <members>ProductConsumed.Van_Crew__c</members>
+        <members>ProductItem.External_Id__c</members>
         <members>ProductItem.Is_Temporary__c</members>
         <members>ProductItem.Van_Crew__c</members>
         <members>ProductRequired.ATAK_Code__c</members>
@@ -2394,6 +2398,8 @@
         <members>Quote.Adjustable_Price__c</members>
         <members>Quote.Adjustment_Period__c</members>
         <members>Quote.Amount__c</members>
+        <members>Quote.Approval_Open__c</members>
+        <members>Quote.Approval_Status__c</members>
         <members>Quote.Commissioning_and_Framing__c</members>
         <members>Quote.Contract_Duration_in_years__c</members>
         <members>Quote.Contract_Resiliation_Time__c</members>
@@ -2561,6 +2567,8 @@
         <members>ServiceContract.Type__c</members>
         <members>ServiceCrew.Driver_Code__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
+        <members>ServiceCrew.Has_Leader__c</members>
+        <members>ServiceCrewMember.Crew_Has_Leader__c</members>
         <members>ServiceCrewMember.FSL__GanttLabel__c</members>
         <members>ServiceResource.FSL__Efficiency__c</members>
         <members>ServiceResource.FSL__GanttLabel__c</members>
@@ -11221,6 +11229,7 @@
         <members>Asset_Record_Page</members>
         <members>Asset_Scheduler</members>
         <members>B2B_Opportunity_Record_Page</members>
+        <members>Business_Support_UtilityBar</members>
         <members>Case_Record_Page</members>
         <members>Case_Record_Page1</members>
         <members>Case_Record_Page2</members>
@@ -11249,6 +11258,7 @@
         <members>Maintenance_Asset_Record_Page</members>
         <members>Maintenance_Plan_Record_Page</members>
         <members>Maintenance_Work_Rule_Record_Page</members>
+        <members>Management_UtilityBar</members>
         <members>Mileage_Entry_Record_Page</members>
         <members>Operating_Hours_Record_Page</members>
         <members>Operational_Account_Record_Page</members>
@@ -11297,6 +11307,7 @@
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
+        <members>CrewMember_Save_Check_for_Crew_Leader</members>
         <members>Datatable_Configuration_Wizard5</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
@@ -11344,6 +11355,7 @@
         <members>Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member</members>
         <members>Van_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
+        <members>Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
@@ -11379,6 +11391,7 @@
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
+        <members>CrewMember_Save_Check_for_Crew_Leader</members>
         <members>Datatable_Configuration_Wizard5</members>
         <members>FSL__Fix_Schedule_Overlaps</members>
         <members>FSL__Send_Email_For_Automated_Bundling_Failures</members>
@@ -11426,6 +11439,7 @@
         <members>Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member</members>
         <members>Van_Before_Save_Record_Triggered_Set_Naming_Convention</members>
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
+        <members>Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
@@ -11649,6 +11663,7 @@
         <members>FeedItem-Feed Item Layout</members>
         <members>FlowInterview-Flow Interview Layout</members>
         <members>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</members>
+        <members>FlowRecord-Flow Layout</members>
         <members>FlowTableViewDefinition__c-FlowTableViewDefinition Layout</members>
         <members>Global-FSL Global Actions</members>
         <members>Global-Global Layout</members>
@@ -12049,6 +12064,8 @@
     <types>
         <members>ATAK_Personnel__c.All</members>
         <members>ATAK_Personnel__c.All</members>
+        <members>ATAK_Project__c.Active_ATAK_Projects</members>
+        <members>ATAK_Project__c.Active_ATAK_Projects</members>
         <members>ATAK_Project__c.All</members>
         <members>ATAK_Project__c.All</members>
         <members>Account.AllAccounts</members>
@@ -14255,6 +14272,12 @@
         <name>TopicsForObjects</name>
     </types>
     <types>
+        <members>en_US</members>
+        <members>fr</members>
+        <members>nl_NL</members>
+        <name>Translations</name>
+    </types>
+    <types>
         <members>Price_Request_Status_Icon</members>
         <members>Type</members>
         <name>UiFormatSpecificationSet</name>
@@ -14355,6 +14378,7 @@
         <members>ServiceAppointment.FSL__isDurationExist</members>
         <members>ServiceAppointment.FSL__isEarliestStartTimeExist</members>
         <members>ServiceAppointment.FSL__startTimeShouldPrecedeEndTime</members>
+        <members>ServiceCrewMember.Crew_Should_Have_Leader</members>
         <members>ServiceCrewMember.FSL__Prevent_Crew_Allocation_For_Contractors</members>
         <members>ServiceResource.FSL__Capacity_Resource_of_Type_Crew</members>
         <members>ServiceResource.FSL__Resource_travel</members>
@@ -14401,12 +14425,11 @@
     </types>
     <types>
         <members>Case.ChangePriorityToHigh</members>
+        <members>Quote.Approval_Done</members>
+        <members>Quote.Approval_Rejected</members>
         <members>Quote.QuoteApproved</members>
         <members>Quote.QuoteInReview</members>
         <members>Quote.QuoteRejected</members>
-        <members>Quote.Quote_Approved</members>
-        <members>Quote.Quote_In_Review</members>
-        <members>Quote.Quote_Rejected</members>
         <members>TimeSheet.Flag_as_Review_Needed</members>
         <members>TimeSheet.Update_to_Approved</members>
         <members>TimeSheet.Update_to_Needs_Review</members>

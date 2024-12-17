@@ -74,40 +74,20 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Financial_Account__c</fieldItem>
-                <identifier>RecordFinancial_Account_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Discipline__c</fieldItem>
-                <identifier>RecordDiscipline__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Region__c</fieldItem>
-                <identifier>RecordRegion__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Language__c</fieldItem>
                 <identifier>RecordLanguage__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Active__c</fieldItem>
+                <identifier>RecordActive__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-aab991b4-abe4-47de-88d8-594d83049792</name>
@@ -284,6 +264,16 @@
                 <identifier>RecordDepot_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Region__c</fieldItem>
+                <identifier>RecordRegion__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-5512bcee-9aa7-4c6f-8889-ffeae77d064e</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -316,6 +306,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Department_Name__c</fieldItem>
                 <identifier>RecordDepartment_Name_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Discipline__c</fieldItem>
+                <identifier>RecordDiscipline__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_ATAK_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>SubProject_ATAK__c</columns>
+    <columns>Subproject_Name__c</columns>
+    <columns>Site_Manager_Code__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Service_Territory__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active ATAK Projects</label>
+</ListView>

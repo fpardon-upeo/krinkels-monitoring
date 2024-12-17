@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3126
+Metadatas: 3145
 
 <details><summary>ApexClass (120)</summary>
   • ATAKMaterialService<br/>
@@ -271,13 +271,15 @@ Metadatas: 3126
   • weatherAPI<br/>
 </details>
 
-<details><summary>CustomApplication (3)</summary>
+<details><summary>CustomApplication (5)</summary>
+  • Bussiness_Support<br/>
   • Krinkels_Admin<br/>
   • Krinkels_Field_Service<br/>
+  • Management<br/>
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (727)</summary>
+<details><summary>CustomField (733)</summary>
   • ATAK_Internal_Project_Map__mdt.ATAK_Code__c<br/>
   • ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c<br/>
   • ATAK_Internal_Project_Map__mdt.Performance_Type__c<br/>
@@ -309,6 +311,7 @@ Metadatas: 3126
   • ATAK_Project_Financial_Account__c.Account__c<br/>
   • ATAK_Project_Financial_Account__c.External_Id__c<br/>
   • ATAK_Project__c.ATAK_Creation_Date__c<br/>
+  • ATAK_Project__c.Active__c<br/>
   • ATAK_Project__c.Branche__c<br/>
   • ATAK_Project__c.Client_Type__c<br/>
   • ATAK_Project__c.Cost_Centre_Atak_Name__c<br/>
@@ -658,6 +661,7 @@ Metadatas: 3126
   • Product2.Service_Package_Product__c<br/>
   • Product2.Work_Type__c<br/>
   • ProductConsumed.Van_Crew__c<br/>
+  • ProductItem.External_Id__c<br/>
   • ProductItem.Is_Temporary__c<br/>
   • ProductItem.Van_Crew__c<br/>
   • ProductRequired.ATAK_Code__c<br/>
@@ -673,6 +677,8 @@ Metadatas: 3126
   • Quote.Adjustable_Price__c<br/>
   • Quote.Adjustment_Period__c<br/>
   • Quote.Amount__c<br/>
+  • Quote.Approval_Open__c<br/>
+  • Quote.Approval_Status__c<br/>
   • Quote.Commissioning_and_Framing__c<br/>
   • Quote.Contract_Duration_in_years__c<br/>
   • Quote.Contract_Resiliation_Time__c<br/>
@@ -846,6 +852,8 @@ Metadatas: 3126
   • ServiceContract.Type__c<br/>
   • ServiceCrew.Driver_Code__c<br/>
   • ServiceCrew.FSL__GanttColor__c<br/>
+  • ServiceCrew.Has_Leader__c<br/>
+  • ServiceCrewMember.Crew_Has_Leader__c<br/>
   • ServiceCrewMember.FSL__GanttLabel__c<br/>
   • ServiceResource.FSL__Efficiency__c<br/>
   • ServiceResource.FSL__GanttLabel__c<br/>
@@ -1498,7 +1506,7 @@ Metadatas: 3126
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (70)</summary>
+<details><summary>FlexiPage (72)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Financial_Account_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
@@ -1506,6 +1514,7 @@ Metadatas: 3126
   • Asset_Record_Page<br/>
   • Asset_Scheduler<br/>
   • B2B_Opportunity_Record_Page<br/>
+  • Business_Support_UtilityBar<br/>
   • Case_Record_Page<br/>
   • Case_Record_Page1<br/>
   • Case_Record_Page2<br/>
@@ -1533,6 +1542,7 @@ Metadatas: 3126
   • Maintenance_Asset_Record_Page<br/>
   • Maintenance_Plan_Record_Page<br/>
   • Maintenance_Work_Rule_Record_Page<br/>
+  • Management_UtilityBar<br/>
   • Mileage_Entry_Record_Page<br/>
   • Operating_Hours_Record_Page<br/>
   • Operational_Account_Record_Page<br/>
@@ -1571,7 +1581,7 @@ Metadatas: 3126
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (84)</summary>
+<details><summary>Flow (86)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1579,6 +1589,7 @@ Metadatas: 3126
   • Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • ContractLineItem_After_Save_Add_Default_Financial_Accounts<br/>
+  • CrewMember_Save_Check_for_Crew_Leader<br/>
   • Datatable_Configuration_Wizard5<br/>
   • Lead_After_Save_Record_Triggered_Populate_Client_Sector_Industry_Type_on_Account<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
@@ -1628,6 +1639,7 @@ Metadatas: 3126
   • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
   • Van_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
+  • Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
   • Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status<br/>
@@ -1658,7 +1670,7 @@ Metadatas: 3126
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (84)</summary>
+<details><summary>FlowDefinition (86)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1666,6 +1678,7 @@ Metadatas: 3126
   • Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • ContractLineItem_After_Save_Add_Default_Financial_Accounts<br/>
+  • CrewMember_Save_Check_for_Crew_Leader<br/>
   • Datatable_Configuration_Wizard5<br/>
   • Lead_After_Save_Record_Triggered_Populate_Client_Sector_Industry_Type_on_Account<br/>
   • Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information<br/>
@@ -1715,6 +1728,7 @@ Metadatas: 3126
   • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
   • Van_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
+  • Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
   • Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status<br/>
@@ -1809,7 +1823,7 @@ Metadatas: 3126
   • IframeWhiteListUrlSettings<br/>
 </details>
 
-<details><summary>Layout (227)</summary>
+<details><summary>Layout (228)</summary>
   • ATAK_Internal_Project_Map__mdt-ATAK Internal Project Map Layout<br/>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project_Financial_Account__c-ATAK Project Financial Account Layout<br/>
@@ -1890,6 +1904,7 @@ Metadatas: 3126
   • FeedItem-Feed Item Layout<br/>
   • FlowInterview-Flow Interview Layout<br/>
   • FlowPersonalConfiguration__c-Flow Personal Configuration Layout<br/>
+  • FlowRecord-Flow Layout<br/>
   • FlowTableViewDefinition__c-FlowTableViewDefinition Layout<br/>
   • Global-FSL Global Actions<br/>
   • Global-Global Layout<br/>
@@ -2165,8 +2180,9 @@ Metadatas: 3126
   • KrinkelsTheme<br/>
 </details>
 
-<details><summary>ListView (15)</summary>
+<details><summary>ListView (16)</summary>
   • ATAK_Personnel__c.All<br/>
+  • ATAK_Project__c.Active_ATAK_Projects<br/>
   • ATAK_Project__c.All<br/>
   • Error_Log__c.All<br/>
   • FlowTableViewDefinition__c.All<br/>
@@ -3325,12 +3341,18 @@ Metadatas: 3126
   • ers_datatableConfig__c<br/>
 </details>
 
+<details><summary>Translations (3)</summary>
+  • en_US<br/>
+  • fr<br/>
+  • nl_NL<br/>
+</details>
+
 <details><summary>UiFormatSpecificationSet (2)</summary>
   • Price_Request_Status_Icon<br/>
   • Type<br/>
 </details>
 
-<details><summary>ValidationRule (25)</summary>
+<details><summary>ValidationRule (26)</summary>
   • Location_Visit__c.Internal_Visitor_Mandatory<br/>
   • Location_Visit__c.Planned_Date<br/>
   • Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start<br/>
@@ -3350,6 +3372,7 @@ Metadatas: 3126
   • ServiceAppointment.FSL__isDurationExist<br/>
   • ServiceAppointment.FSL__isEarliestStartTimeExist<br/>
   • ServiceAppointment.FSL__startTimeShouldPrecedeEndTime<br/>
+  • ServiceCrewMember.Crew_Should_Have_Leader<br/>
   • ServiceCrewMember.FSL__Prevent_Crew_Allocation_For_Contractors<br/>
   • ServiceResource.FSL__Capacity_Resource_of_Type_Crew<br/>
   • ServiceResource.FSL__Resource_travel<br/>
@@ -3387,14 +3410,13 @@ Metadatas: 3126
   • TimeSheet.Time_Sheet_Not_Approved_Notification<br/>
 </details>
 
-<details><summary>WorkflowFieldUpdate (10)</summary>
+<details><summary>WorkflowFieldUpdate (9)</summary>
   • Case.ChangePriorityToHigh<br/>
+  • Quote.Approval_Done<br/>
+  • Quote.Approval_Rejected<br/>
   • Quote.QuoteApproved<br/>
   • Quote.QuoteInReview<br/>
   • Quote.QuoteRejected<br/>
-  • Quote.Quote_Approved<br/>
-  • Quote.Quote_In_Review<br/>
-  • Quote.Quote_Rejected<br/>
   • TimeSheet.Flag_as_Review_Needed<br/>
   • TimeSheet.Update_to_Approved<br/>
   • TimeSheet.Update_to_Needs_Review<br/>

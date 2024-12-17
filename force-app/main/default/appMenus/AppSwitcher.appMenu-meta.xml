@@ -200,4 +200,12 @@
         <name>Krinkels_Admin</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>Bussiness_Support</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Management</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

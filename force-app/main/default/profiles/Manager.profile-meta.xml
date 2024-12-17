@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
+        <application>Bussiness_Support</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Krinkels_Admin</application>
         <default>false</default>
         <visible>false</visible>
@@ -9,6 +14,11 @@
         <application>Krinkels_Field_Service</application>
         <default>false</default>
         <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Management</application>
+        <default>false</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Sales</application>
@@ -615,6 +625,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ATAK_Project__c.ATAK_Creation_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ATAK_Project__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2209,6 +2224,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ProductItem.External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ProductItem.Is_Temporary__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2280,6 +2300,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Quote.Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Approval_Open__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Approval_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3119,6 +3149,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ServiceCrew.Has_Leader__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceCrewMember.Crew_Has_Leader__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ServiceCrewMember.FSL__GanttLabel__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3932,6 +3972,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>CrewMember_Save_Check_for_Crew_Leader</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Datatable_Configuration_Wizard5</flow>
     </flowAccesses>
     <flowAccesses>
@@ -4109,6 +4153,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -4421,6 +4469,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FlowRecord-Flow Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>FlowTableViewDefinition__c-FlowTableViewDefinition Layout</layout>

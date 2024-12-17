@@ -36,6 +36,10 @@
                 <behavior>Edit</behavior>
                 <field>Driver_Code__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Has_Leader__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

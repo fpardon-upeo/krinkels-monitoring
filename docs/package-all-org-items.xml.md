@@ -2,7 +2,7 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 14103
+Metadatas: 14123
 
 <details><summary>ApexClass (915)</summary>
   • ATAKMaterialService<br/>
@@ -1329,11 +1329,13 @@ Metadatas: 14103
   • weatherAPI<br/>
 </details>
 
-<details><summary>CustomApplication (23)</summary>
+<details><summary>CustomApplication (25)</summary>
+  • Bussiness_Support<br/>
   • FSL__FieldService<br/>
   • FSL__FieldService_Admin<br/>
   • Krinkels_Admin<br/>
   • Krinkels_Field_Service<br/>
+  • Management<br/>
   • Sales<br/>
   • cadmus_core__CadmusClassic<br/>
   • cadmus_core__PDFButler<br/>
@@ -1355,7 +1357,7 @@ Metadatas: 14103
   • standard__ServiceConsole<br/>
 </details>
 
-<details><summary>CustomField (1472)</summary>
+<details><summary>CustomField (1478)</summary>
   • ATAK_Internal_Project_Map__mdt.ATAK_Code__c<br/>
   • ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c<br/>
   • ATAK_Internal_Project_Map__mdt.Performance_Type__c<br/>
@@ -1387,6 +1389,7 @@ Metadatas: 14103
   • ATAK_Project_Financial_Account__c.Account__c<br/>
   • ATAK_Project_Financial_Account__c.External_Id__c<br/>
   • ATAK_Project__c.ATAK_Creation_Date__c<br/>
+  • ATAK_Project__c.Active__c<br/>
   • ATAK_Project__c.Branche__c<br/>
   • ATAK_Project__c.Client_Type__c<br/>
   • ATAK_Project__c.Cost_Centre_Atak_Name__c<br/>
@@ -2383,6 +2386,7 @@ Metadatas: 14103
   • Product2.Service_Package_Product__c<br/>
   • Product2.Work_Type__c<br/>
   • ProductConsumed.Van_Crew__c<br/>
+  • ProductItem.External_Id__c<br/>
   • ProductItem.Is_Temporary__c<br/>
   • ProductItem.Van_Crew__c<br/>
   • ProductRequired.ATAK_Code__c<br/>
@@ -2398,6 +2402,8 @@ Metadatas: 14103
   • Quote.Adjustable_Price__c<br/>
   • Quote.Adjustment_Period__c<br/>
   • Quote.Amount__c<br/>
+  • Quote.Approval_Open__c<br/>
+  • Quote.Approval_Status__c<br/>
   • Quote.Commissioning_and_Framing__c<br/>
   • Quote.Contract_Duration_in_years__c<br/>
   • Quote.Contract_Resiliation_Time__c<br/>
@@ -2565,6 +2571,8 @@ Metadatas: 14103
   • ServiceContract.Type__c<br/>
   • ServiceCrew.Driver_Code__c<br/>
   • ServiceCrew.FSL__GanttColor__c<br/>
+  • ServiceCrew.Has_Leader__c<br/>
+  • ServiceCrewMember.Crew_Has_Leader__c<br/>
   • ServiceCrewMember.FSL__GanttLabel__c<br/>
   • ServiceResource.FSL__Efficiency__c<br/>
   • ServiceResource.FSL__GanttLabel__c<br/>
@@ -11218,13 +11226,14 @@ Metadatas: 14103
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (72)</summary>
+<details><summary>FlexiPage (74)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Financial_Account_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
   • Asset_Record_Page<br/>
   • Asset_Scheduler<br/>
   • B2B_Opportunity_Record_Page<br/>
+  • Business_Support_UtilityBar<br/>
   • Case_Record_Page<br/>
   • Case_Record_Page1<br/>
   • Case_Record_Page2<br/>
@@ -11253,6 +11262,7 @@ Metadatas: 14103
   • Maintenance_Asset_Record_Page<br/>
   • Maintenance_Plan_Record_Page<br/>
   • Maintenance_Work_Rule_Record_Page<br/>
+  • Management_UtilityBar<br/>
   • Mileage_Entry_Record_Page<br/>
   • Operating_Hours_Record_Page<br/>
   • Operational_Account_Record_Page<br/>
@@ -11293,7 +11303,7 @@ Metadatas: 14103
   • cadmus_core__PDF_Butler_Pack_Record_Page<br/>
 </details>
 
-<details><summary>Flow (79)</summary>
+<details><summary>Flow (81)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -11301,6 +11311,7 @@ Metadatas: 14103
   • Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • ContractLineItem_After_Save_Add_Default_Financial_Accounts<br/>
+  • CrewMember_Save_Check_for_Crew_Leader<br/>
   • Datatable_Configuration_Wizard5<br/>
   • FSL__Fix_Schedule_Overlaps<br/>
   • FSL__Send_Email_For_Automated_Bundling_Failures<br/>
@@ -11348,6 +11359,7 @@ Metadatas: 14103
   • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
   • Van_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
+  • Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
   • Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status<br/>
@@ -11375,7 +11387,7 @@ Metadatas: 14103
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (79)</summary>
+<details><summary>FlowDefinition (81)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -11383,6 +11395,7 @@ Metadatas: 14103
   • Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request<br/>
   • Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type<br/>
   • ContractLineItem_After_Save_Add_Default_Financial_Accounts<br/>
+  • CrewMember_Save_Check_for_Crew_Leader<br/>
   • Datatable_Configuration_Wizard5<br/>
   • FSL__Fix_Schedule_Overlaps<br/>
   • FSL__Send_Email_For_Automated_Bundling_Failures<br/>
@@ -11430,6 +11443,7 @@ Metadatas: 14103
   • Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member<br/>
   • Van_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps<br/>
+  • Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed<br/>
   • Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines<br/>
   • Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA<br/>
   • Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status<br/>
@@ -11532,7 +11546,7 @@ Metadatas: 14103
   • usf3<br/>
 </details>
 
-<details><summary>Layout (295)</summary>
+<details><summary>Layout (296)</summary>
   • ATAK_Internal_Project_Map__mdt-ATAK Internal Project Map Layout<br/>
   • ATAK_Personnel__c-ATAK Personnel Layout<br/>
   • ATAK_Project_Financial_Account__c-ATAK Project Financial Account Layout<br/>
@@ -11653,6 +11667,7 @@ Metadatas: 14103
   • FeedItem-Feed Item Layout<br/>
   • FlowInterview-Flow Interview Layout<br/>
   • FlowPersonalConfiguration__c-Flow Personal Configuration Layout<br/>
+  • FlowRecord-Flow Layout<br/>
   • FlowTableViewDefinition__c-FlowTableViewDefinition Layout<br/>
   • Global-FSL Global Actions<br/>
   • Global-Global Layout<br/>
@@ -12050,9 +12065,11 @@ Metadatas: 14103
   • KrinkelsTheme<br/>
 </details>
 
-<details><summary>ListView (510)</summary>
+<details><summary>ListView (512)</summary>
   • ATAK_Personnel__c.All<br/>
   • ATAK_Personnel__c.All<br/>
+  • ATAK_Project__c.Active_ATAK_Projects<br/>
+  • ATAK_Project__c.Active_ATAK_Projects<br/>
   • ATAK_Project__c.All<br/>
   • ATAK_Project__c.All<br/>
   • Account.AllAccounts<br/>
@@ -14258,6 +14275,12 @@ Metadatas: 14103
   • ers_datatableConfig__c<br/>
 </details>
 
+<details><summary>Translations (3)</summary>
+  • en_US<br/>
+  • fr<br/>
+  • nl_NL<br/>
+</details>
+
 <details><summary>UiFormatSpecificationSet (2)</summary>
   • Price_Request_Status_Icon<br/>
   • Type<br/>
@@ -14323,7 +14346,7 @@ Metadatas: 14103
   • cadmus_core__PDF_Butler_Pack_Record_Page<br/>
 </details>
 
-<details><summary>ValidationRule (45)</summary>
+<details><summary>ValidationRule (46)</summary>
   • FSL__GanttPalette__c.FSL__Color_Level_validation<br/>
   • FSL__Polygon__c.FSL__Polygon_Color_HEX_Format<br/>
   • FSL__Scheduling_Policy_Goal__c.FSL__Not_Zero<br/>
@@ -14359,6 +14382,7 @@ Metadatas: 14103
   • ServiceAppointment.FSL__isDurationExist<br/>
   • ServiceAppointment.FSL__isEarliestStartTimeExist<br/>
   • ServiceAppointment.FSL__startTimeShouldPrecedeEndTime<br/>
+  • ServiceCrewMember.Crew_Should_Have_Leader<br/>
   • ServiceCrewMember.FSL__Prevent_Crew_Allocation_For_Contractors<br/>
   • ServiceResource.FSL__Capacity_Resource_of_Type_Crew<br/>
   • ServiceResource.FSL__Resource_travel<br/>
@@ -14403,14 +14427,13 @@ Metadatas: 14103
   • TimeSheet.Time_Sheet_Not_Approved_Notification<br/>
 </details>
 
-<details><summary>WorkflowFieldUpdate (10)</summary>
+<details><summary>WorkflowFieldUpdate (9)</summary>
   • Case.ChangePriorityToHigh<br/>
+  • Quote.Approval_Done<br/>
+  • Quote.Approval_Rejected<br/>
   • Quote.QuoteApproved<br/>
   • Quote.QuoteInReview<br/>
   • Quote.QuoteRejected<br/>
-  • Quote.Quote_Approved<br/>
-  • Quote.Quote_In_Review<br/>
-  • Quote.Quote_Rejected<br/>
   • TimeSheet.Flag_as_Review_Needed<br/>
   • TimeSheet.Update_to_Approved<br/>
   • TimeSheet.Update_to_Needs_Review<br/>

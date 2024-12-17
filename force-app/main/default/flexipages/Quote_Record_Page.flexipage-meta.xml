@@ -1391,10 +1391,16 @@
                 <componentName>cadmus_core:LC_ConvertComponent</componentName>
                 <identifier>cadmus_core_LC_ConvertComponent2</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Opportunity.Type}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Progress Statement</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Approval_Open__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1523,10 +1529,16 @@
                 <componentName>cadmus_core:LC_ConvertComponent</componentName>
                 <identifier>cadmus_core_LC_ConvertComponent3</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Opportunity.Type}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Winter Service</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Approval_Open__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1655,10 +1667,16 @@
                 <componentName>cadmus_core:LC_ConvertComponent</componentName>
                 <identifier>cadmus_core_LC_ConvertComponent4</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Opportunity.Type}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Subscription</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Approval_Open__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1787,10 +1805,16 @@
                 <componentName>cadmus_core:LC_ConvertComponent</componentName>
                 <identifier>cadmus_core_LC_ConvertComponent5</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Opportunity.Type}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Smartscape</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Approval_Open__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1919,10 +1943,16 @@
                 <componentName>cadmus_core:LC_ConvertComponent</componentName>
                 <identifier>cadmus_core_LC_ConvertComponent6</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Opportunity.Type}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Small Work</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Approval_Open__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

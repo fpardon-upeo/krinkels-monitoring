@@ -9,19 +9,24 @@ public with sharing class ATAKVehicleService {
         List<Product2> atakVehicles = new List<Product2>();
         List<ServiceCrew> atakServiceCrews = new List<ServiceCrew>();
         List<Schema.Location> atakVehLocs = new List<Schema.Location>();
+        List<ProductItem> atakVehLocAssignments = new List<ProductItem>();
         for(ATAKVehicleWrapper.Data vehicleData : vehicle.data) {
             Product2 atakVeh = createSingleATAKVehicle(vehicleData);
             ServiceCrew atakServiceCrew = createATAKServiceCrew(vehicleData);
             Schema.Location atakVehLoc = createSingleATAKVehicleLocation(vehicleData);
             atakVehicles.add(atakVeh);
-            atakServiceCrews.add(atakServiceCrew);
+            if(vehicleData.driver_code != null) atakServiceCrews.add(atakServiceCrew);
             atakVehLocs.add(atakVehLoc);
+            atakVehLocAssignments.add(createVehicleLocationAssignment(vehicleData));
         }
+
+        System.debug('atakVehLocs: ' + atakVehLocs);
 
         List<String> returnList = new List<String>();
         returnList.add(upsertResults(atakVehicles, 'ATAK_Code__c'));
         returnList.add(upsertResults(atakServiceCrews, 'Driver_Code__c'));
         returnList.add(upsertResults(atakVehLocs, 'Code__c'));
+        returnList.add(upsertResults(atakVehLocAssignments, 'External_Id__c'));
         return JSON.serialize(returnList);
     }
 
@@ -37,6 +42,8 @@ public with sharing class ATAKVehicleService {
             if(!result.isSuccess()) {
                 for(Database.Error error : result.getErrors()) {
                     System.debug('Error: ' + error.getMessage());
+                    System.debug('Fields: ' + error.getFields());
+                    System.debug('StatusCode: ' + error.getStatusCode());
                     errorCount++;
                 }
             } else {
@@ -90,14 +97,23 @@ public with sharing class ATAKVehicleService {
     public static Schema.Location createSingleATAKVehicleLocation(ATAKVehicleWrapper.Data vehicleData) {
         System.debug('ATAKVehicleService.createSingleATAKVehicleLocation');
         Schema.Location atakVehLoc = new Schema.Location();
-        String locationName = vehicleData.driver_name + ' - ' + vehicleData.license_plate;
-        atakVehLoc.Name = locationName;
+        atakVehLoc.Name = vehicleData.license_plate;
         atakVehLoc.License_Plate__c = vehicleData.license_plate;
         atakVehLoc.Code__c = vehicleData.code;
         atakVehLoc.IsInventoryLocation = true;
         atakVehLoc.IsMobile = true;
         atakVehLoc.LocationType = 'Van';
-        atakVehLoc.Van_Crew__r = new ServiceCrew(Driver_Code__c = vehicleData.driver_code);
+        if(vehicleData.driver_code != null) atakVehLoc.Van_Crew__r = new ServiceCrew(Driver_Code__c = vehicleData.driver_code);
         return atakVehLoc;
+    }
+
+    public static ProductItem createVehicleLocationAssignment(ATAKVehicleWrapper.Data vehicleData) {
+        System.debug('ATAKVehicleService.createLocationAssignment');
+        ProductItem atakVehLocAssignment = new ProductItem();
+        atakVehLocAssignment.Product2 = new Product2(ATAK_Code__c = vehicleData.code);
+        atakVehLocAssignment.Location = new Schema.Location(Code__c = vehicleData.code);
+        atakVehLocAssignment.QuantityOnHand = 9999;
+        atakVehLocAssignment.External_Id__c = vehicleData.code;
+        return atakVehLocAssignment;
     }
 }

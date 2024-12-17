@@ -306,6 +306,11 @@
             <field>Is_Temporary__c</field>
             <table>Location.ProductItems</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>External_Id__c</field>
+            <table>Location.ProductItems</table>
+        </columns>
         <masterLabel>Material Items</masterLabel>
     </sections>
 </ReportType>
