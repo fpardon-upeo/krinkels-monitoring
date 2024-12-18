@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <div class="stat-card">
+        <!-- <div class="stat-card">
           <div class="stat-iconAndInfo-container">
             <div class="stat-icon">
               <lightning-icon
@@ -43,7 +43,7 @@
               <span class="stat-value">{travelHours}h</span>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="stat-card">
           <div class="stat-iconAndInfo-container">
@@ -66,7 +66,7 @@
         </div>
 
         <div class="stat-card">
-          <div class="slds-grid_vertical">
+          <!-- <div class="slds-grid_vertical">
             <div class="stat-iconAndInfo-container">
               <div class="stat-icon">
                 <lightning-icon
@@ -79,21 +79,21 @@
                 <span class="stat-label">Total Hours</span>
                 <span class="stat-value">{totalHours}h</span>
               </div>
+            </div> -->
+          <div class="stat-iconAndInfo-container slds-var-m-top_small">
+            <div class="stat-icon">
+              <lightning-icon
+                icon-name="utility:food_and_drink"
+                size="small"
+                class="total-icon"
+              ></lightning-icon>
             </div>
-            <div class="stat-iconAndInfo-container slds-var-m-top_small">
-              <div class="stat-icon">
-                <lightning-icon
-                  icon-name="utility:food_and_drink"
-                  size="small"
-                  class="total-icon"
-                ></lightning-icon>
-              </div>
-              <div class="stat-info">
-                <span class="stat-label">Total Break</span>
-                <span class="stat-value">{totalBreakHours}h</span>
-              </div>
+            <div class="stat-info">
+              <span class="stat-label">Total Break</span>
+              <span class="stat-value">{totalBreakHours}h</span>
             </div>
           </div>
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -966,6 +966,137 @@
             {labels.Calendar_Save}
           </button>
         </div>
+      </div>
+    </div>
+  </template>
+
+  <!--///////////////////////////////// ADD LABELS /////////////////////////////////////////////-->
+  <template if:true={showBreaksMissingModal}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">Breaks missing</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <div class="warning-container">
+          <div class="warning-icon">
+            <lightning-icon
+              icon-name="utility:warning"
+              size="small"
+              variant="warning"
+            ></lightning-icon>
+          </div>
+          <p class="warning-text">
+            It looks like you have forgotten to add your 15m and/or 30m break.
+            Please add them now before submitting your time sheet or correct
+            your time sheet.
+          </p>
+        </div>
+        <div class="action-buttons">
+          <template if:false={hasEntered15mBreak}>
+            <button onclick={handleNew15or30mBreak} class="action-button">
+              <span class="button-icon">
+                <lightning-icon
+                  icon-name="utility:pause"
+                  size="small"
+                ></lightning-icon>
+              </span>
+              <span class="button-text">
+                <span class="button-label">Add a 15m break</span>
+                <span class="button-description"
+                  >Add to your time sheet a 15m break</span
+                >
+              </span>
+            </button>
+          </template>
+
+          <template if:false={hasEntered30mBreak}>
+            <button onclick={handleNew15or30mBreak} class="action-button">
+              <span class="button-icon">
+                <lightning-icon
+                  icon-name="utility:pause"
+                  size="small"
+                ></lightning-icon>
+              </span>
+              <span class="button-text">
+                <span class="button-label">Add a 30m break</span>
+                <span class="button-description"
+                  >Add to your time sheet a 30m break</span
+                >
+              </span>
+            </button>
+          </template>
+        </div>
+        <button class="cancel-button" onclick={handleCloseForm}>
+          {labels.Calendar_Cancel}
+        </button>
+      </div>
+    </div>
+  </template>
+
+  <template if:true={showNewBreakEntryModal}>
+    <div class="mobile-backdrop" onclick={handleCloseForm}></div>
+    <div class="mobile-bottom-sheet large-sheet">
+      <div class="bottom-sheet-header">
+        <div class="drag-indicator"></div>
+        <h2 class="sheet-title">{labels.Calendar_New_Break_Entry}</h2>
+      </div>
+      <div class="bottom-sheet-content">
+        <lightning-record-edit-form
+          object-api-name="ResourceAbsence"
+          record-type-id={breakRecordTypeId}
+          onsuccess={handleSuccessNewBreakEntry}
+        >
+          <lightning-messages></lightning-messages>
+
+          <div class="form-fields">
+            <lightning-input-field
+              field-name="ResourceId"
+              value={resourceId}
+              class="slds-hide"
+            >
+            </lightning-input-field>
+
+            <lightning-input-field
+              field-name="Start"
+              value={startDate}
+              required
+              class="form-element"
+            >
+            </lightning-input-field>
+
+            <lightning-input-field
+              field-name="End"
+              value={endDate}
+              required
+              class="form-element"
+            >
+            </lightning-input-field>
+
+            <lightning-input-field
+              field-name="Type"
+              required
+              class="form-element"
+            >
+            </lightning-input-field>
+
+            <lightning-input-field
+              field-name="Description"
+              class="form-element"
+            >
+            </lightning-input-field>
+          </div>
+
+          <div class="button-group">
+            <button class="cancel-button" onclick={handleCloseForm}>
+              {labels.Calendar_Cancel}
+            </button>
+            <button class="submit-button" type="submit">
+              {labels.Calendar_Save}
+            </button>
+          </div>
+        </lightning-record-edit-form>
       </div>
     </div>
   </template>

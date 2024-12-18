@@ -18,70 +18,17 @@
                                     Please review it <a href="{!ApprovalRequest.Internal_URL}" target="_blank"> here. </a><br /><br />
                                     Thank you,<br /><br />
 
-                                    <table cellpadding="0" cellspacing="0" class="contentbuilderBaseColumnRow" style="align-items: flex-start; width: 100%; background-color:;" width="100%">
-                                        <tbody>
-                                            <tr valign="top">
-                                                <td class="columnCell" style="vertical-align: top; display: inline-block; float: left;" width="33.33%">
-                                                    <div class="columnDiv" style="margin-right: 5px; margin-bottom: 5px;">
-                                                        <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; word-break: break-word;">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <table cellpadding="0" cellspacing="0" id="contentRegion" style="width: 100%; border-collapse: collapse; word-break: break-word;">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td align="center">
-                                                                                        <img alt="" src="https://krinkelsgreencare--upeodev.sandbox.file.force.com/file-asset-public/logo_krinkelsbelgie_balk_kort_1?oid=00DKF000000H0PT" style="width: 100%; display: block; border: none; max-width: 100%; object-fit: fill;" width="194" />
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </td>
-                                                <td class="columnCell" style="vertical-align: top; display: inline-block; float: left;" width="66.66%">
-                                                    <div class="columnDiv" style="margin-right: 5px; margin-bottom: 5px;">
-                                                        <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; word-break: break-word;">
-                                                        </table>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                    <table cellpadding="0" cellspacing="0" class="contentbuilderBaseColumnRow" style="align-items: flex-start; width: 100%; background-color:;" width="100%">
-                                        <tbody>
-                                            <tr valign="top">
-                                                <td class="columnCell" style="vertical-align: top; display: inline-block; float: left;" width="100%">
-                                                    <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; word-break: break-word;">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <table cellpadding="0" cellspacing="0" id="contentRegion" style="width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px;">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td style="font-family: Arial, Helvetica, sans-serif;">
-                                                                                    <span style="font-size: 10px;">
-                                                                                        <span style="color: #2ecc71;">Please consider the environment before printing this email</span><br />
-                                                                                        <span style="color: #7f8c8d;">
-                                                                                            <b>Krinkels nv</b> - RPR Brussel – BE0821 547 933 - Rue Emile Pathéstraat 410 1190 Bruxelles/Brussel
-                                                                                        </span>
-                                                                                    </span>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <!-- New Signature -->
+                                    <div style="font-family:Calibri, sans-serif; font-size:11pt;">
+                                        <p>
+                                            <img src="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=015KF000001kxni&oid=00DKF000000H0PT&lastMod=1734432753000" 
+                                            alt="Logo" width="216" height="115" style="display:block;" />
+                                        </p>
+                                        <p style="font-size:9pt; color:#80BA27;">Please consider the environment before printing this email</p>
+                                        <p style="font-size:9pt; color:#6A737B;">
+                                            <b>Krinkels Greencare nv</b> - RPR Brussel – BE 0457 071 225 - Rue Emile Pathéstraat 410, 1190 Bruxelles/Brussel
+                                        </p>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

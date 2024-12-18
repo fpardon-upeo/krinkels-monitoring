@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Applicable_Reasons__c</fullName>
+    <label>Not Applicable Reasons</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer quality complaint</fullName>
+                <default>false</default>
+                <label>Customer quality complaint</label>
+            </value>
+            <value>
+                <fullName>Internal quality complaint</fullName>
+                <default>false</default>
+                <label>Internal quality complaint</label>
+            </value>
+            <value>
+                <fullName>Lack of equipment</fullName>
+                <default>false</default>
+                <label>Lack of equipment</label>
+            </value>
+            <value>
+                <fullName>Lack of skills</fullName>
+                <default>false</default>
+                <label>Lack of skills</label>
+            </value>
+            <value>
+                <fullName>No access to a certain area on the site</fullName>
+                <default>false</default>
+                <label>No access to a certain area on the site</label>
+            </value>
+            <value>
+                <fullName>No access to the site</fullName>
+                <default>false</default>
+                <label>No access to the site</label>
+            </value>
+            <value>
+                <fullName>Task not applicable for this site</fullName>
+                <default>false</default>
+                <label>Task not applicable for this site</label>
+            </value>
+            <value>
+                <fullName>Task not performed at customer&apos;s request</fullName>
+                <default>false</default>
+                <label>Task not performed at customer&apos;s request</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

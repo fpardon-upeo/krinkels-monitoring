@@ -23,7 +23,7 @@ export default class TimesheetEntryForm extends LightningElement {
   @api startDateAndHours;
   @api endDateAndHours;
 
-  labels = {
+  labelsText = {
     TimeSheetEntryForm_BackButton,
     TimeSheetEntryForm_SelectWork_Text,
     TimeSheetEntryForm_ContinueButton,
@@ -32,6 +32,11 @@ export default class TimesheetEntryForm extends LightningElement {
     TimeSheetEntryForm_WorkOrder_Text,
     TimeSheetEntryForm_Required_Label
   };
+
+  get typeFieldOptions() {
+    // Return a comma-separated string of values to exclude
+    return "Machine,Night Work";
+  }
 
   connectedCallback() {
     //check the api variables and set them to "" if they are undefined
@@ -48,6 +53,8 @@ export default class TimesheetEntryForm extends LightningElement {
     console.log("startDate", this.startDate);
     console.log("endDate", this.endDate);
     this.showRecordForm = true;
+
+    console.log(JSON.stringify(this.labelsText));
   }
 
   labels = {

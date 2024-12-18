@@ -208,4 +208,12 @@
         <name>Management</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>cadmus_sign2__SIGN_Butler</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>SIGN_Butler</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>

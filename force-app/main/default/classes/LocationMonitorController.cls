@@ -25,6 +25,19 @@ public with sharing class LocationMonitorController {
         return entries;
     }
 
+    @AuraEnabled
+     public static TimeSheet getTimeSheetData(String recordId) {
+        TimeSheet timeSheet = [
+                SELECT Id, Owner.Name, StartDate, EndDate,
+                        Total_Break_Time__c, Total_Hours__c, Total_KM__c, Total_Normal_Hours__c,
+                        Total_Travel_Time__c, Working_Hours_in_Contract__c, Total_Hours_Minus_Breaks__c
+                FROM TimeSheet
+                WHERE Id = :recordId
+        ];
+
+        return timeSheet;
+    }
+
     public class TimesheetEntryWrapper {
         @AuraEnabled public String id;
         @AuraEnabled public String workOrderNumber;

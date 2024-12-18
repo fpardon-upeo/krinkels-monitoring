@@ -516,6 +516,75 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>alternativeField</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonActionText</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deliveryTypeOverwrite</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>doDownload</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>docConfigId</name>
+                    <value>a1LKF000000WIVY2A4</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>docConfigTranslationDataSource</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>localeField</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>numCurrLocaleField</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>packDocConfigs</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>recordId</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showAlternative</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showLocale</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showNumCurrLocale</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showPreviewToolbar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>skipDocConfigsRunPack</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>subtitle</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>useNonBrowserViewer</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>cadmus_core:LC_PreviewComponent</componentName>
+                <identifier>cadmus_core_LC_PreviewComponent</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>lookupFieldName</name>
                     <value>Id</value>
                 </componentInstanceProperties>

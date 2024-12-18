@@ -1,5 +1,6 @@
 import { LightningElement, wire, track, api } from 'lwc';
 import getTimesheetEntries from '@salesforce/apex/LocationMonitorController.getTimesheetEntries';
+import getTimeSheetData from '@salesforce/apex/LocationMonitorController.getTimeSheetData';
 import DASHBOARD_TITLE from '@salesforce/label/c.LocationMonitor_DashboardTitle';
 import THRESHOLD_SLIDER_LABEL from '@salesforce/label/c.LocationMonitor_ThresholdSliderLabel';
 import EXCEEDS_THRESHOLD from '@salesforce/label/c.LocationMonitor_ExceedsThreshold';
@@ -22,7 +23,26 @@ export default class LocationMonitor extends LightningElement {
 
   @track thresholdValue = 2.5;
   @track workOrders = [];
+  @track timeSheetData = {};
   @api recordId;
+
+  connectedCallback() {
+    getTimeSheetData({ recordId: this.recordId })
+      .then(data => {
+        this.timeSheetData = data;
+        console.log('timeSheetData:', JSON.stringify(this.timeSheetData));
+        this.timeSheetData.Total_Break_Time__c = this.convertMinutesToDecimal(this.timeSheetData.Total_Break_Time__c);
+        this.timeSheetData.Total_Break_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Break_Time__c);
+        this.timeSheetData.Total_Hours_Minus_Breaks__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Hours_Minus_Breaks__c);
+        this.timeSheetData.Working_Hours_in_Contract__c = this.convertHoursToReadableFormat(this.timeSheetData.Working_Hours_in_Contract__c);
+        this.timeSheetData.Total_Travel_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Travel_Time__c);
+
+      })
+      .catch(error => {
+        console.error('Error fetching time sheet data:', error
+        );
+      });
+  }
 
   @wire(getTimesheetEntries, { recordId: '$recordId' })
   wiredEntries({ error, data }) {
@@ -63,6 +83,18 @@ export default class LocationMonitor extends LightningElement {
     if (!hasWorkOrderLocation) return 'NO_WORK_ORDER_LOCATION';
     if (!hasCheckinLocation) return 'NO_CHECKIN_LOCATION';
     return 'VALID';
+  }
+
+  convertMinutesToDecimal(minutes) {
+    const decimalHours = (minutes / 60).toFixed(2);
+    return parseFloat(decimalHours);
+  }
+
+
+  convertHoursToReadableFormat(hours) {
+    const wholeHours = Math.floor(hours);
+    const minutes = Math.round((hours - wholeHours) * 60);
+    return `${wholeHours}h ${minutes}m`;
   }
 
   getCardClass(status, deltaKm, threshold) {
@@ -111,4 +143,25 @@ export default class LocationMonitor extends LightningElement {
       }));
     }
   }
+
+  get containerStyleBreak() {
+    console.log('timeSheetData total break:', this.timeSheetData.Total_Break_Time__c);
+    console.log('type of timeSheetData total break:', typeof this.timeSheetData.Total_Break_Time__c);
+    if(this.timeSheetData.Total_Break_Time__c < 30) {
+      return 'slider-container-warning'
+    } else {
+      return 'slider-container'
+    }
+  }
+
+  get containerStyleWorkedHours() {
+    console.log('timeSheetData total worked hours:', this.timeSheetData.Total_Hours_Minus_Breaks__c);
+    console.log('type of timeSheetData total worked hours:', typeof this.timeSheetData.Total_Hours_Minus_Breaks__c);
+    if(this.timeSheetData.Total_Hours_Minus_Breaks__c < this.timeSheetData.Working_Hours_in_Contract__c) {
+      return 'slider-container-warning slds-m-right_small'
+    } else {
+      return 'slider-container slds-m-right_small'
+    }
+  }
+
 }

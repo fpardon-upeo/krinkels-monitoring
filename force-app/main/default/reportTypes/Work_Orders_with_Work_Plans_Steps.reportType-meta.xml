@@ -750,6 +750,16 @@
             <field>Reason__c</field>
             <table>WorkOrder.WorkPlans.WorkSteps</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Not_Applicable_Reasons__c</field>
+            <table>WorkOrder.WorkPlans.WorkSteps</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Not_Applicable_Comments__c</field>
+            <table>WorkOrder.WorkPlans.WorkSteps</table>
+        </columns>
         <masterLabel>Work Steps</masterLabel>
     </sections>
 </ReportType>

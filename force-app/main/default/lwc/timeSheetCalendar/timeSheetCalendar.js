@@ -84,6 +84,9 @@ export default class TimeSheetCalendar extends LightningElement {
   @track endDateAndHours;
   @track date;
 
+  @track hasEntered15mBreak = false;
+  @track hasEntered30mBreak = false;
+
   @track user = {};
   @track userWorkSchedule = [];
 
@@ -113,12 +116,13 @@ export default class TimeSheetCalendar extends LightningElement {
   @track settingsEditModal = false;
   @track settingsNewModal = false;
   @track showCalendar = true;
-
+  @track showBreaksMissingModal = false;
   @track submitTimeSheetMessage = false;
   @track showNoEntriesModal = false;
-  @track isTimeSheetSubmittedOrApproved = false;
+  @track isTimeSheetSubmittedOrApproved = true;
   @track isFurtherButtonDisabled = false;
   @track isBackButtonDisabled = false;
+  @track showNewBreakEntryModal = false;
 
   @track minValue = 0;
   @track maxValue = 24;
@@ -173,11 +177,6 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   connectedCallback() {
-    if (!(this.recordId && this.resourceId)) {
-      console.log("No recordId or resourceId");
-      // Maybe show a modal (tbd later)
-    }
-
     // First load the required styles and scripts
     Promise.all([
       loadStyle(this, FullCalendarJS + "/lib/main.css"),
@@ -223,7 +222,13 @@ export default class TimeSheetCalendar extends LightningElement {
             timeSheet.timeSheet.Status === "Submitted" ||
             timeSheet.timeSheet.Status === "Approved"
           ) {
+            console.log(
+              "time sheet is submitted or approved",
+              timeSheet.timeSheet.Status
+            );
             this.isTimeSheetSubmittedOrApproved = true;
+          } else {
+            this.isTimeSheetSubmittedOrApproved = false;
           }
 
           // Check if there are no entries or breaks and display the modal and not the calendar
@@ -232,7 +237,6 @@ export default class TimeSheetCalendar extends LightningElement {
             timeSheet.resourceAbsences.length === 0
           ) {
             this.isLoading = false;
-            this.isTimeSheetSubmittedOrApproved = false;
             this.showNoEntriesModal = true;
 
             const calendarEl = this.template.querySelector("div.fullcalendar");
@@ -245,8 +249,9 @@ export default class TimeSheetCalendar extends LightningElement {
             this.travelHours = timeSheet.timeSheet.Total_Travel_Time__c || 0;
             this.kmAmount = timeSheet.timeSheet.Total_KM__c || 0;
             this.totalHours = timeSheet.timeSheet.Total_Hours__c || 0;
-            this.totalBreakHours =
-              (timeSheet.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
+            this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
+              timeSheet.timeSheet.Total_Break_Time__c || 0
+            );
           }
 
           // Get the Break record type ID
@@ -494,11 +499,11 @@ export default class TimeSheetCalendar extends LightningElement {
         const startTime = info.event.start.toISOString();
         const endTime = info.event.end.toISOString();
 
-        console.log('in event drop');
+        console.log("in event drop");
 
         // Only allow dragging if the TimeSheet is not submitted or approved
         if (!this.isTimeSheetSubmittedOrApproved) {
-          console.log('update time sheet entry after drag and drop')
+          console.log("update time sheet entry after drag and drop");
           if (info.event.extendedProps.recordType === "TimeSheetEntry") {
             updateTimeSheetEntry({
               timeSheetEntryId: info.event.id,
@@ -696,6 +701,8 @@ export default class TimeSheetCalendar extends LightningElement {
     this.submitTimeSheetMessage = false;
     this.settingsEditModal = false;
     this.settingsNewModal = false;
+    this.showBreaksMissingModal = false;
+    this.showNewBreakEntryModal = false;
   }
 
   /**
@@ -789,6 +796,8 @@ export default class TimeSheetCalendar extends LightningElement {
     this.timeSheetEntries = [];
     this.resourceAbsences = [];
     this.mileageEntries = [];
+    this.inMileageEntries = [];
+    this.outMileageEntries = [];
 
     this.workHours = 0;
     this.travelHours = 0;
@@ -846,12 +855,17 @@ export default class TimeSheetCalendar extends LightningElement {
 
         // Update tracked properties from result
         if (result.timeSheet) {
-          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.workHours =
+            this.roundWorkHours(result.timeSheet.Total_Normal_Hours__c) || 0;
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours =
-            (result.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
+          this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
+            result.timeSheet.Total_Break_Time__c || 0
+          );
+
+          this.startDate = result.timeSheet.StartDate;
+          this.endDate = result.timeSheet.EndDate;
         }
 
         // Handle mileage entries
@@ -958,6 +972,8 @@ export default class TimeSheetCalendar extends LightningElement {
     this.timeSheetEntries = [];
     this.resourceAbsences = [];
     this.mileageEntries = [];
+    this.inMileageEntries = [];
+    this.outMileageEntries = [];
 
     this.expectedWorkHours = 0;
     this.workHours = 0;
@@ -1018,12 +1034,17 @@ export default class TimeSheetCalendar extends LightningElement {
 
         // Update tracked properties from result
         if (result.timeSheet) {
-          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.workHours =
+            this.roundWorkHours(result.timeSheet.Total_Normal_Hours__c) || 0;
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours =
-            (result.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
+          this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
+            result.timeSheet.Total_Break_Time__c || 0
+          );
+
+          this.startDate = result.timeSheet.StartDate;
+          this.endDate = result.timeSheet.EndDate;
         }
 
         // Handle mileage entries
@@ -1419,25 +1440,55 @@ export default class TimeSheetCalendar extends LightningElement {
   handleSubmitTimeSheet() {
     this.handleCloseForm();
 
-    submitTimeSheet({ timeSheetId: this.recordId })
-      .then(() => {
-        const toastEvent = new ShowToastEvent({
-          title: "Success",
-          message: "Time Sheet submitted successfully.",
-          variant: "success"
-        });
+    getTimeSheet({ recordId: this.recordId })
+      .then((result) => {
+        if (result.resourceAbsences.length > 0) {
+          // Loop through resource absences and check if there's a 15m and 30m break
+          result.resourceAbsences.forEach((absence) => {
+            if (
+              absence.FSL__Duration_In_Minutes__c >= 15 &&
+              absence.FSL__Duration_In_Minutes__c < 30
+            ) {
+              console.log("15m break found");
+              this.hasEntered15mBreak = true;
+            } else if (absence.FSL__Duration_In_Minutes__c >= 30) {
+              console.log("30m break found");
+              this.hasEntered30mBreak = true;
+            }
+          });
 
-        this.dispatchEvent(toastEvent);
+          if (this.hasEntered15mBreak && this.hasEntered30mBreak) {
+            console.log("submitting time sheet");
+            submitTimeSheet({ timeSheetId: this.recordId })
+              .then(() => {
+                const toastEvent = new ShowToastEvent({
+                  title: "Success",
+                  message: "Time Sheet submitted successfully.",
+                  variant: "success"
+                });
+
+                this.dispatchEvent(toastEvent);
+              })
+              .catch((error) => {
+                const toastEvent = new ShowToastEvent({
+                  title: "Error",
+                  message: "Error submitting time sheet.",
+                  variant: "error"
+                });
+
+                this.dispatchEvent(toastEvent);
+
+                console.error("Error:", error);
+              });
+          } else if (!this.hasEntered15mBreak || !this.hasEntered30mBreak) {
+            console.log("breaks missing");
+            console.log("15m break: ", this.hasEntered15mBreak);
+            console.log("30m break: ", this.hasEntered30mBreak);
+            this.showBreaksMissingModal = true;
+          }
+        }
       })
       .catch((error) => {
-        const toastEvent = new ShowToastEvent({
-          title: "Error",
-          message: "Error submitting time sheet.",
-          variant: "error"
-        });
-
-        this.dispatchEvent(toastEvent);
-
         console.error("Error:", error);
       });
   }
@@ -1459,12 +1510,14 @@ export default class TimeSheetCalendar extends LightningElement {
         console.log("result refresh ", JSON.stringify(result));
         // Process the new data
         if (result.timeSheet) {
-          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.workHours =
+            this.roundWorkHours(result.timeSheet.Total_Normal_Hours__c) || 0;
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
-          this.totalBreakHours =
-            (result.timeSheet.Total_Break_Time__c / 60).toFixed(2) || 0;
+          this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
+            result.timeSheet.Total_Break_Time__c || 0
+          );
         }
 
         // Re-populate all data arrays
@@ -1547,17 +1600,20 @@ export default class TimeSheetCalendar extends LightningElement {
 
   // Helper method to process mileage entries
   processMileageEntries() {
-    //Reset mileage arrays
+    // Clear the arrays first
     this.inMileageEntries = [];
     this.outMileageEntries = [];
 
-    this.mileageEntries.forEach((entry) => {
-      if (entry.Type__c === "Starting") {
-        this.inMileageEntries.push(entry);
-      } else if (entry.Type__c === "Ending") {
-        this.outMileageEntries.push(entry);
-      }
-    });
+    // Only process if there are mileage entries
+    if (this.mileageEntries && this.mileageEntries.length > 0) {
+      this.mileageEntries.forEach((entry) => {
+        if (entry.Type__c === "Starting") {
+          this.inMileageEntries.push(entry);
+        } else if (entry.Type__c === "Ending") {
+          this.outMileageEntries.push(entry);
+        }
+      });
+    }
   }
 
   // Helper method to update the calendar view
@@ -1621,6 +1677,21 @@ export default class TimeSheetCalendar extends LightningElement {
     return 0;
   }
 
+  convertMinutesToHoursAndMinutes(minutes) {
+    if (!minutes) return "0:00";
+    // Round up to nearest 5 minutes
+    minutes = Math.ceil(minutes / 5) * 5;
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = Math.floor(minutes % 60);
+    return `${hours}:${remainingMinutes.toString().padStart(2, "0")}`;
+  }
+
+  roundWorkHours(hours) {
+    if (!hours) return 0;
+    // Round to nearest 0.1
+    return Math.round(hours * 10) / 10;
+  }
+
   // Getters for displaying selected times
   get minLabel() {
     return this.convertToTime(this.minValue);
@@ -1628,5 +1699,66 @@ export default class TimeSheetCalendar extends LightningElement {
 
   get maxLabel() {
     return this.convertToTime(this.maxValue);
+  }
+
+  handleSuccessNewBreakEntry() {
+    this.handleCloseForm();
+
+    console.log("End date:", this.endDate);
+    console.log("Star date: ", this.startDate);
+
+    getTimeSheet({ recordId: this.recordId }).then((result) => {
+      if (result.resourceAbsences.length > 0) {
+        result.resourceAbsences.forEach((absence) => {
+          if (
+            absence.FSL__Duration_In_Minutes__c >= 15 &&
+            absence.FSL__Duration_In_Minutes__c < 30
+          ) {
+            console.log("15m break found");
+            this.hasEntered15mBreak = true;
+          } else if (absence.FSL__Duration_In_Minutes__c >= 30) {
+            console.log("30m break found");
+            this.hasEntered30mBreak = true;
+          }
+        });
+
+        if (this.hasEntered15mBreak && this.hasEntered30mBreak) {
+          console.log("submitting time sheet");
+          submitTimeSheet({ timeSheetId: this.recordId })
+            .then(() => {
+              const toastEvent = new ShowToastEvent({
+                title: "Success",
+                message: "Time Sheet submitted successfully.",
+                variant: "success"
+              });
+
+              this.isTimeSheetSubmittedOrApproved = true;
+
+              this.dispatchEvent(toastEvent);
+            })
+            .catch((error) => {
+              const toastEvent = new ShowToastEvent({
+                title: "Error",
+                message: "Error submitting time sheet.",
+                variant: "error"
+              });
+
+              this.dispatchEvent(toastEvent);
+
+              console.error("Error:", error);
+            });
+        } else if (!this.hasEntered15mBreak || !this.hasEntered30mBreak) {
+          console.log("breaks missing");
+          console.log("15m break exists? ", this.hasEntered15mBreak);
+          console.log("30m break exists? ", this.hasEntered30mBreak);
+          this.showBreaksMissingModal = true;
+        }
+      }
+    });
+  }
+
+  handleNew15or30mBreak() {
+    this.handleCloseForm();
+    this.showNewBreakEntryModal = true;
   }
 }

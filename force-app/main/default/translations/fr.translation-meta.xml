@@ -2652,6 +2652,10 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
+        <fullName>TimeSheet_Record_Trigger_Set_Contract_Hours</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
         <fullName>Time_Sheet_After_Save_Record_Triggered_Approval</fullName>
     </flowDefinitions>
     <flowDefinitions>
@@ -3206,6 +3210,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows>

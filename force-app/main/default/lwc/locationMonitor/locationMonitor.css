@@ -88,6 +88,15 @@
     border: 1px solid #d8dde6;
 }
 
+.slider-container-warning {
+    background: rgba(243, 33, 33, 0.8);
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d8dde6;
+    opacity: 0.8;
+}
+
 /* Custom styles for the lightning-slider */
 .slider-container lightning-slider {
     --sds-c-slider-track-color-background: #e0e5ee;

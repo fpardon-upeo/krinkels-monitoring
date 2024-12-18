@@ -19,7 +19,7 @@
   <div if:true={showBottomFooter} class="footer">
     <div class="button-group">
       <button class="cancel-button" onclick={handleBack}>
-        {labels.TimeSheetEntryForm_BackButton}
+        {labelsText.TimeSheetEntryForm_BackButton}
       </button>
       <button
         if:true={showAppointmentScreen}
@@ -27,7 +27,7 @@
         onclick={handleSelect}
         disabled={disableNextButton}
       >
-        {labels.TimeSheetEntryForm_ContinueButton}
+        {labelsText.TimeSheetEntryForm_ContinueButton}
       </button>
     </div>
   </div>
@@ -50,7 +50,7 @@
                 title={labels.TimeSheetEntryForm_Required_Label}
                 >*</abbr
               >
-              {labels.TimeSheetEntryForm_WorkOrder_Text}
+              {labelsText.TimeSheetEntryForm_WorkOrder_Text}
             </label>
             <div class="slds-form-element__control">
               <div
@@ -69,7 +69,7 @@
                       class="slds-m-right_xx-small"
                     >
                     </lightning-icon>
-                    {labels.TimeSheetEntryForm_SelectWorkOrder_Text}
+                    {labelsText.TimeSheetEntryForm_SelectWorkOrder_Text}
                   </button>
                 </div>
                 <div class="slds-col slds-size_2-of-4">
@@ -115,6 +115,7 @@
             field-name="Type"
             required
             class="form-element"
+            field-level-help={typeFieldOptions}
           >
           </lightning-input-field>
 
@@ -124,10 +125,10 @@
       </div>
       <div class="button-group">
         <button class="cancel-button" onclick={handleCancel}>
-          {labels.TimeSheetEntryForm_CancelButton}
+          {labelsText.TimeSheetEntryForm_CancelButton}
         </button>
         <button class="submit-button" type="submit">
-          {labels.TimeSheetEntryForm_SaveButton}
+          {labelsText.TimeSheetEntryForm_SaveButton}
         </button>
       </div>
     </lightning-record-edit-form>

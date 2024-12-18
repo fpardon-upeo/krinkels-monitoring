@@ -2,9 +2,9 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3145
+Metadatas: 3177
 
-<details><summary>ApexClass (120)</summary>
+<details><summary>ApexClass (121)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -69,6 +69,7 @@ Metadatas: 3145
   • ObjectFieldSelectorController<br/>
   • ObjectFieldSelectorControllerTest<br/>
   • OutboundLoggerService<br/>
+  • OverrideNotApplicableController<br/>
   • PersonnelRestResource<br/>
   • PersonnelRestResourceTest<br/>
   • ProjectRestResource<br/>
@@ -131,12 +132,13 @@ Metadatas: 3145
   • apexEmailNotifications<br/>
 </details>
 
-<details><summary>ApexPage (8)</summary>
+<details><summary>ApexPage (9)</summary>
   • CloneWorkOrder<br/>
   • CreateChildWorkOrder<br/>
   • CreateInternalWork<br/>
   • CustomAccountLightboxVfPage<br/>
   • NonEssentialsMobileLanding<br/>
+  • OverrideNotApplicable<br/>
   • SFS_WorkOrderCreator<br/>
   • fsc_screenFlow<br/>
   • test<br/>
@@ -279,7 +281,7 @@ Metadatas: 3145
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (733)</summary>
+<details><summary>CustomField (739)</summary>
   • ATAK_Internal_Project_Map__mdt.ATAK_Code__c<br/>
   • ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c<br/>
   • ATAK_Internal_Project_Map__mdt.Performance_Type__c<br/>
@@ -434,7 +436,9 @@ Metadatas: 3145
   • Contact.Notes__c<br/>
   • Contact.Type_Formula__c<br/>
   • Contact.Type__c<br/>
+  • Contact.cadmus_sign2__LocaleSidKey__c<br/>
   • ContentVersion.Guest_Record_fileupload__c<br/>
+  • ContentVersion.cadmus_sign2__File_Mac__c<br/>
   • Contract.Check_in_Work__c<br/>
   • ContractLineItem.Calculated_Duration__c<br/>
   • ContractLineItem.Cost_Center_Code__c<br/>
@@ -900,10 +904,12 @@ Metadatas: 3145
   • TimeSheet.Needs_Review__c<br/>
   • TimeSheet.Send_to_ATAK__c<br/>
   • TimeSheet.Total_Break_Time__c<br/>
+  • TimeSheet.Total_Hours_Minus_Breaks__c<br/>
   • TimeSheet.Total_Hours__c<br/>
   • TimeSheet.Total_KM__c<br/>
   • TimeSheet.Total_Normal_Hours__c<br/>
   • TimeSheet.Total_Travel_Time__c<br/>
+  • TimeSheet.Working_Hours_in_Contract__c<br/>
   • TimeSheetEntry.Atak_Project__c<br/>
   • TimeSheetEntry.Break_Duration__c<br/>
   • TimeSheetEntry.Break_Duration_in_Minutes__c<br/>
@@ -989,6 +995,8 @@ Metadatas: 3145
   • WorkOrder.Work_Order_Type__c<br/>
   • WorkOrderLineItem.FSL__IsFillInCandidate__c<br/>
   • WorkOrderLineItem.FSL__VisitingHours__c<br/>
+  • WorkStep.Not_Applicable_Comments__c<br/>
+  • WorkStep.Not_Applicable_Reasons__c<br/>
   • WorkStep.Reason__c<br/>
   • WorkStep.Work_Order_Line_Item__c<br/>
   • WorkType.FSL__Due_Date_Offset__c<br/>
@@ -1506,7 +1514,7 @@ Metadatas: 3145
   • WorkOrderLineItem.FSL__Gantt_Lightbox<br/>
 </details>
 
-<details><summary>FlexiPage (72)</summary>
+<details><summary>FlexiPage (81)</summary>
   • ATAK_Personnel_Record_Page<br/>
   • ATAK_Project_Financial_Account_Record_Page<br/>
   • ATAK_Project_Record_Page<br/>
@@ -1544,6 +1552,15 @@ Metadatas: 3145
   • Maintenance_Work_Rule_Record_Page<br/>
   • Management_UtilityBar<br/>
   • Mileage_Entry_Record_Page<br/>
+  • Notification_Crew_on_its_way_ENG<br/>
+  • Notification_Crew_on_its_way_FR<br/>
+  • Notification_Crew_on_its_way_NL<br/>
+  • Notification_Planned_WO_NL<br/>
+  • Notification_REScheduled_WO_ENG<br/>
+  • Notification_REScheduled_WO_FR<br/>
+  • Notification_REScheduled_WO_NL<br/>
+  • Notification_Scheduled_WO_ENG<br/>
+  • Notification_Scheduled_WO_FR<br/>
   • Operating_Hours_Record_Page<br/>
   • Operational_Account_Record_Page<br/>
   • Opportunity_Product_Record_Page<br/>
@@ -1581,7 +1598,7 @@ Metadatas: 3145
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (86)</summary>
+<details><summary>Flow (88)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1628,6 +1645,7 @@ Metadatas: 3145
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • TimeSheet_Record_Trigger_Set_Contract_Hours<br/>
   • Time_Sheet_After_Save_Record_Triggered_Approval<br/>
   • Time_Sheet_After_Save_Send_to_ATAK<br/>
   • Time_Sheet_Before_Save_Record_Triggered_Approval<br/>
@@ -1667,10 +1685,11 @@ Metadatas: 3145
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
+  • Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable<br/>
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
-<details><summary>FlowDefinition (86)</summary>
+<details><summary>FlowDefinition (88)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1717,6 +1736,7 @@ Metadatas: 3145
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • TimeSheet_Record_Trigger_Set_Contract_Hours<br/>
   • Time_Sheet_After_Save_Record_Triggered_Approval<br/>
   • Time_Sheet_After_Save_Send_to_ATAK<br/>
   • Time_Sheet_Before_Save_Record_Triggered_Approval<br/>
@@ -1756,6 +1776,7 @@ Metadatas: 3145
   • Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO<br/>
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
+  • Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable<br/>
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
 </details>
 
@@ -1790,6 +1811,19 @@ Metadatas: 3145
   • Service_package_type<br/>
   • Type_of_Waste<br/>
   • Work_Type<br/>
+</details>
+
+<details><summary>GlobalValueSetTranslation (10)</summary>
+  • Attachment_type-ja<br/>
+  • Batch_Job_Type-ja<br/>
+  • PackageStatus-de<br/>
+  • PackageStatus-fr<br/>
+  • PackageStatus-ja<br/>
+  • PackageStatus-nl_NL<br/>
+  • Role-ja<br/>
+  • Role-nl_NL<br/>
+  • Sign_method-ja<br/>
+  • Sign_method-nl_NL<br/>
 </details>
 
 <details><summary>Group (20)</summary>
@@ -2339,7 +2373,7 @@ Metadatas: 3145
   • rout_name<br/>
 </details>
 
-<details><summary>QuickAction (174)</summary>
+<details><summary>QuickAction (175)</summary>
   • ATAK_Personnel__c.Create_User<br/>
   • Account.Add_Extra_Work<br/>
   • Account.Child_Account<br/>
@@ -2510,6 +2544,7 @@ Metadatas: 3145
   • WorkStep.Check_In<br/>
   • WorkStep.Checkout<br/>
   • WorkStep.Material_Pickup<br/>
+  • WorkStep.Not_Applicable_Custom<br/>
   • WorkStep.Set_Service_Status<br/>
   • WorkStep.Take_After_Work_Photos<br/>
   • WorkStep.Take_Before_Work_Photos<br/>

@@ -1,40 +1,83 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 appMenus/AppSwitcher.appMenu-meta.xml," ",AppMenu AppSwitcher,M,,log,📰
-applications/Bussiness_Support.app-meta.xml,A,CustomApplication Bussiness_Support,,,log,📰
-applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
-applications/Management.app-meta.xml,A,CustomApplication Management,,,log,📰
-approvalProcesses/Quote.Approval_Process_Quote_Over_5000.approvalProcess-meta.xml," ",ApprovalProcess Quote.Approval_Process_Quote_Over_5000,M,,log,📰
 classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
-classes/ATAKVehicleService.cls," ",ApexClass ATAKVehicleService,M,,log,📰
+classes/LocationMonitorController.cls," ",ApexClass LocationMonitorController,M,,log,📰
+classes/OverrideNotApplicableController.cls,A,ApexClass OverrideNotApplicableController,,,log,📰
+classes/OverrideNotApplicableController.cls-meta.xml,A,ApexClass OverrideNotApplicableController,,,log,📰
+classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
+classes/TimeSheetController.cls-meta.xml," ",ApexClass TimeSheetController,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
-flexipages/Business_Support_UtilityBar.flexipage-meta.xml,A,FlexiPage Business_Support_UtilityBar,,,log,📰
-flexipages/Management_UtilityBar.flexipage-meta.xml,A,FlexiPage Management_UtilityBar,,,log,📰
-flexipages/Product_Record_Page.flexipage-meta.xml," ",FlexiPage Product_Record_Page,M,,log,📰
-flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
-flowDefinitions/CrewMember_Save_Check_for_Crew_Leader.flowDefinition-meta.xml,A,FlowDefinition CrewMember_Save_Check_for_Crew_Leader,,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.flowDefinition-meta.xml,A,FlowDefinition Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed,,,log,📰
-flows/CrewMember_Save_Check_for_Crew_Leader.flow-meta.xml,A,Flow CrewMember_Save_Check_for_Crew_Leader,,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.flow-meta.xml,A,Flow Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed,,,log,📰
-layouts/ATAK_Project__c-ATAK Project Layout.layout-meta.xml," ",Layout ATAK_Project__c-ATAK Project Layout,M,,log,📰
-layouts/FlowRecord-Flow Layout.layout-meta.xml,A,Layout FlowRecord-Flow Layout,,,log,📰
-layouts/ProductItem-Material Item Layout.layout-meta.xml," ",Layout ProductItem-Material Item Layout,M,,log,📰
-layouts/ServiceCrew-Van Crew Layout.layout-meta.xml," ",Layout ServiceCrew-Van Crew Layout,M,,log,📰
-layouts/ServiceCrewMember-Van Crew Member Layout.layout-meta.xml," ",Layout ServiceCrewMember-Van Crew Member Layout,M,,log,📰
-objects/ATAK_Project__c/ATAK_Project__c.object-meta.xml," ",CustomObject ATAK_Project__c/ATAK_Project__c,M,,log,📰
-objects/ATAK_Project__c/fields/Active__c.field-meta.xml,A,CustomField Active__c,,,log,📰
-objects/ATAK_Project__c/listViews/Active_ATAK_Projects.listView-meta.xml,A,ListView Active_ATAK_Projects,,,log,📰
-objects/ATAK_Project__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
-objects/ProductItem/fields/External_Id__c.field-meta.xml,A,CustomField External_Id__c,,,log,📰
-objects/Quote/fields/Approval_Open__c.field-meta.xml,A,CustomField Approval_Open__c,,,log,📰
-objects/Quote/fields/Approval_Status__c.field-meta.xml,A,CustomField Approval_Status__c,,,log,📰
-objects/Quote/recordTypes/B2B_Tender.recordType-meta.xml," ",RecordType B2B_Tender,M,,log,📰
-objects/Quote/recordTypes/Public_Tender.recordType-meta.xml," ",RecordType Public_Tender,M,,log,📰
-objects/Quote/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
-objects/ServiceCrew/fields/Has_Leader__c.field-meta.xml,A,CustomField Has_Leader__c,,,log,📰
-objects/ServiceCrewMember/fields/Crew_Has_Leader__c.field-meta.xml,A,CustomField Crew_Has_Leader__c,,,log,📰
-objects/ServiceCrewMember/validationRules/Crew_Should_Have_Leader.validationRule-meta.xml,A,ValidationRule Crew_Should_Have_Leader,,,log,📰
-permissionsets/ATAK_Permissions.permissionset-meta.xml," ",PermissionSet ATAK_Permissions,M,,log,📰
+email/CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917.email," ",EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917,M,,log,📰
+email/CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917,M,,log,📰
+email/CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179.email," ",EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179,M,,log,📰
+email/CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179,M,,log,📰
+email/CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215.email," ",EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215,M,,log,📰
+email/CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Crew_on_its_way_NL_1732013455215,M,,log,📰
+email/CustomerNotifications/Notification_Planned_WO_NL_1731941363446.email," ",EmailTemplate CustomerNotifications/Notification_Planned_WO_NL_1731941363446,M,,log,📰
+email/CustomerNotifications/Notification_Planned_WO_NL_1731941363446.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Planned_WO_NL_1731941363446,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597.email," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_ENG_1732012846597,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863.email," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_FR_1732001152863,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106.email," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106,M,,log,📰
+email/CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513.email," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709.email," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709,M,,log,📰
+email/CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709.email-meta.xml," ",EmailTemplate CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709,M,,log,📰
+email/unfiled$public/Quote_Approval_Email.email," ",EmailTemplate unfiled$public/Quote_Approval_Email,M,,log,📰
+email/unfiled$public/Quote_Approval_Request_Email.email," ",EmailTemplate unfiled$public/Quote_Approval_Request_Email,M,,log,📰
+email/unfiled$public/Quote_Rejection_Email.email," ",EmailTemplate unfiled$public/Quote_Rejection_Email,M,,log,📰
+email/unfiled$public/Quote_Submission_Confirmation_Email.email," ",EmailTemplate unfiled$public/Quote_Submission_Confirmation_Email,M,,log,📰
+email/unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354.email," ",EmailTemplate unfiled$public/Time_Sheet_Needs_Review_EN_1732107633354,M,,log,📰
+flexipages/Notification_Crew_on_its_way_ENG.flexipage-meta.xml,A,FlexiPage Notification_Crew_on_its_way_ENG,,,log,📰
+flexipages/Notification_Crew_on_its_way_FR.flexipage-meta.xml,A,FlexiPage Notification_Crew_on_its_way_FR,,,log,📰
+flexipages/Notification_Crew_on_its_way_NL.flexipage-meta.xml,A,FlexiPage Notification_Crew_on_its_way_NL,,,log,📰
+flexipages/Notification_Planned_WO_NL.flexipage-meta.xml,A,FlexiPage Notification_Planned_WO_NL,,,log,📰
+flexipages/Notification_REScheduled_WO_ENG.flexipage-meta.xml,A,FlexiPage Notification_REScheduled_WO_ENG,,,log,📰
+flexipages/Notification_REScheduled_WO_FR.flexipage-meta.xml,A,FlexiPage Notification_REScheduled_WO_FR,,,log,📰
+flexipages/Notification_REScheduled_WO_NL.flexipage-meta.xml,A,FlexiPage Notification_REScheduled_WO_NL,,,log,📰
+flexipages/Notification_Scheduled_WO_ENG.flexipage-meta.xml,A,FlexiPage Notification_Scheduled_WO_ENG,,,log,📰
+flexipages/Notification_Scheduled_WO_FR.flexipage-meta.xml,A,FlexiPage Notification_Scheduled_WO_FR,,,log,📰
+flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
+flowDefinitions/Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO,M,,log,📰
+flowDefinitions/TimeSheet_Record_Trigger_Set_Contract_Hours.flowDefinition-meta.xml,A,FlowDefinition TimeSheet_Record_Trigger_Set_Contract_Hours,,,log,📰
+flowDefinitions/Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable.flowDefinition-meta.xml,A,FlowDefinition Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable,,,log,📰
+flows/Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO.flow-meta.xml," ",Flow Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO,M,,log,📰
+flows/TimeSheet_Record_Trigger_Set_Contract_Hours.flow-meta.xml,A,Flow TimeSheet_Record_Trigger_Set_Contract_Hours,,,log,📰
+flows/Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable.flow-meta.xml,A,Flow Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable,,,log,📰
+globalValueSetTranslations/Attachment_type-ja.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation Attachment_type-ja,,,log,📰
+globalValueSetTranslations/Batch_Job_Type-ja.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation Batch_Job_Type-ja,,,log,📰
+globalValueSetTranslations/PackageStatus-de.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation PackageStatus-de,,,log,📰
+globalValueSetTranslations/PackageStatus-fr.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation PackageStatus-fr,,,log,📰
+globalValueSetTranslations/PackageStatus-ja.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation PackageStatus-ja,,,log,📰
+globalValueSetTranslations/PackageStatus-nl_NL.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation PackageStatus-nl_NL,,,log,📰
+globalValueSetTranslations/Role-ja.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation Role-ja,,,log,📰
+globalValueSetTranslations/Role-nl_NL.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation Role-nl_NL,,,log,📰
+globalValueSetTranslations/Sign_method-ja.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation Sign_method-ja,,,log,📰
+globalValueSetTranslations/Sign_method-nl_NL.globalValueSetTranslation-meta.xml,A,GlobalValueSetTranslation Sign_method-nl_NL,,,log,📰
+labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
+layouts/TimeSheet-FSL Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-FSL Time Sheet Layout,M,,log,📰
+layouts/TimeSheet-Time Sheet Layout.layout-meta.xml," ",Layout TimeSheet-Time Sheet Layout,M,,log,📰
+layouts/WorkStep-FSL Work Step Layout.layout-meta.xml," ",Layout WorkStep-FSL Work Step Layout,M,,log,📰
+layouts/WorkStep-Work Step Layout.layout-meta.xml," ",Layout WorkStep-Work Step Layout,M,,log,📰
+lwc/locationMonitor/locationMonitor.css," ",LightningComponentBundle locationMonitor/locationMonitor.css,M,,log,📰
+lwc/locationMonitor/locationMonitor.html," ",LightningComponentBundle locationMonitor/locationMonitor.html,M,,log,📰
+lwc/locationMonitor/locationMonitor.js," ",LightningComponentBundle locationMonitor/locationMonitor.js,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.css," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.css,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.html," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.html,M,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.js," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,M,,log,📰
+objects/Contact/fields/cadmus_sign2__LocaleSidKey__c.field-meta.xml,A,CustomField cadmus_sign2__LocaleSidKey__c,,,log,📰
+objects/ContentVersion/fields/cadmus_sign2__File_Mac__c.field-meta.xml,A,CustomField cadmus_sign2__File_Mac__c,,,log,📰
+objects/TimeSheet/fields/Total_Hours_Minus_Breaks__c.field-meta.xml,A,CustomField Total_Hours_Minus_Breaks__c,,,log,📰
+objects/TimeSheet/fields/Working_Hours_in_Contract__c.field-meta.xml,A,CustomField Working_Hours_in_Contract__c,,,log,📰
+objects/WorkStep/fields/Not_Applicable_Comments__c.field-meta.xml,A,CustomField Not_Applicable_Comments__c,,,log,📰
+objects/WorkStep/fields/Not_Applicable_Reasons__c.field-meta.xml,A,CustomField Not_Applicable_Reasons__c,,,log,📰
+pages/OverrideNotApplicable.page,A,ApexPage OverrideNotApplicable,,,log,📰
+pages/OverrideNotApplicable.page-meta.xml,A,ApexPage OverrideNotApplicable,,,log,📰
+permissionsets/Query_All_Files.permissionset-meta.xml," ",PermissionSet Query_All_Files,M,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -61,11 +104,15 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-reportTypes/Quotes.reportType-meta.xml," ",ReportType Quotes,M,,log,📰
-reportTypes/Vans_with_Material_Items.reportType-meta.xml," ",ReportType Vans_with_Material_Items,M,,log,📰
-translations/en_US.translation-meta.xml,A,Translations en_US,,,log,📰
-translations/fr.translation-meta.xml,A,Translations fr,,,log,📰
-translations/nl_NL.translation-meta.xml,A,Translations nl_NL,,,log,📰
-workflows/Quote.workflow-meta.xml," ",Workflow Quote,M,,log,📰
+quickActions/WorkStep.Not_Applicable_Custom.quickAction-meta.xml,A,QuickAction WorkStep.Not_Applicable_Custom,,,log,📰
+reportTypes/TimeSheets.reportType-meta.xml," ",ReportType TimeSheets,M,,log,📰
+reportTypes/Time_Sheets_with_Mileage.reportType-meta.xml," ",ReportType Time_Sheets_with_Mileage,M,,log,📰
+reportTypes/Times_Sheets_with_Entries.reportType-meta.xml," ",ReportType Times_Sheets_with_Entries,M,,log,📰
+reportTypes/Work_Orders_with_Work_Plans_Steps.reportType-meta.xml," ",ReportType Work_Orders_with_Work_Plans_Steps,M,,log,📰
+settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
+translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
+translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
+translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
+installedPackages/SIGN Butler.json,A,InstalledPackage SIGN Butler.json,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

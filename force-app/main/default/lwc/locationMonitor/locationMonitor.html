@@ -1,75 +1,162 @@
 <template>
   <div class="slds-card slds-p-around_medium">
     <div class="slds-text-heading_medium slds-p-bottom_medium">{labels.dashboardTitle}</div>
-
-    <div class="slider-container">
-      <lightning-slider
-        label={labels.thresholdSliderLabel}
-        value={thresholdValue}
-        min="0"
-        max="5"
-        step="0.25"
-        onchange={handleThresholdChange}>
-      </lightning-slider>
-    </div>
-
-    <div class="entries-container">
-      <template for:each={workOrders} for:item="wo">
-        <div key={wo.id} class="entry-card">
-          <article class={wo.cardContentClass}>
-            <div class="slds-grid slds-grid_vertical">
-              <div class="slds-col slds-grid slds-grid_align-spread">
-                <div class="slds-grid slds-grid_vertical">
-                  <div class="work-order">{wo.workOrderNumber}</div>
-                  <div class="technician">{wo.technicianName}</div>
-                </div>
-
-                <template if:true={wo.exceedsThreshold}>
-                  <div class="alert-badge">
-                    <lightning-icon
-                      icon-name="utility:warning"
-                      size="x-small"
-                      class="slds-m-right_x-small"
-                      variant="inverse">
-                    </lightning-icon>
-                    {labels.exceedsThreshold}
-                  </div>
-                </template>
-
-                <template if:true={wo.withinThreshold}>
-                  <div class="success-badge">
-                    <lightning-icon
-                      icon-name="utility:check"
-                      size="x-small"
-                      class="slds-m-right_x-small"
-                      variant="inverse">
-                    </lightning-icon>
-                    {labels.withinThreshold}
-                  </div>
-                </template>
+    <div class="slds-grid_vertical">
+      <div class="slds-col">
+        <div class="slds-grid slds-grid_align-spread">
+        <div class="slds-col slds-size_1-of-2">
+          <div class="slider-container slds-m-right_small">
+            <div class="slds-grid">
+              <div class="slds-col">
+                <lightning-icon icon-name="utility:truck" size="small"></lightning-icon>
               </div>
-
-              <div class="slds-col slds-grid slds-grid_align-spread slds-m-top_small">
-                <div class={wo.locationInfoClass}>
-                  <lightning-icon
-                    icon-name={wo.locationIcon}
-                    size="xx-small"
-                    class="slds-m-right_xx-small">
-                  </lightning-icon>
-                  {wo.statusMessage}
-                </div>
-                <div class="time-info">
-                  <lightning-formatted-date-time
-                    value={wo.startTime}
-                    hour="2-digit"
-                    minute="2-digit">
-                  </lightning-formatted-date-time>
+              <div class="slds-col">
+                <div class="slds-grid_vertical">
+                  <div class="slds-col slds-p-left_medium">
+                    <span> KM LOGGED </span>
+                  </div>
+                  <div class="slds-col slds-p-left_medium">
+                    <span>{timeSheetData.Total_KM__c} KM</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </article>
+          </div>
         </div>
-      </template>
+        <div class="slds-col slds-size_1-of-2">
+          <div class={containerStyleBreak}>
+            <div class="slds-grid">
+              <div class="slds-col">
+                <lightning-icon icon-name="utility:food_and_drink" size="small"></lightning-icon>
+              </div>
+              <div class="slds-col">
+                <div class="slds-grid_vertical">
+                  <div class="slds-col slds-p-left_medium">
+                    <span> BREAK TIME </span>
+                  </div>
+                  <div class="slds-col slds-p-left_medium">
+                    <span>{timeSheetData.Total_Break_Time__c}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="slds-col">
+        <div class="slds-grid slds-grid_align-spread">
+          <div class="slds-col slds-size_1-of-2">
+            <div class={containerStyleWorkedHours}>
+              <div class="slds-grid">
+                <div class="slds-col">
+                  <lightning-icon icon-name="utility:clock" size="small"></lightning-icon>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-grid_vertical">
+                    <div class="slds-col slds-p-left_medium">
+                      <span> WORK TIME </span>
+                    </div>
+                    <div class="slds-col slds-p-left_medium">
+                      <span>{timeSheetData.Total_Hours_Minus_Breaks__c} / {timeSheetData.Working_Hours_in_Contract__c}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+            <div class="slider-container">
+              <div class="slds-grid">
+                <div class="slds-col">
+                  <lightning-icon icon-name="utility:plane" size="small"></lightning-icon>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-grid_vertical">
+                    <div class="slds-col slds-p-left_medium">
+                      <span> TRAVEL TIME </span>
+                    </div>
+                    <div class="slds-col slds-p-left_medium">
+                      <span>{timeSheetData.Total_Travel_Time__c}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slider-container">
+        <lightning-slider
+          label={labels.thresholdSliderLabel}
+          value={thresholdValue}
+          min="0"
+          max="5"
+          step="0.25"
+          onchange={handleThresholdChange}>
+        </lightning-slider>
+      </div>
+
+      <div class="entries-container">
+        <template for:each={workOrders} for:item="wo">
+          <div key={wo.id} class="entry-card">
+            <article class={wo.cardContentClass}>
+              <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-grid slds-grid_align-spread">
+                  <div class="slds-grid slds-grid_vertical">
+                    <div class="work-order">{wo.workOrderNumber}</div>
+                    <div class="technician">{wo.technicianName}</div>
+                  </div>
+
+                  <template if:true={wo.exceedsThreshold}>
+                    <div class="alert-badge">
+                      <lightning-icon
+                        icon-name="utility:warning"
+                        size="x-small"
+                        class="slds-m-right_x-small"
+                        variant="inverse">
+                      </lightning-icon>
+                      {labels.exceedsThreshold}
+                    </div>
+                  </template>
+
+                  <template if:true={wo.withinThreshold}>
+                    <div class="success-badge">
+                      <lightning-icon
+                        icon-name="utility:check"
+                        size="x-small"
+                        class="slds-m-right_x-small"
+                        variant="inverse">
+                      </lightning-icon>
+                      {labels.withinThreshold}
+                    </div>
+                  </template>
+                </div>
+
+                <div class="slds-col slds-grid slds-grid_align-spread slds-m-top_small">
+                  <div class={wo.locationInfoClass}>
+                    <lightning-icon
+                      icon-name={wo.locationIcon}
+                      size="xx-small"
+                      class="slds-m-right_xx-small">
+                    </lightning-icon>
+                    {wo.statusMessage}
+                  </div>
+                  <div class="time-info">
+                    <lightning-formatted-date-time
+                      value={wo.startTime}
+                      hour="2-digit"
+                      minute="2-digit">
+                    </lightning-formatted-date-time>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </template>
+      </div>
     </div>
   </div>
 </template>

@@ -319,15 +319,21 @@ public with sharing class ATAKPerformanceService {
         }
 
         // Get the materials based on the work order ids
-        List<ProductConsumed> materials = [
-                SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
-                FROM ProductConsumed WHERE WorkOrderId IN :workOrderIds
-        ];
 
-        // Loop through the materials and add them to the data list
-        for(ProductConsumed material : materials){
-            ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
-            dataList.add(data);
+        if(resourceIsCrewLeader(ts.ServiceResourceId) == true) {
+
+            List<ProductConsumed> materials = [
+                    SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
+                    FROM ProductConsumed
+                    WHERE WorkOrderId IN :workOrderIds
+            ];
+
+            // Loop through the materials and add them to the data list
+            for (ProductConsumed material : materials) {
+                ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
+                dataList.add(data);
+            }
+
         }
 
         wrapper.data = dataList;
