@@ -378,6 +378,7 @@ public with sharing class SFS_WorkOrderCreatorController {
 
             return wo.Id;
         } catch (Exception e) {
+            System.debug('Error: ' + e.getMessage());
             throw new AuraHandledException(e.getMessage());
         }
     }

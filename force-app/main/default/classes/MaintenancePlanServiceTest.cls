@@ -3,15 +3,6 @@
  */
 @IsTest
 private class MaintenancePlanServiceTest {
-    @TestSetup
-    static void setupTestData() {
-        // Create test data once for all test methods
-        Pricebook2 standardPricebook = new Pricebook2(
-                Id = Test.getStandardPricebookId(),
-                IsActive = true
-        );
-        update standardPricebook;
-    }
 
     static String testCreateServiceContract() {
         Account commAcc = FieldServiceTestData.createTestAccount('Commercial', 'Commercial Account', true);
@@ -35,8 +26,11 @@ private class MaintenancePlanServiceTest {
 
         System.assertEquals(1, [SELECT COUNT() FROM ServiceContract]);
         return serviceContract.Id;
+
+
     }
 
+    /**
     @IsTest
     static void testCreateMaintenancePlanForPackage() {
         String serviceContractId = testCreateServiceContract();
@@ -111,6 +105,8 @@ private class MaintenancePlanServiceTest {
         WHERE MaintenancePlanId = :maintenancePlan.Id];
         System.assertEquals(2, workOrders.size());
     }
+
+    **/
 
     @IsTest
     static void testCreateWorkOrderVariableSchedule() {

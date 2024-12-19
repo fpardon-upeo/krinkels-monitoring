@@ -3,6 +3,11 @@
     <fullName>Total_Hours_Minus_Breaks__c</fullName>
     <label>Total Hours Minus Breaks</label>
     <summarizedField>TimeSheetEntry.Total_Hours_Minus_Breaks__c</summarizedField>
+    <summaryFilterItems>
+        <field>TimeSheetEntry.Code_ATAK_Limbus__c</field>
+        <operation>notEqual</operation>
+        <value>KMAD, KMBP, KMAP, KMBD, KMEV, RT</value>
+    </summaryFilterItems>
     <summaryForeignKey>TimeSheetEntry.TimeSheetId</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>

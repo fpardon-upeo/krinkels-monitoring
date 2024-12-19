@@ -67,7 +67,7 @@
             <quickActionName>FeedItem.TextPost</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>WorkStep.Not_Applicable_Custom</quickActionName>
+            <quickActionName>WorkStep.Cannot_Complete</quickActionName>
         </quickActionListItems>
     </quickActionList>
     <showEmailCheckbox>false</showEmailCheckbox>

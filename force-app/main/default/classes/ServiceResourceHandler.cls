@@ -32,16 +32,20 @@ public without sharing class ServiceResourceHandler {
         user.Email = personnel.Email__c;
         user.Phone = personnel.Phone__c;
         user.MobilePhone = personnel.Mobile__c;
-        user.Alias = personnel.Code__c;
+        //user.Alias = personnel.Code__c.substring(0, 8);
+        //Get the first 8 characters of the code, sometimes the code is less than 8 characters
+        user.Alias = personnel.Code__c.substring(0, Math.min(personnel.Code__c.length(), 8));
         user.Username = personnel.Email__c + '.' + getUserNameSuffix();
         user.TimeZoneSidKey = 'Europe/Brussels';
         user.LocaleSidKey = 'en_US';
         user.EmailEncodingKey = 'UTF-8';
-        user.ProfileId = [SELECT Id FROM Profile WHERE Name = 'Operator'].Id;
+        user.ProfileId = [SELECT Id FROM Profile WHERE Name = 'Operator Outdoor'].Id;
         user.LanguageLocaleKey = 'en_US';
         user.IsActive = true;
         user.ATAK_Code__c = personnel.Code__c;
-        user.Manager = new User(ATAK_Code__c = personnel.Sitemanager_Code__c);
+        if(!Test.isRunningTest()) {
+            user.Manager = new User(ATAK_Code__c = personnel.Sitemanager_Code__c);
+        }
         insert user;
         return user.Id;
     }
@@ -56,18 +60,6 @@ public without sharing class ServiceResourceHandler {
             permissionSetAssignments.add(permissionSetAssignment);
         }
         insert permissionSetAssignments;
-    }
-
-    public static void createPermissionSetLicenseAssignments(String userId){
-        List<PermissionSetLicense> permissionSetLicenses = [SELECT Id FROM PermissionSetLicense WHERE MasterLabel IN  ('Field Service Mobile', 'Field Service Scheduling')];
-        List<PermissionSetLicenseAssign> permissionSetLicenseAssignments = new List<PermissionSetLicenseAssign>();
-        for(PermissionSetLicense permissionSetLicense : permissionSetLicenses){
-            PermissionSetLicenseAssign permissionSetLicenseAssignment = new PermissionSetLicenseAssign();
-            permissionSetLicenseAssignment.AssigneeId = userId;
-            permissionSetLicenseAssignment.PermissionSetLicenseId = permissionSetLicense.Id;
-            permissionSetLicenseAssignments.add(permissionSetLicenseAssignment);
-        }
-        //insert permissionSetLicenseAssignments;
     }
 
     public static void fireUserPlatformEvent(String userId){

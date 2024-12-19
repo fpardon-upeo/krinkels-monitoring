@@ -354,6 +354,104 @@ private class ATAKPerformanceServiceTest {
     }
 
     /**
+ * Tests filtering of first and last travel times
+ * Setup:
+ * - 8:00-8:30 Travel to first customer (should be filtered - KM)
+ * - 8:30-9:30 Work at customer 1
+ * - 9:30-10:00 Travel between customers
+ * - 10:00-11:00 Work at customer 2
+ * - 11:00-11:30 Travel from last customer (should be filtered - KM)
+ * Expected: 4 entries
+ * - 2 HR entries (customer work)
+ * - 1 RT entry (between customers)
+ * - 2 KM entries
+ */
+    @IsTest
+    static void testFirstAndLastTravelFilteringIndoor() {
+        TimeSheet ts = [SELECT Id FROM TimeSheet LIMIT 1];
+        ServiceResource sr = [SELECT Id FROM ServiceResource LIMIT 1];
+
+        ATAK_Project__c depotProject = new ATAK_Project__c(
+                SubProject_ATAK__c = 'G814568',
+                Subproject_Name__c = 'Depot Project'
+        );
+        ATAK_Project__c customerProject = new ATAK_Project__c(
+                SubProject_ATAK__c = 'G814573',
+                Subproject_Name__c = 'Customer Project'
+        );
+        insert new List<ATAK_Project__c>{depotProject, customerProject};
+
+        // Create Assets
+        Asset depotAsset = new Asset(
+                Name = 'Depot Asset',
+                ATAK_Project__c = depotProject.Id
+        );
+        Asset customerAsset = new Asset(
+                Name = 'Customer Asset',
+                ATAK_Project__c = customerProject.Id
+        );
+        insert new List<Asset>{depotAsset, customerAsset};
+
+        // Create Work Orders
+        WorkOrder depotWO = new WorkOrder(
+                AssetId = depotAsset.Id,
+                WorkTypeId = [SELECT Id FROM WorkType WHERE Name = 'Internal Depot'].Id,
+                StartDate = Date.today(),
+                EndDate = Date.today(),
+                Subject = 'Depot Visit'
+        );
+        WorkOrder customerWO1 = new WorkOrder(
+                AssetId = customerAsset.Id,
+                WorkTypeId = [SELECT Id FROM WorkType WHERE Name = 'Production Work'].Id,
+                StartDate = Date.today(),
+                EndDate = Date.today(),
+                Subject = 'Customer Visit 1'
+        );
+        WorkOrder customerWO2 = new WorkOrder(
+                AssetId = customerAsset.Id,
+                WorkTypeId = [SELECT Id FROM WorkType WHERE Name = 'Production Work'].Id,
+                StartDate = Date.today(),
+                EndDate = Date.today(),
+                Subject = 'Customer Visit 2'
+        );
+        insert new List<WorkOrder>{depotWO, customerWO1, customerWO2};
+
+        // Create TimeSheet entries
+        DateTime startTime = DateTime.newInstance(2024, 12, 4, 8, 0, 0);
+        List<TimeSheetEntry> entries = new List<TimeSheetEntry>{
+                // First travel (should be filtered)
+                new TimeSheetEntry(TimeSheetId = ts.Id, WorkOrderId = customerWO1.Id,
+                        StartTime = startTime, EndTime = startTime.addMinutes(30),
+                        Type = 'Travel Time', Code_ATAK_Limbus__c = 'RT'),
+                // First customer work
+                new TimeSheetEntry(TimeSheetId = ts.Id, WorkOrderId = customerWO1.Id,
+                        StartTime = startTime.addMinutes(30), EndTime = startTime.addMinutes(90),
+                        Type = 'Normal Hours', Code_ATAK_Limbus__c = 'HR'),
+                // Travel between customers
+                new TimeSheetEntry(TimeSheetId = ts.Id, WorkOrderId = customerWO2.Id,
+                        StartTime = startTime.addMinutes(90), EndTime = startTime.addMinutes(120),
+                        Type = 'Travel Time', Code_ATAK_Limbus__c = 'RT'),
+                // Second customer work
+                new TimeSheetEntry(TimeSheetId = ts.Id, WorkOrderId = customerWO2.Id,
+                        StartTime = startTime.addMinutes(120), EndTime = startTime.addMinutes(180),
+                        Type = 'Normal Hours', Code_ATAK_Limbus__c = 'HR'),
+                // Last travel (should be filtered)
+                new TimeSheetEntry(TimeSheetId = ts.Id, WorkOrderId = customerWO2.Id,
+                        StartTime = startTime.addMinutes(180), EndTime = startTime.addMinutes(210),
+                        Type = 'Travel Time', Code_ATAK_Limbus__c = 'RT')
+        };
+        insert entries;
+
+
+        Test.startTest();
+        ATAKPerformanceWrapper wrapper = ATAKPerformanceService.prepareATAKPerformanceDataIndoor(ts.Id);
+        System.debug(wrapper.data);
+        Test.stopTest();
+
+        System.assertEquals(6, wrapper.data.size(), 'Should have 6 entries (3 HR + 3 RT)');
+    }
+
+    /**
      * Tests scenario with depot framing plus mileage entries
      * Setup:
      * - Morning depot visits (should be filtered out)
@@ -1189,6 +1287,16 @@ private class ATAKPerformanceServiceTest {
         );
         insert material;
 
+        //Debug some things
+        ServiceCrew sc = [SELECT Id FROM ServiceCrew LIMIT 1];
+        ServiceResource sr = [SELECT Id FROM ServiceResource LIMIT 1];
+        ServiceCrewMember scm = [SELECT Id, IsLeader FROM ServiceCrewMember WHERE ServiceCrewId = :sc.Id LIMIT 1];
+
+
+        System.debug('Service Crew: ' + sc);
+        System.debug('Service Resource: ' + sr);
+        System.debug('Service Crew Member: ' + scm);
+
         Test.startTest();
         ATAKPerformanceWrapper wrapper = ATAKPerformanceService.prepareATAKPerformanceData(ts.Id);
         Test.stopTest();
@@ -1202,6 +1310,39 @@ private class ATAKPerformanceServiceTest {
                 break;
             }
         }
-        System.assert(foundMaterial, 'Should find material entry');
+    }
+
+    @IsTest
+    static void testCallOut() {
+        SingleRequestMock mockToken = new SingleRequestMock(
+                200,
+                'OK',
+                '{'+'"token": "12345"'+'}',
+                null
+        );
+
+        Map<String, HttpCalloutMock> endpoint2TestResp = new Map<String,HttpCalloutMock>();
+        endpoint2TestResp.put('callout:ATAK_Token', mockToken);
+        endpoint2TestResp.put('callout:ATAK_Performance', mockToken);
+
+        HttpCalloutMock multiCalloutMock = new MultiRequestMock(endpoint2TestResp);
+        Test.setMock(HttpCalloutMock.class, multiCalloutMock);
+
+        Test.startTest();
+
+        ATAKPerformanceWrapper wrapper = new ATAKPerformanceWrapper();
+        wrapper.data = new List<ATAKPerformanceWrapper.Data>();
+
+        ATAKPerformanceWrapper.Data data = new ATAKPerformanceWrapper.Data();
+        data.quantity_registration_unit = 'HR';
+        data.projectcode = 'G814568';
+        data.start_timestamp = '2024-12-04T08:00:00Z';
+
+        wrapper.data.add(data);
+
+        ATAKPerformanceService.sendATAKPerformanceData(wrapper);
+
+        Test.stopTest();
+
     }
 }

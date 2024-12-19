@@ -193,6 +193,9 @@ export default class TimeSheetCalendar extends LightningElement {
       })
 
       .then(([settings, workSchedule, timeSheet]) => {
+        //Variables that will store the work order Ids from the Mileage Entries
+        const workOrderIds = [];
+
         // Process user settings
         if (settings) {
           this.user = settings;
@@ -212,7 +215,9 @@ export default class TimeSheetCalendar extends LightningElement {
           });
 
           const todayNumber = new Date().getDay();
-          this.expectedWorkHours = this.handleWorkScheduleDayHours(todayNumber);
+          this.expectedWorkHours = this.convertDecimalHoursToHoursMinutes(
+            this.handleWorkScheduleDayHours(todayNumber)
+          );
         }
 
         // Process timesheet data
@@ -245,7 +250,10 @@ export default class TimeSheetCalendar extends LightningElement {
           }
 
           if (timeSheet.timeSheet) {
-            this.workHours = timeSheet.timeSheet.Total_Normal_Hours__c || 0;
+            this.workHours =
+              this.convertDecimalHoursToHoursMinutes(
+                timeSheet.timeSheet.Total_Normal_Hours__c
+              ) || "0:00";
             this.travelHours = timeSheet.timeSheet.Total_Travel_Time__c || 0;
             this.kmAmount = timeSheet.timeSheet.Total_KM__c || 0;
             this.totalHours = timeSheet.timeSheet.Total_Hours__c || 0;
@@ -313,8 +321,13 @@ export default class TimeSheetCalendar extends LightningElement {
           }
 
           if (timeSheet.timeSheet?.Mileage_Entries__r) {
-            this.mileageEntries = [...timeSheet.timeSheet.Mileage_Entries__r];
+            timeSheet.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
+              if (mileageEntry.Work_Order__c) {
+                workOrderIds.push(mileageEntry.Work_Order__c);
+              }
+            });
 
+            this.mileageEntries = [...timeSheet.timeSheet.Mileage_Entries__r];
             this.processMileageEntries();
           }
 
@@ -361,13 +374,8 @@ export default class TimeSheetCalendar extends LightningElement {
           this.resourceAbsences = [...timeSheet.resourceAbsences];
         }
 
-        if (timeSheet.timeSheet?.Mileage_Entries__r) {
-          this.mileageEntries = [...timeSheet.timeSheet.Mileage_Entries__r];
-          this.processMileageEntries();
-        }
-
         // Initialize calendar only after all data is processed
-        this.initializeCalendar();
+        this.initializeCalendar(workOrderIds);
         this.isLoading = false;
       })
       .catch((error) => {
@@ -376,36 +384,44 @@ export default class TimeSheetCalendar extends LightningElement {
       });
   }
 
-  initializeCalendar() {
-    const timeSheetEvents = this.timeSheetEntries.map((entry) => ({
-      id: entry.Id,
-      start: entry.StartTime,
-      end: entry.EndTime,
-      title: entry.Subject
-        ? `${entry.Type} - ${entry.Subject}`
-        : `${entry.Type}`,
-      backgroundColor:
-        entry.Type === "Normal Hours"
-          ? "#6DA241"
-          : entry.Type === "Travel Time"
-            ? "#009FBD"
-            : entry.Type === "Night Work" || entry.Type === "Machine"
-              ? "#DAA520"
-              : "#c23934",
-      borderColor:
-        entry.Type === "Normal Hours"
-          ? "#6DA241"
-          : entry.Type === "Travel Time"
-            ? "#009FBD"
-            : entry.Type === "Night Work" || entry.Type === "Machine"
-              ? "#DAA520"
-              : "#c23934",
-      // Only allow editing if the TimeSheet is not submitted or approved
-      editable: !this.isTimeSheetSubmittedOrApproved,
-      extendedProps: {
-        recordType: "TimeSheetEntry"
-      }
-    }));
+  initializeCalendar(workOrderIds) {
+    const timeSheetEvents = this.timeSheetEntries
+      .filter((entry) => {
+        // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
+        return !(
+          entry.Code_ATAK_Limbus__c === "RT" &&
+          workOrderIds.includes(entry.WorkOrderId)
+        );
+      })
+      .map((entry) => ({
+        id: entry.Id,
+        start: entry.StartTime,
+        end: entry.EndTime,
+        title: entry.Subject
+          ? `${entry.Type} - ${entry.Subject}`
+          : `${entry.Type}`,
+        backgroundColor:
+          entry.Type === "Normal Hours"
+            ? "#6DA241"
+            : entry.Type === "Travel Time"
+              ? "#009FBD"
+              : entry.Type === "Night Work" || entry.Type === "Machine"
+                ? "#DAA520"
+                : "#c23934",
+        borderColor:
+          entry.Type === "Normal Hours"
+            ? "#6DA241"
+            : entry.Type === "Travel Time"
+              ? "#009FBD"
+              : entry.Type === "Night Work" || entry.Type === "Machine"
+                ? "#DAA520"
+                : "#c23934",
+        // Only allow editing if the TimeSheet is not submitted or approved
+        editable: !this.isTimeSheetSubmittedOrApproved,
+        extendedProps: {
+          recordType: "TimeSheetEntry"
+        }
+      }));
 
     const absenceEvents = this.resourceAbsences.map((absence) => ({
       id: absence.Id,
@@ -805,6 +821,9 @@ export default class TimeSheetCalendar extends LightningElement {
     this.totalHours = 0;
     this.totalBreakHours = 0;
 
+    //Variables that will store the work order Ids from the Mileage Entries
+    const workOrderIds = [];
+
     const calendarEl = this.template.querySelector("div.fullcalendar");
 
     calendarEl.classList.remove("hide");
@@ -856,7 +875,9 @@ export default class TimeSheetCalendar extends LightningElement {
         // Update tracked properties from result
         if (result.timeSheet) {
           this.workHours =
-            this.roundWorkHours(result.timeSheet.Total_Normal_Hours__c) || 0;
+            this.convertDecimalHoursToHoursMinutes(
+              result.timeSheet.Total_Normal_Hours__c
+            ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
@@ -870,6 +891,12 @@ export default class TimeSheetCalendar extends LightningElement {
 
         // Handle mileage entries
         if (result.timeSheet?.Mileage_Entries__r) {
+          result.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
+            if (mileageEntry.Work_Order__c) {
+              workOrderIds.push(mileageEntry.Work_Order__c);
+            }
+          });
+
           this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
           this.processMileageEntries();
         }
@@ -891,36 +918,42 @@ export default class TimeSheetCalendar extends LightningElement {
 
         // Create new TimeSheet events
         if (result.timeSheet?.TimeSheetEntries) {
-          const timeSheetEvents = result.timeSheet.TimeSheetEntries.map(
-            (entry) => ({
-              id: entry.Id,
-              start: entry.StartTime,
-              end: entry.EndTime,
-              title: entry.Subject
-                ? `${entry.Type} - ${entry.Subject}`
-                : `${entry.Type}`,
-              backgroundColor:
-                entry.Type === "Normal Hours"
-                  ? "#6DA241"
-                  : entry.Type === "Travel Time"
-                    ? "#009FBD"
-                    : entry.Type === "Night Work" || entry.Type === "Machine"
-                      ? "#DAA520"
-                      : "#c23934",
-              borderColor:
-                entry.Type === "Normal Hours"
-                  ? "#6DA241"
-                  : entry.Type === "Travel Time"
-                    ? "#009FBD"
-                    : entry.Type === "Night Work" || entry.Type === "Machine"
-                      ? "#DAA520"
-                      : "#c23934",
-              editable: !this.isTimeSheetSubmittedOrApproved,
-              extendedProps: {
-                recordType: "TimeSheetEntry"
-              }
-            })
-          );
+          const timeSheetEvents = result.timeSheet.TimeSheetEntries.filter(
+            (entry) => {
+              // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
+              return !(
+                entry.Code_ATAK_Limbus__c === "RT" &&
+                workOrderIds.includes(entry.WorkOrderId)
+              );
+            }
+          ).map((entry) => ({
+            id: entry.Id,
+            start: entry.StartTime,
+            end: entry.EndTime,
+            title: entry.Subject
+              ? `${entry.Type} - ${entry.Subject}`
+              : `${entry.Type}`,
+            backgroundColor:
+              entry.Type === "Normal Hours"
+                ? "#6DA241"
+                : entry.Type === "Travel Time"
+                  ? "#009FBD"
+                  : entry.Type === "Night Work" || entry.Type === "Machine"
+                    ? "#DAA520"
+                    : "#c23934",
+            borderColor:
+              entry.Type === "Normal Hours"
+                ? "#6DA241"
+                : entry.Type === "Travel Time"
+                  ? "#009FBD"
+                  : entry.Type === "Night Work" || entry.Type === "Machine"
+                    ? "#DAA520"
+                    : "#c23934",
+            editable: !this.isTimeSheetSubmittedOrApproved,
+            extendedProps: {
+              recordType: "TimeSheetEntry"
+            }
+          }));
           timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
         }
 
@@ -958,7 +991,9 @@ export default class TimeSheetCalendar extends LightningElement {
 
     // Get the day number (0-6) of the new date
     const dateNumber = dateObj.getDay();
-    this.expectedWorkHours = this.handleWorkScheduleDayHours(dateNumber);
+    this.expectedWorkHours = this.convertDecimalHoursToHoursMinutes(
+      this.handleWorkScheduleDayHours(dateNumber)
+    );
   }
 
   /**
@@ -981,6 +1016,9 @@ export default class TimeSheetCalendar extends LightningElement {
     this.kmAmount = 0;
     this.totalHours = 0;
     this.totalBreakHours = 0;
+
+    //Variables that will store the work order Ids from the Mileage Entries
+    const workOrderIds = [];
 
     const calendarEl = this.template.querySelector("div.fullcalendar");
     calendarEl.classList.remove("hide");
@@ -1022,6 +1060,7 @@ export default class TimeSheetCalendar extends LightningElement {
     })
       .then((result) => {
         this.recordId = result.timeSheet.Id;
+
         // Check if the TimeSheet is submitted or approved
         if (
           result.timeSheet.Status === "Submitted" ||
@@ -1035,7 +1074,9 @@ export default class TimeSheetCalendar extends LightningElement {
         // Update tracked properties from result
         if (result.timeSheet) {
           this.workHours =
-            this.roundWorkHours(result.timeSheet.Total_Normal_Hours__c) || 0;
+            this.convertDecimalHoursToHoursMinutes(
+              result.timeSheet.Total_Normal_Hours__c
+            ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
@@ -1049,6 +1090,11 @@ export default class TimeSheetCalendar extends LightningElement {
 
         // Handle mileage entries
         if (result.timeSheet?.Mileage_Entries__r) {
+          result.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
+            if (mileageEntry.Work_Order__c) {
+              workOrderIds.push(mileageEntry.Work_Order__c);
+            }
+          });
           this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
 
           this.processMileageEntries();
@@ -1069,36 +1115,42 @@ export default class TimeSheetCalendar extends LightningElement {
 
         // Create new TimeSheet events
         if (result.timeSheet?.TimeSheetEntries) {
-          const timeSheetEvents = result.timeSheet.TimeSheetEntries.map(
-            (entry) => ({
-              id: entry.Id,
-              start: entry.StartTime,
-              end: entry.EndTime,
-              title: entry.Subject
-                ? `${entry.Type} - ${entry.Subject}`
-                : `${entry.Type}`,
-              backgroundColor:
-                entry.Type === "Normal Hours"
-                  ? "#6DA241"
-                  : entry.Type === "Travel Time"
-                    ? "#009FBD"
-                    : entry.Type === "Night Work" || entry.Type === "Machine"
-                      ? "#DAA520"
-                      : "#c23934",
-              borderColor:
-                entry.Type === "Normal Hours"
-                  ? "#6DA241"
-                  : entry.Type === "Travel Time"
-                    ? "#009FBD"
-                    : entry.Type === "Night Work" || entry.Type === "Machine"
-                      ? "#DAA520"
-                      : "#c23934",
-              editable: !this.isTimeSheetSubmittedOrApproved,
-              extendedProps: {
-                recordType: "TimeSheetEntry"
-              }
-            })
-          );
+          const timeSheetEvents = result.timeSheet.TimeSheetEntries.filter(
+            (entry) => {
+              // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
+              return !(
+                entry.Code_ATAK_Limbus__c === "RT" &&
+                workOrderIds.includes(entry.WorkOrderId)
+              );
+            }
+          ).map((entry) => ({
+            id: entry.Id,
+            start: entry.StartTime,
+            end: entry.EndTime,
+            title: entry.Subject
+              ? `${entry.Type} - ${entry.Subject}`
+              : `${entry.Type}`,
+            backgroundColor:
+              entry.Type === "Normal Hours"
+                ? "#6DA241"
+                : entry.Type === "Travel Time"
+                  ? "#009FBD"
+                  : entry.Type === "Night Work" || entry.Type === "Machine"
+                    ? "#DAA520"
+                    : "#c23934",
+            borderColor:
+              entry.Type === "Normal Hours"
+                ? "#6DA241"
+                : entry.Type === "Travel Time"
+                  ? "#009FBD"
+                  : entry.Type === "Night Work" || entry.Type === "Machine"
+                    ? "#DAA520"
+                    : "#c23934",
+            editable: !this.isTimeSheetSubmittedOrApproved,
+            extendedProps: {
+              recordType: "TimeSheetEntry"
+            }
+          }));
           timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
         }
 
@@ -1134,7 +1186,9 @@ export default class TimeSheetCalendar extends LightningElement {
         this.isTimeSheetSubmittedOrApproved = true;
       });
 
-    this.expectedWorkHours = this.handleWorkScheduleDayHours(dateObj.getDay());
+    this.expectedWorkHours = this.convertDecimalHoursToHoursMinutes(
+      this.handleWorkScheduleDayHours(dateObj.getDay())
+    );
   }
 
   ////////////////////////////////////////////////////////////////
@@ -1268,7 +1322,10 @@ export default class TimeSheetCalendar extends LightningElement {
     getTimeSheet({ recordId: this.recordId })
       .then((result) => {
         if (result.timeSheet) {
-          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.workHours =
+            this.convertDecimalHoursToHoursMinutes(
+              result.timeSheet.Total_Normal_Hours__c
+            ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
@@ -1294,7 +1351,10 @@ export default class TimeSheetCalendar extends LightningElement {
     getTimeSheet({ recordId: this.recordId })
       .then((result) => {
         if (result.timeSheet) {
-          this.workHours = result.timeSheet.Total_Normal_Hours__c || 0;
+          this.workHours =
+            this.convertDecimalHoursToHoursMinutes(
+              result.timeSheet.Total_Normal_Hours__c
+            ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
@@ -1456,36 +1516,36 @@ export default class TimeSheetCalendar extends LightningElement {
               this.hasEntered30mBreak = true;
             }
           });
+        }
 
-          if (this.hasEntered15mBreak && this.hasEntered30mBreak) {
-            console.log("submitting time sheet");
-            submitTimeSheet({ timeSheetId: this.recordId })
-              .then(() => {
-                const toastEvent = new ShowToastEvent({
-                  title: "Success",
-                  message: "Time Sheet submitted successfully.",
-                  variant: "success"
-                });
-
-                this.dispatchEvent(toastEvent);
-              })
-              .catch((error) => {
-                const toastEvent = new ShowToastEvent({
-                  title: "Error",
-                  message: "Error submitting time sheet.",
-                  variant: "error"
-                });
-
-                this.dispatchEvent(toastEvent);
-
-                console.error("Error:", error);
+        if (this.hasEntered15mBreak && this.hasEntered30mBreak) {
+          console.log("submitting time sheet");
+          submitTimeSheet({ timeSheetId: this.recordId })
+            .then(() => {
+              const toastEvent = new ShowToastEvent({
+                title: "Success",
+                message: "Time Sheet submitted successfully.",
+                variant: "success"
               });
-          } else if (!this.hasEntered15mBreak || !this.hasEntered30mBreak) {
-            console.log("breaks missing");
-            console.log("15m break: ", this.hasEntered15mBreak);
-            console.log("30m break: ", this.hasEntered30mBreak);
-            this.showBreaksMissingModal = true;
-          }
+
+              this.dispatchEvent(toastEvent);
+            })
+            .catch((error) => {
+              const toastEvent = new ShowToastEvent({
+                title: "Error",
+                message: "Error submitting time sheet.",
+                variant: "error"
+              });
+
+              this.dispatchEvent(toastEvent);
+
+              console.error("Error:", error);
+            });
+        } else if (!this.hasEntered15mBreak || !this.hasEntered30mBreak) {
+          console.log("breaks missing");
+          console.log("15m break: ", this.hasEntered15mBreak);
+          console.log("30m break: ", this.hasEntered30mBreak);
+          this.showBreaksMissingModal = true;
         }
       })
       .catch((error) => {
@@ -1494,6 +1554,8 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   handleRefresh() {
+    console.log("Record Id: ", this.recordId);
+
     this.isLoading = true;
 
     //Remove all events from calendar
@@ -1507,11 +1569,16 @@ export default class TimeSheetCalendar extends LightningElement {
         this.resourceAbsences = [];
         this.mileageEntries = [];
 
+        //Variables that will store the work order Ids from the Mileage Entries
+        const workOrderIds = [];
+
         console.log("result refresh ", JSON.stringify(result));
         // Process the new data
         if (result.timeSheet) {
           this.workHours =
-            this.roundWorkHours(result.timeSheet.Total_Normal_Hours__c) || 0;
+            this.convertDecimalHoursToHoursMinutes(
+              result.timeSheet.Total_Normal_Hours__c
+            ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
@@ -1530,42 +1597,53 @@ export default class TimeSheetCalendar extends LightningElement {
         }
 
         if (result.timeSheet.Mileage_Entries__r) {
+          result.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
+            if (mileageEntry.Work_Order__c) {
+              workOrderIds.push(mileageEntry.Work_Order__c);
+            }
+          });
           this.mileageEntries = [...result.timeSheet.Mileage_Entries__r];
           this.processMileageEntries();
         }
 
         // Create new TimeSheet events
         if (result.timeSheet?.TimeSheetEntries) {
-          const timeSheetEvents = result.timeSheet.TimeSheetEntries.map(
-            (entry) => ({
-              id: entry.Id,
-              start: entry.StartTime,
-              end: entry.EndTime,
-              title: entry.Subject
-                ? `${entry.Type} - ${entry.Subject}`
-                : `${entry.Type}`,
-              backgroundColor:
-                entry.Type === "Normal Hours"
-                  ? "#6DA241"
-                  : entry.Type === "Travel Time"
-                    ? "#009FBD"
-                    : entry.Type === "Night Work" || entry.Type === "Machine"
-                      ? "#DAA520"
-                      : "#c23934",
-              borderColor:
-                entry.Type === "Normal Hours"
-                  ? "#6DA241"
-                  : entry.Type === "Travel Time"
-                    ? "#009FBD"
-                    : entry.Type === "Night Work" || entry.Type === "Machine"
-                      ? "#DAA520"
-                      : "#c23934",
-              editable: !this.isTimeSheetSubmittedOrApproved,
-              extendedProps: {
-                recordType: "TimeSheetEntry"
-              }
-            })
-          );
+          const timeSheetEvents = result.timeSheet.TimeSheetEntries.filter(
+            (entry) => {
+              // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
+              return !(
+                entry.Code_ATAK_Limbus__c === "RT" &&
+                workOrderIds.includes(entry.WorkOrderId)
+              );
+            }
+          ).map((entry) => ({
+            id: entry.Id,
+            start: entry.StartTime,
+            end: entry.EndTime,
+            title: entry.Subject
+              ? `${entry.Type} - ${entry.Subject}`
+              : `${entry.Type}`,
+            backgroundColor:
+              entry.Type === "Normal Hours"
+                ? "#6DA241"
+                : entry.Type === "Travel Time"
+                  ? "#009FBD"
+                  : entry.Type === "Night Work" || entry.Type === "Machine"
+                    ? "#DAA520"
+                    : "#c23934",
+            borderColor:
+              entry.Type === "Normal Hours"
+                ? "#6DA241"
+                : entry.Type === "Travel Time"
+                  ? "#009FBD"
+                  : entry.Type === "Night Work" || entry.Type === "Machine"
+                    ? "#DAA520"
+                    : "#c23934",
+            editable: !this.isTimeSheetSubmittedOrApproved,
+            extendedProps: {
+              recordType: "TimeSheetEntry"
+            }
+          }));
           timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
         }
 
@@ -1679,8 +1757,8 @@ export default class TimeSheetCalendar extends LightningElement {
 
   convertMinutesToHoursAndMinutes(minutes) {
     if (!minutes) return "0:00";
-    // Round up to nearest 5 minutes
-    minutes = Math.ceil(minutes / 5) * 5;
+    // Round to nearest 5 minutes
+    minutes = Math.round(minutes / 5) * 5;
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = Math.floor(minutes % 60);
     return `${hours}:${remainingMinutes.toString().padStart(2, "0")}`;
@@ -1760,5 +1838,22 @@ export default class TimeSheetCalendar extends LightningElement {
   handleNew15or30mBreak() {
     this.handleCloseForm();
     this.showNewBreakEntryModal = true;
+  }
+
+  convertDecimalHoursToHoursMinutes(decimalHours) {
+    if (!decimalHours) return "0:00";
+
+    // Convert decimal hours to minutes
+    let totalMinutes = decimalHours * 60;
+
+    // Round to nearest 5 minutes
+    totalMinutes = Math.round(totalMinutes / 5) * 5;
+
+    // Calculate hours and minutes
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = Math.floor(totalMinutes % 60);
+
+    // Return formatted string
+    return `${hours}:${minutes.toString().padStart(2, "0")}`;
   }
 }

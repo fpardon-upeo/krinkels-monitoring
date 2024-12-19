@@ -192,21 +192,7 @@ public class RRuleAdjuster {
         }
         return params;
     }
-
-    private void adjustWeeklyParams(Map<String, String> params, Integer dayShift) {
-        if (params.containsKey('BYDAY')) {
-            List<String> days = params.get('BYDAY').split(',');
-            List<String> newDays = new List<String>();
-
-            for (String day : days) {
-                Integer dayNum = getDayNumber(day);
-                Integer newDayNum = Math.mod(dayNum + dayShift, 7);
-                newDays.add(getDayCode(newDayNum));
-            }
-
-            params.put('BYDAY', String.join(newDays, ','));
-        }
-    }
+    
 
     private void adjustMonthlyParams(Map<String, String> params, DateTime original, DateTime newDate) {
         if (params.containsKey('BYMONTHDAY')) {

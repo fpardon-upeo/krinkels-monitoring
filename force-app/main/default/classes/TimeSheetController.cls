@@ -25,7 +25,14 @@ public with sharing class TimeSheetController {
         Total_Break_Time__c,
         Status,
         (
-          SELECT Id, StartTime, EndTime, Subject, Type
+          SELECT
+            Id,
+            StartTime,
+            EndTime,
+            Subject,
+            Type,
+            Code_ATAK_Limbus__c,
+            WorkOrderId
           FROM TimeSheetEntries
           ORDER BY StartTime ASC
         ),
@@ -38,7 +45,8 @@ public with sharing class TimeSheetController {
             Starting_Location_Type__c,
             Ending_Location_Type__c,
             Calculated_Mileage__c,
-            Type__c
+            Type__c,
+            Work_Order__c
           FROM Mileage_Entries__r
         )
       FROM TimeSheet

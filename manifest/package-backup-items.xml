@@ -21,9 +21,10 @@
         <members>ATAKWorkLogService</members>
         <members>ATAKWorkLogServiceTest</members>
         <members>AccountDetailsController</members>
+        <members>AccountDetailsControllerTest</members>
         <members>AccountTriggerHandler</members>
+        <members>AccountTriggerHandlerTest</members>
         <members>AccountWasteRetriever</members>
-        <members>AddressSearchService</members>
         <members>CallOut</members>
         <members>CallOutHandler</members>
         <members>CheckInService</members>
@@ -39,6 +40,7 @@
         <members>FileUploadImprovedHelper</members>
         <members>FileUploadImproved_Test</members>
         <members>FirstWorkOrderChecker</members>
+        <members>FirstWorkOrderCheckerTest</members>
         <members>GanttRoundPinAction</members>
         <members>GanttRoundPinActionTest</members>
         <members>GetRecordsIn</members>
@@ -48,6 +50,7 @@
         <members>InternalWorkOrderController</members>
         <members>LocationMonitorController</members>
         <members>MachineRestResource</members>
+        <members>MachineRestResourceTest</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
         <members>MaintenancePlanServiceTest</members>
@@ -59,6 +62,7 @@
         <members>MaterialPickupController</members>
         <members>MileageEntryProjectLinkService</members>
         <members>MileageEntryProjectLinkServiceTest</members>
+        <members>MultiRequestMock</members>
         <members>MultiSelectFlowValues</members>
         <members>ObjectFieldSelectorController</members>
         <members>ObjectFieldSelectorControllerTest</members>
@@ -69,13 +73,15 @@
         <members>ProjectRestResource</members>
         <members>ProjectRestResourceTest</members>
         <members>RRuleAdjuster</members>
-        <members>RRuleCriteria</members>
+        <members>RRuleAdjusterTest</members>
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
         <members>SDWorxAbsenceBatch</members>
         <members>SDWorxAbsenceBatchScheduler</members>
         <members>SDWorxToResourceAbsenceService</members>
+        <members>SDWorxToResourceAbsenceServiceTest</members>
         <members>SFS_WorkOrderCreatorController</members>
+        <members>SFS_WorkOrderCreatorControllerTest</members>
         <members>SchedulingController</members>
         <members>SendBetterEmail</members>
         <members>SendBetterEmailAddAttachmentToEmail</members>
@@ -89,20 +95,21 @@
         <members>SendBetterEmailUtil</members>
         <members>ServiceAppointmentRescheduler</members>
         <members>ServiceAppointmentTriggerHandler</members>
+        <members>ServiceAppointmentTriggerHandlerTest</members>
         <members>ServiceBuilderController</members>
         <members>ServiceBuilderWrapper</members>
         <members>ServiceContractTriggerHandler</members>
         <members>ServiceResourceHandler</members>
+        <members>ServiceResourceHandlerTest</members>
+        <members>SingleRequestMock</members>
         <members>TimeSheetCalculationInvocable</members>
         <members>TimeSheetCalculationService</members>
         <members>TimeSheetCalculationServiceTest</members>
         <members>TimeSheetController</members>
         <members>TimeSheetControllerTest</members>
-        <members>TimeSheetMapController</members>
         <members>TimeSheetProjectLinkService</members>
         <members>TimeSheetProjectLinkServiceTest</members>
         <members>WeatherService</members>
-        <members>WorkOrderScheduler</members>
         <members>WorkOrderSchedulerBatch</members>
         <members>WorkOrderSchedulerController</members>
         <members>WorkOrderSequence</members>
@@ -2312,7 +2319,6 @@
         <name>LeadConvertSettings</name>
     </types>
     <types>
-        <members>addressSearch</members>
         <members>checkIn</members>
         <members>colorsPicker</members>
         <members>contractLineEditor</members>
@@ -2419,7 +2425,6 @@
         <members>timeSheetCalendar</members>
         <members>timeSheetCalendarCustom</members>
         <members>timeSheetHeader</members>
-        <members>timeSheetMap</members>
         <members>timesheetEntryForm</members>
         <members>toastMessage</members>
         <members>utilsImageCapture</members>
@@ -2739,10 +2744,10 @@
         <members>WorkOrder.Work_Order_Actions</members>
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
+        <members>WorkStep.Cannot_Complete</members>
         <members>WorkStep.Check_In</members>
         <members>WorkStep.Checkout</members>
         <members>WorkStep.Material_Pickup</members>
-        <members>WorkStep.Not_Applicable_Custom</members>
         <members>WorkStep.Set_Service_Status</members>
         <members>WorkStep.Take_After_Work_Photos</members>
         <members>WorkStep.Take_Before_Work_Photos</members>

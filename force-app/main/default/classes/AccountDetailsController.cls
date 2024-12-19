@@ -30,26 +30,6 @@ public with sharing class AccountDetailsController {
     return timeSlots;
   }
 
-  @AuraEnabled(cacheable=true)
-  public static List<ContentDocument> getContentDocuments(Id accountId) {
-    List<ContentDocumentLink> contentLinks = [
-      SELECT ContentDocumentId
-      FROM ContentDocumentLink
-      WHERE LinkedEntityId = :accountId
-    ];
-
-    Set<Id> documentIds = new Set<Id>();
-    for (ContentDocumentLink link : contentLinks) {
-      documentIds.add(link.ContentDocumentId);
-    }
-
-    return [
-      SELECT Id, Title, FileExtension, ContentSize
-      FROM ContentDocument
-      WHERE Id IN :documentIds
-      ORDER BY LastModifiedDate DESC
-    ];
-  }
 
   @AuraEnabled
   public static void createFeedbackPost(
@@ -93,12 +73,15 @@ public with sharing class AccountDetailsController {
     feedItemInput.feedElementType = ConnectApi.FeedElementType.FeedItem;
     feedItemInput.subjectId = accountId;
 
+    System.debug('feedItemInput: ' + feedItemInput);
+
     try {
       ConnectApi.FeedElement feedElement = ConnectApi.ChatterFeeds.postFeedElement(
         Network.getNetworkId(),
         feedItemInput
       );
     } catch (Exception e) {
+      System.debug('Error creating feedback post: ' + e.getMessage());
       throw new AuraHandledException(
         'Error creating feedback post: ' + e.getMessage()
       );

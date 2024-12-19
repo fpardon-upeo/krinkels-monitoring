@@ -91,6 +91,8 @@ public class FieldServiceTestData {
         user.LanguageLocaleKey = 'en_US';
         user.TimeZoneSidKey = 'America/Los_Angeles';
         user.EmailEncodingKey = 'ISO-8859-1';
+        user.ATAK_Code__c = 'GATAK';
+        user.ATAK_Id__c = 'GATAK';
         user.ProfileId = profile.Id;
         if (doInsert) {
             insert user;
@@ -211,6 +213,12 @@ public class FieldServiceTestData {
             ServiceResource resource = createTestServiceResource('Test Resource', null, true, testUser.Id);
             testData.put('ServiceResource', resource);
 
+            ServiceCrew crew = createTestServiceCrew('Test Crew', true);
+            testData.put('ServiceCrew', crew);
+
+            ServiceCrewMember crewMember = createTestServiceCrewMember(crew.Id, resource.Id, true);
+            testData.put('ServiceCrewMember', crewMember);
+
             // Create TimeSheet
             TimeSheet timeSheet = createTestTimeSheet(resource.Id, Date.today(), true);
             testData.put('TimeSheet', timeSheet);
@@ -251,6 +259,32 @@ public class FieldServiceTestData {
             insert territory;
         }
         return territory;
+    }
+
+    public static ServiceCrew createTestServiceCrew(String name, Boolean doInsert) {
+        ServiceCrew crew = new ServiceCrew(
+                Name = name,
+                CrewSize = 1
+        );
+
+        if(doInsert) {
+            insert crew;
+        }
+        return crew;
+    }
+
+    public static ServiceCrewMember createTestServiceCrewMember(Id crewId, Id resourceId, Boolean doInsert) {
+        ServiceCrewMember crewMember = new ServiceCrewMember(
+                ServiceCrewId = crewId,
+                ServiceResourceId = resourceId,
+                IsLeader = true,
+                StartDate = Date.today()
+        );
+
+        if(doInsert) {
+            insert crewMember;
+        }
+        return crewMember;
     }
 
     /**

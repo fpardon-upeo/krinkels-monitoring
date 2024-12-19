@@ -21,7 +21,9 @@
         <members>ATAKWorkLogService</members>
         <members>ATAKWorkLogServiceTest</members>
         <members>AccountDetailsController</members>
+        <members>AccountDetailsControllerTest</members>
         <members>AccountTriggerHandler</members>
+        <members>AccountTriggerHandlerTest</members>
         <members>AccountWasteRetriever</members>
         <members>AddressSearchService</members>
         <members>CallOut</members>
@@ -40,6 +42,7 @@
         <members>FileUploadImprovedHelper</members>
         <members>FileUploadImproved_Test</members>
         <members>FirstWorkOrderChecker</members>
+        <members>FirstWorkOrderCheckerTest</members>
         <members>GanttRoundPinAction</members>
         <members>GanttRoundPinActionTest</members>
         <members>GetRecordsIn</members>
@@ -50,6 +53,7 @@
         <members>LocationMonitorController</members>
         <members>LoggerService</members>
         <members>MachineRestResource</members>
+        <members>MachineRestResourceTest</members>
         <members>MaintenancePlanException</members>
         <members>MaintenancePlanService</members>
         <members>MaintenancePlanServiceTest</members>
@@ -61,6 +65,7 @@
         <members>MaterialPickupController</members>
         <members>MileageEntryProjectLinkService</members>
         <members>MileageEntryProjectLinkServiceTest</members>
+        <members>MultiRequestMock</members>
         <members>MultiSelectFlowValues</members>
         <members>ObjectFieldSelectorController</members>
         <members>ObjectFieldSelectorControllerTest</members>
@@ -71,13 +76,16 @@
         <members>ProjectRestResource</members>
         <members>ProjectRestResourceTest</members>
         <members>RRuleAdjuster</members>
+        <members>RRuleAdjusterTest</members>
         <members>RRuleCriteria</members>
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
         <members>SDWorxAbsenceBatch</members>
         <members>SDWorxAbsenceBatchScheduler</members>
         <members>SDWorxToResourceAbsenceService</members>
+        <members>SDWorxToResourceAbsenceServiceTest</members>
         <members>SFS_WorkOrderCreatorController</members>
+        <members>SFS_WorkOrderCreatorControllerTest</members>
         <members>SchedulingController</members>
         <members>SendBetterEmail</members>
         <members>SendBetterEmailAddAttachmentToEmail</members>
@@ -91,11 +99,14 @@
         <members>SendBetterEmailUtil</members>
         <members>ServiceAppointmentRescheduler</members>
         <members>ServiceAppointmentTriggerHandler</members>
+        <members>ServiceAppointmentTriggerHandlerTest</members>
         <members>ServiceBuilderController</members>
         <members>ServiceBuilderWrapper</members>
         <members>ServiceContractHandler</members>
         <members>ServiceContractTriggerHandler</members>
         <members>ServiceResourceHandler</members>
+        <members>ServiceResourceHandlerTest</members>
+        <members>SingleRequestMock</members>
         <members>TimeSheetCalculationInvocable</members>
         <members>TimeSheetCalculationService</members>
         <members>TimeSheetCalculationServiceTest</members>
@@ -2537,6 +2548,7 @@
         <members>WorkOrder.Work_Order_Actions</members>
         <members>WorkOrderLineItem.Complete_Service</members>
         <members>WorkOrderLineItem.SendEmail</members>
+        <members>WorkStep.Cannot_Complete</members>
         <members>WorkStep.Check_In</members>
         <members>WorkStep.Checkout</members>
         <members>WorkStep.Material_Pickup</members>

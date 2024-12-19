@@ -31,11 +31,11 @@ export default class LocationMonitor extends LightningElement {
       .then(data => {
         this.timeSheetData = data;
         console.log('timeSheetData:', JSON.stringify(this.timeSheetData));
-        this.timeSheetData.Total_Break_Time__c = this.convertMinutesToDecimal(this.timeSheetData.Total_Break_Time__c);
-        this.timeSheetData.Total_Break_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Break_Time__c);
-        this.timeSheetData.Total_Hours_Minus_Breaks__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Hours_Minus_Breaks__c);
-        this.timeSheetData.Working_Hours_in_Contract__c = this.convertHoursToReadableFormat(this.timeSheetData.Working_Hours_in_Contract__c);
-        this.timeSheetData.Total_Travel_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Travel_Time__c);
+        this.timeSheetData.Formatted_Total_Break_Time__c = this.convertMinutesToDecimal(this.timeSheetData.Total_Break_Time__c);
+        this.timeSheetData.Formatted_Total_Break_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Break_Time__c);
+        this.timeSheetData.Formatted_Total_Hours_Minus_Breaks__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Hours_Minus_Breaks__c);
+        this.timeSheetData.Formatted_Working_Hours_in_Contract__c = this.convertHoursToReadableFormat(this.timeSheetData.Working_Hours_in_Contract__c);
+        this.timeSheetData.Formatted_Total_Travel_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Travel_Time__c);
 
       })
       .catch(error => {

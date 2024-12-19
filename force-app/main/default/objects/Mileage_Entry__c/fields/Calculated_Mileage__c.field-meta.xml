@@ -2,7 +2,11 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Calculated_Mileage__c</fullName>
     <externalId>false</externalId>
-    <formula>Ending_Mileage__c - Starting_Mileage__c</formula>
+    <formula>IF(
+    ISNULL(Ending_Mileage__c) || Ending_Mileage__c == 0,
+    0,
+    Ending_Mileage__c - Starting_Mileage__c
+)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Calculated Mileage</label>
     <precision>18</precision>

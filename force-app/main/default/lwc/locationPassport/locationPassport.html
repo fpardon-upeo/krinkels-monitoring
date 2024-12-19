@@ -108,58 +108,6 @@
       </div>
     </div>
 
-    <!-- Documents Section -->
-    <div if:true={docsLoaded}>
-      <div class="mobile-card">
-        <div class="mobile-header">
-          <lightning-icon
-            icon-name="utility:file"
-            size="small"
-          ></lightning-icon>
-          <h2>{labels.LocationPassport_Documents_Header}</h2>
-        </div>
-        <div class="docs-grid">
-          <template for:each={contentDocuments.data} for:item="doc">
-            <div
-              key={doc.Id}
-              class="slds-col slds-size_1-of-3 slds-p-around_xx-small"
-            >
-              <article class="slds-card">
-                <div
-                  class="slds-card__header slds-grid slds-grid_vertical-align-center"
-                >
-                  <header
-                    class="slds-media slds-media_center slds-has-flexi-truncate"
-                  >
-                    <div class="slds-media__figure">
-                      <lightning-icon icon-name={doc.iconName} size="small">
-                      </lightning-icon>
-                    </div>
-                    <div class="slds-media__body">
-                      <h3 class="slds-truncate" title={doc.Title}>
-                        {doc.Title}
-                      </h3>
-                    </div>
-                  </header>
-                </div>
-                <div class="slds-card__footer">
-                  <lightning-button
-                    variant="brand"
-                    label={labels.LocationPassport_View_Button}
-                    icon-name="utility:preview"
-                    onclick={handleViewDocument}
-                    data-id={doc.Id}
-                    class="slds-m-left_x-small"
-                  >
-                  </lightning-button>
-                </div>
-              </article>
-            </div>
-          </template>
-        </div>
-      </div>
-    </div>
-
     <!-- Feedback Section -->
     <div class="mobile-card">
       <div class="mobile-header">

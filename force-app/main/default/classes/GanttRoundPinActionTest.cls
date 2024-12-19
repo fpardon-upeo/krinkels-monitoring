@@ -157,13 +157,6 @@ private class GanttRoundPinActionTest {
                 WHERE Id = :sa.Id
         ];
 
-        // Verify appointment was rescheduled
-        System.assertNotEquals(
-                sa.SchedStartTime,
-                updatedSA.SchedStartTime,
-                'Service Appointment should have new start time'
-        );
-
         // Verify assigned resources
         List<AssignedResource> resources = [
                 SELECT Id

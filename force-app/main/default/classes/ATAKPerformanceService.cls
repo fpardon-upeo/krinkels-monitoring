@@ -47,34 +47,6 @@
 
 public with sharing class ATAKPerformanceService {
 
-    /**
-     * @description: This method syncs the ATAK performance data for a timesheet
-     * @param tsId - TimeSheet record Id
-     * @return Integer - the status code of the callout, this is pretty useless because
-     * ATAK always returns 200 unless there is a connection error.
-     * ATAK runs a large number of business rules after the data is added, but it does this after
-     * returning the 200 status code, so we cannot use this to determine if the data was accepted.
-    **/
-
-    public static Integer syncATAKPerformanceData(String tsId) {
-        TimeSheet ts = [
-                SELECT Id, ServiceResourceId, ServiceResource.RelatedRecord.Department
-                FROM Timesheet WHERE Id = :tsId
-        ];
-
-        String department = ts.ServiceResource.RelatedRecord.Department;
-
-        if(department == 'Indoor - Billing plan'){
-            ATAKPerformanceWrapper wrapper = prepareATAKPerformanceDataIndoor(tsId);
-            Integer statusCode = sendATAKPerformanceData(wrapper);
-            return statusCode;
-        } else {
-            ATAKPerformanceWrapper wrapper = prepareATAKPerformanceData(tsId);
-            Integer statusCode = sendATAKPerformanceData(wrapper);
-            return statusCode;
-        }
-    }
-
 
     /**
      * @description: This method prepares the ATAK performance data for a timesheet
@@ -479,7 +451,7 @@ public with sharing class ATAKPerformanceService {
     /**
      * @description: This method checks if the auth token is still valid
      * @return String - the auth token
-    **/
+
 
     private static String checkAuthToken() {
         // Check if the auth token is still valid
@@ -505,6 +477,8 @@ public with sharing class ATAKPerformanceService {
         return token;
     }
 
+    **/
+
     /**
      * @description: This method gets a new auth token
      * @return String - the auth token
@@ -529,6 +503,8 @@ public with sharing class ATAKPerformanceService {
 
         String token = '';
 
+        System.debug('response: ' + response);
+
         if (response.getStatusCode() == 200) {
             Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
             token = (String) results.get('token');
@@ -548,7 +524,7 @@ public with sharing class ATAKPerformanceService {
             ServiceCrewMember scm = [
                     SELECT Id, IsLeader
                     FROM ServiceCrewMember
-                    WHERE ServiceResource.RelatedRecord.Id = :resourceId AND (EndDate = null OR EndDate >= TODAY)
+                    WHERE ServiceResource.Id = :resourceId AND (EndDate = null OR EndDate >= TODAY)
             ];
             isLeader = scm.IsLeader;
         } catch (Exception e) {
