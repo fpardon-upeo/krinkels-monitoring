@@ -450,6 +450,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TimeSheetHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TimeSheetProjectLinkService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2986,6 +2990,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceAppointment.Original_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Earliest_Start_Permitted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceAppointment.Overdue_Reminder_Send__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5035,7 +5049,7 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>CustomAccountLightboxVfPage</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>NonEssentialsMobileLanding</apexPage>

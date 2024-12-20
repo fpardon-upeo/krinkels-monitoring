@@ -1,47 +1,30 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
-classes/ATAKPerformanceServiceTest.cls," ",ApexClass ATAKPerformanceServiceTest,M,,log,📰
-classes/AccountDetailsController.cls," ",ApexClass AccountDetailsController,M,,log,📰
-classes/AccountDetailsControllerTest.cls,A,ApexClass AccountDetailsControllerTest,,,log,📰
-classes/AccountDetailsControllerTest.cls-meta.xml,A,ApexClass AccountDetailsControllerTest,,,log,📰
-classes/AccountTriggerHandlerTest.cls,A,ApexClass AccountTriggerHandlerTest,,,log,📰
-classes/AccountTriggerHandlerTest.cls-meta.xml,A,ApexClass AccountTriggerHandlerTest,,,log,📰
-classes/FieldServiceTestData.cls," ",ApexClass FieldServiceTestData,M,,log,📰
-classes/FirstWorkOrderCheckerTest.cls,A,ApexClass FirstWorkOrderCheckerTest,,,log,📰
-classes/FirstWorkOrderCheckerTest.cls-meta.xml,A,ApexClass FirstWorkOrderCheckerTest,,,log,📰
-classes/GanttRoundPinActionTest.cls," ",ApexClass GanttRoundPinActionTest,M,,log,📰
-classes/MachineRestResourceTest.cls,A,ApexClass MachineRestResourceTest,,,log,📰
-classes/MachineRestResourceTest.cls-meta.xml,A,ApexClass MachineRestResourceTest,,,log,📰
-classes/MaintenancePlanServiceTest.cls," ",ApexClass MaintenancePlanServiceTest,M,,log,📰
-classes/MultiRequestMock.cls,A,ApexClass MultiRequestMock,,,log,📰
-classes/MultiRequestMock.cls-meta.xml,A,ApexClass MultiRequestMock,,,log,📰
-classes/RRuleAdjuster.cls," ",ApexClass RRuleAdjuster,M,,log,📰
-classes/RRuleAdjusterTest.cls,A,ApexClass RRuleAdjusterTest,,,log,📰
-classes/RRuleAdjusterTest.cls-meta.xml,A,ApexClass RRuleAdjusterTest,,,log,📰
-classes/SDWorxToResourceAbsenceService.cls," ",ApexClass SDWorxToResourceAbsenceService,M,,log,📰
-classes/SDWorxToResourceAbsenceServiceTest.cls,A,ApexClass SDWorxToResourceAbsenceServiceTest,,,log,📰
-classes/SDWorxToResourceAbsenceServiceTest.cls-meta.xml,A,ApexClass SDWorxToResourceAbsenceServiceTest,,,log,📰
-classes/SFS_WorkOrderCreatorController.cls," ",ApexClass SFS_WorkOrderCreatorController,M,,log,📰
-classes/SFS_WorkOrderCreatorControllerTest.cls,A,ApexClass SFS_WorkOrderCreatorControllerTest,,,log,📰
-classes/SFS_WorkOrderCreatorControllerTest.cls-meta.xml,A,ApexClass SFS_WorkOrderCreatorControllerTest,,,log,📰
-classes/ServiceAppointmentTriggerHandlerTest.cls,A,ApexClass ServiceAppointmentTriggerHandlerTest,,,log,📰
-classes/ServiceAppointmentTriggerHandlerTest.cls-meta.xml,A,ApexClass ServiceAppointmentTriggerHandlerTest,,,log,📰
-classes/ServiceResourceHandler.cls," ",ApexClass ServiceResourceHandler,M,,log,📰
-classes/ServiceResourceHandlerTest.cls,A,ApexClass ServiceResourceHandlerTest,,,log,📰
-classes/ServiceResourceHandlerTest.cls-meta.xml,A,ApexClass ServiceResourceHandlerTest,,,log,📰
-classes/SingleRequestMock.cls,A,ApexClass SingleRequestMock,,,log,📰
-classes/SingleRequestMock.cls-meta.xml,A,ApexClass SingleRequestMock,,,log,📰
-classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
-classes/TimeSheetControllerTest.cls," ",ApexClass TimeSheetControllerTest,M,,log,📰
+classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
+classes/TimeSheetHandler.cls,A,ApexClass TimeSheetHandler,,,log,📰
+classes/TimeSheetHandler.cls-meta.xml,A,ApexClass TimeSheetHandler,,,log,📰
+cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+dashboards/BusinessSupport.dashboardFolder-meta.xml," ",Dashboard BusinessSupportFolder-meta.xml,M,,log,📰
+dashboards/ContractManager.dashboardFolder-meta.xml," ",Dashboard ContractManagerFolder-meta.xml,M,,log,📰
+dashboards/Management.dashboardFolder-meta.xml," ",Dashboard ManagementFolder-meta.xml,M,,log,📰
+flexipages/Home_Page_Business_Support.flexipage-meta.xml," ",FlexiPage Home_Page_Business_Support,M,,log,📰
+flexipages/Operational_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Operational_Account_Record_Page,M,,log,📰
+flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
 flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
-layouts/WorkStep-FSL Work Step Layout.layout-meta.xml," ",Layout WorkStep-FSL Work Step Layout,M,,log,📰
+flowDefinitions/TimeSheet_Record_Trigger_Set_Contract_Hours.flowDefinition-meta.xml," ",FlowDefinition TimeSheet_Record_Trigger_Set_Contract_Hours,M,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage,M,,log,📰
+flows/TimeSheet_Record_Trigger_Set_Contract_Hours.flow-meta.xml," ",Flow TimeSheet_Record_Trigger_Set_Contract_Hours,M,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage,M,,log,📰
+layouts/Contact-Contact Layout.layout-meta.xml," ",Layout Contact-Contact Layout,M,,log,📰
+layouts/MaintenancePlan-Maintenance Plan Layout.layout-meta.xml," ",Layout MaintenancePlan-Maintenance Plan Layout,M,,log,📰
+lwc/locationMonitor/locationMonitor.css," ",LightningComponentBundle locationMonitor/locationMonitor.css,M,,log,📰
 lwc/locationMonitor/locationMonitor.html," ",LightningComponentBundle locationMonitor/locationMonitor.html,M,,log,📰
 lwc/locationMonitor/locationMonitor.js," ",LightningComponentBundle locationMonitor/locationMonitor.js,M,,log,📰
-lwc/locationPassport/locationPassport.html," ",LightningComponentBundle locationPassport/locationPassport.html,M,,log,📰
-lwc/locationPassport/locationPassport.js," ",LightningComponentBundle locationPassport/locationPassport.js,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-objects/Mileage_Entry__c/fields/Calculated_Mileage__c.field-meta.xml," ",CustomField Calculated_Mileage__c,M,,log,📰
-objects/TimeSheet/fields/Total_Hours_Minus_Breaks__c.field-meta.xml," ",CustomField Total_Hours_Minus_Breaks__c,M,,log,📰
+lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
+objects/MaintenancePlan/compactLayouts/Maintenance_Plan.compactLayout-meta.xml,A,CompactLayout Maintenance_Plan,,,log,📰
+objects/ServiceAppointment/fields/Original_Due_Date__c.field-meta.xml,A,CustomField Original_Due_Date__c,,,log,📰
+objects/ServiceAppointment/fields/Original_Earliest_Start_Permitted__c.field-meta.xml,A,CustomField Original_Earliest_Start_Permitted__c,,,log,📰
+permissionsetgroups/Operator_Outdoor_Permission_Set_Group.permissionsetgroup-meta.xml," ",PermissionSetGroup Operator_Outdoor_Permission_Set_Group,M,,log,📰
+permissionsets/APEX_Class_Access_Mobile_Operator.permissionset-meta.xml,A,PermissionSet APEX_Class_Access_Mobile_Operator,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -68,7 +51,19 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-quickActions/WorkStep.Cannot_Complete.quickAction-meta.xml,A,QuickAction WorkStep.Cannot_Complete,,,log,📰
-settings/Apex.settings-meta.xml," ",Settings Apex,M,,log,📰
+quickActions/ServiceContract.Create_Service_Contract.quickAction-meta.xml," ",QuickAction ServiceContract.Create_Service_Contract,M,,log,📰
+reportTypes/Assets_with_Work_Orders_and_Service_Appointments.reportType-meta.xml," ",ReportType Assets_with_Work_Orders_and_Service_Appointments,M,,log,📰
+reportTypes/Service_Appointments.reportType-meta.xml," ",ReportType Service_Appointments,M,,log,📰
+reportTypes/Service_Appointments_with_Service_Resources.reportType-meta.xml," ",ReportType Service_Appointments_with_Service_Resources,M,,log,📰
+reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml," ",ReportType Service_Contracts_with_Work_Orders,M,,log,📰
+reportTypes/Work_Order_W_SA_and_Service_Resource.reportType-meta.xml," ",ReportType Work_Order_W_SA_and_Service_Resource,M,,log,📰
+reports/BusienssSupport.reportFolder-meta.xml," ",Report BusienssSupportFolder-meta.xml,M,,log,📰
+reports/ContractManager.reportFolder-meta.xml," ",Report ContractManagerFolder-meta.xml,M,,log,📰
+reports/InvoicingDashboard.reportFolder-meta.xml," ",Report InvoicingDashboardFolder-meta.xml,M,,log,📰
+translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
+translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
+translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
+triggers/TimeSheetTrigger.trigger,A,ApexTrigger TimeSheetTrigger,,,log,📰
+triggers/TimeSheetTrigger.trigger-meta.xml,A,ApexTrigger TimeSheetTrigger,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

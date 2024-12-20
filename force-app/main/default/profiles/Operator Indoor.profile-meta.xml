@@ -12,8 +12,8 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Krinkels_Field_Service</application>
-        <default>false</default>
-        <visible>false</visible>
+        <default>true</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Management</application>
@@ -111,7 +111,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>AccountTriggerHandler</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>AccountTriggerHandlerTest</apexClass>
@@ -119,7 +119,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>AccountWasteRetriever</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>CallOut</apexClass>
@@ -147,11 +147,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CreateInternalWorkController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>CreateInternalWorkOrderController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>DateTimeRounder</apexClass>
@@ -263,7 +263,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>MileageEntryProjectLinkService</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>MileageEntryProjectLinkServiceTest</apexClass>
@@ -435,7 +435,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetCalculationService</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetCalculationServiceTest</apexClass>
@@ -450,8 +450,12 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TimeSheetProjectLinkService</apexClass>
+        <apexClass>TimeSheetHandler</apexClass>
         <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetProjectLinkService</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetProjectLinkServiceTest</apexClass>
@@ -475,7 +479,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>WorkOrderTriggerHandler</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>WorkStepSignatureController</apexClass>
@@ -2986,6 +2990,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceAppointment.Original_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Earliest_Start_Permitted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceAppointment.Overdue_Reminder_Send__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5125,7 +5139,7 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>CustomAccountLightboxVfPage</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>NonEssentialsMobileLanding</apexPage>

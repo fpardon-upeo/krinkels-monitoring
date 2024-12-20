@@ -142,9 +142,7 @@ export default class ServiceBuilder extends LightningElement {
   loadContractLines() {
     getContractLines({ recordId: this.recordId })
       .then((result) => {
-        console.log("Service Contract", result);
-
-        this.serviceContract = result[0].ServiceContract;
+        result = result || [];
 
         if (result.length > 0) {
           let index = 0;
@@ -186,14 +184,25 @@ export default class ServiceBuilder extends LightningElement {
           this.contractLines = result;
           this.originalContractLines = [...this.contractLines];
           this.isLoading = false;
-        } else {
-          getServiceContract({ recordId: this.recordId }).then((result) => {
-            this.serviceContract = result;
-          });
         }
+
+        // Always get the service contract, regardless of contract lines
+        return getServiceContract({ recordId: this.recordId }).then(
+          (serviceContractResult) => {
+            this.serviceContract = serviceContractResult;
+            this.locationType =
+              serviceContractResult.Location_Type__c || "Address";
+            this.isLoading = false;
+          }
+        );
       })
       .catch((error) => {
         console.error("Error loading contract lines:", error);
+        this.handleToast(
+          "Error",
+          "An error occurred while loading contract lines",
+          "error"
+        );
         this.isLoading = false;
       });
   }
@@ -844,8 +853,6 @@ export default class ServiceBuilder extends LightningElement {
 
     this.isModalOpen = true;
 
-    console.log("Index in handleOpenEditModal", index);
-
     this.populateLightningPickerWithExistingFinancialAccountsOfContractLine(
       index
     );
@@ -858,16 +865,12 @@ export default class ServiceBuilder extends LightningElement {
   populateLightningPickerWithExistingFinancialAccountsOfContractLine(index) {
     this.selectedLineItemId = this.contractLines[index].Id;
 
-    console.log("Selected Line Item Id", this.selectedLineItemId);
-
     // Get the financial accounts of the contract line
     const financialAccounts =
       this.contractLines[index].Contract_Line_Financial_Accounts__r;
 
-    console.log("Financial Accounts", financialAccounts);
-
     // Loop through the financial accounts and add them to the FinCustomers array if they don't already exist
-    if (financialAccounts !== undefined && financialAccounts.length > 0) {
+    if (financialAccounts.length > 0) {
       financialAccounts.forEach((account) => {
         const financialAccountInfo = {
           type: "icon",

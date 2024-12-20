@@ -2927,7 +2927,7 @@
                     <name>Ending_Kilometers</name>
                 </fields>
                 <fields>
-                    <name>Starting_Kilomters</name>
+                    <name>Starting_Kilometers</name>
                 </fields>
                 <name>Log_KM</name>
             </screens>

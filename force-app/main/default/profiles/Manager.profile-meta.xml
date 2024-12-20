@@ -13,11 +13,11 @@
     <applicationVisibilities>
         <application>Krinkels_Field_Service</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Management</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -447,6 +447,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2982,6 +2986,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Optimize__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Earliest_Start_Permitted__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

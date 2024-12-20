@@ -131,11 +131,21 @@ public without sharing class ServiceBuilderController {
   public static ContractLineItem saveContractLine(
     ContractLineItem contractLine
   ) {
+
+    System.debug('contractLine: ' + contractLine.Product2Id);
+    System.debug('contractLine: ' + contractLine.ServiceContractId);
+
+    ServiceContract sc = [
+      SELECT Id, Product__c, Default_LMRA__c, Pricebook2Id
+      FROM ServiceContract
+      WHERE Id = :contractLine.ServiceContractId
+    ];
+
     // Query for active PricebookEntry with better error handling
     List<PricebookEntry> pricebookEntries = [
       SELECT Id
       FROM PricebookEntry
-      WHERE Product2Id = :contractLine.Product2Id AND IsActive = TRUE
+      WHERE Product2Id = :contractLine.Product2Id AND Pricebook2Id = :sc.Pricebook2Id
       LIMIT 1
     ];
 

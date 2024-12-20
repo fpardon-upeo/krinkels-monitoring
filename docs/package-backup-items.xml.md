@@ -2,9 +2,9 @@
 
 Contains the list of metadatas that are in the git backup
 
-Metadatas: 3370
+Metadatas: 3376
 
-<details><summary>ApexClass (122)</summary>
+<details><summary>ApexClass (123)</summary>
   • ATAKMaterialService<br/>
   • ATAKMaterialWrapper<br/>
   • ATAKMaterialWrapperTest<br/>
@@ -111,6 +111,7 @@ Metadatas: 3370
   • TimeSheetCalculationServiceTest<br/>
   • TimeSheetController<br/>
   • TimeSheetControllerTest<br/>
+  • TimeSheetHandler<br/>
   • TimeSheetProjectLinkService<br/>
   • TimeSheetProjectLinkServiceTest<br/>
   • WeatherService<br/>
@@ -145,7 +146,7 @@ Metadatas: 3370
   • test<br/>
 </details>
 
-<details><summary>ApexTrigger (13)</summary>
+<details><summary>ApexTrigger (14)</summary>
   • ATAKPersonnelTrigger<br/>
   • AccountTrigger<br/>
   • AppointmentStatusTrigger<br/>
@@ -158,6 +159,7 @@ Metadatas: 3370
   • ServiceContractTrigger<br/>
   • ServiceResourceEvent<br/>
   • TimeSheetEntryTrigger<br/>
+  • TimeSheetTrigger<br/>
   • WorkOrderTrigger<br/>
 </details>
 
@@ -219,7 +221,7 @@ Metadatas: 3370
   • Internal Community<br/>
 </details>
 
-<details><summary>CompactLayout (24)</summary>
+<details><summary>CompactLayout (25)</summary>
   • ATAK_Personnel__c.Custom_Compact_Layout<br/>
   • ATAK_Project__c.ATAK_Project_Compact_Layout<br/>
   • Account.Account_Compact_Layout<br/>
@@ -234,6 +236,7 @@ Metadatas: 3370
   • Lead.Leads_Custom_Compact_Layout<br/>
   • Location.Van_Compact_Layout<br/>
   • Location_Visit__c.Location_Visit<br/>
+  • MaintenancePlan.Maintenance_Plan<br/>
   • Opportunity.Opportunity<br/>
   • ProductConsumed.Product_Consumed_Compact_Layout<br/>
   • Quote.Quote_Compact_Layout<br/>
@@ -281,7 +284,7 @@ Metadatas: 3370
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (733)</summary>
+<details><summary>CustomField (735)</summary>
   • ATAK_Internal_Project_Map__mdt.ATAK_Code__c<br/>
   • ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c<br/>
   • ATAK_Internal_Project_Map__mdt.Performance_Type__c<br/>
@@ -810,6 +813,8 @@ Metadatas: 3370
   • ServiceAppointment.Notification_Day__c<br/>
   • ServiceAppointment.Number_of_Assigned_Resources__c<br/>
   • ServiceAppointment.Optimize__c<br/>
+  • ServiceAppointment.Original_Due_Date__c<br/>
+  • ServiceAppointment.Original_Earliest_Start_Permitted__c<br/>
   • ServiceAppointment.Overdue_Reminder_Send__c<br/>
   • ServiceAppointment.Previous_Status__c<br/>
   • ServiceAppointment.Priority__c<br/>
@@ -2487,7 +2492,8 @@ Metadatas: 3370
   • Default_Opportunity<br/>
 </details>
 
-<details><summary>PermissionSet (11)</summary>
+<details><summary>PermissionSet (12)</summary>
+  • APEX_Class_Access_Mobile_Operator<br/>
   • ATAK_Permissions<br/>
   • Field_Service_Mobile_Custom_Permission_Set<br/>
   • Lightning_Email_Template_Builder<br/>

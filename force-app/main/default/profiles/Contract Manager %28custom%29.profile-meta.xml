@@ -135,7 +135,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CloneWorkOrderController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ContractLineItemTriggerHandler</apexClass>
@@ -143,15 +143,15 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CreateChildWorkOrderController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>CreateInternalWorkController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>CreateInternalWorkOrderController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>DateTimeRounder</apexClass>
@@ -343,11 +343,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SFS_WorkOrderCreatorController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SFS_WorkOrderCreatorControllerTest</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SchedulingController</apexClass>
@@ -447,6 +447,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2986,6 +2990,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceAppointment.Original_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Earliest_Start_Permitted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceAppointment.Overdue_Reminder_Send__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5050,19 +5064,19 @@
     </objectPermissions>
     <pageAccesses>
         <apexPage>CloneWorkOrder</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>CreateChildWorkOrder</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>CreateInternalWork</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>CustomAccountLightboxVfPage</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>NonEssentialsMobileLanding</apexPage>
@@ -5074,7 +5088,7 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>SFS_WorkOrderCreator</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>fsc_screenFlow</apexPage>
@@ -5400,6 +5414,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunFlow</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

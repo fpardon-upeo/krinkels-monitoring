@@ -366,12 +366,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>locationPassport</componentName>
-                <identifier>c_locationPassport</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>WorkOrder.Id</value>

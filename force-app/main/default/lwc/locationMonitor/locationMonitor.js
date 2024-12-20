@@ -148,9 +148,9 @@ export default class LocationMonitor extends LightningElement {
     console.log('timeSheetData total break:', this.timeSheetData.Total_Break_Time__c);
     console.log('type of timeSheetData total break:', typeof this.timeSheetData.Total_Break_Time__c);
     if(this.timeSheetData.Total_Break_Time__c < 30) {
-      return 'slider-container-warning'
+      return 'slider-container-warning hover-effect'
     } else {
-      return 'slider-container'
+      return 'slider-container hover-effect'
     }
   }
 
@@ -158,9 +158,9 @@ export default class LocationMonitor extends LightningElement {
     console.log('timeSheetData total worked hours:', this.timeSheetData.Total_Hours_Minus_Breaks__c);
     console.log('type of timeSheetData total worked hours:', typeof this.timeSheetData.Total_Hours_Minus_Breaks__c);
     if(this.timeSheetData.Total_Hours_Minus_Breaks__c < this.timeSheetData.Working_Hours_in_Contract__c) {
-      return 'slider-container-warning slds-m-right_small'
+      return 'slider-container-warning slds-m-right_small hover-effect'
     } else {
-      return 'slider-container slds-m-right_small'
+      return 'slider-container slds-m-right_small hover-effect'
     }
   }
 

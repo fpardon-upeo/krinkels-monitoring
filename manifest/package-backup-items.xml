@@ -107,6 +107,7 @@
         <members>TimeSheetCalculationServiceTest</members>
         <members>TimeSheetController</members>
         <members>TimeSheetControllerTest</members>
+        <members>TimeSheetHandler</members>
         <members>TimeSheetProjectLinkService</members>
         <members>TimeSheetProjectLinkServiceTest</members>
         <members>WeatherService</members>
@@ -154,6 +155,7 @@
         <members>ServiceContractTrigger</members>
         <members>ServiceResourceEvent</members>
         <members>TimeSheetEntryTrigger</members>
+        <members>TimeSheetTrigger</members>
         <members>WorkOrderTrigger</members>
         <name>ApexTrigger</name>
     </types>
@@ -230,6 +232,7 @@
         <members>Lead.Leads_Custom_Compact_Layout</members>
         <members>Location.Van_Compact_Layout</members>
         <members>Location_Visit__c.Location_Visit</members>
+        <members>MaintenancePlan.Maintenance_Plan</members>
         <members>Opportunity.Opportunity</members>
         <members>ProductConsumed.Product_Consumed_Compact_Layout</members>
         <members>Quote.Quote_Compact_Layout</members>
@@ -806,6 +809,8 @@
         <members>ServiceAppointment.Notification_Day__c</members>
         <members>ServiceAppointment.Number_of_Assigned_Resources__c</members>
         <members>ServiceAppointment.Optimize__c</members>
+        <members>ServiceAppointment.Original_Due_Date__c</members>
+        <members>ServiceAppointment.Original_Earliest_Start_Permitted__c</members>
         <members>ServiceAppointment.Overdue_Reminder_Send__c</members>
         <members>ServiceAppointment.Previous_Status__c</members>
         <members>ServiceAppointment.Priority__c</members>
@@ -2484,6 +2489,7 @@
         <name>PathAssistant</name>
     </types>
     <types>
+        <members>APEX_Class_Access_Mobile_Operator</members>
         <members>ATAK_Permissions</members>
         <members>Field_Service_Mobile_Custom_Permission_Set</members>
         <members>Lightning_Email_Template_Builder</members>

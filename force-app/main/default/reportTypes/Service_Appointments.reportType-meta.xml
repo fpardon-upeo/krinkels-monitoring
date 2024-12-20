@@ -490,6 +490,16 @@
             <field>Priority__c</field>
             <table>ServiceAppointment</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Original_Earliest_Start_Permitted__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Original_Due_Date__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
         <masterLabel>Service Appointments</masterLabel>
     </sections>
     <sections>

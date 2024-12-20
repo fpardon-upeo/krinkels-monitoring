@@ -9,7 +9,7 @@
             <assignToReference>MileageEntryRecord.Starting_Mileage__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Starting_Kilomters</elementReference>
+                <elementReference>Starting_Kilometers</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -180,12 +180,12 @@
             <targetReference>Set_Mileage_Values</targetReference>
         </connector>
         <fields>
-            <name>Starting_Kilomters</name>
+            <name>Starting_Kilometers</name>
             <dataType>Number</dataType>
             <defaultValue>
                 <elementReference>MileageEntryRecord.Starting_Mileage__c</elementReference>
             </defaultValue>
-            <fieldText>Starting Kilomters</fieldText>
+            <fieldText>Starting Kilometers</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>

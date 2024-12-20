@@ -450,6 +450,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TimeSheetHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TimeSheetProjectLinkService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2982,6 +2986,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Optimize__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Earliest_Start_Permitted__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

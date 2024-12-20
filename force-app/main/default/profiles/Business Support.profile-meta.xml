@@ -2,7 +2,7 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Bussiness_Support</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -12,8 +12,8 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Krinkels_Field_Service</application>
-        <default>true</default>
-        <visible>false</visible>
+        <default>false</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Management</application>
@@ -447,6 +447,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeSheetHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2986,6 +2990,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceAppointment.Original_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.Original_Earliest_Start_Permitted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceAppointment.Overdue_Reminder_Send__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5093,7 +5107,7 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Financial_Account</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -5103,7 +5117,7 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Operational_Account</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
