@@ -137,6 +137,7 @@
         <members>CustomAccountLightboxVfPage</members>
         <members>NonEssentialsMobileLanding</members>
         <members>OverrideNotApplicable</members>
+        <members>SFRestrictAccessMessage</members>
         <members>SFS_WorkOrderCreator</members>
         <members>fsc_screenFlow</members>
         <members>test</members>
@@ -930,6 +931,7 @@
         <members>User.Create_Field_Service_Resource__c</members>
         <members>User.End_Date__c</members>
         <members>User.Interim_Office__c</members>
+        <members>User.Restrict_Desktop_Access__c</members>
         <members>User.Start_Date__c</members>
         <members>User_Settings__c.End_Time__c</members>
         <members>User_Settings__c.Service_Resource__c</members>
@@ -1874,8 +1876,10 @@
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Stamp_Original_Planning_Window</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template</members>
+        <members>Service_Appointment_Before_Save_Record_Triggered_Recover_Original_Planning_Windo</members>
         <members>Service_Appointment_Before_Save_Stamp_Actual_End_on_Completed</members>
         <members>Service_Appointment_Before_Save_Stamp_Actual_Start_on_In_Progress</members>
         <members>Service_Appointment_Scheduled_Customer_Notification</members>
@@ -1958,8 +1962,10 @@
         <members>Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Populate_Start_End_Date_on_WO</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory</members>
+        <members>Service_Appointment_After_Save_Record_Triggered_Stamp_Original_Planning_Window</members>
         <members>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</members>
         <members>Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template</members>
+        <members>Service_Appointment_Before_Save_Record_Triggered_Recover_Original_Planning_Windo</members>
         <members>Service_Appointment_Before_Save_Stamp_Actual_End_on_Completed</members>
         <members>Service_Appointment_Before_Save_Stamp_Actual_Start_on_In_Progress</members>
         <members>Service_Appointment_Scheduled_Customer_Notification</members>

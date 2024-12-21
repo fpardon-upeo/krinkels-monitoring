@@ -1,0 +1,46 @@
+<apex:page >
+    <style>
+        /* Center the page content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            background-color: #f4f6f9; /* Light background for contrast */
+        }
+
+        /* Warning Message Styles */
+        .warning-container {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .warning-icon {
+            flex-shrink: 0;
+        }
+
+        .warning-text {
+            color: #856404;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            margin: 0;
+        }
+    </style>
+
+    <div class="warning-container">
+        <apex:image value="/img/msg_icons/warning32.png" />
+        <p class="warning-text">
+            Insufficient privileges: You do not have the necessary permissions to access the desktop version of Salesforce.
+        </p>
+    </div>
+</apex:page>

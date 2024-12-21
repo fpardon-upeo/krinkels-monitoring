@@ -224,8 +224,6 @@ export default class ShowMileageScreen extends LightningElement {
       Id: entry.Id,
       Starting_Mileage__c: entry.Starting_Mileage__c || "",
       Ending_Mileage__c: entry.Ending_Mileage__c || "",
-      Starting_Location_Type__c: entry.Starting_Location_Type__c || "",
-      Ending_Location_Type__c: entry.Ending_Location_Type__c || "",
       Allowance_Type__c: entry.Allowance_Type__c || "",
       Type__c: entry.Type__c || ""
     }));

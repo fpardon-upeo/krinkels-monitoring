@@ -7,7 +7,24 @@
     title="Contract Services"
     icon-name="standard:contract_line_item"
   >
-    <div class="">
+    <div class="mainContainer">
+      <template if:true={maintenancePlan}>
+        <div class="warning-container">
+          <div class="warning-icon">
+            <lightning-icon
+              icon-name="utility:warning"
+              size="small"
+              variant="warning"
+            ></lightning-icon>
+          </div>
+          <p class="warning-text">
+            Please note: Any changes made to these Contract Line Items will only
+            affect new Maintenance Plans created after the changes are applied.
+            Existing Maintenance Plans (and their associated Work Orders) will
+            remain unchanged.
+          </p>
+        </div>
+      </template>
       <div class="toggle-container">
         <div class="slds-form-element">
           <label class="slds-checkbox_toggle slds-grid">
@@ -83,8 +100,8 @@
                 </th>
                 <th
                   class="slds-text-align_center th-label"
-                  lwc:ref="projectCodeRef"
-                  data-lwcref="projectCodeRef"
+                  lwc:ref="estimatedDurationRef"
+                  data-lwcref="estimatedDurationRef"
                   data-icon="utility:arrowdown"
                   onclick={handleBasicSort}
                   data-label={estimatedDurationLabel}
@@ -92,18 +109,28 @@
                   style="width: 8%"
                 >
                   {estimatedDurationLabel}
+                  <span class="lgc-bg slds-m-left_xxx-small">
+                    <lightning-helptext
+                      content={estimatedDurationHelpText}
+                    ></lightning-helptext>
+                  </span>
                 </th>
                 <th
                   class="slds-text-align_center th-label"
-                  lwc:ref="projectCodeRef"
-                  data-lwcref="projectCodeRef"
+                  lwc:ref="calculatedDurationRef"
+                  data-lwcref="calculatedDurationRef"
                   data-icon="utility:arrowdown"
                   onclick={handleBasicSort}
-                  data-label={calculatedDurationlabel}
+                  data-label={calculatedDurationLabel}
                   data-field="Calculated_Duration__c"
                   style="width: 8%"
                 >
                   {calculatedDurationLabel}
+                  <span class="lgc-bg slds-m-left_xxx-small">
+                    <lightning-helptext
+                      content={calculatedDurationHelpText}
+                    ></lightning-helptext>
+                  </span>
                 </th>
                 <template if:true={locationColumns.isGeoLocation}>
                   <th

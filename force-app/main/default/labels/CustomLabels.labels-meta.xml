@@ -308,7 +308,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AppointmentPicker_End_Day_Button</shortDescription>
-        <value>Last Appointment</value>
+        <value>Last Appointment Finished</value>
     </labels>
     <labels>
         <fullName>AppointmentPicker_End_Day_Button_Sub_Text</fullName>

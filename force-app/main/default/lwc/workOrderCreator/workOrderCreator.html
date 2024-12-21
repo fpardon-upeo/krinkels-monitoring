@@ -1,119 +1,135 @@
 <template>
-    <div class="slds-card">
-        <!-- Visit Type Selection Screen -->
-        <template if:true={showTypeSelection}>
-            <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
-                <!-- Waste Visit Tile -->
-                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small">
-                    <div class="slds-box slds-box_link slds-box_x-small slds-theme_default hover-effect"
-                         onclick={handleWasteVisit}
-                         data-type="waste">
-                        <div class="slds-media slds-media_center">
-                            <div class="slds-media__figure">
-                                <span class="slds-icon_container slds-icon-utility-recycling">
-                                    <lightning-icon icon-name="utility:recycle_bin_full"
-                                                    alternative-text="Waste Visit"
-                                                    size="large"
-                                                    class="slds-theme_default">
-                                    </lightning-icon>
-                                </span>
-                            </div>
-                            <div class="slds-media__body">
-                                <h3 class="slds-text-heading_small">Waste Visit</h3>
-                                <p class="slds-text-body_small slds-p-top_x-small">
-                                    Create a work order for waste collection and disposal services
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Depot Visit Tile -->
-                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small">
-                    <div class="slds-box slds-box_link slds-box_x-small slds-theme_default hover-effect"
-                         onclick={handleDepotVisit}
-                         data-type="depot">
-                        <div class="slds-media slds-media_center">
-                            <div class="slds-media__figure">
-                                <span class="slds-icon_container slds-icon-utility-company">
-                                    <lightning-icon icon-name="utility:company"
-                                                    alternative-text="Depot Visit"
-                                                    size="large"
-                                                    class="slds-theme_default">
-                                    </lightning-icon>
-                                </span>
-                            </div>
-                            <div class="slds-media__body">
-                                <h3 class="slds-text-heading_small">Depot Visit</h3>
-                                <p class="slds-text-body_small slds-p-top_x-small">
-                                    Schedule a depot maintenance or inspection visit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Shop Visit Tile -->
-                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small">
-                    <div class="slds-box slds-box_link slds-box_x-small slds-theme_default hover-effect"
-                         onclick={handleRedoVisit}
-                         data-type="shop">
-                        <div class="slds-media slds-media_center">
-                            <div class="slds-media__figure">
-                                <span class="slds-icon_container slds-icon-utility-store">
-                                    <lightning-icon icon-name="utility:redo"
-                                                    alternative-text="Shop Visit"
-                                                    size="large"
-                                                    class="slds-theme_default">
-                                    </lightning-icon>
-                                </span>
-                            </div>
-                            <div class="slds-media__body">
-                                <h3 class="slds-text-heading_small">Rework Visit</h3>
-                                <p class="slds-text-body_small slds-p-top_x-small">
-                                    Create a work order for rework on a previously completed job
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="slds-card">
+    <!-- Visit Type Selection Screen -->
+    <template if:true={showTypeSelection}>
+      <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
+        <!-- Waste Visit Tile -->
+        <div
+          class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small"
+        >
+          <div
+            class="slds-box slds-box_link slds-box_x-small slds-theme_default hover-effect"
+            onclick={handleWasteVisit}
+            data-type="waste"
+          >
+            <div class="slds-media slds-media_center">
+              <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-utility-recycling">
+                  <lightning-icon
+                    icon-name="utility:recycle_bin_full"
+                    alternative-text="Waste Visit"
+                    size="large"
+                    class="slds-theme_default"
+                  >
+                  </lightning-icon>
+                </span>
+              </div>
+              <div class="slds-media__body">
+                <h3 class="slds-text-heading_small">Waste Visit</h3>
+                <p class="slds-text-body_small slds-p-top_x-small">
+                  Create a work order for waste collection and disposal services
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Depot Visit Tile -->
+        <div
+          class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small"
+        >
+          <div
+            class="slds-box slds-box_link slds-box_x-small slds-theme_default hover-effect"
+            onclick={handleDepotVisit}
+            data-type="depot"
+          >
+            <div class="slds-media slds-media_center">
+              <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-utility-company">
+                  <lightning-icon
+                    icon-name="utility:company"
+                    alternative-text="Depot Visit"
+                    size="large"
+                    class="slds-theme_default"
+                  >
+                  </lightning-icon>
+                </span>
+              </div>
+              <div class="slds-media__body">
+                <h3 class="slds-text-heading_small">Depot Visit</h3>
+                <p class="slds-text-body_small slds-p-top_x-small">
+                  Schedule a depot maintenance or inspection visit
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Visit Tile -->
+        <div
+          class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small"
+        >
+          <div
+            class="slds-box slds-box_link slds-box_x-small slds-theme_default hover-effect"
+            onclick={handleRedoVisit}
+            data-type="shop"
+          >
+            <div class="slds-media slds-media_center">
+              <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-utility-store">
+                  <lightning-icon
+                    icon-name="utility:redo"
+                    alternative-text="Shop Visit"
+                    size="large"
+                    class="slds-theme_default"
+                  >
+                  </lightning-icon>
+                </span>
+              </div>
+              <div class="slds-media__body">
+                <h3 class="slds-text-heading_small">Rework Visit</h3>
+                <p class="slds-text-body_small slds-p-top_x-small">
+                  Create a work order for rework on a previously completed job
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Form Container -->
+    <template if:false={showTypeSelection}>
+      <div
+        class="slds-p-around_medium"
+        style="display: flex; flex-direction: column"
+      >
+        <lightning-button-icon
+          icon-name="utility:back"
+          variant="border-filled"
+          size="medium"
+          onclick={handleBack}
+          class="slds-m-bottom_small"
+          alternative-text="Back to selection"
+        >
+        </lightning-button-icon>
+
+        <template if:true={isWasteVisit}>
+          <c-waste-visit-form record-id={recordId} onclose={handleClose}>
+          </c-waste-visit-form>
         </template>
 
-        <!-- Form Container -->
-        <template if:false={showTypeSelection}>
-            <div class="slds-p-around_medium">
-                <lightning-button-icon
-                        icon-name="utility:back"
-                        variant="border-filled"
-                        size="medium"
-                        onclick={handleBack}
-                        class="slds-m-bottom_small"
-                        alternative-text="Back to selection">
-                </lightning-button-icon>
-
-                <template if:true={isWasteVisit}>
-                    <c-waste-visit-form
-                            record-id={recordId}
-                            onclose={handleClose}>
-                    </c-waste-visit-form>
-                </template>
-
-                <template if:true={isDepotVisit}>
-                    <c-depot-visit-form
-                            record-id={recordId}
-                            onclose={handleClose}>
-                    >
-                    </c-depot-visit-form>
-                </template>
-
-                <template if:true={isShopVisit}>
-                    <c-rework-visit-form
-                            record-id={recordId}
-                            onclose={handleClose}>
-                    </c-rework-visit-form>
-                </template>
-            </div>
+        <template if:true={isDepotVisit}>
+          <c-depot-visit-form record-id={recordId} onclose={handleClose}>
+            >
+          </c-depot-visit-form>
         </template>
-    </div>
+
+        <template if:true={isShopVisit}>
+          <c-rework-visit-form record-id={recordId} onclose={handleClose}>
+          </c-rework-visit-form>
+        </template>
+      </div>
+    </template>
+  </div>
 </template>

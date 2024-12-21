@@ -1,127 +1,136 @@
-import { LightningElement, api } from 'lwc';
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import getServiceAppointments from '@salesforce/apex/SFS_WorkOrderCreatorController.getServiceAppointments';
+import { LightningElement, api } from "lwc";
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import getServiceAppointments from "@salesforce/apex/SFS_WorkOrderCreatorController.getServiceAppointments";
 
 export default class WorkOrderCreator extends LightningElement {
+  showTypeSelection = true;
+  selectedType = null;
 
-    showTypeSelection = true;
-    selectedType = null;
+  @api
+  get recordIds() {
+    return this._recordIds || [];
+  }
+  set recordIds(value) {
+    this._recordIds = Array.isArray(value) ? value : [value];
+    this.recordId = this._recordIds[0];
+    console.log("recordIds set to:", this._recordIds);
+  }
 
+  @api
+  get startDate() {
+    return this._startDate;
+  }
+  set startDate(value) {
+    this._startDate = value;
+    console.log("startDate set to:", this._startDate);
+  }
 
-    @api
-    get recordIds() {
-        return this._recordIds || [];
+  @api
+  get endDate() {
+    return this._endDate;
+  }
+  set endDate(value) {
+    this._endDate = value;
+    console.log("endDate set to:", this._endDate);
+  }
+
+  _recordIds;
+  _startDate;
+  _endDate;
+  appointments;
+  error;
+  recordId;
+
+  connectedCallback() {
+    console.log("Component connected with:", {
+      recordIds: this.recordIds,
+      startDate: this.startDate,
+      endDate: this.endDate
+    });
+
+    if (this.recordIds && this.recordIds.length > 0) {
+      this.recordId = this.recordIds[0];
+      console.log("Loading appointments for:", this.recordId);
+      this.loadAppointments();
     }
-    set recordIds(value) {
-        this._recordIds = Array.isArray(value) ? value : [value];
-        this.recordId = this._recordIds[0];
-        console.log('recordIds set to:', this._recordIds);
-    }
+  }
 
-    @api
-    get startDate() {
-        return this._startDate;
-    }
-    set startDate(value) {
-        this._startDate = value;
-        console.log('startDate set to:', this._startDate);
-    }
+  renderedCallback() {
+    console.log("Component rendered");
+  }
 
-    @api
-    get endDate() {
-        return this._endDate;
+  async loadAppointments() {
+    try {
+      if (!this.recordIds || this.recordIds.length === 0) {
+        console.log("No record IDs available");
+        return;
+      }
+      console.log("Loading appointments for:", this.recordIds);
+      this.appointments = await getServiceAppointments({
+        appointmentId: this.recordId
+      });
+      console.log("Appointments loaded:", this.appointments);
+      console.log("Appointments loaded:", JSON.stringify(this.appointments));
+    } catch (error) {
+      console.error("Error in loadAppointments:", error);
+      this.error = error;
+      this.showToast(
+        "Error",
+        error.body?.message || "Error loading appointments",
+        "error"
+      );
     }
-    set endDate(value) {
-        this._endDate = value;
-        console.log('endDate set to:', this._endDate);
-    }
+  }
 
-    _recordIds;
-    _startDate;
-    _endDate;
-    appointments;
-    error;
-    recordId;
+  get isWasteVisit() {
+    return this.selectedType === "waste";
+  }
 
-    connectedCallback() {
-        console.log('Component connected with:', {
-            recordIds: this.recordIds,
-            startDate: this.startDate,
-            endDate: this.endDate
-        });
+  get isDepotVisit() {
+    return this.selectedType === "depot";
+  }
 
-        if (this.recordIds && this.recordIds.length > 0) {
-            this.recordId = this.recordIds[0];
-            console.log('Loading appointments for:', this.recordId);
-            this.loadAppointments();
-        }
-    }
+  get isShopVisit() {
+    return this.selectedType === "shop";
+  }
 
-    renderedCallback() {
-        console.log('Component rendered');
-    }
+  handleWasteVisit() {
+    this.selectedType = "waste";
+    this.showTypeSelection = false;
+  }
 
-    async loadAppointments() {
-        try {
-            if (!this.recordIds || this.recordIds.length === 0) {
-                console.log('No record IDs available');
-                return;
-            }
-            console.log('Loading appointments for:', this.recordIds);
-            this.appointments = await getServiceAppointments({
-                appointmentId: this.recordId
-            });
-            console.log('Appointments loaded:', this.appointments);
-            console.log('Appointments loaded:', JSON.stringify(this.appointments));
-        } catch (error) {
-            console.error('Error in loadAppointments:', error);
-            this.error = error;
-            this.showToast('Error', error.body?.message || 'Error loading appointments', 'error');
-        }
-    }
+  handleDepotVisit() {
+    this.selectedType = "depot";
+    this.showTypeSelection = false;
+  }
 
-    get isWasteVisit() {
-        return this.selectedType === 'waste';
-    }
+  handleRedoVisit() {
+    this.selectedType = "shop";
+    this.showTypeSelection = false;
+  }
 
-    get isDepotVisit() {
-        return this.selectedType === 'depot';
-    }
+  handleBack() {
+    this.selectedType = null;
+    this.showTypeSelection = true;
+  }
 
-    get isShopVisit() {
-        return this.selectedType === 'shop';
-    }
+  handleClose(event) {
+    this.handleBack();
 
-    handleWasteVisit() {
-        this.selectedType = 'waste';
-        this.showTypeSelection = false;
-    }
+    this.showToast(
+      event.detail.title,
+      event.detail.message,
+      event.detail.variant
+    );
+  }
 
-    handleDepotVisit() {
-        this.selectedType = 'depot';
-        this.showTypeSelection = false;
-    }
+  showToast(title, message, variant) {
+    const toastEvent = new ShowToastEvent({
+      title,
+      message,
+      variant
+    });
 
-    handleRedoVisit() {
-        this.selectedType = 'shop';
-        this.showTypeSelection = false;
-    }
-
-    handleBack() {
-        this.selectedType = null;
-        this.showTypeSelection = true;
-    }
-
-    handleClose() {
-        this.handleBack();
-        this.showToast('Info', 'Work Order Created', 'info');
-    }
-
-    showToast(title, message, variant) {
-        this.dispatchEvent(new ShowToastEvent({
-            title,
-            message,
-            variant
-        }));
-    }
+    this.dispatchEvent(toastEvent);
+  }
 }

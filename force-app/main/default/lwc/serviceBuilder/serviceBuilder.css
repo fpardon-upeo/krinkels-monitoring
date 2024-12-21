@@ -61,7 +61,7 @@ th input:hover,
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
-  padding: 0 1rem 1rem 0;
+  padding: 1rem 1rem 1rem 0;
 }
 
 .hidden {
@@ -77,7 +77,44 @@ th input:hover,
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
 }
-/* 
-tr:hover {
-  opacity: 1.5;
-} */
+
+/* Warning Message Styles */
+.warning-container {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: fit-content;
+}
+
+.warning-icon {
+  flex-shrink: 0;
+}
+
+.warning-icon lightning-icon {
+  --sds-c-icon-color-foreground-default: #856404;
+}
+
+.warning-text {
+  color: #856404;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.mainContainer {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slds-grid.slds-grow {
+  width: 100%;
+}

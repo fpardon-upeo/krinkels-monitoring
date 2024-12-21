@@ -9,8 +9,11 @@ import createMaintenancePlanFormServiceContract from "@salesforce/apex/Maintenan
 import getLinesWithInvalidATAKProject from "@salesforce/apex/MaintenancePlanService.getLinesWithInvalidATAKProject";
 import Toast from "lightning/toast";
 import { createRecord, updateRecord } from "lightning/uiRecordApi";
+import { NavigationMixin } from "lightning/navigation";
 
-export default class GenerateMaintenancePlan extends LightningElement {
+export default class GenerateMaintenancePlan extends NavigationMixin(
+  LightningElement
+) {
   @api recordId;
   @track showTable = false;
   @track tableData = [];
@@ -36,25 +39,30 @@ export default class GenerateMaintenancePlan extends LightningElement {
 
   async openConfirm() {
     const result = await LightningConfirm.open({
-      message: "Are you sure you want to create a maintenance plan? This will create a maintenance plan for the selected equipment.",
+      message:
+        "Are you sure you want to create a maintenance plan? This will create a maintenance plan for the selected equipment.",
       variant: "headerless"
     })
       .then((result) => {
         console.log("result", result);
         console.log("recordId", this.recordId);
-        if(result === true) {
+        if (result === true) {
           let linesWithInvalidATAKProject = 0;
           getLinesWithInvalidATAKProject({ serviceContractId: this.recordId })
             .then((result) => {
               console.log("result", JSON.stringify(result));
               linesWithInvalidATAKProject = result.length;
-              console.log("linesWithInvalidATAKProject", linesWithInvalidATAKProject);
-              if(linesWithInvalidATAKProject > 0) {
+              console.log(
+                "linesWithInvalidATAKProject",
+                linesWithInvalidATAKProject
+              );
+              if (linesWithInvalidATAKProject > 0) {
                 this.showTable = true;
                 this.tableData = result;
                 Toast.show({
                   label: "Error",
-                  message: "The selected equipment has lines with invalid ATAK projects. Please correct the ATAK projects before creating the maintenance plan.",
+                  message:
+                    "The selected equipment has lines with invalid ATAK projects. Please correct the ATAK projects before creating the maintenance plan.",
                   variant: "error",
                   mode: "dismissable"
                 });
@@ -63,20 +71,35 @@ export default class GenerateMaintenancePlan extends LightningElement {
                   serviceContractId: this.recordId
                 })
                   .then((result) => {
-                    console.log("result", result);
+                    console.log("Maintenance Plan ID:", result);
+
+                    const maintenancePlanId = result;
+
                     Toast.show({
                       label: "Success",
                       message: "The maintenance plan was created successfully",
                       variant: "success",
                       mode: "dismissable"
                     });
-                    this.dispatchEvent(new CloseActionScreenEvent());
+
+                    // Navigate to the new maintenance plan
+                    this[NavigationMixin.Navigate]({
+                      type: "standard__recordPage",
+                      attributes: {
+                        recordId: maintenancePlanId,
+                        objectApiName: "MaintenancePlan",
+                        actionName: "view"
+                      }
+                    });
+
+                    // this.dispatchEvent(new CloseActionScreenEvent());
                   })
                   .catch((error) => {
                     console.error("error", error);
                     Toast.show({
                       label: "Error",
-                      message: "An error occurred while creating the maintenance plan",
+                      message:
+                        "An error occurred while creating the maintenance plan",
                       variant: "error",
                       mode: "dismissable"
                     });
@@ -87,7 +110,8 @@ export default class GenerateMaintenancePlan extends LightningElement {
             .catch((error) => {
               console.error("error", error);
             });
-        } if (result === false) {
+        }
+        if (result === false) {
           this.dispatchEvent(new CloseActionScreenEvent());
         }
       })
@@ -118,7 +142,8 @@ export default class GenerateMaintenancePlan extends LightningElement {
           console.error("error", error);
           Toast.show({
             label: "Error",
-            message: "An error occurred while updating the line items. Please try again.",
+            message:
+              "An error occurred while updating the line items. Please try again.",
             variant: "error",
             mode: "dismissable"
           });

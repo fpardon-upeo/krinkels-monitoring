@@ -10,7 +10,12 @@ public without sharing class ServiceBuilderController {
   public static ServiceContract getServiceContract(Id recordId) {
     // Query the ServiceContract record with the specified recordId
     ServiceContract serviceContract = [
-      SELECT Product__c, Default_LMRA__c
+      SELECT
+        Product__c,
+        Default_LMRA__c,
+        StartDate,
+        EndDate,
+        (SELECT Id FROM MaintenancePlans)
       FROM ServiceContract
       WHERE Id = :recordId
       LIMIT 1
@@ -131,21 +136,11 @@ public without sharing class ServiceBuilderController {
   public static ContractLineItem saveContractLine(
     ContractLineItem contractLine
   ) {
-
-    System.debug('contractLine: ' + contractLine.Product2Id);
-    System.debug('contractLine: ' + contractLine.ServiceContractId);
-
-    ServiceContract sc = [
-      SELECT Id, Product__c, Default_LMRA__c, Pricebook2Id
-      FROM ServiceContract
-      WHERE Id = :contractLine.ServiceContractId
-    ];
-
     // Query for active PricebookEntry with better error handling
     List<PricebookEntry> pricebookEntries = [
       SELECT Id
       FROM PricebookEntry
-      WHERE Product2Id = :contractLine.Product2Id AND Pricebook2Id = :sc.Pricebook2Id
+      WHERE Product2Id = :contractLine.Product2Id AND IsActive = TRUE
       LIMIT 1
     ];
 

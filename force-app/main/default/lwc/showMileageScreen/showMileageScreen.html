@@ -84,32 +84,6 @@
           <template for:each={mileageEntries} for:item="entry">
             <div class="MileageEntryContainer" key={entry.Id}>
               <div class="form-element">
-                <label class="slds-form-element__label"
-                  >Starting Location</label
-                >
-                <div class="slds-form-element__control">
-                  <input
-                    type="text"
-                    readonly
-                    class="slds-input"
-                    value={entry.Starting_Location_Type__c}
-                  />
-                </div>
-              </div>
-
-              <div class="form-element">
-                <label class="slds-form-element__label">Ending Location</label>
-                <div class="slds-form-element__control">
-                  <input
-                    type="text"
-                    readonly
-                    class="slds-input"
-                    value={entry.Ending_Location_Type__c}
-                  />
-                </div>
-              </div>
-
-              <div class="form-element">
                 <label class="slds-form-element__label">Allowance</label>
                 <div class="slds-form-element__control">
                   <input
@@ -207,14 +181,7 @@
               value={timeSheetResourceId}
               class="slds-hide"
             ></lightning-input-field>
-            <lightning-input-field
-              field-name="Starting_Location_Type__c"
-              value="Customer"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="Ending_Location_Type__c"
-              required
-            ></lightning-input-field>
+
             <lightning-input-field
               field-name="Allowance_Type__c"
               required
@@ -275,14 +242,7 @@
               value={timeSheetResourceId}
               class="slds-hide"
             ></lightning-input-field>
-            <lightning-input-field
-              field-name="Starting_Location_Type__c"
-              value="Home"
-            ></lightning-input-field>
-            <lightning-input-field
-              field-name="Ending_Location_Type__c"
-              required
-            ></lightning-input-field>
+
             <lightning-input-field
               field-name="Allowance_Type__c"
               required

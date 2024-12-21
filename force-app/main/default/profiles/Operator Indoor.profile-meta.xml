@@ -13,7 +13,7 @@
     <applicationVisibilities>
         <application>Krinkels_Field_Service</application>
         <default>true</default>
-        <visible>true</visible>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Management</application>
@@ -3605,6 +3605,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>User.Restrict_Desktop_Access__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>User.Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4144,11 +4149,19 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Service_Appointment_After_Save_Record_Triggered_Stamp_Original_Planning_Window</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Service_Appointment_After_Save_Record_Triggered_Update_Related_WO_Status</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Service_Appointment_Before_Save_Record_Triggered_Recover_Original_Planning_Windo</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -5150,6 +5163,10 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>SFRestrictAccessMessage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>SFS_WorkOrderCreator</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -5418,10 +5435,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EditPublicTemplates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EditTask</name>
     </userPermissions>
     <userPermissions>
@@ -5519,9 +5532,5 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewRoles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewSetup</name>
     </userPermissions>
 </Profile>

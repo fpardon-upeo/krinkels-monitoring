@@ -2,6 +2,7 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>External_Operator_Permission_Set_Group</label>
+    <permissionSets>APEX_Class_Access_Mobile_Operator</permissionSets>
     <permissionSets>FSL_Mobile_License</permissionSets>
     <permissionSets>FSL_Resource_License</permissionSets>
     <permissionSets>FSL_Resource_Permissions</permissionSets>

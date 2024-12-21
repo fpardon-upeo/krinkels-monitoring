@@ -30,6 +30,10 @@
                 <behavior>Edit</behavior>
                 <field>Create_Field_Service_Resource__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Restrict_Desktop_Access__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>

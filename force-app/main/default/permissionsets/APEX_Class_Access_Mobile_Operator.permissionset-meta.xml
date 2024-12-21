@@ -4,6 +4,10 @@
         <apexClass>TimeSheetController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>WorkStepSignatureController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>APEX Class Access Mobile Operator</label>
 </PermissionSet>

@@ -26,7 +26,12 @@
     </fieldOverrides>
     <fieldOverrides>
         <field>StartDate</field>
-        <formula>DATE(YEAR(TODAY()),MONTH(TODAY()),1)</formula>
+        <formula>DATE(
+
+IF(MONTH(TODAY()) = 12, YEAR(TODAY()) + 1, YEAR(TODAY())),
+IF(MONTH(TODAY()) = 12, 1, MONTH(TODAY()) + 1), 1
+
+)</formula>
     </fieldOverrides>
     <fieldOverrides>
         <field>Type__c</field>

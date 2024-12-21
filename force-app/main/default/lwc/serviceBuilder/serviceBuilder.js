@@ -37,6 +37,7 @@ export default class ServiceBuilder extends LightningElement {
   showActions = true;
   selectedLineItemId;
   isModalOpen = false;
+  maintenancePlan = false;
   isLoading = true;
 
   // Accordion Sections
@@ -47,7 +48,9 @@ export default class ServiceBuilder extends LightningElement {
   selectLabel = "";
   projectCodeLabel = "Code";
   estimatedDurationLabel = "Est. Dur.";
+  estimatedDurationHelpText = "Estimated Duration in Minutes";
   calculatedDurationLabel = "Calc. Dur.";
+  calculatedDurationHelpText = "Calculated Duration in Minutes";
   longitudeLabel = "Longitude";
   latitudeLabel = "Latitude";
   longitudeLabel = "Longitude";
@@ -140,6 +143,7 @@ export default class ServiceBuilder extends LightningElement {
    * @description Loads contract lines for the current record
    */
   loadContractLines() {
+    console.log("maintenancePlan", this.maintenancePlan);
     getContractLines({ recordId: this.recordId })
       .then((result) => {
         result = result || [];
@@ -193,6 +197,9 @@ export default class ServiceBuilder extends LightningElement {
             this.locationType =
               serviceContractResult.Location_Type__c || "Address";
             this.isLoading = false;
+
+            this.maintenancePlan =
+              serviceContractResult.MaintenancePlans?.length > 0;
           }
         );
       })
@@ -230,14 +237,26 @@ export default class ServiceBuilder extends LightningElement {
     let newSort = sortDirection === "asc" ? "desc" : "asc";
     let newSortIcon = newSort === "asc" ? "↑" : "↓";
 
-    this.refs[lwcRef].innerHTML =
-      event.target.dataset.label + " " + newSortIcon;
-    this.refs[lwcRef].dataset.sort = newSort;
+    // Instead of replacing all innerHTML, just update the text content of the first text node
+    const headerElement = this.refs[lwcRef];
+    const textNode = Array.from(headerElement.childNodes).find(
+      (node) => node.nodeType === 3
+    );
+    if (textNode) {
+      textNode.textContent = event.target.dataset.label + " " + newSortIcon;
+    }
+
+    headerElement.dataset.sort = newSort;
 
     // Reset sort on other columns
     this.template.querySelectorAll("th[data-lwcref]").forEach((column) => {
       if (column.dataset.lwcref !== lwcRef) {
-        column.innerHTML = column.dataset.label;
+        const columnTextNode = Array.from(column.childNodes).find(
+          (node) => node.nodeType === 3
+        );
+        if (columnTextNode) {
+          columnTextNode.textContent = column.dataset.label;
+        }
         column.dataset.sort = "none";
       }
     });
@@ -578,13 +597,13 @@ export default class ServiceBuilder extends LightningElement {
     const defaultEndDate = `${today.getFullYear()}-12-31`;
 
     // Get dates from existing contract lines if available
-    const startDate = this.contractLines[0]?.ServiceContract?.StartDate
-      ? this.contractLines[0].ServiceContract.StartDate
-      : (this.contractLines[0]?.StartDate ?? defaultStartDate);
+    const startDate = this.serviceContract.StartDate
+      ? this.serviceContract.StartDate
+      : defaultStartDate;
 
-    const endDate = this.contractLines[0]?.ServiceContract?.EndDate
-      ? this.contractLines[0].ServiceContract.EndDate
-      : (this.contractLines[0]?.EndDate ?? defaultEndDate);
+    const endDate = this.serviceContract.EndDate
+      ? this.serviceContract.EndDate
+      : defaultEndDate;
 
     // Set default LMRA value
     const defaultLMRA = this.serviceContract?.Default_LMRA__c || "Limited";

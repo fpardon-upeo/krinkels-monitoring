@@ -9,22 +9,25 @@ export default class ReadyForValidation extends LightningElement {
   connectedCallback() {
     setTimeout(() => {
       setReadyForValidation({ recordId: this.recordId })
-        .then(() => {
-          this.dispatchEvent(
-            new ShowToastEvent({
-              title: "Ready for Validation",
-              message: "This record was set to Ready for Validation.",
-              variant: "success",
-              mode: "dismissable"
-            })
-          );
-          this.closeQuickAction();
+        .then((result) => {
+          if (result) {
+            this.dispatchEvent(
+              new ShowToastEvent({
+                title: "Success",
+                message:
+                  "The Contract Manager of each contract line item will be notified.",
+                variant: "success",
+                mode: "dismissable"
+              })
+            );
+            this.closeQuickAction();
+          }
         })
         .catch((error) => {
           this.dispatchEvent(
             new ShowToastEvent({
-              title: "Ready for Validation",
-              message: "Error setting record to Ready for Validation: " + error,
+              title: "Failed",
+              message: "Error: " + error.body.message,
               variant: "error",
               mode: "dismissable"
             })

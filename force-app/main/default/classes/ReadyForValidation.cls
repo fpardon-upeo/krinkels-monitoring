@@ -1,19 +1,72 @@
 public with sharing class ReadyForValidation {
   @AuraEnabled
-  public static void setReadyForValidation(Id recordId) {
+  public static Boolean setReadyForValidation(Id recordId) {
     ServiceContract sc = [
-      SELECT Id, ApprovalStatus
+      SELECT
+        Id,
+        Name,
+        ApprovalStatus,
+        (SELECT Id, Project_Code__c FROM ContractLineItems)
       FROM ServiceContract
       WHERE Id = :recordId
     ];
 
+    // First validate all project codes
+    for (ContractLineItem lineItem : sc.ContractLineItems) {
+      List<ATAK_Project__c> projects = [
+        SELECT Id
+        FROM ATAK_Project__c
+        WHERE Name = :lineItem.Project_Code__c
+      ];
+
+      if (projects.isEmpty()) {
+        throw new AuraHandledException(
+          'Project Code: ' + lineItem.Project_Code__c + ' does not exist.'
+        );
+      }
+    }
+
+    // Get project codes for notification
+    Set<String> projectCodes = new Set<String>();
+    for (ContractLineItem cli : sc.ContractLineItems) {
+      projectCodes.add(cli.Project_Code__c);
+    }
+
+    // Get owners to notify
+    Set<String> ownersToNotify = new Set<String>();
+    for (ATAK_Project__c proj : [
+      SELECT Id, SubProject_ATAK__c, OwnerId
+      FROM ATAK_Project__c
+      WHERE SubProject_ATAK__c IN :projectCodes
+    ]) {
+      ownersToNotify.add(proj.OwnerId);
+    }
+
+    // Get notification type
+    CustomNotificationType notificationType = [
+      SELECT Id, DeveloperName
+      FROM CustomNotificationType
+      WHERE DeveloperName = 'Service_Contract_Approval_Notification'
+      LIMIT 1
+    ];
+
+    // Send notification
+    Messaging.CustomNotification notification = new Messaging.CustomNotification();
+    notification.setTitle('Service Contract Ready for Validation');
+    notification.setBody(
+      'The Service Contract ' + sc.Name + ' requires your validation.'
+    );
+    notification.setNotificationTypeId(notificationType.Id);
+    notification.setTargetId(sc.Id);
+
     try {
-      sc.ApprovalStatus = 'In Approval Process';
-      update sc;
+      notification.send(ownersToNotify);
     } catch (Exception e) {
       throw new AuraHandledException(
-        'Error setting record to Ready for Validation: ' + e.getMessage()
+        'Failed to send notification: ' + e.getMessage()
       );
     }
+
+    return true;
   }
 }

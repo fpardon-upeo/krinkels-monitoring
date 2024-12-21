@@ -151,6 +151,10 @@
                     <name>label</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>reportFilter</name>
+                    <value>MaintenancePlan.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>reportName</name>
                     <value>Maintenance_Plan_Work_Breakdown_XMG</value>
                 </componentInstanceProperties>
