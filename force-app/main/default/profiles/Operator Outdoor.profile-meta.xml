@@ -4355,6 +4355,10 @@
         <enabled>false</enabled>
         <flow>sendBetterEmail_Test_Create_Test_Templates_if_needed</flow>
     </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>test</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>ATAK_Internal_Project_Map__mdt-ATAK Internal Project Map Layout</layout>
     </layoutAssignments>
@@ -5163,10 +5167,6 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>SFRestrictAccessMessage</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>SFS_WorkOrderCreator</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -5435,10 +5435,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EditPublicTemplates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EditTask</name>
     </userPermissions>
     <userPermissions>
@@ -5536,9 +5532,5 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewRoles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewSetup</name>
     </userPermissions>
 </Profile>

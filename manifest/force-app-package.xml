@@ -188,6 +188,7 @@
     <types>
         <members>CreateInternalWorkApp</members>
         <members>CustomAccountLightboxApp</members>
+        <members>GetBrowserInformation</members>
         <members>SFS_WorkOrderCreatorApp</members>
         <members>fsc_openUrl</members>
         <members>fsc_screenFlowApp</members>
@@ -1703,6 +1704,7 @@
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
         <members>Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
+        <members>test</members>
         <name>Flow</name>
     </types>
     <types>
@@ -1796,6 +1798,7 @@
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
         <members>Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
+        <members>test</members>
         <name>FlowDefinition</name>
     </types>
     <types>

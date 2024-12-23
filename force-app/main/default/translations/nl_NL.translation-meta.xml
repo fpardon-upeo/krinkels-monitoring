@@ -3270,6 +3270,26 @@
         </flows>
         <fullName>sendBetterEmail_Test_Create_Test_Templates_if_needed</fullName>
     </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <fields>
+                    <name>ErrorMessage</name>
+                </fields>
+                <name>Force_Logout</name>
+            </screens>
+            <screens>
+                <name>logout_screen</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>msgfactor</name>
+                </fields>
+                <name>tittre</name>
+            </screens>
+        </flows>
+        <fullName>test</fullName>
+    </flowDefinitions>
     <quickActions>
         <label><!-- Follow Up --></label>
         <name>Follow_Up</name>

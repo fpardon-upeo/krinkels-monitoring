@@ -1,2 +1,42 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+aura/GetBrowserInformation/GetBrowserInformation.cmp,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformation.cmp,,,log,📰
+aura/GetBrowserInformation/GetBrowserInformation.cmp-meta.xml,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformation.cmp-meta.xml,,,log,📰
+aura/GetBrowserInformation/GetBrowserInformation.design,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformation.design,,,log,📰
+aura/GetBrowserInformation/GetBrowserInformationController.js,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformationController.js,,,log,📰
+aura/GetBrowserInformation/GetBrowserInformationRenderer.js,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformationRenderer.js,,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+flowDefinitions/test.flowDefinition-meta.xml,A,FlowDefinition test,,,log,📰
+flows/test.flow-meta.xml,A,Flow test,,,log,📰
+layouts/Account-Other Account Layout.layout-meta.xml," ",Layout Account-Other Account Layout,M,,log,📰
+profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
+profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
+profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
+profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
+profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
+profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
+profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
+profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
+profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
+profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
+profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
+profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
+profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
+profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
+profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
+profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
+profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
+profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
+profiles/Operator Indoor.profile-meta.xml," ",Profile Operator Indoor,M,,log,📰
+profiles/Operator Outdoor.profile-meta.xml," ",Profile Operator Outdoor,M,,log,📰
+profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
+profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
+profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
+profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
+profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
+profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
+translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
+translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
+translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
+installedPackages/GetBrowserInformation.json,A,InstalledPackage GetBrowserInformation.json,,,log,📰
+manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
+manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

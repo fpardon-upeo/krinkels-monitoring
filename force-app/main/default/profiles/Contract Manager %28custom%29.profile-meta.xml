@@ -191,7 +191,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>GanttRoundPinActionTest</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>GetRecordsIn</apexClass>
@@ -4355,6 +4355,10 @@
         <enabled>false</enabled>
         <flow>sendBetterEmail_Test_Create_Test_Templates_if_needed</flow>
     </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>test</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>ATAK_Internal_Project_Map__mdt-ATAK Internal Project Map Layout</layout>
     </layoutAssignments>
@@ -5097,10 +5101,6 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>OverrideNotApplicable</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>SFRestrictAccessMessage</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>

@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3201
+Metadatas: 3204
 
 <details><summary>ApexClass (133)</summary>
   • ATAKMaterialService<br/>
@@ -189,9 +189,10 @@ Metadatas: 3201
   • Lead<br/>
 </details>
 
-<details><summary>AuraDefinitionBundle (7)</summary>
+<details><summary>AuraDefinitionBundle (8)</summary>
   • CreateInternalWorkApp<br/>
   • CustomAccountLightboxApp<br/>
+  • GetBrowserInformation<br/>
   • SFS_WorkOrderCreatorApp<br/>
   • fsc_openUrl<br/>
   • fsc_screenFlowApp<br/>
@@ -1616,7 +1617,7 @@ Metadatas: 3201
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (90)</summary>
+<details><summary>Flow (91)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1707,9 +1708,10 @@ Metadatas: 3201
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
   • Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable<br/>
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
+  • test<br/>
 </details>
 
-<details><summary>FlowDefinition (90)</summary>
+<details><summary>FlowDefinition (91)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1800,6 +1802,7 @@ Metadatas: 3201
   • Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status<br/>
   • Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable<br/>
   • sendBetterEmail_Test_Create_Test_Templates_if_needed<br/>
+  • test<br/>
 </details>
 
 <details><summary>ForecastingType (12)</summary>
