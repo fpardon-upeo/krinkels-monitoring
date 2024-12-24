@@ -673,6 +673,10 @@
         <name>NotifyCustomer_Toggle</name>
     </customLabels>
     <customLabels>
+        <label><!-- Send Sign Request --></label>
+        <name>Send_Sign_Request</name>
+    </customLabels>
+    <customLabels>
         <label><!-- StartDay_Back_To_Menu_Button --></label>
         <name>StartDay_Back_To_Menu_Button</name>
     </customLabels>
@@ -1497,6 +1501,10 @@
                     </inputParameters>
                     <inputParameters>
                         <name>objectApiName</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
                         <value/>
                     </inputParameters>
                     <name>Contact</name>
@@ -2657,6 +2665,10 @@
             </textTemplates>
         </flows>
         <fullName>Service_contract_Scheduled_Contract_Renewal_Reminder</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Sign_Request_After_Save_Update_quote_signing_info</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>

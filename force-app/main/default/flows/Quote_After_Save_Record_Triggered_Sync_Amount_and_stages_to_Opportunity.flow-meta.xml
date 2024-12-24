@@ -2,11 +2,58 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <decisions>
+        <name>Contact_on_Opportunity</name>
+        <label>Contact on Opportunity?</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_linked_Opportunity.Main_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Contact_to_Quote</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Found</name>
+        <label>Opportunity Found</label>
+        <locationX>776</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Opportunity_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_linked_Opportunity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Contact_on_Opportunity</targetReference>
+            </connector>
+            <label>Yes Opportunity found</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>to chich status the oppty must go?</description>
         <name>Status</name>
         <label>Status</label>
         <locationX>446</locationX>
-        <locationY>323</locationY>
+        <locationY>839</locationY>
         <defaultConnector>
             <targetReference>Update_Opportunity_OnlyAmount</targetReference>
         </defaultConnector>
@@ -80,11 +127,48 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_linked_Opportunity</name>
+        <label>Get linked Opportunity</label>
+        <locationX>776</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Opportunity_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Add_Contact_to_Quote</name>
+        <label>Add Contact to Quote</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Status</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>Get_linked_Opportunity.Main_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_Opportunity</name>
         <label>Update Opportunity to Quote Send</label>
         <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -111,7 +195,7 @@
         <name>Update_Opportunity_ClsoedLost</name>
         <label>Update Opportunity ClosedLost</label>
         <locationX>578</locationX>
-        <locationY>431</locationY>
+        <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -138,7 +222,7 @@
         <name>Update_Opportunity_OnlyAmount</name>
         <label>Update Opportunity Only Amount</label>
         <locationX>842</locationX>
-        <locationY>431</locationY>
+        <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -159,7 +243,7 @@
         <name>Update_Opportunity_to_ClosedWon</name>
         <label>Update Opportunity to ClosedWon</label>
         <locationX>314</locationX>
-        <locationY>431</locationY>
+        <locationY>947</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -183,10 +267,10 @@
         <object>Opportunity</object>
     </recordUpdates>
     <start>
-        <locationX>320</locationX>
+        <locationX>650</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Status</targetReference>
+            <targetReference>Get_linked_Opportunity</targetReference>
         </connector>
         <filterFormula>{!$Record.IsSyncing} = True
 &amp;&amp;
@@ -197,6 +281,8 @@ ISNEW()
 ISCHANGED({!$Record.Amount__c})
 ||
 ISCHANGED({!$Record.Status})
+|| 
+ISBLANK({!$Record.ContactId})
 )
 )</filterFormula>
         <object>Quote</object>

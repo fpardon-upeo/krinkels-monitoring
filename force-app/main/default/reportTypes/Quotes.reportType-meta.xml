@@ -611,6 +611,46 @@
             <field>Approval_Status__c</field>
             <table>Quote</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Signing_Date__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Signer_Name__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Signer_Function__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>VAT_Number__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PO_NUmber__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Invoicing_Contact__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Invoicing_Contact_Function__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Signing_Status__c</field>
+            <table>Quote</table>
+        </columns>
         <masterLabel>Quotes</masterLabel>
     </sections>
 </ReportType>

@@ -2400,6 +2400,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Quote.Invoicing_Contact_Function__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Invoicing_Contact__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Quote.Language_Code__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2436,6 +2446,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Quote.Owner__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.PO_NUmber__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2500,6 +2515,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Quote.Signer_Function__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Signer_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Signing_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.Signing_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Quote.Smartscape_SLAs__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2546,6 +2581,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Quote.Use_of_Mechanical_Snowplow__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.VAT_Number__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3970,6 +4010,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>cadmus_sign2__Sign_request__c.Quote__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ers_datatableConfig__c.Active__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4198,6 +4243,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Service_contract_Scheduled_Contract_Renewal_Reminder</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Sign_Request_After_Save_Update_quote_signing_info</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

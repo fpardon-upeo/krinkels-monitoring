@@ -1,13 +1,42 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-aura/GetBrowserInformation/GetBrowserInformation.cmp,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformation.cmp,,,log,📰
-aura/GetBrowserInformation/GetBrowserInformation.cmp-meta.xml,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformation.cmp-meta.xml,,,log,📰
-aura/GetBrowserInformation/GetBrowserInformation.design,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformation.design,,,log,📰
-aura/GetBrowserInformation/GetBrowserInformationController.js,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformationController.js,,,log,📰
-aura/GetBrowserInformation/GetBrowserInformationRenderer.js,A,AuraDefinitionBundle GetBrowserInformation/GetBrowserInformationRenderer.js,,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flowDefinitions/test.flowDefinition-meta.xml,A,FlowDefinition test,,,log,📰
-flows/test.flow-meta.xml,A,Flow test,,,log,📰
-layouts/Account-Other Account Layout.layout-meta.xml," ",Layout Account-Other Account Layout,M,,log,📰
+email/SignRequestTemplates.emailFolder-meta.xml,A,EmailTemplate SignRequestTemplatesFolder-meta.xml,,,log,📰
+email/SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937.email,A,EmailTemplate SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937,,,log,📰
+email/SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937.email-meta.xml,A,EmailTemplate SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413.email,A,EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413.email-meta.xml,A,EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913.email,A,EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913.email-meta.xml,A,EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145.email,A,EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145.email-meta.xml,A,EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643.email,A,EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643.email-meta.xml,A,EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132.email,A,EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132,,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132.email-meta.xml,A,EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132,,,log,📰
+flexipages/Quote_Quick_Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Quick_Quote_Record_Page,M,,log,📰
+flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
+flowDefinitions/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.flowDefinition-meta.xml," ",FlowDefinition Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote,M,,log,📰
+flowDefinitions/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flowDefinition-meta.xml," ",FlowDefinition Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,M,,log,📰
+flowDefinitions/Sign_Request_After_Save_Update_quote_signing_info.flowDefinition-meta.xml,A,FlowDefinition Sign_Request_After_Save_Update_quote_signing_info,,,log,📰
+flows/Account_Screen_Flow_Add_Extra_Work_Quote.flow-meta.xml," ",Flow Account_Screen_Flow_Add_Extra_Work_Quote,M,,log,📰
+flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.flow-meta.xml," ",Flow Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote,M,,log,📰
+flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flow-meta.xml," ",Flow Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,M,,log,📰
+flows/Sign_Request_After_Save_Update_quote_signing_info.flow-meta.xml,A,Flow Sign_Request_After_Save_Update_quote_signing_info,,,log,📰
+labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
+layouts/Quote-Quote Layout.layout-meta.xml," ",Layout Quote-Quote Layout,M,,log,📰
+objects/Quote/fields/Invoicing_Contact_Function__c.field-meta.xml,A,CustomField Invoicing_Contact_Function__c,,,log,📰
+objects/Quote/fields/Invoicing_Contact__c.field-meta.xml,A,CustomField Invoicing_Contact__c,,,log,📰
+objects/Quote/fields/PO_NUmber__c.field-meta.xml,A,CustomField PO_NUmber__c,,,log,📰
+objects/Quote/fields/Signer_Function__c.field-meta.xml,A,CustomField Signer_Function__c,,,log,📰
+objects/Quote/fields/Signer_Name__c.field-meta.xml,A,CustomField Signer_Name__c,,,log,📰
+objects/Quote/fields/Signing_Date__c.field-meta.xml,A,CustomField Signing_Date__c,,,log,📰
+objects/Quote/fields/Signing_Status__c.field-meta.xml,A,CustomField Signing_Status__c,,,log,📰
+objects/Quote/fields/VAT_Number__c.field-meta.xml,A,CustomField VAT_Number__c,,,log,📰
+objects/Quote/recordTypes/B2B_Tender.recordType-meta.xml," ",RecordType B2B_Tender,M,,log,📰
+objects/Quote/recordTypes/Public_Tender.recordType-meta.xml," ",RecordType Public_Tender,M,,log,📰
+objects/Quote/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
+objects/cadmus_sign2__Sign_request__c/cadmus_sign2__Sign_request__c.object-meta.xml,A,CustomObject cadmus_sign2__Sign_request__c/cadmus_sign2__Sign_request__c,,,log,📰
+objects/cadmus_sign2__Sign_request__c/fields/Quote__c.field-meta.xml,A,CustomField Quote__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -34,9 +63,9 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
+reportTypes/Quotes.reportType-meta.xml," ",ReportType Quotes,M,,log,📰
 translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
 translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
 translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
-installedPackages/GetBrowserInformation.json,A,InstalledPackage GetBrowserInformation.json,,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

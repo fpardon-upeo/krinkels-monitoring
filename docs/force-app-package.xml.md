@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3204
+Metadatas: 3223
 
 <details><summary>ApexClass (133)</summary>
   • ATAKMaterialService<br/>
@@ -297,7 +297,7 @@ Metadatas: 3204
   • Sales<br/>
 </details>
 
-<details><summary>CustomField (742)</summary>
+<details><summary>CustomField (751)</summary>
   • ATAK_Internal_Project_Map__mdt.ATAK_Code__c<br/>
   • ATAK_Internal_Project_Map__mdt.ATAK_Overrides_After_Sync__c<br/>
   • ATAK_Internal_Project_Map__mdt.Performance_Type__c<br/>
@@ -707,6 +707,8 @@ Metadatas: 3204
   • Quote.End_Period__c<br/>
   • Quote.Extra_Work__c<br/>
   • Quote.Implementation_Time__c<br/>
+  • Quote.Invoicing_Contact_Function__c<br/>
+  • Quote.Invoicing_Contact__c<br/>
   • Quote.Language_Code__c<br/>
   • Quote.Language__c<br/>
   • Quote.Manual_Snow_Removal__c<br/>
@@ -715,6 +717,7 @@ Metadatas: 3204
   • Quote.Offer_Valid_For__c<br/>
   • Quote.Our_Reference__c<br/>
   • Quote.Owner__c<br/>
+  • Quote.PO_NUmber__c<br/>
   • Quote.Payment_Term__c<br/>
   • Quote.Permanence_Fee__c<br/>
   • Quote.Price_Request_BS_Comments__c<br/>
@@ -727,6 +730,10 @@ Metadatas: 3204
   • Quote.Saturday_Rate__c<br/>
   • Quote.Service_Contract__c<br/>
   • Quote.Service_Package_Type__c<br/>
+  • Quote.Signer_Function__c<br/>
+  • Quote.Signer_Name__c<br/>
+  • Quote.Signing_Date__c<br/>
+  • Quote.Signing_Status__c<br/>
   • Quote.Smartscape_SLAs__c<br/>
   • Quote.Start_Period__c<br/>
   • Quote.Subject__c<br/>
@@ -737,6 +744,7 @@ Metadatas: 3204
   • Quote.Type_Code__c<br/>
   • Quote.Type__c<br/>
   • Quote.Use_of_Mechanical_Snowplow__c<br/>
+  • Quote.VAT_Number__c<br/>
   • Quote.Weekdays_Night_Work_Rate__c<br/>
   • Quote.Winter_Service_Price_Adjustment__c<br/>
   • Reorder_Work_Step__e.Next_Number__c<br/>
@@ -1026,6 +1034,7 @@ Metadatas: 3204
   • Work_Schedule_Day__c.Hours__c<br/>
   • Work_Schedule_Day__c.Work_Schedule__c<br/>
   • Work_Schedule__c.Total_Weekly_Hours__c<br/>
+  • cadmus_sign2__Sign_request__c.Quote__c<br/>
   • ers_datatableConfig__c.Active__c<br/>
   • ers_datatableConfig__c.Alignments__c<br/>
   • ers_datatableConfig__c.Cell_Attributes__c<br/>
@@ -1042,7 +1051,7 @@ Metadatas: 3204
   • ers_datatableConfig__c.Wraps__c<br/>
 </details>
 
-<details><summary>CustomLabel (263)</summary>
+<details><summary>CustomLabel (264)</summary>
   • AppointmentPicker_Appointments_Header<br/>
   • AppointmentPicker_Break_Button_Sub_Text<br/>
   • AppointmentPicker_Break_Button_Text<br/>
@@ -1206,6 +1215,7 @@ Metadatas: 3204
   • Mileage_View_Add_OwnMileage<br/>
   • Mileage_View_Add_StartMileage<br/>
   • NotifyCustomer_Toggle<br/>
+  • Send_Sign_Request<br/>
   • StartDay_Back_To_Menu_Button<br/>
   • StartDay_End_Button_Sub_Text<br/>
   • StartDay_End_Button_Text<br/>
@@ -1434,7 +1444,7 @@ Metadatas: 3204
   • EmailToSalesforce<br/>
 </details>
 
-<details><summary>EmailTemplate (44)</summary>
+<details><summary>EmailTemplate (51)</summary>
   • Approvals<br/>
   • CustomerNotifications<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917<br/>
@@ -1446,6 +1456,13 @@ Metadatas: 3204
   • CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106<br/>
   • CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513<br/>
   • CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709<br/>
+  • SignRequestTemplates<br/>
+  • SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937<br/>
+  • SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413<br/>
+  • SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913<br/>
+  • SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145<br/>
+  • SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643<br/>
+  • SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132<br/>
   • unfiled$public/ContactFollowUpSAMPLE<br/>
   • unfiled$public/Email_First_Response<br/>
   • unfiled$public/LeadsNewassignmentnotificationSAMPLE<br/>
@@ -1617,7 +1634,7 @@ Metadatas: 3204
   • Work_Type_Record_Page<br/>
 </details>
 
-<details><summary>Flow (91)</summary>
+<details><summary>Flow (92)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1666,6 +1683,7 @@ Metadatas: 3204
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • Sign_Request_After_Save_Update_quote_signing_info<br/>
   • TimeSheet_Record_Trigger_Set_Contract_Hours<br/>
   • Time_Sheet_After_Save_Record_Triggered_Approval<br/>
   • Time_Sheet_After_Save_Send_to_ATAK<br/>
@@ -1711,7 +1729,7 @@ Metadatas: 3204
   • test<br/>
 </details>
 
-<details><summary>FlowDefinition (91)</summary>
+<details><summary>FlowDefinition (92)</summary>
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
   • ATAK_Project_Before_Save_Record_Triggered_Set_Naming_Convention<br/>
   • Account_Screen_Flow_Add_Extra_Work<br/>
@@ -1760,6 +1778,7 @@ Metadatas: 3204
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
+  • Sign_Request_After_Save_Update_quote_signing_info<br/>
   • TimeSheet_Record_Trigger_Set_Contract_Hours<br/>
   • Time_Sheet_After_Save_Record_Triggered_Approval<br/>
   • Time_Sheet_After_Save_Send_to_ATAK<br/>

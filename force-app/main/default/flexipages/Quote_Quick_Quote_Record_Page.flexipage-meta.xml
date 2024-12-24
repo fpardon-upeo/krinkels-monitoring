@@ -254,6 +254,128 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Signing_Status__c</fieldItem>
+                <identifier>RecordSigning_Status_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Signing_Date__c</fieldItem>
+                <identifier>RecordSigning_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Signer_Name__c</fieldItem>
+                <identifier>RecordSigner_Name_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Signer_Function__c</fieldItem>
+                <identifier>RecordSigner_Function_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.VAT_Number__c</fieldItem>
+                <identifier>RecordVAT_Number_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-167e5588-7211-44e8-8fa1-2e529110de0f</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Invoicing_Contact__c</fieldItem>
+                <identifier>RecordInvoicing_Contact_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Invoicing_Contact_Function__c</fieldItem>
+                <identifier>RecordInvoicing_Contact_Function_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.BillingName</fieldItem>
+                <identifier>RecordBillingNameField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.BillingAddress</fieldItem>
+                <identifier>RecordBillingAddressField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f0f85aa6-9e47-4282-808a-547b491e4d8f</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-167e5588-7211-44e8-8fa1-2e529110de0f</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f0f85aa6-9e47-4282-808a-547b491e4d8f</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column16</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e0ef4c1a-2205-43b2-9396-67eb15f03a8c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Price_Request_Status__c</fieldItem>
                 <identifier>RecordPrice_Request_Status_cField</identifier>
             </fieldInstance>
@@ -686,6 +808,31 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
+                    <value>Facet-e0ef4c1a-2205-43b2-9396-67eb15f03a8c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Sign Request Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection9</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Signing_Status__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Not Send</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
                     <value>Facet-ca8987bc-9f49-43b6-9249-fe5cd318c643</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -918,6 +1065,144 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>alternativeField</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deliveryTypeOverwrite</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>displayType</name>
+                    <value>TABLE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>doDownloadAfterGenerate</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>doDownloadDocxAfterGenerate</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>doDownloadFromPreview</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>doShowPreviewAfterGenerate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>docConfigIds</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>docConfigTranslationDataSource</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>localeField</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>numCurrLocaleField</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>packButtonAction</name>
+                    <value>Send</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>packDocConfig</name>
+                    <value>a1NKF000001uGKQ2A2</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>packDocConfigs</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>packName</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>packPdfActionType</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>recordId</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showAlternative</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showCsvProfiles</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showDocConfigFilter</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showDocxProfiles</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showFileSelector</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showLocale</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showMultiFileSelector</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showNumCurrLocale</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showPdfProfiles</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showPreviewToolbar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showXslxProfiles</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>subtitle</name>
+                    <value>Send Sign Request</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>targetTypeOverwrite</name>
+                    <value>DEFAULT</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>useNonBrowserViewer</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>cadmus_core:LC_ConvertComponent</componentName>
+                <identifier>cadmus_core_LC_ConvertComponent7</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Approval_Open__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Extra Work</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>allowFileUpload</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>alternativeField</name>
                     <value>Language__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1022,6 +1307,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>subtitle</name>
+                    <value>Create Document</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>targetTypeOverwrite</name>

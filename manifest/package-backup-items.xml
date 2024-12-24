@@ -692,6 +692,8 @@
         <members>Quote.End_Period__c</members>
         <members>Quote.Extra_Work__c</members>
         <members>Quote.Implementation_Time__c</members>
+        <members>Quote.Invoicing_Contact_Function__c</members>
+        <members>Quote.Invoicing_Contact__c</members>
         <members>Quote.Language_Code__c</members>
         <members>Quote.Language__c</members>
         <members>Quote.Manual_Snow_Removal__c</members>
@@ -700,6 +702,7 @@
         <members>Quote.Offer_Valid_For__c</members>
         <members>Quote.Our_Reference__c</members>
         <members>Quote.Owner__c</members>
+        <members>Quote.PO_NUmber__c</members>
         <members>Quote.Payment_Term__c</members>
         <members>Quote.Permanence_Fee__c</members>
         <members>Quote.Price_Request_BS_Comments__c</members>
@@ -712,6 +715,10 @@
         <members>Quote.Saturday_Rate__c</members>
         <members>Quote.Service_Contract__c</members>
         <members>Quote.Service_Package_Type__c</members>
+        <members>Quote.Signer_Function__c</members>
+        <members>Quote.Signer_Name__c</members>
+        <members>Quote.Signing_Date__c</members>
+        <members>Quote.Signing_Status__c</members>
         <members>Quote.Smartscape_SLAs__c</members>
         <members>Quote.Start_Period__c</members>
         <members>Quote.Subject__c</members>
@@ -722,6 +729,7 @@
         <members>Quote.Type_Code__c</members>
         <members>Quote.Type__c</members>
         <members>Quote.Use_of_Mechanical_Snowplow__c</members>
+        <members>Quote.VAT_Number__c</members>
         <members>Quote.Weekdays_Night_Work_Rate__c</members>
         <members>Quote.Winter_Service_Price_Adjustment__c</members>
         <members>Reorder_Work_Step__e.Next_Number__c</members>
@@ -1004,6 +1012,7 @@
         <members>Work_Schedule_Day__c.Hours__c</members>
         <members>Work_Schedule_Day__c.Work_Schedule__c</members>
         <members>Work_Schedule__c.Total_Weekly_Hours__c</members>
+        <members>cadmus_sign2__Sign_request__c.Quote__c</members>
         <members>ers_datatableConfig__c.Active__c</members>
         <members>ers_datatableConfig__c.Alignments__c</members>
         <members>ers_datatableConfig__c.Cell_Attributes__c</members>
@@ -1347,6 +1356,8 @@
         <members>Mileage_View_Add_StartMileage</members>
         <members>NotifyCustomer_Toggle</members>
         <members>NotifyCustomer_Toggle</members>
+        <members>Send_Sign_Request</members>
+        <members>Send_Sign_Request</members>
         <members>StartDay_Back_To_Menu_Button</members>
         <members>StartDay_Back_To_Menu_Button</members>
         <members>StartDay_End_Button_Sub_Text</members>
@@ -1676,6 +1687,13 @@
         <members>CustomerNotifications/Notification_REScheduled_WO_NL_1732001423106</members>
         <members>CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513</members>
         <members>CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709</members>
+        <members>SignRequestTemplates</members>
+        <members>SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937</members>
+        <members>SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413</members>
+        <members>SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913</members>
+        <members>SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145</members>
+        <members>SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643</members>
+        <members>SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132</members>
         <members>unfiled$public</members>
         <members>unfiled$public/ContactFollowUpSAMPLE</members>
         <members>unfiled$public/Email_First_Response</members>
@@ -1889,6 +1907,7 @@
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>Sign_Request_After_Save_Update_quote_signing_info</members>
         <members>TimeSheet_Record_Trigger_Set_Contract_Hours</members>
         <members>Time_Sheet_After_Save_Record_Triggered_Approval</members>
         <members>Time_Sheet_After_Save_Send_to_ATAK</members>
@@ -1976,6 +1995,7 @@
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
+        <members>Sign_Request_After_Save_Update_quote_signing_info</members>
         <members>TimeSheet_Record_Trigger_Set_Contract_Hours</members>
         <members>Time_Sheet_After_Save_Record_Triggered_Approval</members>
         <members>Time_Sheet_After_Save_Send_to_ATAK</members>
