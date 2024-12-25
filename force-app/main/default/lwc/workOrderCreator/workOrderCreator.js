@@ -5,6 +5,11 @@ import getServiceAppointments from "@salesforce/apex/SFS_WorkOrderCreatorControl
 export default class WorkOrderCreator extends LightningElement {
   showTypeSelection = true;
   selectedType = null;
+  title = "";
+  message = "";
+  variant = "";
+  iconName = "";
+  showWarning = false;
 
   @api
   get recordIds() {
@@ -115,20 +120,46 @@ export default class WorkOrderCreator extends LightningElement {
   }
 
   handleClose(event) {
-    this.handleBack();
+    this.showWarning = false;
+    this.title = "";
+    this.message = "";
+    this.variant = "";
+    this.iconName = "";
 
-    this.showToast(
-      event.detail.title,
-      event.detail.message,
-      event.detail.variant
-    );
+    if (event.detail) {
+      if (event.detail.title == "Error") {
+        this.iconName = "utility:warning";
+        this.title = "Error";
+        this.message = event.detail.message;
+      } else {
+        this.iconName = "utility:success";
+        this.title = "Success";
+        this.message = event.detail.message;
+      }
+
+      //Currently not working for some reason
+      // this.showToast(
+      //   event.detail.title,
+      //   event.detail.message,
+      //   event.detail.variant
+      // );
+
+      this.showWarning = true;
+
+      //Add it back after 3 seconds
+      setTimeout(() => {
+        this.showWarning = false;
+      }, 3000);
+    }
+
+    this.handleBack();
   }
 
   showToast(title, message, variant) {
     const toastEvent = new ShowToastEvent({
-      title,
-      message,
-      variant
+      title: title || "Error",
+      message: message || "An error occurred",
+      variant: variant || "error"
     });
 
     this.dispatchEvent(toastEvent);

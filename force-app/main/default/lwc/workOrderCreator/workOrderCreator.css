@@ -9,3 +9,32 @@
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Warning Message Styles */
+.warning-container {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: fit-content;
+}
+
+.warning-icon {
+  flex-shrink: 0;
+}
+
+.warning-icon lightning-icon {
+  --sds-c-icon-color-foreground-default: #856404;
+}
+
+.warning-text {
+  color: #856404;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}

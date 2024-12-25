@@ -84,8 +84,7 @@ export default class TimeSheetCalendar extends LightningElement {
   @track endDateAndHours;
   @track date;
 
-  @track hasEntered15mBreak = false;
-  @track hasEntered30mBreak = false;
+  @track hasEnteredBreak = false;
 
   @track user = {};
   @track userWorkSchedule = [];
@@ -116,7 +115,7 @@ export default class TimeSheetCalendar extends LightningElement {
   @track settingsEditModal = false;
   @track settingsNewModal = false;
   @track showCalendar = true;
-  @track showBreaksMissingModal = false;
+  @track showBreakMissingModal = false;
   @track submitTimeSheetMessage = false;
   @track showNoEntriesModal = false;
   @track isTimeSheetSubmittedOrApproved = true;
@@ -716,7 +715,7 @@ export default class TimeSheetCalendar extends LightningElement {
     this.submitTimeSheetMessage = false;
     this.settingsEditModal = false;
     this.settingsNewModal = false;
-    this.showBreaksMissingModal = false;
+    this.showBreakMissingModal = false;
     this.showNewBreakEntryModal = false;
   }
 
@@ -1504,20 +1503,14 @@ export default class TimeSheetCalendar extends LightningElement {
         if (result.resourceAbsences.length > 0) {
           // Loop through resource absences and check if there's a 15m and 30m break
           result.resourceAbsences.forEach((absence) => {
-            if (
-              absence.FSL__Duration_In_Minutes__c >= 15 &&
-              absence.FSL__Duration_In_Minutes__c < 30
-            ) {
-              console.log("15m break found");
-              this.hasEntered15mBreak = true;
-            } else if (absence.FSL__Duration_In_Minutes__c >= 30) {
+            if (absence.FSL__Duration_In_Minutes__c >= 30) {
               console.log("30m break found");
-              this.hasEntered30mBreak = true;
+              this.hasEnteredBreak = true;
             }
           });
         }
 
-        if (this.hasEntered15mBreak && this.hasEntered30mBreak) {
+        if (this.hasEnteredBreak) {
           console.log("submitting time sheet");
           submitTimeSheet({ timeSheetId: this.recordId })
             .then(() => {
@@ -1540,11 +1533,8 @@ export default class TimeSheetCalendar extends LightningElement {
 
               console.error("Error:", error);
             });
-        } else if (!this.hasEntered15mBreak || !this.hasEntered30mBreak) {
-          console.log("breaks missing");
-          console.log("15m break: ", this.hasEntered15mBreak);
-          console.log("30m break: ", this.hasEntered30mBreak);
-          this.showBreaksMissingModal = true;
+        } else if (!this.hasEnteredBreak) {
+          this.showBreakMissingModal = true;
         }
       })
       .catch((error) => {
@@ -1787,19 +1777,13 @@ export default class TimeSheetCalendar extends LightningElement {
     getTimeSheet({ recordId: this.recordId }).then((result) => {
       if (result.resourceAbsences.length > 0) {
         result.resourceAbsences.forEach((absence) => {
-          if (
-            absence.FSL__Duration_In_Minutes__c >= 15 &&
-            absence.FSL__Duration_In_Minutes__c < 30
-          ) {
-            console.log("15m break found");
-            this.hasEntered15mBreak = true;
-          } else if (absence.FSL__Duration_In_Minutes__c >= 30) {
+          if (absence.FSL__Duration_In_Minutes__c >= 30) {
             console.log("30m break found");
-            this.hasEntered30mBreak = true;
+            this.hasEnteredBreak = true;
           }
         });
 
-        if (this.hasEntered15mBreak && this.hasEntered30mBreak) {
+        if (this.hasEnteredBreak) {
           console.log("submitting time sheet");
           submitTimeSheet({ timeSheetId: this.recordId })
             .then(() => {
@@ -1824,17 +1808,15 @@ export default class TimeSheetCalendar extends LightningElement {
 
               console.error("Error:", error);
             });
-        } else if (!this.hasEntered15mBreak || !this.hasEntered30mBreak) {
-          console.log("breaks missing");
-          console.log("15m break exists? ", this.hasEntered15mBreak);
-          console.log("30m break exists? ", this.hasEntered30mBreak);
-          this.showBreaksMissingModal = true;
+        } else if (!this.hasEnteredBreak) {
+          console.log("break missing");
+          this.showBreakMissingModal = true;
         }
       }
     });
   }
 
-  handleNew15or30mBreak() {
+  handleNewBreak() {
     this.handleCloseForm();
     this.showNewBreakEntryModal = true;
   }

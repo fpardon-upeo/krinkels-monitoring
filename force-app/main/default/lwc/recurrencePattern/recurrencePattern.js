@@ -116,40 +116,41 @@ export default class RecurrencePattern extends LightningModal {
     {
       label: "December",
       value: "12"
-    }];
+    }
+  ];
 
   recurrenceYearMonthDayOptions = [
-    { label: "1" , value: "1" },
-    { label: "2" , value: "2" },
-    { label: "3" , value: "3" },
-    { label: "4" , value: "4" },
-    { label: "5" , value: "5" },
-    { label: "6" , value: "6" },
-    { label: "7" , value: "7" },
-    { label: "8" , value: "8" },
-    { label: "9" , value: "9" },
-    { label: "10" , value: "10" },
-    { label: "11" , value: "11" },
-    { label: "12" , value: "12" },
-    { label: "13" , value: "13" },
-    { label: "14" , value: "14" },
-    { label: "15" , value: "15" },
-    { label: "16" , value: "16" },
-    { label: "17" , value: "17" },
-    { label: "18" , value: "18" },
-    { label: "19" , value: "19" },
-    { label: "20" , value: "20" },
-    { label: "21" , value: "21" },
-    { label: "22" , value: "22" },
-    { label: "23" , value: "23" },
-    { label: "24" , value: "24" },
-    { label: "25" , value: "25" },
-    { label: "26" , value: "26" },
-    { label: "27" , value: "27" },
-    { label: "28" , value: "28" },
-    { label: "29" , value: "29" },
-    { label: "30" , value: "30" },
-    { label: "31" , value: "31" }
+    { label: "1", value: "1" },
+    { label: "2", value: "2" },
+    { label: "3", value: "3" },
+    { label: "4", value: "4" },
+    { label: "5", value: "5" },
+    { label: "6", value: "6" },
+    { label: "7", value: "7" },
+    { label: "8", value: "8" },
+    { label: "9", value: "9" },
+    { label: "10", value: "10" },
+    { label: "11", value: "11" },
+    { label: "12", value: "12" },
+    { label: "13", value: "13" },
+    { label: "14", value: "14" },
+    { label: "15", value: "15" },
+    { label: "16", value: "16" },
+    { label: "17", value: "17" },
+    { label: "18", value: "18" },
+    { label: "19", value: "19" },
+    { label: "20", value: "20" },
+    { label: "21", value: "21" },
+    { label: "22", value: "22" },
+    { label: "23", value: "23" },
+    { label: "24", value: "24" },
+    { label: "25", value: "25" },
+    { label: "26", value: "26" },
+    { label: "27", value: "27" },
+    { label: "28", value: "28" },
+    { label: "29", value: "29" },
+    { label: "30", value: "30" },
+    { label: "31", value: "31" }
   ];
 
   recurrenceYearDayOptions = [
@@ -162,9 +163,8 @@ export default class RecurrencePattern extends LightningModal {
     { label: "Sunday", value: "SU" },
     { label: "Weekday", value: "MO,TU,WE,TH,FR" },
     { label: "Weekend Day", value: "SA,SU" },
-    { label: "Day", value: "MO,TU,WE,TH,FR,SA,SU"}
+    { label: "Day", value: "MO,TU,WE,TH,FR,SA,SU" }
   ];
-
 
   recurrenceMonthWeekOptions = [
     { label: "First", value: "1" },
@@ -175,6 +175,10 @@ export default class RecurrencePattern extends LightningModal {
   ];
 
   connectedCallback() {
+    // Set default end date for "Never" option
+    const currentYear = new Date().getFullYear();
+    this.selectedEndDate = `${currentYear}-12-31`;
+
     if (this.recordId !== undefined) {
       this.selectedRecords.push(this.recordId);
       if (this.recordId.Recurrence_Pattern__c !== undefined) {
@@ -263,6 +267,8 @@ export default class RecurrencePattern extends LightningModal {
 
     let records = JSON.parse(JSON.stringify(this.selectedRecords));
 
+    console.log("records: ", JSON.stringify(records));
+
     records.forEach((record) => {
       record.Recurrence_Pattern__c = this.completePattern;
       record.EndDate = this.selectedEndDate
@@ -334,15 +340,15 @@ export default class RecurrencePattern extends LightningModal {
 
   handleEndTypeDependencies() {
     if (this.selectedEndType === "Never") {
+      const currentYear = new Date().getFullYear();
+      this.selectedEndDate = `${currentYear}-12-31`;
       this.showOnDate = false;
       this.showAfterOccurrences = false;
-      // this.selectedEndDate = null;
       this.selectedRruleEndDate = "";
       this.selectedOccurrences = 0;
     } else if (this.selectedEndType === "After") {
       this.showAfterOccurrences = true;
       this.showOnDate = false;
-      // this.selectedEndDate = null;
       this.selectedRruleEndDate = "";
     } else {
       this.selectedOccurrences = 0;
@@ -367,7 +373,7 @@ export default class RecurrencePattern extends LightningModal {
 
   handleRecurrenceYearTypeChange(event) {
     this.selectedRecurrenceYearType = event.detail.value;
-    if(this.selectedRecurrenceYearType === "specificDate") {
+    if (this.selectedRecurrenceYearType === "specificDate") {
       this.selectedMonthType = "specificDate";
     } else {
       this.selectedMonthType = "dayOfGivenMonth";

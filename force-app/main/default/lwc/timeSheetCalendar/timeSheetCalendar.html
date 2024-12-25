@@ -929,12 +929,12 @@
   </template>
 
   <!--///////////////////////////////// ADD LABELS /////////////////////////////////////////////-->
-  <template if:true={showBreaksMissingModal}>
+  <template if:true={showBreakMissingModal}>
     <div class="mobile-backdrop" onclick={handleCloseForm}></div>
     <div class="mobile-bottom-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Breaks missing</h2>
+        <h2 class="sheet-title">Break missing</h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="warning-container">
@@ -946,14 +946,13 @@
             ></lightning-icon>
           </div>
           <p class="warning-text">
-            It looks like you have forgotten to add your 15m and/or 30m break.
-            Please add them now before submitting your time sheet or correct
-            your time sheet.
+            It looks like you have forgotten to add your break. Please add it
+            now before submitting your time sheet or correct your time sheet.
           </p>
         </div>
         <div class="action-buttons">
-          <template if:false={hasEntered15mBreak}>
-            <button onclick={handleNew15or30mBreak} class="action-button">
+          <template if:false={hasEnteredBreak}>
+            <button onclick={handleNewBreak} class="action-button">
               <span class="button-icon">
                 <lightning-icon
                   icon-name="utility:pause"
@@ -961,26 +960,9 @@
                 ></lightning-icon>
               </span>
               <span class="button-text">
-                <span class="button-label">Add a 15m break</span>
+                <span class="button-label">Add a break</span>
                 <span class="button-description"
-                  >Add to your time sheet a 15m break</span
-                >
-              </span>
-            </button>
-          </template>
-
-          <template if:false={hasEntered30mBreak}>
-            <button onclick={handleNew15or30mBreak} class="action-button">
-              <span class="button-icon">
-                <lightning-icon
-                  icon-name="utility:pause"
-                  size="small"
-                ></lightning-icon>
-              </span>
-              <span class="button-text">
-                <span class="button-label">Add a 30m break</span>
-                <span class="button-description"
-                  >Add to your time sheet a 30m break</span
+                  >Add to your time sheet a break</span
                 >
               </span>
             </button>

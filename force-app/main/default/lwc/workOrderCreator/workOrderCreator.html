@@ -96,7 +96,18 @@
           </div>
         </div>
       </div>
+
+      <template if:true={showWarning}>
+        <div class="warning-container">
+          <div class="warning-icon">
+            <lightning-icon icon-name={iconName} size="small"></lightning-icon>
+          </div>
+          <p class="warning-text">{title} : {message}.</p>
+        </div>
+      </template>
     </template>
+
+    <!-- Create a success container message just like the warning container -->
 
     <!-- Form Container -->
     <template if:false={showTypeSelection}>
