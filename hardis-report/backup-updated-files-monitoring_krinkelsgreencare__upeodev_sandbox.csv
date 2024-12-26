@@ -1,11 +1,3 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-lwc/recurrencePattern/recurrencePattern.js," ",LightningComponentBundle recurrencePattern/recurrencePattern.js,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.css," ",LightningComponentBundle startOperatorDay/startOperatorDay.css,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
-lwc/startStopTimer/startStopTimer.css," ",LightningComponentBundle startStopTimer/startStopTimer.css,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-lwc/workOrderCreator/workOrderCreator.css," ",LightningComponentBundle workOrderCreator/workOrderCreator.css,M,,log,📰
-lwc/workOrderCreator/workOrderCreator.html," ",LightningComponentBundle workOrderCreator/workOrderCreator.html,M,,log,📰
-lwc/workOrderCreator/workOrderCreator.js," ",LightningComponentBundle workOrderCreator/workOrderCreator.js,M,,log,📰
+layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
