@@ -189,27 +189,49 @@ export default class WasteVisitForm extends LightningElement {
         depotId: this.selectedDepotId,
         wasteTypes: this.selectedWasteTypes.join(";")
       });
+
       // this.dispatchEvent(new ShowToastEvent({
       //     title: 'Success',
       //     message: 'Waste Visit Work Order created successfully',
       //     variant: 'success'
       // }));
-      this.dispatchEvent(new CustomEvent("close"));
+
+      // this.dispatchEvent(new CustomEvent("close"));
+
+      this.dispatchEvent(
+        new CustomEvent("close", {
+          detail: {
+            title: "Success",
+            message: "Waste Visit Work Order created successfully",
+            variant: "success"
+          }
+        })
+      );
     } catch (error) {
-      this.handleError(error);
+      // this.handleError(error);
+
+      this.dispatchEvent(
+        new CustomEvent("close", {
+          detail: {
+            title: "Error",
+            message: error.body?.message || "An unexpected error occurred",
+            variant: "error"
+          }
+        })
+      );
     } finally {
       this.isLoading = false;
     }
   }
 
-  handleError(error) {
-    console.error(error);
-    this.dispatchEvent(
-      new ShowToastEvent({
-        title: "Error",
-        message: error.body?.message || "An unexpected error occurred",
-        variant: "error"
-      })
-    );
-  }
+  // handleError(error) {
+  //   console.error(error);
+  //   this.dispatchEvent(
+  //     new ShowToastEvent({
+  //       title: "Error",
+  //       message: error.body?.message || "An unexpected error occurred",
+  //       variant: "error"
+  //     })
+  //   );
+  // }
 }

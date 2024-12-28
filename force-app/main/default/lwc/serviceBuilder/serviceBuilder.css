@@ -88,7 +88,7 @@ th input:hover,
   justify-content: start;
   align-items: center;
   gap: 0.75rem;
-  max-width: fit-content;
+  max-width: 65%;
 }
 
 .warning-icon {

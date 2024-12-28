@@ -86,20 +86,30 @@ export default class DepotVisitForm extends LightningElement {
         })
       );
     } catch (error) {
-      this.handleError(error);
+      this.dispatchEvent(
+        new CustomEvent("close", {
+          detail: {
+            title: "Error",
+            message: error.body?.message || "An unexpected error occurred",
+            variant: "error"
+          }
+        })
+      );
+
+      // this.handleError(error);
     } finally {
       this.isLoading = false;
     }
   }
 
-  handleError(error) {
-    console.error(error);
-    this.dispatchEvent(
-      new ShowToastEvent({
-        title: "Error",
-        message: error.body?.message || "An unexpected error occurred",
-        variant: "error"
-      })
-    );
-  }
+  // handleError(error) {
+  //   console.error(error);
+  //   this.dispatchEvent(
+  //     new ShowToastEvent({
+  //       title: "Error",
+  //       message: error.body?.message || "An unexpected error occurred",
+  //       variant: "error"
+  //     })
+  //   );
+  // }
 }

@@ -60,9 +60,11 @@
             </div>
           </div>
 
-          <button class="info-button" onclick={handleShowMileageInfo}>
-            Info
-          </button>
+          <template if:false={isTimeSheetSubmittedOrApproved}>
+            <button class="info-button" onclick={handleShowMileageInfo}>
+              Info
+            </button>
+          </template>
         </div>
 
         <div class="stat-card">

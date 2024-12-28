@@ -70,6 +70,24 @@ export default class ServiceBuilder extends LightningElement {
   //TODO: Add filterOptions to filter out Product RecordType (only need 'Service' and 'Service Package')
   // Filter Options
 
+  filterService = {
+    criteria: [
+      {
+        fieldPath: "RecordTypeId",
+        operator: "eq",
+        //Service
+        value: "012KF000003Q7cLYAS"
+      },
+      {
+        fieldPath: "RecordTypeId",
+        operator: "eq",
+        //Service Package
+        value: "012KF000003Q7cKYAS"
+      }
+    ],
+    filterLogic: "1 OR 2"
+  };
+
   ///////////////////////////////Getters/////////////////////////////
 
   get contractLinesArrayLength() {

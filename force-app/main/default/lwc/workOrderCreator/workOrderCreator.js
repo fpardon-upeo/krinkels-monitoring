@@ -10,6 +10,7 @@ export default class WorkOrderCreator extends LightningElement {
   variant = "";
   iconName = "";
   showWarning = false;
+  showSuccess = false;
 
   @api
   get recordIds() {
@@ -121,6 +122,7 @@ export default class WorkOrderCreator extends LightningElement {
 
   handleClose(event) {
     this.showWarning = false;
+    this.showSuccess = false;
     this.title = "";
     this.message = "";
     this.variant = "";
@@ -131,10 +133,22 @@ export default class WorkOrderCreator extends LightningElement {
         this.iconName = "utility:warning";
         this.title = "Error";
         this.message = event.detail.message;
+        this.showWarning = true;
+
+        //Remove it back after 3 seconds
+        setTimeout(() => {
+          this.showWarning = false;
+        }, 3000);
       } else {
         this.iconName = "utility:success";
         this.title = "Success";
         this.message = event.detail.message;
+        this.showSuccess = true;
+
+        //Remove it back after 3 seconds
+        setTimeout(() => {
+          this.showSuccess = false;
+        }, 3000);
       }
 
       //Currently not working for some reason
@@ -143,13 +157,6 @@ export default class WorkOrderCreator extends LightningElement {
       //   event.detail.message,
       //   event.detail.variant
       // );
-
-      this.showWarning = true;
-
-      //Add it back after 3 seconds
-      setTimeout(() => {
-        this.showWarning = false;
-      }, 3000);
     }
 
     this.handleBack();

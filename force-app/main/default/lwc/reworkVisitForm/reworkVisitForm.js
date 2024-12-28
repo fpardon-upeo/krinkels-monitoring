@@ -240,22 +240,42 @@ export default class ReworkVisitForm extends LightningElement {
       //     variant: 'success'
       // }));
 
-      this.dispatchEvent(new CustomEvent("close"));
+      // this.dispatchEvent(new CustomEvent("close"));
+
+      this.dispatchEvent(
+        new CustomEvent("close", {
+          detail: {
+            title: "Success",
+            message: "Rework Order created successfully",
+            variant: "success"
+          }
+        })
+      );
     } catch (error) {
-      this.handleError(error);
+      // this.handleError(error);
+
+      this.dispatchEvent(
+        new CustomEvent("close", {
+          detail: {
+            title: "Error",
+            message: error.body?.message || "An unexpected error occurred",
+            variant: "error"
+          }
+        })
+      );
     } finally {
       this.isLoading = false;
     }
   }
 
-  handleError(error) {
-    console.error(error);
-    this.dispatchEvent(
-      new ShowToastEvent({
-        title: "Error",
-        message: error.body?.message || "An unexpected error occurred",
-        variant: "error"
-      })
-    );
-  }
+  // handleError(error) {
+  //   console.error(error);
+  //   this.dispatchEvent(
+  //     new ShowToastEvent({
+  //       title: "Error",
+  //       message: error.body?.message || "An unexpected error occurred",
+  //       variant: "error"
+  //     })
+  //   );
+  // }
 }

@@ -98,16 +98,33 @@
       </div>
 
       <template if:true={showWarning}>
-        <div class="warning-container">
-          <div class="warning-icon">
-            <lightning-icon icon-name={iconName} size="small"></lightning-icon>
+        <div class="messageContainer">
+          <div class="warning-container">
+            <div class="warning-icon">
+              <lightning-icon
+                icon-name={iconName}
+                size="small"
+              ></lightning-icon>
+            </div>
+            <p class="warning-text">{title} : {message}.</p>
           </div>
-          <p class="warning-text">{title} : {message}.</p>
+        </div>
+      </template>
+
+      <template if:true={showSuccess}>
+        <div class="messageContainer">
+          <div class="success-container">
+            <div class="success-icon">
+              <lightning-icon
+                icon-name={iconName}
+                size="small"
+              ></lightning-icon>
+            </div>
+            <p class="success-text">{title} : {message}.</p>
+          </div>
         </div>
       </template>
     </template>
-
-    <!-- Create a success container message just like the warning container -->
 
     <!-- Form Container -->
     <template if:false={showTypeSelection}>

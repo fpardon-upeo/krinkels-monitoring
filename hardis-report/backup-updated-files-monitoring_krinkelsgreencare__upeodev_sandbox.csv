@@ -1,2 +1,13 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+layouts/ServiceAppointment-Service Appointment Layout.layout-meta.xml," ",Layout ServiceAppointment-Service Appointment Layout,M,,log,📰
+lwc/depotVisitForm/depotVisitForm.js," ",LightningComponentBundle depotVisitForm/depotVisitForm.js,M,,log,📰
+lwc/reworkVisitForm/reworkVisitForm.js," ",LightningComponentBundle reworkVisitForm/reworkVisitForm.js,M,,log,📰
+lwc/serviceBuilder/serviceBuilder.css," ",LightningComponentBundle serviceBuilder/serviceBuilder.css,M,,log,📰
+lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
+lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
+lwc/wasteVisitForm/wasteVisitForm.js," ",LightningComponentBundle wasteVisitForm/wasteVisitForm.js,M,,log,📰
+lwc/workOrderCreator/workOrderCreator.css," ",LightningComponentBundle workOrderCreator/workOrderCreator.css,M,,log,📰
+lwc/workOrderCreator/workOrderCreator.html," ",LightningComponentBundle workOrderCreator/workOrderCreator.html,M,,log,📰
+lwc/workOrderCreator/workOrderCreator.js," ",LightningComponentBundle workOrderCreator/workOrderCreator.js,M,,log,📰

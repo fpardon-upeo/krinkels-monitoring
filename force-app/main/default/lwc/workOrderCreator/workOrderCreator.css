@@ -12,10 +12,10 @@
 
 /* Warning Message Styles */
 .warning-container {
-  background-color: #fff3cd;
-  border: 1px solid #ffeeba;
+  background-color: #c12424;
+  border: 1px solid #c12424;
   border-radius: 8px;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -28,13 +28,49 @@
 }
 
 .warning-icon lightning-icon {
-  --sds-c-icon-color-foreground-default: #856404;
+  --sds-c-icon-color-foreground-default: white;
 }
 
 .warning-text {
-  color: #856404;
-  font-size: 0.9rem;
+  color: white;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.4;
   margin: 0;
+}
+
+.success-container {
+  background-color: #029925;
+  border: 1px solid #029925;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: fit-content;
+}
+
+.success-icon {
+  flex-shrink: 0;
+}
+
+.success-icon lightning-icon {
+  --sds-c-icon-color-foreground-default: white;
+}
+
+.success-text {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.messageContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
