@@ -1,2 +1,8 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+email/SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937.email," ",EmailTemplate SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913,M,,log,📰
+flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
+layouts/AccountContactRelation-Account Contact Relationship Layout.layout-meta.xml," ",Layout AccountContactRelation-Account Contact Relationship Layout,M,,log,📰
+manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰

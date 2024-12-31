@@ -2,7 +2,7 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 15413
+Metadatas: 15412
 
 <details><summary>ApexClass (1062)</summary>
   • ATAKMaterialService<br/>
@@ -12137,7 +12137,7 @@ Metadatas: 15413
   • EmailToSalesforce<br/>
 </details>
 
-<details><summary>EmailTemplate (116)</summary>
+<details><summary>EmailTemplate (115)</summary>
   • CustomerNotifications<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_ENG_1732013701917<br/>
   • CustomerNotifications/Notification_Crew_on_its_way_FR_1732013592179<br/>
@@ -12166,7 +12166,6 @@ Metadatas: 15413
   • cadmus_sign2__Receiver/cadmus_sign2__receiverRequestSigned_en4<br/>
   • cadmus_sign2__Receiver/cadmus_sign2__receiverRequestWarning_en4<br/>
   • cadmus_sign2__SignButlerEmails4<br/>
-  • cadmus_sign2__SignButlerEmails4/KGC_signerRequestCreated_nl_1734941820047<br/>
   • cadmus_sign2__SignButlerEmails4/cadmus_sign2__signerMailOtp_de4<br/>
   • cadmus_sign2__SignButlerEmails4/cadmus_sign2__signerMailOtp_en4<br/>
   • cadmus_sign2__SignButlerEmails4/cadmus_sign2__signerMailOtp_es4<br/>

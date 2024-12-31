@@ -1334,125 +1334,32 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>allowFileUpload</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alternativeField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>deliveryTypeOverwrite</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>displayType</name>
-                    <value>TABLE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doDownloadFromPreview</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>doShowPreviewAfterGenerate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigIds</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>docConfigTranslationDataSource</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
+                    <name>alternativeNameField</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>localeField</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>numCurrLocaleField</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packButtonAction</name>
-                    <value>Send</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfig</name>
+                    <name>packIds</name>
                     <value>a1NKF000001uGKQ2A2</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packDocConfigs</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>packPdfActionType</name>
-                    <value>NONE</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>recordId</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>showAlternative</name>
+                    <name>saveConverted</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>showCsvProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showDocConfigFilter</name>
+                    <name>saveOriginal</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>showDocxProfiles</name>
+                    <name>usePacksForOverride</name>
+                    <value>true</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showMultiFileSelector</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNumCurrLocale</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPdfProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showPreviewToolbar</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showXslxProfiles</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>subtitle</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>targetTypeOverwrite</name>
-                    <value>DEFAULT</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>useNonBrowserViewer</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>cadmus_core:LC_ConvertComponent</componentName>
-                <identifier>cadmus_core_LC_ConvertComponent7</identifier>
+                <componentName>cadmus_core:LC_WGenerateAndUploadDocuments</componentName>
+                <identifier>cadmus_core_LC_WGenerateAndUploadDocuments</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1475,11 +1382,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadAfterGenerate</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadDocxAfterGenerate</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>doDownloadFromPreview</name>
