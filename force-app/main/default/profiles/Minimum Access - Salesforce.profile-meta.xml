@@ -3544,6 +3544,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>TimeSheetEntry.Corrected__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheetEntry.Invoice_Type__c</field>
         <readable>true</readable>

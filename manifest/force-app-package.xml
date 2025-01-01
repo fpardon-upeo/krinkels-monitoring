@@ -936,6 +936,7 @@
         <members>TimeSheetEntry.Break_Duration__c</members>
         <members>TimeSheetEntry.Break_Duration_in_Minutes__c</members>
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
+        <members>TimeSheetEntry.Corrected__c</members>
         <members>TimeSheetEntry.Invoice_Type__c</members>
         <members>TimeSheetEntry.Pause_Duration__c</members>
         <members>TimeSheetEntry.Resource_Absence__c</members>
@@ -2699,7 +2700,9 @@
         <members>Management/Additional_Work_Quote_Open_I7U</members>
         <members>Management/Average_Travel_time_This_Year_Et7</members>
         <members>Management/Contract_Renewal_Overview_br2</members>
+        <members>Management/Corrections_TimeSheets_This_Month_jVD</members>
         <members>Management/New_Deelproject_needed_additional_work_blh</members>
+        <members>Management/New_Times_Sheets_with_Entries_Report_7qN</members>
         <members>Management/New_Times_Sheets_with_Entries_Report_K1Q</members>
         <members>Management/New_Work_Orders_Report_dsD</members>
         <members>Management/New_Work_Orders_Report_myy</members>
@@ -2719,6 +2722,13 @@
         <members>Management/Work_Orders_per_CM_This_Year_YNg</members>
         <members>Management/Work_Steps_not_done_This_Month_jvJ</members>
         <members>Management/Work_Steps_not_done_This_Year_HM7</members>
+        <members>SalesPipeline/</members>
+        <members>SalesPipeline/All_Closed_Opportunities_Per_Type_IIR</members>
+        <members>SalesPipeline/All_Open_Opportunities_Per_Type_Dv1</members>
+        <members>SalesPipeline/All_Won_Opportunities_Per_Type_CY_O1C</members>
+        <members>SalesPipeline/Extra_Work_Quotes_Current_Month_Wt0</members>
+        <members>SalesPipeline/Extra_Work_Quotes_Current_Year_kSG</members>
+        <members>SalesPipeline/Won_Extra_Work_Quotes_Current_Year_eRe</members>
         <members>Sales_Marketing_Reports/</members>
         <members>Sales_Marketing_Reports/Closed_Lost_by_Reason</members>
         <members>Sales_Marketing_Reports/Closed_Won_80_This_Q_by_Owner</members>
@@ -2852,6 +2862,7 @@
         <members>Service_Contracts_with_Work_Orders</members>
         <members>Service_contracts</members>
         <members>TimeSheets</members>
+        <members>Time_Sheet_Entry_Feed</members>
         <members>Time_Sheets_with_Mileage</members>
         <members>Times_Sheets_with_Entries</members>
         <members>Vans_with_Material_Items</members>

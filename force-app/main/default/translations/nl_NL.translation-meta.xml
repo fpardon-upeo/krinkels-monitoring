@@ -3477,6 +3477,23 @@
         </sections>
     </reportTypes>
     <reportTypes>
+        <description><!-- Time Sheet Entry Feed --></description>
+        <label><!-- Time Sheet Entry Feed --></label>
+        <name>Time_Sheet_Entry_Feed</name>
+        <sections>
+            <label><!-- Time Sheet Entries --></label>
+            <name>Time Sheet Entries</name>
+        </sections>
+        <sections>
+            <label><!-- Time Sheet Entry Feed --></label>
+            <name>Time Sheet Entry Feed</name>
+        </sections>
+        <sections>
+            <label><!-- Time Sheets --></label>
+            <name>Time Sheets</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Time Sheets with Mileage --></description>
         <label><!-- Time Sheets with Mileage --></label>
         <name>Time_Sheets_with_Mileage</name>

@@ -10,9 +10,6 @@
         <field>ServiceAppointment$Priority__c</field>
     </columns>
     <columns>
-        <field>ServiceAppointment$WorkType</field>
-    </columns>
-    <columns>
         <field>ServiceAppointment$EarliestStartTime</field>
     </columns>
     <columns>
@@ -22,15 +19,9 @@
     <columns>
         <field>ServiceAppointment$Status</field>
     </columns>
-    <description>All Unscheduled Service Appointments for the next 14 days</description>
+    <description>All Unscheduled Service Appointments (not internal) for the current and the next month</description>
     <filter>
-        <criteriaItems>
-            <column>ServiceAppointment$DueDate</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>NEXT_N_DAYS:14</value>
-        </criteriaItems>
+        <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
         <criteriaItems>
             <column>ServiceAppointment$Status</column>
             <columnToColumn>false</columnToColumn>
@@ -38,10 +29,48 @@
             <operator>equals</operator>
             <value>Unscheduled</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>ServiceAppointment$DueDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ServiceAppointment$DueDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>NEXT_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ServiceAppointment$Work_Type_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Internal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ServiceAppointment$WorkType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Waste</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
-    <format>Tabular</format>
-    <name>Unscheduled Work next 14 days</name>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ServiceAppointment$ServiceTerritory</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ServiceAppointment$WorkType</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Unscheduled Work This + Next Month</name>
     <params>
         <name>co</name>
         <value>1</value>

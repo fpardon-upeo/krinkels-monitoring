@@ -46,13 +46,14 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Open Deelproject Requests Extra Work</header>
+                <header>Open Deelproject Requests</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Management/New_Deelproject_needed_additional_work_blh</report>
                 <showPercentage>false</showPercentage>
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <title>for Extra Work</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>2</rowIndex>
@@ -79,19 +80,19 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Quote.Owner__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>Quote.Type__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
                         <reportColumn>Quote.Amount__c</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Quote.Status</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Quote.ATAK_Project_Request_Priority__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
@@ -103,20 +104,21 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Quote.ATAK_Project_Request_Priority__c</reportColumn>
+                        <reportColumn>Quote.Owner__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Quote.ATAK_Project_Request_Priority__c</sortColumn>
+                        <sortColumn>Quote.Amount__c</sortColumn>
                         <sortOrder>2</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
                 <groupingSortProperties/>
-                <header>Open Deelproject Requests Extra Work</header>
+                <header>Open Deelproject Requests</header>
                 <report>Management/New_Deelproject_needed_additional_work_blh</report>
+                <title>for Extra Work</title>
             </dashboardComponent>
             <rowIndex>2</rowIndex>
             <rowSpan>8</rowSpan>
@@ -145,13 +147,14 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Open Calculation Requests Extra Work</header>
+                <header>Open Calculation Requests</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>BusienssSupport/New_Price_Requests_KXx</report>
                 <showPercentage>false</showPercentage>
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <title>for Extra Work</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>10</rowIndex>
@@ -178,19 +181,19 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Quote.Owner__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>Quote.Type__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
                         <reportColumn>Quote.Amount__c</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Quote.Status</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Quote.Price_Request_Priority__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
@@ -202,20 +205,21 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Quote.Price_Request_Priority__c</reportColumn>
+                        <reportColumn>Quote.Owner__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Quote.QuoteAccount.Name</sortColumn>
-                        <sortOrder>1</sortOrder>
+                        <sortColumn>Quote.Amount__c</sortColumn>
+                        <sortOrder>2</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
                 <groupingSortProperties/>
-                <header>Open Calculation Requests Extra Work</header>
+                <header>Open Calculation Requests</header>
                 <report>BusienssSupport/New_Price_Requests_KXx</report>
+                <title>for Extra Work</title>
             </dashboardComponent>
             <rowIndex>10</rowIndex>
             <rowSpan>8</rowSpan>
@@ -244,13 +248,14 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Open Calculation Request Opportunities</header>
+                <header>Open Calculation Requests</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>BusienssSupport/New_Price_Requests_wDh</report>
                 <showPercentage>false</showPercentage>
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <title>Other then Extra Work</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>18</rowIndex>
@@ -277,13 +282,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>FULL_NAME</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>TYPE</reportColumn>
+                        <reportColumn>STAGE_NAME</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
@@ -295,13 +294,25 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Opportunity.Price_Request_Demand_Comments__c</reportColumn>
+                        <reportColumn>TYPE</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Opportunity.Price_Request_Priority__c</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Opportunity.Price_Request_Demand_Comments__c</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>FULL_NAME</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
@@ -313,8 +324,9 @@
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
                 <groupingSortProperties/>
-                <header>Open Calculation Request Opportunities</header>
+                <header>Open Calculation Request</header>
                 <report>BusienssSupport/New_Price_Requests_wDh</report>
+                <title>Other then Extra Work</title>
             </dashboardComponent>
             <rowIndex>18</rowIndex>
             <rowSpan>8</rowSpan>
@@ -340,13 +352,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Quote.Owner__c</reportColumn>
-                        <showSubTotal>false</showSubTotal>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>Quote.Type__c</reportColumn>
+                        <reportColumn>Quote.Status</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
@@ -358,26 +364,33 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
+                        <reportColumn>Quote.Price_Request_Priority__c</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
                         <reportColumn>Quote.Price_Request_Demand_Comments__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Quote.Price_Request_Priority__c</reportColumn>
+                        <reportColumn>Quote.Owner__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Quote.QuoteAccount.Name</sortColumn>
-                        <sortOrder>1</sortOrder>
+                        <sortColumn>Quote.Amount__c</sortColumn>
+                        <sortOrder>2</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
                 <groupingSortProperties/>
-                <header>Ongoing Calculation Requests Extra Work</header>
+                <header>Ongoing Calculation Requests</header>
                 <report>BusienssSupport/Ongoing_Price_Request_WUN</report>
+                <title>for Extra Work</title>
             </dashboardComponent>
             <rowIndex>26</rowIndex>
             <rowSpan>8</rowSpan>
@@ -403,7 +416,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>FULL_NAME</reportColumn>
+                        <reportColumn>STAGE_NAME</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
@@ -420,15 +433,28 @@
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>FULL_NAME</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Opportunity.Price_Request_BS_Comments__c</reportColumn>
+                        <showSubTotal>false</showSubTotal>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>ACCOUNT_NAME</sortColumn>
-                        <sortOrder>1</sortOrder>
+                        <sortColumn>Opportunity.Amount__c</sortColumn>
+                        <sortOrder>2</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
                 <groupingSortProperties/>
-                <header>Ongoing Calculation Requests Opportunities</header>
+                <header>Ongoing Calculation Requests</header>
                 <report>BusienssSupport/Lopende_Prijscalculatie_rxn</report>
+                <title>Other then Extra Work</title>
             </dashboardComponent>
             <rowIndex>26</rowIndex>
             <rowSpan>8</rowSpan>
@@ -492,8 +518,9 @@
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
                 <groupingSortProperties/>
-                <header>Check-in At Work Deze Maand</header>
+                <header>Work Orders - Check-in At Work</header>
                 <report>BusienssSupport/New_Report_Pxg</report>
+                <title>This Month</title>
             </dashboardComponent>
             <rowIndex>36</rowIndex>
             <rowSpan>8</rowSpan>

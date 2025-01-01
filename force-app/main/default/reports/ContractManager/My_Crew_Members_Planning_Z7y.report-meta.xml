@@ -56,7 +56,7 @@
         <value>1</value>
     </params>
     <reportType>Service_Appointments_with_Service_Resources__c</reportType>
-    <scope>user</scope>
+    <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>true</showSubTotals>

@@ -3,12 +3,16 @@
     <baseObject>TimeSheet</baseObject>
     <category>other</category>
     <deployed>true</deployed>
-    <description>Times Sheeets with Entries</description>
+    <description>Time Sheet Entry Feed</description>
     <join>
+        <join>
+            <outerJoin>true</outerJoin>
+            <relationship>FeedItems</relationship>
+        </join>
         <outerJoin>false</outerJoin>
         <relationship>TimeSheetEntries</relationship>
     </join>
-    <label>Times Sheets with Entries</label>
+    <label>Time Sheet Entry Feed</label>
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -270,6 +274,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Invoice_Type__c</field>
+            <table>TimeSheet.TimeSheetEntries</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Break_Duration__c</field>
             <table>TimeSheet.TimeSheetEntries</table>
         </columns>
@@ -290,14 +299,87 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Invoice_Type__c</field>
-            <table>TimeSheet.TimeSheetEntries</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Corrected__c</field>
             <table>TimeSheet.TimeSheetEntries</table>
         </columns>
         <masterLabel>Time Sheet Entries</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Type</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CommentCount</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LikeCount</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ClientOauthLink</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BestComment</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BestCommentSelectedBy</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Title</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Body</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LinkUrl</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsRichText</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DerivedFeedItem</field>
+            <table>TimeSheet.TimeSheetEntries.FeedItems</table>
+        </columns>
+        <masterLabel>Time Sheet Entry Feed</masterLabel>
     </sections>
 </ReportType>

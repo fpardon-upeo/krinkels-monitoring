@@ -36,6 +36,11 @@
         <field>Quote$Price_Request_Priority__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Quote$Status</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>New Price Requests (Quotes)</name>
     <params>
         <name>co</name>

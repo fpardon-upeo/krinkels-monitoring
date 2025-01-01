@@ -74,8 +74,35 @@
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>8</colSpan>
+            <colSpan>2</colSpan>
             <columnIndex>4</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <aggregate>Average</aggregate>
+                    <column>TimeSheet.TimeSheetEntries$Working_Time__c</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <footer>In Minutes</footer>
+                <groupingSortProperties/>
+                <header>Average Travel Time</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>This Month</metricLabel>
+                <report>Management/New_Times_Sheets_with_Entries_Report_K1Q</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>2</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>6</colSpan>
+            <columnIndex>6</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -109,6 +136,33 @@
             </dashboardComponent>
             <rowIndex>2</rowIndex>
             <rowSpan>8</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>4</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <column>TimeSheet.TimeSheetEntries$Working_Time__c</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Integer</displayUnits>
+                <footer>In Minutes</footer>
+                <groupingSortProperties/>
+                <header>Full Travel Time</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>This Month</metricLabel>
+                <report>Management/New_Times_Sheets_with_Entries_Report_K1Q</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>6</rowIndex>
+            <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>4</colSpan>
@@ -148,8 +202,35 @@
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>8</colSpan>
+            <colSpan>2</colSpan>
             <columnIndex>4</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <aggregate>Average</aggregate>
+                    <column>TimeSheet.TimeSheetEntries$Working_Time__c</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <footer>In Minutes</footer>
+                <groupingSortProperties/>
+                <header>Average Travel Time</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>This Year</metricLabel>
+                <report>Management/Average_Travel_time_This_Year_Et7</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>10</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>6</colSpan>
+            <columnIndex>6</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -185,6 +266,33 @@
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>4</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <column>TimeSheet.TimeSheetEntries$Working_Time__c</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Integer</displayUnits>
+                <footer>In Minutes</footer>
+                <groupingSortProperties/>
+                <header>Full Travel time</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>This Year</metricLabel>
+                <report>Management/Average_Travel_time_This_Year_Et7</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>14</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
             <colSpan>12</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
@@ -199,8 +307,33 @@
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
+            <colSpan>2</colSpan>
             <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Integer</displayUnits>
+                <groupingSortProperties/>
+                <header>Total # Work Orders</header>
+                <indicatorBreakpoint1>-1.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>0.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>This Month</metricLabel>
+                <report>Management/New_Work_Orders_Report_dsD</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>20</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>5</colSpan>
+            <columnIndex>2</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -234,8 +367,8 @@
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
-            <columnIndex>6</columnIndex>
+            <colSpan>5</colSpan>
+            <columnIndex>7</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -267,6 +400,31 @@
             </dashboardComponent>
             <rowIndex>20</rowIndex>
             <rowSpan>8</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>2</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Integer</displayUnits>
+                <groupingSortProperties/>
+                <header>Total # Work Orders</header>
+                <indicatorBreakpoint1>-1.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>0.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <metricLabel>This Year</metricLabel>
+                <report>Management/Work_Orders_per_CM_This_Year_YNg</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>24</rowIndex>
+            <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>12</colSpan>
@@ -306,12 +464,13 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Travel Time Vs Working Time This Month</header>
+                <header>Travel Time Vs Working Time</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Management/Travel_Time_Vs_Working_Time_This_Month_Wx3</report>
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <title>This Month</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>30</rowIndex>
@@ -320,42 +479,6 @@
         <dashboardGridComponents>
             <colSpan>4</colSpan>
             <columnIndex>4</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartAxisRange>Auto</chartAxisRange>
-                <chartSummary>
-                    <aggregate>Sum</aggregate>
-                    <axisBinding>y</axisBinding>
-                    <column>TimeSheet$Total_Travel_Time__c</column>
-                </chartSummary>
-                <componentType>Column</componentType>
-                <decimalPrecision>-1</decimalPrecision>
-                <displayUnits>Auto</displayUnits>
-                <drillEnabled>false</drillEnabled>
-                <drillToDetailEnabled>false</drillToDetailEnabled>
-                <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
-                <groupingColumn>TimeSheet.TimeSheetEntries$Invoice_Type__c</groupingColumn>
-                <groupingSortProperties>
-                    <groupingSorts>
-                        <groupingLevel>g1</groupingLevel>
-                        <sortOrder>a</sortOrder>
-                    </groupingSorts>
-                </groupingSortProperties>
-                <header>Travel Time  This Month</header>
-                <legendPosition>Bottom</legendPosition>
-                <report>Management/Travel_Time_Vs_Working_Time_This_Month_Wx3</report>
-                <showPercentage>false</showPercentage>
-                <showValues>true</showValues>
-                <sortBy>RowLabelAscending</sortBy>
-                <useReportChart>false</useReportChart>
-            </dashboardComponent>
-            <rowIndex>30</rowIndex>
-            <rowSpan>7</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>4</colSpan>
-            <columnIndex>8</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -378,12 +501,50 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Working Time This Month</header>
+                <header>Total Working Time</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Management/Travel_Time_Vs_Working_Time_This_Month_Wx3</report>
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <title>This Month</title>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>30</rowIndex>
+            <rowSpan>7</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
+            <columnIndex>8</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>TimeSheet$Total_Travel_Time__c</column>
+                </chartSummary>
+                <componentType>Column</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>TimeSheet.TimeSheetEntries$Invoice_Type__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>Total Travel Time</header>
+                <legendPosition>Bottom</legendPosition>
+                <report>Management/Travel_Time_Vs_Working_Time_This_Month_Wx3</report>
+                <showPercentage>false</showPercentage>
+                <showValues>true</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>This Month</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>30</rowIndex>
@@ -413,12 +574,13 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Travel Time Vs Working Time This Year</header>
+                <header>Travel Time Vs Working Time</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Management/Travel_Time_Vs_Working_Time_This_Year_mWa</report>
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <title>This Year</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>37</rowIndex>
@@ -427,42 +589,6 @@
         <dashboardGridComponents>
             <colSpan>4</colSpan>
             <columnIndex>4</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartAxisRange>Auto</chartAxisRange>
-                <chartSummary>
-                    <aggregate>Sum</aggregate>
-                    <axisBinding>y</axisBinding>
-                    <column>TimeSheet$Total_Travel_Time__c</column>
-                </chartSummary>
-                <componentType>Column</componentType>
-                <decimalPrecision>-1</decimalPrecision>
-                <displayUnits>Auto</displayUnits>
-                <drillEnabled>false</drillEnabled>
-                <drillToDetailEnabled>false</drillToDetailEnabled>
-                <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
-                <groupingColumn>TimeSheet.TimeSheetEntries$Invoice_Type__c</groupingColumn>
-                <groupingSortProperties>
-                    <groupingSorts>
-                        <groupingLevel>g1</groupingLevel>
-                        <sortOrder>a</sortOrder>
-                    </groupingSorts>
-                </groupingSortProperties>
-                <header>Travel Time This Year</header>
-                <legendPosition>Bottom</legendPosition>
-                <report>Management/Travel_Time_Vs_Working_Time_This_Year_mWa</report>
-                <showPercentage>false</showPercentage>
-                <showValues>true</showValues>
-                <sortBy>RowLabelAscending</sortBy>
-                <useReportChart>false</useReportChart>
-            </dashboardComponent>
-            <rowIndex>37</rowIndex>
-            <rowSpan>7</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>4</colSpan>
-            <columnIndex>8</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -485,12 +611,50 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Working Time This Year</header>
+                <header>Total Working Time</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Management/Travel_Time_Vs_Working_Time_This_Year_mWa</report>
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <title>This Year</title>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>37</rowIndex>
+            <rowSpan>7</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
+            <columnIndex>8</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>TimeSheet$Total_Travel_Time__c</column>
+                </chartSummary>
+                <componentType>Column</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>TimeSheet.TimeSheetEntries$Invoice_Type__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>Total Travel Time</header>
+                <legendPosition>Bottom</legendPosition>
+                <report>Management/Travel_Time_Vs_Working_Time_This_Year_mWa</report>
+                <showPercentage>false</showPercentage>
+                <showValues>true</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>This Year</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>37</rowIndex>

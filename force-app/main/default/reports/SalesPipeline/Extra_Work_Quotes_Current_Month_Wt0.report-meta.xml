@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Quote$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Quote$Amount__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Extra_Work__c</field>
+    </columns>
+    <columns>
+        <field>Quote$QuoteAccount</field>
+    </columns>
+    <columns>
+        <field>Quote$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Quote$QuoteNumber</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Quote$IsSyncing</field>
+    </columns>
+    <columns>
+        <field>Quote$ExpirationDate</field>
+    </columns>
+    <columns>
+        <field>Quote$BillingName</field>
+    </columns>
+    <description>Per status</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Quote$Status</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Extra Work Quotes - Current Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Quotes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Quote$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

@@ -3857,10 +3857,11 @@
     <tabs>standard-MaintenancePlan</tabs>
     <tabs>standard-WorkOrder</tabs>
     <tabs>standard-ServiceAppointment</tabs>
-    <tabs>standard-ServiceCrew</tabs>
-    <tabs>LMRA__c</tabs>
+    <tabs>standard-Dashboard</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Feed</tabs>
+    <tabs>standard-ServiceCrew</tabs>
+    <tabs>LMRA__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Krinkels_Field_Service_UtilityBar</utilityBar>
 </CustomApplication>
