@@ -176,6 +176,9 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   connectedCallback() {
+    console.log("connectedCallback");
+    console.log("recordId", this.recordId);
+    console.log("resourceId", this.resourceId);
     // First load the required styles and scripts
     Promise.all([
       loadStyle(this, FullCalendarJS + "/lib/main.css"),
