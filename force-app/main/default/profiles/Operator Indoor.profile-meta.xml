@@ -13,7 +13,7 @@
     <applicationVisibilities>
         <application>Krinkels_Field_Service</application>
         <default>true</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Management</application>
@@ -451,7 +451,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetHandler</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>TimeSheetProjectLinkService</apexClass>

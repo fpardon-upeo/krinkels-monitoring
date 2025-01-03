@@ -367,16 +367,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>startOperatorDay</componentName>
-                <identifier>c_startOperatorDay</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-a4da0f95-df90-4c8c-b798-cea7a9eb5245</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -405,20 +395,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>relatedListsTab</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-a4da0f95-df90-4c8c-b798-cea7a9eb5245</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Testing</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

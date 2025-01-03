@@ -10,6 +10,9 @@
     <timeSheetTemplateAssignments>
         <assignedTo>Operator Indoor</assignedTo>
     </timeSheetTemplateAssignments>
+    <timeSheetTemplateAssignments>
+        <assignedTo>Operator Outdoor</assignedTo>
+    </timeSheetTemplateAssignments>
     <workWeekEndDay>Sunday</workWeekEndDay>
     <workWeekStartDay>Monday</workWeekStartDay>
 </TimeSheetTemplate>

@@ -1,3 +1,9 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
+flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
+globalValueSets/Language.globalValueSet-meta.xml," ",GlobalValueSet Language,M,,log,📰
+lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
+lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
+permissionsets/APEX_Class_Access_Mobile_Operator.permissionset-meta.xml," ",PermissionSet APEX_Class_Access_Mobile_Operator,M,,log,📰
+profiles/Operator Indoor.profile-meta.xml," ",Profile Operator Indoor,M,,log,📰
+timeSheetTemplates/Default_Timesheet_Daily.timeSheetTemplate-meta.xml," ",TimeSheetTemplate Default_Timesheet_Daily,M,,log,📰

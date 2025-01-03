@@ -390,18 +390,21 @@
               </span>
               <span class="button-text">{labels.StartDay_Next_Button}</span>
             </button>
-          </template>
-          <!--
-            <lightning-button
-              if:true={showAppointmentScreen}
-              label="Continue"
-              icon-name="utility:forward"
-              variant="neutral"
-              disabled={disableNextButton}
+            <button
+              if:false={disableNextButton}
               onclick={handleSelect}
+              class="next-button slds-m-left_medium"
             >
-            </lightning-button>
-            -->
+              <span class="button-icon">
+                <lightning-icon
+                  icon-name="utility:forward"
+                  size="small"
+                  variant="inverse"
+                ></lightning-icon>
+              </span>
+              <span class="button-text">{labels.StartDay_Next_Button}</span>
+            </button>
+          </template>
         </div>
       </div>
     </div>

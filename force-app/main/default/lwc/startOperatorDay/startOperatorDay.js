@@ -564,7 +564,10 @@ export default class StartOperatorDay extends NavigationMixin(
         console.log("result", JSON.stringify(result));
       })
       .catch((error) => {
-        console.log("!!!!!!!!!!!!!! Error updating service appointment status", error);
+        console.log(
+          "!!!!!!!!!!!!!! Error updating service appointment status",
+          error
+        );
       });
   }
 
