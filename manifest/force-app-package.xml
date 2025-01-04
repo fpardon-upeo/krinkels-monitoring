@@ -437,6 +437,7 @@
         <members>AssignedResource.FSL__calculated_duration__c</members>
         <members>AssignedResource.Resource_Is_A_Person__c</members>
         <members>AssignedResource.Service_Territory__c</members>
+        <members>AssignedResource.User_Is_System_Admin__c</members>
         <members>Contact.ContractType__c</members>
         <members>Contact.Contract_Type__c</members>
         <members>Contact.Decision_maker__c</members>
@@ -791,8 +792,10 @@
         <members>SD_Import__c.PersoonRoepVoornaam__c</members>
         <members>SD_Import__c.Werkschema__c</members>
         <members>ServiceAppointment.ATAK_Code__c</members>
+        <members>ServiceAppointment.ATAK_Project_Name__c</members>
         <members>ServiceAppointment.Asset__c</members>
         <members>ServiceAppointment.Billing_Type__c</members>
+        <members>ServiceAppointment.Cost_Center__c</members>
         <members>ServiceAppointment.Day_Pause_Duration__c</members>
         <members>ServiceAppointment.Due_Date_in_the_Past__c</members>
         <members>ServiceAppointment.FSL__Appointment_Grade__c</members>
@@ -983,6 +986,7 @@
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
         <members>WorkOrder.Goodwill_Tasks__c</members>
+        <members>WorkOrder.Invoice_Type__c</members>
         <members>WorkOrder.Invoicing_Remarks__c</members>
         <members>WorkOrder.Is_First_of_Day__c</members>
         <members>WorkOrder.LMRA_Done__c</members>
@@ -2638,11 +2642,17 @@
     <types>
         <members>BusienssSupport/</members>
         <members>BusienssSupport/All_Mileage_Entries_this_Month_Tpl</members>
+        <members>BusienssSupport/All_TS_Entries_This_Month_Urgent_Interv_I5U</members>
+        <members>BusienssSupport/All_TS_Entries_This_Month_Winter_Service_Y84</members>
         <members>BusienssSupport/All_TS_This_Month_Starting_Allowance_7BQ</members>
         <members>BusienssSupport/All_TS_This_Month_Urgent_Intervention_eZH</members>
         <members>BusienssSupport/All_Time_Sheets_this_Month_2Lf</members>
         <members>BusienssSupport/All_Timesheets_This_Month_1gH</members>
         <members>BusienssSupport/All_Timesheets_to_be_approved_5Y0</members>
+        <members>BusienssSupport/Invoicing_Report_Grouped_SA_Q4f</members>
+        <members>BusienssSupport/Invoicing_Report_Progress_Statement_x3a</members>
+        <members>BusienssSupport/Invoicing_Report_Service_Appointments_H0s</members>
+        <members>BusienssSupport/Invoicing_Report_Subscr_Additional_NAZ</members>
         <members>BusienssSupport/Lopende_Prijscalculatie_rxn</members>
         <members>BusienssSupport/Meerwerk_Opportuniy_Open_k8u</members>
         <members>BusienssSupport/New_Price_Requests_KXx</members>
@@ -2726,6 +2736,7 @@
         <members>SalesPipeline/All_Closed_Opportunities_Per_Type_IIR</members>
         <members>SalesPipeline/All_Open_Opportunities_Per_Type_Dv1</members>
         <members>SalesPipeline/All_Won_Opportunities_Per_Type_CY_O1C</members>
+        <members>SalesPipeline/Extra_Work_Quotes_0Rh</members>
         <members>SalesPipeline/Extra_Work_Quotes_Current_Month_Wt0</members>
         <members>SalesPipeline/Extra_Work_Quotes_Current_Year_kSG</members>
         <members>SalesPipeline/Won_Extra_Work_Quotes_Current_Year_eRe</members>
@@ -2870,6 +2881,7 @@
         <members>Work_Orders</members>
         <members>Work_Orders_w_Time_Sheets_Entries</members>
         <members>Work_Orders_with_Work_Plans_Steps</members>
+        <members>Work_Orders_with_service_appointments</members>
         <members>flow_orchestration_log_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_run_ootb_crt_two_four_eight</members>
         <members>flow_orchestration_stage_run_ootb_crt_two_four_eight</members>

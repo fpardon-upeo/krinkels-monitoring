@@ -58,7 +58,7 @@
         <field>TimeSheet$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>My Teams&apos; Timesheets this Month</name>
+    <name>My Teams&apos; TS Entries this Month</name>
     <params>
         <name>co</name>
         <value>1</value>

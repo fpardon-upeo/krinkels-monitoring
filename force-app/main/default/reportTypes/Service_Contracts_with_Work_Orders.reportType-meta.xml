@@ -1022,6 +1022,11 @@
             <field>Quote__c</field>
             <table>ServiceContract.WorkOrders</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Invoice_Type__c</field>
+            <table>ServiceContract.WorkOrders</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>
@@ -1503,6 +1508,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Original_Due_Date__c</field>
+            <table>ServiceContract.WorkOrders.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ATAK_Project_Name__c</field>
+            <table>ServiceContract.WorkOrders.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Cost_Center__c</field>
             <table>ServiceContract.WorkOrders.ServiceAppointments</table>
         </columns>
         <masterLabel>Service Appointments</masterLabel>

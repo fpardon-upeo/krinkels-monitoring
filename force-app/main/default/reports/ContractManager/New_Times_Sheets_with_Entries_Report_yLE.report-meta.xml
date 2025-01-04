@@ -58,7 +58,7 @@
         <field>TimeSheet$Status</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>My Teams&apos; Timesheets to be approved</name>
+    <name>My Teams&apos; TS Entries to be approved</name>
     <params>
         <name>co</name>
         <value>1</value>

@@ -6,15 +6,6 @@
       onfirstworkorderchecked={handleFirstWorkOrderChecked}
     ></c-start-operator-day-metrics>
 
-    <!-- <div class="currentWork">
-      <p>Current Work Order</p>
-      <template if:true={showMultipleWorkOrders}>
-        <p>
-          Warning: you have multiple work orders in progress, please fix this.
-        </p>
-      </template>
-    </div> -->
-
     <div if:true={showTimesheetScreen} class="top-nav">
       <div class="nav-content">
         <lightning-button
@@ -233,6 +224,7 @@
       <template if:true={showMilageEntryScreen}>
         <c-show-mileage-screen
           record-id={timeSheetId}
+          service-resource-id={serviceResourceId}
           onback={handleBack}
         ></c-show-mileage-screen>
       </template>
@@ -269,13 +261,7 @@
                   field-name="Type__c"
                   value="Starting"
                 ></lightning-input-field>
-                <lightning-input-field
-                  field-name="Starting_Location_Type__c"
-                  value="Home"
-                ></lightning-input-field>
-                <lightning-input-field
-                  field-name="Ending_Location_Type__c"
-                ></lightning-input-field>
+
                 <lightning-input-field
                   field-name="Starting_Mileage__c"
                 ></lightning-input-field>

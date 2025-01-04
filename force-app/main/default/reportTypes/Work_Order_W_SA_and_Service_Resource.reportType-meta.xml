@@ -604,6 +604,11 @@
             <field>Quote__c</field>
             <table>WorkOrder</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Invoice_Type__c</field>
+            <table>WorkOrder</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>
@@ -1087,6 +1092,16 @@
             <field>Original_Due_Date__c</field>
             <table>WorkOrder.ServiceAppointments</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ATAK_Project_Name__c</field>
+            <table>WorkOrder.ServiceAppointments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Cost_Center__c</field>
+            <table>WorkOrder.ServiceAppointments</table>
+        </columns>
         <masterLabel>Service Appointments</masterLabel>
     </sections>
     <sections>
@@ -1198,6 +1213,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>External_Id__c</field>
+            <table>WorkOrder.ServiceAppointments.ServiceResources</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>User_Is_System_Admin__c</field>
             <table>WorkOrder.ServiceAppointments.ServiceResources</table>
         </columns>
         <masterLabel>Assigned Resources</masterLabel>

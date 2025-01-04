@@ -58,7 +58,7 @@
         <field>TimeSheet.TimeSheetEntries$Type</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>All Timesheets to be approved</name>
+    <name>All TS Entries to be approved</name>
     <params>
         <name>co</name>
         <value>1</value>

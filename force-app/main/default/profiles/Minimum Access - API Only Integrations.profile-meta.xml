@@ -1144,6 +1144,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>AssignedResource.User_Is_System_Admin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.ContractType__c</field>
         <readable>true</readable>
@@ -2839,6 +2844,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.ATAK_Project_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Asset__c</field>
         <readable>true</readable>
@@ -2846,6 +2856,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Billing_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.Cost_Center__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3771,6 +3786,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Goodwill_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Invoice_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

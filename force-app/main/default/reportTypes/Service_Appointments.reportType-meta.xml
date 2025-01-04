@@ -500,6 +500,16 @@
             <field>Original_Due_Date__c</field>
             <table>ServiceAppointment</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ATAK_Project_Name__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Cost_Center__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
         <masterLabel>Service Appointments</masterLabel>
     </sections>
     <sections>
@@ -611,6 +621,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>External_Id__c</field>
+            <table>ServiceAppointment.ServiceResources</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>User_Is_System_Admin__c</field>
             <table>ServiceAppointment.ServiceResources</table>
         </columns>
         <masterLabel>Assigned Resources</masterLabel>

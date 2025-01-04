@@ -1,9 +1,72 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
-globalValueSets/Language.globalValueSet-meta.xml," ",GlobalValueSet Language,M,,log,📰
+dashboards/BusinessSupport/WPkVzWwFbQSfsPROliTmMQzEFeIizc1.dashboard-meta.xml," ",Dashboard BusinessSupport/WPkVzWwFbQSfsPROliTmMQzEFeIizc1,M,,log,📰
+dashboards/InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI.dashboard-meta.xml," ",Dashboard InvoicingDashboard/cyWAeUqIOMjWaPgOKGDEosdZrkCjHI,M,,log,📰
+dashboards/Management/abJeXokmMSyeVggNqNYVSgBOzrpJCa.dashboard-meta.xml," ",Dashboard Management/abJeXokmMSyeVggNqNYVSgBOzrpJCa,M,,log,📰
+flexipages/LMRA_Record_Page.flexipage-meta.xml," ",FlexiPage LMRA_Record_Page,M,,log,📰
+flexipages/Work_Step_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Step_Record_Page,M,,log,📰
+flowDefinitions/Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type.flowDefinition-meta.xml," ",FlowDefinition Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type,M,,log,📰
+flowDefinitions/Service_Appointment_Time_Sheet_Automations.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Time_Sheet_Automations,M,,log,📰
+flows/Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type.flow-meta.xml," ",Flow Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type,M,,log,📰
+flows/Service_Appointment_Time_Sheet_Automations.flow-meta.xml," ",Flow Service_Appointment_Time_Sheet_Automations,M,,log,📰
+layouts/AssignedResource-Assigned Resource Layout.layout-meta.xml," ",Layout AssignedResource-Assigned Resource Layout,M,,log,📰
+layouts/LMRA__c-LMRA Layout.layout-meta.xml," ",Layout LMRA__c-LMRA Layout,M,,log,📰
 lwc/startOperatorDay/startOperatorDay.html," ",LightningComponentBundle startOperatorDay/startOperatorDay.html,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
+objects/AssignedResource/fields/User_Is_System_Admin__c.field-meta.xml,A,CustomField User_Is_System_Admin__c,,,log,📰
+objects/ServiceAppointment/fields/ATAK_Project_Name__c.field-meta.xml,A,CustomField ATAK_Project_Name__c,,,log,📰
+objects/ServiceAppointment/fields/Cost_Center__c.field-meta.xml,A,CustomField Cost_Center__c,,,log,📰
+objects/WorkOrder/fields/Invoice_Type__c.field-meta.xml,A,CustomField Invoice_Type__c,,,log,📰
 permissionsets/APEX_Class_Access_Mobile_Operator.permissionset-meta.xml," ",PermissionSet APEX_Class_Access_Mobile_Operator,M,,log,📰
+profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
+profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
+profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
+profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
+profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
+profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
+profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
+profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
+profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
+profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
+profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
+profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
+profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
+profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
+profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
+profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
+profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
+profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
 profiles/Operator Indoor.profile-meta.xml," ",Profile Operator Indoor,M,,log,📰
-timeSheetTemplates/Default_Timesheet_Daily.timeSheetTemplate-meta.xml," ",TimeSheetTemplate Default_Timesheet_Daily,M,,log,📰
+profiles/Operator Outdoor.profile-meta.xml," ",Profile Operator Outdoor,M,,log,📰
+profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
+profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
+profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
+profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
+profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
+profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
+reportTypes/Accounts_with_Work_Orders.reportType-meta.xml," ",ReportType Accounts_with_Work_Orders,M,,log,📰
+reportTypes/Assets_with_Work_Orders_and_Service_Appointments.reportType-meta.xml," ",ReportType Assets_with_Work_Orders_and_Service_Appointments,M,,log,📰
+reportTypes/Service_Appointments.reportType-meta.xml," ",ReportType Service_Appointments,M,,log,📰
+reportTypes/Service_Appointments_with_Service_Resources.reportType-meta.xml," ",ReportType Service_Appointments_with_Service_Resources,M,,log,📰
+reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml," ",ReportType Service_Contracts_with_Work_Orders,M,,log,📰
+reportTypes/Work_Order_W_SA_and_Service_Resource.reportType-meta.xml," ",ReportType Work_Order_W_SA_and_Service_Resource,M,,log,📰
+reportTypes/Work_Orders.reportType-meta.xml," ",ReportType Work_Orders,M,,log,📰
+reportTypes/Work_Orders_w_Time_Sheets_Entries.reportType-meta.xml," ",ReportType Work_Orders_w_Time_Sheets_Entries,M,,log,📰
+reportTypes/Work_Orders_with_Work_Plans_Steps.reportType-meta.xml," ",ReportType Work_Orders_with_Work_Plans_Steps,M,,log,📰
+reportTypes/Work_Orders_with_service_appointments.reportType-meta.xml,A,ReportType Work_Orders_with_service_appointments,,,log,📰
+reports/BusienssSupport/All_TS_Entries_This_Month_Urgent_Interv_I5U.report-meta.xml,A,Report BusienssSupport/All_TS_Entries_This_Month_Urgent_Interv_I5U,,,log,📰
+reports/BusienssSupport/All_TS_Entries_This_Month_Winter_Service_Y84.report-meta.xml,A,Report BusienssSupport/All_TS_Entries_This_Month_Winter_Service_Y84,,,log,📰
+reports/BusienssSupport/All_Timesheets_This_Month_1gH.report-meta.xml," ",Report BusienssSupport/All_Timesheets_This_Month_1gH,M,,log,📰
+reports/BusienssSupport/All_Timesheets_to_be_approved_5Y0.report-meta.xml," ",Report BusienssSupport/All_Timesheets_to_be_approved_5Y0,M,,log,📰
+reports/BusienssSupport/Invoicing_Report_Grouped_SA_Q4f.report-meta.xml,A,Report BusienssSupport/Invoicing_Report_Grouped_SA_Q4f,,,log,📰
+reports/BusienssSupport/Invoicing_Report_Progress_Statement_x3a.report-meta.xml,A,Report BusienssSupport/Invoicing_Report_Progress_Statement_x3a,,,log,📰
+reports/BusienssSupport/Invoicing_Report_Service_Appointments_H0s.report-meta.xml,A,Report BusienssSupport/Invoicing_Report_Service_Appointments_H0s,,,log,📰
+reports/BusienssSupport/Invoicing_Report_Subscr_Additional_NAZ.report-meta.xml,A,Report BusienssSupport/Invoicing_Report_Subscr_Additional_NAZ,,,log,📰
+reports/ContractManager/My_Teams_Timesheets_this_Month_jML.report-meta.xml," ",Report ContractManager/My_Teams_Timesheets_this_Month_jML,M,,log,📰
+reports/ContractManager/New_Times_Sheets_with_Entries_Report_yLE.report-meta.xml," ",Report ContractManager/New_Times_Sheets_with_Entries_Report_yLE,M,,log,📰
+reports/SalesPipeline/Extra_Work_Quotes_0Rh.report-meta.xml,A,Report SalesPipeline/Extra_Work_Quotes_0Rh,,,log,📰
+translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
+translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
+translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
+manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
+manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

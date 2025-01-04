@@ -2,10 +2,42 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <decisions>
+        <name>Is_User_a_System_Admin</name>
+        <label>Is User a System Admin ?</label>
+        <locationX>182</locationX>
+        <locationY>803</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Is_User_a_System_Admin</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User_Information.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>System Administrator</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_User_Information</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_User_Is_System_Admin_Checkbox</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Resource_Is_A_Person</name>
         <label>Resource Is A Person ?</label>
         <locationX>182</locationX>
         <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Get_User_Information</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -23,7 +55,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>For reporting purposes, this flow will allow identifying the type of resource assigned to a service appointment.</description>
+    <description>For reporting purposes, this flow will allow identifying the type of resource assigned to a service appointment. 
+This flow will also allow the identification of whether the assigned resource is linked to a system admin user for the purpose of timesheet entry creation.</description>
     <environments>Default</environments>
     <interviewLabel>[Assigned Resource] [Before save] [RecordTriggered] Account Fields duplication {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Assigned Resource] [Before-Save] [Record-Triggered] Identify Assigned Resource Type</label>
@@ -74,13 +107,50 @@
         <object>ServiceResource</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_User_Information</name>
+        <label>Get User Information</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_User_a_System_Admin</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Related_Resource_Information.RelatedRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Service_Territory_and_Resource_Type_Field</name>
         <label>Update Service Territory and Resource Type Field</label>
         <locationX>50</locationX>
         <locationY>503</locationY>
+        <connector>
+            <targetReference>Get_User_Information</targetReference>
+        </connector>
         <inputAssignments>
             <field>Resource_Is_A_Person__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_User_Is_System_Admin_Checkbox</name>
+        <label>Update User Is System Admin Checkbox</label>
+        <locationX>50</locationX>
+        <locationY>911</locationY>
+        <inputAssignments>
+            <field>User_Is_System_Admin__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>

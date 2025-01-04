@@ -100,12 +100,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>materialPickup</componentName>
-                <identifier>c_materialPickup</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>

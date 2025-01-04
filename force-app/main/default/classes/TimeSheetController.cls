@@ -222,6 +222,8 @@ public with sharing class TimeSheetController {
         SELECT
           Id,
           Total_KM__c,
+          StartDate,
+          EndDate,
           (
             SELECT
               Id,

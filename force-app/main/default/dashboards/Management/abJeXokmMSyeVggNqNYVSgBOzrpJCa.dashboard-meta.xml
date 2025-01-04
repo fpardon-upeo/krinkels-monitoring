@@ -57,6 +57,48 @@
                 <chartSummary>
                     <aggregate>Sum</aggregate>
                     <axisBinding>y</axisBinding>
+                    <column>Quote$Amount__c</column>
+                </chartSummary>
+                <componentType>ColumnStacked</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>Quote$CreatedDate</groupingColumn>
+                <groupingColumn>Quote$Status</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                    <groupingSorts>
+                        <groupingLevel>g2</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>Extra Work</header>
+                <legendPosition>Right</legendPosition>
+                <report>SalesPipeline/Extra_Work_Quotes_0Rh</report>
+                <showPercentage>false</showPercentage>
+                <showValues>false</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>Quote Open (Not excecuted)</title>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>7</rowIndex>
+            <rowSpan>7</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>12</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
                     <column>Opportunity.Weighted_Amount__c</column>
                 </chartSummary>
                 <componentType>ColumnStacked</componentType>
@@ -87,7 +129,7 @@
                 <title>Close Date this or next 12 Months</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>7</rowIndex>
+            <rowIndex>14</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>12</numberOfColumns>

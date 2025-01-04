@@ -3601,6 +3601,19 @@
         </sections>
     </reportTypes>
     <reportTypes>
+        <description><!-- Work Orders with Service Appointments --></description>
+        <label><!-- Work Orders with Service Appointments --></label>
+        <name>Work_Orders_with_service_appointments</name>
+        <sections>
+            <label><!-- Service Appointments --></label>
+            <name>Service Appointments</name>
+        </sections>
+        <sections>
+            <label><!-- Work Orders --></label>
+            <name>Work Orders</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Orchestration Run Logs Spring &apos;24 --></description>
         <label><!-- Orchestration Run Logs Spring &apos;24 --></label>
         <name>flow_orchestration_log_ootb_crt_two_four_eight</name>
