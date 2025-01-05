@@ -245,6 +245,7 @@ export default class TimeSheetCalendar extends LightningElement {
           ) {
             this.isLoading = false;
             this.showNoEntriesModal = true;
+            this.isTimeSheetSubmittedOrApproved = true;
 
             const calendarEl = this.template.querySelector("div.fullcalendar");
 

@@ -2109,4 +2109,20 @@
         <shortDescription>Send Sign Request</shortDescription>
         <value>Send Sign Request</value>
     </labels>
+    <labels>
+        <fullName>StartDay_TodayProgress</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_TodayProgress</shortDescription>
+        <value>TODAY&apos;S PROGRESS</value>
+    </labels>
+    <labels>
+        <fullName>StartDay_WeatherForecast_Text</fullName>
+        <categories>StartDay</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartDay_WeatherForecast_Text</shortDescription>
+        <value>WEATHER FORECAST</value>
+    </labels>
 </CustomLabels>

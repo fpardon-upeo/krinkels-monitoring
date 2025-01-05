@@ -5,39 +5,66 @@ Contains the list of metadatas that are excluded from the backup.<br/>Other meta
 Metadatas: 9
 
 <details><summary>AuthProvider (*)</summary>
-  • ALL (wildcard *)<br/>
+
+
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/AuthProviders/home" target="_blank">ALL (wildcard *)</a><br/>
+
 </details>
 
 <details><summary>Certificate (*)</summary>
+
+
   • ALL (wildcard *)<br/>
+
 </details>
 
 <details><summary>ConnectedApp (*)</summary>
-  • ALL (wildcard *)<br/>
+
+
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ConnectedApps/home" target="_blank">ALL (wildcard *)</a><br/>
+
 </details>
 
 <details><summary>CustomObjectTranslation (*)</summary>
+
+
   • ALL (wildcard *)<br/>
+
 </details>
 
 <details><summary>Document (*)</summary>
+
+
   • ALL (wildcard *)<br/>
+
 </details>
 
 <details><summary>LightningMessageChannel (*)</summary>
+
+
   • ALL (wildcard *)<br/>
+
 </details>
 
 <details><summary>ListView (*)</summary>
+
+
   • ALL (wildcard *)<br/>
+
 </details>
 
 <details><summary>SamlSsoConfig (*)</summary>
+
+
   • ALL (wildcard *)<br/>
+
 </details>
 
 <details><summary>UiViewDefinition (*)</summary>
+
+
   • ALL (wildcard *)<br/>
+
 </details>
 
 

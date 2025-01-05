@@ -769,12 +769,20 @@
         <name>StartDay_Timesheet_Button_Text</name>
     </customLabels>
     <customLabels>
+        <label><!-- StartDay_TodayProgress --></label>
+        <name>StartDay_TodayProgress</name>
+    </customLabels>
+    <customLabels>
         <label><!-- StartDay_Waste_Button_Sub_Text --></label>
         <name>StartDay_Waste_Button_Sub_Text</name>
     </customLabels>
     <customLabels>
         <label><!-- StartDay_Waste_Button_Text --></label>
         <name>StartDay_Waste_Button_Text</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- StartDay_WeatherForecast_Text --></label>
+        <name>StartDay_WeatherForecast_Text</name>
     </customLabels>
     <customLabels>
         <label><!-- TimeSheetEntryForm_BackButton --></label>

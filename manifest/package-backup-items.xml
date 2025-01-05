@@ -1409,10 +1409,14 @@
         <members>StartDay_Timesheet_Button_Sub_Text</members>
         <members>StartDay_Timesheet_Button_Text</members>
         <members>StartDay_Timesheet_Button_Text</members>
+        <members>StartDay_TodayProgress</members>
+        <members>StartDay_TodayProgress</members>
         <members>StartDay_Waste_Button_Sub_Text</members>
         <members>StartDay_Waste_Button_Sub_Text</members>
         <members>StartDay_Waste_Button_Text</members>
         <members>StartDay_Waste_Button_Text</members>
+        <members>StartDay_WeatherForecast_Text</members>
+        <members>StartDay_WeatherForecast_Text</members>
         <members>TimeSheetEntryForm_BackButton</members>
         <members>TimeSheetEntryForm_BackButton</members>
         <members>TimeSheetEntryForm_CancelButton</members>

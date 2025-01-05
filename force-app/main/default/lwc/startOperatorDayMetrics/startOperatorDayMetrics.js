@@ -5,13 +5,16 @@
 import { LightningElement, api, wire, track } from "lwc";
 import { getLocationService } from "lightning/mobileCapabilities";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
-import getNextHourForecast from "@salesforce/apex/WeatherService.getNextHourForecast";
 import { gql, graphql, refreshGraphQL } from "lightning/uiGraphQLApi";
 import ID from "@salesforce/user/Id";
-import {NavigationMixin} from "lightning/navigation";
+import { NavigationMixin } from "lightning/navigation";
 import firstWorkOrderChecker from "@salesforce/apex/FirstWorkOrderChecker.hasFirstWorkOrder";
-
-export default class StartOperatorDayMetrics extends NavigationMixin(LightningElement) {
+import getNextHourForecast from "@salesforce/apex/WeatherService.getNextHourForecast";
+import StartDay_TodayProgress from "@salesforce/label/c.StartDay_TodayProgress";
+import StartDay_WeatherForecast_Text from "@salesforce/label/c.StartDay_WeatherForecast_Text";
+export default class StartOperatorDayMetrics extends NavigationMixin(
+  LightningElement
+) {
   //--------------------------------------API------------------------------------------//
 
   @api serviceResourceId;
@@ -27,6 +30,10 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
   serviceAppointments;
   hasFirstWorkOrder = false;
 
+  labels = {
+    StartDay_TodayProgress,
+    StartDay_WeatherForecast_Text
+  };
 
   @track nextAppointment = {};
 
@@ -50,13 +57,13 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
     //this.fetchWeather( 51.294896, 4.437022);
     this.getLocation();
     firstWorkOrderChecker().then((result) => {
-        console.log("hasFirstWorkOrder", result);
-        this.hasFirstWorkOrder = result;
-        //Fire an event to the parent component to notify it of the first work order
-        const event = new CustomEvent("firstworkorderchecked", {
-          detail: this.hasFirstWorkOrder
-        });
-        this.dispatchEvent(event);
+      console.log("hasFirstWorkOrder", result);
+      this.hasFirstWorkOrder = result;
+      //Fire an event to the parent component to notify it of the first work order
+      const event = new CustomEvent("firstworkorderchecked", {
+        detail: this.hasFirstWorkOrder
+      });
+      this.dispatchEvent(event);
     });
   }
 
@@ -185,7 +192,6 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
     }
   }
 
-
   @api
   async handleRefresh() {
     try {
@@ -204,9 +210,9 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
   handleOpenWorkOrder() {
     setTimeout(() => {
       this[NavigationMixin.Navigate]({
-        "type": "standard__webPage",
-        "attributes": {
-          "url": `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
+        type: "standard__webPage",
+        attributes: {
+          url: `com.salesforce.fieldservice://v1/sObject/${this.nextWorkOrderId}`
         }
       });
     }, 500);
@@ -219,21 +225,31 @@ export default class StartOperatorDayMetrics extends NavigationMixin(LightningEl
   }
 
   calculateAppointmentsMetrics() {
-    console.log('calculateAppointmentsMetrics')
+    console.log("calculateAppointmentsMetrics");
     this.totalAppointments = this.serviceAppointments.length;
     const completedStatuses = ["Completed", "Canceled", "Cannot Complete"];
     this.completedAppointments = this.serviceAppointments.filter(
       (appointment) => completedStatuses.includes(appointment.Status)
     ).length;
-    const inProgressStatuses = ["Completed", "Canceled", "Cannot Complete", "In Progress", "Travelling"];
-    const hasInProgress = this.serviceAppointments.filter(
-      (appointment) => inProgressStatuses.includes(appointment.Status)
-    ).length > 0;
+    const inProgressStatuses = [
+      "Completed",
+      "Canceled",
+      "Cannot Complete",
+      "In Progress",
+      "Travelling"
+    ];
+    const hasInProgress =
+      this.serviceAppointments.filter((appointment) =>
+        inProgressStatuses.includes(appointment.Status)
+      ).length > 0;
     console.log("completed appointments", this.completedAppointments);
     console.log("total appointments", this.totalAppointments);
-    console.log("in progress appointments", this.serviceAppointments.filter(
-        (appointment) => inProgressStatuses.includes(appointment.Status)
-    ).length);
+    console.log(
+      "in progress appointments",
+      this.serviceAppointments.filter((appointment) =>
+        inProgressStatuses.includes(appointment.Status)
+      ).length
+    );
     console.log("hasInProgress", hasInProgress);
     this.showCompletion = true;
 

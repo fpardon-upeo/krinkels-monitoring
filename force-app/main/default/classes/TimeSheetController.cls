@@ -216,7 +216,6 @@ public with sharing class TimeSheetController {
 
   @AuraEnabled
   public static TimeSheet getMileageEntries(Id recordId) {
-    System.debug('recordId: ' + recordId);
     try {
       return [
         SELECT
@@ -230,9 +229,6 @@ public with sharing class TimeSheetController {
               Allowance_Type__c,
               Starting_Mileage__c,
               Ending_Mileage__c,
-              Starting_Location_Type__c,
-              Ending_Location_Type__c,
-              Calculated_Mileage__c,
               Type__c
             FROM Mileage_Entries__r
           )

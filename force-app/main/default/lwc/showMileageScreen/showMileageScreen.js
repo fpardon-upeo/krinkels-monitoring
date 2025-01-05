@@ -1,4 +1,5 @@
-import { LightningElement, api, track } from "lwc";
+import { LightningElement, api, track, wire } from "lwc";
+import { gql, graphql } from "lightning/uiGraphQLApi";
 import getMileageEntries from "@salesforce/apex/TimeSheetController.getMileageEntries";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import Mileage_Start_Day from "@salesforce/label/c.Mileage_Start_Day";
@@ -27,6 +28,7 @@ import Mileage_Header from "@salesforce/label/c.Mileage_Header";
 
 export default class ShowMileageScreen extends LightningElement {
   @api recordId;
+  @api serviceResourceId;
 
   @track kmAmount = 0;
   @track mileageEntries = [];
@@ -34,6 +36,11 @@ export default class ShowMileageScreen extends LightningElement {
   @track outMileageEntries = [];
   @track ownMileageEntries = [];
   @track mileageEntryIdBeingHandled;
+  @track selectedRows = [];
+  @track workOrderId;
+  @track startDate;
+  @track endDate;
+  @track disableNextButton = true;
 
   // Modal states
   @track showMileageEntries = false;
@@ -43,7 +50,7 @@ export default class ShowMileageScreen extends LightningElement {
   @track showInMileageEntryNewForm = false;
   @track showMileageEntryEditForm = false;
   @track showOwnMileageMessage = false;
-
+  @track showAppointmentScreen = false;
   //Labels
   labels = {
     Mileage_Start_Day,
@@ -71,6 +78,149 @@ export default class ShowMileageScreen extends LightningElement {
     Mileage_Header
   };
 
+  @wire(graphql, {
+    query: gql`
+      query ServiceAppointments(
+        $serviceResourceId: ID
+        $startDate: DateTimeInput
+        $endDate: DateTimeInput
+      ) {
+        uiapi {
+          query {
+            AssignedResource(
+              where: {
+                and: [
+                  { ServiceResourceId: { eq: $serviceResourceId } }
+                  { ServiceAppointment: { Status: { ne: "Scheduled" } } }
+                  { ServiceAppointment: { Status: { ne: "Unscheduled" } } }
+                  { ServiceAppointment: { Status: { ne: "Cannot Complete" } } }
+                  { ServiceAppointment: { Status: { ne: "Cancelled" } } }
+                  {
+                    ServiceAppointment: {
+                      SchedStartTime: { gte: $startDate, lte: $endDate }
+                    }
+                  }
+                ]
+              }
+              orderBy: {
+                ServiceAppointment: { SchedStartTime: { order: ASC } }
+              }
+            ) {
+              edges {
+                node {
+                  ServiceAppointment {
+                    AppointmentNumber {
+                      value
+                      displayValue
+                    }
+                    Account {
+                      Name {
+                        value
+                        displayValue
+                      }
+                    }
+                    Id
+                    Subject {
+                      value
+                      displayValue
+                    }
+                    SchedStartTime {
+                      value
+                      displayValue
+                    }
+                    ParentRecordId {
+                      value
+                      displayValue
+                    }
+                    WorkType {
+                      Name {
+                        value
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: "$serviceAppointmentsVariables"
+  })
+  appointmentsQueryResult({ error, data }) {
+    if (data) {
+      this.data = data.uiapi.query.AssignedResource.edges.map(
+        (edge) => edge.node.ServiceAppointment
+      );
+      this.serviceAppointments = this.data.map((appointment) => {
+        //Pretty schedule start time
+        let date = new Date(appointment.SchedStartTime.value);
+        //Use the date and the cleaned up hours and minutes, use 24h format
+        let dateFormatted =
+          date.getDate() +
+          "/" +
+          (date.getMonth() + 1) +
+          " " +
+          date.getHours() +
+          ":" +
+          date.getMinutes();
+        //Make sure we don't return things like 14:0, but 14:00
+        dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
+
+        let icon = "";
+        if (appointment.WorkType.Name.value === "Waste Management") {
+          icon = "🗑️";
+        } else if (appointment.WorkType.Name.value === "Internal Depot") {
+          icon = "🏭";
+        } else {
+          icon = "💲";
+        }
+
+        return {
+          Appointment:
+            icon +
+            " " +
+            appointment.Account.Name.value +
+            " - " +
+            dateFormatted +
+            " - " +
+            appointment.WorkType.Name.value,
+          AppointmentNumber: appointment.AppointmentNumber.value,
+          Subject: appointment.Subject.value,
+          Id: appointment.Id,
+          SchedStartTime: appointment.SchedStartTime.value,
+          ParentRecordId: appointment.ParentRecordId.value,
+          WorkOrderType: appointment.WorkType.Name.value
+        };
+      });
+      console.log(JSON.stringify(this.serviceAppointments));
+    } else if (error) {
+      console.log(error);
+    }
+  }
+
+  get serviceAppointmentsVariables() {
+    // // Get the dates for last week's start and next week's end
+    // const today = new Date();
+    // const lastWeekStart = new Date(today);
+    // lastWeekStart.setDate(today.getDate() - today.getDay() - 7); // Beginning of last week
+    // const nextWeekEnd = new Date(today);
+    // nextWeekEnd.setDate(today.getDate() - today.getDay() + 21); // End of next week
+
+    //Use the dates from the time sheet being loaded
+    const startDateTime = new Date(this.startDate);
+    const endDateTime = new Date(this.endDate);
+
+    // Set end date to end of day
+    endDateTime.setHours(23, 59, 59, 999);
+
+    return {
+      serviceResourceId: this.serviceResourceId,
+      startDate: { value: startDateTime.toISOString() },
+      endDate: { value: endDateTime.toISOString() }
+    };
+  }
+
   connectedCallback() {
     this.loadMileageData();
   }
@@ -80,13 +230,12 @@ export default class ShowMileageScreen extends LightningElement {
       .then((result) => {
         if (result) {
           this.kmAmount = result.Total_KM__c || 0;
+          this.startDate = result.StartDate;
+          this.endDate = result.EndDate ? result.EndDate : result.StartDate;
+
           if (result.Mileage_Entries__r) {
-            console.log("result.Mileage_Entries__r", result);
             this.mileageEntries = [...result.Mileage_Entries__r];
-            console.log(
-              "this.mileageEntries",
-              JSON.stringify(this.mileageEntries)
-            );
+
             this.categorizeMileageEntries();
           }
         }
@@ -135,6 +284,9 @@ export default class ShowMileageScreen extends LightningElement {
     this.showInMileageEntryNewForm = false;
     this.showMileageEntryEditForm = false;
     this.showOwnMileageMessage = false;
+    this.showAppointmentScreen = false;
+
+    this.workOrderId = null;
   }
 
   handleShowMileageInfo() {
@@ -193,6 +345,8 @@ export default class ShowMileageScreen extends LightningElement {
   }
 
   handleSuccessMileageEntryNew(event) {
+    this.workOrderId = null;
+
     console.log("event.detail", event.detail);
     console.log("event", event);
 
@@ -207,7 +361,7 @@ export default class ShowMileageScreen extends LightningElement {
     this.dispatchEvent(toastEvent);
   }
 
-  handleSuccessMileageEntryEdit() {
+  handleSuccessMileageEntryEdit(event) {
     this.handleCloseForm();
     this.loadMileageData();
 
@@ -235,5 +389,58 @@ export default class ShowMileageScreen extends LightningElement {
 
     // Then dispatch the event
     this.dispatchEvent(new CustomEvent("back"));
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  columns = [
+    {
+      label: this.labels.AppointmentPicker_Appointments_Header,
+      fieldName: "Appointment",
+      type: "text",
+      wrapText: true
+    }
+  ];
+
+  handleRowSelection(event) {
+    const button = this.template.querySelector(".grey-button");
+
+    //If the button exists, remove the grey-button class and add the submit-button class
+    // This will only happens once, when the user selects an option
+    if (button) {
+      button.classList.remove("grey-button");
+      button.classList.add("submit-button");
+    }
+
+    //Continue with the rest of the logic, this will happen every time the user selects an option
+    const selectedRows = event.detail.selectedRows;
+    console.log("selectedRows", JSON.stringify(selectedRows));
+    this.selectedRows = selectedRows;
+    this.workOrderId = selectedRows[0].ParentRecordId;
+    this.disableNextButton = selectedRows.length === 0;
+  }
+
+  handleSetAppointmentClicked() {
+    this.showAppointmentScreen = true;
+  }
+
+  handleNext() {
+    // Close the appointment screen
+    this.showAppointmentScreen = false;
+
+    // Return to the new mileage entry form
+    if (this.showInMileageEntryNewForm) {
+      this.showInMileageEntryNewForm = true;
+    } else if (this.showOutMileageEntryNewForm) {
+      this.showOutMileageEntryNewForm = true;
+    }
+  }
+
+  get workOrderText() {
+    if (this.workOrderId) {
+      return "Change Work Order";
+    } else {
+      return "Select Work Order";
+    }
   }
 }
