@@ -856,6 +856,7 @@
         <members>ServiceContract.Default_LMRA__c</members>
         <members>ServiceContract.External_Contract_Reference__c</members>
         <members>ServiceContract.Generate_Maintenance_Plan__c</members>
+        <members>ServiceContract.Global_Contract_ID__c</members>
         <members>ServiceContract.Indexation_Date__c</members>
         <members>ServiceContract.Indexation_Formula__c</members>
         <members>ServiceContract.Indexation_Needed__c</members>

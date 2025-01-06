@@ -399,6 +399,11 @@
             <field>Service_Appointments_Icon_on_Gantt__c</field>
             <table>ServiceContract</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Global_Contract_ID__c</field>
+            <table>ServiceContract</table>
+        </columns>
         <masterLabel>Service Contracts</masterLabel>
     </sections>
     <sections>

@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>Link_contract__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Global_Contract_ID__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

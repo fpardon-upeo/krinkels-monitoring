@@ -211,6 +211,12 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Global_Contract_ID__c</fieldItem>
+                <identifier>RecordGlobal_Contract_ID__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-dd481e51-48d0-4c90-a635-63bd25b51d48</name>
         <type>Facet</type>
     </flexiPageRegions>
