@@ -171,15 +171,6 @@
         <fields>ATAK_Project_Code__c</fields>
         <relatedList>ATAK_Project_Financial_Account__c.ATAK_Project__c</relatedList>
     </relatedLists>
-    <relatedLists>
-        <fields>CONTRACT.NAME</fields>
-        <fields>CONTRACT.STARTDATE</fields>
-        <fields>CONTRACT.ENDDATE</fields>
-        <fields>CONTRACT.APPROVALSTATUS</fields>
-        <fields>CONTRACT.STATUS</fields>
-        <fields>CONTRACT.STATUSINDICATOR</fields>
-        <relatedList>ServiceContract.Global_Contract_ID__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

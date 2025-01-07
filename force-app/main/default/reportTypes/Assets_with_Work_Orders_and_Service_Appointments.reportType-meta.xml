@@ -902,6 +902,11 @@
             <field>Invoice_Type__c</field>
             <table>Asset.WorkOrders</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ATAK_Project_Code__c</field>
+            <table>Asset.WorkOrders</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>

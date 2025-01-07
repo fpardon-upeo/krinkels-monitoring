@@ -61,9 +61,9 @@
         <label>RT</label>
     </customValue>
     <customValue>
-        <fullName>DI</fullName>
+        <fullName>DIVU</fullName>
         <default>false</default>
-        <label>DI</label>
+        <label>DIVU</label>
     </customValue>
     <customValue>
         <fullName>A</fullName>

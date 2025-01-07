@@ -13,6 +13,9 @@ flowchart TB
 START(["START<br/><b>Screen Flow</b>"]):::startClass
 click START "#general-information" "705287189"
 
+Set_Default_Department_Variable[\"🟰 <em></em><br/>Set Default Department Variable"/]:::assignments
+click Set_Default_Department_Variable "#set_default_department_variable" "1953268795"
+
 Set_Department_Variable[\"🟰 <em></em><br/>Set Department Variable"/]:::assignments
 click Set_Department_Variable "#set_department_variable" "3663044599"
 
@@ -23,7 +26,7 @@ Set_Work_Order_Values[\"🟰 <em></em><br/>Set Work Order Values"/]:::assignment
 click Set_Work_Order_Values "#set_work_order_values" "156156866"
 
 Check_Service_Resource_Type{"🔀 <em></em><br/>Check Service Resource Type"}:::decisions
-click Check_Service_Resource_Type "#check_service_resource_type" "1653469501"
+click Check_Service_Resource_Type "#check_service_resource_type" "18318353"
 
 Create_Assigned_Resource[("➕ <em></em><br/>Create Assigned Resource")]:::recordCreates
 click Create_Assigned_Resource "#create_assigned_resource" "2218988301"
@@ -58,12 +61,13 @@ click ServiceAppointment "#serviceappointment" "3513791040"
 Work_Order_Initial_Screen(["💻 <em></em><br/>Work Order Initial Screen"]):::screens
 click Work_Order_Initial_Screen "#work_order_initial_screen" "935218798"
 
+Set_Default_Department_Variable --> Get_Asset_for_Work_Order
 Set_Department_Variable --> Get_Asset_for_Work_Order
 Set_Department_Variable_Indoor --> Get_Asset_for_Work_Order
 Set_Work_Order_Values --> Create_Work_Order
 Check_Service_Resource_Type --> |"Is Outdoor Resource"| Set_Department_Variable
 Check_Service_Resource_Type --> |"Is Indoor Resource"| Set_Department_Variable_Indoor
-Check_Service_Resource_Type --> |"Default Outcome"| Get_Asset_for_Work_Order
+Check_Service_Resource_Type --> |"Default Outcome"| Set_Default_Department_Variable
 Create_Assigned_Resource --> End_Screen
 Create_Work_Order --> Get_Service_Appointment
 Get_Asset_for_Work_Order --> Get_Work_Type
@@ -79,20 +83,20 @@ START -->  Work_Order_Initial_Screen
 END_End_Screen(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
@@ -133,6 +137,24 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 
 
 ## Flow Nodes Details
+
+### Set_Default_Department_Variable
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Assignment|
+|Label|Set Default Department Variable|
+|Connector|[Get_Asset_for_Work_Order](#get_asset_for_work_order)|
+
+
+#### Assignments
+
+|Assign To Reference|Operator|Value|
+|:-- |:--:|:--: |
+|departmentType| Assign|Outdoor|
+
+
+
 
 ### Set_Department_Variable
 
@@ -198,7 +220,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |:---|:---|
 |Type|Decision|
 |Label|Check Service Resource Type|
-|Default Connector|[Get_Asset_for_Work_Order](#get_asset_for_work_order)|
+|Default Connector|[Set_Default_Department_Variable](#set_default_department_variable)|
 |Default Connector Label|Default Outcome|
 
 
@@ -214,7 +236,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 
 |Condition Id|Left Value Reference|Operator|Right Value|
 |:-- |:-- |:--:|:--: |
-|1|Get_Service_Resource.RelatedRecord.Department| Equal To|Landscaping - Billing plan|
+|1|$User.Department| Equal To|Landscaping - Billing plan|
 
 
 
@@ -231,7 +253,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 
 |Condition Id|Left Value Reference|Operator|Right Value|
 |:-- |:-- |:--:|:--: |
-|1|Get_Service_Resource.RelatedRecord.Department| Equal To|Indoor - Billing plan|
+|1|$User.Department| Equal To|Indoor - Billing plan|
 
 
 

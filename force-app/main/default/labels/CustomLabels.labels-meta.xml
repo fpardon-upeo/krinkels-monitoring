@@ -2125,4 +2125,28 @@
         <shortDescription>StartDay_WeatherForecast_Text</shortDescription>
         <value>WEATHER FORECAST</value>
     </labels>
+    <labels>
+        <fullName>WorkOrderActions_Extra_Work_Description</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Extra_Work_Description</shortDescription>
+        <value>Create a new work order for extra work</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Extra_Work_Header</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Extra_Work_Header</shortDescription>
+        <value>Create Extra Work</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrderActions_Extra_Work_Subject</fullName>
+        <categories>WorkOrderActions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrderActions_Extra_Work_Subject</shortDescription>
+        <value>Work Description</value>
+    </labels>
 </CustomLabels>

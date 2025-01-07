@@ -426,3 +426,14 @@
     font-size: 0.9375rem;
   }
 }
+
+.work-order-button {
+  color: white;
+  background: #449f03;
+  border-radius: 12px;
+  padding: 0.25rem 0.75rem;
+}
+
+.work-order-container {
+  padding-bottom: 1rem;
+}

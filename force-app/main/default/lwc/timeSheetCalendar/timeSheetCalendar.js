@@ -179,6 +179,24 @@ export default class TimeSheetCalendar extends LightningElement {
     console.log("connectedCallback");
     console.log("recordId", this.recordId);
     console.log("resourceId", this.resourceId);
+
+    if (!this.recordId) {
+      console.log("there's no recordId");
+      this.isLoading = false;
+      this.showNoEntriesModal = true;
+      this.isTimeSheetSubmittedOrApproved = true;
+
+      // Initialize this.date with today's date in DD-MM-YYYY format
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, "0");
+      const mm = String(today.getMonth() + 1).padStart(2, "0");
+      const yyyy = today.getFullYear();
+      this.date = `${dd}-${mm}-${yyyy}`;
+
+      this.disableNextButton = true;
+
+      return;
+    }
     // First load the required styles and scripts
     Promise.all([
       loadStyle(this, FullCalendarJS + "/lib/main.css"),
@@ -858,11 +876,25 @@ export default class TimeSheetCalendar extends LightningElement {
       this.isFurtherButtonDisabled = true;
     }
 
+    console.log(`${newYear}-${newMonth}-${newDay}`);
     getTimeSheetByResourceAndDate({
       serviceResourceId: this.resourceId,
       endDate: `${newYear}-${newMonth}-${newDay}`
     })
       .then((result) => {
+        // If no timesheet found, show no entries modal
+        if (!result.timeSheet) {
+          this.isLoading = false;
+          this.showNoEntriesModal = true;
+          const calendarEl = this.template.querySelector("div.fullcalendar");
+          calendarEl.classList.add("hide");
+          this.isTimeSheetSubmittedOrApproved = true;
+
+          console.log("there's no timeSheet with this resource and date");
+
+          return;
+        }
+
         this.recordId = result.timeSheet.Id;
         // Check if the TimeSheet is submitted or approved
         if (
@@ -908,13 +940,11 @@ export default class TimeSheetCalendar extends LightningElement {
           !result.timeSheet?.TimeSheetEntries &&
           result.resourceAbsences.length === 0
         ) {
-          this.isLoading = false;
           this.showNoEntriesModal = true;
-          this.isTimeSheetSubmittedOrApproved = true;
-
-          const calendarEl = this.template.querySelector("div.fullcalendar");
+          this.isLoading = false;
 
           calendarEl.classList.add("hide");
+          this.isTimeSheetSubmittedOrApproved = true;
           return;
         }
 
@@ -1002,6 +1032,26 @@ export default class TimeSheetCalendar extends LightningElement {
    * Decreases the date by one day
    */
   handleBackDays() {
+    // Calculate date 30 days ago
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(new Date().getDate() - 30);
+
+    // Convert current displayed date (this.date) from DD-MM-YYYY to Date object
+    let [currentDay, currentMonth, currentYear] = this.date.split("-");
+    let currentDate = new Date(currentYear, currentMonth - 1, currentDay);
+
+    // Calculate one day before current displayed date
+    let previousDay = new Date(currentDate);
+    previousDay.setDate(currentDate.getDate() - 1);
+
+    // Check if going back one more day would exceed 30 days limit
+    if (previousDay < thirtyDaysAgo) {
+      console.log("Cannot go back more than 30 days");
+      this.isBackButtonDisabled = true;
+      return;
+    }
+
+    // If we can go back, proceed with existing handleBackDays logic
     this.isLoading = true;
     this.showNoEntriesModal = false;
 
@@ -1056,11 +1106,26 @@ export default class TimeSheetCalendar extends LightningElement {
       this.isFurtherButtonDisabled = false;
     }
 
+    console.log(`${newYear}-${newMonth}-${newDay}`);
+
     getTimeSheetByResourceAndDate({
       serviceResourceId: this.resourceId,
       endDate: `${newYear}-${newMonth}-${newDay}`
     })
       .then((result) => {
+        // If no timesheet found, show no entries modal
+        if (!result.timeSheet) {
+          this.isLoading = false;
+          this.showNoEntriesModal = true;
+          const calendarEl = this.template.querySelector("div.fullcalendar");
+          calendarEl.classList.add("hide");
+          this.isTimeSheetSubmittedOrApproved = true;
+
+          console.log("there's no timeSheet with this resource and date");
+
+          return;
+        }
+
         this.recordId = result.timeSheet.Id;
 
         // Check if the TimeSheet is submitted or approved

@@ -130,7 +130,9 @@
     </div>
 
     <!-- Calendar -->
-    <div class="fullcalendar"></div>
+    <template if:true={recordId}>
+      <div class="fullcalendar"></div>
+    </template>
 
     <template if:true={showNoEntriesModal}>
       <div class="warning-container">

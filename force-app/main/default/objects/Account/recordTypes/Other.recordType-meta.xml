@@ -218,6 +218,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Intervention_registration_type__c</picklist>
+        <values>
+            <fullName>Exact Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Week of Excecution</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>LMRA_Type__c</picklist>
         <values>
             <fullName>Full</fullName>

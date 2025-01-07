@@ -336,6 +336,9 @@ private class ATAKPerformanceServiceTest {
         ATAKPerformanceWrapper wrapper = ATAKPerformanceService.prepareATAKPerformanceData(ts.Id);
         Test.stopTest();
 
+        System.debug(wrapper.data);
+        System.debug(wrapper.data.size());
+
         System.assertEquals(5, wrapper.data.size(), 'Should have 5 entries (2 HR + 1 RT + 2 KM, first and last travel filtered)');
 
         // Verify the specific entries

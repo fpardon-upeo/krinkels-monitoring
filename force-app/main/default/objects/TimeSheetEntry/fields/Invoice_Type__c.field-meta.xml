@@ -3,7 +3,7 @@
     <fullName>Invoice_Type__c</fullName>
     <description>For Reporting Purposes</description>
     <externalId>false</externalId>
-    <formula>TEXT(WorkOrder.ServiceContract.Invoice_Type__c)</formula>
+    <formula>TEXT( WorkOrder.ServiceContract.Contract_type__c )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Invoice Type</label>
     <required>false</required>

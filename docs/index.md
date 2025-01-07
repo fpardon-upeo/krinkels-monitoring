@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (15440) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (3432) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (15466) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (3458) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3249) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3272) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -121,6 +121,7 @@ ___
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps](flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps-history.md) | RecordAfterSave |  |
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed](flows/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.md) | RecordAfterSave |  |
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines](flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines-history.md) | RecordAfterSave |  |
+| WorkOrder | [Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps](flows/Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps-history.md) | RecordAfterSave |  |
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA](flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA-history.md) | RecordAfterSave | This flow populates the contact field on a work order and its related service appointment on creation. It takes an operational contact of the related operational account. |
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status](flows/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.md) | RecordAfterSave | This flow updates the status of the related service appointment so that it is aligned and has the same status. |
 | WorkOrder | [Work_Order_After_Update_Add_Log_KM](flows/Work_Order_After_Update_Add_Log_KM.md) | RecordAfterSave |  |
@@ -130,6 +131,7 @@ ___
 | WorkOrder | [Work_Order_Goodwill_Task_Check](flows/Work_Order_Goodwill_Task_Check.md) | RecordBeforeSave | For reporting purposes, this flow will tick the 'WO with Goodwill Tasks' checkbox to identify work orders where goodwill tasks have been performed. |
 | WorkOrder | [Work_Order_Scheduled_High_Prio_Work_Order_Overdue](flows/Work_Order_Scheduled_High_Prio_Work_Order_Overdue.md) [🕒](flows/Work_Order_Scheduled_High_Prio_Work_Order_Overdue-history.md) | Scheduled | sends notification to Contract Manager when a high prio work order is overdue |
 | WorkOrder | [Work_Order_Send_Customer_Notification_Crew_Inbound](flows/Work_Order_Send_Customer_Notification_Crew_Inbound.md) [🕒](flows/Work_Order_Send_Customer_Notification_Crew_Inbound-history.md) | RecordAfterSave |  |
+| WorkPlan | [Work_Plan_Extra_Work_Steps](flows/Work_Plan_Extra_Work_Steps.md) [🕒](flows/Work_Plan_Extra_Work_Steps-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status](flows/Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status.md) | RecordAfterSave |  |

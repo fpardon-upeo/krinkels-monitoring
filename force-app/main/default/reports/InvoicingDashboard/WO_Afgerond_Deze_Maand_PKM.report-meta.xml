@@ -31,7 +31,7 @@
         <field>ServiceContract.WorkOrders$Billed__c</field>
     </columns>
     <columns>
-        <field>ServiceContract$Invoice_Type__c</field>
+        <field>ServiceContract$Contract_type__c</field>
     </columns>
     <description>WO with status completed (Work + Rework)</description>
     <filter>

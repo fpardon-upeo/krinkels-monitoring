@@ -15,11 +15,6 @@
         <default>false</default>
         <label>English</label>
     </customValue>
-    <customValue>
-        <fullName>nl</fullName>
-        <default>false</default>
-        <label>Flemish</label>
-    </customValue>
     <masterLabel>Language</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

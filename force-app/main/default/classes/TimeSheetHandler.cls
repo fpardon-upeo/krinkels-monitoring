@@ -6,6 +6,8 @@ public with sharing class TimeSheetHandler {
 
     public static void onAfterInsert(List<TimeSheet> timeSheets){
 
+        try {
+
         //Get the service resources tied ti the timesheets
         List<String> resourceIds = new List<String>();
         for(TimeSheet ts : timeSheets){
@@ -71,6 +73,10 @@ public with sharing class TimeSheetHandler {
         System.debug('TimeSheets with working hours: ' + timeSheets);
 
         update timeSheetsToUpdate;
+
+        } catch (Exception e){
+            System.debug('Error: ' + e.getMessage());
+        }
     }
 
     public static Integer dayOfWeekNumber(Date aDate) {
@@ -80,25 +86,25 @@ public with sharing class TimeSheetHandler {
     public static String dayOfWeekString(Integer dayOfWeek){
         switch on dayOfWeek {
             when 1 {
-                return 'Sunday';
-            }
-            when 2 {
                 return 'Monday';
             }
-            when 3 {
+            when 2 {
                 return 'Tuesday';
             }
-            when 4 {
+            when 3 {
                 return 'Wednesday';
             }
-            when 5 {
+            when 4 {
                 return 'Thursday';
             }
-            when 6 {
+            when 5 {
                 return 'Friday';
             }
-            when 0 {
+            when 6 {
                 return 'Saturday';
+            }
+            when 0 {
+                return 'Sunday';
             }
             when else {
                 return '';

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to customer with scheduled day for excecution</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Notification - Scheduled WO Day (ENG)</name>
+    <pageDevName>Notification_Scheduled_WO_Day_ENG</pageDevName>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>Planned intervention - [{{{WorkOrder.WorkOrderNumber}}}{{{WorkOrder.Customer_Reference__c}}}]</subject>
+    <textOnly>Dear customer,
+
+Good news! An intervention under your contract is scheduled soon. 
+
+You will find the key details below:
+
+ - Contract description: {{{WorkOrder.Name_Commercial_Contract__c}}}
+ - {{{WorkOrder.Product__c}}}
+
+ - Location: 
+ - {{{WorkOrder.Address}}}
+
+The intervention takes place on {{{WorkOrder.Excecution_Week__c}}}.
+
+For everything to run smoothly, we kindly ask you to clear the necessary areas in advance. This will allow us to get started without delay.
+
+Do you have any questions or want to discuss anything? Feel free to let us know via the details in the email signature below. We will be happy to help you further. 
+
+Thank you in advance for your cooperation!
+
+Kind regards,
+
+{{{WorkOrder.Name_Contract_Manager__c}}}
+
+{{{WorkOrder.Mobile_Contract_Manager__c}}}
+
+[Image alt text: Logo]
+
+Please consider the environment before printing this email
+
+Krinkels Greencare nv- RPR Brussel – BE 0457 071 225 - Rue Emile Pathéstraat 410, 1190 Bruxelles/Brussel</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

@@ -174,19 +174,19 @@
             </button>
           </div>
           <div
-                  class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons"
+            class="slds-col slds-size_1-of-1 slds-p-bottom_medium action-buttons"
           >
             <button
-                    class="action-button brand"
-                    ontouchstart={handleTouchStart}
-                    ontouchend={handleTouchEnd}
-                    onclick={handleEndDayWithDepotClicked}
+              class="action-button brand"
+              ontouchstart={handleTouchStart}
+              ontouchend={handleTouchEnd}
+              onclick={handleEndDayWithDepotClicked}
             >
               <span class="button-icon">
                 <lightning-icon
-                        icon-name="utility:waits"
-                        size="medium"
-                        class="slds-m-bottom_small"
+                  icon-name="utility:waits"
+                  size="medium"
+                  class="slds-m-bottom_small"
                 >
                 </lightning-icon>
               </span>
@@ -238,7 +238,9 @@
       </div>
       <div class="bottom-sheet-content">
         <div class="table-container">
-          <c-send-notification-action onbubble={handleBubbleNotification}></c-send-notification-action>
+          <c-send-notification-action
+            onbubble={handleBubbleNotification}
+          ></c-send-notification-action>
           <div class="datatable-wrapper">
             <lightning-datatable
               class="slds-table_striped slds-cell-wrap"
@@ -315,26 +317,29 @@
             <div class="slds-col">
               <lightning-input-field
                 field-name="Allowance_Type__c"
+                required
               ></lightning-input-field>
               <lightning-input-field
                 field-name="Type__c"
                 value={mileageType}
+                required
               ></lightning-input-field>
               <lightning-input-field
                 class="slds-hide"
                 field-name="Service_Resource__c"
                 value={serviceResourceId}
               ></lightning-input-field>
-              <lightning-input-field
+              <!-- <lightning-input-field
                 field-name="Starting_Location_Type__c"
                 value={startingLocationType}
               ></lightning-input-field>
               <lightning-input-field
                 field-name="Ending_Location_Type__c"
                 value={endingLocationType}
-              ></lightning-input-field>
+              ></lightning-input-field> -->
               <lightning-input-field
                 field-name="Starting_Mileage__c"
+                required
               ></lightning-input-field>
               <lightning-input-field
                 class="slds-hide"

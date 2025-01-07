@@ -166,6 +166,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ExtraWorkOrderController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>FieldServiceTestData</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -960,6 +964,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Intervention_registration_type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.LMRA_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1171,6 +1180,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Functional_level__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Language_Formula__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3700,6 +3714,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.ATAK_Project_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.After_Work_Comments__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4336,6 +4355,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</flow>
     </flowAccesses>
     <flowAccesses>
@@ -4413,6 +4436,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Send_Customer_Notification_Crew_Inbound</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Plan_Extra_Work_Steps</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

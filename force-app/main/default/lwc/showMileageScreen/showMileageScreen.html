@@ -201,7 +201,7 @@
             </div> -->
 
             <!-- Work Order -->
-            <abbr class="slds-required">*</abbr>
+            <!-- <abbr class="slds-required">*</abbr>
             <button onclick={handleSetAppointmentClicked} type="button">
               <lightning-icon
                 icon-name="utility:search"
@@ -220,7 +220,7 @@
               variant="label-hidden"
               required
             >
-            </lightning-input-field>
+            </lightning-input-field> -->
 
             <lightning-input-field
               field-name="Time_Sheet__c"
@@ -330,17 +330,23 @@
             </div> -->
 
             <!-- Work Order -->
-            <abbr class="slds-required">*</abbr>
-            <button onclick={handleSetAppointmentClicked} type="button">
-              <lightning-icon
-                icon-name="utility:search"
-                size="xx-small"
-                variant="inverse"
-                class="slds-m-right_xx-small"
+            <div class="work-order-container">
+              <abbr class="slds-required">*</abbr>
+              <button
+                onclick={handleSetAppointmentClicked}
+                type="button"
+                class="work-order-button"
               >
-              </lightning-icon>
-              {workOrderText}
-            </button>
+                <lightning-icon
+                  icon-name="utility:search"
+                  size="xx-small"
+                  variant="inverse"
+                  class="slds-m-right_xx-small"
+                >
+                </lightning-icon>
+                {workOrderText}
+              </button>
+            </div>
 
             <lightning-input-field
               field-name="Work_Order__c"

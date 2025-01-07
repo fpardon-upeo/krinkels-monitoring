@@ -146,6 +146,8 @@ nav:
       Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps: flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps.md
       Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed: flows/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.md
       Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines: flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.md
+      Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps: >-
+        flows/Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps.md
       Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA: >-
         flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.md
       Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status: flows/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.md
@@ -171,6 +173,7 @@ nav:
       Work_Order_Screen_Flow_Create_Rework_WO: flows/Work_Order_Screen_Flow_Create_Rework_WO.md
       Work_Order_Screen_Flow_Create_Waste_Depot_Visit: flows/Work_Order_Screen_Flow_Create_Waste_Depot_Visit.md
       Work_Order_Send_Customer_Notification_Crew_Inbound: flows/Work_Order_Send_Customer_Notification_Crew_Inbound.md
+      Work_Plan_Extra_Work_Steps: flows/Work_Plan_Extra_Work_Steps.md
       Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO: >-
         flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO.md
       Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO: >-
@@ -227,6 +230,8 @@ nav:
         flows/Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps-history.md
       Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines: >-
         flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines-history.md
+      Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps: >-
+        flows/Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps-history.md
       Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA: >-
         flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA-history.md
       Work_Order_After_Update_Create_Signature_Work_Step: flows/Work_Order_After_Update_Create_Signature_Work_Step-history.md
@@ -246,6 +251,7 @@ nav:
       Work_Order_Screen_Flow_Create_Rework_WO: flows/Work_Order_Screen_Flow_Create_Rework_WO-history.md
       Work_Order_Screen_Flow_Create_Waste_Depot_Visit: flows/Work_Order_Screen_Flow_Create_Waste_Depot_Visit-history.md
       Work_Order_Send_Customer_Notification_Crew_Inbound: flows/Work_Order_Send_Customer_Notification_Crew_Inbound-history.md
+      Work_Plan_Extra_Work_Steps: flows/Work_Plan_Extra_Work_Steps-history.md
       Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO: >-
         flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO-history.md
       Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO: >-

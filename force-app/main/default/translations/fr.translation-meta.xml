@@ -829,6 +829,18 @@
         <name>WorkOrderActions_Edit_Tasks_Header</name>
     </customLabels>
     <customLabels>
+        <label><!-- WorkOrderActions_Extra_Work_Description --></label>
+        <name>WorkOrderActions_Extra_Work_Description</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WorkOrderActions_Extra_Work_Header --></label>
+        <name>WorkOrderActions_Extra_Work_Header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WorkOrderActions_Extra_Work_Subject --></label>
+        <name>WorkOrderActions_Extra_Work_Subject</name>
+    </customLabels>
+    <customLabels>
         <label><!-- WorkOrderActions_Header --></label>
         <name>WorkOrderActions_Header</name>
     </customLabels>
@@ -2736,6 +2748,10 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
+        <fullName>Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
         <fullName>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</fullName>
     </flowDefinitions>
     <flowDefinitions>
@@ -3226,6 +3242,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Work_Order_Send_Customer_Notification_Crew_Inbound</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Work_Plan_Extra_Work_Steps</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>

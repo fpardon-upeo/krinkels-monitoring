@@ -21,8 +21,10 @@ public with sharing class ATAKWorkLogService {
             ATAKPerformanceWrapper wrapper = new ATAKPerformanceWrapper();
 
             if(department == 'Indoor - Billing plan'){
+                System.debug('🔍 Preparing ATAK Performance Data for Indoor: ' + timeSheetId);
                 wrapper = ATAKPerformanceService.prepareATAKPerformanceDataIndoor(timeSheetId);
             } else {
+                System.debug('🔍 Preparing ATAK Performance Data for Outdoor: ' + timeSheetId);
                 wrapper = ATAKPerformanceService.prepareATAKPerformanceData(timeSheetId);
             }
 

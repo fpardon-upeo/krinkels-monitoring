@@ -5,7 +5,7 @@
     <formula>IF(
 NOT(ISBLANK( Quote__c )), 
 &quot;Extra Work&quot;, 
-TEXT(ServiceContract.Invoice_Type__c))</formula>
+TEXT( ServiceContract.Contract_type__c ))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Invoice Type</label>
     <required>false</required>

@@ -47,6 +47,11 @@
 
 public with sharing class ATAKPerformanceService {
 
+    // List of performance codes where project code becomes 'ATAKDEFAULT'
+    private static final Set<String> ATAKDEFAULT_CODES = new Set<String>{
+            'VV', 'A', 'Z', 'SP-', 'AF'
+    };
+
 
     /**
      * @description: This method prepares the ATAK performance data for a timesheet
@@ -58,14 +63,16 @@ public with sharing class ATAKPerformanceService {
 
         TimeSheet ts = [
                 SELECT Id, ServiceResource.RelatedRecord.ATAK_Code__c, ServiceResourceId, StartDate
-                FROM Timesheet WHERE Id = :tsId
+                FROM Timesheet
+                WHERE Id = :tsId
         ];
 
         List<TimeSheetEntry> tsEntries = [
                 SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
-                FROM TimeSheetEntry WHERE TimesheetId = :tsId
+                FROM TimeSheetEntry
+                WHERE TimesheetId = :tsId
                 ORDER BY StartTime ASC
         ];
 
@@ -78,11 +85,11 @@ public with sharing class ATAKPerformanceService {
         List<String> workOrderIds = new List<String>();
 
         // Loop through the timesheet entries and add them to the data list
-        for(TimeSheetEntry timeSheetEntry : tsEntries){
+        for (TimeSheetEntry timeSheetEntry : tsEntries) {
             ATAKPerformanceWrapper.Data data = personnelTimesheetToATAKPerformance(timeSheetEntry);
             dataList.add(data);
             workOrderIds.add(timeSheetEntry.WorkOrderId);
-            if(timeSheetEntry.Starting_Allowance_Winter_Service__c == true){
+            if (timeSheetEntry.Starting_Allowance_Winter_Service__c == true) {
                 //Add a second entry for the winter service, Code_ATAK_Limbus__c = "P"
                 timeSheetEntry.Code_ATAK_Limbus__c = 'P';
                 ATAKPerformanceWrapper.Data dataWinter = personnelTimesheetToATAKPerformance(timeSheetEntry);
@@ -92,14 +99,15 @@ public with sharing class ATAKPerformanceService {
 
         Boolean isLeader = resourceIsCrewLeader(ts.ServiceResourceId);
 
-        if(isLeader == true) {
+        if (isLeader == true) {
             List<ProductConsumed> materials = [
                     SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
-                    FROM ProductConsumed WHERE WorkOrderId IN :workOrderIds
+                    FROM ProductConsumed
+                    WHERE WorkOrderId IN :workOrderIds
             ];
 
             // Loop through the materials and add them to the data list
-            for(ProductConsumed material : materials){
+            for (ProductConsumed material : materials) {
                 ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
                 dataList.add(data);
             }
@@ -123,14 +131,16 @@ public with sharing class ATAKPerformanceService {
 
         TimeSheet ts = [
                 SELECT Id, ServiceResource.RelatedRecord.ATAK_Code__c
-                FROM Timesheet WHERE Id = :tsId
+                FROM Timesheet
+                WHERE Id = :tsId
         ];
 
         List<TimeSheetEntry> tsEntries = [
                 SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
-                FROM TimeSheetEntry WHERE TimesheetId = :tsId
+                FROM TimeSheetEntry
+                WHERE TimesheetId = :tsId
                 ORDER BY StartTime ASC
         ];
         System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntries: ' + tsEntries);
@@ -144,26 +154,37 @@ public with sharing class ATAKPerformanceService {
         TimeSheetEntry lastTravelEntry = null;
 
         // First pass - filter from start and identify last travel
-        for(TimeSheetEntry tsEntry : tsEntries){
-            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work'){
+        Integer counter = 0;
+        Integer firstProductionIndex = -1;
+        for (TimeSheetEntry tsEntry : tsEntries) {
+            counter++;
+            if (tsEntry.WorkOrder.WorkType.Name != 'Internal Depot' && tsEntry.WorkOrder.WorkType.Name != null) {
+                System.debug('tsEntry.WorkOrder.WorkType.Name: '+ tsEntry.WorkOrder.WorkType.Name);
+                if (firstProductionIndex == -1) {
+                    firstProductionIndex = counter;
+                }
+                System.debug('ATAKPerformanceService.prepareATAKPerformanceData - Found production work');
                 foundProductionTime = true;
 
                 // If this is our first RT after finding production work, skip it
-                if(!firstTravelSkipped && tsEntry.Code_ATAK_Limbus__c == 'RT'){
+                if (!firstTravelSkipped && tsEntry.Code_ATAK_Limbus__c == 'RT') {
+                    System.debug('ATAKPerformanceService.prepareATAKPerformanceData - Skipping first travel');
                     firstTravelSkipped = true;
                     continue;
                 }
 
                 // Track potential last travel entry
-                if(tsEntry.Code_ATAK_Limbus__c == 'RT'){
+                if (tsEntry.Code_ATAK_Limbus__c == 'RT') {
+                    System.debug('ATAKPerformanceService.prepareATAKPerformanceData - Found potential last travel');
                     lastTravelEntry = tsEntry;
                 } else {
                     // If we found a non-travel entry, clear the last travel
                     lastTravelEntry = null;
                 }
             }
-
-            if(foundProductionTime == true){
+            System.debug('tse before foundProductionTime: ' + tsEntry);
+            if (foundProductionTime == true) {
+                System.debug('tse added because foundProductionTime is true: ' + tsEntry);
                 tsEntriesFiltered.add(tsEntry);
             }
         }
@@ -171,19 +192,19 @@ public with sharing class ATAKPerformanceService {
         //Second pass - filter from end
         foundProductionTime = false;
         List<TimeSheetEntry> tsEntriesFilteredFinal = new List<TimeSheetEntry>();
-        for(Integer i = tsEntriesFiltered.size() - 1; i >= 0; i--){
+        for (Integer i = tsEntriesFiltered.size() - 1; i >= 0; i--) {
             TimeSheetEntry tsEntry = tsEntriesFiltered[i];
-            if(tsEntry.WorkOrder.WorkType.Name == 'Production Work'){
+            if (tsEntry.WorkOrder.WorkType.Name != 'Internal Depot' && tsEntry.WorkOrder.WorkType.Name != null) {
                 foundProductionTime = true;
             }
-            if(foundProductionTime == true){
+            if (foundProductionTime == true) {
                 tsEntriesFilteredFinal.add(tsEntry);
             }
         }
 
         // Now handle last travel time
         TimeSheetEntry lastEntry = tsEntriesFilteredFinal.isEmpty() ? null : tsEntriesFilteredFinal[0];
-        if(lastEntry != null && lastEntry.Code_ATAK_Limbus__c == 'RT') {
+        if (lastEntry != null && lastEntry.Code_ATAK_Limbus__c == 'RT') {
             tsEntriesFilteredFinal.remove(0);
         }
 
@@ -192,7 +213,7 @@ public with sharing class ATAKPerformanceService {
 
         //Now we need to reverse the list
         List<TimeSheetEntry> reversedList = new List<TimeSheetEntry>();
-        for(Integer i = tsEntriesFilteredFinal.size() - 1; i >= 0; i--) {
+        for (Integer i = tsEntriesFilteredFinal.size() - 1; i >= 0; i--) {
             reversedList.add(tsEntriesFilteredFinal[i]);
         }
 
@@ -204,7 +225,8 @@ public with sharing class ATAKPerformanceService {
                 SELECT Id, CreatedDate,
                         Time_Sheet__r.StartDate, Codes_ATAK_Limbus__c, Type__c,
                         Calculated_Mileage__c, Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c, Service_Resource__r.RelatedRecord.ATAK_Code__c
-                FROM Mileage_Entry__c WHERE Time_Sheet__c = :tsId
+                FROM Mileage_Entry__c
+                WHERE Time_Sheet__c = :tsId
         ];
 
         // Create the wrapper object and add the data
@@ -218,7 +240,7 @@ public with sharing class ATAKPerformanceService {
 
         List<String> tseIds = new List<String>();
         // Get the Ids currently in the list
-        for(TimeSheetEntry tse : reversedList){
+        for (TimeSheetEntry tse : reversedList) {
             tseIds.add(tse.Id);
         }
 
@@ -227,30 +249,38 @@ public with sharing class ATAKPerformanceService {
                 SELECT Id, WorkOrderId, WorkOrder.WorkType.Name, WorkOrder.Subject, CreatedDate, StartTime, EndTime, Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c,
                         WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c, Total_Hours_Minus_Breaks__c, Code_ATAK_Limbus__c,
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
-                FROM TimeSheetEntry WHERE TimesheetId = :tsId AND Id NOT IN :tseIds AND Code_ATAK_Limbus__c != 'RT' AND Code_ATAK_Limbus__c != 'HR'
+                FROM TimeSheetEntry
+                WHERE TimesheetId = :tsId AND Id NOT IN :tseIds AND Code_ATAK_Limbus__c != 'RT' AND Code_ATAK_Limbus__c != 'HR'
                 ORDER BY StartTime ASC
         ];
 
         //Check this list for missing ATAK codes. If there are any, we need to process them.
+        /*
         List<TimeSheetEntry> tsesToProcess = new List<TimeSheetEntry>();
-        for(TimeSheetEntry tse : tses){
-            if(tse.Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c == null){
+        for (TimeSheetEntry tse : tses) {
+            if (tse.Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c == null) {
                 tsesToProcess.add(tse);
             }
         }
 
+         */
+
         //Add the new TSEs to the list
-        for(TimeSheetEntry tse : tses){
+        for (TimeSheetEntry tse : tses) {
             reversedList.add(tse);
         }
 
 
         // Loop through the timesheet entries and add them to the data list
-        for(TimeSheetEntry timeSheetEntry : reversedList){
+        for (TimeSheetEntry timeSheetEntry : reversedList) {
             ATAKPerformanceWrapper.Data data = personnelTimesheetToATAKPerformance(timeSheetEntry);
             dataList.add(data);
-            workOrderIds.add(timeSheetEntry.WorkOrderId);
-            if(timeSheetEntry.Starting_Allowance_Winter_Service__c == true){
+            if (timeSheetEntry.WorkOrderId != null && !ATAKDEFAULT_CODES.contains(timeSheetEntry.Code_ATAK_Limbus__c)) {
+                //Add the work order id to the list (if it is not null)
+                workOrderIds.add(timeSheetEntry.WorkOrderId);
+            }
+            if (timeSheetEntry.Starting_Allowance_Winter_Service__c == true) {
+                System.debug('!!!!! ATAKPerformanceService.prepareATAKPerformanceData - Winter Service');
                 //Add a second entry for the winter service, Code_ATAK_Limbus__c = "P"
                 timeSheetEntry.Code_ATAK_Limbus__c = 'P';
                 ATAKPerformanceWrapper.Data dataWinter = personnelTimesheetToATAKPerformance(timeSheetEntry);
@@ -259,15 +289,16 @@ public with sharing class ATAKPerformanceService {
         }
 
         //Before adding the mileage entries, we need to get the SubProject_ATAK__c of the first and last work order
-        String firstWorkOrderId = workOrderIds[0];
-        String lastWorkOrderId = workOrderIds[workOrderIds.size() - 1];
+        String firstWorkOrderId = !workOrderIds.isEmpty() ? workOrderIds[0] : null;
+        String lastWorkOrderId = !workOrderIds.isEmpty() ? workOrderIds[workOrderIds.size() - 1] : null;
 
         String firstSubProject;
 
         try {
             firstSubProject = [
                     SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
-                    FROM WorkOrder WHERE Id = :firstWorkOrderId
+                    FROM WorkOrder
+                    WHERE Id = :firstWorkOrderId
             ].Asset.ATAK_Project__r.SubProject_ATAK__c;
         } catch (Exception e) {
             firstSubProject = '';
@@ -278,21 +309,22 @@ public with sharing class ATAKPerformanceService {
         try {
             lastSubProject = [
                     SELECT Asset.ATAK_Project__r.SubProject_ATAK__c
-                    FROM WorkOrder WHERE Id = :lastWorkOrderId
+                    FROM WorkOrder
+                    WHERE Id = :lastWorkOrderId
             ].Asset.ATAK_Project__r.SubProject_ATAK__c;
         } catch (Exception e) {
             lastSubProject = '';
         }
 
         // Loop through the mileage entries and add them to the data list
-        for(Mileage_Entry__c mileage : mileageEntries){
+        for (Mileage_Entry__c mileage : mileageEntries) {
             ATAKPerformanceWrapper.Data data = mileageToATAKPerformance(mileage, firstSubProject, lastSubProject);
             dataList.add(data);
         }
 
         // Get the materials based on the work order ids
 
-        if(resourceIsCrewLeader(ts.ServiceResourceId) == true) {
+        if (resourceIsCrewLeader(ts.ServiceResourceId) == true) {
 
             List<ProductConsumed> materials = [
                     SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
@@ -326,31 +358,31 @@ public with sharing class ATAKPerformanceService {
     * @param: tsEntry - TimeSheetEntry record
     * @return: ATAKPerformanceWrapper.Data object
     **/
-    public static ATAKPerformanceWrapper.Data personnelTimesheetToATAKPerformance(TimeSheetEntry tsEntry){
-
-
+    public static ATAKPerformanceWrapper.Data personnelTimesheetToATAKPerformance(TimeSheetEntry tsEntry) {
         ATAKPerformanceWrapper.Data data = new ATAKPerformanceWrapper.Data();
-
-        //data.day_id = tsEntry.day_id; // Krinkels needs to confirm if this field is needed
         data.registration_timestamp = tsEntry.CreatedDate.format('YYYYMMddHHmmss');
         data.dossier = 'KGC';
         data.performance_date = tsEntry.StartTime.format('YYYYMMdd');
         data.start_timestamp = tsEntry.StartTime.format('YYYYMMddHHmmss');
         data.end_timestamp = tsEntry.EndTime.format('YYYYMMddHHmmss');
         data.performance_resource_code = tsEntry.Timesheet.ServiceResource.RelatedRecord.ATAK_Code__c;
-        data.performance_resource_type = 'P'; //P for personnel
+        data.performance_resource_type = 'P';
         data.projectcode = tsEntry.WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c;
         data.quantity_registration_unit = tsEntry.Code_ATAK_Limbus__c;
         data.remarks = tsEntry.WorkOrder.Subject;
 
-        // If quantity_registration_unit is "P", then quantity is always 1
+        // Override projectcode if TSE code is in ATAKDEFAULT_CODES
+        if (ATAKDEFAULT_CODES.contains(tsEntry.Code_ATAK_Limbus__c)) {
+            data.projectcode = 'ATAKDEFAULT';
+        }
+
         if (data.quantity_registration_unit == 'P') {
             data.quantity = '1';
         } else {
-            data.quantity = tsEntry.Total_Hours_Minus_Breaks__c == null ? '0' : String.valueOf(tsEntry.Total_Hours_Minus_Breaks__c);
+            data.quantity = tsEntry.Total_Hours_Minus_Breaks__c == null
+                    ? '0'
+                    : String.valueOf(tsEntry.Total_Hours_Minus_Breaks__c);
         }
-
-        System.debug('ATAKPerformanceService.personnelTimesheetToATAKPerformance - data: ' + data);
         return data;
     }
 
@@ -371,9 +403,9 @@ public with sharing class ATAKPerformanceService {
 
         String atakProject = '';
 
-        if(mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Starting'){
+        if (mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Starting') {
             atakProject = firstSubProject;
-        } else if(mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Ending'){
+        } else if (mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c == null && mileage.Type__c == ' Ending') {
             atakProject = lastSubProject;
         } else {
             atakProject = mileage.Work_Order__r.Asset.ATAK_Project__r.SubProject_ATAK__c;
@@ -404,7 +436,7 @@ public with sharing class ATAKPerformanceService {
     * @param: material - ProductConsumed record
     * @return: ATAKPerformanceWrapper.Data object
     **/
-    public static ATAKPerformanceWrapper.Data materialTimesheetToATAKPerformance(ProductConsumed material){
+    public static ATAKPerformanceWrapper.Data materialTimesheetToATAKPerformance(ProductConsumed material) {
 
         ATAKPerformanceWrapper.Data data = new ATAKPerformanceWrapper.Data();
         data.registration_timestamp = material.CreatedDate.format('YYYYMMddHHmmss');
@@ -437,7 +469,7 @@ public with sharing class ATAKPerformanceService {
         HttpResponse response = handler.makeCallout(callout);
         System.debug('ATAKPerformanceService.sendATAKPerformanceData - response: ' + response);
 
-        if(response.getStatusCode() == 200) {
+        if (response.getStatusCode() == 200) {
             System.debug('ATAKPerformanceService.sendATAKPerformanceData - Success');
             OutboundLoggerService.createOutboundLog(jsonATAKPerformanceData, response.getBody());
             return response.getStatusCode();

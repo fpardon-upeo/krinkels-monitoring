@@ -50,17 +50,16 @@ public without sharing class InternalWorkOrderController {
     private static WorkOrder getParentWorkOrder(String parentWorkOrderId) {
         System.debug('Getting Parent Work Order');
         System.debug('parentWorkOrderId: ' + parentWorkOrderId);
-        WorkOrder parentWorkOrder = [SELECT Id, Subject, AccountId, WorkTypeId, AssetId, ServiceTerritoryId, MaintenancePlanId FROM WorkOrder WHERE Id = :parentWorkOrderId];
-        return parentWorkOrder;
+        WorkOrder parentWorkOrder = [SELECT Id, Subject, AccountId, WorkTypeId, AssetId, ServiceTerritoryId, MaintenancePlanId FROM WorkOrder WHERE Id = :parentWorkOrderId];        return parentWorkOrder;
     }
 
-    private static String getServiceResourceId(){
+    public static String getServiceResourceId(){
 
         ServiceResource serviceResource = [SELECT Id FROM ServiceResource WHERE IsActive = true AND RelatedRecordId = :UserInfo.getUserId() LIMIT 1 ];
         return serviceResource.Id;
     }
 
-    private static String assignServiceResource(String serviceResourceId, String internalWorkOrderId) {
+    public static String assignServiceResource(String serviceResourceId, String internalWorkOrderId) {
         System.debug('Assigning Service Resource');
         System.debug('serviceResourceId: ' + serviceResourceId);
         System.debug('internalWorkOrderId: ' + internalWorkOrderId);
@@ -102,7 +101,11 @@ public without sharing class InternalWorkOrderController {
 
         System.debug('assignedResource: ' + assignedResource);
 
-        insert assignedResource;
+        try {
+            insert assignedResource;
+        } catch (DmlException e) {
+            System.debug('Error assigning Service Resource');
+        }
 
         serviceAppointment.Status = 'Dispatched';
         update serviceAppointment;
