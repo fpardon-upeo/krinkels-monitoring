@@ -324,10 +324,10 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |WorkOrderLine|SObject|⬜|⬜|⬜|WorkOrderLineItem|
-    |WorkOrderLineItems|SObject|✅|⬜|⬜|WorkOrderLineItem|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |WorkOrderLine|SObject|⬜|⬜|⬜|WorkOrderLineItem|<!-- -->|
+    |WorkOrderLineItems|SObject|✅|⬜|⬜|WorkOrderLineItem|<!-- -->|
     
     
     ## Flow Nodes Details

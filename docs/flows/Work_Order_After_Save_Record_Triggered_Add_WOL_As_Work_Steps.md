@@ -20,7 +20,7 @@ Set_beforeExecutions[\"🟰 <em></em><br/>Set beforeExecutions"/]:::assignments
 click Set_beforeExecutions "#set_beforeexecutions" "1601222617"
 
 Set_Values_for_Work_Steps[\"🟰 <em></em><br/>Set Values for Work Steps"/]:::assignments
-click Set_Values_for_Work_Steps "#set_values_for_work_steps" "4058244898"
+click Set_Values_for_Work_Steps "#set_values_for_work_steps" "2871189508"
 
 Check_beforeExectionsOrder{"🔀 <em></em><br/>Check beforeExectionsOrder"}:::decisions
 click Check_beforeExectionsOrder "#check_beforeexectionsorder" "3664902101"
@@ -71,20 +71,20 @@ END_Work_Plan_Present(( END )):::endClass
 END_Create_Platform_Event_to_Reorder_Last_Steps(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
@@ -118,12 +118,19 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 
 ## Variables
 
-|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-|:-- |:--:|:--:|:--:|:--:|:--: |
-|BeforePhotosOrder|Number|⬜|✅|⬜|<!-- -->|
-|IncrementOrder|Number|⬜|✅|⬜|<!-- -->|
-|WorkStepCollection|SObject|✅|✅|⬜|WorkStep|
-|WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|BeforePhotosOrder|Number|⬜|✅|⬜|<!-- -->|<!-- -->|
+|IncrementOrder|Number|⬜|✅|⬜|<!-- -->|<!-- -->|
+|WorkStepCollection|SObject|✅|✅|⬜|WorkStep|<!-- -->|
+|WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|<!-- -->|
+
+
+## Formulas
+
+|Name|Data Type|Expression|Description|
+|:-- |:--:|:-- |:--  |
+|NextNumber|Number|{!BeforePhotosOrder} + {!IncrementOrder}|<!-- -->|
 
 
 ## Flow Nodes Details
@@ -182,6 +189,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |WorkStepRecord.WorkPlanId| Assign|Get_Work_Plan_Information.Id|
 |WorkStepRecord.Work_Order_Line_Item__c| Assign|Loop_Through_WOL.Id|
 |WorkStepRecord.ExecutionOrder| Assign|NextNumber|
+|WorkStepRecord.Added_from_WOL__c| Assign|✅|
 |WorkStepCollection| Add|WorkStepRecord|
 
 

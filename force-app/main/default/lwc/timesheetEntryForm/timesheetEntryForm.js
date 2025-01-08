@@ -274,9 +274,12 @@ export default class TimesheetEntryForm extends LightningElement {
     // Get the dates for last week's start and next week's end
     const today = new Date();
     const lastWeekStart = new Date(today);
-    lastWeekStart.setDate(today.getDate() - today.getDay() - 7); // Beginning of last week
+    lastWeekStart.setDate(today.getDate() - 3); // Beginning of last week
     const nextWeekEnd = new Date(today);
-    nextWeekEnd.setDate(today.getDate() - today.getDay() + 21); // End of next week
+    nextWeekEnd.setDate(today.getDate() - today.getDay() + 3); // End of next week
+
+    console.log('lastweekstart', lastWeekStart.toISOString())
+    console.log('nextweekend', nextWeekEnd.toISOString())
 
     return {
       serviceResourceId: this.serviceResourceId,

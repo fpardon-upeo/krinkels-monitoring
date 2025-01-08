@@ -96,10 +96,10 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |newWorkOrder|SObject|⬜|⬜|⬜|WorkOrder|
-    |serviceAppointmentId|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |newWorkOrder|SObject|⬜|⬜|⬜|WorkOrder|<!-- -->|
+    |serviceAppointmentId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

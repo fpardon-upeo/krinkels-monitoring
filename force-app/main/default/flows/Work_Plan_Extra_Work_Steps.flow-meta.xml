@@ -29,6 +29,12 @@
         <locationX>176</locationX>
         <locationY>431</locationY>
         <inputAssignments>
+            <field>Added_from_WOL__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>ExecutionOrder</field>
             <value>
                 <numberValue>10.0</numberValue>

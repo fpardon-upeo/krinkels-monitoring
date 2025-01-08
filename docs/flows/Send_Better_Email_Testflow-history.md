@@ -309,86 +309,82 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |bulk_counter|Number|⬜|⬜|⬜|<!-- -->|
-    |bulkSendBetterEmailRequest|Apex|✅|⬜|⬜|<!-- -->|
-    |bulkSubjectNames|String|✅|⬜|⬜|<!-- -->|
-    |bulkThisSendBetterEmailRequest|Apex|✅|⬜|⬜|<!-- -->|
-    |bulkThisSubject|String|⬜|⬜|⬜|<!-- -->|
-    |bulkThisSubjectLine|String|⬜|⬜|⬜|<!-- -->|
-    |cd_counter|Number|⬜|⬜|✅|<!-- -->|
-    |content_document_ids|String|✅|⬜|✅|<!-- -->|
-    |cur_cd_id|String|⬜|⬜|✅|<!-- -->|
-    |cur_cdl|SObject|⬜|⬜|✅|ContentDocumentLink|
-    |curAttachments|SObject|✅|⬜|⬜|Attachment|
-    |curContacts|SObject|✅|⬜|⬜|Contact|
-    |curLeads|SObject|✅|✅|⬜|Lead|
-    |curUsers|SObject|✅|⬜|⬜|User|
-    |errorsFromEmail|String|⬜|⬜|⬜|<!-- -->|
-    |filtered_cdls|SObject|✅|⬜|✅|ContentDocumentLink|
-    |isSuccess|Boolean|⬜|⬜|⬜|<!-- -->|
-    |ListOfInReplyToEmailMessageIds|String|✅|⬜|⬜|<!-- -->|
-    |massEmailUserCollection|SObject|✅|⬜|⬜|User|
-    |recordId|String|⬜|✅|⬜|<!-- -->|
-    |RelatedRecordType|String|⬜|⬜|⬜|<!-- -->|
-    |send_Email_To|String|⬜|⬜|⬜|<!-- -->|
-    |sendSubject|String|⬜|⬜|⬜|<!-- -->|
-    |stringCollectionEmailAddresses|String|✅|✅|⬜|<!-- -->|
-    |templateRecipientId|String|⬜|⬜|⬜|<!-- -->|
-    |templateTargetId|String|⬜|⬜|⬜|<!-- -->|
-    |templateWhatId|String|⬜|⬜|⬜|<!-- -->|
-    |testContactContains|String|⬜|⬜|⬜|<!-- -->|
-    |testEmailAddress1|String|⬜|⬜|⬜|<!-- -->|
-    |testEmailAddress2|String|⬜|⬜|⬜|<!-- -->|
-    |testMassEmailFinishedMessage|String|⬜|⬜|⬜|<!-- -->|
-    |testMessageId|String|⬜|⬜|⬜|<!-- -->|
-    |testPlainTextBody|String|⬜|⬜|⬜|<!-- -->|
-    |testReturnAddress|String|⬜|⬜|⬜|<!-- -->|
-    |testSenderName|String|⬜|⬜|⬜|<!-- -->|
-    |testSubject|String|⬜|⬜|⬜|<!-- -->|
-    |testTemplateId|String|⬜|⬜|⬜|<!-- -->|
-    |testTemplateLanguage|String|⬜|⬜|⬜|<!-- -->|
-    |testTemplateName|String|⬜|⬜|⬜|<!-- -->|
-    |testUserContains|String|⬜|⬜|⬜|<!-- -->|
-    |UserListForMassMail|String|✅|⬜|⬜|<!-- -->|
-    |x1_HTML_Body|String|⬜|⬜|⬜|<!-- -->|
-    |x2_HTML_Body|String|⬜|⬜|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |bulk_counter|Number|⬜|⬜|⬜|<!-- -->|Counter for number of bulk items in loop|
+    |bulkSendBetterEmailRequest|Apex|✅|⬜|⬜|<!-- -->|<!-- -->|
+    |bulkSubjectNames|String|✅|⬜|⬜|<!-- -->|A collection of subject names for bulkification testing|
+    |bulkThisSendBetterEmailRequest|Apex|✅|⬜|⬜|<!-- -->|<!-- -->|
+    |bulkThisSubject|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |bulkThisSubjectLine|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |cd_counter|Number|⬜|⬜|✅|<!-- -->|<!-- -->|
+    |content_document_ids|String|✅|⬜|✅|<!-- -->|<!-- -->|
+    |cur_cd_id|String|⬜|⬜|✅|<!-- -->|<!-- -->|
+    |cur_cdl|SObject|⬜|⬜|✅|ContentDocumentLink|<!-- -->|
+    |curAttachments|SObject|✅|⬜|⬜|Attachment|<!-- -->|
+    |curContacts|SObject|✅|⬜|⬜|Contact|<!-- -->|
+    |curLeads|SObject|✅|✅|⬜|Lead|<!-- -->|
+    |curUsers|SObject|✅|⬜|⬜|User|<!-- -->|
+    |errorsFromEmail|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |filtered_cdls|SObject|✅|⬜|✅|ContentDocumentLink|<!-- -->|
+    |isSuccess|Boolean|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |ListOfInReplyToEmailMessageIds|String|✅|⬜|⬜|<!-- -->|List of MessageIds of existing email if this is InReplyTo|
+    |massEmailUserCollection|SObject|✅|⬜|⬜|User|<!-- -->|
+    |recordId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |RelatedRecordType|String|⬜|⬜|⬜|<!-- -->|The related record (versus the TargetObject) which can be used for merge fields in the email templates.<br/>The value must be one of the following types:<br/>· Account<br/>· Asset<br/>· Campaign<br/>· Case<br/>· Contract<br/>· Opportunity<br/>· Order<br/>· Product<br/>· Solution<br/>· Custom|
+    |send_Email_To|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |sendSubject|String|⬜|⬜|⬜|<!-- -->|For adding sender name to emails|
+    |stringCollectionEmailAddresses|String|✅|✅|⬜|<!-- -->|<!-- -->|
+    |templateRecipientId|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |templateTargetId|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |templateWhatId|String|⬜|⬜|⬜|<!-- -->|used for testing email merges|
+    |testContactContains|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |testEmailAddress1|String|⬜|⬜|⬜|<!-- -->|A test email address for checking if an email is actually sent.|
+    |testEmailAddress2|String|⬜|⬜|⬜|<!-- -->|A second email address  for testing actual sends if desired|
+    |testMassEmailFinishedMessage|String|⬜|⬜|⬜|<!-- -->|The message sent to the originator when all emails have been attempted|
+    |testMessageId|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |testPlainTextBody|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |testReturnAddress|String|⬜|⬜|⬜|<!-- -->|A return address if an actual email is requested|
+    |testSenderName|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |testSubject|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |testTemplateId|String|⬜|⬜|⬜|<!-- -->|The template Id to be used in the action|
+    |testTemplateLanguage|String|⬜|⬜|⬜|<!-- -->|The specific language to send the email in|
+    |testTemplateName|String|⬜|⬜|⬜|<!-- -->|The name of the template from which to search for language|
+    |testUserContains|String|⬜|⬜|⬜|<!-- -->|For testing list/collection of recipients if the user name contains this value|
+    |UserListForMassMail|String|✅|⬜|⬜|<!-- -->|Create a user list for mass email|
+    |x1_HTML_Body|String|⬜|⬜|⬜|<!-- -->|Plain Text for Body 1|
+    |x2_HTML_Body|String|⬜|⬜|⬜|<!-- -->|Plain Text Body for example 2|
     
     
     ## Formulas
     
-    |Name|Data Type|Expression|
-    |:-- |:--:|:--  |
-    |BulkSubject|String|{!testSubject} + ": Request #: " + text({!bulk_counter})|
-    |TestFlowMassSubject|String|'Finished Mass Email Send: sendBetterEmail Test:  Flow Example  ' + text({!Choose_Example})|
-    |TestFlowSubject|String|'sendBetterEmail Test:  Flow Example  ' + text({!Choose_Example})|
-    |testPlainTextLineFeeds|String|'Plaintext Line 1'&BR()&'Plaintext Line 2'&BR()&'Plaintext Line 3'|
-    |UserIdRunningFlow|String|{!$User.Id}|
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
     
     
     ## Constants
     
-    |Name|Data Type|Value|
-    |:-- |:--:|:--: |
-    |DefaultMassEmailTemplateName|String|sendMassBetterEmailTest|
-    |DefaultRecipientEmailAddress1|String|john.doe@example.com.invalid|
-    |DefaultRecipientEmailAddress2|String|jane.roe@example.com.invalid|
-    |DefaultRecipientRecordType|String|Contact|
-    |DefaultRelatedRecordType|String|Account|
-    |DefaultReplyToEmail|String|DoNotReply@example.com.invalid|
-    |DefaultSenderEmailAddress|String|donotreply@example.com.invalid|
-    |DefaultSenderName|String|DoNotReply|
-    |DefaultTemplateLanguage|String|es_MX|
-    |DefaultTemplateName|String|sendBetterEmailTest|
+    |Name|Data Type|Value|Description|
+    |:-- |:--:|:--:|:--  |
+    |DefaultMassEmailTemplateName|String|sendMassBetterEmailTest|The Default Mass Email Template Name|
+    |DefaultRecipientEmailAddress1|String|john.doe@example.com.invalid|<!-- -->|
+    |DefaultRecipientEmailAddress2|String|jane.roe@example.com.invalid|<!-- -->|
+    |DefaultRecipientRecordType|String|Contact|The default Recipient Record Type for Recipient Addresses and Fields used in Template Merges|
+    |DefaultRelatedRecordType|String|Account|The default Related Record type for template related record field merges|
+    |DefaultReplyToEmail|String|DoNotReply@example.com.invalid|<!-- -->|
+    |DefaultSenderEmailAddress|String|donotreply@example.com.invalid|The default sender email address for test examples|
+    |DefaultSenderName|String|DoNotReply|Default sender name for examples|
+    |DefaultTemplateLanguage|String|es_MX|The default test Language for examples|
+    |DefaultTemplateName|String|sendBetterEmailTest|Default Name for Email Template|
     
     
     ## Text Templates
     
-    |Name|Text|
-    |:-- |:--  |
-    |HTMLTextTemplate|<p>This is some <span style="color: rgb(41, 25, 215);">body text </span>created using the rich text editor in the <b>Text Template</b> resource in <u style="font-size: 22px;">Flow</u>.</p>|
-    |plainTextBody|<p>This is some body text created using the rich text editor in the Text Template resource in Flow.</p><p><br></p><p>This email is being sent to this set of email addresses that came from a string collection:</p><p>{!stringCollectionEmailAddresses}</p>|
+    |Name|Text|Description|
+    |:-- |:-- |:--  |
+    |HTMLTextTemplate|<p>This is some <span style="color: rgb(41, 25, 215);">body text </span>created using the rich text editor in the <b>Text Template</b> resource in <u style="font-size: 22px;">Flow</u>.</p>|<!-- -->|
+    |plainTextBody|<p>This is some body text created using the rich text editor in the Text Template resource in Flow.</p><p><br></p><p>This email is being sent to this set of email addresses that came from a string collection:</p><p>{!stringCollectionEmailAddresses}</p>|<!-- -->|
     
     
     ## Flow Nodes Details

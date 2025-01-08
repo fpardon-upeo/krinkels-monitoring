@@ -202,6 +202,13 @@
     |Next Node|[Get_User_Details](#get_user_details)|
     
     
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |NameOfUser|String|{!Get_User_Details.FirstName} & ' ' & {!Get_User_Details.LastName}|<!-- -->|
+    
+    
     ## Flow Nodes Details
     
     ### Check_Manager_Territory

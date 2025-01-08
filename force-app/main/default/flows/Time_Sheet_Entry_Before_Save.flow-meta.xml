@@ -179,7 +179,7 @@
     <formulas>
         <name>CalculateATAKCode</name>
         <dataType>String</dataType>
-        <expression>IF($Record.Urgent_Intervention__c, &quot;DIVU&quot;, 
+        <expression>IF($Record.Urgent_Intervention__c, &quot;HR&quot;, 
   CASE($Record.Type, 
     &quot;Normal Hours&quot;, &quot;HR&quot;, 
     &quot;Travel Time&quot;, &quot;RT&quot;,

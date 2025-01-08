@@ -139,6 +139,13 @@
     linkStyle 4,5 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>assetName</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>"Extra Work - " +{!$Record.QuoteAccount.Parent.Alias_commercial_customer_name__c} +" - " + {!$Record.QuoteAccount.ShippingStreet}</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>assetName</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!$Record.Name}</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
     ## Flow Nodes Details
     
     ### Create_Asset
@@ -348,9 +355,16 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |🟩<span style="background-color: #a6e22e; color: black;"><b>extraLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>extraLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>assetName</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>"Extra Work - " +{!$Record.Opportunity.Account.Alias_commercial_customer_name__c} +" - " + {!$Record.Opportunity.Account.ShippingStreet}</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>assetName</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>"Extra Work - " +{!$Record.QuoteAccount.Parent.Alias_commercial_customer_name__c} +" - " + {!$Record.QuoteAccount.ShippingStreet}</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     
     ## Flow Nodes Details
     
@@ -877,10 +891,17 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |assetId|String|⬜|⬜|⬜|<!-- -->|
-    |extraWorkOrder|SObject|⬜|⬜|⬜|WorkOrder|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |assetId|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |extraWorkOrder|SObject|⬜|⬜|⬜|WorkOrder|<!-- -->|
+    
+    
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |assetName|String|"Extra Work - " +{!$Record.Opportunity.Account.Alias_commercial_customer_name__c} +" - " + {!$Record.Opportunity.Account.ShippingStreet}|<!-- -->|
     
     
     ## Flow Nodes Details

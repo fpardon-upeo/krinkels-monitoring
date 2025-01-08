@@ -88,13 +88,13 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |formFactor|String|⬜|✅|⬜|<!-- -->|
-    |iOS|Boolean|⬜|✅|⬜|<!-- -->|
-    |LoginFlow_ForceLogout|String|⬜|✅|⬜|<!-- -->|
-    |LoginFlow_Platform|String|⬜|✅|⬜|<!-- -->|
-    |LoginFlow_UserAgent|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |formFactor|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |iOS|Boolean|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |LoginFlow_ForceLogout|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |LoginFlow_Platform|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |LoginFlow_UserAgent|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

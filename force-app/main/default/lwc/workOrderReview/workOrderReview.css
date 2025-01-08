@@ -1,0 +1,17 @@
+/**
+ * Created by Frederik on 1/7/2025.
+ */
+
+.card-background {
+    background-color:  #f3f3f3;
+    border-radius: 0.25rem;
+    border-color: #e5e5e5;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+}

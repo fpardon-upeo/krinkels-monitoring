@@ -12,8 +12,6 @@ public without sharing class SDWorxAbsenceBatchScheduler implements Schedulable 
 
         String absenceBatch = Database.executeBatch(new SDWorxAbsenceBatch(), 200);
         System.debug('Batch Id: ' + absenceBatch);
-        
+
     }
-
-
 }

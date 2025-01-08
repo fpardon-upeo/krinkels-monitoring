@@ -170,6 +170,13 @@
     |Next Node|[Set_Van_Naming_Convention](#set_van_naming_convention)|
     
     
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |VanNaming|String|{!$Record.Van_Crew__r.Name} + " (" + {!$Record.License_Plate__c}+ ")"|<!-- -->|
+    
+    
     ## Flow Nodes Details
     
     ### Set_Van_Naming_Convention

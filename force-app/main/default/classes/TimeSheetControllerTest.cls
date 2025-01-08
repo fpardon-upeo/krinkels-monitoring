@@ -193,20 +193,13 @@ private class TimeSheetControllerTest {
     TimeSheet ts = [SELECT Id FROM TimeSheet LIMIT 1];
     ResourceAbsence absence = [SELECT Id FROM ResourceAbsence LIMIT 1];
 
-    // Create input times
-    DateTime newStart = DateTime.now().addHours(-2);
-    DateTime newEnd = DateTime.now().addHours(-1);
+    // Create input times - using specific times to test rounding
+    DateTime newStart = DateTime.newInstance(2025, 1, 7, 7, 52, 0); // Should round to 7:50
+    DateTime newEnd = DateTime.newInstance(2025, 1, 7, 8, 58, 0); // Should round to 9:00
 
     // Calculate expected rounded times
-    DateTime expectedStart = DateTimeRounder.roundSingle(newStart, 5); // Using 20-minute intervals
-    DateTime expectedEnd = DateTimeRounder.roundSingle(newEnd, 5);
-
-    System.debug(
-      'Original start time: ' + newStart.format('yyyy-MM-dd HH:mm:ss')
-    );
-    System.debug(
-      'Expected rounded start: ' + expectedStart.format('yyyy-MM-dd HH:mm:ss')
-    );
+    DateTime expectedStart = DateTime.newInstance(2025, 1, 7, 7, 50, 0); // 7:50
+    DateTime expectedEnd = DateTime.newInstance(2025, 1, 7, 9, 0, 0); // 9:00
 
     Test.startTest();
     TimeSheetController.TimeSheetWrapper result = TimeSheetController.updateAbsence(
@@ -223,20 +216,15 @@ private class TimeSheetControllerTest {
       WHERE Id = :absence.Id
     ];
 
-    System.debug(
-      'Actual stored start: ' +
-      updatedAbsence.Start.format('yyyy-MM-dd HH:mm:ss')
-    );
-
     Assert.areEqual(
-      expectedStart.format('yyyy-MM-dd HH:mm'),
-      updatedAbsence.Start.format('yyyy-MM-dd HH:mm'),
-      'Start time should be rounded to nearest 5-minute interval'
+      expectedStart,
+      updatedAbsence.Start,
+      'Start time should round down to 7:50 as it\'s closer than 7:55'
     );
     Assert.areEqual(
-      expectedEnd.format('yyyy-MM-dd HH:mm'),
-      updatedAbsence.End.format('yyyy-MM-dd HH:mm'),
-      'End time should be rounded to nearest 5-minute interval'
+      expectedEnd,
+      updatedAbsence.End,
+      'End time should round up to 9:00 as it\'s closer than 8:55'
     );
   }
 

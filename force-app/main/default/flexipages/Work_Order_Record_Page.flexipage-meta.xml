@@ -220,6 +220,32 @@
                 <identifier>force_relatedListSingleContainer7</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>WorkOrder.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>ActivityHistories</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer11</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-cc66e4ef-a285-46ed-a0d2-214db19d867e</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -530,6 +556,47 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>flowArguments</name>
+                    <value>[{&quot;label&quot;:&quot;recordId&quot;,&quot;dataType&quot;:&quot;String&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowLayout</name>
+                    <value>oneColumn</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowName</name>
+                    <value>Work_Order_Screen_Flow_Service_Report_Review_Flag</value>
+                </componentInstanceProperties>
+                <componentName>flowruntime:interview</componentName>
+                <identifier>flowruntime_interview</identifier>
+                <visibilityRule>
+                    <booleanFilter>(1 OR 2 ) AND 3 AND 4</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.WorkType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Extra Work</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.WorkType.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Small Works</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.PDF_Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Review Needed</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Status}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Completed</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>WorkOrder.Id</value>
                 </componentInstanceProperties>
@@ -591,6 +658,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>localeField</name>
+                    <value>Contact.Language_Formula__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numCurrLocaleField</name>

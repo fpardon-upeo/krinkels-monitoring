@@ -88,12 +88,12 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |LastWOLNumber|Number|⬜|✅|⬜|<!-- -->|
-    |LastWorkStepsCollection|SObject|✅|✅|⬜|WorkStep|
-    |WorkStepCollection|SObject|✅|✅|⬜|WorkStep|
-    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |LastWOLNumber|Number|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |LastWorkStepsCollection|SObject|✅|✅|⬜|WorkStep|<!-- -->|
+    |WorkStepCollection|SObject|✅|✅|⬜|WorkStep|<!-- -->|
+    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|<!-- -->|
     
     
     ## Flow Nodes Details

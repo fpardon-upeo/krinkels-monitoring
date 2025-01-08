@@ -21,7 +21,7 @@
               ></lightning-icon>
             </div>
             <div class="stat-info">
-              <span class="stat-label">Work Hours</span>
+              <span class="stat-label">{labels.Calendar_WorkHours_Header}</span>
               <span class="stat-value"
                 >{workHours}h / {expectedWorkHours}h
               </span>
@@ -55,7 +55,7 @@
               ></lightning-icon>
             </div>
             <div class="stat-info">
-              <span class="stat-label">Total KM</span>
+              <span class="stat-label">{labels.Calendar_TotalKM_Header}</span>
               <span class="stat-value">{kmAmount}km</span>
             </div>
           </div>
@@ -91,7 +91,9 @@
               ></lightning-icon>
             </div>
             <div class="stat-info">
-              <span class="stat-label">Total Break</span>
+              <span class="stat-label"
+                >{labels.Calendar_TotalBreakHours_Header}</span
+              >
               <span class="stat-value">{totalBreakHours}h</span>
             </div>
           </div>
@@ -938,7 +940,7 @@
     <div class="mobile-bottom-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Break missing</h2>
+        <h2 class="sheet-title">{labels.Calendar_BreakMissing}</h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="warning-container">
@@ -949,10 +951,7 @@
               variant="warning"
             ></lightning-icon>
           </div>
-          <p class="warning-text">
-            It looks like you have forgotten to add your break. Please add it
-            now before submitting your time sheet or correct your time sheet.
-          </p>
+          <p class="warning-text">{labels.Calendar_BreakMissing_Text}</p>
         </div>
         <div class="action-buttons">
           <template if:false={hasEnteredBreak}>
@@ -964,9 +963,9 @@
                 ></lightning-icon>
               </span>
               <span class="button-text">
-                <span class="button-label">Add a break</span>
+                <span class="button-label">{labels.Calendar_Add_Break}</span>
                 <span class="button-description"
-                  >Add to your time sheet a break</span
+                  >{labels.Calendar_Add_Break_Description}</span
                 >
               </span>
             </button>

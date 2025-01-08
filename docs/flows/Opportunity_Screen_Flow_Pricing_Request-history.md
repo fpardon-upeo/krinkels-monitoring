@@ -68,9 +68,9 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |recordId|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |recordId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

@@ -349,23 +349,22 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |ContentDocumentIdsCollection|String|✅|✅|⬜|<!-- -->|
-    |ContentDocumentLinkCollection|SObject|✅|✅|⬜|ContentDocumentLink|
-    |ContentDocumentLinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|
-    |ContentDocumentRecord|SObject|⬜|✅|⬜|ContentDocument|
-    |DepotVisitId|String|⬜|✅|⬜|<!-- -->|
-    |recordId|String|⬜|✅|⬜|<!-- -->|
-    |SelectedDepotId|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |ContentDocumentIdsCollection|String|✅|✅|⬜|<!-- -->|<!-- -->|
+    |ContentDocumentLinkCollection|SObject|✅|✅|⬜|ContentDocumentLink|<!-- -->|
+    |ContentDocumentLinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|<!-- -->|
+    |ContentDocumentRecord|SObject|⬜|✅|⬜|ContentDocument|<!-- -->|
+    |DepotVisitId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |recordId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |SelectedDepotId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     
     
     ## Formulas
     
-    |Name|Data Type|Expression|
-    |:-- |:--:|:--  |
-    |DepotVisitURL|String|LEFT({!$Api.Partner_Server_URL_340},FIND("/services", {!$Api.Partner_Server_URL_340})) & {!DepotVisitId}|
-    |today|Date|TODAY()|
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

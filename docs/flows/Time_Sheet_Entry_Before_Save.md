@@ -103,10 +103,9 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 ## Formulas
 
-|Name|Data Type|Expression|
-|:-- |:--:|:--  |
-|CalculateATAKCode|String|IF($Record.Urgent_Intervention__c, "DIVU", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "A",<br/>    "Illness",  "Z",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "AF",<br/>    "HR"<br/>  )<br/>)|
-|CalculatedSoccode|String|IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", "1706",<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)|
+|Name|Data Type|Expression|Description|
+|:-- |:--:|:-- |:--  |
+|<!-- -->|<!-- -->|<!-- -->|<!-- -->|
 
 
 ## Flow Nodes Details

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Contract_Commercial_Contract</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(Type__c) = &apos;Service Contract&apos; &amp;&amp;  ParentServiceContractId = &apos;&apos;</errorConditionFormula>
+    <errorMessage>A Service Contract always needs a Commercial Agreement</errorMessage>
+</ValidationRule>

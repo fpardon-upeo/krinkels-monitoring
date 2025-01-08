@@ -3,16 +3,16 @@
  */
 
 import { api, LightningElement, track } from "lwc";
-import checkIn from '@salesforce/apex/CheckInService.checkIn';
+import checkIn from "@salesforce/apex/CheckInService.checkIn";
 import { getLocationService } from "lightning/mobileCapabilities";
 import { updateRecord } from "lightning/uiRecordApi";
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { NavigationMixin } from 'lightning/navigation';
-import { CloseActionScreenEvent } from 'lightning/actions';
-import LOADING_MESSAGE from '@salesforce/label/c.Checkin_Loading';
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import { NavigationMixin } from "lightning/navigation";
+import { CloseActionScreenEvent } from "lightning/actions";
+import LOADING_MESSAGE from "@salesforce/label/c.Checkin_Loading";
+import Checkin_locationError from "@salesforce/label/c.Checkin_locationError";
 
-export default class CheckIn extends  NavigationMixin(LightningElement) {
-
+export default class CheckIn extends NavigationMixin(LightningElement) {
   _recordId;
   @track latitude;
   @track longitude;
@@ -21,8 +21,9 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
   currentLocation;
 
   labels = {
-    loadingMessage: LOADING_MESSAGE
-  }
+    loadingMessage: LOADING_MESSAGE,
+    locationError: Checkin_locationError
+  };
 
   @api
   get recordId() {
@@ -35,14 +36,14 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
     }
   }
 
-  @api async invoke () {
-    console.log('invoke');
+  @api async invoke() {
+    console.log("invoke");
     this.myLocationService = getLocationService();
     await this.getLocation();
   }
 
   connectedCallback() {
-    console.log('connectedCallback');
+    console.log("connectedCallback");
     this.updateWorkStepToCompleted();
     this.myLocationService = getLocationService();
     this.getLocation();
@@ -50,14 +51,14 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
 
   updateWorkStepToCompleted() {
     const fields = {};
-    fields['Status'] = 'Completed';
-    fields['Id'] = this.recordId;
+    fields["Status"] = "Completed";
+    fields["Id"] = this.recordId;
     const recordInput = { fields };
-    updateRecord( recordInput )
+    updateRecord(recordInput)
       .then(() => {
-        console.log('Record updated');
+        console.log("Record updated");
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   }
@@ -71,9 +72,11 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
     this.dispatchEvent(event);
   }
 
-
   async getLocation() {
-    if (this.myLocationService != null && this.myLocationService.isAvailable()) {
+    if (
+      this.myLocationService != null &&
+      this.myLocationService.isAvailable()
+    ) {
       const locationOptions = {
         enableHighAccuracy: true
       };
@@ -81,7 +84,8 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
       this.requestInProgress = true;
 
       try {
-        const result = await this.myLocationService.getCurrentPosition(locationOptions);
+        const result =
+          await this.myLocationService.getCurrentPosition(locationOptions);
         this.currentLocation = result;
         this.latitude = result.coords.latitude.toFixed(6);
         this.longitude = result.coords.longitude.toFixed(6);
@@ -99,12 +103,11 @@ export default class CheckIn extends  NavigationMixin(LightningElement) {
         throw error;
       }
     } else {
-      throw new Error("LocationService Is Not Available");
+      throw new Error(this.labels.locationError);
     }
   }
 
   closeQuickAction() {
     this.dispatchEvent(new CloseActionScreenEvent());
   }
-
 }

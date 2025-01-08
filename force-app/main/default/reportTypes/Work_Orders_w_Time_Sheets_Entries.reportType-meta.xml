@@ -610,6 +610,31 @@
             <field>ATAK_Project_Code__c</field>
             <table>WorkOrder</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PDF_Status__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Reviewed_for_Service_Report__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOL_Already_Added__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Current_User_is_CM__c</field>
+            <table>WorkOrder</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Has_Kilometers_Booked__c</field>
+            <table>WorkOrder</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
     <sections>
@@ -776,6 +801,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Corrected__c</field>
+            <table>WorkOrder.TimeSheetEntries</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Kilometer_Allowance__c</field>
+            <table>WorkOrder.TimeSheetEntries</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Kilometer_Allowance_Entry__c</field>
             <table>WorkOrder.TimeSheetEntries</table>
         </columns>
         <masterLabel>Time Sheet Entries</masterLabel>

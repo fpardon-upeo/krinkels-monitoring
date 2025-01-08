@@ -78,127 +78,6 @@ export default class ShowMileageScreen extends LightningElement {
     Mileage_Header
   };
 
-  // @wire(graphql, {
-  //   query: gql`
-  //     query ServiceAppointments(
-  //       $serviceResourceId: ID
-  //       $startDate: DateTimeInput
-  //       $endDate: DateTimeInput
-  //     ) {
-  //       uiapi {
-  //         query {
-  //           AssignedResource(
-  //             where: {
-  //               and: [
-  //                 { ServiceResourceId: { eq: $serviceResourceId } }
-  //                 { ServiceAppointment: { Status: { ne: "Scheduled" } } }
-  //                 { ServiceAppointment: { Status: { ne: "Unscheduled" } } }
-  //                 { ServiceAppointment: { Status: { ne: "Cannot Complete" } } }
-  //                 { ServiceAppointment: { Status: { ne: "Cancelled" } } }
-  //                 {
-  //                   ServiceAppointment: {
-  //                     SchedStartTime: { gte: $startDate, lte: $endDate }
-  //                   }
-  //                 }
-  //               ]
-  //             }
-  //             orderBy: {
-  //               ServiceAppointment: { SchedStartTime: { order: ASC } }
-  //             }
-  //           ) {
-  //             edges {
-  //               node {
-  //                 ServiceAppointment {
-  //                   AppointmentNumber {
-  //                     value
-  //                     displayValue
-  //                   }
-  //                   Account {
-  //                     Name {
-  //                       value
-  //                       displayValue
-  //                     }
-  //                   }
-  //                   Id
-  //                   Subject {
-  //                     value
-  //                     displayValue
-  //                   }
-  //                   SchedStartTime {
-  //                     value
-  //                     displayValue
-  //                   }
-  //                   ParentRecordId {
-  //                     value
-  //                     displayValue
-  //                   }
-  //                   WorkType {
-  //                     Name {
-  //                       value
-  //                     }
-  //                   }
-  //                 }
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `,
-  //   variables: "$serviceAppointmentsVariables"
-  // })
-  // appointmentsQueryResult({ error, data }) {
-  //   if (data) {
-  //     this.data = data.uiapi.query.AssignedResource.edges.map(
-  //       (edge) => edge.node.ServiceAppointment
-  //     );
-  //     this.serviceAppointments = this.data.map((appointment) => {
-  //       //Pretty schedule start time
-  //       let date = new Date(appointment.SchedStartTime.value);
-  //       //Use the date and the cleaned up hours and minutes, use 24h format
-  //       let dateFormatted =
-  //         date.getDate() +
-  //         "/" +
-  //         (date.getMonth() + 1) +
-  //         " " +
-  //         date.getHours() +
-  //         ":" +
-  //         date.getMinutes();
-  //       //Make sure we don't return things like 14:0, but 14:00
-  //       dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
-
-  //       let icon = "";
-  //       if (appointment.WorkType.Name.value === "Waste Management") {
-  //         icon = "🗑️";
-  //       } else if (appointment.WorkType.Name.value === "Internal Depot") {
-  //         icon = "🏭";
-  //       } else {
-  //         icon = "💲";
-  //       }
-
-  //       return {
-  //         Appointment:
-  //           icon +
-  //           " " +
-  //           appointment.Account.Name.value +
-  //           " - " +
-  //           dateFormatted +
-  //           " - " +
-  //           appointment.WorkType.Name.value,
-  //         AppointmentNumber: appointment.AppointmentNumber.value,
-  //         Subject: appointment.Subject.value,
-  //         Id: appointment.Id,
-  //         SchedStartTime: appointment.SchedStartTime.value,
-  //         ParentRecordId: appointment.ParentRecordId.value,
-  //         WorkOrderType: appointment.WorkType.Name.value
-  //       };
-  //     });
-  //     console.log(JSON.stringify(this.serviceAppointments));
-  //   } else if (error) {
-  //     console.log(error);
-  //   }
-  // }
-
   @wire(graphql, {
     query: gql`
       query ServiceAppointments(
@@ -212,12 +91,10 @@ export default class ShowMileageScreen extends LightningElement {
               where: {
                 and: [
                   { ServiceResourceId: { eq: $serviceResourceId } }
-                  { ServiceAppointment: { Status: { ne: "Completed" } } }
+                  { ServiceAppointment: { Status: { ne: "Scheduled" } } }
                   { ServiceAppointment: { Status: { ne: "Unscheduled" } } }
                   { ServiceAppointment: { Status: { ne: "Cannot Complete" } } }
                   { ServiceAppointment: { Status: { ne: "Cancelled" } } }
-                  { ServiceAppointment: { Status: { ne: "In Progress" } } }
-                  { ServiceAppointment: { Status: { ne: "Travelling" } } }
                   {
                     ServiceAppointment: {
                       SchedStartTime: { gte: $startDate, lte: $endDate }
@@ -275,9 +152,6 @@ export default class ShowMileageScreen extends LightningElement {
       this.data = data.uiapi.query.AssignedResource.edges.map(
         (edge) => edge.node.ServiceAppointment
       );
-
-      console.log("data", JSON.stringify(data));
-
       this.serviceAppointments = this.data.map((appointment) => {
         //Pretty schedule start time
         let date = new Date(appointment.SchedStartTime.value);
@@ -319,44 +193,22 @@ export default class ShowMileageScreen extends LightningElement {
           WorkOrderType: appointment.WorkType.Name.value
         };
       });
-      console.log(
-        "serviceAppointments",
-        JSON.stringify(this.serviceAppointments)
-      );
+      console.log(JSON.stringify(this.serviceAppointments));
     } else if (error) {
       console.log(error);
     }
   }
 
-  // get serviceAppointmentsVariables() {
-  //   // // Get the dates for last week's start and next week's end
-  //   // const today = new Date();
-  //   // const lastWeekStart = new Date(today);
-  //   // lastWeekStart.setDate(today.getDate() - today.getDay() - 7); // Beginning of last week
-  //   // const nextWeekEnd = new Date(today);
-  //   // nextWeekEnd.setDate(today.getDate() - today.getDay() + 21); // End of next week
-
-  //   //Use the dates from the time sheet being loaded
-  //   const startDateTime = new Date(this.startDate);
-  //   const endDateTime = new Date(this.endDate);
-
-  //   // Set end date to end of day
-  //   endDateTime.setHours(23, 59, 59, 999);
-
-  //   return {
-  //     serviceResourceId: this.serviceResourceId,
-  //     startDate: { value: startDateTime.toISOString() },
-  //     endDate: { value: endDateTime.toISOString() }
-  //   };
-  // }
-
   get serviceAppointmentsVariables() {
     // Get the dates for last week's start and next week's end
     const today = new Date();
     const lastWeekStart = new Date(today);
-    lastWeekStart.setDate(today.getDate() - today.getDay() - 7); // Beginning of last week
+    lastWeekStart.setDate(today.getDate() - 3); // Beginning of last week
     const nextWeekEnd = new Date(today);
-    nextWeekEnd.setDate(today.getDate() - today.getDay() + 21); // End of next week
+    nextWeekEnd.setDate(today.getDate() - today.getDay() + 3); // End of next week
+
+    console.log("lastweekstart", lastWeekStart.toISOString());
+    console.log("nextweekend", nextWeekEnd.toISOString());
 
     return {
       serviceResourceId: this.serviceResourceId,

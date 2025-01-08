@@ -222,7 +222,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Contract_type__c</fieldItem>
                 <identifier>RecordContract_type2__cField</identifier>
@@ -325,6 +325,30 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.AccountId</fieldItem>
                 <identifier>RecordAccountIdField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Commercial Agreement</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.AccountId</fieldItem>
+                <identifier>RecordAccountIdField2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Service Contract</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -506,7 +530,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Product__c</fieldItem>
                 <identifier>RecordProduct_cField</identifier>

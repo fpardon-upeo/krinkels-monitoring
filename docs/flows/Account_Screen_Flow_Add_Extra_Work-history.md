@@ -1308,19 +1308,18 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |CreatedOpportunityId|String|⬜|✅|⬜|<!-- -->|
-    |CreatedQuoteId|String|⬜|✅|⬜|<!-- -->|
-    |recordId|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |CreatedOpportunityId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |CreatedQuoteId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |recordId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     
     
     ## Formulas
     
-    |Name|Data Type|Expression|
-    |:-- |:--:|:--  |
-    |OpportunityNameCalculation|String|{!Get_Account_Details.Name} &' - Extra Work'&' - '&TEXT({!Expected_Work_Date})|
-    |PricingRequestStatus|String|IF({!Request_Pricing_to_Business_Support_Choice}='Yes', 'Requested', '')|
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

@@ -103,28 +103,28 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |ContactEmail|String|⬜|✅|⬜|<!-- -->|
-    |ContactId|String|⬜|✅|⬜|<!-- -->|
-    |ContactName|String|⬜|✅|⬜|<!-- -->|
-    |ContentDocumentLinkCollection|SObject|✅|✅|⬜|ContentDocumentLink|
-    |ContentDocumentLinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|
-    |EmailTemplateRecord|SObject|⬜|✅|⬜|EmailTemplate|
-    |Id|String|⬜|✅|⬜|<!-- -->|
-    |ServiceAppointmentContactId|String|⬜|✅|⬜|<!-- -->|
-    |ServiceAppointmentId|String|⬜|✅|⬜|<!-- -->|
-    |ServiceReportRecord|SObject|⬜|✅|⬜|ServiceReport|
-    |ServiceReportTitle|String|⬜|✅|⬜|<!-- -->|
-    |WorkOrderId|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |ContactEmail|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |ContactId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |ContactName|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |ContentDocumentLinkCollection|SObject|✅|✅|⬜|ContentDocumentLink|<!-- -->|
+    |ContentDocumentLinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|<!-- -->|
+    |EmailTemplateRecord|SObject|⬜|✅|⬜|EmailTemplate|<!-- -->|
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |ServiceAppointmentContactId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |ServiceAppointmentId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |ServiceReportRecord|SObject|⬜|✅|⬜|ServiceReport|<!-- -->|
+    |ServiceReportTitle|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |WorkOrderId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     
     
     ## Text Templates
     
-    |Name|Text|
-    |:-- |:--  |
-    |EmailBody|Hi,<br/>Please find attached the service report for the work order carried out today.<br/>Please do not hesitate to contact us for any additional information.<br/><br/>Krinkels Team|
-    |EmailSubject|Krinkels - Service Report|
+    |Name|Text|Description|
+    |:-- |:-- |:--  |
+    |EmailBody|Hi,<br/>Please find attached the service report for the work order carried out today.<br/>Please do not hesitate to contact us for any additional information.<br/><br/>Krinkels Team|<!-- -->|
+    |EmailSubject|Krinkels - Service Report|<!-- -->|
     
     
     ## Flow Nodes Details

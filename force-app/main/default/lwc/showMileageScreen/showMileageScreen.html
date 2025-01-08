@@ -154,65 +154,23 @@
         >
           <lightning-messages></lightning-messages>
           <div class="form-fields">
-            <!-- Work Order -->
-            <!-- <div
-              class="slds-form-element slds-m-top_medium slds-m-bottom_x-small"
-            >
-              <label class="slds-form-element__label">
-                <abbr
-                  class="slds-required"
-                  title={labels.TimeSheetEntryForm_Required_Label}
-                  >*</abbr
-                >
-                {labelsText.TimeSheetEntryForm_WorkOrder_Text}
-              </label>
-              <div class="slds-form-element__control">
-                <div
-                  class="slds-grid slds-gutters slds-grid_vertical-align-center"
-                >
-                  <div class="slds-col slds-size_2-of-4">
-                    <button
-                      type="button"
-                      class="slds-button slds-button_brand lookup-button"
-                      onclick={handleSetAppointmentClicked}
-                    >
-                      <lightning-icon
-                        icon-name="utility:search"
-                        size="xx-small"
-                        variant="inverse"
-                        class="slds-m-right_xx-small"
-                      >
-                      </lightning-icon>
-                      {labelsText.TimeSheetEntryForm_SelectWorkOrder_Text}
-                    </button>
-                  </div>
-                  <div class="slds-col slds-size_2-of-4">
-                    <lightning-input-field
-                      if:true={workOrderId}
-                      field-name="WorkOrderId"
-                      value={workOrderId}
-                      variant="label-hidden"
-                      required
-                    >
-                    </lightning-input-field>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Work Order -->
-            <!-- <abbr class="slds-required">*</abbr>
-            <button onclick={handleSetAppointmentClicked} type="button">
-              <lightning-icon
-                icon-name="utility:search"
-                size="xx-small"
-                variant="inverse"
-                class="slds-m-right_xx-small"
+            <div class="work-order-container">
+              <abbr class="slds-required">*</abbr>
+              <button
+                onclick={handleSetAppointmentClicked}
+                type="button"
+                class="work-order-button"
               >
-              </lightning-icon>
-
-              {workOrderText}
-            </button>
+                <lightning-icon
+                  icon-name="utility:search"
+                  size="xx-small"
+                  variant="inverse"
+                  class="slds-m-right_xx-small"
+                >
+                </lightning-icon>
+                {workOrderText}
+              </button>
+            </div>
 
             <lightning-input-field
               field-name="Work_Order__c"
@@ -220,7 +178,7 @@
               variant="label-hidden"
               required
             >
-            </lightning-input-field> -->
+            </lightning-input-field>
 
             <lightning-input-field
               field-name="Time_Sheet__c"

@@ -724,6 +724,7 @@
         <members>ObjectFieldSelectorControllerTest</members>
         <members>OutboundLoggerService</members>
         <members>OverrideNotApplicableController</members>
+        <members>PDFButler_ConvertService</members>
         <members>PersonnelRestResource</members>
         <members>PersonnelRestResourceTest</members>
         <members>ProjectRestResource</members>
@@ -732,6 +733,7 @@
         <members>RRuleAdjusterTest</members>
         <members>RRuleDescriptionGenerator</members>
         <members>ReadyForValidation</members>
+        <members>ReadyForValidationTest</members>
         <members>SDWorxAbsenceBatch</members>
         <members>SDWorxAbsenceBatchScheduler</members>
         <members>SDWorxToResourceAbsenceService</members>
@@ -755,6 +757,8 @@
         <members>ServiceBuilderController</members>
         <members>ServiceBuilderWrapper</members>
         <members>ServiceContractTriggerHandler</members>
+        <members>ServiceReportGenerationBatch</members>
+        <members>ServiceReportGenerationBatchScheduler</members>
         <members>ServiceResourceHandler</members>
         <members>ServiceResourceHandlerTest</members>
         <members>SingleRequestMock</members>
@@ -767,6 +771,7 @@
         <members>TimeSheetProjectLinkService</members>
         <members>TimeSheetProjectLinkServiceTest</members>
         <members>WeatherService</members>
+        <members>WorkOrderReviewController</members>
         <members>WorkOrderSchedulerBatch</members>
         <members>WorkOrderSchedulerController</members>
         <members>WorkOrderSequence</members>
@@ -1449,6 +1454,7 @@
         <members>SD_Import__c.Custom_Compact_Layout</members>
         <members>ServiceAppointment.Service_Appointment_Compact_Layout</members>
         <members>ServiceContract.Service_Contract</members>
+        <members>TimeSheet.Timesheet</members>
         <members>User.User_Layout</members>
         <members>WorkOrder.Work_Order_Compact_Layout</members>
         <members>WorkOrderLineItem.Work_Order_Line_Item_Compact_Layout</members>
@@ -2811,6 +2817,8 @@
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
         <members>TimeSheetEntry.Corrected__c</members>
         <members>TimeSheetEntry.Invoice_Type__c</members>
+        <members>TimeSheetEntry.Is_Kilometer_Allowance_Entry__c</members>
+        <members>TimeSheetEntry.Is_Kilometer_Allowance__c</members>
         <members>TimeSheetEntry.Pause_Duration__c</members>
         <members>TimeSheetEntry.Resource_Absence__c</members>
         <members>TimeSheetEntry.Soccode__c</members>
@@ -2846,6 +2854,7 @@
         <members>WorkOrder.Checkin_Location__c</members>
         <members>WorkOrder.Collected_Items__c</members>
         <members>WorkOrder.Contract_Manager__c</members>
+        <members>WorkOrder.Current_User_is_CM__c</members>
         <members>WorkOrder.Customer_Reference__c</members>
         <members>WorkOrder.Depot_Visit_Comments__c</members>
         <members>WorkOrder.Depot_Visit_Planned__c</members>
@@ -2856,6 +2865,7 @@
         <members>WorkOrder.FSL__Scheduling_Priority__c</members>
         <members>WorkOrder.FSL__VisitingHours__c</members>
         <members>WorkOrder.Goodwill_Tasks__c</members>
+        <members>WorkOrder.Has_Kilometers_Booked__c</members>
         <members>WorkOrder.Invoice_Type__c</members>
         <members>WorkOrder.Invoicing_Remarks__c</members>
         <members>WorkOrder.Is_First_of_Day__c</members>
@@ -2867,10 +2877,12 @@
         <members>WorkOrder.Name_Contract_Manager__c</members>
         <members>WorkOrder.Operating_Hours__c</members>
         <members>WorkOrder.Opportunity__c</members>
+        <members>WorkOrder.PDF_Status__c</members>
         <members>WorkOrder.Pick_Up_Items__c</members>
         <members>WorkOrder.Product__c</members>
         <members>WorkOrder.Production_Work__c</members>
         <members>WorkOrder.Quote__c</members>
+        <members>WorkOrder.Reviewed_for_Service_Report__c</members>
         <members>WorkOrder.Rework_Planned__c</members>
         <members>WorkOrder.Rework_for_Work_Order__c</members>
         <members>WorkOrder.Rework_reasons__c</members>
@@ -2886,6 +2898,7 @@
         <members>WorkOrder.Special_Equipment__c</members>
         <members>WorkOrder.Trigger_Notification_to_Customer__c</members>
         <members>WorkOrder.Type__c</members>
+        <members>WorkOrder.WOL_Already_Added__c</members>
         <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
         <members>WorkOrder.Waste_Visit_Done__c</members>
         <members>WorkOrder.Waste_Visit_Planned__c</members>
@@ -2893,6 +2906,7 @@
         <members>WorkOrder.Work_Order_Type__c</members>
         <members>WorkOrderLineItem.FSL__IsFillInCandidate__c</members>
         <members>WorkOrderLineItem.FSL__VisitingHours__c</members>
+        <members>WorkStep.Added_from_WOL__c</members>
         <members>WorkStep.Not_Applicable_Comments__c</members>
         <members>WorkStep.Not_Applicable_Reasons__c</members>
         <members>WorkStep.Reason__c</members>
@@ -3210,6 +3224,10 @@
         <members>Calendar_Add_Time_Sheet_Entry</members>
         <members>Calendar_Add_Time_Sheet_Entry_Description</members>
         <members>Calendar_Add_Time_Sheet_Entry_Description</members>
+        <members>Calendar_BreakMissing</members>
+        <members>Calendar_BreakMissing</members>
+        <members>Calendar_BreakMissing_Text</members>
+        <members>Calendar_BreakMissing_Text</members>
         <members>Calendar_Cancel</members>
         <members>Calendar_Cancel</members>
         <members>Calendar_Create_New_Entry</members>
@@ -3320,6 +3338,8 @@
         <members>Calendar_WorkHours_Header</members>
         <members>Checkin_Loading</members>
         <members>Checkin_Loading</members>
+        <members>Checkin_locationError</members>
+        <members>Checkin_locationError</members>
         <members>ExportCLI_Error_Toast_Message</members>
         <members>ExportCLI_Error_Toast_Message</members>
         <members>ExportCLI_Error_Toast_Title</members>
@@ -12170,6 +12190,7 @@
         <members>CustomerNotifications/Notification_Scheduled_WO_Day_NL_1736149375605</members>
         <members>CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513</members>
         <members>CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709</members>
+        <members>CustomerNotifications/Service_Report_Notification</members>
         <members>SignRequestTemplates</members>
         <members>SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937</members>
         <members>SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413</members>
@@ -12489,6 +12510,9 @@
         <members>Service_Appointment_Service_Report_Without_Signature_NL</members>
         <members>Service_Contract_Record_Page</members>
         <members>Service_Crew_Record_Page</members>
+        <members>Service_Report_Notification</members>
+        <members>Service_Report_Notification_fr</members>
+        <members>Service_Report_Notification_nl</members>
         <members>Service_Resource_Record_Page</members>
         <members>Service_Territory_Record_Page</members>
         <members>Time_Sheet_Entry_Record_Page</members>
@@ -12520,6 +12544,7 @@
         <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Account_Screen_Flow_Add_Extra_Work_Quote</members>
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
+        <members>Asset_Notify_Business_Support_for_ATAK_Project</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>CrewMember_Save_Check_for_Crew_Leader</members>
@@ -12531,6 +12556,7 @@
         <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_After_Save_Record_Triggered</members>
+        <members>Mileage_Entry_After_Save_Record_Triggered_Set_Work_As_Travel_Time_Work_Order</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
@@ -12576,11 +12602,13 @@
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
+        <members>Work_Order_After_Save_Record_Triggered_Delete_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
         <members>Work_Order_After_Update_Create_Signature_Work_Step</members>
+        <members>Work_Order_Autolaunched_Flow_Update_PDF_Status</members>
         <members>Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check</members>
         <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
@@ -12590,12 +12618,14 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
+        <members>Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit_Console</members>
         <members>Work_Order_Screen_Flow_Create_Internal_Work</members>
         <members>Work_Order_Screen_Flow_Create_Rework_WO</members>
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
+        <members>Work_Order_Screen_Flow_Service_Report_Review_Flag</members>
         <members>Work_Order_Send_Customer_Notification_Crew_Inbound</members>
         <members>Work_Plan_Extra_Work_Steps</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
@@ -12612,6 +12642,7 @@
         <members>Account_Screen_Flow_Add_Extra_Work</members>
         <members>Account_Screen_Flow_Add_Extra_Work_Quote</members>
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
+        <members>Asset_Notify_Business_Support_for_ATAK_Project</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>CrewMember_Save_Check_for_Crew_Leader</members>
@@ -12623,6 +12654,7 @@
         <members>Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit</members>
         <members>Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field</members>
         <members>Mileage_Entry_After_Save_Record_Triggered</members>
+        <members>Mileage_Entry_After_Save_Record_Triggered_Set_Work_As_Travel_Time_Work_Order</members>
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
@@ -12668,11 +12700,13 @@
         <members>Work_Order_After_Save_Record_Triggered_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed</members>
         <members>Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines</members>
+        <members>Work_Order_After_Save_Record_Triggered_Delete_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
         <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
         <members>Work_Order_After_Update_Create_Signature_Work_Step</members>
+        <members>Work_Order_Autolaunched_Flow_Update_PDF_Status</members>
         <members>Work_Order_Before_Save_Record_Triggered_Goodwill_Task_Check</members>
         <members>Work_Order_Before_Save_Record_Triggered_Set_Contract_Manager_Value</members>
         <members>Work_Order_Mobile_Flow_Check_In</members>
@@ -12682,12 +12716,14 @@
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
+        <members>Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work</members>
         <members>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit</members>
         <members>Work_Order_Screen_Flow_Create_Depot_Visit_Console</members>
         <members>Work_Order_Screen_Flow_Create_Internal_Work</members>
         <members>Work_Order_Screen_Flow_Create_Rework_WO</members>
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
+        <members>Work_Order_Screen_Flow_Service_Report_Review_Flag</members>
         <members>Work_Order_Send_Customer_Notification_Crew_Inbound</members>
         <members>Work_Plan_Extra_Work_Steps</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
@@ -13339,6 +13375,7 @@
         <members>wasteVisitForm</members>
         <members>workOrderActions</members>
         <members>workOrderCreator</members>
+        <members>workOrderReview</members>
         <members>workStepSignature</members>
         <name>LightningComponentBundle</name>
     </types>
@@ -13815,8 +13852,12 @@
         <members>WorkCapacityUsage.My_WorkCapacityUsages</members>
         <members>WorkOrder.All_WorkOrders</members>
         <members>WorkOrder.All_WorkOrders</members>
+        <members>WorkOrder.My_Team_s_Work_With_PDFs_to_Review</members>
+        <members>WorkOrder.My_Team_s_Work_With_PDFs_to_Review</members>
         <members>WorkOrder.My_WorkOrders</members>
         <members>WorkOrder.My_WorkOrders</members>
+        <members>WorkOrder.Work_Orders_In_Need_of_ATAK_Project</members>
+        <members>WorkOrder.Work_Orders_In_Need_of_ATAK_Project</members>
         <members>WorkPlan.All_WorkPlans</members>
         <members>WorkPlan.All_WorkPlans</members>
         <members>WorkPlan.My_WorkPlans</members>
@@ -15724,6 +15765,8 @@
         <members>ServiceAppointment.FSL__isDurationExist</members>
         <members>ServiceAppointment.FSL__isEarliestStartTimeExist</members>
         <members>ServiceAppointment.FSL__startTimeShouldPrecedeEndTime</members>
+        <members>ServiceContract.Commercial_Contract_Commercial_Acc</members>
+        <members>ServiceContract.Service_Contract_Commercial_Contract</members>
         <members>ServiceCrewMember.Crew_Should_Have_Leader</members>
         <members>ServiceCrewMember.FSL__Prevent_Crew_Allocation_For_Contractors</members>
         <members>ServiceResource.FSL__Capacity_Resource_of_Type_Crew</members>

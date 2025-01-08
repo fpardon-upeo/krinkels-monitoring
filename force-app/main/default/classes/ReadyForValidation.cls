@@ -1,4 +1,20 @@
 public with sharing class ReadyForValidation {
+  @TestVisible
+  private static List<ATAK_Project__c> getATAKProjects(String projectCode) {
+    return [SELECT Id FROM ATAK_Project__c WHERE Name = :projectCode];
+  }
+
+  @TestVisible
+  private static List<ATAK_Project__c> getATAKProjectsForNotification(
+    Set<String> projectCodes
+  ) {
+    return [
+      SELECT Id, SubProject_ATAK__c, OwnerId
+      FROM ATAK_Project__c
+      WHERE SubProject_ATAK__c IN :projectCodes
+    ];
+  }
+
   @AuraEnabled
   public static Boolean setReadyForValidation(Id recordId) {
     ServiceContract sc = [
@@ -13,11 +29,9 @@ public with sharing class ReadyForValidation {
 
     // First validate all project codes
     for (ContractLineItem lineItem : sc.ContractLineItems) {
-      List<ATAK_Project__c> projects = [
-        SELECT Id
-        FROM ATAK_Project__c
-        WHERE Name = :lineItem.Project_Code__c
-      ];
+      List<ATAK_Project__c> projects = getATAKProjects(
+        lineItem.Project_Code__c
+      );
 
       if (projects.isEmpty()) {
         throw new AuraHandledException(
@@ -34,11 +48,7 @@ public with sharing class ReadyForValidation {
 
     // Get owners to notify
     Set<String> ownersToNotify = new Set<String>();
-    for (ATAK_Project__c proj : [
-      SELECT Id, SubProject_ATAK__c, OwnerId
-      FROM ATAK_Project__c
-      WHERE SubProject_ATAK__c IN :projectCodes
-    ]) {
+    for (ATAK_Project__c proj : getATAKProjectsForNotification(projectCodes)) {
       ownersToNotify.add(proj.OwnerId);
     }
 

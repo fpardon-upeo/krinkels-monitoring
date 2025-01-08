@@ -210,17 +210,17 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |varRecipientIDs|String|✅|⬜|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |varRecipientIDs|String|✅|⬜|⬜|<!-- -->|<!-- -->|
     
     
     ## Text Templates
     
-    |Name|Text|
-    |:-- |:--  |
-    |NotificationBody|The Work Order "{!$Record.WorkOrderNumber}" for High Priority Customer {!$Record.Account.Name} is overdue!|
-    |NotificationTitle|Work Order "{!$Record.WorkOrderNumber}" overdue!|
+    |Name|Text|Description|
+    |:-- |:-- |:--  |
+    |NotificationBody|The Work Order "{!$Record.WorkOrderNumber}" for High Priority Customer {!$Record.Account.Name} is overdue!|<!-- -->|
+    |NotificationTitle|Work Order "{!$Record.WorkOrderNumber}" overdue!|<!-- -->|
     
     
     ## Flow Nodes Details

@@ -972,7 +972,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Calendar_Warning_Submit_Timesheet</shortDescription>
-        <value>Warning: After submission, this timesheet will be locked and cannot be edited.</value>
+        <value>Warning: After submission, this time sheet will be locked and cannot be edited.</value>
     </labels>
     <labels>
         <fullName>AppointmentPicker_Cancel_Button</fullName>
@@ -2148,5 +2148,29 @@
         <protected>false</protected>
         <shortDescription>WorkOrderActions_Extra_Work_Subject</shortDescription>
         <value>Work Description</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_BreakMissing</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_BreakMissing</shortDescription>
+        <value>Break Missing</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_BreakMissing_Text</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_BreakMissing_Text</shortDescription>
+        <value>It looks like you have forgotten to add your break. Please add it now before submitting your time sheet or correct your time sheet.</value>
+    </labels>
+    <labels>
+        <fullName>Checkin_locationError</fullName>
+        <categories>Checkin</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Checkin_locationError</shortDescription>
+        <value>LocationService Is Not Available</value>
     </labels>
 </CustomLabels>

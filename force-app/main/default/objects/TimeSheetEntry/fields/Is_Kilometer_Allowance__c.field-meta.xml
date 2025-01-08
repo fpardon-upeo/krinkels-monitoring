@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Kilometer_Allowance__c</fullName>
+    <formula>TEXT(Code_ATAK_Limbus__c) = &apos;RT&apos; &amp;&amp;  WorkOrder.Has_Kilometers_Booked__c</formula>
+    <label>Is Kilometer Allowance</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

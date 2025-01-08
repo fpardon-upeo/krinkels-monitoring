@@ -247,9 +247,9 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 ## Variables
 
-|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-|:-- |:--:|:--:|:--:|:--:|:--: |
-|Recipients|String|✅|⬜|⬜|<!-- -->|
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|Recipients|String|✅|⬜|⬜|<!-- -->|<!-- -->|
 
 
 ## Flow Nodes Details

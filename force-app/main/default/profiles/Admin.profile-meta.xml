@@ -298,6 +298,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PDFButler_ConvertService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PersonnelRestResource</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -327,6 +331,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ReadyForValidation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReadyForValidationTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -422,6 +430,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ServiceReportGenerationBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ServiceReportGenerationBatchScheduler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ServiceResourceHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -467,6 +483,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>WeatherService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>WorkOrderReviewController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -3589,6 +3609,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>TimeSheetEntry.Is_Kilometer_Allowance_Entry__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Is_Kilometer_Allowance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>TimeSheetEntry.Pause_Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3764,6 +3794,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>WorkOrder.Current_User_is_CM__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>WorkOrder.Customer_Reference__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3810,6 +3845,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Goodwill_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Has_Kilometers_Booked__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3869,6 +3909,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkOrder.PDF_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkOrder.Pick_Up_Items__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3885,6 +3930,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Quote__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Reviewed_for_Service_Report__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3964,6 +4014,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkOrder.WOL_Already_Added__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkOrder.WO_with_Goodwill_Tasks__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3995,6 +4050,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrderLineItem.FSL__VisitingHours__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkStep.Added_from_WOL__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4139,6 +4199,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Asset_Notify_Business_Support_for_ATAK_Project</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</flow>
     </flowAccesses>
     <flowAccesses>
@@ -4172,6 +4236,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Mileage_Entry_After_Save_Record_Triggered</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Mileage_Entry_After_Save_Record_Triggered_Set_Work_As_Travel_Time_Work_Order</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -4355,6 +4423,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_After_Save_Record_Triggered_Delete_Work_Steps</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps</flow>
     </flowAccesses>
     <flowAccesses>
@@ -4372,6 +4444,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_After_Update_Create_Signature_Work_Step</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Autolaunched_Flow_Update_PDF_Status</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -4411,6 +4487,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Order_Scheduled_High_Prio_Work_Order_Overdue</flow>
     </flowAccesses>
     <flowAccesses>
@@ -4432,6 +4512,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Screen_Flow_Service_Report_Review_Flag</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

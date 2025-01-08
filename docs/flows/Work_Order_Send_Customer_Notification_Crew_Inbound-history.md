@@ -112,9 +112,9 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |templateId|String|⬜|⬜|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |templateId|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

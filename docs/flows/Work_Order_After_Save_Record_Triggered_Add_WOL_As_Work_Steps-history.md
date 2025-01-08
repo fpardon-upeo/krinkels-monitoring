@@ -755,12 +755,19 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |BeforePhotosOrder|Number|⬜|✅|⬜|<!-- -->|
-    |IncrementOrder|Number|⬜|✅|⬜|<!-- -->|
-    |WorkStepCollection|SObject|✅|✅|⬜|WorkStep|
-    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |BeforePhotosOrder|Number|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |IncrementOrder|Number|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |WorkStepCollection|SObject|✅|✅|⬜|WorkStep|<!-- -->|
+    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|<!-- -->|
+    
+    
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |NextNumber|Number|{!BeforePhotosOrder} + {!IncrementOrder}|<!-- -->|
     
     
     ## Flow Nodes Details

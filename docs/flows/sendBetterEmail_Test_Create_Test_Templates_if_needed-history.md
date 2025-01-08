@@ -118,45 +118,42 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |en_US_TemplateRecord|SObject|⬜|⬜|⬜|EmailTemplate|
-    |es_MX_TemplateRecord|SObject|⬜|⬜|⬜|EmailTemplate|
-    |RelatedRecordType|String|⬜|✅|✅|<!-- -->|
-    |sendBetterEmailStatus|String|⬜|⬜|✅|<!-- -->|
-    |sendBetterEmailTestName|String|⬜|✅|✅|<!-- -->|
-    |sendBetterEmailTestType|String|⬜|✅|✅|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |en_US_TemplateRecord|SObject|⬜|⬜|⬜|EmailTemplate|The EmailTemplate record for the en_US version|
+    |es_MX_TemplateRecord|SObject|⬜|⬜|⬜|EmailTemplate|The EmailTemplate record for the es_MX version|
+    |RelatedRecordType|String|⬜|✅|✅|<!-- -->|The type of related record (if any) to be used for the template merge field.  The value must be one of the following types:<br/>· Account<br/>· Asset<br/>· Campaign<br/>· Case<br/>· Contract<br/>· Opportunity<br/>· Order<br/>· Product<br/>· Solution<br/>· Custom|
+    |sendBetterEmailStatus|String|⬜|⬜|✅|<!-- -->|The action (or error) taken|
+    |sendBetterEmailTestName|String|⬜|✅|✅|<!-- -->|The name of the Templates to be used/or created|
+    |sendBetterEmailTestType|String|⬜|✅|✅|<!-- -->|Which type of templates do you want created|
     
     
     ## Formulas
     
-    |Name|Data Type|Expression|
-    |:-- |:--:|:--  |
-    |DeveloperName_en_US|String|{!sendBetterEmailTestName}&"_en_US"|
-    |DeveloperName_es_MX|String|{!sendBetterEmailTestName}&"_es_MX"|
-    |DeveloperName_Mass_Email|String|{!sendBetterEmailTestName}&"_Mass_Email"|
-    |InvalidTemplateType|String|"Error: Invalid Type Requested - " + {!sendBetterEmailTestType}|
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
     
     
     ## Constants
     
-    |Name|Data Type|Value|
-    |:-- |:--:|:--: |
-    |sendBetterEmailDescription_en_US|String|Test email template for sendBetterEmailTest - Language="en_US"|
-    |sendBetterEmailDescription_es_MX|String|Test email template for sendBetterEmailTest - Language="es_MX"|
-    |sendBetterEmailDescription_Mass_Email|String|Test email template for sendBetterEmailTest - Mass Email|
-    |sendBetterEmailSubject_en_US|String|This is a test email|
-    |sendBetterEmailSubject_es_MX|String|Este es un correo electrónico de prueba|
-    |sendBetterEmailSubject_MassEmail|String|This is a test mass email message|
+    |Name|Data Type|Value|Description|
+    |:-- |:--:|:--:|:--  |
+    |sendBetterEmailDescription_en_US|String|Test email template for sendBetterEmailTest - Language="en_US"|en_US Description for sendBetterEmail Template|
+    |sendBetterEmailDescription_es_MX|String|Test email template for sendBetterEmailTest - Language="es_MX"|es_MX Description for sendBetterEmail Template|
+    |sendBetterEmailDescription_Mass_Email|String|Test email template for sendBetterEmailTest - Mass Email|Test email template for sendBetterEmailTest - Mass Email|
+    |sendBetterEmailSubject_en_US|String|This is a test email|en_US subject line for sendBetterEmail Template|
+    |sendBetterEmailSubject_es_MX|String|Este es un correo electrónico de prueba|en_MX subject line for sendBetterEmail Template|
+    |sendBetterEmailSubject_MassEmail|String|This is a test mass email message|<!-- -->|
     
     
     ## Text Templates
     
-    |Name|Text|
-    |:-- |:--  |
-    |TemplateBodyHTML_en_US|<html style="overflow-y: hidden;"><br/><head><br/>	<title></title><br/></head><br/><body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">Dear {{{Recipient.Name}}},<br /><br/><br /><br/>This is a test email about Account {{{Account.Name}}}</span><br /><br/>&nbsp;</body><br/></html>|
-    |TemplateBodyHTML_es_MX|<html style="overflow-y: hidden;"><br/><head><br/>	<title></title><br/></head><br/><body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">Hola {{{Recipient.Name}}},<br /><br/><br /><br/>Este es un correo electr&oacute;nico de prueba sobre Cuenta {{{Account.Name}}}</span><br /><br/>&nbsp;</body><br/></html>|
-    |TemplateBodyHTMLMassEmail|<p>This is from and automatically generated test template for the sendBetterEmail Flow</p>|
+    |Name|Text|Description|
+    |:-- |:-- |:--  |
+    |TemplateBodyHTML_en_US|<html style="overflow-y: hidden;"><br/><head><br/>	<title></title><br/></head><br/><body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">Dear {{{Recipient.Name}}},<br /><br/><br /><br/>This is a test email about Account {{{Account.Name}}}</span><br /><br/>&nbsp;</body><br/></html>|The body of the en_US version of sendBetterEmailTest|
+    |TemplateBodyHTML_es_MX|<html style="overflow-y: hidden;"><br/><head><br/>	<title></title><br/></head><br/><body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">Hola {{{Recipient.Name}}},<br /><br/><br /><br/>Este es un correo electr&oacute;nico de prueba sobre Cuenta {{{Account.Name}}}</span><br /><br/>&nbsp;</body><br/></html>|The body of the es_MX version of sendBetterEmailTest|
+    |TemplateBodyHTMLMassEmail|<p>This is from and automatically generated test template for the sendBetterEmail Flow</p>|A template for mass email creation|
     
     
     ## Flow Nodes Details

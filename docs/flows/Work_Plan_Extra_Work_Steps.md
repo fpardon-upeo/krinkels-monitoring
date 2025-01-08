@@ -14,7 +14,7 @@ START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Record After Save</b>"]
 click START "#general-information" "2199145117"
 
 Create_Work_Step[("➕ <em></em><br/>Create Work Step")]:::recordCreates
-click Create_Work_Step "#create_work_step" "3720646557"
+click Create_Work_Step "#create_work_step" "1037466265"
 
 Get_Work_Order_Lines[("🔍 <em></em><br/>Get Work Order Lines")]:::recordLookups
 click Get_Work_Order_Lines "#get_work_order_lines" "1526534153"
@@ -79,6 +79,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Field|Value|
 |:-- |:--: |
+|Added_from_WOL__c|✅|
 |ExecutionOrder|10|
 |Name|Get_Work_Order_Lines.Description|
 |Status|New|

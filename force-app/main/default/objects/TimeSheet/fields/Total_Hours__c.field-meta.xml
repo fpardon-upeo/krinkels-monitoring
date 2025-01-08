@@ -3,6 +3,11 @@
     <fullName>Total_Hours__c</fullName>
     <label>Total Hours</label>
     <summarizedField>TimeSheetEntry.Total_Hours__c</summarizedField>
+    <summaryFilterItems>
+        <field>TimeSheetEntry.Is_Kilometer_Allowance_Entry__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
     <summaryForeignKey>TimeSheetEntry.TimeSheetId</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>

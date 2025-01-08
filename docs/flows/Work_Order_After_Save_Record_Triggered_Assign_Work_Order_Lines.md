@@ -23,35 +23,39 @@ Loop_Items_And_Create_WOLI{{"🔁 <em></em><br/>Loop Items And Create WOLI"}}:::
 click Loop_Items_And_Create_WOLI "#loop_items_and_create_woli" "1125607767"
 
 Create_Work_Order_Lines[("➕ <em></em><br/>Create Work Order Lines")]:::recordCreates
-click Create_Work_Order_Lines "#create_work_order_lines" "3435590418"
+click Create_Work_Order_Lines "#create_work_order_lines" "153767599"
 
 Get_Asset_Items[("🔍 <em></em><br/>Get Asset Items")]:::recordLookups
 click Get_Asset_Items "#get_asset_items" "2108291657"
+
+Flag_this_Work_Order_as_WOL_Already_Created[("🛠️ <em></em><br/>Flag this Work Order as WOL Already Created")]:::recordUpdates
+click Flag_this_Work_Order_as_WOL_Already_Created "#flag_this_work_order_as_wol_already_created" "79649730"
 
 Add_to_Collection --> Loop_Items_And_Create_WOLI
 Set_WOLI_Values --> Add_to_Collection
 Loop_Items_And_Create_WOLI --> |"For Each"|Set_WOLI_Values
 Loop_Items_And_Create_WOLI ---> |"After Last"|Create_Work_Order_Lines
-Create_Work_Order_Lines --> END_Create_Work_Order_Lines
+Create_Work_Order_Lines --> Flag_this_Work_Order_as_WOL_Already_Created
 Get_Asset_Items --> Loop_Items_And_Create_WOLI
+Flag_this_Work_Order_as_WOL_Already_Created --> END_Flag_this_Work_Order_as_WOL_Already_Created
 START -->  Get_Asset_Items
-END_Create_Work_Order_Lines(( END )):::endClass
+END_Flag_this_Work_Order_as_WOL_Already_Created(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
@@ -83,14 +87,15 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |2|Status| Equal To|Scheduled|
 |3|AssetId| Is Null|<!-- -->|
 |4|Production_Work__c| Equal To|✅|
+|5|WOL_Already_Added__c| Equal To|⬜|
 
 
 ## Variables
 
-|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-|:-- |:--:|:--:|:--:|:--:|:--: |
-|WorkOrderLine|SObject|⬜|⬜|⬜|WorkOrderLineItem|
-|WorkOrderLineItems|SObject|✅|⬜|⬜|WorkOrderLineItem|
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|WorkOrderLine|SObject|⬜|⬜|⬜|WorkOrderLineItem|<!-- -->|
+|WorkOrderLineItems|SObject|✅|⬜|⬜|WorkOrderLineItem|<!-- -->|
 
 
 ## Flow Nodes Details
@@ -152,6 +157,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Type|Record Create|
 |Label|Create Work Order Lines|
 |Input Reference|WorkOrderLineItems|
+|Connector|[Flag_this_Work_Order_as_WOL_Already_Created](#flag_this_work_order_as_wol_already_created)|
 
 
 ### Get_Asset_Items
@@ -172,6 +178,24 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
 |1|Service__c| Equal To|$Record.AssetId|
+
+
+
+
+### Flag_this_Work_Order_as_WOL_Already_Created
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Record Update|
+|Label|Flag this Work Order as WOL Already Created|
+|Input Reference|$Record|
+
+
+#### Input Assignments
+
+|Field|Value|
+|:-- |:--: |
+|WOL_Already_Added__c|✅|
 
 
 

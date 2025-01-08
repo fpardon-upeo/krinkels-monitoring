@@ -254,23 +254,21 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |ExistingWOLCollections|SObject|✅|✅|⬜|WorkOrderLineItem|
-    |ExistingWOLRecord|SObject|⬜|✅|⬜|WorkOrderLineItem|
-    |recordId|String|⬜|✅|⬜|<!-- -->|
-    |ReworkWOId|String|⬜|✅|⬜|<!-- -->|
-    |WOLCollection|SObject|✅|✅|⬜|WorkOrderLineItem|
-    |WOLRecord|SObject|⬜|✅|⬜|WorkOrderLineItem|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |ExistingWOLCollections|SObject|✅|✅|⬜|WorkOrderLineItem|<!-- -->|
+    |ExistingWOLRecord|SObject|⬜|✅|⬜|WorkOrderLineItem|<!-- -->|
+    |recordId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |ReworkWOId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |WOLCollection|SObject|✅|✅|⬜|WorkOrderLineItem|<!-- -->|
+    |WOLRecord|SObject|⬜|✅|⬜|WorkOrderLineItem|<!-- -->|
     
     
     ## Formulas
     
-    |Name|Data Type|Expression|
-    |:-- |:--:|:--  |
-    |ReworkSubject|String|"Rework of" + " " + {!Get_Work_Order_Information.WorkOrderNumber}|
-    |ReworkURL|String|LEFT({!$Api.Partner_Server_URL_340},FIND("/services", {!$Api.Partner_Server_URL_340})) & {!ReworkWOId}|
-    |today|Date|TODAY()|
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

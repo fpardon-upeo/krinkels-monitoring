@@ -119,21 +119,20 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 ## Variables
 
-|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-|:-- |:--:|:--:|:--:|:--:|:--: |
-|departmentType|String|⬜|⬜|⬜|<!-- -->|
-|endDate|DateTime|⬜|✅|⬜|<!-- -->|
-|resourceId|String|⬜|✅|⬜|<!-- -->|
-|startDate|DateTime|⬜|✅|⬜|<!-- -->|
-|workOrder|SObject|⬜|⬜|⬜|WorkOrder|
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|departmentType|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+|endDate|DateTime|⬜|✅|⬜|<!-- -->|<!-- -->|
+|resourceId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+|startDate|DateTime|⬜|✅|⬜|<!-- -->|<!-- -->|
+|workOrder|SObject|⬜|⬜|⬜|WorkOrder|<!-- -->|
 
 
 ## Formulas
 
-|Name|Data Type|Expression|
-|:-- |:--:|:--  |
-|assetNameForQuery|String|{!Select_Internal_Work_Type} & " - " & {!departmentType}|
-|workOrderSubject|String|{!Select_Internal_Work_Type} & " - " & {!Get_Service_Resource.Name}|
+|Name|Data Type|Expression|Description|
+|:-- |:--:|:-- |:--  |
+|<!-- -->|<!-- -->|<!-- -->|<!-- -->|
 
 
 ## Flow Nodes Details

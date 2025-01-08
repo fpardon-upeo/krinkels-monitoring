@@ -4,5 +4,6 @@
     <formula>RecordType.DeveloperName=&apos;Quick_Quote&apos;</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Quick Quote</label>
+    <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

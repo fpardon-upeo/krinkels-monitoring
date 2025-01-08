@@ -98,10 +98,10 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |ProductRequiredCollections|SObject|✅|✅|⬜|ProductRequired|
-    |ProductRequiredRecord|SObject|⬜|✅|⬜|ProductRequired|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |ProductRequiredCollections|SObject|✅|✅|⬜|ProductRequired|<!-- -->|
+    |ProductRequiredRecord|SObject|⬜|✅|⬜|ProductRequired|<!-- -->|
     
     
     ## Flow Nodes Details

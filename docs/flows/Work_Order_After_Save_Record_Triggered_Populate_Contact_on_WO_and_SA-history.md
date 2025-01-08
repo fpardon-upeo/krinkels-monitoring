@@ -231,6 +231,12 @@
       
     ```
     
+    ## 🟥Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>TypeText</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Boolean</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>INCLUDES({!Get_Operational_Contact.Type__c}, 'Operational')</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
+    
     ## Flow Nodes Details
     
     ### Contact_Found
@@ -350,6 +356,13 @@
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
     |1|ContactId| Is Null|<!-- -->|
+    
+    
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |TypeText|Boolean|INCLUDES({!Get_Operational_Contact.Type__c}, 'Operational')|<!-- -->|
     
     
     ## Flow Nodes Details

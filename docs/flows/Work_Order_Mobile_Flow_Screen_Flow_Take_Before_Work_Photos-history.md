@@ -73,15 +73,22 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |ContentDocumentCollection|SObject|✅|✅|⬜|ContentDocument|
-    |Id|String|⬜|✅|⬜|<!-- -->|
-    |LoopContentDocumentItem|SObject|⬜|✅|⬜|ContentDocument|
-    |LoopCurrentContentDocumentId|String|⬜|✅|⬜|<!-- -->|
-    |UpdatedContentDocument|SObject|✅|✅|⬜|ContentDocument|
-    |UploadedFilesContentDocumentIds|String|✅|✅|⬜|<!-- -->|
-    |WorkOrderId|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |ContentDocumentCollection|SObject|✅|✅|⬜|ContentDocument|<!-- -->|
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |LoopContentDocumentItem|SObject|⬜|✅|⬜|ContentDocument|<!-- -->|
+    |LoopCurrentContentDocumentId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |UpdatedContentDocument|SObject|✅|✅|⬜|ContentDocument|<!-- -->|
+    |UploadedFilesContentDocumentIds|String|✅|✅|⬜|<!-- -->|<!-- -->|
+    |WorkOrderId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    
+    
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |NewTitleContentDocument|String|"Before Work Photo - " + {!LoopContentDocumentItem.Title}|<!-- -->|
     
     
     ## Flow Nodes Details

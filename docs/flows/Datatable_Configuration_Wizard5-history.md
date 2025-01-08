@@ -271,72 +271,63 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |apexColFieldDescriptors_usf|Apex|✅|⬜|⬜|<!-- -->|
-    |apexColSelectedFieldDescriptors_usf|Apex|✅|⬜|⬜|<!-- -->|
-    |apexFieldDescriptor|Apex|⬜|⬜|⬜|<!-- -->|
-    |colDescriptions|String|✅|⬜|⬜|<!-- -->|
-    |colFieldList|String|✅|✅|⬜|<!-- -->|
-    |colIcons|String|✅|⬜|⬜|<!-- -->|
-    |colPreSelectedConfigs|SObject|✅|⬜|⬜|FlowTableViewDefinition__c|
-    |colTitles|String|✅|⬜|⬜|<!-- -->|
-    |objConfig|SObject|⬜|⬜|⬜|FlowTableViewDefinition__c|
-    |vCombinedAttribute|String|⬜|⬜|⬜|<!-- -->|
-    |vConfigCount|Number|⬜|⬜|⬜|<!-- -->|
-    |vConfigFields|String|⬜|⬜|⬜|<!-- -->|
-    |vConfigToggleStatus|Boolean|⬜|⬜|⬜|<!-- -->|
-    |vDebugMode|Boolean|⬜|✅|⬜|<!-- -->|
-    |vDuplicateNameError|Boolean|⬜|⬜|⬜|<!-- -->|
-    |vEarlyExit|Boolean|⬜|⬜|✅|<!-- -->|
-    |vFieldList|String|⬜|✅|✅|<!-- -->|
-    |vLoadedConfig|Boolean|⬜|⬜|⬜|<!-- -->|
-    |vNewConfigName|String|⬜|⬜|⬜|<!-- -->|
-    |vRecordList|String|⬜|⬜|⬜|<!-- -->|
-    |vSelectionMethod|String|⬜|✅|✅|<!-- -->|
-    |vSeparatorLength|Number|⬜|⬜|⬜|<!-- -->|
-    |vSeparatorLocation|Number|⬜|⬜|⬜|<!-- -->|
-    |vSObject|String|⬜|✅|⬜|<!-- -->|
-    |vWizRecordCount|Number|⬜|✅|⬜|<!-- -->|
-    |wiz_columnAlignments|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnCellAttribs|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnEdits|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnFields|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnFilters|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnFlexes|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnIcons|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnLabels|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnOtherAttribs|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnTypeAttribs|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnWidths|String|⬜|✅|✅|<!-- -->|
-    |wiz_columnWraps|String|⬜|✅|✅|<!-- -->|
-    |wiz_objectName|String|⬜|⬜|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |apexColFieldDescriptors_usf|Apex|✅|⬜|⬜|<!-- -->|<!-- -->|
+    |apexColSelectedFieldDescriptors_usf|Apex|✅|⬜|⬜|<!-- -->|<!-- -->|
+    |apexFieldDescriptor|Apex|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |colDescriptions|String|✅|⬜|⬜|<!-- -->|<!-- -->|
+    |colFieldList|String|✅|✅|⬜|<!-- -->|<!-- -->|
+    |colIcons|String|✅|⬜|⬜|<!-- -->|<!-- -->|
+    |colPreSelectedConfigs|SObject|✅|⬜|⬜|FlowTableViewDefinition__c|<!-- -->|
+    |colTitles|String|✅|⬜|⬜|<!-- -->|<!-- -->|
+    |objConfig|SObject|⬜|⬜|⬜|FlowTableViewDefinition__c|<!-- -->|
+    |vCombinedAttribute|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vConfigCount|Number|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vConfigFields|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vConfigToggleStatus|Boolean|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vDebugMode|Boolean|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |vDuplicateNameError|Boolean|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vEarlyExit|Boolean|⬜|⬜|✅|<!-- -->|<!-- -->|
+    |vFieldList|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |vLoadedConfig|Boolean|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vNewConfigName|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vRecordList|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vSelectionMethod|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |vSeparatorLength|Number|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vSeparatorLocation|Number|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |vSObject|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |vWizRecordCount|Number|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |wiz_columnAlignments|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnCellAttribs|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnEdits|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnFields|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnFilters|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnFlexes|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnIcons|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnLabels|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnOtherAttribs|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnTypeAttribs|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnWidths|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_columnWraps|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |wiz_objectName|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
     
     
     ## Formulas
     
-    |Name|Data Type|Expression|
-    |:-- |:--:|:--  |
-    |fFirstField|String|TRIM(LEFT({!vConfigFields},FIND(",",{!vConfigFields})-1))|
-    |fGetFlexAttribute|String|IF( {!vSeparatorLocation} > 0, RIGHT( {!vCombinedAttribute}, LEN( {!vCombinedAttribute} ) - {!vSeparatorLocation} - {!vSeparatorLength} + 1 ) , "" )|
-    |fGetWidthAttribute|String|IF( {!vSeparatorLocation} > 0, LEFT( {!vCombinedAttribute}, {!vSeparatorLocation} - 1 ), {!vCombinedAttribute} )|
-    |fHasComma|Boolean|FIND(",",{!vConfigFields})>0|
-    |fListLength|Number|LEN({!vFieldList})|
-    |fRemoveField|String|MID({!vConfigFields},FIND(",",{!vConfigFields})+1,999)|
-    |fSeparatorLength|Number|LEN( {!cSeparator} )|
-    |fSeparatorLocation|Number|FIND( {!cSeparator}, {!ConfigTable_select.outputSelectedRow.Widths__c} )|
-    |fSetWidthFlexAttribute|String|{!wiz_columnWidths} & IF( LEN( {!wiz_columnFlexes} ) > 0, {!cSeparator} & {!wiz_columnFlexes}, "" )|
-    |fTrimFieldList|String|TRIM({!vFieldList})|
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
     
     
     ## Constants
     
-    |Name|Data Type|Value|
-    |:-- |:--:|:--: |
-    |cConfig|String|Config|
-    |cPick|String|Pick|
-    |cSeparator|String||~||
-    |cType|String|Type|
+    |Name|Data Type|Value|Description|
+    |:-- |:--:|:--:|:--  |
+    |cConfig|String|Config|<!-- -->|
+    |cPick|String|Pick|<!-- -->|
+    |cSeparator|String||~||<!-- -->|
+    |cType|String|Type|<!-- -->|
     
     
     ## Flow Nodes Details

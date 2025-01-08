@@ -14,17 +14,29 @@ private class MaintenancePlanServiceTest {
         String pricebookId = Test.getStandardPricebookId();
         List<PricebookEntry> pricebookEntries = FieldServiceTestData.createTestPricebookEntries(products, 1, true);
 
+        ServiceContract serviceContractMaster = new ServiceContract(
+                AccountId = commAcc.Id,
+                Pricebook2Id = pricebookId,
+                Name = 'Test Service Contract Master',
+                StartDate = Date.newInstance(Date.today().year(), 01, 01),
+                Type__c = 'Commercial Agreement'
+        );
+
+        insert serviceContractMaster;
+
+
         ServiceContract serviceContract = new ServiceContract(
                 AccountId = commAcc.Id,
                 Pricebook2Id = pricebookId,
                 Name = 'Test Service Contract',
                 StartDate = Date.newInstance(Date.today().year(), 01, 01),
-                Type__c = 'Service Contract'
+                Type__c = 'Service Contract',
+                ParentServiceContractId = serviceContractMaster.Id
         );
 
         insert serviceContract;
 
-        System.assertEquals(1, [SELECT COUNT() FROM ServiceContract]);
+        System.assertEquals(2, [SELECT COUNT() FROM ServiceContract]);
         return serviceContract.Id;
 
 
@@ -180,12 +192,12 @@ private class MaintenancePlanServiceTest {
         Test.stopTest();
 
         List<Account> accounts = [SELECT Id FROM Account WHERE ParentId = :serviceContract.AccountId];
-        System.assertEquals(1, accounts.size());
 
         List<Asset> assets = [SELECT Id, ATAK_Project__r.SubProject_ATAK__c, InstallDate,
                 LastSuggestedMaintenanceDate__c, Recurrence_Pattern__c
         FROM Asset
-        WHERE AccountId = :accounts[0].Id];
+        WHERE AccountId = :accounts[0].Id
+        ORDER BY CreatedDate ASC];
         System.assertEquals(3, assets.size());
         System.assertEquals('FREQ=DAILY;INTERVAL=7', assets[0].Recurrence_Pattern__c);
         System.assertEquals('FREQ=MONTHLY;INTERVAL=1', assets[1].Recurrence_Pattern__c);

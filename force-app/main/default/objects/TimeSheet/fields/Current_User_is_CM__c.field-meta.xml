@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Current_User_is_CM__c</fullName>
-    <formula>ServiceResource.Location.Contract_Manager__c =  $User.Id</formula>
+    <formula>ServiceResource.RelatedRecord.ManagerId =  $User.Id</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Current User is CM</label>
     <trackHistory>false</trackHistory>

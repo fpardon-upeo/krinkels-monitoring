@@ -286,6 +286,13 @@ public with sharing class ATAKPerformanceService {
                 ATAKPerformanceWrapper.Data dataWinter = personnelTimesheetToATAKPerformance(timeSheetEntry);
                 dataList.add(dataWinter);
             }
+            if (timeSheetEntry.Urgent_Intervention__c == true) {
+                System.debug('!!!!! ATAKPerformanceService.prepareATAKPerformanceData - Urgent Service');
+                //Add a second entry for the urgent intervention, Code_ATAK_Limbus__c = "DIVU"
+                timeSheetEntry.Code_ATAK_Limbus__c = 'DIVU';
+                ATAKPerformanceWrapper.Data dataWinter = personnelTimesheetToATAKPerformance(timeSheetEntry);
+                dataList.add(dataWinter);
+            }
         }
 
         //Before adding the mileage entries, we need to get the SubProject_ATAK__c of the first and last work order
@@ -376,7 +383,7 @@ public with sharing class ATAKPerformanceService {
             data.projectcode = 'ATAKDEFAULT';
         }
 
-        if (data.quantity_registration_unit == 'P') {
+        if (data.quantity_registration_unit == 'P' || data.quantity_registration_unit == 'DIVU') {
             data.quantity = '1';
         } else {
             data.quantity = tsEntry.Total_Hours_Minus_Breaks__c == null

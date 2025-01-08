@@ -74,6 +74,13 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>WorkStepRecord.Added_from_WOL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>WorkStepCollection</assignToReference>
             <operator>Add</operator>
             <value>

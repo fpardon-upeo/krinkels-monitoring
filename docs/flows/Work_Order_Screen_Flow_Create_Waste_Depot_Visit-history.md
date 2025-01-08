@@ -381,24 +381,23 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |currentItem_Test|SObject|⬜|⬜|⬜|Account|
-    |currentItem_Test_0|SObject|⬜|⬜|⬜|Account|
-    |currentItemFromSourceCollection|SObject|⬜|⬜|⬜|Account|
-    |recordId|String|⬜|✅|⬜|<!-- -->|
-    |SelectedMSPValues|String|✅|✅|⬜|<!-- -->|
-    |WasteDepotFoundCollection|SObject|✅|✅|⬜|Account|
-    |WasteDepotFoundRecord|SObject|⬜|✅|⬜|Account|
-    |WasteDepotVisitId|String|⬜|✅|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |currentItem_Test|SObject|⬜|⬜|⬜|Account|<!-- -->|
+    |currentItem_Test_0|SObject|⬜|⬜|⬜|Account|<!-- -->|
+    |currentItemFromSourceCollection|SObject|⬜|⬜|⬜|Account|<!-- -->|
+    |recordId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |SelectedMSPValues|String|✅|✅|⬜|<!-- -->|<!-- -->|
+    |WasteDepotFoundCollection|SObject|✅|✅|⬜|Account|<!-- -->|
+    |WasteDepotFoundRecord|SObject|⬜|✅|⬜|Account|<!-- -->|
+    |WasteDepotVisitId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     
     
     ## Formulas
     
-    |Name|Data Type|Expression|
-    |:-- |:--:|:--  |
-    |today|Date|TODAY()|
-    |WasteDepotURL|String|LEFT({!$Api.Partner_Server_URL_340},FIND("/services", {!$Api.Partner_Server_URL_340})) & {!WasteDepotVisitId}|
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
     
     
     ## Flow Nodes Details

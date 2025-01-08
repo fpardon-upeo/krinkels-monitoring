@@ -131,14 +131,14 @@ export default class NextAppointmentPicker extends NavigationMixin(
   //--------------------------------------LIFECYCLE----------------------------------------//
 
   connectedCallback() {
-    console.log("connectedCallback");
-    console.log(this.recordId);
+    //console.log("connectedCallback");
+    //console.log(this.recordId);
     getBreakRecordTypeId().then((result) => {
       this.breakRecordTypeId = result;
-      console.log("Break Record Type Id: ", this.recordTypeId);
+      //console.log("Break Record Type Id: ", this.recordTypeId);
     });
     firstWorkOrderChecker().then((result) => {
-      console.log("hasFirstWorkOrder", result);
+      //console.log("hasFirstWorkOrder", result);
       this.hasFirstWorkOrder = result;
     });
 
@@ -149,11 +149,11 @@ export default class NextAppointmentPicker extends NavigationMixin(
   @wire(getRecord, { recordId: "$recordId", fields: ["WorkStep.WorkOrderId"] })
   wiredWorkOrder({ error, data }) {
     if (data) {
-      console.log(data);
-      console.log(data.fields.WorkOrderId.value);
+      //console.log(data);
+      //console.log(data.fields.WorkOrderId.value);
       this.workOrderId = data.fields.WorkOrderId.value;
     } else if (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
 
@@ -189,10 +189,10 @@ export default class NextAppointmentPicker extends NavigationMixin(
   workStepQueryResult({ error, data }) {
     if (data) {
       this.otherWorkSteps = data.uiapi.query.WorkStep.edges;
-      console.log("other worksteps", this.otherWorkSteps);
+      //console.log("other worksteps", this.otherWorkSteps);
       //Check if all other work steps are completed
       let allCompleted = true;
-      console.log("recordId", this.recordId);
+      //console.log("recordId", this.recordId);
       this.otherWorkSteps.forEach((step) => {
         const status = step.node.Status.value;
         if (
@@ -203,7 +203,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
           allCompleted = false;
         }
       });
-      console.log("allCompleted", allCompleted);
+      //console.log("allCompleted", allCompleted);
       if (allCompleted) {
         //Wait 1 second before showing the initial screen
         setTimeout(() => {
@@ -217,7 +217,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
         this.showHasIncompleteWorkSteps = true;
       }
     } else if (error) {
-      console.log(error);
+      //console.log(error);
       this.showSpinner = false;
     }
   }
@@ -250,9 +250,9 @@ export default class NextAppointmentPicker extends NavigationMixin(
     if (data) {
       this.serviceAppointmentId =
         data.uiapi.query.ServiceAppointment.edges[0].node.Id;
-      console.log("service appointment id", this.serviceAppointmentId);
+      //console.log("service appointment id", this.serviceAppointmentId);
     } else if (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
 
@@ -278,9 +278,9 @@ export default class NextAppointmentPicker extends NavigationMixin(
     if (data) {
       this.serviceResourceId =
         data.uiapi.query.ServiceResource.edges[0].node.Id;
-      console.log("service resource id", this.serviceResourceId);
+      //console.log("service resource id", this.serviceResourceId);
     } else if (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
 
@@ -294,7 +294,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
       ) {
         uiapi {
           query {
-            AssignedResource(
+            AssignedResource(first: 25
               where: {
                 and: [
                   { ServiceResourceId: { eq: $serviceResourceId } }
@@ -401,7 +401,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
           ParentRecordId: appointment.ParentRecordId.value
         };
       });
-      console.log(JSON.stringify(this.serviceAppointments));
+      console.log('size of service appointments', this.serviceAppointments.length);
     } else if (result.error) {
       console.log(result.error);
     }
@@ -444,16 +444,16 @@ export default class NextAppointmentPicker extends NavigationMixin(
   })
   timeSheetQueryResult({ error, data }) {
     if (data) {
-      console.log("timesheet data", data);
+      ////console.log("timesheet data", data);
       //check first if the edges is not empty
       if (data.uiapi.query.TimeSheet.edges.length === 0) {
-        console.log("timesheet is empty");
+        //console.log("timesheet is empty");
       } else {
         this.timeSheetId = data.uiapi.query.TimeSheet.edges[0].node.Id;
-        console.log("timesheet id", this.timeSheetId);
+        //console.log("timesheet id", this.timeSheetId);
       }
     } else if (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
 
@@ -467,20 +467,20 @@ export default class NextAppointmentPicker extends NavigationMixin(
 
   handleRowSelection(event) {
     const selectedRows = event.detail.selectedRows;
-    console.log("selectedRows", JSON.stringify(selectedRows));
+    //console.log("selectedRows", JSON.stringify(selectedRows));
     this.selectedRows = selectedRows;
     this.nextWorkOrderId = selectedRows[0].ParentRecordId;
     this.disableNextButton = selectedRows.length === 0;
   }
 
   handleTakeBreakClicked() {
-    console.log("Take break clicked");
+    //console.log("Take break clicked");
     this.showInitialScreen = false;
     this.showBreakForm = true;
   }
 
   handleSimplyClose() {
-    console.log("Simply close clicked");
+    //console.log("Simply close clicked");
     this.setWorkStepStatus();
     this.setCurrentServiceAppointStatus();
     this.setParentWorkOrderStatus();
@@ -496,19 +496,19 @@ export default class NextAppointmentPicker extends NavigationMixin(
   }
 
   handleSetAppointmentClicked() {
-    console.log("Set appointment clicked");
+    //console.log("Set appointment clicked");
     this.showInitialScreen = false;
     this.showAppointmentScreen = true;
   }
 
   handleInternalOrderClicked() {
-    console.log("Internal order clicked");
+    //console.log("Internal order clicked");
     this.showInitialScreen = false;
     this.showWorkOrderScreen = true;
   }
 
   handleEndDayWithDepotClicked() {
-    console.log("End day with depot clicked");
+    //console.log("End day with depot clicked");
     this.showInitialScreen = false;
     this.showMilageEntryScreen = true;
     this.endingDayAtDepot = true;
@@ -524,15 +524,15 @@ export default class NextAppointmentPicker extends NavigationMixin(
   }
 
   handleBreakDurationChange(event) {
-    console.log("break duration", event.detail.value);
-    console.log("type of break duration", typeof event.detail.value);
+    //console.log("break duration", event.detail.value);
+    //console.log("type of break duration", typeof event.detail.value);
     //Convert the string to a number
     this.breakDuration = parseInt(event.detail.value);
   }
 
   handleSelect() {
-    console.log("selectedRows", JSON.stringify(this.selectedRows));
-    console.log("selectedRows Id", this.selectedRows[0].Id);
+    //console.log("selectedRows", JSON.stringify(this.selectedRows));
+    //console.log("selectedRows Id", this.selectedRows[0].Id);
     this.setWorkStepStatus();
     this.setCurrentServiceAppointStatus();
     this.setParentWorkOrderStatus();
@@ -552,13 +552,13 @@ export default class NextAppointmentPicker extends NavigationMixin(
   }
 
   handleEndWorkingDay() {
-    console.log("End working day clicked");
+    //console.log("End working day clicked");
     this.showInitialScreen = false;
     this.showMilageEntryScreen = true;
   }
 
   handleEndDayClicked() {
-    console.log("End day clicked");
+    //console.log("End day clicked");
     this.setWorkStepStatus();
     this.setCurrentServiceAppointStatus();
     this.setParentWorkOrderStatus();
@@ -592,7 +592,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
     const recordInput = { apiName: "ResourceAbsence", fields };
     createRecord(recordInput)
       .then(() => {
-        console.log("ResourceAbsence record created");
+        //console.log("ResourceAbsence record created");
         const toastEvent = new ShowToastEvent({
           title: "Success",
           message: this.labels.AppointmentPicker_Break_Success_Message,
@@ -609,7 +609,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
         }, 500);
       })
       .catch((error) => {
-        console.log("Error creating ResourceAbsence record", error);
+        //console.log("Error creating ResourceAbsence record", error);
       });
   }
 
@@ -652,13 +652,13 @@ export default class NextAppointmentPicker extends NavigationMixin(
     fields["Id"] = this.serviceAppointmentId;
     fields["Status"] = "Completed";
     const recordInput = { fields };
-    console.log("recordInput", JSON.stringify(recordInput));
+    //console.log("recordInput", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then(() => {
-        console.log("Service Appointment status updated");
+        //console.log("Service Appointment status updated");
       })
       .catch((error) => {
-        console.log("Error updating service appointment status", error);
+        //console.log("Error updating service appointment status", error);
       });
   }
 
@@ -668,13 +668,13 @@ export default class NextAppointmentPicker extends NavigationMixin(
     fields["Status"] = "Travelling";
     fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
     const recordInput = { fields };
-    console.log("recordInput service appointment", JSON.stringify(recordInput));
+    //console.log("recordInput service appointment", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then(() => {
-        console.log("Service Appointment status updated");
+        //console.log("Service Appointment status updated");
       })
       .catch((error) => {
-        console.log("Error updating service appointment status", error);
+        //console.log("Error updating service appointment status", error);
       });
   }
 
@@ -683,20 +683,20 @@ export default class NextAppointmentPicker extends NavigationMixin(
     fields["Id"] = this.nextWorkOrderId;
     fields["Status"] = "Travelling";
     fields["Trigger_Notification_to_Customer__c"] = this.notifyCustomer;
-    console.log("hasFirstWorkOrder", this.hasFirstWorkOrder);
+    //console.log("hasFirstWorkOrder", this.hasFirstWorkOrder);
     if(this.hasFirstWorkOrder === false) {
-        console.log('setting first work order');
+        //console.log('setting first work order');
         fields["Is_First_of_Day__c"] = true;
     }
     const recordInput = { fields };
-    console.log("recordInput work order", JSON.stringify(recordInput));
+    //console.log("recordInput work order", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then((result) => {
-        console.log("Work Order status updated", result);
-        console.log(result);
+        //console.log("Work Order status updated", result);
+        //console.log(result);
       })
       .catch((error) => {
-        console.log("Error updating work order status", error);
+        //console.log("Error updating work order status", error);
       });
   }
 
@@ -705,13 +705,13 @@ export default class NextAppointmentPicker extends NavigationMixin(
     fields["Id"] = this.workOrderId;
     fields["Status"] = "Completed";
     const recordInput = { fields };
-    console.log("recordInput", JSON.stringify(recordInput));
+    //console.log("recordInput", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then(() => {
-        console.log("Work Order status updated");
+        //console.log("Work Order status updated");
       })
       .catch((error) => {
-        console.log("Error updating work order status", error);
+        //console.log("Error updating work order status", error);
       });
   }
 
@@ -720,13 +720,13 @@ export default class NextAppointmentPicker extends NavigationMixin(
     fields["Id"] = this.recordId;
     fields["Status"] = "Completed";
     const recordInput = { fields };
-    console.log("recordInput", JSON.stringify(recordInput));
+    //console.log("recordInput", JSON.stringify(recordInput));
     updateRecord(recordInput)
       .then(() => {
-        console.log("Work Step status updated");
+        //console.log("Work Step status updated");
       })
       .catch((error) => {
-        console.log("Error updating work step status", error);
+        //console.log("Error updating work step status", error);
       });
   }
 
@@ -740,9 +740,9 @@ export default class NextAppointmentPicker extends NavigationMixin(
     // Get the dates for last week's start and next week's end
     const today = new Date();
     const lastWeekStart = new Date(today);
-    lastWeekStart.setDate(today.getDate() - today.getDay() - 7); // Beginning of last week
+    lastWeekStart.setDate(today.getDate() - 3); // Beginning of last week
     const nextWeekEnd = new Date(today);
-    nextWeekEnd.setDate(today.getDate() - today.getDay() + 21); // End of next week
+    nextWeekEnd.setDate(today.getDate()  + 3); // End of next week
 
     return {
       serviceResourceId: this.serviceResourceId,
@@ -775,7 +775,7 @@ export default class NextAppointmentPicker extends NavigationMixin(
     let todayAsDate = new Date();
     let today = todayAsDate.toISOString();
     today = today.split("T")[0];
-    console.log("today", today);
+    //console.log("today", today);
     return {
       resourceId: this.serviceResourceId,
       today: { value: today }

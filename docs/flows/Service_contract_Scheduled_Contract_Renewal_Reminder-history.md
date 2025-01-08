@@ -552,17 +552,17 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |varRecipientList|String|✅|⬜|⬜|<!-- -->|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |varRecipientList|String|✅|⬜|⬜|<!-- -->|<!-- -->|
     
     
     ## Text Templates
     
-    |Name|Text|
-    |:-- |:--  |
-    |EmailBody|Hello<br/><br/>the renewal for contract {!$Record.Name} and account {!$Record.Account.Name} is upcoming. End date for the contract is {!$Record.EndDate}.<br/>Link to Contract: https://krinkelsgreencare--upeodev.sandbox.lightning.force.com/lightning/r/ServiceContract/{!$Record.Id}/view<br/><br/>Kind rergards|
-    |EmailSubject|Renwal due for Account {!$Record.Account.Name}|
+    |Name|Text|Description|
+    |:-- |:-- |:--  |
+    |EmailBody|Hello<br/><br/>the renewal for contract {!$Record.Name} and account {!$Record.Account.Name} is upcoming. End date for the contract is {!$Record.EndDate}.<br/>Link to Contract: https://krinkelsgreencare--upeodev.sandbox.lightning.force.com/lightning/r/ServiceContract/{!$Record.Id}/view<br/><br/>Kind rergards|<!-- -->|
+    |EmailSubject|Renwal due for Account {!$Record.Account.Name}|<!-- -->|
     
     
     ## Flow Nodes Details

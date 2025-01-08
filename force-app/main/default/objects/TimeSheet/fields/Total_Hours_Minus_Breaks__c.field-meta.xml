@@ -6,7 +6,12 @@
     <summaryFilterItems>
         <field>TimeSheetEntry.Code_ATAK_Limbus__c</field>
         <operation>notEqual</operation>
-        <value>KMAD, KMBP, KMAP, KMBD, KMEV, RT</value>
+        <value>KMAD, KMBP, KMAP, KMBD, KMEV</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>TimeSheetEntry.Is_Kilometer_Allowance_Entry__c</field>
+        <operation>equals</operation>
+        <value>False</value>
     </summaryFilterItems>
     <summaryForeignKey>TimeSheetEntry.TimeSheetId</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>

@@ -4,5 +4,6 @@
     <label>ATAK Project Request Comment</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
     <type>TextArea</type>
 </CustomField>

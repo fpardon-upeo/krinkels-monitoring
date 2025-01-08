@@ -252,6 +252,12 @@
       
     ```
     
+    ## 🟩Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Now</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DateTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b>NOW()</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
     ## Flow Nodes Details
     
     ### Update_Status_of_Service_Appointment
@@ -337,10 +343,10 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |Id|String|⬜|✅|✅|<!-- -->|
-    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |Id|String|⬜|✅|✅|<!-- -->|<!-- -->|
+    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|<!-- -->|
     
     
     ## Flow Nodes Details

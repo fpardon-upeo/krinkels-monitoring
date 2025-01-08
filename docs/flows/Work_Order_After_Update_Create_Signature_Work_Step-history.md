@@ -91,6 +91,13 @@
     |2|Signature_Required__c| Equal To|✅|
     
     
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |CalculatedExecutionOrder|Number|{!Get_Highest_Execution_Order.ExecutionOrder}-1|<!-- -->|
+    
+    
     ## Flow Nodes Details
     
     ### Work_Type_Signature_Exists

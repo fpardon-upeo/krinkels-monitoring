@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Added_from_WOL__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Added from WOL</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

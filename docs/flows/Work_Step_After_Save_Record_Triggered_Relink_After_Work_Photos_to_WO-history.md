@@ -129,14 +129,21 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |ContentDocumentCollection|SObject|✅|✅|⬜|ContentDocument|
-    |ContentDocumentIdCollection|String|✅|✅|⬜|<!-- -->|
-    |ContentDocumentRecord|SObject|⬜|✅|⬜|ContentDocument|
-    |FileCounter|Number|⬜|⬜|⬜|<!-- -->|
-    |RelinkCollection|SObject|✅|✅|⬜|ContentDocumentLink|
-    |RelinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |ContentDocumentCollection|SObject|✅|✅|⬜|ContentDocument|<!-- -->|
+    |ContentDocumentIdCollection|String|✅|✅|⬜|<!-- -->|<!-- -->|
+    |ContentDocumentRecord|SObject|⬜|✅|⬜|ContentDocument|<!-- -->|
+    |FileCounter|Number|⬜|⬜|⬜|<!-- -->|<!-- -->|
+    |RelinkCollection|SObject|✅|✅|⬜|ContentDocumentLink|<!-- -->|
+    |RelinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|<!-- -->|
+    
+    
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |TitleFormat|String|"After Work Photos - " + {!Loop_Through_Content_Document.Title} +"_"+TEXT({!FileCounter})|<!-- -->|
     
     
     ## Flow Nodes Details

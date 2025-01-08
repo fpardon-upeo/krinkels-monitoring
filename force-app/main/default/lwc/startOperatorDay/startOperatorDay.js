@@ -260,7 +260,7 @@ export default class StartOperatorDay extends NavigationMixin(
       ) {
         uiapi {
           query {
-            AssignedResource(
+            AssignedResource(first: 200
               where: {
                 and: [
                   { ServiceResourceId: { eq: $serviceResourceId } }
@@ -278,7 +278,8 @@ export default class StartOperatorDay extends NavigationMixin(
                 ]
               }
               orderBy: {
-                ServiceAppointment: { SchedStartTime: { order: ASC } }
+                ServiceAppointment: { SchedStartTime: { order: ASC } 
+                }
               }
             ) {
               edges {

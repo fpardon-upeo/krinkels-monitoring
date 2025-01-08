@@ -245,12 +245,19 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |PermissionSetAssignment|SObject|⬜|⬜|⬜|PermissionSetAssignment|
-    |PermissionSetAssignmentCollection|SObject|✅|⬜|⬜|PermissionSetAssignment|
-    |PermissionSetLicense|SObject|⬜|⬜|⬜|PermissionSetLicenseAssign|
-    |PermissionSetLicenseAssignmentCollection|SObject|✅|⬜|⬜|PermissionSetLicenseAssign|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |PermissionSetAssignment|SObject|⬜|⬜|⬜|PermissionSetAssignment|<!-- -->|
+    |PermissionSetAssignmentCollection|SObject|✅|⬜|⬜|PermissionSetAssignment|<!-- -->|
+    |PermissionSetLicense|SObject|⬜|⬜|⬜|PermissionSetLicenseAssign|<!-- -->|
+    |PermissionSetLicenseAssignmentCollection|SObject|✅|⬜|⬜|PermissionSetLicenseAssign|<!-- -->|
+    
+    
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |NameOfUser|String|{!$Record.FirstName} &' '&{!$Record.LastName}|<!-- -->|
     
     
     ## Flow Nodes Details

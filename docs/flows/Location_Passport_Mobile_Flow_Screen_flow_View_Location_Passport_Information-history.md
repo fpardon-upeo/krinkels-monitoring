@@ -132,6 +132,13 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Active</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⚠️ Draft</b></span>|
     
+    ## Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>formTimeSlotDetail</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>{!TimeSlots.Timeslot_Details__c}&BR()</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>formTimeSlotDetail</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!TimeSlots.Timeslot_Details__c}&" - "</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
     ___
     
     _Documentation generated from branch monitoring_krinkelsgreencare__upeodev_sandbox by [sfdx-hardis](https://sfdx-hardis.cloudity.com), featuring [salesforce-flow-visualiser](https://github.com/toddhalfpenny/salesforce-flow-visualiser)_
@@ -501,11 +508,17 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |🟩<span style="background-color: #a6e22e; color: black;"><b>OperatingHours_TimeSlots</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TimeSlot</b></span>|
-    |🟩<span style="background-color: #a6e22e; color: black;"><b>OperatingHoursDetails</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
-    |🟩<span style="background-color: #a6e22e; color: black;"><b>TimeSlots</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TimeSlot</b></span>|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>OperatingHours_TimeSlots</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TimeSlot</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>OperatingHoursDetails</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>TimeSlots</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TimeSlot</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    ## 🟩Formulas
+    
+    |Name|Data Type|Expression|Description|
+    |:-- |:--:|:-- |:--  |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>formTimeSlotDetail</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!TimeSlots.Timeslot_Details__c}&BR()</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     
     ## Flow Nodes Details
     
@@ -703,9 +716,9 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |🟥<span style="background-color: #ff7f7f; color: black;"><i>LocationPassportRecord</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>SObject</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Location_Passport__c</i></span>|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>LocationPassportRecord</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>SObject</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Location_Passport__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     
     ___
     
@@ -1052,11 +1065,11 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |🟩<span style="background-color: #a6e22e; color: black;"><b>ContentDocumentlinks</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ContentDocumentLink</b></span>|
-    |🟩<span style="background-color: #a6e22e; color: black;"><b>ServiceTerritoryRecord</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ServiceTerritory</b></span>|
-    |🟩<span style="background-color: #a6e22e; color: black;"><b>UserRecord</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>User</b></span>|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>ContentDocumentlinks</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ContentDocumentLink</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>ServiceTerritoryRecord</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ServiceTerritory</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>UserRecord</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>User</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     
     ## Flow Nodes Details
     
@@ -1263,14 +1276,14 @@
     
     ## Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-    |:-- |:--:|:--:|:--:|:--:|:--: |
-    |AccountRecord|SObject|⬜|✅|⬜|Account|
-    |ContentDocumentLinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|
-    |ContentDocumentRecord|SObject|⬜|✅|⬜|ContentDocument|
-    |Id|String|⬜|✅|⬜|<!-- -->|
-    |LocationPassportRecord|SObject|⬜|✅|⬜|Location_Passport__c|
-    |WorkOrderRecord|SObject|⬜|✅|⬜|WorkOrder|
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |AccountRecord|SObject|⬜|✅|⬜|Account|<!-- -->|
+    |ContentDocumentLinkRecord|SObject|⬜|✅|⬜|ContentDocumentLink|<!-- -->|
+    |ContentDocumentRecord|SObject|⬜|✅|⬜|ContentDocument|<!-- -->|
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |LocationPassportRecord|SObject|⬜|✅|⬜|Location_Passport__c|<!-- -->|
+    |WorkOrderRecord|SObject|⬜|✅|⬜|WorkOrder|<!-- -->|
     
     
     ## Flow Nodes Details
