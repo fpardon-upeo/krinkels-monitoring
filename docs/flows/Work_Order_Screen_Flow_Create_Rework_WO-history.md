@@ -268,7 +268,9 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |ReworkSubject|String|"Rework of" + " " + {!Get_Work_Order_Information.WorkOrderNumber}|<!-- -->|
+    |ReworkURL|String|LEFT({!$Api.Partner_Server_URL_340},FIND("/services", {!$Api.Partner_Server_URL_340})) & {!ReworkWOId}|<!-- -->|
+    |today|Date|TODAY()|<!-- -->|
     
     
     ## Flow Nodes Details

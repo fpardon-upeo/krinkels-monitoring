@@ -155,30 +155,33 @@
           <lightning-messages></lightning-messages>
           <div class="form-fields">
             <div class="work-order-container">
-              <abbr class="slds-required">*</abbr>
-              <button
-                onclick={handleSetAppointmentClicked}
-                type="button"
-                class="work-order-button"
-              >
-                <lightning-icon
-                  icon-name="utility:search"
-                  size="xx-small"
-                  variant="inverse"
-                  class="slds-m-right_xx-small"
+              <div class="required-button-wrapper">
+                <abbr class="slds-required" title="required">*</abbr>
+                <button
+                  onclick={handleSetAppointmentClicked}
+                  type="button"
+                  class="work-order-button"
                 >
-                </lightning-icon>
-                {workOrderText}
-              </button>
+                  <lightning-icon
+                    icon-name="utility:search"
+                    size="xx-small"
+                    variant="inverse"
+                    class="slds-m-right_xx-small"
+                  >
+                  </lightning-icon>
+                  {workOrderText}
+                </button>
+              </div>
+              <lightning-input-field
+                if:true={workOrderId}
+                field-name="Work_Order__c"
+                value={workOrderId}
+                variant="label-hidden"
+                required
+                class="work-order-field"
+              >
+              </lightning-input-field>
             </div>
-
-            <lightning-input-field
-              field-name="Work_Order__c"
-              value={workOrderId}
-              variant="label-hidden"
-              required
-            >
-            </lightning-input-field>
 
             <lightning-input-field
               field-name="Time_Sheet__c"
@@ -242,77 +245,35 @@
           <lightning-messages></lightning-messages>
           <div class="form-fields">
             <!-- Work Order -->
-            <!-- <div
-              class="slds-form-element slds-m-top_medium slds-m-bottom_x-small"
-            >
-              <label class="slds-form-element__label">
-                <abbr
-                  class="slds-required"
-                  title={labels.TimeSheetEntryForm_Required_Label}
-                  >*</abbr
-                >
-                {labelsText.TimeSheetEntryForm_WorkOrder_Text}
-              </label>
-              <div class="slds-form-element__control">
-                <div
-                  class="slds-grid slds-gutters slds-grid_vertical-align-center"
-                >
-                  <div class="slds-col slds-size_2-of-4">
-                    <button
-                      type="button"
-                      class="slds-button slds-button_brand lookup-button"
-                      onclick={handleSetAppointmentClicked}
-                    >
-                      <lightning-icon
-                        icon-name="utility:search"
-                        size="xx-small"
-                        variant="inverse"
-                        class="slds-m-right_xx-small"
-                      >
-                      </lightning-icon>
-                      {labelsText.TimeSheetEntryForm_SelectWorkOrder_Text}
-                    </button>
-                  </div>
-                  <div class="slds-col slds-size_2-of-4">
-                    <lightning-input-field
-                      if:true={workOrderId}
-                      field-name="WorkOrderId"
-                      value={workOrderId}
-                      variant="label-hidden"
-                      required
-                    >
-                    </lightning-input-field>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
-            <!-- Work Order -->
             <div class="work-order-container">
-              <abbr class="slds-required">*</abbr>
-              <button
-                onclick={handleSetAppointmentClicked}
-                type="button"
-                class="work-order-button"
-              >
-                <lightning-icon
-                  icon-name="utility:search"
-                  size="xx-small"
-                  variant="inverse"
-                  class="slds-m-right_xx-small"
+              <div class="required-button-wrapper">
+                <abbr class="slds-required" title="required">*</abbr>
+                <button
+                  onclick={handleSetAppointmentClicked}
+                  type="button"
+                  class="work-order-button"
                 >
-                </lightning-icon>
-                {workOrderText}
-              </button>
+                  <lightning-icon
+                    icon-name="utility:search"
+                    size="xx-small"
+                    variant="inverse"
+                    class="slds-m-right_xx-small"
+                  >
+                  </lightning-icon>
+                  {workOrderText}
+                </button>
+              </div>
+              <lightning-input-field
+                if:true={workOrderId}
+                field-name="Work_Order__c"
+                value={workOrderId}
+                variant="label-hidden"
+                required
+                class="work-order-field"
+              >
+              </lightning-input-field>
             </div>
-
-            <lightning-input-field
-              field-name="Work_Order__c"
-              value={workOrderId}
-              variant="label-hidden"
-              required
-            >
-            </lightning-input-field>
 
             <lightning-input-field
               field-name="Time_Sheet__c"
@@ -500,14 +461,14 @@
     >
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Select Appointment</h2>
+        <h2 class="sheet-title">{labels.Mileage_SelectAppointmentText}</h2>
       </div>
       <div class="bottom-sheet-content" style="height: calc(100vh - 120px)">
         <div
           class="table-container"
-          style="height: calc(100% - 60px); overflow-y: auto"
+          style="height: calc(100% - 60px); overflow-y: auto; width: 100%"
         >
-          <div class="datatable-wrapper">
+          <div class="datatable-wrapper" style="width: 100%">
             <lightning-datatable
               class="slds-table_striped slds-cell-wrap"
               columns={columns}
@@ -540,7 +501,7 @@
             onclick={handleNext}
             type="button"
           >
-            Next
+            {labels.Mileage_NextButtonText}
           </button>
         </div>
       </div>

@@ -3304,6 +3304,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ServiceCrewMember.Active_Member__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ServiceCrewMember.Crew_Has_Leader__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3549,6 +3554,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>TimeSheet.Total_Break_and_Absent_Time_Minutes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>TimeSheet.Total_Hours_Minus_Breaks__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3615,6 +3625,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheetEntry.Is_Kilometer_Allowance__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Operator__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4267,6 +4282,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Quote_After_Save_Create_Work_Order_on_Acceptance</flow>
     </flowAccesses>
     <flowAccesses>
@@ -4283,7 +4302,19 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>ResourceAbsence_After_Save_Break_Time</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>ResourceAbsence_After_Save_Set_Total_Absence_Time_on_TimeSheet</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -4432,6 +4463,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_After_Save_Record_Triggered_Unassign_Products_Consumed</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

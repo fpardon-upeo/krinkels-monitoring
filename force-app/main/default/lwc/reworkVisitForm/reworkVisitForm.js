@@ -7,10 +7,31 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getReworkReasons from "@salesforce/apex/SFS_WorkOrderCreatorController.getReworkReasons";
 import getExistingTasks from "@salesforce/apex/SFS_WorkOrderCreatorController.getExistingTasks";
 import createReworkOrder from "@salesforce/apex/SFS_WorkOrderCreatorController.createReworkOrder";
+import ReworkVisitForm_ReworkInfoText from "@salesforce/label/c.ReworkVisitForm_ReworkInfoText";
+import ReworkVisitForm_TaskSelectionText from "@salesforce/label/c.ReworkVisitForm_TaskSelectionText";
+import ReworkVisitForm_ConfirmDetailsText from "@salesforce/label/c.ReworkVisitForm_ConfirmDetailsText";
+import ReworkVisitForm_NewTasksText from "@salesforce/label/c.ReworkVisitForm_NewTasksText";
+import ReworkVisitForm_SubjectText from "@salesforce/label/c.ReworkVisitForm_SubjectText";
+import ReworkVisitForm_ReworkReasonText from "@salesforce/label/c.ReworkVisitForm_ReworkReasonText";
+import ReworkVisitForm_SelectedTasksText from "@salesforce/label/c.ReworkVisitForm_SelectedTasksText";
+import ReworkVisitForm_AddAdditionalTasksText from "@salesforce/label/c.ReworkVisitForm_AddAdditionalTasksText";
+import ReworkVisitForm_TaskDescriptionText from "@salesforce/label/c.ReworkVisitForm_TaskDescriptionText";
+import ReworkVisitForm_AddTaskText from "@salesforce/label/c.ReworkVisitForm_AddTaskText";
+import ReworkVisitForm_BackText from "@salesforce/label/c.ReworkVisitForm_BackText";
+import ReworkVisitForm_NextText from "@salesforce/label/c.ReworkVisitForm_NextText";
+import ReworkVisitForm_CreateWorkOrderText from "@salesforce/label/c.ReworkVisitForm_CreateWorkOrderText";
+import ReworkVisitForm_DescriptionText from "@salesforce/label/c.ReworkVisitForm_DescriptionText";
+import ReworkVisitForm_TasksFromPreviousWorkOrderText from "@salesforce/label/c.ReworkVisitForm_TasksFromPreviousWorkOrderText";
+import ReworkVisitForm_AddNewTasksText from "@salesforce/label/c.ReworkVisitForm_AddNewTasksText";
+import ReworkVisitForm_ReworkOfText from "@salesforce/label/c.ReworkVisitForm_ReworkOfText";
+import ReworkVisitForm_TitleError from "@salesforce/label/c.ReworkVisitForm_TitleError";
+import ReworkVisitForm_TitleSuccess from "@salesforce/label/c.ReworkVisitForm_TitleSuccess";
+import ReworkVisitForm_ErrorMessage from "@salesforce/label/c.ReworkVisitForm_ErrorMessage";
+import ReworkVisitForm_SuccessMessage from "@salesforce/label/c.ReworkVisitForm_SuccessMessage";
 
 const COLUMNS = [
   {
-    label: "Description",
+    label: ReworkVisitForm_DescriptionText,
     fieldName: "Description",
     type: "text",
     wrapText: true
@@ -32,10 +53,32 @@ export default class ReworkVisitForm extends LightningElement {
   @track newTasks = [];
 
   columns = COLUMNS;
+
   taskTypeOptions = [
-    { label: "Tasks from previous work order", value: "redo" },
-    { label: "Add new tasks", value: "new" }
+    { label: ReworkVisitForm_TasksFromPreviousWorkOrderText, value: "redo" },
+    { label: ReworkVisitForm_AddNewTasksText, value: "new" }
   ];
+
+  labels = {
+    ReworkVisitForm_ReworkInfoText,
+    ReworkVisitForm_TaskSelectionText,
+    ReworkVisitForm_ConfirmDetailsText,
+    ReworkVisitForm_NewTasksText,
+    ReworkVisitForm_SubjectText,
+    ReworkVisitForm_ReworkReasonText,
+    ReworkVisitForm_SelectedTasksText,
+    ReworkVisitForm_AddAdditionalTasksText,
+    ReworkVisitForm_TaskDescriptionText,
+    ReworkVisitForm_AddTaskText,
+    ReworkVisitForm_BackText,
+    ReworkVisitForm_NextText,
+    ReworkVisitForm_CreateWorkOrderText,
+    ReworkVisitForm_ReworkOfText,
+    ReworkVisitForm_TitleError,
+    ReworkVisitForm_TitleSuccess,
+    ReworkVisitForm_ErrorMessage,
+    ReworkVisitForm_SuccessMessage
+  };
 
   // Lifecycle hooks
   connectedCallback() {
@@ -94,7 +137,9 @@ export default class ReworkVisitForm extends LightningElement {
   }
 
   get nextButtonLabel() {
-    return this.isStepThree ? "Create Work Order" : "Next";
+    return this.isStepThree
+      ? this.labels.ReworkVisitForm_CreateWorkOrderText
+      : this.labels.ReworkVisitForm_NextText;
   }
 
   get isNextDisabled() {
@@ -138,7 +183,7 @@ export default class ReworkVisitForm extends LightningElement {
       }));
 
       this.existingTasks = workOrder.WorkOrderLineItems || [];
-      this.subject = `Rework of ${workOrder.WorkOrderNumber}`;
+      this.subject = `${this.labels.ReworkVisitForm_ReworkOfText} ${workOrder.WorkOrderNumber}`;
     } catch (error) {
       this.handleError(error);
     } finally {
@@ -245,8 +290,9 @@ export default class ReworkVisitForm extends LightningElement {
       this.dispatchEvent(
         new CustomEvent("close", {
           detail: {
-            title: "Success",
-            message: "Rework Order created successfully",
+            outcome: "success",
+            title: this.labels.ReworkVisitForm_TitleSuccess,
+            message: this.labels.ReworkVisitForm_SuccessMessage,
             variant: "success"
           }
         })
@@ -257,8 +303,9 @@ export default class ReworkVisitForm extends LightningElement {
       this.dispatchEvent(
         new CustomEvent("close", {
           detail: {
-            title: "Error",
-            message: error.body?.message || "An unexpected error occurred",
+            outcome: "error",
+            title: this.labels.ReworkVisitForm_TitleError,
+            message: this.labels.ReworkVisitForm_ErrorMessage,
             variant: "error"
           }
         })

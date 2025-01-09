@@ -4,8 +4,7 @@
     <fields>TimeSheetNumber</fields>
     <fields>ServiceResourceId</fields>
     <fields>StartDate</fields>
-    <fields>EndDate</fields>
-    <fields>Total_Hours__c</fields>
+    <fields>Total_Normal_Hours__c</fields>
     <fields>Status</fields>
     <label>Timesheet</label>
 </CompactLayout>

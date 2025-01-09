@@ -1,5 +1,6 @@
 import { api, LightningElement } from "lwc";
 import { ToastTypes } from "c/utilsImageCapture";
+import ToastMessage_CloseButtonText from "@salesforce/label/c.ToastMessage_CloseButtonText";
 
 export default class ToastMessage extends LightningElement {
   @api
@@ -7,6 +8,10 @@ export default class ToastMessage extends LightningElement {
 
   @api
   type;
+
+  labels = {
+    ToastMessage_CloseButtonText
+  };
 
   get typeName() {
     return this.type.description;

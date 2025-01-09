@@ -317,7 +317,16 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |fFirstField|String|TRIM(LEFT({!vConfigFields},FIND(",",{!vConfigFields})-1))|<!-- -->|
+    |fGetFlexAttribute|String|IF( {!vSeparatorLocation} > 0, RIGHT( {!vCombinedAttribute}, LEN( {!vCombinedAttribute} ) - {!vSeparatorLocation} - {!vSeparatorLength} + 1 ) , "" )|<!-- -->|
+    |fGetWidthAttribute|String|IF( {!vSeparatorLocation} > 0, LEFT( {!vCombinedAttribute}, {!vSeparatorLocation} - 1 ), {!vCombinedAttribute} )|<!-- -->|
+    |fHasComma|Boolean|FIND(",",{!vConfigFields})>0|<!-- -->|
+    |fListLength|Number|LEN({!vFieldList})|<!-- -->|
+    |fRemoveField|String|MID({!vConfigFields},FIND(",",{!vConfigFields})+1,999)|<!-- -->|
+    |fSeparatorLength|Number|LEN( {!cSeparator} )|<!-- -->|
+    |fSeparatorLocation|Number|FIND( {!cSeparator}, {!ConfigTable_select.outputSelectedRow.Widths__c} )|<!-- -->|
+    |fSetWidthFlexAttribute|String|{!wiz_columnWidths} & IF( LEN( {!wiz_columnFlexes} ) > 0, {!cSeparator} & {!wiz_columnFlexes}, "" )|<!-- -->|
+    |fTrimFieldList|String|TRIM({!vFieldList})|<!-- -->|
     
     
     ## Constants

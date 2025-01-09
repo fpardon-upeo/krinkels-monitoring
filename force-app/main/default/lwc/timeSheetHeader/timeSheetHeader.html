@@ -1,79 +1,131 @@
 <template>
-    <lightning-card>
-        <div class="slds-p-around_medium">
-            <div class="slds-grid slds-wrap slds-gutters">
-                <!-- Total Hours - Full width on mobile -->
-                <div class="slds-col slds-size_full slds-large-size_1-of-4 slds-m-bottom_medium">
-                    <div class="metric-box">
-                        <div class="slds-grid slds-grid_vertical">
-                            <div class="slds-grid slds-m-bottom_medium">
-                                <lightning-icon icon-name="utility:clock" size="medium" class="slds-m-right_small"></lightning-icon>
-                                <div class="slds-text-heading_medium">Total Hours</div>
-                            </div>
-                            <div class="slds-grid slds-grid_align-spread">
-                                <div class="slds-text-align_center slds-p-horizontal_small">
-                                    <div class="slds-text-body_regular slds-m-bottom_x-small">Logged</div>
-                                    <div class="slds-text-heading_small">{formattedTotalHoursLogged} h</div>
-                                </div>
-                                <div class="slds-text-align_center slds-p-horizontal_small">
-                                    <div class="slds-text-body_regular slds-m-bottom_x-small">Expected</div>
-                                    <div class="slds-text-heading_small">{formattedTotalHoursExpected} h</div>
-                                </div>
-                                <div class="slds-text-align_center slds-p-horizontal_small">
-                                    <div class="slds-text-body_regular slds-m-bottom_x-small">Missing</div>
-                                    <div class="slds-text-heading_small">{formattedMissingHours} h</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <lightning-card>
+    <div class="slds-p-around_medium">
+      <div class="slds-grid slds-wrap slds-gutters">
+        <!-- Total Hours - Full width on mobile -->
+        <div
+          class="slds-col slds-size_full slds-large-size_1-of-4 slds-m-bottom_medium"
+        >
+          <div class="metric-box">
+            <div class="slds-grid slds-grid_vertical">
+              <div class="slds-grid slds-m-bottom_medium">
+                <lightning-icon
+                  icon-name="utility:clock"
+                  size="medium"
+                  class="slds-m-right_small"
+                ></lightning-icon>
+                <div class="slds-text-heading_medium">
+                  {labels.timeSheetHeader_HoursText}
                 </div>
-
-                <!-- Other metrics - Two per row on mobile -->
-                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium slds-p-horizontal_x-small">
-                    <div class="metric-box">
-                        <div class="slds-grid slds-grid_vertical">
-                            <div class="slds-grid slds-m-bottom_x-small">
-                                <lightning-icon icon-name="utility:plane" size="medium" class="slds-m-right_small"></lightning-icon>
-                                <div class="slds-text-heading_medium">KM Logged</div>
-                            </div>
-                            <div class="slds-p-left_xx-large">
-                                <div class="slds-text-heading_small">{formattedTotalDistance} km</div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="slds-grid slds-grid_align-spread">
+                <div class="slds-text-align_center slds-p-horizontal_small">
+                  <div class="slds-text-body_regular slds-m-bottom_x-small">
+                    {labels.TimeSheet_LoggedText}
+                  </div>
+                  <div class="slds-text-heading_small">
+                    {formattedTotalHoursLogged} h
+                  </div>
                 </div>
-
-                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium slds-p-horizontal_x-small">
-                    <div class="metric-box">
-                        <div class="slds-grid slds-grid_vertical">
-                            <div class="slds-grid slds-m-bottom_x-small">
-                                <lightning-icon icon-name="utility:travel_and_places" size="medium" class="slds-m-right_small"></lightning-icon>
-                                <div class="slds-text-heading_medium">Travel Time</div>
-                            </div>
-                            <div class="slds-p-left_xx-large">
-                                <div class="slds-text-heading_small">{formattedTravelTime} h</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="slds-text-align_center slds-p-horizontal_small">
+                  <div class="slds-text-body_regular slds-m-bottom_x-small">
+                    {labels.TimeSheet_ExpectedText}
+                  </div>
+                  <div class="slds-text-heading_small">
+                    {formattedTotalHoursExpected} h
+                  </div>
                 </div>
-
-                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-4 slds-p-horizontal_x-small">
-                    <div class="metric-box">
-                        <div class="slds-grid slds-grid_vertical">
-                            <div class="slds-grid slds-m-bottom_x-small">
-                                <lightning-icon icon-name="utility:pause" size="medium" class="slds-m-right_small"></lightning-icon>
-                                <div class="slds-text-heading_medium">Break Time</div>
-                            </div>
-                            <div class="slds-p-left_xx-large">
-                                <div class="slds-text-heading_small">{formattedBreakTime} h</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="slds-text-align_center slds-p-horizontal_small">
+                  <div class="slds-text-body_regular slds-m-bottom_x-small">
+                    {labels.TimeSheet_MissingText}
+                  </div>
+                  <div class="slds-text-heading_small">
+                    {formattedMissingHours} h
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </lightning-card>
-    <lightning-card if:true={timeSheetLoaded}>
-        <c-time-sheet-calendar-custom record-id={timeSheetId}></c-time-sheet-calendar-custom>
-    </lightning-card>
+
+        <!-- Other metrics - Two per row on mobile -->
+        <div
+          class="slds-col slds-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium slds-p-horizontal_x-small"
+        >
+          <div class="metric-box">
+            <div class="slds-grid slds-grid_vertical">
+              <div class="slds-grid slds-m-bottom_x-small">
+                <lightning-icon
+                  icon-name="utility:plane"
+                  size="medium"
+                  class="slds-m-right_small"
+                ></lightning-icon>
+                <div class="slds-text-heading_medium">
+                  {labels.TimeSheet_KmLoggedText}
+                </div>
+              </div>
+              <div class="slds-p-left_xx-large">
+                <div class="slds-text-heading_small">
+                  {formattedTotalDistance} km
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="slds-col slds-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_medium slds-p-horizontal_x-small"
+        >
+          <div class="metric-box">
+            <div class="slds-grid slds-grid_vertical">
+              <div class="slds-grid slds-m-bottom_x-small">
+                <lightning-icon
+                  icon-name="utility:travel_and_places"
+                  size="medium"
+                  class="slds-m-right_small"
+                ></lightning-icon>
+                <div class="slds-text-heading_medium">
+                  {labels.TimeSheet_TravelTimeText}
+                </div>
+              </div>
+              <div class="slds-p-left_xx-large">
+                <div class="slds-text-heading_small">
+                  {formattedTravelTime} h
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="slds-col slds-size_1-of-2 slds-large-size_1-of-4 slds-p-horizontal_x-small"
+        >
+          <div class="metric-box">
+            <div class="slds-grid slds-grid_vertical">
+              <div class="slds-grid slds-m-bottom_x-small">
+                <lightning-icon
+                  icon-name="utility:pause"
+                  size="medium"
+                  class="slds-m-right_small"
+                ></lightning-icon>
+                <div class="slds-text-heading_medium">
+                  {labels.TimeSheet_TravelTimeText}
+                </div>
+              </div>
+              <div class="slds-p-left_xx-large">
+                <div class="slds-text-heading_small">
+                  {formattedBreakTime} h
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+  <lightning-card if:true={timeSheetLoaded}>
+    <c-time-sheet-calendar-custom
+      record-id={timeSheetId}
+    ></c-time-sheet-calendar-custom>
+  </lightning-card>
 </template>

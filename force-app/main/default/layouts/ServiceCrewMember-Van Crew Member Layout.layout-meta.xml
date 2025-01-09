@@ -23,6 +23,10 @@
                 <behavior>Edit</behavior>
                 <field>Crew_Has_Leader__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Active_Member__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

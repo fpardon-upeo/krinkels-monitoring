@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Intervention_Registration__c</fullName>
     <externalId>false</externalId>
-    <formula>TEXT( Account.Intervention_registration__c )</formula>
+    <formula>TEXT( Account.Intervention_registration__c )&amp;&quot; &quot;&amp;TEXT( Account.Intervention_Registration_Method__c )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Intervention Registration</label>
     <required>false</required>

@@ -3,13 +3,53 @@ import getWasteTypePicklist from "@salesforce/apex/SFS_WorkOrderCreatorControlle
 import getWasteDepots from "@salesforce/apex/SFS_WorkOrderCreatorController.getWasteDepots";
 import createWasteVisitWorkOrder from "@salesforce/apex/SFS_WorkOrderCreatorController.createWasteVisitWorkOrder";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import WasteVisitForm_WasteTypeText from "@salesforce/label/c.WasteVisitForm_WasteTypeText";
+import WasteVisitForm_DepotText from "@salesforce/label/c.WasteVisitForm_DepotText";
+import WasteVisitForm_DetailsText from "@salesforce/label/c.WasteVisitForm_DetailsText";
+import WasteVisitForm_SelectedDepotText from "@salesforce/label/c.WasteVisitForm_SelectedDepotText";
+import WasteVisitForm_SelectedWasteTypesText from "@salesforce/label/c.WasteVisitForm_SelectedWasteTypesText";
+import WasteVisitForm_SelectedWasteTypesDropOff from "@salesforce/label/c.WasteVisitForm_SelectedWasteTypesDropOff";
+import WasteVisitForm_WasteDepotColumnLabel from "@salesforce/label/c.WasteVisitForm_WasteDepotColumnLabel";
+import WasteVisitForm_ContractColumnLabel from "@salesforce/label/c.WasteVisitForm_ContractColumnLabel";
+import WasteVisitForm_TypeOfWasteColumnLabel from "@salesforce/label/c.WasteVisitForm_TypeOfWasteColumnLabel";
+import WasteVisitForm_PostalCodeColumnLabel from "@salesforce/label/c.WasteVisitForm_PostalCodeColumnLabel";
+import WasteVisitForm_CityColumnLabel from "@salesforce/label/c.WasteVisitForm_CityColumnLabel";
+import WasteVisitForm_CreateWOText from "@salesforce/label/c.WasteVisitForm_CreateWOText";
+import WasteVisitForm_NextText from "@salesforce/label/c.WasteWasteVisitForm_NextTextVisitForm_NextText";
+import WasteVisitForm_SuccessTitle from "@salesforce/label/c.WasteVisitForm_SuccessTitle";
+import WasteVisitForm_SuccessMessage from "@salesforce/label/c.WasteVisitForm_SuccessMessage";
+import WasteVisitForm_ErrorTitle from "@salesforce/label/c.WasteVisitForm_ErrorTitle";
+import WasteVisitForm_ErrorMessage from "@salesforce/label/c.WasteVisitForm_ErrorMessage";
+import WasteVisitForm_BackText from "@salesforce/label/c.WasteVisitForm_BackText";
+import WasteVisitForm_AvailableTypes from "@salesforce/label/c.WasteVisitForm_AvailableTypes";
+import WasteVisitForm_SelectedTypes from "@salesforce/label/c.WasteVisitForm_SelectedTypes";
 
 const COLUMNS = [
-  { label: "Waste Depot", fieldName: "Name", type: "text" },
-  { label: "Contract", fieldName: "Contract__c", type: "boolean" },
-  { label: "Type of Waste", fieldName: "Type_of_Waste__c", type: "text" },
-  { label: "Postal Code", fieldName: "ShippingPostalCode", type: "text" },
-  { label: "City", fieldName: "ShippingCity", type: "text" }
+  {
+    label: WasteVisitForm_WasteDepotColumnLabel,
+    fieldName: "Name",
+    type: "text"
+  },
+  {
+    label: WasteVisitForm_ContractColumnLabel,
+    fieldName: "Contract__c",
+    type: "boolean"
+  },
+  {
+    label: WasteVisitForm_TypeOfWasteColumnLabel,
+    fieldName: "Type_of_Waste__c",
+    type: "text"
+  },
+  {
+    label: WasteVisitForm_PostalCodeColumnLabel,
+    fieldName: "ShippingPostalCode",
+    type: "text"
+  },
+  {
+    label: WasteVisitForm_CityColumnLabel,
+    fieldName: "ShippingCity",
+    type: "text"
+  }
 ];
 
 export default class WasteVisitForm extends LightningElement {
@@ -22,6 +62,29 @@ export default class WasteVisitForm extends LightningElement {
   @track isLoading = false;
 
   columns = COLUMNS;
+
+  labels = {
+    WasteVisitForm_WasteTypeText,
+    WasteVisitForm_DepotText,
+    WasteVisitForm_DetailsText,
+    WasteVisitForm_SelectedDepotText,
+    WasteVisitForm_SelectedWasteTypesText,
+    WasteVisitForm_SelectedWasteTypesDropOff,
+    WasteVisitForm_WasteDepotColumnLabel,
+    WasteVisitForm_ContractColumnLabel,
+    WasteVisitForm_TypeOfWasteColumnLabel,
+    WasteVisitForm_PostalCodeColumnLabel,
+    WasteVisitForm_CityColumnLabel,
+    WasteVisitForm_CreateWOText,
+    WasteVisitForm_NextText,
+    WasteVisitForm_SuccessTitle,
+    WasteVisitForm_SuccessMessage,
+    WasteVisitForm_ErrorTitle,
+    WasteVisitForm_ErrorMessage,
+    WasteVisitForm_BackText,
+    WasteVisitForm_AvailableTypes,
+    WasteVisitForm_SelectedTypes
+  };
 
   // Getters for step management
   get isStepOne() {
@@ -79,7 +142,9 @@ export default class WasteVisitForm extends LightningElement {
 
   // Button and validation getters
   get nextButtonLabel() {
-    return this.isStepThree ? "Create Work Order" : "Next";
+    return this.isStepThree
+      ? this.labels.WasteVisitForm_CreateWOText
+      : this.labels.WasteVisitForm_NextText;
   }
 
   get nextButtonClass() {
@@ -201,8 +266,9 @@ export default class WasteVisitForm extends LightningElement {
       this.dispatchEvent(
         new CustomEvent("close", {
           detail: {
-            title: "Success",
-            message: "Waste Visit Work Order created successfully",
+            outcome: "success",
+            title: this.labels.WasteVisitForm_SuccessTitle,
+            message: this.labels.WasteVisitForm_SuccessMessage,
             variant: "success"
           }
         })
@@ -213,8 +279,9 @@ export default class WasteVisitForm extends LightningElement {
       this.dispatchEvent(
         new CustomEvent("close", {
           detail: {
-            title: "Error",
-            message: error.body?.message || "An unexpected error occurred",
+            outcome: "error",
+            title: this.labels.WasteVisitForm_ErrorTitle,
+            message: this.labels.WasteVisitForm_ErrorMessage,
             variant: "error"
           }
         })

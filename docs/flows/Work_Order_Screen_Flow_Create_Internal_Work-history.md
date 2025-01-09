@@ -339,7 +339,8 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |assetNameForQuery|String|{!Select_Internal_Work_Type} & " - " & {!departmentType}|<!-- -->|
+    |workOrderSubject|String|{!Select_Internal_Work_Type} & " - " & {!Get_Service_Resource.Name}|<!-- -->|
     
     
     ## Flow Nodes Details

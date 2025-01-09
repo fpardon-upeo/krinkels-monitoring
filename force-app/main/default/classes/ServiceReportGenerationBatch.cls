@@ -15,7 +15,13 @@ public without sharing class ServiceReportGenerationBatch implements Database.Ba
         // Query for SD_Import__c records that need to be processed
         // You might want to add additional filtering criteria
         return Database.getQueryLocator([
-                SELECT Id, Contact.Language_Formula__c FROM WorkOrder WHERE PDF_Status__c = 'Ready to be Generated' AND Status = 'Completed' AND ContactId != null
+                SELECT Id, Contact.Language_Formula__c FROM WorkOrder
+                WHERE PDF_Status__c = 'Ready to be Generated'
+                AND Status = 'Completed'
+                AND ContactId != null
+                AND WorkType.Name != 'Internal Production Work'
+                AND WorkType.Name != 'Internal Depot'
+                AND WorkType.Name != 'Waste Management'
         ]);
     }
 
@@ -38,7 +44,16 @@ public without sharing class ServiceReportGenerationBatch implements Database.Ba
     public void finish(Database.BatchableContext bc) {
         // Any post-processing logic can go here
         System.debug('Batch job completed');
-        List<WorkOrder> workOrders = [SELECT Id, ContactId FROM WorkOrder WHERE PDF_Status__c = 'Ready to be Generated' AND Status = 'Completed' AND ContactId = null];
+        List<WorkOrder> workOrders = [
+                SELECT Id, ContactId
+                FROM WorkOrder
+                WHERE PDF_Status__c = 'Ready to be Generated'
+                AND Status = 'Completed'
+                AND ContactId = null
+                AND WorkType.Name != 'Internal Production Work'
+                AND WorkType.Name != 'Internal Depot'
+                AND WorkType.Name != 'Waste Management'
+        ];
         for(WorkOrder wo : workOrders) {
             wo.PDF_Status__c = 'Not Generated - No Contact';
         }

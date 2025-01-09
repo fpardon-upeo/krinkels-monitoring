@@ -182,7 +182,8 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |CalculatedATAKCode|String|CASE($Record.Type, <br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "HR",<br/>    "Illness",  "HR",<br/>    "Recup Overtime", "SP",<br/>    "Absent Hours", "HR",<br/>    ""<br/>  )|<!-- -->|
+    |CalculatedSoccode|String|CASE($Record.Type, <br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )|<!-- -->|
     
     
     ## Flow Nodes Details

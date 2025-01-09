@@ -31,8 +31,10 @@ export default class LocationMonitor extends LightningElement {
       .then(data => {
         this.timeSheetData = data;
         console.log('timeSheetData:', JSON.stringify(this.timeSheetData));
-        this.timeSheetData.Formatted_Total_Break_Time__c = this.convertMinutesToDecimal(this.timeSheetData.Total_Break_Time__c);
-        this.timeSheetData.Formatted_Total_Break_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Break_Time__c);
+        this.timeSheetData.Formatted_Total_Break_Time__c = this.convertMinutesToDecimal(this.timeSheetData.Total_Break_and_Absent_Time_Minutes__c);
+        console.log('Formatted_Total_Break_Time__c:', this.timeSheetData.Formatted_Total_Break_Time__c);
+        this.timeSheetData.Formatted_Total_Break_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Formatted_Total_Break_Time__c);
+        console.log('Formatted_Total_Break_Time__c:', this.timeSheetData.Formatted_Total_Break_Time__c);
         this.timeSheetData.Formatted_Total_Hours_Minus_Breaks__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Hours_Minus_Breaks__c);
         this.timeSheetData.Formatted_Working_Hours_in_Contract__c = this.convertHoursToReadableFormat(this.timeSheetData.Working_Hours_in_Contract__c);
         this.timeSheetData.Formatted_Total_Travel_Time__c = this.convertHoursToReadableFormat(this.timeSheetData.Total_Travel_Time__c);
@@ -87,13 +89,17 @@ export default class LocationMonitor extends LightningElement {
 
   convertMinutesToDecimal(minutes) {
     const decimalHours = (minutes / 60).toFixed(2);
+    console.log('decimalHours:', decimalHours);
     return parseFloat(decimalHours);
   }
 
 
   convertHoursToReadableFormat(hours) {
+    console.log('hours:', hours);
     const wholeHours = Math.floor(hours);
+    console.log('wholeHours:', wholeHours);
     const minutes = Math.round((hours - wholeHours) * 60);
+    console.log('minutes:', minutes);
     return `${wholeHours}h ${minutes}m`;
   }
 

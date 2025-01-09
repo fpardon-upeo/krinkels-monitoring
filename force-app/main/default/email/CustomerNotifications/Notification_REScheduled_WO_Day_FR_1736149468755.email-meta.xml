@@ -18,7 +18,7 @@ Nous souhaitons vous informer d’une modification concernant l’intervention p
  - Lieu: 
  - {{{WorkOrder.Address}}}
 
-L’intervention aura désormais le {{{WorkOrder.Excecution_Week__c}}}
+L’intervention aura désormais le {{{WorkOrder.StartDate}}}.
 
 Pour assurer un déroulement sans encombre, nous vous prions de bien vouloir libérer les zones nécessaires à l’avance. Cela nous permettra de commencer sans délai.
 

@@ -634,6 +634,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>alternativeField</name>
+                    <value>Contact.Language__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>buttonActionText</name>

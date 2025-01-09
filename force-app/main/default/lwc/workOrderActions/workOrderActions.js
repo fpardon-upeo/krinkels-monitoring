@@ -14,6 +14,10 @@ import WorkOrderActions_Save_Button from "@salesforce/label/c.WorkOrderActions_S
 import WorkOrderActions_Extra_Work_Description from "@salesforce/label/c.WorkOrderActions_Extra_Work_Description";
 import WorkOrderActions_Extra_Work_Header from "@salesforce/label/c.WorkOrderActions_Extra_Work_Header";
 import WorkOrderActions_Extra_Work_Subject from "@salesforce/label/c.WorkOrderActions_Extra_Work_Subject";
+import WorkOrderActions_ErrorTitle from "@salesforce/label/c.WorkOrderActions_ErrorTitle";
+import WorkOrderActions_SuccessTitle from "@salesforce/label/c.WorkOrderActions_SuccessTitle";
+import WorkOrderActions_ErrorMessage from "@salesforce/label/c.WorkOrderActions_ErrorMessage";
+import WorkOrderActions_SuccessMessage from "@salesforce/label/c.WorkOrderActions_SuccessMessage";
 
 export default class WorkOrderActions extends LightningElement {
   @track showLogShopVisit = false;
@@ -39,7 +43,11 @@ export default class WorkOrderActions extends LightningElement {
     WorkOrderActions_Save_Button,
     WorkOrderActions_Extra_Work_Description,
     WorkOrderActions_Extra_Work_Header,
-    WorkOrderActions_Extra_Work_Subject
+    WorkOrderActions_Extra_Work_Subject,
+    WorkOrderActions_ErrorTitle,
+    WorkOrderActions_SuccessTitle,
+    WorkOrderActions_ErrorMessage,
+    WorkOrderActions_SuccessMessage
   };
 
   connectedCallback() {
@@ -68,8 +76,8 @@ export default class WorkOrderActions extends LightningElement {
         console.log("result", result);
         this.dispatchEvent(
           new ShowToastEvent({
-            title: "Success",
-            message: "Extra Work Order Created",
+            title: this.labels.WorkOrderActions_SuccessTitle,
+            message: this.labels.WorkOrderActions_SuccessMessage,
             variant: "success"
           })
         );
@@ -79,8 +87,8 @@ export default class WorkOrderActions extends LightningElement {
         console.log("error", error);
         this.dispatchEvent(
           new ShowToastEvent({
-            title: "Error creating Extra Work Order",
-            message: error.body.message,
+            title: this.labels.WorkOrderActions_ErrorTitle,
+            message: this.labels.WorkOrderActions_ErrorMessage,
             variant: "error"
           })
         );

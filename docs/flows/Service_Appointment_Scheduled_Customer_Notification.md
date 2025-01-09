@@ -11,49 +11,49 @@
 
 flowchart TB
 START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Scheduled</b>"]):::startClass
-click START "#general-information" "1355914100"
+click START "#general-information" "1013521487"
 
 REScheduled_WO_Send_ENG_mail("📧 <em></em><br/>REScheduled WO - Send ENG mail"):::actionCalls
-click REScheduled_WO_Send_ENG_mail "#rescheduled_wo_send_eng_mail" "2135964102"
+click REScheduled_WO_Send_ENG_mail "#rescheduled_wo_send_eng_mail" "1563395032"
 
 REScheduled_WO_Send_ENG_mail_Day("📧 <em></em><br/>REScheduled WO - Send ENG mail Day"):::actionCalls
-click REScheduled_WO_Send_ENG_mail_Day "#rescheduled_wo_send_eng_mail_day" "1848631256"
+click REScheduled_WO_Send_ENG_mail_Day "#rescheduled_wo_send_eng_mail_day" "808690215"
 
 REScheduled_WO_Send_FR_mail("📧 <em></em><br/>REScheduled WO - Send FR mail"):::actionCalls
-click REScheduled_WO_Send_FR_mail "#rescheduled_wo_send_fr_mail" "1298286610"
+click REScheduled_WO_Send_FR_mail "#rescheduled_wo_send_fr_mail" "4287079472"
 
 REScheduled_WO_Send_FR_mail_Day("📧 <em></em><br/>REScheduled WO - Send FR mail Day"):::actionCalls
-click REScheduled_WO_Send_FR_mail_Day "#rescheduled_wo_send_fr_mail_day" "3255687445"
+click REScheduled_WO_Send_FR_mail_Day "#rescheduled_wo_send_fr_mail_day" "255685198"
 
 REScheduled_WO_Send_NL_mail("📧 <em></em><br/>REScheduled WO - Send NL mail"):::actionCalls
-click REScheduled_WO_Send_NL_mail "#rescheduled_wo_send_nl_mail" "3265677256"
+click REScheduled_WO_Send_NL_mail "#rescheduled_wo_send_nl_mail" "1573337660"
 
 REScheduled_WO_Send_NL_mail_Day("📧 <em></em><br/>REScheduled WO - Send NL mail Day"):::actionCalls
-click REScheduled_WO_Send_NL_mail_Day "#rescheduled_wo_send_nl_mail_day" "3561876225"
+click REScheduled_WO_Send_NL_mail_Day "#rescheduled_wo_send_nl_mail_day" "272357784"
 
 Scheduled_WO_Send_ENG_mail("📧 <em></em><br/>Scheduled WO - Send ENG mail"):::actionCalls
-click Scheduled_WO_Send_ENG_mail "#scheduled_wo_send_eng_mail" "3544746943"
+click Scheduled_WO_Send_ENG_mail "#scheduled_wo_send_eng_mail" "3536185047"
 
 Scheduled_WO_Send_ENG_mail_Day("📧 <em></em><br/>Scheduled WO - Send ENG mail Day"):::actionCalls
-click Scheduled_WO_Send_ENG_mail_Day "#scheduled_wo_send_eng_mail_day" "4089875781"
+click Scheduled_WO_Send_ENG_mail_Day "#scheduled_wo_send_eng_mail_day" "3169031084"
 
 Scheduled_WO_Send_FR_mail("📧 <em></em><br/>Scheduled WO - Send FR mail"):::actionCalls
-click Scheduled_WO_Send_FR_mail "#scheduled_wo_send_fr_mail" "3198771491"
+click Scheduled_WO_Send_FR_mail "#scheduled_wo_send_fr_mail" "3873809746"
 
 Scheduled_WO_Send_FR_mail_Day("📧 <em></em><br/>Scheduled WO - Send FR mail Day"):::actionCalls
-click Scheduled_WO_Send_FR_mail_Day "#scheduled_wo_send_fr_mail_day" "1764086241"
+click Scheduled_WO_Send_FR_mail_Day "#scheduled_wo_send_fr_mail_day" "1542042991"
 
 Scheduled_WO_Send_NL_mail("📧 <em></em><br/>Scheduled WO - Send NL mail"):::actionCalls
-click Scheduled_WO_Send_NL_mail "#scheduled_wo_send_nl_mail" "4240238333"
+click Scheduled_WO_Send_NL_mail "#scheduled_wo_send_nl_mail" "1697756540"
 
 Scheduled_WO_Send_NL_mail_Day("📧 <em></em><br/>Scheduled WO - Send NL mail Day"):::actionCalls
-click Scheduled_WO_Send_NL_mail_Day "#scheduled_wo_send_nl_mail_day" "1430351579"
+click Scheduled_WO_Send_NL_mail_Day "#scheduled_wo_send_nl_mail_day" "4068910866"
 
 Assign_email_Recipients[\"🟰 <em></em><br/>Assign email Recipients"/]:::assignments
-click Assign_email_Recipients "#assign_email_recipients" "1274736035"
+click Assign_email_Recipients "#assign_email_recipients" "2562774588"
 
 Contact_Language{"🔀 <em></em><br/>Contact Language"}:::decisions
-click Contact_Language "#contact_language" "3593304308"
+click Contact_Language "#contact_language" "2831191991"
 
 First_send_or_Resend{"🔀 <em></em><br/>First send or Resend"}:::decisions
 click First_send_or_Resend "#first_send_or_resend" "99629469"
@@ -83,13 +83,7 @@ Week_OR_Exact_Day6{"🔀 <em></em><br/>Week OR Exact Day"}:::decisions
 click Week_OR_Exact_Day6 "#week_or_exact_day6" "3028823591"
 
 Work_Order_Contact_with_Email_Found{"🔀 <em></em><br/>Work Order & Contact with Email Found?"}:::decisions
-click Work_Order_Contact_with_Email_Found "#work_order_contact_with_email_found" "531392331"
-
-Get_Contact_Relation[("🔍 <em></em><br/>Get Contact Relation")]:::recordLookups
-click Get_Contact_Relation "#get_contact_relation" "1669882529"
-
-Get_Contacts[("🔍 <em></em><br/>Get Contacts")]:::recordLookups
-click Get_Contacts "#get_contacts" "1157115469"
+click Work_Order_Contact_with_Email_Found "#work_order_contact_with_email_found" "3937827058"
 
 Get_Email_Template_ENG_Planned_WO[("🔍 <em></em><br/>Get Email Template ENG Planned WO")]:::recordLookups
 click Get_Email_Template_ENG_Planned_WO "#get_email_template_eng_planned_wo" "2513349678"
@@ -127,8 +121,11 @@ click Get_Email_Template_NL_REPlanned_WO "#get_email_template_nl_replanned_wo" "
 Get_Email_Template_NL_REPlanned_WO_Day[("🔍 <em></em><br/>Get Email Template NL REPlanned WO Day")]:::recordLookups
 click Get_Email_Template_NL_REPlanned_WO_Day "#get_email_template_nl_replanned_wo_day" "4076393078"
 
+Get_WO_Contact[("🔍 <em></em><br/>Get WO Contact")]:::recordLookups
+click Get_WO_Contact "#get_wo_contact" "3176914413"
+
 Get_work_Order[("🔍 <em></em><br/>Get Work Order")]:::recordLookups
-click Get_work_Order "#get_work_order" "4186512945"
+click Get_work_Order "#get_work_order" "1055462644"
 
 Update_SA[("🛠️ <em></em><br/>Update SA")]:::recordUpdates
 click Update_SA "#update_sa" "310899656"
@@ -169,8 +166,6 @@ Week_OR_Exact_Day6 --> |"Week"| Get_Email_Template_NL_REPlanned_WO
 Week_OR_Exact_Day6 --> |"Day"| Get_Email_Template_NL_REPlanned_WO_Day
 Work_Order_Contact_with_Email_Found --> |"Yes"| Contact_Language
 Work_Order_Contact_with_Email_Found --> |"No"| END_Work_Order_Contact_with_Email_Found
-Get_Contact_Relation --> Get_Contacts
-Get_Contacts --> Assign_email_Recipients
 Get_Email_Template_ENG_Planned_WO --> Scheduled_WO_Send_ENG_mail
 Get_Email_Template_ENG_Planned_WO_Day --> Scheduled_WO_Send_ENG_mail_Day
 Get_Email_Template_ENG_REPlanned_WO --> REScheduled_WO_Send_ENG_mail
@@ -183,7 +178,8 @@ Get_Email_Template_NL_Planned_WO --> Scheduled_WO_Send_NL_mail
 Get_Email_Template_NL_Planned_WO_Day --> Scheduled_WO_Send_NL_mail_Day
 Get_Email_Template_NL_REPlanned_WO --> REScheduled_WO_Send_NL_mail
 Get_Email_Template_NL_REPlanned_WO_Day --> REScheduled_WO_Send_NL_mail_Day
-Get_work_Order --> Get_Contact_Relation
+Get_WO_Contact --> Assign_email_Recipients
+Get_work_Order --> Get_WO_Contact
 Update_SA --> END_Update_SA
 START -->  Get_work_Order
 END_Work_Order_Contact_with_Email_Found(( END )):::endClass
@@ -216,7 +212,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Process Type| Auto Launched Flow|
 |Trigger Type| Scheduled|
 |Label|[Service Appointment] [Scheduled] Customer Notification|
-|Status|⚠️ Draft|
+|Status|Active|
 |Description|Flow that sends notification to customer when a service appointment is (re)scheduled|
 |Environments|Default|
 |Interview Label|[Service Appointment] [Scheduled] Customer Notification {!$Flow.CurrentDateTime}|
@@ -240,7 +236,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:-- |:-- |:--:|:--: |
 |1|Status| Equal To|Scheduled|
 |2|Notification_Day__c| Equal To|✅|
-|3|Intervention_Registration__c| Equal To|Yes|
+|3|Intervention_Registration__c| Equal To|Yes Mail|
 |4|Scheduling_Notification_Send__c| Equal To|Not Send|
 |5|Scheduling_Notification_Send__c| Equal To|Resend Needed|
 
@@ -270,7 +266,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_ENG_REPlanned_WO.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -292,7 +288,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_ENG_REPlanned_WO_Day.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -314,7 +310,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_FR_REPlanned_WO.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -336,7 +332,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_FR_REPlanned_WO_Day.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -358,7 +354,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_NL_REPlanned_WO.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -380,7 +376,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_NL_REPlanned_WO_Day.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -402,7 +398,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_ENG_Planned_WO.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -424,7 +420,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_ENG_Planned_WO_Day.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -446,7 +442,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_FR_Planned_WO.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -468,7 +464,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_FR_Planned_WO_Day.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -490,7 +486,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_NL_Planned_WO.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -512,7 +508,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Sender Type (input)|OrgWideEmailAddress|
 |Sender Address (input)|info@upeoconsulting.com|
 |Related Record Id (input)|Get_work_Order.Id|
-|Recipient Id (input)|{!Get_Contacts.Id}|
+|Recipient Id (input)|Get_WO_Contact.Id|
 |Log Email On Send (input)|✅|
 |Email Template Id (input)|Get_Email_Template_NL_Planned_WO_Day.Id|
 |Connector|[Update_SA](#update_sa)|
@@ -531,7 +527,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Assign To Reference|Operator|Value|
 |:-- |:--:|:--: |
-|Recipients| Add|Get_Contacts.Email|
+|Recipients| Add|Get_WO_Contact.Email|
 
 
 
@@ -558,7 +554,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Condition Id|Left Value Reference|Operator|Right Value|
 |:-- |:-- |:--:|:--: |
-|1|Get_Contacts.Language__c| Equal To|French|
+|1|Get_WO_Contact.Language__c| Equal To|French|
 
 
 
@@ -575,7 +571,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Condition Id|Left Value Reference|Operator|Right Value|
 |:-- |:-- |:--:|:--: |
-|1|Get_Contacts.Language__c| Equal To|English|
+|1|Get_WO_Contact.Language__c| Equal To|English|
 
 
 
@@ -845,53 +841,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Condition Id|Left Value Reference|Operator|Right Value|
 |:-- |:-- |:--:|:--: |
 |1|[Get_work_Order](#get_work_order)| Is Null|⬜|
-|2|[Get_Contacts](#get_contacts)| Is Null|⬜|
-
-
-
-
-### Get_Contact_Relation
-
-|<!-- -->|<!-- -->|
-|:---|:---|
-|Type|Record Lookup|
-|Object|AccountContactRelation|
-|Label|Get Contact Relation|
-|Assign Null Values If No Records Found|⬜|
-|Get First Record Only|✅|
-|Store Output Automatically|✅|
-|Connector|[Get_Contacts](#get_contacts)|
-
-
-#### Filters (logic: **and**)
-
-|Filter Id|Field|Operator|Value|
-|:-- |:-- |:--:|:--: |
-|1|Operational_SPOC__c| Equal To|✅|
-|2|AccountId| Equal To|Get_work_Order.AccountId|
-
-
-
-
-### Get_Contacts
-
-|<!-- -->|<!-- -->|
-|:---|:---|
-|Type|Record Lookup|
-|Object|Contact|
-|Label|Get Contacts|
-|Assign Null Values If No Records Found|⬜|
-|Get First Record Only|✅|
-|Store Output Automatically|✅|
-|Connector|[Assign_email_Recipients](#assign_email_recipients)|
-
-
-#### Filters (logic: **and**)
-
-|Filter Id|Field|Operator|Value|
-|:-- |:-- |:--:|:--: |
-|1|Id| Equal To|Get_Contact_Relation.ContactId|
-|2|Email| Is Null|<!-- -->|
+|2|[Get_WO_Contact](#get_wo_contact)| Is Null|⬜|
 
 
 
@@ -1160,6 +1110,28 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 
+### Get_WO_Contact
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Record Lookup|
+|Object|Contact|
+|Label|Get WO Contact|
+|Assign Null Values If No Records Found|⬜|
+|Get First Record Only|✅|
+|Store Output Automatically|✅|
+|Connector|[Assign_email_Recipients](#assign_email_recipients)|
+
+
+#### Filters (logic: **and**)
+
+|Filter Id|Field|Operator|Value|
+|:-- |:-- |:--:|:--: |
+|1|Id| Equal To|Get_work_Order.ContactId|
+
+
+
+
 ### Get_work_Order
 
 |<!-- -->|<!-- -->|
@@ -1170,7 +1142,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Assign Null Values If No Records Found|⬜|
 |Get First Record Only|✅|
 |Store Output Automatically|✅|
-|Connector|[Get_Contact_Relation](#get_contact_relation)|
+|Connector|[Get_WO_Contact](#get_wo_contact)|
 
 
 #### Filters (logic: **and**)

@@ -29,7 +29,7 @@ public with sharing class LocationMonitorController {
      public static TimeSheet getTimeSheetData(String recordId) {
         TimeSheet timeSheet = [
                 SELECT Id, Owner.Name, StartDate, EndDate,
-                        Total_Break_Time__c, Total_Hours__c, Total_KM__c, Total_Normal_Hours__c,
+                        Total_Break_Time__c, Total_Hours__c, Total_KM__c, Total_Normal_Hours__c, Total_Break_and_Absent_Time_Minutes__c,
                         Total_Travel_Time__c, Working_Hours_in_Contract__c, Total_Hours_Minus_Breaks__c
                 FROM TimeSheet
                 WHERE Id = :recordId

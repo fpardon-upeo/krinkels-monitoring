@@ -50,7 +50,7 @@ Voici les d&amp;eacute;tails principaux :&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;L&amp;rsquo;intervention est pr&amp;eacute;vue pour le&amp;nbsp;&lt;/span&gt;&lt;/span&gt;{{{WorkOrder.Excecution_Week__c}}}&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;p&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;L&amp;rsquo;intervention est pr&amp;eacute;vue pour le&amp;nbsp;&lt;/span&gt;&lt;/span&gt;{{{WorkOrder.StartDate}}}&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
 &lt;br /&gt;
 Pour assurer un d&amp;eacute;roulement sans encombre, nous vous prions de bien vouloir lib&amp;eacute;rer les zones n&amp;eacute;cessaires &amp;agrave; l&amp;rsquo;avance. Cela nous permettra de commencer sans d&amp;eacute;lai.&lt;br /&gt;
 &lt;br /&gt;
@@ -63,7 +63,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
 {{{WorkOrder.Mobile_Contract_Manager__c}}}&lt;/span&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText19</identifier>
+                <identifier>contentbuilder_richText3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -81,7 +81,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
 &lt;/div&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:html</componentName>
-                <identifier>contentbuilder_html19</identifier>
+                <identifier>contentbuilder_html3</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-1d1d2e55-def2-41d8-8e5e-e7e8ff1ed77a</name>
@@ -115,7 +115,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column73</identifier>
+                <identifier>contentbuilder_column9</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fa2aa1a9-500e-4272-9d1a-9b1f33350629</name>
@@ -160,7 +160,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
                     <value>33.33%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column74</identifier>
+                <identifier>contentbuilder_column10</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -193,7 +193,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
                     <value>66.66%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column75</identifier>
+                <identifier>contentbuilder_column11</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fb65d76e-d651-461d-9a5a-76c7dd60f1ee</name>
@@ -231,7 +231,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column76</identifier>
+                <identifier>contentbuilder_column12</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-0fd37e15-fc49-4343-bcc6-594a49657d34</name>
@@ -255,7 +255,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row55</identifier>
+                <identifier>contentbuilder_row7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -287,7 +287,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row56</identifier>
+                <identifier>contentbuilder_row8</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -307,7 +307,7 @@ Cordialement,&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row57</identifier>
+                <identifier>contentbuilder_row9</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

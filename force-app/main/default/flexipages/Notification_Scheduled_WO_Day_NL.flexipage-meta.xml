@@ -63,7 +63,7 @@ Met vriendelijke groet,&lt;br /&gt;
 {{{WorkOrder.Mobile_Contract_Manager__c}}}&lt;/span&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText27</identifier>
+                <identifier>contentbuilder_richText11</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -81,7 +81,7 @@ Met vriendelijke groet,&lt;br /&gt;
 &lt;/div&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:html</componentName>
-                <identifier>contentbuilder_html27</identifier>
+                <identifier>contentbuilder_html11</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-1d1d2e55-def2-41d8-8e5e-e7e8ff1ed77a</name>
@@ -115,7 +115,7 @@ Met vriendelijke groet,&lt;br /&gt;
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column105</identifier>
+                <identifier>contentbuilder_column41</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fa2aa1a9-500e-4272-9d1a-9b1f33350629</name>
@@ -160,7 +160,7 @@ Met vriendelijke groet,&lt;br /&gt;
                     <value>33.33%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column106</identifier>
+                <identifier>contentbuilder_column42</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -193,7 +193,7 @@ Met vriendelijke groet,&lt;br /&gt;
                     <value>66.66%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column107</identifier>
+                <identifier>contentbuilder_column43</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fb65d76e-d651-461d-9a5a-76c7dd60f1ee</name>
@@ -231,7 +231,7 @@ Met vriendelijke groet,&lt;br /&gt;
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column108</identifier>
+                <identifier>contentbuilder_column44</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-0fd37e15-fc49-4343-bcc6-594a49657d34</name>
@@ -255,7 +255,7 @@ Met vriendelijke groet,&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row79</identifier>
+                <identifier>contentbuilder_row31</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -287,7 +287,7 @@ Met vriendelijke groet,&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row80</identifier>
+                <identifier>contentbuilder_row32</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -307,7 +307,7 @@ Met vriendelijke groet,&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row81</identifier>
+                <identifier>contentbuilder_row33</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

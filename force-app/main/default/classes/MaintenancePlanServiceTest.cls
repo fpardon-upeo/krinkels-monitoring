@@ -43,6 +43,7 @@ private class MaintenancePlanServiceTest {
     }
 
     /**
+    @Remarks: Cannot remember why this test was commented out, but the functionality is covered in the testCreateWorkOrderVariableSchedule test
     @IsTest
     static void testCreateMaintenancePlanForPackage() {
         String serviceContractId = testCreateServiceContract();
@@ -131,7 +132,11 @@ private class MaintenancePlanServiceTest {
 
         List<ContractLineItem> contractLineItems = new List<ContractLineItem>();
         Date startOfYear = Date.newInstance(Date.today().year(), 01, 01);
-        Date endOfCurrentLineItem = startOfYear.addMonths(3);
+        Date endOfYear = Date.newInstance(Date.today().year(), 12, 31);
+        Date endOfCurrentLineItem = Date.newInstance(Date.today().year(), 03, 31);
+
+        System.debug('Start of year: ' + startOfYear);
+        System.debug('End of current line item: ' + endOfCurrentLineItem);
 
         contractLineItems.add(createContractLineItem(
                 serviceContract.Id,
@@ -144,12 +149,22 @@ private class MaintenancePlanServiceTest {
                 'Oude Markt 13'
         ));
 
-        Date startOfNextLineItem = endOfCurrentLineItem.addDays(1);
-        Date endOfNextLineItem = startOfNextLineItem.addMonths(3);
         contractLineItems.add(createContractLineItem(
                 serviceContract.Id,
-                startOfNextLineItem,
-                endOfNextLineItem,
+                startOfYear,
+                endOfYear,
+                'FREQ=DAILY;INTERVAL=7;COUNT=5',
+                atakProjectId,
+                'Leuven',
+                '3000',
+                'Oude Markt 13'
+        ));
+
+        Date startOfNextLineItem = endOfCurrentLineItem.addDays(1);
+        contractLineItems.add(createContractLineItem(
+                serviceContract.Id,
+                startOfYear,
+                endOfCurrentLineItem,
                 'FREQ=MONTHLY;INTERVAL=1',
                 atakProjectId,
                 'Leuven',
@@ -157,18 +172,18 @@ private class MaintenancePlanServiceTest {
                 'Oude Markt 13'
         ));
 
-        startOfNextLineItem = endOfNextLineItem.addDays(1);
-        endOfNextLineItem = startOfNextLineItem.addMonths(3);
         contractLineItems.add(createContractLineItem(
                 serviceContract.Id,
-                startOfNextLineItem,
-                endOfNextLineItem,
+                startOfYear,
+                endOfCurrentLineItem,
                 'FREQ=YEARLY;INTERVAL=2',
                 atakProjectId,
                 'Leuven',
                 '3000',
                 'Oude Markt 13'
         ));
+
+
 
         insert contractLineItems;
 
@@ -198,10 +213,11 @@ private class MaintenancePlanServiceTest {
         FROM Asset
         WHERE AccountId = :accounts[0].Id
         ORDER BY CreatedDate ASC];
-        System.assertEquals(3, assets.size());
+        System.assertEquals(4, assets.size());
         System.assertEquals('FREQ=DAILY;INTERVAL=7', assets[0].Recurrence_Pattern__c);
-        System.assertEquals('FREQ=MONTHLY;INTERVAL=1', assets[1].Recurrence_Pattern__c);
-        System.assertEquals('FREQ=YEARLY;INTERVAL=2', assets[2].Recurrence_Pattern__c);
+        System.assertEquals('FREQ=DAILY;INTERVAL=7;COUNT=5', assets[1].Recurrence_Pattern__c);
+        System.assertEquals('FREQ=MONTHLY;INTERVAL=1', assets[2].Recurrence_Pattern__c);
+        System.assertEquals('FREQ=YEARLY;INTERVAL=2', assets[3].Recurrence_Pattern__c);
 
         // Check work orders for each asset
         for (Asset asset : assets) {
@@ -222,6 +238,30 @@ private class MaintenancePlanServiceTest {
             );
 
             System.assertEquals(instanceCount, workOrders.size());
+
+            if(asset.Recurrence_Pattern__c == 'FREQ=DAILY;INTERVAL=7') {
+                System.debug('Checking work orders for daily interval 7');
+                //We should have gotten work orders between jan 1 and march 31, so 13 work orders
+                System.assertEquals(13, workOrders.size());
+            }
+
+            if(asset.Recurrence_Pattern__c == 'FREQ=DAILY;INTERVAL=7;COUNT=5') {
+                System.debug('Checking work orders for daily interval 7 count 5');
+                //We should have gotten 5 work orders between jan 1 and december 31, so 5 work orders
+                System.assertEquals(5, workOrders.size());
+            }
+
+            if(asset.Recurrence_Pattern__c == 'FREQ=MONTHLY;INTERVAL=1') {
+                System.debug('Checking work orders for monthly interval 1');
+                //We should have gotten work orders between april 1 and june 30, so 3 work orders
+                System.assertEquals(3, workOrders.size());
+            }
+
+            if(asset.Recurrence_Pattern__c == 'FREQ=YEARLY;INTERVAL=2') {
+                System.debug('Checking work orders for yearly interval 2');
+                //We should have gotten work orders between july 1 and september 30, so 1 work order
+                System.assertEquals(1, workOrders.size());
+            }
         }
     }
 

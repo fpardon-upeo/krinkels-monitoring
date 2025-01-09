@@ -1,6 +1,14 @@
 import { LightningElement, api } from "lwc";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getServiceAppointments from "@salesforce/apex/SFS_WorkOrderCreatorController.getServiceAppointments";
+import WorkOrderCreator_WasteVisitTitle from "@salesforce/label/c.WorkOrderCreator_WasteVisitTitle";
+import WorkOrderCreator_DepotVisitTitle from "@salesforce/label/c.WorkOrderCreator_DepotVisitTitle";
+import WorkOrderCreator_ReworkVisitTitle from "@salesforce/label/c.WorkOrderCreator_ReworkVisitTitle";
+import WorkOrderCreator_WasteVisitMessage from "@salesforce/label/c.WorkOrderCreator_WasteVisitMessage";
+import WorkOrderCreator_DepotVisitMessage from "@salesforce/label/c.WorkOrderCreator_DepotVisitMessage";
+import WorkOrderCreator_ReworkVisitMessage from "@salesforce/label/c.WorkOrderCreator_ReworkVisitMessage";
+import WorkOrderCreator_SuccessTitle from "@salesforce/label/c.WorkOrderCreator_SuccessTitle";
+import WorkOrderCreator_ErrorTitle from "@salesforce/label/c.WorkOrderCreator_ErrorTitle";
 
 export default class WorkOrderCreator extends LightningElement {
   showTypeSelection = true;
@@ -11,6 +19,17 @@ export default class WorkOrderCreator extends LightningElement {
   iconName = "";
   showWarning = false;
   showSuccess = false;
+
+  labels = {
+    WorkOrderCreator_WasteVisitTitle,
+    WorkOrderCreator_DepotVisitTitle,
+    WorkOrderCreator_ReworkVisitTitle,
+    WorkOrderCreator_WasteVisitMessage,
+    WorkOrderCreator_DepotVisitMessage,
+    WorkOrderCreator_ReworkVisitMessage,
+    WorkOrderCreator_SuccessTitle,
+    WorkOrderCreator_ErrorTitle
+  };
 
   @api
   get recordIds() {
@@ -129,9 +148,9 @@ export default class WorkOrderCreator extends LightningElement {
     this.iconName = "";
 
     if (event.detail) {
-      if (event.detail.title == "Error") {
+      if (event.detail.outcome == "error") {
         this.iconName = "utility:warning";
-        this.title = "Error";
+        this.title = this.labels.WorkOrderCreator_ErrorTitle;
         this.message = event.detail.message;
         this.showWarning = true;
 
@@ -141,7 +160,7 @@ export default class WorkOrderCreator extends LightningElement {
         }, 3000);
       } else {
         this.iconName = "utility:success";
-        this.title = "Success";
+        this.title = this.labels.WorkOrderCreator_SuccessTitle;
         this.message = event.detail.message;
         this.showSuccess = true;
 
@@ -164,9 +183,9 @@ export default class WorkOrderCreator extends LightningElement {
 
   showToast(title, message, variant) {
     const toastEvent = new ShowToastEvent({
-      title: title || "Error",
-      message: message || "An error occurred",
-      variant: variant || "error"
+      title: title,
+      message: message,
+      variant: variant
     });
 
     this.dispatchEvent(toastEvent);

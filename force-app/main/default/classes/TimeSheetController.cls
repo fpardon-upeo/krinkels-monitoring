@@ -23,6 +23,7 @@ public with sharing class TimeSheetController {
         Total_Normal_Hours__c,
         Total_Travel_Time__c,
         Total_Break_Time__c,
+        Total_Hours_Minus_Breaks__c,
         Status,
         (
           SELECT
@@ -70,9 +71,6 @@ public with sharing class TimeSheetController {
         AND Start <= :wrapper.timeSheet.EndDate.addDays(1)
         AND End >= :wrapper.timeSheet.StartDate
         // Query only ResourceAbsence records with the Break record type
-        AND RecordTypeId = :Schema.SObjectType.ResourceAbsence.getRecordTypeInfosByDeveloperName()
-          .get('Break')
-          .getRecordTypeId()
     ];
 
     return wrapper;

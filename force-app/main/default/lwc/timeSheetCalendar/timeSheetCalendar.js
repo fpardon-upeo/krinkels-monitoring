@@ -217,10 +217,6 @@ export default class TimeSheetCalendar extends LightningElement {
   }
 
   connectedCallback() {
-    console.log("connectedCallback");
-    console.log("recordId", this.recordId);
-    console.log("resourceId", this.resourceId);
-
     if (!this.recordId) {
       console.log("there's no recordId");
       this.isLoading = false;
@@ -312,13 +308,14 @@ export default class TimeSheetCalendar extends LightningElement {
           }
 
           if (timeSheet.timeSheet) {
+            console.log("timeSheet", timeSheet.timeSheet.Total_Normal_Hours__c);
             this.workHours =
-              this.convertDecimalHoursToHoursMinutes(
-                timeSheet.timeSheet.Total_Normal_Hours__c
+              this.convertHoursToReadableFormat(
+                timeSheet.timeSheet.Total_Hours_Minus_Breaks__c
               ) || "0:00";
             this.travelHours = timeSheet.timeSheet.Total_Travel_Time__c || 0;
             this.kmAmount = timeSheet.timeSheet.Total_KM__c || 0;
-            this.totalHours = timeSheet.timeSheet.Total_Hours__c || 0;
+            this.totalHours = timeSheet.timeSheet.Total_Normal_Hours__c || 0;
             this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
               timeSheet.timeSheet.Total_Break_Time__c || 0
             );
@@ -950,8 +947,8 @@ export default class TimeSheetCalendar extends LightningElement {
         // Update tracked properties from result
         if (result.timeSheet) {
           this.workHours =
-            this.convertDecimalHoursToHoursMinutes(
-              result.timeSheet.Total_Normal_Hours__c
+            this.convertHoursToReadableFormat(
+              result.timeSheet.Total_Hours_Minus_Breaks__c
             ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
@@ -1182,8 +1179,8 @@ export default class TimeSheetCalendar extends LightningElement {
         // Update tracked properties from result
         if (result.timeSheet) {
           this.workHours =
-            this.convertDecimalHoursToHoursMinutes(
-              result.timeSheet.Total_Normal_Hours__c
+            this.convertHoursToReadableFormat(
+              result.timeSheet.Total_Hours_Minus_Breaks__c
             ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
@@ -1337,8 +1334,9 @@ export default class TimeSheetCalendar extends LightningElement {
         existingEvent.setProp("borderColor", color);
 
         const toastEvent = new ShowToastEvent({
-          title: labels.Calendar_SuccessToast_Title,
-          message: labels.Calendar_SuccessToast_UpdatedTimeSheetEntry_Message,
+          title: this.labels.Calendar_SuccessToast_Title,
+          message:
+            this.labels.Calendar_SuccessToast_UpdatedTimeSheetEntry_Message,
           variant: "success"
         });
 
@@ -1359,8 +1357,9 @@ export default class TimeSheetCalendar extends LightningElement {
         });
 
         const toastEvent = new ShowToastEvent({
-          title: labels.Calendar_SuccessToast_Title,
-          message: labels.Calendar_SuccessToast_CreatedTimeSheetEntry_Message,
+          title: this.labels.Calendar_SuccessToast_Title,
+          message:
+            this.labels.Calendar_SuccessToast_CreatedTimeSheetEntry_Message,
           variant: "success"
         });
 
@@ -1383,8 +1382,9 @@ export default class TimeSheetCalendar extends LightningElement {
         existingEvent.setProp("borderColor", "#c23934");
 
         const toastEvent = new ShowToastEvent({
-          title: labels.Calendar_SuccessToast_Title,
-          message: labels.Calendar_SuccessToast_UpdatedResourceAbsence_Message,
+          title: this.labels.Calendar_SuccessToast_Title,
+          message:
+            this.labels.Calendar_SuccessToast_UpdatedResourceAbsence_Message,
           variant: "success"
         });
 
@@ -1406,8 +1406,9 @@ export default class TimeSheetCalendar extends LightningElement {
         });
 
         const toastEvent = new ShowToastEvent({
-          title: labels.Calendar_SuccessToast_Title,
-          message: labels.Calendar_SuccessToast_CreatedResourceAbsence_Message,
+          title: this.labels.Calendar_SuccessToast_Title,
+          message:
+            this.labels.Calendar_SuccessToast_CreatedResourceAbsence_Message,
           variant: "success"
         });
 
@@ -1431,8 +1432,8 @@ export default class TimeSheetCalendar extends LightningElement {
       .then((result) => {
         if (result.timeSheet) {
           this.workHours =
-            this.convertDecimalHoursToHoursMinutes(
-              result.timeSheet.Total_Normal_Hours__c
+            this.convertHoursToReadableFormat(
+              result.timeSheet.Total_Hours_Minus_Breaks__c
             ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
@@ -1460,8 +1461,8 @@ export default class TimeSheetCalendar extends LightningElement {
       .then((result) => {
         if (result.timeSheet) {
           this.workHours =
-            this.convertDecimalHoursToHoursMinutes(
-              result.timeSheet.Total_Normal_Hours__c
+            this.convertHoursToReadableFormat(
+              result.timeSheet.Total_Hours_Minus_Breaks__c
             ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
@@ -1479,8 +1480,8 @@ export default class TimeSheetCalendar extends LightningElement {
       });
 
     const toastEvent = new ShowToastEvent({
-      title: labels.Calendar_SuccessToast_Title,
-      message: labels.Calendar_SuccessToast_UpdatedMileageEntry_Message,
+      title: this.labels.Calendar_SuccessToast_Title,
+      message: this.labels.Calendar_SuccessToast_UpdatedMileageEntry_Message,
       variant: "success"
     });
 
@@ -1496,8 +1497,8 @@ export default class TimeSheetCalendar extends LightningElement {
 
     if (startTime === endTime) {
       const toastEvent = new ShowToastEvent({
-        title: labels.Calendar_ErrorToast_Title,
-        message: labels.Calendar_ErrorToast_UserSettings_Message,
+        title: this.labels.Calendar_ErrorToast_Title,
+        message: this.labels.Calendar_ErrorToast_UserSettings_Message,
         variant: "error"
       });
 
@@ -1507,8 +1508,8 @@ export default class TimeSheetCalendar extends LightningElement {
 
     if (startTime > endTime) {
       const toastEvent = new ShowToastEvent({
-        title: labels.Calendar_ErrorToast_Title,
-        message: labels.Calendar_ErrorToast_UserSettings_Message,
+        title: this.labels.Calendar_ErrorToast_Title,
+        message: this.labels.Calendar_ErrorToast_UserSettings_Message,
         variant: "error"
       });
 
@@ -1518,8 +1519,8 @@ export default class TimeSheetCalendar extends LightningElement {
 
     if (!startTime || !endTime) {
       const toastEvent = new ShowToastEvent({
-        title: labels.Calendar_ErrorToast_Title,
-        message: labels.Calendar_ErrorToast_UserSettings_Message,
+        title: this.labels.Calendar_ErrorToast_Title,
+        message: this.labels.Calendar_ErrorToast_UserSettings_Message,
         variant: "error"
       });
 
@@ -1536,8 +1537,8 @@ export default class TimeSheetCalendar extends LightningElement {
       })
         .then(() => {
           const toastEvent = new ShowToastEvent({
-            title: labels.Calendar_SuccessToast_Title,
-            message: labels.Calendar_SuccessToast_NewUserSettings_Message,
+            title: this.labels.Calendar_SuccessToast_Title,
+            message: this.labels.Calendar_SuccessToast_NewUserSettings_Message,
             variant: "success"
           });
 
@@ -1556,8 +1557,8 @@ export default class TimeSheetCalendar extends LightningElement {
         })
         .catch((error) => {
           const toastEvent = new ShowToastEvent({
-            title: labels.Calendar_ErrorToast_Title,
-            message: labels.Calendar_ErrorToast_NewUserSettings_Message,
+            title: this.labels.Calendar_ErrorToast_Title,
+            message: this.labels.Calendar_ErrorToast_NewUserSettings_Message,
             variant: "error"
           });
 
@@ -1572,8 +1573,9 @@ export default class TimeSheetCalendar extends LightningElement {
       })
         .then(() => {
           const toastEvent = new ShowToastEvent({
-            title: labels.Calendar_SuccessToast_Title,
-            message: labels.Calendar_SuccessToast_UpdatedUserSettings_Message,
+            title: this.labels.Calendar_SuccessToast_Title,
+            message:
+              this.labels.Calendar_SuccessToast_UpdatedUserSettings_Message,
             variant: "success"
           });
 
@@ -1584,8 +1586,8 @@ export default class TimeSheetCalendar extends LightningElement {
           console.error("Error:", error);
 
           const toastEvent = new ShowToastEvent({
-            title: labels.Calendar_ErrorToast_Title,
-            message: labels.Calendar_ErrorToast_EditUserSettings_Message,
+            title: this.labels.Calendar_ErrorToast_Title,
+            message: this.labels.Calendar_ErrorToast_EditUserSettings_Message,
             variant: "error"
           });
 
@@ -1625,9 +1627,9 @@ export default class TimeSheetCalendar extends LightningElement {
           submitTimeSheet({ timeSheetId: this.recordId })
             .then(() => {
               const toastEvent = new ShowToastEvent({
-                title: labels.Calendar_SuccessToast_Title,
+                title: this.labels.Calendar_SuccessToast_Title,
                 message:
-                  labels.Calendar_SuccessToast_SubmittedTimeSheet_Message,
+                  this.labels.Calendar_SuccessToast_SubmittedTimeSheet_Message,
                 variant: "success"
               });
 
@@ -1635,8 +1637,9 @@ export default class TimeSheetCalendar extends LightningElement {
             })
             .catch((error) => {
               const toastEvent = new ShowToastEvent({
-                title: labels.Calendar_ErrorToast_Title,
-                message: labels.Calendar_ErrorToast_SubmitTimeSheet_Message,
+                title: this.labels.Calendar_ErrorToast_Title,
+                message:
+                  this.labels.Calendar_ErrorToast_SubmitTimeSheet_Message,
                 variant: "error"
               });
 
@@ -1676,8 +1679,8 @@ export default class TimeSheetCalendar extends LightningElement {
         // Process the new data
         if (result.timeSheet) {
           this.workHours =
-            this.convertDecimalHoursToHoursMinutes(
-              result.timeSheet.Total_Normal_Hours__c
+            this.convertHoursToReadableFormat(
+              result.timeSheet.Total_Hours_Minus_Breaks__c
             ) || "0:00";
           this.travelHours = result.timeSheet.Total_Travel_Time__c || 0;
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
@@ -1899,9 +1902,9 @@ export default class TimeSheetCalendar extends LightningElement {
           submitTimeSheet({ timeSheetId: this.recordId })
             .then(() => {
               const toastEvent = new ShowToastEvent({
-                title: labels.Calendar_SuccessToast_Title,
+                title: this.labels.Calendar_SuccessToast_Title,
                 message:
-                  labels.Calendar_SuccessToast_SubmittedTimeSheet_Message,
+                  this.labels.Calendar_SuccessToast_SubmittedTimeSheet_Message,
                 variant: "success"
               });
 
@@ -1911,8 +1914,9 @@ export default class TimeSheetCalendar extends LightningElement {
             })
             .catch((error) => {
               const toastEvent = new ShowToastEvent({
-                title: labels.Calendar_ErrorToast_Title,
-                message: labels.Calendar_ErrorToast_SubmitTimeSheet_Message,
+                title: this.labels.Calendar_ErrorToast_Title,
+                message:
+                  this.labels.Calendar_ErrorToast_SubmitTimeSheet_Message,
                 variant: "error"
               });
 
@@ -1931,6 +1935,15 @@ export default class TimeSheetCalendar extends LightningElement {
   handleNewBreak() {
     this.handleCloseForm();
     this.showNewBreakEntryModal = true;
+  }
+
+  convertHoursToReadableFormat(hours) {
+    console.log("hours:", hours);
+    const wholeHours = Math.floor(hours);
+    console.log("wholeHours:", wholeHours);
+    const minutes = Math.round((hours - wholeHours) * 60);
+    console.log("minutes:", minutes);
+    return `${wholeHours}h ${minutes}m`;
   }
 
   convertDecimalHoursToHoursMinutes(decimalHours) {

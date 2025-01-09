@@ -397,7 +397,8 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |today|Date|TODAY()|<!-- -->|
+    |WasteDepotURL|String|LEFT({!$Api.Partner_Server_URL_340},FIND("/services", {!$Api.Partner_Server_URL_340})) & {!WasteDepotVisitId}|<!-- -->|
     
     
     ## Flow Nodes Details

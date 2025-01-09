@@ -364,7 +364,8 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |DepotVisitURL|String|LEFT({!$Api.Partner_Server_URL_340},FIND("/services", {!$Api.Partner_Server_URL_340})) & {!DepotVisitId}|<!-- -->|
+    |today|Date|TODAY()|<!-- -->|
     
     
     ## Flow Nodes Details

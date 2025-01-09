@@ -18,7 +18,7 @@ We would like to inform you of an adjustment in our previously planned intervent
  - Location: 
  - {{{WorkOrder.Address}}}
 
-The intervention will now take place on {{{WorkOrder.Excecution_Week__c}}}.
+The intervention will now take place on {{{WorkOrder.StartDate}}}.
 
 For everything to run smoothly, we kindly ask you to clear the necessary areas in advance. This will allow us to get started without delay.
 

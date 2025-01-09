@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (15509) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (3497) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (15677) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (3665) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3308) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3399) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -85,6 +85,7 @@ ___
 | Mileage_Entry__c | [Mileage_Entry_Before_Save](flows/Mileage_Entry_Before_Save.md) [🕒](flows/Mileage_Entry_Before_Save-history.md) | RecordBeforeSave | This flow is to update and automatically fill in specific fields |
 | Operator_Created_Event__e | [Operator_Created_Event_e_Create_Service_Resource](flows/Operator_Created_Event_e_Create_Service_Resource.md) [🕒](flows/Operator_Created_Event_e_Create_Service_Resource-history.md) | PlatformEvent |  |
 | Opportunity | [Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote](flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.md) [🕒](flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote-history.md) | RecordAfterSave | Keeps quote in sync when opportunity amounts or contact is changed |
+| ProductConsumed | [Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand](flows/Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand.md) [🕒](flows/Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand-history.md) | RecordAfterSave |  |
 | ProductItem | [Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field](flows/Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field.md) | RecordAfterSave | This flow populates the 'Van Crew' field on the Material Item object. This way, the van's materials is displayed at the van crew object level. |
 | ProductItem | [Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field](flows/Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field.md) [🕒](flows/Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field-history.md) | RecordAfterSave | This flow populates the 'Van Crew' field on the Material Item object. This way, the van's materials is displayed at the van crew object level. |
 | Quote | [Quote_After_Save_Create_Work_Order_on_Acceptance](flows/Quote_After_Save_Create_Work_Order_on_Acceptance.md) [🕒](flows/Quote_After_Save_Create_Work_Order_on_Acceptance-history.md) | RecordAfterSave |  |
@@ -92,7 +93,10 @@ ___
 | Quote | [Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process](flows/Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process.md) | RecordAfterSave | This flow triggers the approval process for the quote over 5000€. |
 | Quote | [Quote_After_Save_Update_Status_to_RfE](flows/Quote_After_Save_Update_Status_to_RfE.md) | RecordAfterSave |  |
 | Reorder_Work_Step__e | [Platform_Event_Reorder_Work_Steps](flows/Platform_Event_Reorder_Work_Steps.md) [🕒](flows/Platform_Event_Reorder_Work_Steps-history.md) | PlatformEvent |  |
+| ResourceAbsence | [ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet](flows/ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet.md) [🕒](flows/ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet-history.md) | RecordBeforeDelete |  |
 | ResourceAbsence | [ResourceAbsence_After_Save_Break_Time](flows/ResourceAbsence_After_Save_Break_Time.md) | RecordAfterSave |  |
+| ResourceAbsence | [ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents](flows/ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents.md) [🕒](flows/ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents-history.md) | RecordAfterSave |  |
+| ResourceAbsence | [ResourceAbsence_After_Save_Set_Total_Absence_Time_on_TimeSheet](flows/ResourceAbsence_After_Save_Set_Total_Absence_Time_on_TimeSheet.md) [🕒](flows/ResourceAbsence_After_Save_Set_Total_Absence_Time_on_TimeSheet-history.md) | RecordAfterSave |  |
 | ResourceAbsence | [ResourceAbsence_Before_Save_Set_Timesheet_Id](flows/ResourceAbsence_Before_Save_Set_Timesheet_Id.md) | RecordAfterSave |  |
 | ResourceAbsence | [Resource_Absence_Before_Save](flows/Resource_Absence_Before_Save.md) [🕒](flows/Resource_Absence_Before_Save-history.md) | RecordBeforeSave |  |
 | ServiceAppointment | [Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data](flows/Service_Appointment_After_Save_Record_Triggered_Add_Customer_Notification_Data.md) | RecordAfterSave | Flow that sents field to retrigger the notification to the customer if a SA is rescheduled |
@@ -128,6 +132,7 @@ ___
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Delete_Work_Steps](flows/Work_Order_After_Save_Record_Triggered_Delete_Work_Steps.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Delete_Work_Steps-history.md) | RecordAfterSave | This flow deletes the work steps when the work order status changes from 'Dispatched' to either 'Unscheduled' or 'Scheduled'. |
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps](flows/Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps-history.md) | RecordAfterSave |  |
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA](flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA-history.md) | RecordAfterSave | This flow populates the contact field on a work order and its related service appointment on creation. It takes an operational contact of the related operational account. |
+| WorkOrder | [Work_Order_After_Save_Record_Triggered_Unassign_Products_Consumed](flows/Work_Order_After_Save_Record_Triggered_Unassign_Products_Consumed.md) [🕒](flows/Work_Order_After_Save_Record_Triggered_Unassign_Products_Consumed-history.md) | RecordAfterSave |  |
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status](flows/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.md) | RecordAfterSave | This flow updates the status of the related service appointment so that it is aligned and has the same status. |
 | WorkOrder | [Work_Order_After_Update_Add_Log_KM](flows/Work_Order_After_Update_Add_Log_KM.md) | RecordAfterSave |  |
 | WorkOrder | [Work_Order_After_Update_Create_Signature_Work_Step](flows/Work_Order_After_Update_Create_Signature_Work_Step.md) [🕒](flows/Work_Order_After_Update_Create_Signature_Work_Step-history.md) | RecordAfterSave |  |

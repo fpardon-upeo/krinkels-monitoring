@@ -100,6 +100,22 @@ public with sharing class ATAKPerformanceService {
         Boolean isLeader = resourceIsCrewLeader(ts.ServiceResourceId);
 
         if (isLeader == true) {
+
+            List<WorkOrder> workOrders = [
+                    SELECT Id, (SELECT Total_Hours__c FROM TimeSheetEntries WHERE Is_Kilometer_Allowance_Entry__c = FALSE)
+                    FROM WorkOrder
+                    WHERE Id IN :workOrderIds
+            ];
+
+            Map<String, Decimal> workOrderHours = new Map<String, Decimal>();
+            for (WorkOrder workOrder : workOrders) {
+                Decimal totalHours = 0;
+                for (TimeSheetEntry tse : workOrder.TimeSheetEntries) {
+                    totalHours += tse.Total_Hours__c;
+                }
+                workOrderHours.put(workOrder.Id, totalHours);
+            }
+
             List<ProductConsumed> materials = [
                     SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
                     FROM ProductConsumed
@@ -108,7 +124,7 @@ public with sharing class ATAKPerformanceService {
 
             // Loop through the materials and add them to the data list
             for (ProductConsumed material : materials) {
-                ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
+                ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material, workOrderHours.get(material.WorkOrderId));
                 dataList.add(data);
             }
         }
@@ -333,6 +349,21 @@ public with sharing class ATAKPerformanceService {
 
         if (resourceIsCrewLeader(ts.ServiceResourceId) == true) {
 
+            List<WorkOrder> workOrders = [
+                    SELECT Id, (SELECT Total_Hours_Minus_Breaks_and_Pauses__c FROM TimeSheetEntries WHERE Is_Kilometer_Allowance_Entry__c = FALSE AND TimeSheetId = :tsId)
+                    FROM WorkOrder
+                    WHERE Id IN :workOrderIds
+            ];
+
+            Map<String, Decimal> workOrderHours = new Map<String, Decimal>();
+            for (WorkOrder workOrder : workOrders) {
+                Decimal totalHours = 0;
+                for (TimeSheetEntry tse : workOrder.TimeSheetEntries) {
+                    totalHours += tse.Total_Hours_Minus_Breaks_and_Pauses__c;
+                }
+                workOrderHours.put(workOrder.Id, totalHours);
+            }
+
             List<ProductConsumed> materials = [
                     SELECT Id, CreatedDate, Product2.ATAK_Code__c, QuantityConsumed, WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c
                     FROM ProductConsumed
@@ -341,7 +372,7 @@ public with sharing class ATAKPerformanceService {
 
             // Loop through the materials and add them to the data list
             for (ProductConsumed material : materials) {
-                ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material);
+                ATAKPerformanceWrapper.Data data = materialTimesheetToATAKPerformance(material, workOrderHours.get(material.WorkOrderId));
                 dataList.add(data);
             }
 
@@ -443,7 +474,10 @@ public with sharing class ATAKPerformanceService {
     * @param: material - ProductConsumed record
     * @return: ATAKPerformanceWrapper.Data object
     **/
-    public static ATAKPerformanceWrapper.Data materialTimesheetToATAKPerformance(ProductConsumed material) {
+    public static ATAKPerformanceWrapper.Data materialTimesheetToATAKPerformance(ProductConsumed material, Decimal workOrderHours) {
+
+        System.debug('ATAKPerformanceService.materialTimesheetToATAKPerformance - material: ' + material);
+        System.debug('ATAKPerformanceService.materialTimesheetToATAKPerformance - workOrderHours: ' + workOrderHours);
 
         ATAKPerformanceWrapper.Data data = new ATAKPerformanceWrapper.Data();
         data.registration_timestamp = material.CreatedDate.format('YYYYMMddHHmmss');
@@ -455,7 +489,7 @@ public with sharing class ATAKPerformanceService {
         data.performance_resource_type = 'E'; //M for material
         data.projectcode = material.WorkOrder.Asset.ATAK_Project__r.SubProject_ATAK__c;
         data.quantity_registration_unit = 'MU';
-        data.quantity = material.QuantityConsumed == null ? '0' : String.valueOf(material.QuantityConsumed);
+        data.quantity = workOrderHours == null ? '0' : String.valueOf(workOrderHours);
         return data;
     }
 

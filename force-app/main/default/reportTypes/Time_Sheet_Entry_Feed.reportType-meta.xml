@@ -134,6 +134,11 @@
             <field>Total_Hours_Minus_Breaks__c</field>
             <table>TimeSheet</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Break_and_Absent_Time_Minutes__c</field>
+            <table>TimeSheet</table>
+        </columns>
         <masterLabel>Time Sheets</masterLabel>
     </sections>
     <sections>
@@ -310,6 +315,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Is_Kilometer_Allowance_Entry__c</field>
+            <table>TimeSheet.TimeSheetEntries</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Operator__c</field>
             <table>TimeSheet.TimeSheetEntries</table>
         </columns>
         <masterLabel>Time Sheet Entries</masterLabel>

@@ -15,7 +15,7 @@ trigger ResourceAbsenceTrigger on ResourceAbsence (before insert, before update,
             absence.Start = DateTimeRounder.roundSingle(request.inputDateTime, request.intervalMinutes);
             request.inputDateTime = absence.End;
             absence.End = DateTimeRounder.roundSingle(request.inputDateTime, request.intervalMinutes);
-            if(absence.Type == 'Standard'){
+            if(absence.Type == 'Standard' || absence.Type == 'Eblox'){
                 resourceIds.add(absence.ResourceId);
                 dates.add(absence.Start.date());
             }
@@ -27,8 +27,8 @@ trigger ResourceAbsenceTrigger on ResourceAbsence (before insert, before update,
         //Get the timesheets for the resources and dates
         List<TimeSheet> timeSheets = [SELECT Id, ServiceResourceId, StartDate FROM TimeSheet WHERE ServiceResourceId IN :resourceIds AND StartDate IN :dates];
         for(ResourceAbsence absence : Trigger.new){
-            if(absence.Type == 'Standard'){
-                System.debug('Type is Standard');
+            if(absence.Type == 'Standard' || absence.Type == 'Eblox'){
+                System.debug('Type is ' + absence.Type);
                 for(TimeSheet timeSheet : timeSheets){
                     if(timeSheet.ServiceResourceId == absence.ResourceId && timeSheet.StartDate == absence.Start.date()){
                         System.debug('TimeSheet found');
@@ -38,9 +38,6 @@ trigger ResourceAbsenceTrigger on ResourceAbsence (before insert, before update,
                 }
             }
         }
-
-
-
     }
 
     if(Trigger.isAfter) {

@@ -13,6 +13,10 @@ import TimeSheetEntryForm_CancelButton from "@salesforce/label/c.TimeSheetEntryF
 import TimeSheetEntryForm_SaveButton from "@salesforce/label/c.TimeSheetEntryForm_SaveButton";
 import TimeSheetEntryForm_WorkOrder_Text from "@salesforce/label/c.TimeSheetEntryForm_WorkOrder_Text";
 import TimeSheetEntryForm_Required_Label from "@salesforce/label/c.TimeSheetEntryForm_Required_Label";
+import TimeSheetEntryForm_MachineText from "@salesforce/label/c.TimeSheetEntryForm_MachineText";
+import TimeSheetEntryForm_NightWorkText from "@salesforce/label/c.TimeSheetEntryForm_NightWorkText";
+import TimeSheetEntryForm_WO_Text from "@salesforce/label/c.TimeSheetEntryForm_WO_Text";
+import TimeSheetEntryForm_SelectWorkOrder from "@salesforce/label/c.TimeSheetEntryForm_SelectWorkOrder";
 
 export default class TimesheetEntryForm extends LightningElement {
   @api timesheetEntryId;
@@ -30,7 +34,11 @@ export default class TimesheetEntryForm extends LightningElement {
     TimeSheetEntryForm_CancelButton,
     TimeSheetEntryForm_SaveButton,
     TimeSheetEntryForm_WorkOrder_Text,
-    TimeSheetEntryForm_Required_Label
+    TimeSheetEntryForm_Required_Label,
+    TimeSheetEntryForm_MachineText,
+    TimeSheetEntryForm_NightWorkText,
+    TimeSheetEntryForm_WO_Text,
+    TimeSheetEntryForm_SelectWorkOrder
   };
 
   get typeFieldOptions() {
@@ -261,7 +269,9 @@ export default class TimesheetEntryForm extends LightningElement {
   }
 
   get buttonLabel() {
-    return this.workOrderId ? "Change Work Order" : "Select Work Order";
+    return this.workOrderId
+      ? this.labelsText.TimeSheetEntryForm_WO_Text
+      : this.labelsText.TimeSheetEntryForm_SelectWorkOrder;
   }
 
   get variables() {
@@ -278,8 +288,8 @@ export default class TimesheetEntryForm extends LightningElement {
     const nextWeekEnd = new Date(today);
     nextWeekEnd.setDate(today.getDate() - today.getDay() + 3); // End of next week
 
-    console.log('lastweekstart', lastWeekStart.toISOString())
-    console.log('nextweekend', nextWeekEnd.toISOString())
+    console.log("lastweekstart", lastWeekStart.toISOString());
+    console.log("nextweekend", nextWeekEnd.toISOString());
 
     return {
       serviceResourceId: this.serviceResourceId,

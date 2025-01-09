@@ -97,7 +97,28 @@ public without sharing class SDWorxToResourceAbsenceService {
         sdworxAbsence.AfwezigheidscodelabelCode__c;
       resourceAbsences.add(resourceAbsence);
     }
-    upsert resourceAbsences ResourceAbsence.Unique_Key__c;
+    //upsert resourceAbsences ResourceAbsence.Unique_Key__c;
+    Database.UpsertResult[] upsertResults = Database.upsert(resourceAbsences, ResourceAbsence.Unique_Key__c, false);
+  }
+
+  public static void errorLogger(List<Database.UpsertResult> upsertResults) {
+
+    List<Error_Log__c> errorLogs = new List<Error_Log__c>();
+
+    for (Database.UpsertResult upsertResult : upsertResults) {
+      if (!upsertResult.isSuccess()) {
+        for (Database.Error error : upsertResult.getErrors()) {
+          Error_Log__c errorLog = new Error_Log__c();
+          errorLog.Error_Message__c = error.getMessage();
+          errorLog.Object__c = 'ResourceAbsence';
+          errorLog.Type__c = 'SD Import Error';
+          errorLogs.add(errorLog);
+        }
+      }
+
+      insert errorLogs;
+
+    }
   }
 
 }

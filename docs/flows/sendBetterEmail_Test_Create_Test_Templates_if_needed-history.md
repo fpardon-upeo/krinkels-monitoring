@@ -132,7 +132,10 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |DeveloperName_en_US|String|{!sendBetterEmailTestName}&"_en_US"|The calculated developer name for the template (en_US)|
+    |DeveloperName_es_MX|String|{!sendBetterEmailTestName}&"_es_MX"|The calculated developer name for the Español version|
+    |DeveloperName_Mass_Email|String|{!sendBetterEmailTestName}&"_Mass_Email"|Calculated developer name for Mass Email Template|
+    |InvalidTemplateType|String|"Error: Invalid Type Requested - " + {!sendBetterEmailTestType}|Returns an error with they invalid type requested|
     
     
     ## Constants

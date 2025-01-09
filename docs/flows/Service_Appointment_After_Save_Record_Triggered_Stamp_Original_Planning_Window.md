@@ -11,7 +11,7 @@
 
 flowchart TB
 START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Record After Save</b>"]):::startClass
-click START "#general-information" "3934913424"
+click START "#general-information" "2104159198"
 
 Stamp_Values[("🛠️ <em></em><br/>Stamp Values")]:::recordUpdates
 click Stamp_Values "#stamp_values" "360801566"
@@ -21,20 +21,20 @@ START -->  Stamp_Values
 END_Stamp_Values(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
@@ -48,7 +48,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Trigger Type| Record After Save|
 |Record Trigger Type| Create|
 |Label|[Service Appointment][After-Save][Record-Triggered] Stamp Original Planning Window|
-|Status|Active|
+|Status|Obsolete|
 |Description|This flow stamps the original earliest start permitted and due date. In order for an unscheduled appointment to recover its original values.|
 |Environments|Default|
 |Interview Label|[Service Appointment][After-Save][Record-Triggered] Stamp Original Planning Window {!$Flow.CurrentDateTime}|

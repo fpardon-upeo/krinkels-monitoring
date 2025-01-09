@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Member__c</fullName>
+    <formula>DATEVALUE(StartDate) &lt;=  TODAY() &amp;&amp; (ISBLANK(EndDate) || DATEVALUE(EndDate) &gt; Today())</formula>
+    <label>Active Member</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -25,6 +25,15 @@ import Mileage_Add_Out_Entry from "@salesforce/label/c.Mileage_Add_Out_Entry";
 import Mileage_Add_Out_Entry_Description from "@salesforce/label/c.Mileage_Add_Out_Entry_Description";
 import Mileage_Own_No_Entries_Message from "@salesforce/label/c.Mileage_Own_No_Entries_Message";
 import Mileage_Header from "@salesforce/label/c.Mileage_Header";
+import Mileage_SelectAppointmentText from "@salesforce/label/c.Mileage_SelectAppointmentText";
+import Mileage_NextButtonText from "@salesforce/label/c.Mileage_NextButtonText";
+import Mileage_SelectWorkOrderText from "@salesforce/label/c.Mileage_SelectWorkOrderText";
+import Mileage_ChangeWorkOrderText from "@salesforce/label/c.Mileage_ChangeWorkOrderText";
+import Mileage_ErrorTitle from "@salesforce/label/c.Mileage_ErrorTitle";
+import Mileage_ErrorMessageLoadingEntries from "@salesforce/label/c.Mileage_ErrorMessageLoadingEntries";
+import Mileage_SuccessTitle from "@salesforce/label/c.Mileage_SuccessTitle";
+import Mileage_SuccessMessageEditEntry from "@salesforce/label/c.Mileage_SuccessMessageEditEntry";
+import Mileage_SuccessMessageNewEntry from "@salesforce/label/c.Mileage_SuccessMessageNewEntry";
 
 export default class ShowMileageScreen extends LightningElement {
   @api recordId;
@@ -75,7 +84,16 @@ export default class ShowMileageScreen extends LightningElement {
     Mileage_Add_Out_Entry,
     Mileage_Add_Out_Entry_Description,
     Mileage_Own_No_Entries_Message,
-    Mileage_Header
+    Mileage_Header,
+    Mileage_SelectAppointmentText,
+    Mileage_NextButtonText,
+    Mileage_SelectWorkOrderText,
+    Mileage_ChangeWorkOrderText,
+    Mileage_ErrorTitle,
+    Mileage_ErrorMessageLoadingEntries,
+    Mileage_SuccessTitle,
+    Mileage_SuccessMessageEditEntry,
+    Mileage_SuccessMessageNewEntry
   };
 
   @wire(graphql, {
@@ -241,8 +259,8 @@ export default class ShowMileageScreen extends LightningElement {
         console.error("Error:", error);
         this.dispatchEvent(
           new ShowToastEvent({
-            title: "Error",
-            message: `Error loading mileage entries:" + ${this.recordId}`,
+            title: this.labels.Mileage_ErrorTitle,
+            message: this.labels.Mileage_ErrorMessageLoadingEntries,
             variant: "error"
           })
         );
@@ -351,8 +369,8 @@ export default class ShowMileageScreen extends LightningElement {
     this.loadMileageData();
 
     const toastEvent = new ShowToastEvent({
-      title: "Success",
-      message: "Mileage entry created successfully.",
+      title: this.labels.Mileage_SuccessTitle,
+      message: this.labels.Mileage_SuccessMessageNewEntry,
       variant: "success"
     });
     this.dispatchEvent(toastEvent);
@@ -363,8 +381,8 @@ export default class ShowMileageScreen extends LightningElement {
     this.loadMileageData();
 
     const toastEvent = new ShowToastEvent({
-      title: "Success",
-      message: "Mileage entry updated successfully.",
+      title: this.labels.Mileage_SuccessTitle,
+      message: this.labels.Mileage_SuccessMessageEditEntry,
       variant: "success"
     });
     this.dispatchEvent(toastEvent);
@@ -435,9 +453,9 @@ export default class ShowMileageScreen extends LightningElement {
 
   get workOrderText() {
     if (this.workOrderId) {
-      return "Change Work Order";
+      return this.labels.Mileage_ChangeWorkOrderText;
     } else {
-      return "Select Work Order";
+      return this.labels.Mileage_SelectWorkOrderText;
     }
   }
 }

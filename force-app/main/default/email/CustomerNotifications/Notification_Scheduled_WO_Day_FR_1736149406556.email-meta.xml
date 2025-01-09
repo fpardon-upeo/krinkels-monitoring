@@ -20,7 +20,7 @@ Voici les détails principaux :
  - Lieu: 
  - {{{WorkOrder.Address}}}
 
-L’intervention est prévue pour le {{{WorkOrder.Excecution_Week__c}}}.
+L’intervention est prévue pour le {{{WorkOrder.StartDate}}}.
 
 Pour assurer un déroulement sans encombre, nous vous prions de bien vouloir libérer les zones nécessaires à l’avance. Cela nous permettra de commencer sans délai.
 

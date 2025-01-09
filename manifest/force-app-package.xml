@@ -171,6 +171,7 @@
         <members>ServiceContractMaintenancePlan</members>
         <members>ServiceContractTrigger</members>
         <members>ServiceResourceEvent</members>
+        <members>StampOriginalTimes</members>
         <members>TimeSheetEntryTrigger</members>
         <members>TimeSheetTrigger</members>
         <members>WorkOrderTrigger</members>
@@ -892,6 +893,7 @@
         <members>ServiceCrew.Driver_Code__c</members>
         <members>ServiceCrew.FSL__GanttColor__c</members>
         <members>ServiceCrew.Has_Leader__c</members>
+        <members>ServiceCrewMember.Active_Member__c</members>
         <members>ServiceCrewMember.Crew_Has_Leader__c</members>
         <members>ServiceCrewMember.FSL__GanttLabel__c</members>
         <members>ServiceResource.FSL__Efficiency__c</members>
@@ -939,6 +941,7 @@
         <members>TimeSheet.Needs_Review__c</members>
         <members>TimeSheet.Send_to_ATAK__c</members>
         <members>TimeSheet.Total_Break_Time__c</members>
+        <members>TimeSheet.Total_Break_and_Absent_Time_Minutes__c</members>
         <members>TimeSheet.Total_Hours_Minus_Breaks__c</members>
         <members>TimeSheet.Total_Hours__c</members>
         <members>TimeSheet.Total_KM__c</members>
@@ -953,6 +956,7 @@
         <members>TimeSheetEntry.Invoice_Type__c</members>
         <members>TimeSheetEntry.Is_Kilometer_Allowance_Entry__c</members>
         <members>TimeSheetEntry.Is_Kilometer_Allowance__c</members>
+        <members>TimeSheetEntry.Operator__c</members>
         <members>TimeSheetEntry.Pause_Duration__c</members>
         <members>TimeSheetEntry.Resource_Absence__c</members>
         <members>TimeSheetEntry.Soccode__c</members>
@@ -1161,6 +1165,8 @@
         <members>Calendar_WorkHours_Header</members>
         <members>Checkin_Loading</members>
         <members>Checkin_locationError</members>
+        <members>DepotVisit_Header</members>
+        <members>DepotVisit_NameText</members>
         <members>ExportCLI_Error_Toast_Message</members>
         <members>ExportCLI_Error_Toast_Title</members>
         <members>ExportCLI_ExportButton</members>
@@ -1218,26 +1224,57 @@
         <members>Mileage_Add_Out_Entry</members>
         <members>Mileage_Add_Out_Entry_Description</members>
         <members>Mileage_Cancel_Button</members>
+        <members>Mileage_ChangeWorkOrderText</members>
         <members>Mileage_Edit_Button</members>
         <members>Mileage_Edit_Entry</members>
         <members>Mileage_Edit_Entry_Header</members>
         <members>Mileage_End_day</members>
         <members>Mileage_Entries_Header</members>
+        <members>Mileage_ErrorMessageLoadingEntries</members>
+        <members>Mileage_ErrorTitle</members>
         <members>Mileage_Header</members>
         <members>Mileage_In_Header</members>
         <members>Mileage_New_In_Header</members>
         <members>Mileage_New_Out_Header</members>
+        <members>Mileage_NextButtonText</members>
         <members>Mileage_Out_Header</members>
         <members>Mileage_Own</members>
         <members>Mileage_Own_Header</members>
         <members>Mileage_Own_No_Entries_Message</members>
         <members>Mileage_Return_Button</members>
         <members>Mileage_Save_Button</members>
+        <members>Mileage_SelectAppointmentText</members>
+        <members>Mileage_SelectWorkOrderText</members>
         <members>Mileage_Start_Day</members>
+        <members>Mileage_SuccessMessageEditEntry</members>
+        <members>Mileage_SuccessMessageNewEntry</members>
+        <members>Mileage_SuccessTitle</members>
         <members>Mileage_View_Add_EndMileage</members>
         <members>Mileage_View_Add_OwnMileage</members>
         <members>Mileage_View_Add_StartMileage</members>
         <members>NotifyCustomer_Toggle</members>
+        <members>ReworkVisitForm_AddAdditionalTasksText</members>
+        <members>ReworkVisitForm_AddNewTasksText</members>
+        <members>ReworkVisitForm_AddTaskText</members>
+        <members>ReworkVisitForm_BackText</members>
+        <members>ReworkVisitForm_ConfirmDetailsText</members>
+        <members>ReworkVisitForm_CreateWorkOrderText</members>
+        <members>ReworkVisitForm_DescriptionText</members>
+        <members>ReworkVisitForm_ErrorMessage</members>
+        <members>ReworkVisitForm_NewTasksText</members>
+        <members>ReworkVisitForm_NextText</members>
+        <members>ReworkVisitForm_ReworkInfoText</members>
+        <members>ReworkVisitForm_ReworkOfText</members>
+        <members>ReworkVisitForm_ReworkReasonText</members>
+        <members>ReworkVisitForm_ReworkTasksText</members>
+        <members>ReworkVisitForm_SelectedTasksText</members>
+        <members>ReworkVisitForm_SubjectText</members>
+        <members>ReworkVisitForm_SuccessMessage</members>
+        <members>ReworkVisitForm_TaskDescriptionText</members>
+        <members>ReworkVisitForm_TaskSelectionText</members>
+        <members>ReworkVisitForm_TasksFromPreviousWorkOrderText</members>
+        <members>ReworkVisitForm_TitleError</members>
+        <members>ReworkVisitForm_TitleSuccess</members>
         <members>Send_Sign_Request</members>
         <members>StartDay_Back_To_Menu_Button</members>
         <members>StartDay_End_Button_Sub_Text</members>
@@ -1269,14 +1306,47 @@
         <members>TimeSheetEntryForm_BackButton</members>
         <members>TimeSheetEntryForm_CancelButton</members>
         <members>TimeSheetEntryForm_ContinueButton</members>
+        <members>TimeSheetEntryForm_MachineText</members>
+        <members>TimeSheetEntryForm_NightWorkText</members>
         <members>TimeSheetEntryForm_Required_Label</members>
         <members>TimeSheetEntryForm_SaveButton</members>
+        <members>TimeSheetEntryForm_SelectWorkOrder</members>
         <members>TimeSheetEntryForm_SelectWork_Text</members>
+        <members>TimeSheetEntryForm_WO_Text</members>
         <members>TimeSheetEntryForm_WorkOrder_Text</members>
+        <members>TimeSheet_BreakTimeText</members>
+        <members>TimeSheet_ExpectedText</members>
         <members>TimeSheet_Header_Title</members>
+        <members>TimeSheet_KmLoggedText</members>
+        <members>TimeSheet_LoggedText</members>
+        <members>TimeSheet_MissingText</members>
+        <members>TimeSheet_TravelTimeText</members>
+        <members>ToastMessage_CloseButtonText</members>
+        <members>WasteVisitForm_AvailableTypes</members>
+        <members>WasteVisitForm_BackText</members>
+        <members>WasteVisitForm_CityColumnLabel</members>
+        <members>WasteVisitForm_ContractColumnLabel</members>
+        <members>WasteVisitForm_CreateWOText</members>
+        <members>WasteVisitForm_DepotText</members>
+        <members>WasteVisitForm_DetailsText</members>
+        <members>WasteVisitForm_ErrorMessage</members>
+        <members>WasteVisitForm_ErrorTitle</members>
+        <members>WasteVisitForm_PostalCodeColumnLabel</members>
+        <members>WasteVisitForm_SelectedDepotText</members>
+        <members>WasteVisitForm_SelectedTypes</members>
+        <members>WasteVisitForm_SelectedWasteTypesDropOff</members>
+        <members>WasteVisitForm_SelectedWasteTypesText</members>
+        <members>WasteVisitForm_SuccessMessage</members>
+        <members>WasteVisitForm_SuccessTitle</members>
+        <members>WasteVisitForm_TypeOfWasteColumnLabel</members>
+        <members>WasteVisitForm_WasteDepotColumnLabel</members>
+        <members>WasteVisitForm_WasteTypeText</members>
+        <members>WasteWasteVisitForm_NextTextVisitForm_NextText</members>
         <members>WorkOrderActions_Cancel_Button</members>
         <members>WorkOrderActions_Edit_Tasks_Description</members>
         <members>WorkOrderActions_Edit_Tasks_Header</members>
+        <members>WorkOrderActions_ErrorMessage</members>
+        <members>WorkOrderActions_ErrorTitle</members>
         <members>WorkOrderActions_Extra_Work_Description</members>
         <members>WorkOrderActions_Extra_Work_Header</members>
         <members>WorkOrderActions_Extra_Work_Subject</members>
@@ -1286,6 +1356,16 @@
         <members>WorkOrderActions_Shop_Visit_Header</members>
         <members>WorkOrderActions_Special_Equipment_Description</members>
         <members>WorkOrderActions_Special_Equipment_Header</members>
+        <members>WorkOrderActions_SuccessMessage</members>
+        <members>WorkOrderActions_SuccessTitle</members>
+        <members>WorkOrderCreator_DepotVisitMessage</members>
+        <members>WorkOrderCreator_DepotVisitTitle</members>
+        <members>WorkOrderCreator_ErrorTitle</members>
+        <members>WorkOrderCreator_ReworkVisitMessage</members>
+        <members>WorkOrderCreator_ReworkVisitTitle</members>
+        <members>WorkOrderCreator_SuccessTitle</members>
+        <members>WorkOrderCreator_WasteVisitMessage</members>
+        <members>WorkOrderCreator_WasteVisitTitle</members>
         <members>ers_CancelButton</members>
         <members>ers_ClearFilterAction</members>
         <members>ers_ClearFilterButton</members>
@@ -1344,6 +1424,7 @@
         <members>fsc_Value_Label</members>
         <members>sremailNoSearchResultsMessage</members>
         <members>sremailSearchMembers</members>
+        <members>timeSheetHeader_HoursText</members>
         <name>CustomLabel</name>
     </types>
     <types>
@@ -1702,12 +1783,16 @@
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand</members>
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
         <members>Quote_After_Save_Update_Status_to_RfE</members>
         <members>Quote_Gantt_Action_Clone</members>
+        <members>ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
+        <members>ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents</members>
+        <members>ResourceAbsence_After_Save_Set_Total_Absence_Time_on_TimeSheet</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
@@ -1747,6 +1832,7 @@
         <members>Work_Order_After_Save_Record_Triggered_Delete_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
+        <members>Work_Order_After_Save_Record_Triggered_Unassign_Products_Consumed</members>
         <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
         <members>Work_Order_After_Update_Create_Signature_Work_Step</members>
@@ -1805,12 +1891,16 @@
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
+        <members>Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand</members>
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process</members>
         <members>Quote_After_Save_Update_Status_to_RfE</members>
         <members>Quote_Gantt_Action_Clone</members>
+        <members>ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
+        <members>ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents</members>
+        <members>ResourceAbsence_After_Save_Set_Total_Absence_Time_on_TimeSheet</members>
         <members>ResourceAbsence_Before_Save_Set_Timesheet_Id</members>
         <members>Resource_Absence_Before_Save</members>
         <members>Send_Better_Email_Testflow</members>
@@ -1850,6 +1940,7 @@
         <members>Work_Order_After_Save_Record_Triggered_Delete_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Extra_Work_Add_WOL_As_Work_Steps</members>
         <members>Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA</members>
+        <members>Work_Order_After_Save_Record_Triggered_Unassign_Products_Consumed</members>
         <members>Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status</members>
         <members>Work_Order_After_Update_Add_Log_KM</members>
         <members>Work_Order_After_Update_Create_Signature_Work_Step</members>

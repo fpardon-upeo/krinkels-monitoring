@@ -18,7 +18,7 @@ We willen u op de hoogte brengen van een aanpassing in de eerder geplande interv
  - Locatie: 
  - {{{WorkOrder.Address}}}
 
-De interventie vindt plaats op {{{WorkOrder.Excecution_Week__c}}}.
+De interventie vindt plaats op {{{WorkOrder.StartDate}}}.
 
 Om alles soepel te laten verlopen, vragen we u vriendelijk om de nodige zones alvast vrij te maken. Zo kunnen we zonder vertraging aan de slag.
 

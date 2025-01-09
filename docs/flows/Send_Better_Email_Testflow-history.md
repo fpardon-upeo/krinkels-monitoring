@@ -360,7 +360,11 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
-    |<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+    |BulkSubject|String|{!testSubject} + ": Request #: " + text({!bulk_counter})|Create a unique bulk subject name for each request|
+    |TestFlowMassSubject|String|'Finished Mass Email Send: sendBetterEmail Test:  Flow Example  ' + text({!Choose_Example})|The subject for the mass email finished notification|
+    |TestFlowSubject|String|'sendBetterEmail Test:  Flow Example  ' + text({!Choose_Example})|Create a test flow subject for the appropriate flow|
+    |testPlainTextLineFeeds|String|'Plaintext Line 1'&BR()&'Plaintext Line 2'&BR()&'Plaintext Line 3'|Create a plaintext message with line feeds|
+    |UserIdRunningFlow|String|{!$User.Id}|The user ID of the user running the flow|
     
     
     ## Constants
