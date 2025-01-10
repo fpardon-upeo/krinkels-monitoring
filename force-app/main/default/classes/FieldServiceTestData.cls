@@ -14,6 +14,16 @@ public class FieldServiceTestData {
         return account;
     }
 
+    public static Contact createTestContact(String name, Boolean doInsert) {
+        Contact contact = new Contact();
+        contact.FirstName = name;
+        contact.LastName = name;
+        if (doInsert) {
+            insert contact;
+        }
+        return contact;
+    }
+
     public static Product2 createTestProduct(String name, String recordTypeName, Boolean doInsert) {
         Product2 product = new Product2();
         product.Name = name;

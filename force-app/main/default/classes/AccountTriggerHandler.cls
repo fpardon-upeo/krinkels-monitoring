@@ -12,7 +12,9 @@ public without sharing class AccountTriggerHandler {
             2 => 'Tuesday',
             3 => 'Wednesday',
             4 => 'Thursday',
-            5 => 'Friday'
+            5 => 'Friday',
+            6 => 'Saturday',
+            7 => 'Sunday'
     };
 
     public static void createOperatingHoursAndSlots(List<Account> newAccounts) {
@@ -65,13 +67,13 @@ public without sharing class AccountTriggerHandler {
 
         // Create time slots for each day from 8:00 to 19:00
         for(OperatingHours oh : operatingHoursToInsert) {
-            for(Integer dayNumber = 1; dayNumber <= 5; dayNumber++) {
+            for(Integer dayNumber = 1; dayNumber <= 7; dayNumber++) {
                 // Create 11 slots per day (8:00-9:00, 9:00-10:00, ..., 18:00-19:00)
                 TimeSlot slot = new TimeSlot();
                 slot.OperatingHoursId = oh.Id;
                 slot.DayOfWeek = dayMap.get(dayNumber);
-                slot.StartTime = Time.newInstance(8, 0, 0, 0);
-                slot.EndTime = Time.newInstance(17, 0, 0, 0);
+                slot.StartTime = Time.newInstance(0, 0, 0, 0);
+                slot.EndTime = Time.newInstance(0, 0, 0, 0);
                 slotsToInsert.add(slot);
             }
         }

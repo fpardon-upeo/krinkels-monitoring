@@ -30,6 +30,7 @@ export default class WorkOrderActions extends LightningElement {
   @track imagePreview;
   @track base64Image = "";
   @track extraWorkSubject = "";
+  @track loading = false;
 
   labels = {
     WorkOrderActions_Header,
@@ -68,12 +69,14 @@ export default class WorkOrderActions extends LightningElement {
 
   createExtraWork() {
     console.log("createExtraWork");
+    this.loading = true;
     createExtraWorkOrder({
       subject: this.extraWorkSubject,
       parentWorkOrderId: this.recordId
     })
       .then((result) => {
         console.log("result", result);
+        this.loading = false;
         this.dispatchEvent(
           new ShowToastEvent({
             title: this.labels.WorkOrderActions_SuccessTitle,
@@ -84,6 +87,7 @@ export default class WorkOrderActions extends LightningElement {
         this.closeModal();
       })
       .catch((error) => {
+        this.loading = false;
         console.log("error", error);
         this.dispatchEvent(
           new ShowToastEvent({

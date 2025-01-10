@@ -94,6 +94,7 @@
 
       <!-- Extra Work Form -->
       <template if:true={showExtraWork}>
+        <lightning-spinner if:true={loading} alternative-text="Loading"></lightning-spinner>
         <div class="form-fields">
           <lightning-input
             label={labels.WorkOrderActions_Extra_Work_Subject}

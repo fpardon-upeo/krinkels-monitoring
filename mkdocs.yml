@@ -188,6 +188,7 @@ nav:
       Work_Order_Screen_Flow_Create_Waste_Depot_Visit: flows/Work_Order_Screen_Flow_Create_Waste_Depot_Visit.md
       Work_Order_Screen_Flow_Service_Report_Review_Flag: flows/Work_Order_Screen_Flow_Service_Report_Review_Flag.md
       Work_Order_Send_Customer_Notification_Crew_Inbound: flows/Work_Order_Send_Customer_Notification_Crew_Inbound.md
+      Work_Order_Set_Customer_Notification_Flag: flows/Work_Order_Set_Customer_Notification_Flag.md
       Work_Plan_Extra_Work_Steps: flows/Work_Plan_Extra_Work_Steps.md
       Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO: >-
         flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO.md
@@ -285,6 +286,7 @@ nav:
       Work_Order_Screen_Flow_Create_Waste_Depot_Visit: flows/Work_Order_Screen_Flow_Create_Waste_Depot_Visit-history.md
       Work_Order_Screen_Flow_Service_Report_Review_Flag: flows/Work_Order_Screen_Flow_Service_Report_Review_Flag-history.md
       Work_Order_Send_Customer_Notification_Crew_Inbound: flows/Work_Order_Send_Customer_Notification_Crew_Inbound-history.md
+      Work_Order_Set_Customer_Notification_Flag: flows/Work_Order_Set_Customer_Notification_Flag-history.md
       Work_Plan_Extra_Work_Steps: flows/Work_Plan_Extra_Work_Steps-history.md
       Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO: >-
         flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO-history.md

@@ -15,7 +15,12 @@ import ImportCLI_UploadButton from "@salesforce/label/c.ImportCLI_UploadButton";
 export default class ImportCsv extends LightningElement {
   labels = {
     ImportCLI_Header,
-    ImportCLI_UploadButton
+    ImportCLI_UploadButton,
+    ImportCLI_WrongFile_Message,
+    ImportCLI_Error_Toast_Title,
+    ImportCLI_Error_Toast_Message,
+    ImportCLI_Success_Toast_Title,
+    ImportCLI_Success_Toast_Message
   };
 
   handleFileUpload(event) {
@@ -27,8 +32,8 @@ export default class ImportCsv extends LightningElement {
         console.error("Invalid file type. Please upload a CSV file.");
 
         const event = new ShowToastEvent({
-          title: ImportCLI_Error_Toast_Title,
-          message: ImportCLI_WrongFile_Message,
+          title: this.labels.ImportCLI_Error_Toast_Title,
+          message: this.labels.ImportCLI_WrongFile_Message,
           variant: "error"
         });
 
@@ -70,16 +75,16 @@ export default class ImportCsv extends LightningElement {
           });
 
           const event = new ShowToastEvent({
-            title: ImportCLI_Success_Toast_Title,
-            message: ImportCLI_Success_Toast_Message,
+            title: this.labels.ImportCLI_Success_Toast_Title,
+            message: this.labels.ImportCLI_Success_Toast_Message,
             variant: "success"
           });
 
           this.dispatchEvent(event);
         } catch (error) {
           const event = new ShowToastEvent({
-            title: ImportCLI_Error_Toast_Title,
-            message: ImportCLI_Error_Toast_Message,
+            title: this.labels.ImportCLI_Error_Toast_Title,
+            message: this.labels.ImportCLI_Error_Toast_Message,
             variant: "error"
           });
 

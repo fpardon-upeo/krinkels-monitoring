@@ -10,9 +10,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Executive</fullName>
-                <default>false</default>
-                <label>Executive</label>
+                <fullName>Executive (No Mandate)</fullName>
+                <default>true</default>
+                <label>Executive (No Mandate)</label>
             </value>
             <value>
                 <fullName>Limited Decision Mandate</fullName>
@@ -23,12 +23,6 @@
                 <fullName>Extended Decision Mandate</fullName>
                 <default>false</default>
                 <label>Extended Decision Mandate</label>
-            </value>
-            <value>
-                <fullName>TBD</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>TBD</label>
             </value>
         </valueSetDefinition>
     </valueSet>

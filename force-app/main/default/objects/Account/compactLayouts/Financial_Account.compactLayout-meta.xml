@@ -2,8 +2,8 @@
 <CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Financial_Account</fullName>
     <fields>Name</fields>
-    <fields>Financial_client_ATAK_Code__c</fields>
-    <fields>Financial_client_type_ATAK__c</fields>
+    <fields>Account_ATAK_Code__c</fields>
+    <fields>Financial_Client_Type_ATAK__c</fields>
     <fields>RecordTypeId</fields>
     <label>Financial Account</label>
 </CompactLayout>

@@ -7,13 +7,7 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Account.Create_Quick_Quote</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Edit</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Delete</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -118,6 +112,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
                 <identifier>RecordOwnerIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Status__c</fieldItem>
+                <identifier>RecordStatus_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -250,18 +254,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Intervention_registration__c</fieldItem>
-                <identifier>RecordIntervention_registration_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Intervention_registration_type__c</fieldItem>
-                <identifier>RecordIntervention_registration_type_cField</identifier>
+                <fieldItem>Record.Latitude__c</fieldItem>
+                <identifier>RecordLatitude_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-fc39eccb-2ac0-46e8-9f0b-41cec40749f1</name>
@@ -274,18 +268,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Intervention_Registration_Announcement__c</fieldItem>
-                <identifier>RecordIntervention_Registration_Announcement_cField2</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Intervention_Registration_Method__c</fieldItem>
-                <identifier>RecordIntervention_Registration_Method_cField2</identifier>
+                <fieldItem>Record.Longitude__c</fieldItem>
+                <identifier>RecordLongitude_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a01cf0d5-6020-4726-8892-513505240ca9</name>
@@ -434,7 +418,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Intervention Registration</value>
+                    <value>Geolocation</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection8</identifier>
@@ -541,6 +525,16 @@
                 <identifier>RecordAttention_points_for_execution__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Description</fieldItem>
+                <identifier>RecordDescriptionField2</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-c1ef430c-35f5-4430-810f-ae451237ef9f</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -567,6 +561,61 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Intervention_registration__c</fieldItem>
                 <identifier>RecordIntervention_registration__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Intervention_Registration_Contact__c</fieldItem>
+                <identifier>RecordIntervention_Registration_Contact_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Intervention_registration__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Intervention_registration_type__c</fieldItem>
+                <identifier>RecordIntervention_registration_type_cField2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Intervention_registration__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-60bfad87-0fdb-4761-9446-f1ad2fcd1631</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Intervention_Registration_Method__c</fieldItem>
+                <identifier>RecordIntervention_Registration_Method_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Intervention_registration__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -601,20 +650,6 @@
                         <rightValue>No</rightValue>
                     </criteria>
                 </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-60bfad87-0fdb-4761-9446-f1ad2fcd1631</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Intervention_Registration_Method__c</fieldItem>
-                <identifier>RecordIntervention_Registration_Method_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-873347a0-c47a-44bf-81b7-98e0899eab33</name>
@@ -1010,6 +1045,16 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>displayOption</name>
+                    <value>BOTH</value>
+                </componentInstanceProperties>
+                <componentName>runtime_sales_merge:mergeCandidatesPreviewCard</componentName>
+                <identifier>runtime_sales_merge_mergeCandidatesPreviewCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
@@ -1065,16 +1110,6 @@
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
                 <identifier>lst_dynamicRelatedList3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>displayOption</name>
-                    <value>BOTH</value>
-                </componentInstanceProperties>
-                <componentName>runtime_sales_merge:mergeCandidatesPreviewCard</componentName>
-                <identifier>runtime_sales_merge_mergeCandidatesPreviewCard</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

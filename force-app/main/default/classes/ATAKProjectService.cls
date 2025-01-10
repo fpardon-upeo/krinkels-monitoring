@@ -77,6 +77,7 @@ public with sharing class ATAKProjectService {
             Account acc = new Account();
             acc.Name = adrescode.project_addresscode;
             acc.RecordTypeId = recordtType;
+            acc.Account_ATAK_Code__c = adrescode.project_addresscode;
             acc.Financial_External_Id__c = adrescode.project_addresscode;
             accounts.add(acc);
 

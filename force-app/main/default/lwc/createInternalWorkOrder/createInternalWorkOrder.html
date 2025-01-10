@@ -4,22 +4,24 @@
 
 <!-- Create Internal Work Order -->
 <template>
-  <lightning-quick-action-panel header="Create Internal Work Order">
+  <lightning-quick-action-panel header={labels.CreateInternalWorkOrder_Header}>
     <div class="slds-p-around_medium">
       <lightning-combobox
         name="internalWorkType"
-        label="Select Internal Work Type"
+        label={labels.CreateInternalWorkOrder_SelectInternalWorkTypeLabel}
         value={selectedWorkType}
         options={internalWorkTypeOptions}
         onchange={handleWorkTypeChange}
-        required>
+        required
+      >
       </lightning-combobox>
 
       <lightning-record-picker
         object-api-name="ServiceResource"
         onchange={handleOperatorChange}
-        label="Select ServiceResourceChange"
-        required>
+        label={labels.CreateInternalWorkOrder_SelectServiceResourceLabel}
+        required
+      >
       </lightning-record-picker>
 
       <div class="slds-grid slds-gutters slds-p-top_medium">
@@ -27,20 +29,22 @@
           <lightning-input
             type="datetime"
             name="startDateTime"
-            label="Start"
+            label={labels.CreateInternalWorkOrder_StartDateTimeLabel}
             value={startDateTime}
             onchange={handleStartDateChange}
-            required>
+            required
+          >
           </lightning-input>
         </div>
         <div class="slds-col">
           <lightning-input
             type="datetime"
             name="endDateTime"
-            label="End"
+            label={labels.CreateInternalWorkOrder_EndDateTimeLabel}
             value={endDateTime}
             onchange={handleEndDateChange}
-            required>
+            required
+          >
           </lightning-input>
         </div>
       </div>
@@ -49,14 +53,16 @@
     <div slot="footer">
       <lightning-button
         variant="neutral"
-        label="Cancel"
+        label={labels.CreateInternalWorkOrder_CancelButton}
         onclick={handleCancel}
-        class="slds-m-right_x-small">
+        class="slds-m-right_x-small"
+      >
       </lightning-button>
       <lightning-button
         variant="brand"
-        label="Save"
-        onclick={handleSave}>
+        label={labels.CreateInternalWorkOrder_SaveButton}
+        onclick={handleSave}
+      >
       </lightning-button>
     </div>
   </lightning-quick-action-panel>

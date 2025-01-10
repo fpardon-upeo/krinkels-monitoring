@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>Calculated_Duration__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Notify_Customer_When_En_Route__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

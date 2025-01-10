@@ -17,7 +17,7 @@ Contact_Found{"🔀 <em></em><br/>Contact Found ?"}:::decisions
 click Contact_Found "#contact_found" "1888914664"
 
 Get_Operational_Contact[("🔍 <em></em><br/>Get Operational Contact")]:::recordLookups
-click Get_Operational_Contact "#get_operational_contact" "50307600"
+click Get_Operational_Contact "#get_operational_contact" "1246953570"
 
 Update_Contact_Field_on_SA[("🛠️ <em></em><br/>Update Contact Field on SA")]:::recordUpdates
 click Update_Contact_Field_on_SA "#update_contact_field_on_sa" "1559423494"
@@ -35,20 +35,20 @@ END_Contact_Found(( END )):::endClass
 END_Update_Contact_Field_on_SA(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
@@ -60,7 +60,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Object|WorkOrder|
 |Process Type| Auto Launched Flow|
 |Trigger Type| Record After Save|
-|Record Trigger Type| Create|
+|Record Trigger Type| Update|
 |Label|[Work Order][After-Save][Record-Triggered] Populate Contact on WO and SA|
 |Status|Active|
 |Description|This flow populates the contact field on a work order and its related service appointment on creation. It takes an operational contact of the related operational account.|
@@ -78,6 +78,9 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
 |1|ContactId| Is Null|<!-- -->|
+|2|AccountId| Is Null|<!-- -->|
+|3|Status| Is Changed|✅|
+|4|Status| Equal To|Scheduled|
 
 
 ## Flow Nodes Details
@@ -126,7 +129,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
 |1|AccountId| Equal To|$Record.AccountId|
-|2|Roles| Equal To|Operational|
+|2|Roles| Contains|Operational|
 
 
 

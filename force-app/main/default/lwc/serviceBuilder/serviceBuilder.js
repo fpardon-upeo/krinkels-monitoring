@@ -15,8 +15,35 @@ import updateServiceContractLocationType from "@salesforce/apex/ServiceBuilderCo
 import getServiceContract from "@salesforce/apex/ServiceBuilderController.getServiceContract";
 import recurrenceModal from "c/recurrencePattern";
 import { subscribe } from "lightning/empApi";
+import ServiceBuilder_WarningText from "@salesforce/label/c.ServiceBuilder_WarningText";
+import ServiceBuilder_SuccessTitle from "@salesforce/label/c.ServiceBuilder_SuccessTitle";
+import ServiceBuilder_ErrorTitle from "@salesforce/label/c.ServiceBuilder_ErrorTitle";
+import ServiceBuilder_ErrorMessageSavingRecord from "@salesforce/label/c.ServiceBuilder_ErrorMessageSavingRecord";
+import ServiceBuilder_SuccessMessageSavingRecord from "@salesforce/label/c.ServiceBuilder_SuccessMessageSavingRecord";
+import ServiceBuilder_ErrorMessageLoadingCLI from "@salesforce/label/c.ServiceBuilder_ErrorMessageLoadingCLI";
+import ServiceBuilder_SuccessMessageRecurrenceApplied from "@salesforce/label/c.ServiceBuilder_SuccessMessageRecurrenceApplied";
+import ServiceBuilder_ErrorMessageRecurrenceApplied from "@salesforce/label/c.ServiceBuilder_ErrorMessageRecurrenceApplied";
+import ServiceBuilder_ErrorMessageNoRecordsSelected from "@salesforce/label/c.ServiceBuilder_ErrorMessageNoRecordsSelected";
+import ServiceBuilder_SuccessMessageDeleteRecord from "@salesforce/label/c.ServiceBuilder_SuccessMessageDeleteRecord";
+import ServiceBuilder_ErrorMessageDeleteRecord from "@salesforce/label/c.ServiceBuilder_ErrorMessageDeleteRecord";
+import ServiceBuilder_ErrorMessageCompleteRequiredFields from "@salesforce/label/c.ServiceBuilder_ErrorMessageCompleteRequiredFields";
 
 export default class ServiceBuilder extends LightningElement {
+  labels = {
+    ServiceBuilder_WarningText,
+    ServiceBuilder_SuccessTitle,
+    ServiceBuilder_ErrorTitle,
+    ServiceBuilder_ErrorMessageSavingRecord,
+    ServiceBuilder_SuccessMessageSavingRecord,
+    ServiceBuilder_ErrorMessageLoadingCLI,
+    ServiceBuilder_SuccessMessageRecurrenceApplied,
+    ServiceBuilder_ErrorMessageRecurrenceApplied,
+    ServiceBuilder_ErrorMessageNoRecordsSelected,
+    ServiceBuilder_SuccessMessageDeleteRecord,
+    ServiceBuilder_ErrorMessageDeleteRecord,
+    ServiceBuilder_ErrorMessageCompleteRequiredFields
+  };
+
   // API Properties
   @api recordId;
   @api channelName = "/event/Contract_Event__e";
@@ -29,6 +56,7 @@ export default class ServiceBuilder extends LightningElement {
   @track appliedFilters = [];
   @track serviceContract = {};
   @track locationType = "Address";
+  notifyViaAlerts = false;
 
   // Component Properties
   frequencyOptions;
@@ -212,6 +240,8 @@ export default class ServiceBuilder extends LightningElement {
         return getServiceContract({ recordId: this.recordId }).then(
           (serviceContractResult) => {
             this.serviceContract = serviceContractResult;
+            this.notifyViaAlerts = serviceContractResult.Notify_Customer_When_En_Route__c;
+            console.log('notifyViaAlerts', this.notifyViaAlerts);
             this.locationType =
               serviceContractResult.Location_Type__c || "Address";
             this.isLoading = false;
@@ -224,8 +254,8 @@ export default class ServiceBuilder extends LightningElement {
       .catch((error) => {
         console.error("Error loading contract lines:", error);
         this.handleToast(
-          "Error",
-          "An error occurred while loading contract lines",
+          this.labels.ServiceBuilder_ErrorTitle,
+          this.labels.ServiceBuilder_ErrorMessageLoadingCLI,
           "error"
         );
         this.isLoading = false;
@@ -442,8 +472,8 @@ export default class ServiceBuilder extends LightningElement {
         });
 
         this.handleToast(
-          "Success",
-          "Recurrence pattern has been applied to selected record",
+          this.labels.ServiceBuilder_SuccessTitle,
+          this.labels.ServiceBuilder_SuccessMessageRecurrenceApplied,
           "success"
         );
       } else {
@@ -452,8 +482,8 @@ export default class ServiceBuilder extends LightningElement {
     } catch (error) {
       console.error("Error applying recurrence pattern:", error);
       this.handleToast(
-        "Error",
-        "An error occurred while applying recurrence pattern",
+        this.labels.ServiceBuilder_ErrorTitle,
+        this.labels.ServiceBuilder_ErrorMessageRecurrenceApplied,
         "error"
       );
     }
@@ -478,8 +508,8 @@ export default class ServiceBuilder extends LightningElement {
 
     if (this.selectedRecords.length === 0) {
       this.handleToast(
-        "Error",
-        "No records selected, please select at least one record by selecting the appropriate checkbox.",
+        this.labels.ServiceBuilder_ErrorTitle,
+        this.labels.ServiceBuilder_ErrorMessageNoRecordsSelected,
         "error"
       );
       return;
@@ -507,8 +537,8 @@ export default class ServiceBuilder extends LightningElement {
             }
           });
           this.handleToast(
-            "Success",
-            "Recurrence pattern has been applied to selected records",
+            this.labels.ServiceBuilder_SuccessTitle,
+            this.labels.ServiceBuilder_SuccessMessageRecurrenceApplied,
             "success"
           );
         }
@@ -516,8 +546,8 @@ export default class ServiceBuilder extends LightningElement {
       .catch((error) => {
         console.error("Error applying mass recurrence pattern:", error);
         this.handleToast(
-          "Error",
-          "An error occurred while applying recurrence pattern",
+          this.labels.ServiceBuilder_ErrorTitle,
+          this.labels.ServiceBuilder_ErrorMessageRecurrenceApplied,
           "error"
         );
       });
@@ -640,7 +670,8 @@ export default class ServiceBuilder extends LightningElement {
       ServiceContractId: this.recordId,
       FinCustomers: [],
       Index: this.contractLines.length,
-      Recurrence_Pattern__c: "FREQ=WEEKLY;INTERVAL=2"
+      Recurrence_Pattern__c: "FREQ=WEEKLY;INTERVAL=2",
+      Notify_Customer_When_En_Route__c: this.notifyViaAlerts,
     };
 
     if (this.filterResults.length > 0) {
@@ -692,13 +723,17 @@ export default class ServiceBuilder extends LightningElement {
         .then(() => {
           this.contractLines.splice(index, 1);
           this.reIndex();
-          this.handleToast("Success", "Record has been deleted", "success");
+          this.handleToast(
+            this.labels.ServiceBuilder_SuccessTitle,
+            this.labels.ServiceBuilder_SuccessMessageDeleteRecord,
+            "success"
+          );
         })
         .catch((error) => {
           console.error("Error deleting contract line:", error);
           this.handleToast(
-            "Error",
-            "An error occurred while deleting record",
+            this.labels.ServiceBuilder_ErrorTitle,
+            this.labels.ServiceBuilder_ErrorMessageDeleteRecord,
             "error"
           );
           this.contractLines = [...this.contractLines];
@@ -770,8 +805,8 @@ export default class ServiceBuilder extends LightningElement {
 
     if (hasErrors) {
       this.handleToast(
-        "Error",
-        "Please complete all required fields before saving.",
+        this.labels.ServiceBuilder_ErrorTitle,
+        this.labels.ServiceBuilder_ErrorMessageCompleteRequiredFields,
         "error"
       );
       // Force a refresh of the UI
@@ -788,16 +823,18 @@ export default class ServiceBuilder extends LightningElement {
     Promise.all(promises)
       .then(() => {
         this.reIndex();
-        this.handleToast("Success", "All records have been saved", "success");
+        this.handleToast(
+          this.labels.ServiceBuilder_SuccessTitle,
+          this.labels.ServiceBuilder_SuccessMessageSavingRecord,
+          "success"
+        );
       })
       .catch((error) => {
-        const ERROR_MESSAGE = error.body?.message || error;
-
         console.log("ERROR MESSAGE: ", ERROR_MESSAGE);
 
         this.handleToast(
-          "Error",
-          `An error occurred while saving records: ${ERROR_MESSAGE}`,
+          this.labels.ServiceBuilder_ErrorTitle,
+          this.labels.ServiceBuilder_ErrorMessageSavingRecord,
           "error"
         );
       });

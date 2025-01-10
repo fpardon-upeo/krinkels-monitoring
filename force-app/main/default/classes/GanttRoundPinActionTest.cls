@@ -11,6 +11,12 @@ private class GanttRoundPinActionTest {
         );
         testData.put('Account', testAccount);
 
+        Contact testContact = FieldServiceTestData.createTestContact(
+                'Test',
+                true
+        );
+        testData.put('Contact', testContact);
+
         // Create product
         Product2 testProduct = FieldServiceTestData.createTestProduct(
                 'Test Product',
@@ -45,6 +51,8 @@ private class GanttRoundPinActionTest {
                 StartDate = Date.today(),
                 EndDate = Date.today().addDays(90)
         );
+
+        wo.ContactId = testContact.Id;
         insert wo;
         testData.put('WorkOrder', wo);
 

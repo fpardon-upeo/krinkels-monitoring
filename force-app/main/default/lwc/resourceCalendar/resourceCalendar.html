@@ -5,23 +5,26 @@
 <!-- Resource Calendar -->
 <!-- resourceCalendar.html -->
 <template>
-  <lightning-card title="Resource Calendar" icon-name="standard:service_resource">
+  <lightning-card
+    title={labels.ResourceCalendar_Title}
+    icon-name="standard:service_resource"
+  >
     <div class="slds-m-around_medium">
       <!-- Calendar Header -->
       <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
-        <h2 class="slds-text-heading_medium">
-          {formattedMonth}
-        </h2>
+        <h2 class="slds-text-heading_medium">{formattedMonth}</h2>
         <div class="slds-button-group">
           <lightning-button-icon
             icon-name="utility:chevronleft"
             variant="border-filled"
-            onclick={previousMonth}>
+            onclick={previousMonth}
+          >
           </lightning-button-icon>
           <lightning-button-icon
             icon-name="utility:chevronright"
             variant="border-filled"
-            onclick={nextMonth}>
+            onclick={nextMonth}
+          >
           </lightning-button-icon>
         </div>
       </div>
@@ -30,32 +33,45 @@
       <div class="calendar-grid">
         <!-- Weekday Headers -->
         <template for:each={weekDays} for:item="day">
-          <div key={day} class="calendar-header slds-text-align_center slds-text-title_bold">
+          <div
+            key={day}
+            class="calendar-header slds-text-align_center slds-text-title_bold"
+          >
             {day}
           </div>
         </template>
 
         <!-- Calendar Days -->
         <template for:each={calendarDays} for:item="day">
-          <div key={day.date}
-               class={day.className}
-               style={day.style}
-               onclick={handleDayClick}
-               ondragover={handleDragOver}
-               ondrop={handleDrop}
-               ondragleave={handleDragLeave}
-               data-date={day.date}>
+          <div
+            key={day.date}
+            class={day.className}
+            style={day.style}
+            onclick={handleDayClick}
+            ondragover={handleDragOver}
+            ondrop={handleDrop}
+            ondragleave={handleDragLeave}
+            data-date={day.date}
+          >
             <div class="slds-text-body_small">{day.dayNumber}</div>
             <template if:true={day.hasWorkload}>
               <div class="slds-text-body_small workload-indicator">
-                <div class="scheduled" onmouseenter={handleDayAppointmentsMouseEnter} data-appointments={day.appointmentsString} data-count={day.scheduledCount}>
-                  {day.scheduledCount} appointments
+                <div
+                  class="scheduled"
+                  onmouseenter={handleDayAppointmentsMouseEnter}
+                  data-appointments={day.appointmentsString}
+                  data-count={day.scheduledCount}
+                >
+                  {day.scheduledCount}
+                  {labels.ResourceCalendar_AppointmentsCount_Word}
                 </div>
                 <div class="hours">
-                  {day.hoursScheduled}h scheduled
+                  {day.hoursScheduled}h
+                  {labels.ResourceCalendar_ScheduledHours_Word}
                 </div>
                 <div class="available">
-                  {day.hoursAvailable}h available
+                  {day.hoursAvailable}h
+                  {labels.ResourceCalendar_AvailableHours_Word}
                 </div>
               </div>
             </template>
@@ -67,15 +83,21 @@
       <div class="slds-grid slds-grid_align-spread slds-m-top_small">
         <div class="slds-grid slds-grid_vertical-align-center">
           <span class="legend-box available"></span>
-          <span class="slds-p-left_x-small">Available</span>
+          <span class="slds-p-left_x-small"
+            >{labels.ResourceCalendar_Available_Text}</span
+          >
         </div>
         <div class="slds-grid slds-grid_vertical-align-center">
           <span class="legend-box partial"></span>
-          <span class="slds-p-left_x-small">Partially Booked</span>
+          <span class="slds-p-left_x-small"
+            >{labels.ResourceCalendar_PartiallyBooked_Text}</span
+          >
         </div>
         <div class="slds-grid slds-grid_vertical-align-center">
           <span class="legend-box full"></span>
-          <span class="slds-p-left_x-small">Fully Booked</span>
+          <span class="slds-p-left_x-small"
+            >{labels.ResourceCalendar_FullyBooked_Text}</span
+          >
         </div>
       </div>
     </div>

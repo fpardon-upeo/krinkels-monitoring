@@ -6,9 +6,33 @@ import { LightningElement, api, track } from "lwc";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getFinancialAccountName from "@salesforce/apex/ServiceBuilderController.getFinancialAccountName";
 import insertOrRemoveContractLineFinancialAccount from "@salesforce/apex/ServiceBuilderController.insertOrRemoveContractLineFinancialAccount";
+import ContractLineEditor_SaveButton from "@salesforce/label/c.ContractLineEditor_SaveButton";
+import ContractLineEditor_CancelButton from "@salesforce/label/c.ContractLineEditor_CancelButton";
+import ContractLineEditor_FinancialCustomersLabel from "@salesforce/label/c.ContractLineEditor_FinancialCustomersLabel";
+import ContractLineEditor_FinancialCustomersPlaceholder from "@salesforce/label/c.ContractLineEditor_FinancialCustomersPlaceholder";
+import ContractLineEditor_EditContractLineText from "@salesforce/label/c.ContractLineEditor_EditContractLineText";
+import ContractLineEditor_CloseButtonText from "@salesforce/label/c.ContractLineEditor_CloseButtonText";
+import ContractLineEditor_SuccessTitle from "@salesforce/label/c.ContractLineEditor_SuccessTitle";
+import ContractLineEditor_SuccessMessage from "@salesforce/label/c.ContractLineEditor_SuccessMessage";
+import ContractLineEditor_ErrorTitle from "@salesforce/label/c.ContractLineEditor_ErrorTitle";
+import ContractLineEditor_ErrorMessage from "@salesforce/label/c.ContractLineEditor_ErrorMessage";
 
 export default class ContractLineEditor extends LightningElement {
   //--------------------------------------API------------------------------------------//
+
+  labels = {
+    ContractLineEditor_SaveButton,
+    ContractLineEditor_CancelButton,
+    ContractLineEditor_FinancialCustomersLabel,
+    ContractLineEditor_FinancialCustomersPlaceholder,
+    ContractLineEditor_EditContractLineText,
+    ContractLineEditor_CloseButtonText,
+    ContractLineEditor_SuccessTitle,
+    ContractLineEditor_SuccessMessage,
+    ContractLineEditor_ErrorTitle,
+    ContractLineEditor_ErrorMessage,
+    ContractLineEditor_ErrorMessageDuplicates
+  };
 
   @api selectedLineItemId;
   @api contractLines;
@@ -96,8 +120,8 @@ export default class ContractLineEditor extends LightningElement {
           this.contractLines = [...this.contractLinesClone];
         } else {
           this.handleToast(
-            "Error",
-            "No duplicate financial customers allowed.",
+            this.labels.ContractLineEditor_ErrorTitle,
+            this.labels.ContractLineEditor_ErrorMessageDuplicates,
             "error"
           );
         }
@@ -113,8 +137,8 @@ export default class ContractLineEditor extends LightningElement {
       .catch((error) => {
         console.error("Error getting financial account name:", error);
         this.handleToast(
-          "Error",
-          "An error occurred while adding the financial customer.",
+          this.labels.ContractLineEditor_ErrorTitle,
+          this.labels.ContractLineEditor_ErrorMessage,
           "error"
         );
       });
@@ -147,8 +171,8 @@ export default class ContractLineEditor extends LightningElement {
       console.error("Error saving record:", error.message);
 
       this.handleToast(
-        "Error",
-        "An error occurred while saving the record.",
+        this.labels.ContractLineEditor_ErrorTitle,
+        this.labels.ContractLineEditor_ErrorMessage,
         "error"
       );
     }
@@ -233,7 +257,11 @@ export default class ContractLineEditor extends LightningElement {
     updatedContractLines[index].Estimated_Duration__c =
       event.detail.fields.Estimated_Duration__c.value;
 
-    this.handleToast("Success", "Record has been saved", "success");
+    this.handleToast(
+      this.labels.ContractLineEditor_SuccessTitle,
+      this.labels.ContractLineEditor_SuccessMessage,
+      "success"
+    );
 
     this.dispatchEvent(
       new CustomEvent("closemodal", {

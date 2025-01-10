@@ -20,9 +20,24 @@
                 <label>Waste Depot</label>
             </value>
             <value>
-                <fullName>Other</fullName>
+                <fullName>Subcontractor</fullName>
                 <default>false</default>
-                <label>Other</label>
+                <label>Subcontractor</label>
+            </value>
+            <value>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+                <label>Supplier</label>
+            </value>
+            <value>
+                <fullName>Interim</fullName>
+                <default>false</default>
+                <label>Interim</label>
+            </value>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
             </value>
         </valueSetDefinition>
     </valueSet>

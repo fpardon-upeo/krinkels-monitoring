@@ -1,0 +1,33 @@
+<!-- accountImages.html -->
+<template>
+    <div if:true={imagesLoaded} class="mobile-card">
+        <div class="mobile-header">
+            <lightning-icon icon-name="utility:image" size="small"></lightning-icon>
+            <h2>Location Images</h2>
+        </div>
+        <div class="image-grid-container">
+            <template if:true={images.data}>
+                <div class="image-grid">
+                    <template for:each={images.data} for:item="image">
+                        <div key={image.Id} class="image-wrapper">
+                            <div class="image-box">
+                                <img
+                                        src={image.base64Data}
+                                        alt={image.Title}
+                                        loading="lazy"
+                                        class="grid-image"
+                                />
+                            </div>
+                            <div class="image-title">{image.Title}</div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template if:true={noImages}>
+                <div class="no-images-message">
+                    No images available for this location
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

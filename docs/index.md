@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (15677) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (3665) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (15927) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (3915) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3399) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3534) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -142,6 +142,7 @@ ___
 | WorkOrder | [Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work](flows/Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work.md) [🕒](flows/Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work-history.md) | RecordAfterSave | Sets the PDF Status for Extra Work and Small Works |
 | WorkOrder | [Work_Order_Scheduled_High_Prio_Work_Order_Overdue](flows/Work_Order_Scheduled_High_Prio_Work_Order_Overdue.md) [🕒](flows/Work_Order_Scheduled_High_Prio_Work_Order_Overdue-history.md) | Scheduled | sends notification to Contract Manager when a high prio work order is overdue |
 | WorkOrder | [Work_Order_Send_Customer_Notification_Crew_Inbound](flows/Work_Order_Send_Customer_Notification_Crew_Inbound.md) [🕒](flows/Work_Order_Send_Customer_Notification_Crew_Inbound-history.md) | RecordAfterSave |  |
+| WorkOrder | [Work_Order_Set_Customer_Notification_Flag](flows/Work_Order_Set_Customer_Notification_Flag.md) [🕒](flows/Work_Order_Set_Customer_Notification_Flag-history.md) | RecordBeforeSave |  |
 | WorkPlan | [Work_Plan_Extra_Work_Steps](flows/Work_Plan_Extra_Work_Steps.md) [🕒](flows/Work_Plan_Extra_Work_Steps-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO-history.md) | RecordAfterSave |  |

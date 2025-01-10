@@ -292,16 +292,19 @@ public class RRuleAdjuster {
         return true;
     }
 
+    @TestVisible
     private Integer getDayOfWeek(DateTime dt) {
         // Returns 0-6 for Sunday-Saturday
         return Math.mod(Integer.valueOf(dt.format('u')) + 6, 7);
     }
 
+    @TestVisible
     private String getDayCode(Integer dayNum) {
         List<String> days = new List<String>{'SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'};
         return days[dayNum];
     }
 
+    @TestVisible
     private Integer getDayNumber(String dayCode) {
         Map<String, Integer> dayMap = new Map<String, Integer>{
                 'SU' => 0, 'MO' => 1, 'TU' => 2, 'WE' => 3,
@@ -310,6 +313,7 @@ public class RRuleAdjuster {
         return dayMap.get(dayCode.right(2));
     }
 
+    @TestVisible
     private String buildRRule(Map<String, String> params) {
         List<String> parts = new List<String>();
         for (String key : params.keySet()) {

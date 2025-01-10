@@ -164,7 +164,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Indexation_Needed__c</field>
+                <field>Indexation_Allowed__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

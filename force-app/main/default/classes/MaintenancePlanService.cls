@@ -144,7 +144,8 @@ public with sharing class MaintenancePlanService {
         Planning_Type__c,
         Estimated_Duration__c,
         LMRA__c,
-        ServiceContract.Priority__c
+        ServiceContract.Priority__c,
+        Notify_Customer_When_En_Route__c
       FROM ContractLineItem
       WHERE ServiceContractId = :serviceContractId
     ];
@@ -224,7 +225,7 @@ public with sharing class MaintenancePlanService {
         location.Client_Code__c = line.Project_Code__c;
         location.Priority__c = serviceContract.Priority__c;
         location.LMRA_Type__c = serviceContract.Default_LMRA__c;
-        location.Status__c = 'Customer';
+        location.Status__c = 'Active';
         uniqueLocations.add(location);
         locationKeys.add(locationKey);
       }
@@ -310,6 +311,7 @@ public with sharing class MaintenancePlanService {
       asset.Recurrence_Text__c = RRuleDescriptionGenerator.generateDescription(
         asset.Recurrence_Pattern__c
       );
+      asset.Notify_Customer_When_En_Route__c = line.Notify_Customer_When_En_Route__c;
 
       if (projectMap.containsKey(line.Project_Code__c)) {
         asset.ATAK_Project__c = projectMap.get(line.Project_Code__c).Id;

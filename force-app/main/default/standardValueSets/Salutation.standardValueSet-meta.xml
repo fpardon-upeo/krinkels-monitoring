@@ -11,9 +11,4 @@
         <default>false</default>
         <label>Ms.</label>
     </standardValue>
-    <standardValue>
-        <fullName>Mx.</fullName>
-        <default>false</default>
-        <label>Mx.</label>
-    </standardValue>
 </StandardValueSet>

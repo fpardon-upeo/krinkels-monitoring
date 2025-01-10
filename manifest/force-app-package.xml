@@ -22,6 +22,7 @@
         <members>ATAKWorkLogServiceTest</members>
         <members>AccountDetailsController</members>
         <members>AccountDetailsControllerTest</members>
+        <members>AccountImagesController</members>
         <members>AccountTriggerHandler</members>
         <members>AccountTriggerHandlerTest</members>
         <members>AccountWasteRetriever</members>
@@ -104,6 +105,7 @@
         <members>ServiceAppointmentTriggerHandler</members>
         <members>ServiceAppointmentTriggerHandlerTest</members>
         <members>ServiceBuilderController</members>
+        <members>ServiceBuilderControllerTest</members>
         <members>ServiceBuilderWrapper</members>
         <members>ServiceContractHandler</members>
         <members>ServiceContractTriggerHandler</members>
@@ -377,6 +379,7 @@
         <members>ATAK_Work_Log__c.Time_Sheet__c</members>
         <members>Account.ATAK_Project__c</members>
         <members>Account.Access_Information__c</members>
+        <members>Account.Account_ATAK_Code__c</members>
         <members>Account.Address_Identifier__c</members>
         <members>Account.Alias_commercial_customer_name__c</members>
         <members>Account.Attention_points_for_execution__c</members>
@@ -393,11 +396,13 @@
         <members>Account.Email__c</members>
         <members>Account.Enterprise_Number__c</members>
         <members>Account.Facility_Type__c</members>
+        <members>Account.Financial_Client_Type_ATAK__c</members>
         <members>Account.Financial_External_Id__c</members>
         <members>Account.Financial_client_ATAK_Code__c</members>
         <members>Account.Financial_client_type_ATAK__c</members>
         <members>Account.Group__c</members>
         <members>Account.Intervention_Registration_Announcement__c</members>
+        <members>Account.Intervention_Registration_Contact__c</members>
         <members>Account.Intervention_Registration_Method__c</members>
         <members>Account.Intervention_registration__c</members>
         <members>Account.Intervention_registration_type__c</members>
@@ -428,6 +433,7 @@
         <members>Asset.Default_Duration_in_Minutes__c</members>
         <members>Asset.LMRA__c</members>
         <members>Asset.LastSuggestedMaintenanceDate__c</members>
+        <members>Asset.Notify_Customer_When_En_Route__c</members>
         <members>Asset.Recurrence_Pattern__c</members>
         <members>Asset.Recurrence_Text__c</members>
         <members>Asset.Service_Territory__c</members>
@@ -453,6 +459,7 @@
         <members>Contact.Function_Type__c</members>
         <members>Contact.Function__c</members>
         <members>Contact.Functional_level__c</members>
+        <members>Contact.Has_Left_Company__c</members>
         <members>Contact.Language_Formula__c</members>
         <members>Contact.Language__c</members>
         <members>Contact.Linkedin__c</members>
@@ -469,6 +476,7 @@
         <members>ContractLineItem.Geolocation__c</members>
         <members>ContractLineItem.LMRA__c</members>
         <members>ContractLineItem.Location__c</members>
+        <members>ContractLineItem.Notify_Customer_When_En_Route__c</members>
         <members>ContractLineItem.Parent_Customer__c</members>
         <members>ContractLineItem.Planning_Type__c</members>
         <members>ContractLineItem.Project_Code__c</members>
@@ -867,6 +875,7 @@
         <members>ServiceContract.External_Contract_Reference__c</members>
         <members>ServiceContract.Generate_Maintenance_Plan__c</members>
         <members>ServiceContract.Global_Contract_ID__c</members>
+        <members>ServiceContract.Indexation_Allowed__c</members>
         <members>ServiceContract.Indexation_Date__c</members>
         <members>ServiceContract.Indexation_Formula__c</members>
         <members>ServiceContract.Indexation_Needed__c</members>
@@ -876,6 +885,7 @@
         <members>ServiceContract.Link_contract__c</members>
         <members>ServiceContract.Location_Type__c</members>
         <members>ServiceContract.Location_Visit__c</members>
+        <members>ServiceContract.Notify_Customer_When_En_Route__c</members>
         <members>ServiceContract.Payment_Conditions__c</members>
         <members>ServiceContract.Priority__c</members>
         <members>ServiceContract.Product__c</members>
@@ -1087,6 +1097,7 @@
         <members>AppointmentPicker_End_Day_Button</members>
         <members>AppointmentPicker_End_Day_Button_Sub_Text</members>
         <members>AppointmentPicker_Incomplete_Work_Steps_Message</members>
+        <members>AppointmentPicker_InternalWO_Title</members>
         <members>AppointmentPicker_Last_Depot_Sub_Text</members>
         <members>AppointmentPicker_Last_Depot_Text</members>
         <members>AppointmentPicker_Next_Action_Sub_Text</members>
@@ -1094,6 +1105,7 @@
         <members>AppointmentPicker_Next_Button</members>
         <members>AppointmentPicker_No_Results</members>
         <members>AppointmentPicker_Save_Button</members>
+        <members>AppointmentPicker_Select_Appointment_Title</members>
         <members>AppointmentPicker_Select_Next_Appointment_Button</members>
         <members>AppointmentPicker_Simple_Checkout_Button_Sub_Text</members>
         <members>AppointmentPicker_Simple_Checkout_Button_Text</members>
@@ -1165,6 +1177,26 @@
         <members>Calendar_WorkHours_Header</members>
         <members>Checkin_Loading</members>
         <members>Checkin_locationError</members>
+        <members>ContractLineEditor_CancelButton</members>
+        <members>ContractLineEditor_CloseButtonText</members>
+        <members>ContractLineEditor_EditContractLineText</members>
+        <members>ContractLineEditor_ErrorMessage</members>
+        <members>ContractLineEditor_ErrorMessageDuplicates</members>
+        <members>ContractLineEditor_ErrorTitle</members>
+        <members>ContractLineEditor_FinancialCustomersLabel</members>
+        <members>ContractLineEditor_FinancialCustomersPlaceholder</members>
+        <members>ContractLineEditor_SaveButton</members>
+        <members>ContractLineEditor_SuccessMessage</members>
+        <members>ContractLineEditor_SuccessTitle</members>
+        <members>CreateInternalWorkOrder_CancelButton</members>
+        <members>CreateInternalWorkOrder_EndDateTimeLabel</members>
+        <members>CreateInternalWorkOrder_Header</members>
+        <members>CreateInternalWorkOrder_SaveButton</members>
+        <members>CreateInternalWorkOrder_SelectInternalWorkTypeLabel</members>
+        <members>CreateInternalWorkOrder_SelectServiceResourceLabel</members>
+        <members>CreateInternalWorkOrder_StartDateTimeLabel</members>
+        <members>CreateInternalWorkOrder_SuccessMessage</members>
+        <members>CreateInternalWorkOrder_SuccessTitle</members>
         <members>DepotVisit_Header</members>
         <members>DepotVisit_NameText</members>
         <members>ExportCLI_Error_Toast_Message</members>
@@ -1173,6 +1205,16 @@
         <members>ExportCLI_Header</members>
         <members>ExportCLI_Success_Toast_Message</members>
         <members>ExportCLI_Success_Toast_Title</members>
+        <members>GenerateMaintenancePlan_AtakProject_Label</members>
+        <members>GenerateMaintenancePlan_Confirmation_Message</members>
+        <members>GenerateMaintenancePlan_ErrorMessage</members>
+        <members>GenerateMaintenancePlan_ErrorMessageInvalidATAKProject</members>
+        <members>GenerateMaintenancePlan_ErrorTitle</members>
+        <members>GenerateMaintenancePlan_ErrorUpdateMessage</members>
+        <members>GenerateMaintenancePlan_LineNumber_Label</members>
+        <members>GenerateMaintenancePlan_SuccessMessage</members>
+        <members>GenerateMaintenancePlan_SuccessTitle</members>
+        <members>GenerateMaintenancePlan_Title</members>
         <members>Image_Selector_Upload</members>
         <members>ImportCLI_Error_Toast_Message</members>
         <members>ImportCLI_Error_Toast_Title</members>
@@ -1181,11 +1223,17 @@
         <members>ImportCLI_Success_Toast_Title</members>
         <members>ImportCLI_UploadButton</members>
         <members>ImportCLI_WrongFile_Message</members>
+        <members>InternalWorkOrder_City_Label</members>
         <members>InternalWorkOrder_Depot_Button_Sub_Text</members>
         <members>InternalWorkOrder_Depot_Button_Text</members>
+        <members>InternalWorkOrder_ErrorMessage</members>
+        <members>InternalWorkOrder_ErrorTitle</members>
         <members>InternalWorkOrder_Header_Text</members>
+        <members>InternalWorkOrder_Internal_Depot_Label</members>
+        <members>InternalWorkOrder_Name_Label</members>
         <members>InternalWorkOrder_No_Travel_Sub_Text</members>
         <members>InternalWorkOrder_No_Travel_Text</members>
+        <members>InternalWorkOrder_PostalCode_Label</members>
         <members>InternalWorkOrder_Save_Button</members>
         <members>InternalWorkOrder_Select_Account_Text</members>
         <members>InternalWorkOrder_Select_Account_Warning_Text</members>
@@ -1193,15 +1241,23 @@
         <members>InternalWorkOrder_Select_WO_Warning_Text</members>
         <members>InternalWorkOrder_Start_Travel_Sub_Text</members>
         <members>InternalWorkOrder_Start_Travel_Text</members>
+        <members>InternalWorkOrder_SuccessMessage</members>
+        <members>InternalWorkOrder_SuccessTitle</members>
+        <members>InternalWorkOrder_WasteTypes_Label</members>
         <members>InternalWorkOrder_Waste_Button_Sub_Text</members>
         <members>InternalWorkOrder_Waste_Button_Text</members>
+        <members>InternalWorkOrder_Waste_Management_Label</members>
+        <members>LocationMonitor_BreakTime_Text</members>
         <members>LocationMonitor_DashboardTitle</members>
         <members>LocationMonitor_ExceedsThreshold</members>
+        <members>LocationMonitor_KMLogged_Text</members>
         <members>LocationMonitor_NoCheckinLocation</members>
         <members>LocationMonitor_NoLocations</members>
         <members>LocationMonitor_NoWorkOrderLocation</members>
         <members>LocationMonitor_ThresholdSliderLabel</members>
+        <members>LocationMonitor_TravelTime_Text</members>
         <members>LocationMonitor_WithinThreshold</members>
+        <members>LocationMonitor_WorkTime_Text</members>
         <members>LocationPassport_Documents_Header</members>
         <members>LocationPassport_Error_Toast_Message</members>
         <members>LocationPassport_Error_Toast_Title</members>
@@ -1212,6 +1268,8 @@
         <members>LocationPassport_General_Information_Account_AttentionPoints_Header</members>
         <members>LocationPassport_General_Information_Account_Name_Header</members>
         <members>LocationPassport_General_Information_Header</members>
+        <members>LocationPassport_Images_Header</members>
+        <members>LocationPassport_No_Images_Message</members>
         <members>LocationPassport_Operating_Hours_Day_Header</members>
         <members>LocationPassport_Operating_Hours_End_Time_Header</members>
         <members>LocationPassport_Operating_Hours_Header</members>
@@ -1219,6 +1277,23 @@
         <members>LocationPassport_Successfull_Toast_Message</members>
         <members>LocationPassport_Successfull_Toast_Title</members>
         <members>LocationPassport_View_Button</members>
+        <members>MaterialPickUp_ATAKCodeFieldLabel</members>
+        <members>MaterialPickUp_AddedItemsText</members>
+        <members>MaterialPickUp_CloseButtonLabel</members>
+        <members>MaterialPickUp_DropOffItemsText</members>
+        <members>MaterialPickUp_ErrorMessage</members>
+        <members>MaterialPickUp_ErrorTitle</members>
+        <members>MaterialPickUp_MaterialFieldLabel</members>
+        <members>MaterialPickUp_NoMaterials_Text</members>
+        <members>MaterialPickUp_PickUpItems</members>
+        <members>MaterialPickUp_SaveButtonLabel</members>
+        <members>MaterialPickUp_SaveReturnsButtonLabel</members>
+        <members>MaterialPickUp_SelectMaterialToReturn</members>
+        <members>MaterialPickUp_SelectMaterials_Text</members>
+        <members>MaterialPickUp_SelectedMaterialsToReturnText</members>
+        <members>MaterialPickUp_ShortTextFieldLabel</members>
+        <members>MaterialPickUp_SuccessMessage</members>
+        <members>MaterialPickUp_SuccessTitle</members>
         <members>Mileage_Add_In_Entry</members>
         <members>Mileage_Add_In_Entry_Description</members>
         <members>Mileage_Add_Out_Entry</members>
@@ -1253,6 +1328,25 @@
         <members>Mileage_View_Add_OwnMileage</members>
         <members>Mileage_View_Add_StartMileage</members>
         <members>NotifyCustomer_Toggle</members>
+        <members>PrepareContractNextYear_Message</members>
+        <members>ReadyForValidation_ErrorMessage</members>
+        <members>ReadyForValidation_ErrorTitle</members>
+        <members>ReadyForValidation_SuccessMessage</members>
+        <members>ReadyForValidation_SuccessTitle</members>
+        <members>ResourceCalendar_AppointmentsCount_Word</members>
+        <members>ResourceCalendar_AvailableHours_Word</members>
+        <members>ResourceCalendar_Available_Text</members>
+        <members>ResourceCalendar_FridayWord_Abbreviation</members>
+        <members>ResourceCalendar_FullyBooked_Text</members>
+        <members>ResourceCalendar_MondayWord_Abbreviation</members>
+        <members>ResourceCalendar_PartiallyBooked_Text</members>
+        <members>ResourceCalendar_SaturdayWord_Abbreviation</members>
+        <members>ResourceCalendar_ScheduledHours_Word</members>
+        <members>ResourceCalendar_SundayWord_Abbreviation</members>
+        <members>ResourceCalendar_ThursdayWord_Abbreviation</members>
+        <members>ResourceCalendar_Title</members>
+        <members>ResourceCalendar_TuesdayWord_Abbreviation</members>
+        <members>ResourceCalendar_WednesdayWord_Abbreviation</members>
         <members>ReworkVisitForm_AddAdditionalTasksText</members>
         <members>ReworkVisitForm_AddNewTasksText</members>
         <members>ReworkVisitForm_AddTaskText</members>
@@ -1275,12 +1369,35 @@
         <members>ReworkVisitForm_TasksFromPreviousWorkOrderText</members>
         <members>ReworkVisitForm_TitleError</members>
         <members>ReworkVisitForm_TitleSuccess</members>
+        <members>ScheduleWO_ConfirmMessage</members>
+        <members>ScheduleWO_ErrorMessage</members>
+        <members>ScheduleWO_ErrorTitle</members>
+        <members>ScheduleWO_SuccessMessage</members>
+        <members>ScheduleWO_SuccessTitle</members>
         <members>Send_Sign_Request</members>
+        <members>ServiceBuilder_ErrorMessageCompleteRequiredFields</members>
+        <members>ServiceBuilder_ErrorMessageDeleteRecord</members>
+        <members>ServiceBuilder_ErrorMessageLoadingCLI</members>
+        <members>ServiceBuilder_ErrorMessageNoRecordsSelected</members>
+        <members>ServiceBuilder_ErrorMessageRecurrenceApplied</members>
+        <members>ServiceBuilder_ErrorMessageSavingRecord</members>
+        <members>ServiceBuilder_ErrorTitle</members>
+        <members>ServiceBuilder_SuccessMessageDeleteRecord</members>
+        <members>ServiceBuilder_SuccessMessageRecurrenceApplied</members>
+        <members>ServiceBuilder_SuccessMessageSavingRecord</members>
+        <members>ServiceBuilder_SuccessTitle</members>
+        <members>ServiceBuilder_WarningText</members>
+        <members>SimpleDispatcher_ResourceLabel</members>
+        <members>SimpleDispatcher_TerritoryLabel</members>
+        <members>StartDay_AppointmentsCompleteWord</members>
         <members>StartDay_Back_To_Menu_Button</members>
+        <members>StartDay_EndDayTitle</members>
         <members>StartDay_End_Button_Sub_Text</members>
         <members>StartDay_End_Button_Text</members>
         <members>StartDay_End_Day_Button_Sub_Text</members>
         <members>StartDay_End_Day_Button_Text</members>
+        <members>StartDay_ErrorMessage</members>
+        <members>StartDay_ErrorTitle</members>
         <members>StartDay_Internal_Button_Sub_Text</members>
         <members>StartDay_Internal_Button_Text</members>
         <members>StartDay_KM_Back_Button_Text</members>
@@ -1290,6 +1407,7 @@
         <members>StartDay_KM_Save_Button_Text</members>
         <members>StartDay_KM_Save_Success_Result</members>
         <members>StartDay_Loading_Message</members>
+        <members>StartDay_LocationNotAvailableText</members>
         <members>StartDay_Next_Action_Text</members>
         <members>StartDay_Next_Appointment_Button_Sub_Text</members>
         <members>StartDay_Next_Appointment_Button_Text</members>
@@ -1303,6 +1421,19 @@
         <members>StartDay_Waste_Button_Sub_Text</members>
         <members>StartDay_Waste_Button_Text</members>
         <members>StartDay_WeatherForecast_Text</members>
+        <members>StartStopTimer_BreakDurationText</members>
+        <members>StartStopTimer_ErrorMessage</members>
+        <members>StartStopTimer_ErrorTitle</members>
+        <members>StartStopTimer_LogBreakDescription</members>
+        <members>StartStopTimer_LogBreakText</members>
+        <members>StartStopTimer_PauseWorkDescription</members>
+        <members>StartStopTimer_PauseWorkText</members>
+        <members>StartStopTimer_ResumeWorkDescription</members>
+        <members>StartStopTimer_ResumeWorkText</members>
+        <members>StartStopTimer_SaveButtonText</members>
+        <members>StartStopTimer_SuccessMessage</members>
+        <members>StartStopTimer_SuccessTitle</members>
+        <members>StartStopTimer_Title</members>
         <members>TimeSheetEntryForm_BackButton</members>
         <members>TimeSheetEntryForm_CancelButton</members>
         <members>TimeSheetEntryForm_ContinueButton</members>
@@ -1858,6 +1989,7 @@
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
         <members>Work_Order_Screen_Flow_Service_Report_Review_Flag</members>
         <members>Work_Order_Send_Customer_Notification_Crew_Inbound</members>
+        <members>Work_Order_Set_Customer_Notification_Flag</members>
         <members>Work_Plan_Extra_Work_Steps</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
@@ -1966,6 +2098,7 @@
         <members>Work_Order_Screen_Flow_Create_Waste_Depot_Visit</members>
         <members>Work_Order_Screen_Flow_Service_Report_Review_Flag</members>
         <members>Work_Order_Send_Customer_Notification_Crew_Inbound</members>
+        <members>Work_Order_Set_Customer_Notification_Flag</members>
         <members>Work_Plan_Extra_Work_Steps</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
@@ -2371,6 +2504,7 @@
         <members>loadingSpinner</members>
         <members>locationMonitor</members>
         <members>locationPassport</members>
+        <members>locationPassportImages</members>
         <members>locationServiceUtil</members>
         <members>materialPickup</members>
         <members>nextAppointmentPicker</members>
@@ -3604,6 +3738,7 @@
         <name>UiFormatSpecificationSet</name>
     </types>
     <types>
+        <members>Account.Active_Commercial_Account_VAT</members>
         <members>Location_Visit__c.Internal_Visitor_Mandatory</members>
         <members>Location_Visit__c.Planned_Date</members>
         <members>Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start</members>

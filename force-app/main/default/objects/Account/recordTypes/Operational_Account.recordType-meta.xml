@@ -86,6 +86,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Financial_Client_Type_ATAK__c</picklist>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Group__c</picklist>
         <values>
             <fullName>Kantoorgebouwen %2F Immeubles de bureaux</fullName>
@@ -276,15 +287,15 @@
     <picklistValues>
         <picklist>Rating</picklist>
         <values>
-            <fullName>Cold</fullName>
+            <fullName>A</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Hot</fullName>
+            <fullName>B</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Warm</fullName>
+            <fullName>C</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -358,19 +369,15 @@
     <picklistValues>
         <picklist>Status__c</picklist>
         <values>
-            <fullName>3rd Party</fullName>
+            <fullName>Active</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Competitor</fullName>
+            <fullName>Inactive</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Customer</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Prospect</fullName>
+            <fullName>On Hold</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -378,10 +385,6 @@
         <picklist>Sub_Type__c</picklist>
         <values>
             <fullName>Depot KGC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Other</fullName>
             <default>false</default>
         </values>
         <values>

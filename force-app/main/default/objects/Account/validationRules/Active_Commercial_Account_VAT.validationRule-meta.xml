@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Commercial_Account_VAT</fullName>
+    <active>true</active>
+    <errorConditionFormula>RecordType.Name = &apos;Commercial Account&apos; &amp;&amp; TEXT(Status__c) = &apos;Active&apos; &amp;&amp;  Enterprise_Number__c = &apos;&apos;</errorConditionFormula>
+    <errorMessage>Enterprise Number is required for active commercial accounts</errorMessage>
+</ValidationRule>

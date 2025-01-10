@@ -198,7 +198,6 @@ export default class TimeSheetCalendar extends LightningElement {
     Calendar_ErrorToast_SubmitTimeSheet_Message,
     Calendar_ErrorToast_EditUserSettings_Message,
     Calendar_ErrorToast_NewUserSettings_Message,
-    Calendar_ErrorToast_UserSettings_Message,
     Calendar_ErrorToast_Title,
     Calendar_SuccessToast_Title,
     Calendar_SuccessToast_SubmittedTimeSheet_Message,

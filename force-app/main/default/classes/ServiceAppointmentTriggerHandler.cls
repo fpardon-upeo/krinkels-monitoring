@@ -15,6 +15,7 @@ public with sharing class ServiceAppointmentTriggerHandler {
         List<ServiceAppointment> serviceAppointmentsToUpdate = new List<ServiceAppointment>();
         List<String> workOrderIds = new List<String>();
         for(ServiceAppointment sa : newServiceAppointments){
+
             if(sa.ParentRecordId.getSobjectType() == WorkOrder.SObjectType){
                 serviceAppointmentsToUpdate.add(sa);
                 workOrderIds.add(sa.ParentRecordId);
@@ -66,6 +67,9 @@ public with sharing class ServiceAppointmentTriggerHandler {
                     ServiceAppointment appointment = new ServiceAppointment();
                     appointment.Id = sa.Id;
                     appointment.Asset__c = wo.AssetId;
+                    appointment.Original_Due_Date__c = sa.Original_Due_Date__c;
+                    appointment.Original_Earliest_Start_Permitted__c = sa.EarliestStartTime ;
+                    appointment.Original_Due_Date__c = sa.DueDate;
 
                     // Get financial accounts from our map
                     List<String> accountNames = assetToFinancialAccounts.get(wo.AssetId);

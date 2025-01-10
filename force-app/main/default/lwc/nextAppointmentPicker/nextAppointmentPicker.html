@@ -210,12 +210,12 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Internal Work Order</h2>
+        <h2 class="sheet-title">{labels.AppointmentPicker_InternalWO_Title}</h2>
       </div>
       <div class="bottom-sheet-content">
         <c-internal-work-order-form
           service-resource-id={serviceResourceId}
-          record-id={serviceResourceId}
+          record-id={recordId}
           oncloseform={handleWorkOrderCreated}
         >
         </c-internal-work-order-form>
@@ -234,7 +234,9 @@
     <div class="mobile-bottom-sheet large-sheet">
       <div class="bottom-sheet-header">
         <div class="drag-indicator"></div>
-        <h2 class="sheet-title">Select Appointment</h2>
+        <h2 class="sheet-title">
+          {labels.AppointmentPicker_Select_Appointment_Title}
+        </h2>
       </div>
       <div class="bottom-sheet-content">
         <div class="table-container">

@@ -86,6 +86,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Financial_Client_Type_ATAK__c</picklist>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Group__c</picklist>
         <values>
             <fullName>Kantoorgebouwen %2F Immeubles de bureaux</fullName>
@@ -276,15 +287,11 @@
     <picklistValues>
         <picklist>Rating</picklist>
         <values>
-            <fullName>Cold</fullName>
+            <fullName>Non preferred</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Hot</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Warm</fullName>
+            <fullName>Preferred</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -377,11 +384,23 @@
     <picklistValues>
         <picklist>Sub_Type__c</picklist>
         <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Depot KGC</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Other</fullName>
+            <fullName>Interim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subcontractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplier</fullName>
             <default>false</default>
         </values>
         <values>

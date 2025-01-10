@@ -1,48 +1,56 @@
 <template>
   <div class="slds-card slds-p-around_medium">
-    <div class="slds-text-heading_medium slds-p-bottom_medium">{labels.dashboardTitle}</div>
+    <div class="slds-text-heading_medium slds-p-bottom_medium">
+      {labels.dashboardTitle}
+    </div>
     <div class="slds-grid_vertical">
       <div class="slds-col">
         <div class="slds-grid slds-grid_align-spread">
-        <div class="slds-col slds-size_1-of-2">
-          <div class="slider-container slds-m-right_small hover-effect">
-            <div class="slds-grid">
-              <div class="slds-col">
-                <lightning-icon icon-name="utility:truck" size="small"></lightning-icon>
-              </div>
-              <div class="slds-col">
-                <div class="slds-grid_vertical">
-                  <div class="slds-col slds-p-left_medium">
-                    <span> KM LOGGED </span>
+          <div class="slds-col slds-size_1-of-2">
+            <div class="slider-container slds-m-right_small hover-effect">
+              <div class="slds-grid">
+                <div class="slds-col">
+                  <lightning-icon
+                    icon-name="utility:truck"
+                    size="small"
+                  ></lightning-icon>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-grid_vertical">
+                    <div class="slds-col slds-p-left_medium">
+                      <span> {labels.LocationMonitor_KMLogged_Text} </span>
+                    </div>
+                    <div class="slds-col slds-p-left_medium">
+                      <span>{timeSheetData.Total_KM__c} KM</span>
+                    </div>
                   </div>
-                  <div class="slds-col slds-p-left_medium">
-                    <span>{timeSheetData.Total_KM__c} KM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+            <div class={containerStyleBreak}>
+              <div class="slds-grid">
+                <div class="slds-col">
+                  <lightning-icon
+                    icon-name="utility:food_and_drink"
+                    size="small"
+                  ></lightning-icon>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-grid_vertical">
+                    <div class="slds-col slds-p-left_medium">
+                      <span> {labels.LocationMonitor_BreakTime_Text} </span>
+                    </div>
+                    <div class="slds-col slds-p-left_medium">
+                      <span>{timeSheetData.Formatted_Total_Break_Time__c}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="slds-col slds-size_1-of-2">
-          <div class={containerStyleBreak}>
-            <div class="slds-grid">
-              <div class="slds-col">
-                <lightning-icon icon-name="utility:food_and_drink" size="small"></lightning-icon>
-              </div>
-              <div class="slds-col">
-                <div class="slds-grid_vertical">
-                  <div class="slds-col slds-p-left_medium">
-                    <span> BREAK TIME </span>
-                  </div>
-                  <div class="slds-col slds-p-left_medium">
-                    <span>{timeSheetData.Formatted_Total_Break_Time__c}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
       <div class="slds-col">
         <div class="slds-grid slds-grid_align-spread">
@@ -50,15 +58,21 @@
             <div class={containerStyleWorkedHours}>
               <div class="slds-grid">
                 <div class="slds-col">
-                  <lightning-icon icon-name="utility:clock" size="small"></lightning-icon>
+                  <lightning-icon
+                    icon-name="utility:clock"
+                    size="small"
+                  ></lightning-icon>
                 </div>
                 <div class="slds-col">
                   <div class="slds-grid_vertical">
                     <div class="slds-col slds-p-left_medium">
-                      <span> WORK TIME </span>
+                      <span> {labels.LocationMonitor_WorkTime_Text} </span>
                     </div>
                     <div class="slds-col slds-p-left_medium">
-                      <span>{timeSheetData.Formatted_Total_Hours_Minus_Breaks__c} / {timeSheetData.Formatted_Working_Hours_in_Contract__c}</span>
+                      <span
+                        >{timeSheetData.Formatted_Total_Hours_Minus_Breaks__c} /
+                        {timeSheetData.Formatted_Working_Hours_in_Contract__c}</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -69,15 +83,20 @@
             <div class="slider-container hover-effect">
               <div class="slds-grid">
                 <div class="slds-col">
-                  <lightning-icon icon-name="utility:plane" size="small"></lightning-icon>
+                  <lightning-icon
+                    icon-name="utility:plane"
+                    size="small"
+                  ></lightning-icon>
                 </div>
                 <div class="slds-col">
                   <div class="slds-grid_vertical">
                     <div class="slds-col slds-p-left_medium">
-                      <span> TRAVEL TIME </span>
+                      <span> {labels.LocationMonitor_TravelTime_Text} </span>
                     </div>
                     <div class="slds-col slds-p-left_medium">
-                      <span>{timeSheetData.Formatted_Total_Travel_Time__c}</span>
+                      <span
+                        >{timeSheetData.Formatted_Total_Travel_Time__c}</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -95,7 +114,8 @@
           min="0"
           max="5"
           step="0.25"
-          onchange={handleThresholdChange}>
+          onchange={handleThresholdChange}
+        >
         </lightning-slider>
       </div>
 
@@ -116,7 +136,8 @@
                         icon-name="utility:warning"
                         size="x-small"
                         class="slds-m-right_x-small"
-                        variant="inverse">
+                        variant="inverse"
+                      >
                       </lightning-icon>
                       {labels.exceedsThreshold}
                     </div>
@@ -128,19 +149,23 @@
                         icon-name="utility:check"
                         size="x-small"
                         class="slds-m-right_x-small"
-                        variant="inverse">
+                        variant="inverse"
+                      >
                       </lightning-icon>
                       {labels.withinThreshold}
                     </div>
                   </template>
                 </div>
 
-                <div class="slds-col slds-grid slds-grid_align-spread slds-m-top_small">
+                <div
+                  class="slds-col slds-grid slds-grid_align-spread slds-m-top_small"
+                >
                   <div class={wo.locationInfoClass}>
                     <lightning-icon
                       icon-name={wo.locationIcon}
                       size="xx-small"
-                      class="slds-m-right_xx-small">
+                      class="slds-m-right_xx-small"
+                    >
                     </lightning-icon>
                     {wo.statusMessage}
                   </div>
@@ -148,7 +173,8 @@
                     <lightning-formatted-date-time
                       value={wo.startTime}
                       hour="2-digit"
-                      minute="2-digit">
+                      minute="2-digit"
+                    >
                     </lightning-formatted-date-time>
                   </div>
                 </div>

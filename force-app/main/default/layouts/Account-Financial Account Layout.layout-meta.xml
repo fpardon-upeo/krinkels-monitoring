@@ -20,11 +20,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Financial_client_ATAK_Code__c</field>
+                <field>Account_ATAK_Code__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Financial_client_type_ATAK__c</field>
+                <field>Financial_Client_Type_ATAK__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -21,6 +21,16 @@ import InternalWorkOrder_Select_WO_Warning_Text from "@salesforce/label/c.Intern
 import InternalWorkOrder_Select_Account_Text from "@salesforce/label/c.InternalWorkOrder_Select_Account_Text";
 import InternalWorkOrder_Select_Account_Warning_Text from "@salesforce/label/c.InternalWorkOrder_Select_Account_Warning_Text";
 import InternalWorkOrder_Save_Button from "@salesforce/label/c.InternalWorkOrder_Save_Button";
+import InternalWorkOrder_ErrorMessage from "@salesforce/label/c.InternalWorkOrder_ErrorMessage";
+import InternalWorkOrder_ErrorTitle from "@salesforce/label/c.InternalWorkOrder_ErrorTitle";
+import InternalWorkOrder_SuccessTitle from "@salesforce/label/c.InternalWorkOrder_SuccessTitle";
+import InternalWorkOrder_SuccessMessage from "@salesforce/label/c.InternalWorkOrder_SuccessMessage";
+import InternalWorkOrder_Internal_Depot_Label from "@salesforce/label/c.InternalWorkOrder_Internal_Depot_Label";
+import InternalWorkOrder_Waste_Management_Label from "@salesforce/label/c.InternalWorkOrder_Waste_Management_Label";
+import InternalWorkOrder_Name_Label from "@salesforce/label/c.InternalWorkOrder_Name_Label";
+import InternalWorkOrder_WasteTypes_Label from "@salesforce/label/c.InternalWorkOrder_WasteTypes_Label";
+import InternalWorkOrder_City_Label from "@salesforce/label/c.InternalWorkOrder_City_Label";
+import InternalWorkOrder_PostalCode_Label from "@salesforce/label/c.InternalWorkOrder_PostalCode_Label";
 
 import { NavigationMixin } from "lightning/navigation";
 
@@ -79,12 +89,28 @@ export default class InternalWorkOrderForm extends NavigationMixin(
     InternalWorkOrder_Select_WO_Warning_Text,
     InternalWorkOrder_Select_Account_Text,
     InternalWorkOrder_Select_Account_Warning_Text,
-    InternalWorkOrder_Save_Button
+    InternalWorkOrder_Save_Button,
+    InternalWorkOrder_ErrorMessage,
+    InternalWorkOrder_ErrorTitle,
+    InternalWorkOrder_SuccessTitle,
+    InternalWorkOrder_SuccessMessage,
+    InternalWorkOrder_Internal_Depot_Label,
+    InternalWorkOrder_Waste_Management_Label,
+    InternalWorkOrder_Name_Label,
+    InternalWorkOrder_WasteTypes_Label,
+    InternalWorkOrder_City_Label,
+    InternalWorkOrder_PostalCode_Label
   };
 
   workOrderTypeOptions = [
-    { label: "Internal Depot", value: "Internal Depot" },
-    { label: "Waste Management", value: "Waste Management" }
+    {
+      label: this.labels.InternalWorkOrder_Internal_Depot_Label,
+      value: "Internal Depot"
+    },
+    {
+      label: this.labels.InternalWorkOrder_Waste_Management_Label,
+      value: "Waste Management"
+    }
   ];
 
   columns = [
@@ -97,13 +123,24 @@ export default class InternalWorkOrderForm extends NavigationMixin(
   ];
 
   accountWasteColumns = [
-    { label: "Name", fieldName: "Name" },
-    { label: "Waste Types", fieldName: "Type_Of_Waste__c" },
-    { label: "City", fieldName: "ShippingCity" },
-    { label: "Postal Code", fieldName: "ShippingPostalCode" }
+    { label: this.labels.InternalWorkOrder_Name_Label, fieldName: "Name" },
+    {
+      label: this.labels.InternalWorkOrder_WasteTypes_Label,
+      fieldName: "Type_Of_Waste__c"
+    },
+    {
+      label: this.labels.InternalWorkOrder_City_Label,
+      fieldName: "ShippingCity"
+    },
+    {
+      label: this.labels.InternalWorkOrder_PostalCode_Label,
+      fieldName: "ShippingPostalCode"
+    }
   ];
 
-  accountInternalDepotColumns = [{ label: "Name", fieldName: "Name" }];
+  accountInternalDepotColumns = [
+    { label: this.labels.InternalWorkOrder_Name_Label, fieldName: "Name" }
+  ];
 
   serviceAppointments = [];
   wasteAccounts = [];
@@ -535,8 +572,8 @@ export default class InternalWorkOrderForm extends NavigationMixin(
 
   showToastSuccess() {
     const event = new ShowToastEvent({
-      title: "Success",
-      message: "The Internal Work Order has been created",
+      title: this.labels.InternalWorkOrder_SuccessTitle,
+      message: this.labels.InternalWorkOrder_SuccessMessage,
       variant: "success"
     });
     this.dispatchEvent(event);
@@ -544,8 +581,8 @@ export default class InternalWorkOrderForm extends NavigationMixin(
 
   showToastError() {
     const event = new ShowToastEvent({
-      title: "Error",
-      message: "An error occurred while creating the Internal Work Order",
+      title: this.labels.InternalWorkOrder_ErrorTitle,
+      message: this.labels.InternalWorkOrder_ErrorMessage,
       variant: "error"
     });
     this.dispatchEvent(event);

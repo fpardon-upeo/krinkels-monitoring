@@ -34,7 +34,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>Hot</value>
+            <value></value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

@@ -29,6 +29,21 @@
                 <default>false</default>
                 <label>3rd Party</label>
             </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

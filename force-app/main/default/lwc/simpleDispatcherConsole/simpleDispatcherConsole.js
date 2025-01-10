@@ -6,9 +6,10 @@ import { LightningElement, track, api } from "lwc";
 import getServiceTerritories from "@salesforce/apex/SchedulingController.getServiceTerritories";
 import getServiceResources from "@salesforce/apex/SchedulingController.getServiceResources";
 import userId from "@salesforce/user/Id";
+import SimpleDispatcher_TerritoryLabel from "@salesforce/label/c.SimpleDispatcher_TerritoryLabel";
+import SimpleDispatcher_ResourceLabel from "@salesforce/label/c.SimpleDispatcher_ResourceLabel";
 
 export default class SimpleDispatcherConsole extends LightningElement {
-
   @track territoryOptions = [];
   @track resourceOptions = [];
   @track selectedTerritory;
@@ -16,18 +17,23 @@ export default class SimpleDispatcherConsole extends LightningElement {
   _draggedAssetId;
   _draggedAssetDetails;
 
+  labels = {
+    SimpleDispatcher_TerritoryLabel,
+    SimpleDispatcher_ResourceLabel
+  };
+
   get draggedAssetDetails() {
     return this._draggedAssetDetails;
   }
   @api
   set draggedAssetDetails(value) {
     this._draggedAssetDetails = value;
-    console.log('SimpleDispatcherConsole received draggedAssetDetails:', value);
+    console.log("SimpleDispatcherConsole received draggedAssetDetails:", value);
   }
 
   @api
   set draggedAssetId(value) {
-    console.log('SimpleDispatcherConsole received draggedAssetId:', value);
+    console.log("SimpleDispatcherConsole received draggedAssetId:", value);
     this._draggedAssetId = value;
     // If you need to pass it to resource calendar, you might want to refresh something here
   }
@@ -36,7 +42,7 @@ export default class SimpleDispatcherConsole extends LightningElement {
     return this._draggedAssetId;
   }
   connectedCallback() {
-    this.getTerritories()
+    this.getTerritories();
   }
 
   getTerritories() {
@@ -71,8 +77,8 @@ export default class SimpleDispatcherConsole extends LightningElement {
         result.forEach((resource) => {
           resources.push({
             label: resource.Name,
-            value: resource.Id,
-          })
+            value: resource.Id
+          });
         });
         this.resourceOptions = resources;
       })
@@ -91,6 +97,4 @@ export default class SimpleDispatcherConsole extends LightningElement {
     console.log(event.detail.value);
     this.selectedResource = event.detail.value;
   }
-
-
 }

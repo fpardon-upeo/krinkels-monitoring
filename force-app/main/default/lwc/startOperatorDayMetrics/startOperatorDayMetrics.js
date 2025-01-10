@@ -12,6 +12,11 @@ import firstWorkOrderChecker from "@salesforce/apex/FirstWorkOrderChecker.hasFir
 import getNextHourForecast from "@salesforce/apex/WeatherService.getNextHourForecast";
 import StartDay_TodayProgress from "@salesforce/label/c.StartDay_TodayProgress";
 import StartDay_WeatherForecast_Text from "@salesforce/label/c.StartDay_WeatherForecast_Text";
+import StartDay_LocationNotAvailableText from "@salesforce/label/c.StartDay_LocationNotAvailableText";
+import StartDay_ErrorTitle from "@salesforce/label/c.StartDay_ErrorTitle";
+import StartDay_ErrorMessage from "@salesforce/label/c.StartDay_ErrorMessage";
+import StartDay_AppointmentsCompleteWord from "@salesforce/label/c.StartDay_AppointmentsCompleteWord";
+
 export default class StartOperatorDayMetrics extends NavigationMixin(
   LightningElement
 ) {
@@ -32,7 +37,11 @@ export default class StartOperatorDayMetrics extends NavigationMixin(
 
   labels = {
     StartDay_TodayProgress,
-    StartDay_WeatherForecast_Text
+    StartDay_WeatherForecast_Text,
+    StartDay_LocationNotAvailableText,
+    StartDay_ErrorTitle,
+    StartDay_ErrorMessage,
+    StartDay_AppointmentsCompleteWord
   };
 
   @track nextAppointment = {};
@@ -203,7 +212,11 @@ export default class StartOperatorDayMetrics extends NavigationMixin(
       this.dispatchEvent(new CustomEvent("refreshall"));
     } catch (error) {
       console.error("Error refreshing data:", error);
-      this.sendToastMessage("Error", "Failed to refresh data", "error");
+      this.sendToastMessage(
+        this.labels.StartDay_ErrorTitle,
+        this.labels.StartDay_ErrorMessage,
+        "error"
+      );
     }
   }
 
@@ -296,7 +309,7 @@ export default class StartOperatorDayMetrics extends NavigationMixin(
       }
     } else {
       // LocationService is not available
-      const error = new Error("LocationService Is Not Available");
+      const error = new Error(this.labels.StartDay_LocationNotAvailableText);
       await this.fetchWeather(51.294896, 4.437022);
     }
   }

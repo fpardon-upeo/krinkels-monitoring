@@ -81,6 +81,8 @@ export default class LocationPassport extends NavigationMixin(
     if (data) {
       console.log("data: ", data);
       this.accountId = data.fields.AccountId.value;
+      this.template.querySelector('c-location-passport-images').accountId = this.accountId;
+      this.template.querySelector('c-location-passport-images').loadImages();
       console.log("accountId: ", this.accountId);
     } else if (error) {
       console.error("Error loading work order:", error);

@@ -3857,6 +3857,7 @@
     <tabs>standard-MaintenancePlan</tabs>
     <tabs>standard-WorkOrder</tabs>
     <tabs>standard-ServiceAppointment</tabs>
+    <tabs>standard-TimeSheet</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Feed</tabs>

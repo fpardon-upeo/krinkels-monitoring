@@ -1308,7 +1308,7 @@ private class ATAKPerformanceServiceTest {
         for(ATAKPerformanceWrapper.Data data : wrapper.data) {
             if(data.performance_resource_type == 'E') {
                 foundMaterial = true;
-                System.assertEquals('10.00', data.quantity, 'Material quantity should match');
+                System.assertEquals('1.00000', data.quantity, 'Material quantity should match');
                 System.assertEquals('MU', data.quantity_registration_unit, 'Should use MU for materials');
                 break;
             }

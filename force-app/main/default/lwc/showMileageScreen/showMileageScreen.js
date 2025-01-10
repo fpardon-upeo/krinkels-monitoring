@@ -105,7 +105,7 @@ export default class ShowMileageScreen extends LightningElement {
       ) {
         uiapi {
           query {
-            AssignedResource(
+            AssignedResource(first: 200
               where: {
                 and: [
                   { ServiceResourceId: { eq: $serviceResourceId } }
