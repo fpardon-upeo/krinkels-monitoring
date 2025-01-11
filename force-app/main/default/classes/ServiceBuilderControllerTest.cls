@@ -92,7 +92,7 @@ private class ServiceBuilderControllerTest {
       PricebookEntryId = standardPBE.Id,
       Quantity = 1,
       UnitPrice = 1,
-      Project_Code__c = 'TEST001' // Matches the ATAK Project
+      Project_Code__c = 'TEST001'
     );
     insert cli;
   }
@@ -111,44 +111,216 @@ private class ServiceBuilderControllerTest {
   static void testGetContractLines() {
     ServiceContract sc = [SELECT Id FROM ServiceContract LIMIT 1];
 
-    List<ContractLineItem> CLI = [
-      SELECT Id
-      FROM ContractLineItem
-      WHERE ServiceContractId = :sc.Id
-    ];
+    List<ContractLineItem> CLI = ServiceBuilderController.getContractLines(
+      sc.Id
+    );
 
     Assert.isTrue(CLI.size() > 0, 'Contains CLI(s).');
   }
 
   @isTest
   static void testDeleteContractLine() {
-    List<ContractLineItem> CLI = [
+    // Get the CLI created in test setup
+    ContractLineItem cli = [SELECT Id FROM ContractLineItem LIMIT 1];
+
+    // Test successful deletion
+    Boolean result = ServiceBuilderController.deleteContractLine(cli.Id);
+    Assert.isTrue(result, 'Deletion should return true');
+
+    // Verify the CLI was actually deleted
+    List<ContractLineItem> remainingCLIs = [
       SELECT Id
+      FROM ContractLineItem
+      WHERE Id = :cli.Id
+    ];
+    Assert.areEqual(0, remainingCLIs.size(), 'CLI should be deleted');
+
+    // Test deletion with invalid ID
+    Boolean failResult = ServiceBuilderController.deleteContractLine(
+      '001000000000000'
+    );
+    Assert.isFalse(failResult, 'Deletion with invalid ID should return false');
+  }
+
+  @isTest
+  static void testGetWrappedContractLines() {
+    ServiceContract sc = [SELECT Id FROM ServiceContract LIMIT 1];
+    String result = ServiceBuilderController.getWrappedContractLines(sc.Id);
+    Assert.isNotNull(result, 'Result should not be null');
+
+    //Wrong ID
+    String resultNull = ServiceBuilderController.getWrappedContractLines(
+      '001000000000000AAA'
+    );
+    Assert.areEqual(
+      '{"locations":[]}',
+      resultNull,
+      'Should return empty wrapper'
+    );
+  }
+
+  @isTest
+  static void testGetFinancialAccountName() {
+    Account acc = [SELECT Id, Name FROM Account LIMIT 1];
+    String name = ServiceBuilderController.getFinancialAccountName(acc.Id);
+    Assert.areEqual(acc.Name, name, 'Financial account name should match');
+  }
+
+  @isTest
+  static void testInsertOrRemoveContractLineFinancialAccount() {
+    ContractLineItem cli = [SELECT Id FROM ContractLineItem LIMIT 1];
+    Account financialAccount = [SELECT Id FROM Account LIMIT 1];
+
+    // Test insert
+    ServiceBuilderController.insertOrRemoveContractLineFinancialAccount(
+      'Test Link',
+      cli.Id,
+      financialAccount.Id,
+      'insert'
+    );
+
+    List<Contract_Line_Financial_Account__c> links = [
+      SELECT Id
+      FROM Contract_Line_Financial_Account__c
+      WHERE Contract_Line_Item__c = :cli.Id
+    ];
+    Assert.areEqual(1, links.size(), 'Link should have been created');
+
+    // Test delete
+    ServiceBuilderController.insertOrRemoveContractLineFinancialAccount(
+      'Test Link',
+      cli.Id,
+      financialAccount.Id,
+      'delete'
+    );
+
+    links = [
+      SELECT Id
+      FROM Contract_Line_Financial_Account__c
+      WHERE Contract_Line_Item__c = :cli.Id
+    ];
+    Assert.areEqual(0, links.size(), 'Link should have been deleted');
+  }
+
+  @isTest
+  static void testUpdateServiceContractLocationType() {
+    ServiceContract sc = [SELECT Id FROM ServiceContract LIMIT 1];
+
+    ServiceBuilderController.updateServiceContractLocationType(
+      sc.Id,
+      'Address'
+    );
+
+    ServiceContract updatedSC = [
+      SELECT Id, Location_Type__c
+      FROM ServiceContract
+      WHERE Id = :sc.Id
+    ];
+    Assert.areEqual(
+      'Address',
+      updatedSC.Location_Type__c,
+      'Location type should have been updated to Address'
+    );
+  }
+
+  @isTest
+  static void testUpdateServiceContractLocationTypeException() {
+    ServiceContract sc = [SELECT Id FROM ServiceContract LIMIT 1];
+
+    try {
+      ServiceBuilderController.updateServiceContractLocationType(
+        '001000000000000AAA',
+        'Address'
+      );
+      Assert.fail('Should have thrown an exception for invalid ID');
+    } catch (AuraHandledException e) {
+      // Expected exception
+    }
+  }
+
+  @isTest
+  static void testPrepareContractForNextYear() {
+    ServiceContract sc = [SELECT Id FROM ServiceContract LIMIT 1];
+    ContractLineItem cli = [
+      SELECT Id, StartDate, EndDate
       FROM ContractLineItem
       LIMIT 1
     ];
 
-    Boolean result = ServiceBuilderController.deleteContractLine(CLI[0].Id);
+    // Set dates and recurrence pattern
+    cli.StartDate = Date.today();
+    cli.EndDate = Date.today().addDays(30);
+    cli.Recurrence_Pattern__c = 'FREQ=WEEKLY;INTERVAL=1;BYDAY=MO;UNTIL=20241218T000000Z';
+    update cli;
 
-    Assert.isTrue(
-      result,
-      'Result should be true which means the CLI was deelted.'
-    );
+    Boolean result = ServiceBuilderController.prepareContractForNextYear(sc.Id);
+    Assert.isTrue(result, 'Contract preparation should succeed');
 
-    Boolean resultFalse = ServiceBuilderController.deleteContractLine(
-      'randomID'
-    );
-    Assert.isFalse(resultFalse, 'Result should be false as fake ID as passed');
-
-    List<ContractLineItem> contractLineItem = [
-      SELECT Id
+    ContractLineItem updated = [
+      SELECT StartDate, EndDate, Recurrence_Pattern__c
       FROM ContractLineItem
-      WHERE Id = :CLI[0].Id
+      WHERE Id = :cli.Id
     ];
 
-    Assert.isTrue(
-      contractLineItem.size() == 0,
-      'Length of the array should be 0'
+    Assert.areEqual(
+      cli.StartDate.addYears(1),
+      updated.StartDate,
+      'Start date should be increased by 1 year' + updated.StartDate
+    );
+    Assert.areEqual(
+      cli.EndDate.addYears(1),
+      updated.EndDate,
+      'End date should be increased by 1 year' + updated.EndDate
+    );
+  }
+
+  @isTest
+  static void testSaveContractLine() {
+    // Get existing CLI
+    ContractLineItem cli = [
+      SELECT Id, Product2Id, Quantity
+      FROM ContractLineItem
+      LIMIT 1
+    ];
+
+    // Test update
+    cli.Quantity = 2;
+    ContractLineItem result = ServiceBuilderController.saveContractLine(cli);
+
+    // Verify
+    Assert.areEqual(2, result.Quantity, 'Quantity should be updated to 2 ');
+    Assert.areEqual(0, result.UnitPrice, 'UnitPrice should be 0');
+  }
+
+  @isTest
+  static void testGetProductRecordTypeIds() {
+    // Call the method
+    Map<String, String> recordTypeIds = ServiceBuilderController.getProductRecordTypeIds();
+
+    // Get the expected Record Type IDs directly
+    Id serviceRTId = Schema.SObjectType.Product2.getRecordTypeInfosByDeveloperName()
+      .get('Service')
+      .getRecordTypeId();
+    Id servicePackageRTId = Schema.SObjectType.Product2.getRecordTypeInfosByDeveloperName()
+      .get('Service_Package')
+      .getRecordTypeId();
+
+    // Verify the results
+    Assert.isNotNull(recordTypeIds, 'Record Type map should not be null');
+    Assert.areEqual(
+      2,
+      recordTypeIds.size(),
+      'Should return exactly 2 Record Type IDs'
+    );
+    Assert.areEqual(
+      serviceRTId,
+      recordTypeIds.get('Service'),
+      'Service Record Type ID should match'
+    );
+    Assert.areEqual(
+      servicePackageRTId,
+      recordTypeIds.get('ServicePackage'),
+      'Service Package Record Type ID should match'
     );
   }
 }

@@ -15,7 +15,7 @@ public without sharing class ServiceBuilderController {
         Default_LMRA__c,
         StartDate,
         EndDate,
-        Notify_Customer_When_En_Route__c,
+        Location_Type__c,
         (SELECT Id FROM MaintenancePlans)
       FROM ServiceContract
       WHERE Id = :recordId
@@ -62,7 +62,6 @@ public without sharing class ServiceBuilderController {
         Geolocation__Latitude__s,
         Geolocation__Longitude__s,
         Project_Code__c,
-        Notify_Customer_When_En_Route__c,
         (
           SELECT
             Id,
@@ -106,8 +105,7 @@ public without sharing class ServiceBuilderController {
         Location__PostalCode__s,
         Location__StateCode__s,
         Location__CountryCode__s,
-        Project_Code__c,
-        Notify_Customer_When_En_Route__c
+        Project_Code__c
       FROM ContractLineItem
       WHERE ServiceContractId = :recordId
     ];
@@ -121,13 +119,14 @@ public without sharing class ServiceBuilderController {
 
   @AuraEnabled
   public static Boolean deleteContractLine(String contractLineId) {
-    ContractLineItem contractLine = [
-      SELECT Id
-      FROM ContractLineItem
-      WHERE Id = :contractLineId
-      LIMIT 1
-    ];
     try {
+      ContractLineItem contractLine = [
+        SELECT Id
+        FROM ContractLineItem
+        WHERE Id = :contractLineId
+        LIMIT 1
+      ];
+
       delete contractLine;
       return true;
     } catch (Exception e) {
@@ -198,7 +197,6 @@ public without sharing class ServiceBuilderController {
           Geolocation__Latitude__s,
           Geolocation__Longitude__s,
           Project_Code__c,
-          Notify_Customer_When_En_Route__c,
           (
             SELECT
               Id,
@@ -318,5 +316,25 @@ public without sharing class ServiceBuilderController {
     //Create a new Platform Event
     Contract_Event__e event = new Contract_Event__e(Record_Id__c = contractId);
     EventBus.publish(event);
+  }
+
+  @AuraEnabled
+  public static Map<String, String> getProductRecordTypeIds() {
+    Map<String, String> recordTypeMap = new Map<String, String>();
+
+    recordTypeMap.put(
+      'Service',
+      Schema.SObjectType.Product2.getRecordTypeInfosByDeveloperName()
+        .get('Service')
+        .getRecordTypeId()
+    );
+    recordTypeMap.put(
+      'ServicePackage',
+      Schema.SObjectType.Product2.getRecordTypeInfosByDeveloperName()
+        .get('Service_Package')
+        .getRecordTypeId()
+    );
+
+    return recordTypeMap;
   }
 }

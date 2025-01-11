@@ -16,6 +16,7 @@ import ContractLineEditor_SuccessTitle from "@salesforce/label/c.ContractLineEdi
 import ContractLineEditor_SuccessMessage from "@salesforce/label/c.ContractLineEditor_SuccessMessage";
 import ContractLineEditor_ErrorTitle from "@salesforce/label/c.ContractLineEditor_ErrorTitle";
 import ContractLineEditor_ErrorMessage from "@salesforce/label/c.ContractLineEditor_ErrorMessage";
+import ContractLineEditor_ErrorMessageDuplicates from "@salesforce/label/c.ContractLineEditor_ErrorMessageDuplicates";
 
 export default class ContractLineEditor extends LightningElement {
   //--------------------------------------API------------------------------------------//

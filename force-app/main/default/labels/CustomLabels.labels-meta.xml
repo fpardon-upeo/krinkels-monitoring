@@ -3757,4 +3757,148 @@
         <shortDescription>StartStopTimer_Title</shortDescription>
         <value>Pause or resume the work</value>
     </labels>
+    <labels>
+        <fullName>Mileage_Allowance_FieldLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Allowance_FieldLabel</shortDescription>
+        <value>Allowance</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Ending_Mileage_FieldLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Ending_Mileage_FieldLabel</shortDescription>
+        <value>Ending Mileage</value>
+    </labels>
+    <labels>
+        <fullName>Mileage_Starting_Mileage_FieldLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mileage_Starting_Mileage_FieldLabel</shortDescription>
+        <value>Starting Mileage</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_ActionsColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_ActionsColumnLabel</shortDescription>
+        <value>Actions</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_CalculatedDurationColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_CalculatedDurationColumnLabel</shortDescription>
+        <value>Calc. Dur.</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_CalculatedDurationHelpText</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_CalculatedDurationHelpText</shortDescription>
+        <value>Calculated Duration in Minutes</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_CityColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_CityColumnLabel</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_EndDateColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_EndDateColumnLabel</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_EstimatedDurationColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_EstimatedDurationColumnLabel</shortDescription>
+        <value>Est. Dur.</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_EstimatedDurationHelpText</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_EstimatedDurationHelpText</shortDescription>
+        <value>Estimated Duration in Minutes</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_LatitudeColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_LatitudeColumnLabel</shortDescription>
+        <value>Latitude</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_LongitudeColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_LongitudeColumnLabel</shortDescription>
+        <value>Longitude</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_MissingFieldsMessage</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_MissingFieldsMessage</shortDescription>
+        <value>Missing fields</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_ProjectCodeColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_ProjectCodeColumnLabel</shortDescription>
+        <value>Code</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_ServiceTypeColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_ServiceTypeColumnLabel</shortDescription>
+        <value>Service Type</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_StartDateColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_StartDateColumnLabel</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_StreetColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_StreetColumnLabel</shortDescription>
+        <value>Street</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_ZipCodeColumnLabel</fullName>
+        <categories>Mileage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_ZipCodeColumnLabel</shortDescription>
+        <value>Zip Code</value>
+    </labels>
 </CustomLabels>

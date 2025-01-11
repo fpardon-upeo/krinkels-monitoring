@@ -4,6 +4,7 @@
     <columns>NAME</columns>
     <columns>Type__c</columns>
     <columns>JSON_Body__c</columns>
+    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

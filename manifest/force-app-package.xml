@@ -1298,12 +1298,14 @@
         <members>Mileage_Add_In_Entry_Description</members>
         <members>Mileage_Add_Out_Entry</members>
         <members>Mileage_Add_Out_Entry_Description</members>
+        <members>Mileage_Allowance_FieldLabel</members>
         <members>Mileage_Cancel_Button</members>
         <members>Mileage_ChangeWorkOrderText</members>
         <members>Mileage_Edit_Button</members>
         <members>Mileage_Edit_Entry</members>
         <members>Mileage_Edit_Entry_Header</members>
         <members>Mileage_End_day</members>
+        <members>Mileage_Ending_Mileage_FieldLabel</members>
         <members>Mileage_Entries_Header</members>
         <members>Mileage_ErrorMessageLoadingEntries</members>
         <members>Mileage_ErrorTitle</members>
@@ -1321,6 +1323,7 @@
         <members>Mileage_SelectAppointmentText</members>
         <members>Mileage_SelectWorkOrderText</members>
         <members>Mileage_Start_Day</members>
+        <members>Mileage_Starting_Mileage_FieldLabel</members>
         <members>Mileage_SuccessMessageEditEntry</members>
         <members>Mileage_SuccessMessageNewEntry</members>
         <members>Mileage_SuccessTitle</members>
@@ -1375,6 +1378,11 @@
         <members>ScheduleWO_SuccessMessage</members>
         <members>ScheduleWO_SuccessTitle</members>
         <members>Send_Sign_Request</members>
+        <members>ServiceBuilder_ActionsColumnLabel</members>
+        <members>ServiceBuilder_CalculatedDurationColumnLabel</members>
+        <members>ServiceBuilder_CalculatedDurationHelpText</members>
+        <members>ServiceBuilder_CityColumnLabel</members>
+        <members>ServiceBuilder_EndDateColumnLabel</members>
         <members>ServiceBuilder_ErrorMessageCompleteRequiredFields</members>
         <members>ServiceBuilder_ErrorMessageDeleteRecord</members>
         <members>ServiceBuilder_ErrorMessageLoadingCLI</members>
@@ -1382,11 +1390,21 @@
         <members>ServiceBuilder_ErrorMessageRecurrenceApplied</members>
         <members>ServiceBuilder_ErrorMessageSavingRecord</members>
         <members>ServiceBuilder_ErrorTitle</members>
+        <members>ServiceBuilder_EstimatedDurationColumnLabel</members>
+        <members>ServiceBuilder_EstimatedDurationHelpText</members>
+        <members>ServiceBuilder_LatitudeColumnLabel</members>
+        <members>ServiceBuilder_LongitudeColumnLabel</members>
+        <members>ServiceBuilder_MissingFieldsMessage</members>
+        <members>ServiceBuilder_ProjectCodeColumnLabel</members>
+        <members>ServiceBuilder_ServiceTypeColumnLabel</members>
+        <members>ServiceBuilder_StartDateColumnLabel</members>
+        <members>ServiceBuilder_StreetColumnLabel</members>
         <members>ServiceBuilder_SuccessMessageDeleteRecord</members>
         <members>ServiceBuilder_SuccessMessageRecurrenceApplied</members>
         <members>ServiceBuilder_SuccessMessageSavingRecord</members>
         <members>ServiceBuilder_SuccessTitle</members>
         <members>ServiceBuilder_WarningText</members>
+        <members>ServiceBuilder_ZipCodeColumnLabel</members>
         <members>SimpleDispatcher_ResourceLabel</members>
         <members>SimpleDispatcher_TerritoryLabel</members>
         <members>StartDay_AppointmentsCompleteWord</members>

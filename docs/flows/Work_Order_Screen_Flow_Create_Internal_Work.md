@@ -59,7 +59,7 @@ ServiceAppointment(["💻 <em></em><br/>ServiceAppointment"]):::screens
 click ServiceAppointment "#serviceappointment" "3513791040"
 
 Work_Order_Initial_Screen(["💻 <em></em><br/>Work Order Initial Screen"]):::screens
-click Work_Order_Initial_Screen "#work_order_initial_screen" "935218798"
+click Work_Order_Initial_Screen "#work_order_initial_screen" "2030505052"
 
 Set_Default_Department_Variable --> Get_Asset_for_Work_Order
 Set_Department_Variable --> Get_Asset_for_Work_Order
@@ -132,7 +132,8 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Name|Data Type|Expression|Description|
 |:-- |:--:|:-- |:--  |
-|<!-- -->|<!-- -->|<!-- -->|<!-- -->|
+|assetNameForQuery|String|{!Select_Internal_Work_Type} & " - " & {!departmentType}|<!-- -->|
+|workOrderSubject|String|IF(<br/>{!Machine_Vehicle_Number} <> '',<br/>{!Select_Internal_Work_Type} & " - " & {!Machine_Vehicle_Number} &  " - " & {!Get_Service_Resource.Name},<br/>{!Select_Internal_Work_Type} & " - " & {!Get_Service_Resource.Name}<br/>)|<!-- -->|
 
 
 ## Flow Nodes Details
@@ -624,6 +625,21 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Field Type| Input Field|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
 |Is Required|✅|
+|Parent Field|[Work_Order_Initial_Screen_Section2_Column1](#work_order_initial_screen_section2_column1)|
+
+
+
+
+#### Machine_Vehicle_Number
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Data Type|String|
+|Field Text|Machine/Vehicle Number|
+|Field Type| Input Field|
+|Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+|Is Required|⬜|
+|Visibility Rule|conditionLogic: and<br/>conditions:<br/>&nbsp;&nbsp;leftValueReference: Select_Internal_Work_Type<br/>&nbsp;&nbsp;operator: EqualTo<br/>&nbsp;&nbsp;rightValue:<br/>&nbsp;&nbsp;&nbsp;&nbsp;stringValue: Machine Maintenance<br/>|
 |Parent Field|[Work_Order_Initial_Screen_Section2_Column1](#work_order_initial_screen_section2_column1)|
 
 

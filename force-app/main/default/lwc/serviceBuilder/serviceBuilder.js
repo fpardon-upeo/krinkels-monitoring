@@ -12,6 +12,8 @@ import saveContractLine from "@salesforce/apex/ServiceBuilderController.saveCont
 import deleteContractLine from "@salesforce/apex/ServiceBuilderController.deleteContractLine";
 import insertOrRemoveContractLineFinancialAccount from "@salesforce/apex/ServiceBuilderController.insertOrRemoveContractLineFinancialAccount";
 import updateServiceContractLocationType from "@salesforce/apex/ServiceBuilderController.updateServiceContractLocationType";
+import getProductRecordTypeIds from "@salesforce/apex/ServiceBuilderController.getProductRecordTypeIds";
+
 import getServiceContract from "@salesforce/apex/ServiceBuilderController.getServiceContract";
 import recurrenceModal from "c/recurrencePattern";
 import { subscribe } from "lightning/empApi";
@@ -27,6 +29,21 @@ import ServiceBuilder_ErrorMessageNoRecordsSelected from "@salesforce/label/c.Se
 import ServiceBuilder_SuccessMessageDeleteRecord from "@salesforce/label/c.ServiceBuilder_SuccessMessageDeleteRecord";
 import ServiceBuilder_ErrorMessageDeleteRecord from "@salesforce/label/c.ServiceBuilder_ErrorMessageDeleteRecord";
 import ServiceBuilder_ErrorMessageCompleteRequiredFields from "@salesforce/label/c.ServiceBuilder_ErrorMessageCompleteRequiredFields";
+import ServiceBuilder_ServiceTypeColumnLabel from "@salesforce/label/c.ServiceBuilder_ServiceTypeColumnLabel";
+import ServiceBuilder_ProjectCodeColumnLabel from "@salesforce/label/c.ServiceBuilder_ProjectCodeColumnLabel";
+import ServiceBuilder_EstimatedDurationColumnLabel from "@salesforce/label/c.ServiceBuilder_EstimatedDurationColumnLabel";
+import ServiceBuilder_CalculatedDurationColumnLabel from "@salesforce/label/c.ServiceBuilder_CalculatedDurationColumnLabel";
+import ServiceBuilder_LongitudeColumnLabel from "@salesforce/label/c.ServiceBuilder_LongitudeColumnLabel";
+import ServiceBuilder_LatitudeColumnLabel from "@salesforce/label/c.ServiceBuilder_LatitudeColumnLabel";
+import ServiceBuilder_StreetColumnLabel from "@salesforce/label/c.ServiceBuilder_StreetColumnLabel";
+import ServiceBuilder_CityColumnLabel from "@salesforce/label/c.ServiceBuilder_CityColumnLabel";
+import ServiceBuilder_ZipCodeColumnLabel from "@salesforce/label/c.ServiceBuilder_ZipCodeColumnLabel";
+import ServiceBuilder_StartDateColumnLabel from "@salesforce/label/c.ServiceBuilder_StartDateColumnLabel";
+import ServiceBuilder_EndDateColumnLabel from "@salesforce/label/c.ServiceBuilder_EndDateColumnLabel";
+import ServiceBuilder_ActionsColumnLabel from "@salesforce/label/c.ServiceBuilder_ActionsColumnLabel";
+import ServiceBuilder_EstimatedDurationHelpText from "@salesforce/label/c.ServiceBuilder_EstimatedDurationHelpText";
+import ServiceBuilder_CalculatedDurationHelpText from "@salesforce/label/c.ServiceBuilder_CalculatedDurationHelpText";
+import ServiceBuilder_MissingFieldsMessage from "@salesforce/label/c.ServiceBuilder_MissingFieldsMessage";
 
 export default class ServiceBuilder extends LightningElement {
   labels = {
@@ -41,7 +58,22 @@ export default class ServiceBuilder extends LightningElement {
     ServiceBuilder_ErrorMessageNoRecordsSelected,
     ServiceBuilder_SuccessMessageDeleteRecord,
     ServiceBuilder_ErrorMessageDeleteRecord,
-    ServiceBuilder_ErrorMessageCompleteRequiredFields
+    ServiceBuilder_ErrorMessageCompleteRequiredFields,
+    ServiceBuilder_ServiceTypeColumnLabel,
+    ServiceBuilder_ProjectCodeColumnLabel,
+    ServiceBuilder_EstimatedDurationColumnLabel,
+    ServiceBuilder_CalculatedDurationColumnLabel,
+    ServiceBuilder_LongitudeColumnLabel,
+    ServiceBuilder_LatitudeColumnLabel,
+    ServiceBuilder_StreetColumnLabel,
+    ServiceBuilder_CityColumnLabel,
+    ServiceBuilder_ZipCodeColumnLabel,
+    ServiceBuilder_StartDateColumnLabel,
+    ServiceBuilder_EndDateColumnLabel,
+    ServiceBuilder_ActionsColumnLabel,
+    ServiceBuilder_EstimatedDurationHelpText,
+    ServiceBuilder_CalculatedDurationHelpText,
+    ServiceBuilder_MissingFieldsMessage
   };
 
   // API Properties
@@ -56,7 +88,7 @@ export default class ServiceBuilder extends LightningElement {
   @track appliedFilters = [];
   @track serviceContract = {};
   @track locationType = "Address";
-  notifyViaAlerts = false;
+  @track filterService;
 
   // Component Properties
   frequencyOptions;
@@ -72,22 +104,25 @@ export default class ServiceBuilder extends LightningElement {
   activeSections = ["generalInfo", "locationInfo", "priceInfo"];
 
   // Column Labels
-  serviceTypeLabel = "Service Type";
+  serviceTypeLabel = this.labels.ServiceBuilder_ServiceTypeColumnLabel;
   selectLabel = "";
-  projectCodeLabel = "Code";
-  estimatedDurationLabel = "Est. Dur.";
-  estimatedDurationHelpText = "Estimated Duration in Minutes";
-  calculatedDurationLabel = "Calc. Dur.";
-  calculatedDurationHelpText = "Calculated Duration in Minutes";
-  longitudeLabel = "Longitude";
-  latitudeLabel = "Latitude";
-  longitudeLabel = "Longitude";
-  streetLabel = "Street";
-  cityLabel = "City";
-  zipCodeLabel = "Zip Code";
-  startDateLabel = "Start Date";
-  endDateLabel = "End Date";
-  actionsLabel = "Actions";
+  projectCodeLabel = this.labels.ServiceBuilder_ProjectCodeColumnLabel;
+  estimatedDurationLabel =
+    this.labels.ServiceBuilder_EstimatedDurationColumnLabel;
+  estimatedDurationHelpText =
+    this.labels.ServiceBuilder_EstimatedDurationHelpText;
+  calculatedDurationLabel =
+    this.labels.ServiceBuilder_CalculatedDurationColumnLabel;
+  calculatedDurationHelpText =
+    this.labels.ServiceBuilder_CalculatedDurationHelpText;
+  longitudeLabel = this.labels.ServiceBuilder_LongitudeColumnLabel;
+  latitudeLabel = this.labels.ServiceBuilder_LatitudeColumnLabel;
+  streetLabel = this.labels.ServiceBuilder_StreetColumnLabel;
+  cityLabel = this.labels.ServiceBuilder_CityColumnLabel;
+  zipCodeLabel = this.labels.ServiceBuilder_ZipCodeColumnLabel;
+  startDateLabel = this.labels.ServiceBuilder_StartDateColumnLabel;
+  endDateLabel = this.labels.ServiceBuilder_EndDateColumnLabel;
+  actionsLabel = this.labels.ServiceBuilder_ActionsColumnLabel;
 
   // Product Matching Configuration
   productMatchingInfo = {
@@ -97,24 +132,6 @@ export default class ServiceBuilder extends LightningElement {
 
   //TODO: Add filterOptions to filter out Product RecordType (only need 'Service' and 'Service Package')
   // Filter Options
-
-  filterService = {
-    criteria: [
-      {
-        fieldPath: "RecordTypeId",
-        operator: "eq",
-        //Service
-        value: "012KF000003Q7cLYAS"
-      },
-      {
-        fieldPath: "RecordTypeId",
-        operator: "eq",
-        //Service Package
-        value: "012KF000003Q7cKYAS"
-      }
-    ],
-    filterLogic: "1 OR 2"
-  };
 
   ///////////////////////////////Getters/////////////////////////////
 
@@ -167,6 +184,25 @@ export default class ServiceBuilder extends LightningElement {
    * @description Lifecycle hook called when the component is inserted into the DOM
    */
   connectedCallback() {
+    getProductRecordTypeIds().then((result) => {
+      const recordTypeIds = result;
+      console.log("recordTypeIds", recordTypeIds);
+      this.filterService = {
+        criteria: [
+          {
+            fieldPath: "RecordTypeId",
+            operator: "eq",
+            value: recordTypeIds.Service
+          },
+          {
+            fieldPath: "RecordTypeId",
+            operator: "eq",
+            value: recordTypeIds.ServicePackage
+          }
+        ],
+        filterLogic: "1 OR 2"
+      };
+    });
     this.loadContractLines();
 
     this.handleSubscribe();
@@ -225,12 +261,6 @@ export default class ServiceBuilder extends LightningElement {
             index++;
           });
 
-          // Set initial locationType from the first contract line
-          if (result.length > 0) {
-            this.locationType =
-              result[0].ServiceContract.Location_Type__c || "Address";
-          }
-
           this.contractLines = result;
           this.originalContractLines = [...this.contractLines];
           this.isLoading = false;
@@ -240,8 +270,6 @@ export default class ServiceBuilder extends LightningElement {
         return getServiceContract({ recordId: this.recordId }).then(
           (serviceContractResult) => {
             this.serviceContract = serviceContractResult;
-            this.notifyViaAlerts = serviceContractResult.Notify_Customer_When_En_Route__c;
-            console.log('notifyViaAlerts', this.notifyViaAlerts);
             this.locationType =
               serviceContractResult.Location_Type__c || "Address";
             this.isLoading = false;
@@ -619,6 +647,13 @@ export default class ServiceBuilder extends LightningElement {
    * @param {Event} event - The event object
    */
   handleToggleLocationType(event) {
+    // Clear all previous errors as location type is changed and we don't want to show something like 'Geolocation is required' when we switched to Address location type
+    this.contractLines = this.contractLines.map((line) => ({
+      ...line,
+      Error: null,
+      Class: "hidden"
+    }));
+
     // Set the location type based on the checkbox state
     this.locationType = event.target.checked ? "Address" : "Geolocation";
 
@@ -670,8 +705,7 @@ export default class ServiceBuilder extends LightningElement {
       ServiceContractId: this.recordId,
       FinCustomers: [],
       Index: this.contractLines.length,
-      Recurrence_Pattern__c: "FREQ=WEEKLY;INTERVAL=2",
-      Notify_Customer_When_En_Route__c: this.notifyViaAlerts,
+      Recurrence_Pattern__c: "FREQ=WEEKLY;INTERVAL=2"
     };
 
     if (this.filterResults.length > 0) {
@@ -762,33 +796,38 @@ export default class ServiceBuilder extends LightningElement {
     this.contractLines = this.contractLines.map((line, index) => {
       const errors = [];
 
-      if (!line.Product2Id) errors.push("Service Type");
-      if (!line.Project_Code__c) errors.push("Code");
+      if (!line.Product2Id)
+        errors.push(this.labels.ServiceBuilder_ServiceTypeColumnLabel);
+      if (!line.Project_Code__c)
+        errors.push(this.labels.ServiceBuilder_ProjectCodeColumnLabel);
 
-      if (!line.Estimated_Duration__c) errors.push("Estimated Duration");
+      if (!line.Estimated_Duration__c)
+        errors.push(this.labels.ServiceBuilder_EstimatedDurationHelpText);
 
       // Location validation based on type
       if (this.locationColumns.isGeoLocation) {
         if (!line.Geolocation__Latitude__s) {
-          errors.push("Latitude");
+          errors.push(this.labels.ServiceBuilder_LatitudeColumnLabel);
         }
         if (!line.Geolocation__Longitude__s) {
-          errors.push("Longitude");
+          errors.push(this.labels.ServiceBuilder_LongitudeColumnLabel);
         }
       } else if (this.locationColumns.isAddress) {
         if (!line.Location__Street__s) {
-          errors.push("Street");
+          errors.push(this.labels.ServiceBuilder_StreetColumnLabel);
         }
         if (!line.Location__City__s) {
-          errors.push("City");
+          errors.push(this.labels.ServiceBuilder_CityColumnLabel);
         }
         if (!line.Location__PostalCode__s) {
-          errors.push("Zip Code");
+          errors.push(this.labels.ServiceBuilder_ZipCodeColumnLabel);
         }
       }
 
-      if (!line.StartDate) errors.push("Start Date");
-      if (!line.EndDate) errors.push("End Date");
+      if (!line.StartDate)
+        errors.push(this.labels.ServiceBuilder_StartDateColumnLabel);
+      if (!line.EndDate)
+        errors.push(this.labels.ServiceBuilder_EndDateColumnLabel);
 
       if (!line.Recurrence_Pattern__c) errors.push("Recurrence Pattern");
 
@@ -796,7 +835,7 @@ export default class ServiceBuilder extends LightningElement {
         hasErrors = true;
         return {
           ...line,
-          Error: `Missing fields: ${errors.join(", ")}.`,
+          Error: `${this.labels.ServiceBuilder_MissingFieldsMessage}: ${errors.join(", ")}.`,
           Class: "display"
         };
       }

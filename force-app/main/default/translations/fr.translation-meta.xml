@@ -869,6 +869,10 @@
         <name>Mileage_Add_Out_Entry_Description</name>
     </customLabels>
     <customLabels>
+        <label><!-- Mileage_Allowance_FieldLabel --></label>
+        <name>Mileage_Allowance_FieldLabel</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Mileage_Cancel_Button --></label>
         <name>Mileage_Cancel_Button</name>
     </customLabels>
@@ -891,6 +895,10 @@
     <customLabels>
         <label><!-- Mileage_End_day --></label>
         <name>Mileage_End_day</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mileage_Ending_Mileage_FieldLabel --></label>
+        <name>Mileage_Ending_Mileage_FieldLabel</name>
     </customLabels>
     <customLabels>
         <label><!-- Mileage_Entries_Header --></label>
@@ -959,6 +967,10 @@
     <customLabels>
         <label><!-- Mileage_Start_Day --></label>
         <name>Mileage_Start_Day</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mileage_Starting_Mileage_FieldLabel --></label>
+        <name>Mileage_Starting_Mileage_FieldLabel</name>
     </customLabels>
     <customLabels>
         <label><!-- Mileage_SuccessMessageEditEntry --></label>
@@ -1177,6 +1189,26 @@
         <name>Send_Sign_Request</name>
     </customLabels>
     <customLabels>
+        <label><!-- ServiceBuilder_ActionsColumnLabel --></label>
+        <name>ServiceBuilder_ActionsColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_CalculatedDurationColumnLabel --></label>
+        <name>ServiceBuilder_CalculatedDurationColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_CalculatedDurationHelpText --></label>
+        <name>ServiceBuilder_CalculatedDurationHelpText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_CityColumnLabel --></label>
+        <name>ServiceBuilder_CityColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_EndDateColumnLabel --></label>
+        <name>ServiceBuilder_EndDateColumnLabel</name>
+    </customLabels>
+    <customLabels>
         <label><!-- ServiceBuilder_ErrorMessageCompleteRequiredFields --></label>
         <name>ServiceBuilder_ErrorMessageCompleteRequiredFields</name>
     </customLabels>
@@ -1205,6 +1237,42 @@
         <name>ServiceBuilder_ErrorTitle</name>
     </customLabels>
     <customLabels>
+        <label><!-- ServiceBuilder_EstimatedDurationColumnLabel --></label>
+        <name>ServiceBuilder_EstimatedDurationColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_EstimatedDurationHelpText --></label>
+        <name>ServiceBuilder_EstimatedDurationHelpText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_LatitudeColumnLabel --></label>
+        <name>ServiceBuilder_LatitudeColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_LongitudeColumnLabel --></label>
+        <name>ServiceBuilder_LongitudeColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_MissingFieldsMessage --></label>
+        <name>ServiceBuilder_MissingFieldsMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_ProjectCodeColumnLabel --></label>
+        <name>ServiceBuilder_ProjectCodeColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_ServiceTypeColumnLabel --></label>
+        <name>ServiceBuilder_ServiceTypeColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_StartDateColumnLabel --></label>
+        <name>ServiceBuilder_StartDateColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_StreetColumnLabel --></label>
+        <name>ServiceBuilder_StreetColumnLabel</name>
+    </customLabels>
+    <customLabels>
         <label><!-- ServiceBuilder_SuccessMessageDeleteRecord --></label>
         <name>ServiceBuilder_SuccessMessageDeleteRecord</name>
     </customLabels>
@@ -1223,6 +1291,10 @@
     <customLabels>
         <label><!-- ServiceBuilder_WarningText --></label>
         <name>ServiceBuilder_WarningText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_ZipCodeColumnLabel --></label>
+        <name>ServiceBuilder_ZipCodeColumnLabel</name>
     </customLabels>
     <customLabels>
         <label><!-- SimpleDispatcher_ResourceLabel --></label>
@@ -3714,6 +3786,12 @@
     <flowDefinitions>
         <flows>
             <choices>
+                <name>Choice_No</name>
+            </choices>
+            <choices>
+                <name>Choice_Yes</name>
+            </choices>
+            <choices>
                 <name>Full</name>
             </choices>
             <choices>
@@ -3722,6 +3800,9 @@
             <screens>
                 <fields>
                     <name>Corrective_Measures_1</name>
+                </fields>
+                <fields>
+                    <name>Do_you_have_to_use_a_thermal_burner_because_there_is_no_alternative</name>
                 </fields>
                 <fields>
                     <name>EPC_EPI_CBM_PBM_1</name>
@@ -3740,6 +3821,9 @@
                         <value/>
                     </inputParameters>
                     <name>FileUpload</name>
+                </fields>
+                <fields>
+                    <name>Header</name>
                 </fields>
                 <fields>
                     <name>Project_Lead_Full</name>
@@ -3882,6 +3966,9 @@
             <screens>
                 <fields>
                     <name>End</name>
+                </fields>
+                <fields>
+                    <name>Machine_Vehicle_Number</name>
                 </fields>
                 <fields>
                     <inputParameters>

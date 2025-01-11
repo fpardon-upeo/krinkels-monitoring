@@ -150,7 +150,11 @@
     <formulas>
         <name>workOrderSubject</name>
         <dataType>String</dataType>
-        <expression>{!Select_Internal_Work_Type} &amp; &quot; - &quot; &amp; {!Get_Service_Resource.Name}</expression>
+        <expression>IF(
+{!Machine_Vehicle_Number} &lt;&gt; &apos;&apos;,
+{!Select_Internal_Work_Type} &amp; &quot; - &quot; &amp; {!Machine_Vehicle_Number} &amp;  &quot; - &quot; &amp; {!Get_Service_Resource.Name},
+{!Select_Internal_Work_Type} &amp; &quot; - &quot; &amp; {!Get_Service_Resource.Name}
+)</expression>
     </formulas>
     <interviewLabel>[Work Order] - [Screen Flow] - Create Internal Work {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Create Internal Work Order</label>
@@ -529,6 +533,24 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Machine_Vehicle_Number</name>
+                    <dataType>String</dataType>
+                    <fieldText>Machine/Vehicle Number</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Select_Internal_Work_Type</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Machine Maintenance</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>

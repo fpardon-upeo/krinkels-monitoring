@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <collectionProcessors>
+        <name>Filter_Out_Operating</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Filter Out Operating</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignNextValueToReference>currentItem_Filter_Out_Operating</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Get_Operational_Contact</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Filter_Out_Operating.Roles</leftValueReference>
+            <operator>Contains</operator>
+            <rightValue>
+                <stringValue>Operational</stringValue>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Contact_Found</targetReference>
+        </connector>
+    </collectionProcessors>
     <decisions>
         <name>Contact_Found</name>
         <label>Contact Found ?</label>
         <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Operational_Contact</leftValueReference>
+                <leftValueReference>Filter_Out_Operating</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -53,7 +74,7 @@
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Contact_Found</targetReference>
+            <targetReference>Filter_Out_Operating</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -63,14 +84,7 @@
                 <elementReference>$Record.AccountId</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>Roles</field>
-            <operator>Contains</operator>
-            <value>
-                <stringValue>Operational</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>AccountContactRelation</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -78,7 +92,7 @@
         <name>Update_Contact_Field_on_SA</name>
         <label>Update Contact Field on SA</label>
         <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ParentRecordId</field>
@@ -90,7 +104,7 @@
         <inputAssignments>
             <field>ContactId</field>
             <value>
-                <elementReference>$Record.ContactId</elementReference>
+                <elementReference>currentItem_Filter_Out_Operating.ContactId</elementReference>
             </value>
         </inputAssignments>
         <object>ServiceAppointment</object>
@@ -99,14 +113,14 @@
         <name>Update_Contact_Field_on_WO</name>
         <label>Update Contact Field on WO</label>
         <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Update_Contact_Field_on_SA</targetReference>
         </connector>
         <inputAssignments>
             <field>ContactId</field>
             <value>
-                <elementReference>Get_Operational_Contact.ContactId</elementReference>
+                <elementReference>currentItem_Filter_Out_Operating.ContactId</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -151,4 +165,12 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>currentItem_Filter_Out_Operating</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AccountContactRelation</objectType>
+    </variables>
 </Flow>

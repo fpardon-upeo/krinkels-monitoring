@@ -1,135 +1,24 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-apexEmailNotifications/apexEmailNotifications.notifications-meta.xml," ",apexEmailNotifications/apexEmailNotifications.notifications-meta.xml,M,,log,📰
-applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
-classes/ATAKPerformanceServiceTest.cls," ",ApexClass ATAKPerformanceServiceTest,M,,log,📰
-classes/ATAKProjectService.cls," ",ApexClass ATAKProjectService,M,,log,📰
-classes/AccountImagesController.cls,A,ApexClass AccountImagesController,,,log,📰
-classes/AccountImagesController.cls-meta.xml,A,ApexClass AccountImagesController,,,log,📰
-classes/AccountTriggerHandler.cls," ",ApexClass AccountTriggerHandler,M,,log,📰
-classes/FieldServiceTestData.cls," ",ApexClass FieldServiceTestData,M,,log,📰
-classes/GanttRoundPinActionTest.cls," ",ApexClass GanttRoundPinActionTest,M,,log,📰
-classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
-classes/RRuleAdjuster.cls," ",ApexClass RRuleAdjuster,M,,log,📰
-classes/ServiceAppointmentTriggerHandler.cls," ",ApexClass ServiceAppointmentTriggerHandler,M,,log,📰
 classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
-classes/ServiceBuilderControllerTest.cls,A,ApexClass ServiceBuilderControllerTest,,,log,📰
-classes/ServiceBuilderControllerTest.cls-meta.xml,A,ApexClass ServiceBuilderControllerTest,,,log,📰
+classes/ServiceBuilderControllerTest.cls," ",ApexClass ServiceBuilderControllerTest,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/Commercial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Commercial_Account_Record_Page,M,,log,📰
-flexipages/Contact_Record_Page.flexipage-meta.xml," ",FlexiPage Contact_Record_Page,M,,log,📰
-flexipages/Financial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Financial_Account_Record_Page,M,,log,📰
-flexipages/Group_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Group_Account_Record_Page,M,,log,📰
-flexipages/Operational_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Operational_Account_Record_Page,M,,log,📰
-flexipages/Other_Record_Page.flexipage-meta.xml," ",FlexiPage Other_Record_Page,M,,log,📰
-flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
-flowDefinitions/Service_Appointment_Scheduled_Customer_Notification.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Scheduled_Customer_Notification,M,,log,📰
 flowDefinitions/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flowDefinitions/Work_Order_Set_Customer_Notification_Flag.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Set_Customer_Notification_Flag,,,log,📰
-flows/Service_Appointment_Scheduled_Customer_Notification.flow-meta.xml," ",Flow Service_Appointment_Scheduled_Customer_Notification,M,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+flowDefinitions/Work_Order_Screen_Flow_Create_Internal_Work.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Screen_Flow_Create_Internal_Work,M,,log,📰
 flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flows/Work_Order_Set_Customer_Notification_Flag.flow-meta.xml,A,Flow Work_Order_Set_Customer_Notification_Flag,,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+flows/Work_Order_Screen_Flow_Create_Internal_Work.flow-meta.xml," ",Flow Work_Order_Screen_Flow_Create_Internal_Work,M,,log,📰
 labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-layouts/Account-Financial Account Layout.layout-meta.xml," ",Layout Account-Financial Account Layout,M,,log,📰
-layouts/Asset-Asset Layout.layout-meta.xml," ",Layout Asset-Asset Layout,M,,log,📰
-layouts/Contact-Contact Layout.layout-meta.xml," ",Layout Contact-Contact Layout,M,,log,📰
-layouts/ContractLineItem-Contract Line Item Layout.layout-meta.xml," ",Layout ContractLineItem-Contract Line Item Layout,M,,log,📰
-layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
-lwc/contractLineEditor/contractLineEditor.html," ",LightningComponentBundle contractLineEditor/contractLineEditor.html,M,,log,📰
 lwc/contractLineEditor/contractLineEditor.js," ",LightningComponentBundle contractLineEditor/contractLineEditor.js,M,,log,📰
-lwc/createInternalWorkOrder/createInternalWorkOrder.html," ",LightningComponentBundle createInternalWorkOrder/createInternalWorkOrder.html,M,,log,📰
-lwc/createInternalWorkOrder/createInternalWorkOrder.js," ",LightningComponentBundle createInternalWorkOrder/createInternalWorkOrder.js,M,,log,📰
-lwc/generateMaintenancePlan/generateMaintenancePlan.html," ",LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.html,M,,log,📰
-lwc/generateMaintenancePlan/generateMaintenancePlan.js," ",LightningComponentBundle generateMaintenancePlan/generateMaintenancePlan.js,M,,log,📰
-lwc/importCLI/importCLI.js," ",LightningComponentBundle importCLI/importCLI.js,M,,log,📰
-lwc/internalWorkOrderForm/internalWorkOrderForm.js," ",LightningComponentBundle internalWorkOrderForm/internalWorkOrderForm.js,M,,log,📰
-lwc/locationMonitor/locationMonitor.html," ",LightningComponentBundle locationMonitor/locationMonitor.html,M,,log,📰
-lwc/locationMonitor/locationMonitor.js," ",LightningComponentBundle locationMonitor/locationMonitor.js,M,,log,📰
-lwc/locationPassport/locationPassport.html," ",LightningComponentBundle locationPassport/locationPassport.html,M,,log,📰
-lwc/locationPassport/locationPassport.js," ",LightningComponentBundle locationPassport/locationPassport.js,M,,log,📰
-lwc/locationPassportImages/locationPassportImages.css,A,LightningComponentBundle locationPassportImages/locationPassportImages.css,,,log,📰
-lwc/locationPassportImages/locationPassportImages.html,A,LightningComponentBundle locationPassportImages/locationPassportImages.html,,,log,📰
-lwc/locationPassportImages/locationPassportImages.js,A,LightningComponentBundle locationPassportImages/locationPassportImages.js,,,log,📰
-lwc/locationPassportImages/locationPassportImages.js-meta.xml,A,LightningComponentBundle locationPassportImages/locationPassportImages.js-meta.xml,,,log,📰
-lwc/materialPickup/materialPickup.html," ",LightningComponentBundle materialPickup/materialPickup.html,M,,log,📰
-lwc/materialPickup/materialPickup.js," ",LightningComponentBundle materialPickup/materialPickup.js,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.html," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.html,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
-lwc/prepareContractForNextYear/prepareContractForNextYear.js," ",LightningComponentBundle prepareContractForNextYear/prepareContractForNextYear.js,M,,log,📰
-lwc/readyForValidation/readyForValidation.js," ",LightningComponentBundle readyForValidation/readyForValidation.js,M,,log,📰
-lwc/resourceCalendar/resourceCalendar.html," ",LightningComponentBundle resourceCalendar/resourceCalendar.html,M,,log,📰
-lwc/resourceCalendar/resourceCalendar.js," ",LightningComponentBundle resourceCalendar/resourceCalendar.js,M,,log,📰
-lwc/scheduleWorkOrders/scheduleWorkOrders.js," ",LightningComponentBundle scheduleWorkOrders/scheduleWorkOrders.js,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
 lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
+lwc/showMileageScreen/showMileageScreen.html," ",LightningComponentBundle showMileageScreen/showMileageScreen.html,M,,log,📰
 lwc/showMileageScreen/showMileageScreen.js," ",LightningComponentBundle showMileageScreen/showMileageScreen.js,M,,log,📰
-lwc/simpleDispatcherConsole/simpleDispatcherConsole.html," ",LightningComponentBundle simpleDispatcherConsole/simpleDispatcherConsole.html,M,,log,📰
-lwc/simpleDispatcherConsole/simpleDispatcherConsole.js," ",LightningComponentBundle simpleDispatcherConsole/simpleDispatcherConsole.js,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.html," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.html,M,,log,📰
-lwc/startOperatorDayMetrics/startOperatorDayMetrics.js," ",LightningComponentBundle startOperatorDayMetrics/startOperatorDayMetrics.js,M,,log,📰
-lwc/startStopTimer/startStopTimer.html," ",LightningComponentBundle startStopTimer/startStopTimer.html,M,,log,📰
-lwc/startStopTimer/startStopTimer.js," ",LightningComponentBundle startStopTimer/startStopTimer.js,M,,log,📰
+lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
 lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-lwc/workOrderActions/workOrderActions.html," ",LightningComponentBundle workOrderActions/workOrderActions.html,M,,log,📰
-lwc/workOrderActions/workOrderActions.js," ",LightningComponentBundle workOrderActions/workOrderActions.js,M,,log,📰
-objects/Account/compactLayouts/Financial_Account.compactLayout-meta.xml," ",CompactLayout Financial_Account,M,,log,📰
-objects/Account/fields/Account_ATAK_Code__c.field-meta.xml,A,CustomField Account_ATAK_Code__c,,,log,📰
-objects/Account/fields/Financial_Client_Type_ATAK__c.field-meta.xml,A,CustomField Financial_Client_Type_ATAK__c,,,log,📰
-objects/Account/fields/Intervention_Registration_Contact__c.field-meta.xml,A,CustomField Intervention_Registration_Contact__c,,,log,📰
-objects/Account/fields/Status__c.field-meta.xml," ",CustomField Status__c,M,,log,📰
-objects/Account/fields/Sub_Type__c.field-meta.xml," ",CustomField Sub_Type__c,M,,log,📰
-objects/Account/recordTypes/Commercial_Account.recordType-meta.xml," ",RecordType Commercial_Account,M,,log,📰
-objects/Account/recordTypes/Financial_Account.recordType-meta.xml," ",RecordType Financial_Account,M,,log,📰
-objects/Account/recordTypes/Group_Account.recordType-meta.xml," ",RecordType Group_Account,M,,log,📰
-objects/Account/recordTypes/Operational_Account.recordType-meta.xml," ",RecordType Operational_Account,M,,log,📰
-objects/Account/recordTypes/Other.recordType-meta.xml," ",RecordType Other,M,,log,📰
-objects/Account/validationRules/Active_Commercial_Account_VAT.validationRule-meta.xml,A,ValidationRule Active_Commercial_Account_VAT,,,log,📰
-objects/Asset/fields/Notify_Customer_When_En_Route__c.field-meta.xml,A,CustomField Notify_Customer_When_En_Route__c,,,log,📰
-objects/Contact/fields/Functional_level__c.field-meta.xml," ",CustomField Functional_level__c,M,,log,📰
-objects/Contact/fields/Has_Left_Company__c.field-meta.xml,A,CustomField Has_Left_Company__c,,,log,📰
-objects/Contact/fields/Type__c.field-meta.xml," ",CustomField Type__c,M,,log,📰
-objects/ContractLineItem/fields/Notify_Customer_When_En_Route__c.field-meta.xml,A,CustomField Notify_Customer_When_En_Route__c,,,log,📰
-objects/ServiceContract/fields/Cancellation_Date_Contract__c.field-meta.xml," ",CustomField Cancellation_Date_Contract__c,M,,log,📰
-objects/ServiceContract/fields/Indexation_Allowed__c.field-meta.xml,A,CustomField Indexation_Allowed__c,,,log,📰
-objects/ServiceContract/fields/Notify_Customer_When_En_Route__c.field-meta.xml,A,CustomField Notify_Customer_When_En_Route__c,,,log,📰
-permissionsets/sfdcInternalInt__sfdc_fieldservice.permissionset-meta.xml," ",PermissionSet sfdcInternalInt__sfdc_fieldservice,M,,log,📰
-profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
-profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
-profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
-profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
-profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
-profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
-profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
-profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
-profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
-profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
-profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
-profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
-profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
-profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
-profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
-profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
-profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
-profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
-profiles/Operator Indoor.profile-meta.xml," ",Profile Operator Indoor,M,,log,📰
-profiles/Operator Outdoor.profile-meta.xml," ",Profile Operator Outdoor,M,,log,📰
-profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
-profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
-profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
-profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
-profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
-profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-reportTypes/Accounts_with_Work_Orders.reportType-meta.xml," ",ReportType Accounts_with_Work_Orders,M,,log,📰
-reportTypes/Assets_with_Work_Orders_and_Service_Appointments.reportType-meta.xml," ",ReportType Assets_with_Work_Orders_and_Service_Appointments,M,,log,📰
-reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml," ",ReportType Service_Contracts_with_Work_Orders,M,,log,📰
-reportTypes/Service_contracts.reportType-meta.xml," ",ReportType Service_contracts,M,,log,📰
-reports/Sales_Marketing_Reports/Hot_Leads_w_o_Activity_96_Hours.report-meta.xml," ",Report Sales_Marketing_Reports/Hot_Leads_w_o_Activity_96_Hours,M,,log,📰
-settings/Flow.settings-meta.xml," ",Settings Flow,M,,log,📰
-standardValueSets/AccountRating.standardValueSet-meta.xml," ",StandardValueSet AccountRating,M,,log,📰
-standardValueSets/Salutation.standardValueSet-meta.xml," ",StandardValueSet Salutation,M,,log,📰
+lwc/timesheetEntryForm/timesheetEntryForm.js," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,M,,log,📰
+objects/Inbound_Log__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
 translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
 translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
 translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
-triggers/StampOriginalTimes.trigger-meta.xml," ",ApexTrigger StampOriginalTimes,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

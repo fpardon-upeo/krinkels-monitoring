@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Set_Tasks_Of_Day_Value</name>
+        <label>Set Tasks Of Day Value</label>
+        <locationX>633</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>tasksOfDay</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>{!workLineLoopVar.Description}, </stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Lines</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Choice_No</name>
+        <choiceText>No</choiceText>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </choices>
     <choices>
         <name>Full</name>
         <choiceText>Full</choiceText>
@@ -20,7 +52,7 @@
         <name>Full_or_Limited_LMRA</name>
         <label>Full or Limited LMRA ?</label>
         <locationX>248</locationX>
-        <locationY>566</locationY>
+        <locationY>974</locationY>
         <defaultConnector>
             <targetReference>Limited_LMRA_Information</targetReference>
         </defaultConnector>
@@ -45,7 +77,7 @@
         <name>Limited_LMRA_Confirmed</name>
         <label>Limited LMRA Confirmed ?</label>
         <locationX>446</locationX>
-        <locationY>782</locationY>
+        <locationY>1190</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Limited_LMRA_Information</targetReference>
@@ -71,7 +103,7 @@
         <name>LMRA_Already_Done</name>
         <label>LMRA Already Done ?</label>
         <locationX>545</locationX>
-        <locationY>458</locationY>
+        <locationY>866</locationY>
         <defaultConnector>
             <targetReference>LMRA_Done_Message</targetReference>
         </defaultConnector>
@@ -95,6 +127,21 @@
     <environments>Default</environments>
     <interviewLabel>[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information</label>
+    <loops>
+        <name>Loop_Lines</name>
+        <label>Loop Lines</label>
+        <locationX>545</locationX>
+        <locationY>566</locationY>
+        <assignNextValueToReference>workLineLoopVar</assignNextValueToReference>
+        <collectionReference>workOrderLines</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Tasks_Of_Day_Value</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>LMRA_Already_Done</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -118,7 +165,7 @@
         <name>Create_Full_LMRA</name>
         <label>Create Full LMRA</label>
         <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationY>1190</locationY>
         <connector>
             <targetReference>Update_Work_Step_Status_to_Complete_After</targetReference>
         </connector>
@@ -170,7 +217,7 @@
         <name>Create_Limited_LMRA</name>
         <label>Create Limited LMRA</label>
         <locationX>314</locationX>
-        <locationY>890</locationY>
+        <locationY>1298</locationY>
         <connector>
             <targetReference>Update_Work_Step_Status_to_Complete_After</targetReference>
         </connector>
@@ -198,10 +245,10 @@
         <name>Get_Related_Operational_Account</name>
         <label>Get Related Operational Account</label>
         <locationX>545</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>LMRA_Already_Done</targetReference>
+            <targetReference>Loop_Lines</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -223,7 +270,7 @@
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Related_Operational_Account</targetReference>
+            <targetReference>Get_Work_Lines</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -240,6 +287,28 @@
         <queriedFields>LMRA__c</queriedFields>
         <queriedFields>LMRA_Done__c</queriedFields>
         <queriedFields>AccountId</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Work_Lines</name>
+        <label>Get Work Lines</label>
+        <locationX>545</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Related_Operational_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WorkOrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>workOrderRecord.Id</elementReference>
+            </value>
+        </filters>
+        <object>WorkOrderLineItem</object>
+        <outputReference>workOrderLines</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Description</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Work_Step_Information</name>
@@ -268,7 +337,7 @@
         <name>Confirmed_LMRA_Done_at_WO_level</name>
         <label>Confirmed LMRA Done at WO level</label>
         <locationX>248</locationX>
-        <locationY>1274</locationY>
+        <locationY>1682</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -289,7 +358,7 @@
         <name>Update_Work_Step_Status_to_Complete</name>
         <label>Update Work Step Status to Complete</label>
         <locationX>842</locationX>
-        <locationY>674</locationY>
+        <locationY>1082</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -310,7 +379,7 @@
         <name>Update_Work_Step_Status_to_Complete_After</name>
         <label>Update Work Step Status to Complete After</label>
         <locationX>248</locationX>
-        <locationY>1166</locationY>
+        <locationY>1574</locationY>
         <connector>
             <targetReference>Confirmed_LMRA_Done_at_WO_level</targetReference>
         </connector>
@@ -334,13 +403,18 @@
         <name>Full_LMRA_Information</name>
         <label>Full LMRA Information</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>1082</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Create_Full_LMRA</targetReference>
         </connector>
+        <fields>
+            <name>Header</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://krinkelsgreencare--upeodev.sandbox.file.force.com/sfc/servlet.shepherd/version/download/068KF000001eO36?asPdf=false&amp;amp;operationContext=CHATTER&quot; alt=&quot;LMRA_Header.png&quot;&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Work_Order_Full</name>
             <dataType>String</dataType>
@@ -367,7 +441,20 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
+            <name>Do_you_have_to_use_a_thermal_burner_because_there_is_no_alternative</name>
+            <choiceReferences>Choice_Yes</choiceReferences>
+            <choiceReferences>Choice_No</choiceReferences>
+            <dataType>Boolean</dataType>
+            <fieldText>Do you have to use a thermal burner (because there is no alternative?)</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
             <name>Tasks_of_the_Day_1</name>
+            <defaultValue>
+                <stringValue>{!tasksOfDay}</stringValue>
+            </defaultValue>
             <fieldText>Tasks of the Day</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -426,7 +513,7 @@
         <name>Limited_LMRA_Information</name>
         <label>Limited LMRA Information</label>
         <locationX>446</locationX>
-        <locationY>674</locationY>
+        <locationY>1082</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -458,7 +545,7 @@
         <name>LMRA_Done_Message</name>
         <label>LMRA Done Message</label>
         <locationX>842</locationX>
-        <locationY>566</locationY>
+        <locationY>974</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -496,6 +583,29 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>tasksOfDay</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>workLineLoopVar</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkOrderLineItem</objectType>
+    </variables>
+    <variables>
+        <name>workOrderLines</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkOrderLineItem</objectType>
     </variables>
     <variables>
         <name>workOrderRecord</name>

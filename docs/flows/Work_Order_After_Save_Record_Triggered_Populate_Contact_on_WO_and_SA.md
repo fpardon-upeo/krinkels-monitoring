@@ -13,21 +13,25 @@ flowchart TB
 START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Record After Save</b>"]):::startClass
 click START "#general-information" "346636380"
 
+Filter_Out_Operating{{"🔽 <em>Collection Filter</em><br/>Filter Out Operating"}}:::collectionProcessors
+click Filter_Out_Operating "#filter_out_operating" "2577911783"
+
 Contact_Found{"🔀 <em></em><br/>Contact Found ?"}:::decisions
-click Contact_Found "#contact_found" "1888914664"
+click Contact_Found "#contact_found" "58119269"
 
 Get_Operational_Contact[("🔍 <em></em><br/>Get Operational Contact")]:::recordLookups
-click Get_Operational_Contact "#get_operational_contact" "1246953570"
+click Get_Operational_Contact "#get_operational_contact" "447239799"
 
 Update_Contact_Field_on_SA[("🛠️ <em></em><br/>Update Contact Field on SA")]:::recordUpdates
-click Update_Contact_Field_on_SA "#update_contact_field_on_sa" "1559423494"
+click Update_Contact_Field_on_SA "#update_contact_field_on_sa" "1668573287"
 
 Update_Contact_Field_on_WO[("🛠️ <em></em><br/>Update Contact Field on WO")]:::recordUpdates
-click Update_Contact_Field_on_WO "#update_contact_field_on_wo" "3213611049"
+click Update_Contact_Field_on_WO "#update_contact_field_on_wo" "694167732"
 
+Filter_Out_Operating --> Contact_Found
 Contact_Found --> |"Yes"| Update_Contact_Field_on_WO
 Contact_Found --> |"No"| END_Contact_Found
-Get_Operational_Contact --> Contact_Found
+Get_Operational_Contact --> Filter_Out_Operating
 Update_Contact_Field_on_SA --> END_Update_Contact_Field_on_SA
 Update_Contact_Field_on_WO --> Update_Contact_Field_on_SA
 START -->  Get_Operational_Contact
@@ -83,7 +87,35 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |4|Status| Equal To|Scheduled|
 
 
+## Variables
+
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|currentItem_Filter_Out_Operating|SObject|⬜|⬜|⬜|AccountContactRelation|<!-- -->|
+
+
 ## Flow Nodes Details
+
+### Filter_Out_Operating
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Collection Processor|
+|Label|Filter Out Operating|
+|Element Subtype|FilterCollectionProcessor|
+|Assign Next Value To Reference|currentItem_Filter_Out_Operating|
+|Collection Processor Type|FilterCollectionProcessor|
+|Collection Reference|[Get_Operational_Contact](#get_operational_contact)|
+|Connector|[Contact_Found](#contact_found)|
+|Condition Logic|and|
+
+
+|Condition Id|Left Value Reference|Operator|Right Value|
+|:-- |:-- |:--:|:--: |
+|1|currentItem_Filter_Out_Operating.Roles| Contains|Operational|
+
+
+
 
 ### Contact_Found
 
@@ -106,7 +138,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Condition Id|Left Value Reference|Operator|Right Value|
 |:-- |:-- |:--:|:--: |
-|1|[Get_Operational_Contact](#get_operational_contact)| Is Null|⬜|
+|1|[Filter_Out_Operating](#filter_out_operating)| Is Null|⬜|
 
 
 
@@ -119,9 +151,9 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Object|AccountContactRelation|
 |Label|Get Operational Contact|
 |Assign Null Values If No Records Found|⬜|
-|Get First Record Only|✅|
+|Get First Record Only|⬜|
 |Store Output Automatically|✅|
-|Connector|[Contact_Found](#contact_found)|
+|Connector|[Filter_Out_Operating](#filter_out_operating)|
 
 
 #### Filters (logic: **and**)
@@ -129,7 +161,6 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
 |1|AccountId| Equal To|$Record.AccountId|
-|2|Roles| Contains|Operational|
 
 
 
@@ -156,7 +187,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Field|Value|
 |:-- |:--: |
-|ContactId|$Record.ContactId|
+|ContactId|currentItem_Filter_Out_Operating.ContactId|
 
 
 
@@ -175,7 +206,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Field|Value|
 |:-- |:--: |
-|ContactId|Get_Operational_Contact.ContactId|
+|ContactId|currentItem_Filter_Out_Operating.ContactId|
 
 
 

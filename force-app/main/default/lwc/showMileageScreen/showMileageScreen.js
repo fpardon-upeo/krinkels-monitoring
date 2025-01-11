@@ -34,6 +34,9 @@ import Mileage_ErrorMessageLoadingEntries from "@salesforce/label/c.Mileage_Erro
 import Mileage_SuccessTitle from "@salesforce/label/c.Mileage_SuccessTitle";
 import Mileage_SuccessMessageEditEntry from "@salesforce/label/c.Mileage_SuccessMessageEditEntry";
 import Mileage_SuccessMessageNewEntry from "@salesforce/label/c.Mileage_SuccessMessageNewEntry";
+import Mileage_Allowance_FieldLabel from "@salesforce/label/c.Mileage_Allowance_FieldLabel";
+import Mileage_Starting_Mileage_FieldLabel from "@salesforce/label/c.Mileage_Starting_Mileage_FieldLabel";
+import Mileage_Ending_Mileage_FieldLabel from "@salesforce/label/c.Mileage_Ending_Mileage_FieldLabel";
 
 export default class ShowMileageScreen extends LightningElement {
   @api recordId;
@@ -62,6 +65,9 @@ export default class ShowMileageScreen extends LightningElement {
   @track showAppointmentScreen = false;
   //Labels
   labels = {
+    Mileage_Allowance_FieldLabel,
+    Mileage_Starting_Mileage_FieldLabel,
+    Mileage_Ending_Mileage_FieldLabel,
     Mileage_Start_Day,
     Mileage_View_Add_StartMileage,
     Mileage_End_Day,
@@ -105,7 +111,7 @@ export default class ShowMileageScreen extends LightningElement {
       ) {
         uiapi {
           query {
-            AssignedResource(first: 200
+            AssignedResource(
               where: {
                 and: [
                   { ServiceResourceId: { eq: $serviceResourceId } }
