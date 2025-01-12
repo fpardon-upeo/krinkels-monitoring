@@ -1,24 +1,2 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
-classes/ServiceBuilderControllerTest.cls," ",ApexClass ServiceBuilderControllerTest,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flowDefinitions/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flowDefinition-meta.xml," ",FlowDefinition Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
-flowDefinitions/Work_Order_Screen_Flow_Create_Internal_Work.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Screen_Flow_Create_Internal_Work,M,,log,📰
-flows/Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA.flow-meta.xml," ",Flow Work_Order_After_Save_Record_Triggered_Populate_Contact_on_WO_and_SA,M,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
-flows/Work_Order_Screen_Flow_Create_Internal_Work.flow-meta.xml," ",Flow Work_Order_Screen_Flow_Create_Internal_Work,M,,log,📰
-labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-lwc/contractLineEditor/contractLineEditor.js," ",LightningComponentBundle contractLineEditor/contractLineEditor.js,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.html," ",LightningComponentBundle showMileageScreen/showMileageScreen.html,M,,log,📰
-lwc/showMileageScreen/showMileageScreen.js," ",LightningComponentBundle showMileageScreen/showMileageScreen.js,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.html," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.html,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-lwc/timesheetEntryForm/timesheetEntryForm.js," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,M,,log,📰
-objects/Inbound_Log__c/listViews/All.listView-meta.xml," ",ListView All,M,,log,📰
-translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
-translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
-translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
-manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
-manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

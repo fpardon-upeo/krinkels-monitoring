@@ -2,6 +2,287 @@
 
 <!-- This page has been generated to be viewed with mkdocs-material, you can not view it just as markdown . Activate tab plugin following the doc at https://squidfunk.github.io/mkdocs-material/reference/content-tabs/ -->
 
+=== "Jan 11, 2025"
+
+    _Jan 11, 2025, by fpardon-upeo in commit Org state on 2025-01-11 00:25 for monitoring_krinkelsgreencare__upeodev_sandbox [skip ci]_
+
+    
+    ## Flow Diagram
+    
+    ```mermaid
+    %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.
+    %% - If you are in VsCode, install extension `Markdown Preview Mermaid Support` at https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
+    %% - If you are using sfdx-hardis, try to define env variable `MERMAID_MODES=cli,docker` ,then run again the command to regenerate markdown with SVG images.
+    %% - If you are within mkdocs-material, define mermaid plugin in `mkdocs.yml` as described in https://squidfunk.github.io/mkdocs-material/extensions/mermaid/
+    %% - At last resort, you can copy-paste this MermaidJS code in https://mermaid.live/ to see the Flow Diagram
+    
+    flowchart TB
+    START(["START"]):::startClass
+    click START "#general-information" "459049158"
+    
+    
+    Set_Tasks_Of_Day_Value[\"<b>🟰 <em></em><br/>Set Tasks Of Day Value</b>"/]:::assignmentsAdded
+    click Set_Tasks_Of_Day_Value "#set_tasks_of_day_value" "3916738752"
+    
+    
+    Full_or_Limited_LMRA{"🔀 <em></em><br/>Full or Limited LMRA ?"}:::decisions
+    click Full_or_Limited_LMRA "#full_or_limited_lmra" "2088660188"
+    
+    Limited_LMRA_Confirmed{"🔀 <em></em><br/>Limited LMRA Confirmed ?"}:::decisions
+    click Limited_LMRA_Confirmed "#limited_lmra_confirmed" "2857364459"
+    
+    LMRA_Already_Done{"🔀 <em></em><br/>LMRA Already Done ?"}:::decisions
+    click LMRA_Already_Done "#lmra_already_done" "2884183025"
+    
+    
+    Loop_Lines{{"<b>🔁 <em></em><br/>Loop Lines</b>"}}:::loopsAdded
+    click Loop_Lines "#loop_lines" "1034807019"
+    
+    
+    Create_Full_LMRA[("➕ <em></em><br/>Create Full LMRA")]:::recordCreates
+    click Create_Full_LMRA "#create_full_lmra" "3999568703"
+    
+    Create_Limited_LMRA[("➕ <em></em><br/>Create Limited LMRA")]:::recordCreates
+    click Create_Limited_LMRA "#create_limited_lmra" "2204160202"
+    
+    Get_Related_Operational_Account[("<b>🔍 <em></em><br/>Get Related Operational Account</b>")]:::recordLookupsChanged
+    
+    
+    click Get_Related_Operational_Account "#get_related_operational_account" "3839606916"
+    
+    
+    Get_Related_Work_Order[("<b>🔍 <em></em><br/>Get Related Work Order</b>")]:::recordLookupsChanged
+    
+    
+    click Get_Related_Work_Order "#get_related_work_order" "514490499"
+    
+    
+    
+    Get_Work_Lines[("<b>🔍 <em></em><br/>Get Work Lines</b>")]:::recordLookupsAdded
+    click Get_Work_Lines "#get_work_lines" "2948152931"
+    
+    
+    Get_Work_Step_Information[("🔍 <em></em><br/>Get Work Step Information")]:::recordLookups
+    click Get_Work_Step_Information "#get_work_step_information" "968707648"
+    
+    Confirmed_LMRA_Done_at_WO_level[("🛠️ <em></em><br/>Confirmed LMRA Done at WO level")]:::recordUpdates
+    click Confirmed_LMRA_Done_at_WO_level "#confirmed_lmra_done_at_wo_level" "3771151378"
+    
+    Update_Work_Step_Status_to_Complete[("🛠️ <em></em><br/>Update Work Step Status to Complete")]:::recordUpdates
+    click Update_Work_Step_Status_to_Complete "#update_work_step_status_to_complete" "1882464419"
+    
+    Update_Work_Step_Status_to_Complete_After[("🛠️ <em></em><br/>Update Work Step Status to Complete After")]:::recordUpdates
+    click Update_Work_Step_Status_to_Complete_After "#update_work_step_status_to_complete_after" "247084983"
+    
+    Full_LMRA_Information(["<b>💻 <em></em><br/>Full LMRA Information</b>"]):::screensChanged
+    
+    
+    click Full_LMRA_Information "#full_lmra_information" "793521090"
+    
+    
+    Limited_LMRA_Information(["💻 <em></em><br/>Limited LMRA Information"]):::screens
+    click Limited_LMRA_Information "#limited_lmra_information" "3519037032"
+    
+    LMRA_Done_Message(["💻 <em></em><br/>LMRA Done Message"]):::screens
+    click LMRA_Done_Message "#lmra_done_message" "581062939"
+    
+    
+    Set_Tasks_Of_Day_Value ==> Loop_Lines
+    
+    Full_or_Limited_LMRA --> |"Full"| Full_LMRA_Information
+    Full_or_Limited_LMRA --> |"Limited"| Limited_LMRA_Information
+    Limited_LMRA_Confirmed --> |"Yes"| Create_Limited_LMRA
+    Limited_LMRA_Confirmed --> |"No"| Limited_LMRA_Information
+    LMRA_Already_Done --> |"No"| Full_or_Limited_LMRA
+    LMRA_Already_Done --> |"Yes"| LMRA_Done_Message
+    
+    Loop_Lines ==> |"🟩<b>For Each</b>"|Set_Tasks_Of_Day_Value
+    Loop_Lines ===> |"🟩<b>After Last</b>"|LMRA_Already_Done
+    
+    Create_Full_LMRA --> Update_Work_Step_Status_to_Complete_After
+    Create_Limited_LMRA --> Update_Work_Step_Status_to_Complete_After
+    
+    Get_Related_Operational_Account -.-> LMRA_Already_Done
+    Get_Related_Work_Order -.-> Get_Related_Operational_Account
+    
+    Get_Related_Operational_Account ==> Loop_Lines
+    Get_Related_Work_Order ==> Get_Work_Lines
+    Get_Work_Lines ==> Get_Related_Operational_Account
+    
+    Get_Work_Step_Information --> Get_Related_Work_Order
+    Confirmed_LMRA_Done_at_WO_level --> END_Confirmed_LMRA_Done_at_WO_level
+    Update_Work_Step_Status_to_Complete --> END_Update_Work_Step_Status_to_Complete
+    Update_Work_Step_Status_to_Complete_After --> Confirmed_LMRA_Done_at_WO_level
+    Full_LMRA_Information --> Create_Full_LMRA
+    Limited_LMRA_Information --> Limited_LMRA_Confirmed
+    LMRA_Done_Message --> Update_Work_Step_Status_to_Complete
+    START -->  Get_Work_Step_Information
+    END_Confirmed_LMRA_Done_at_WO_level(( END )):::endClass
+    END_Update_Work_Step_Status_to_Complete(( END )):::endClass
+    
+    
+    classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+    classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+    classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+    classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+    classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+    classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+    classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+    classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+    classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+    classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+    classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
+    
+    
+    
+    classDef actionCallsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    
+    classDef actionCallsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    
+    classDef actionCallsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+      
+    linkStyle 0,7,8,13,14,15 stroke:#00ff00,stroke-width:4px,color:green;
+    linkStyle 11,12 stroke:#ff0000,stroke-width:4px,color:red;
+    ```
+    
+    ## Variables
+    
+    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>tasksOfDay</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>workLineLoopVar</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>workOrderLines</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    ## Flow Nodes Details
+    
+    
+    ### 🟩Set_Tasks_Of_Day_Value
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Set Tasks Of Day Value</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Loop_Lines](#loop_lines)</b></span>|
+    
+    #### 🟩Assignments
+    
+    |Assign To Reference|Operator|Value|
+    |:-- |:--:|:--: |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>tasksOfDay</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Add</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!workLineLoopVar.Description},</b></span>|
+    
+    ### 🟩Loop_Lines
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Loop</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Loop Lines</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign Next Value To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workLineLoopVar</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Collection Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderLines</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Iteration Order</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Asc</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Next Value Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Set_Tasks_Of_Day_Value](#set_tasks_of_day_value)</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>No More Values Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[LMRA_Already_Done](#lmra_already_done)</b></span>|
+    
+    ### Get_Related_Operational_Account
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[LMRA_Already_Done](#lmra_already_done)</i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Loop_Lines](#loop_lines)</b></span>|
+    
+    ### Get_Related_Work_Order
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Related_Operational_Account](#get_related_operational_account)</i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Work_Lines](#get_work_lines)</b></span>|
+    
+    ### 🟩Get_Work_Lines
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get Work Lines</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign Null Values If No Records Found</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Output Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderLines</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Queried Fields</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Id<br/>- Description<br/></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Related_Operational_Account](#get_related_operational_account)</b></span>|
+    
+    #### 🟩Filters (logic: **and**)
+    
+    |Filter Id|Field|Operator|Value|
+    |:-- |:-- |:--:|:--: |
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.Id</b></span>|
+    
+    ### Full_LMRA_Information
+    
+    #### 🟩Header
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p style="text-align: center;"><img src="https://krinkelsgreencare--upeodev.sandbox.file.force.com/sfc/servlet.shepherd/version/download/068KF000001eO36?asPdf=false&amp;operationContext=CHATTER" alt="LMRA_Header.png"></p></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
+    
+    #### 🟩Do_you_have_to_use_a_thermal_burner_because_there_is_no_alternative
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Boolean</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Choice References</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Choice_Yes<br/>- Choice_No<br/></b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Do you have to use a thermal burner (because there is no alternative?)</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Dropdown Box</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    #### Tasks_of_the_Day_1
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Value</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!tasksOfDay}</b></span>|
+    
+    ___
+    
+    _Documentation generated from branch monitoring_krinkelsgreencare__upeodev_sandbox by [sfdx-hardis](https://sfdx-hardis.cloudity.com), featuring [salesforce-flow-visualiser](https://github.com/toddhalfpenny/salesforce-flow-visualiser)_
+
 === "Nov 26, 2024"
 
     _Nov 26, 2024, by fpardon-upeo in commit Org state on 2024-11-26 00:25 for monitoring_krinkelsgreencare__upeodev_sandbox [skip ci]_
