@@ -26,4 +26,4 @@
 
 ___
 
-_Documentation generated from branch monitoring_krinkelsgreencare__upeodev_sandbox with [sfdx-hardis](https://sfdx-hardis.cloudity.com) command [`sf hardis:doc:project2markdown`](https://sfdx-hardis.cloudity.com/hardis/doc/project2markdown/)_
+_Documentation generated from branch monitoring_krinkelsgreencare__upeodev_sandbox with [sfdx-hardis](https://sfdx-hardis.cloudity.com) by [Cloudity](https://cloudity.com) command [`sf hardis:doc:project2markdown`](https://sfdx-hardis.cloudity.com/hardis/doc/project2markdown/)_

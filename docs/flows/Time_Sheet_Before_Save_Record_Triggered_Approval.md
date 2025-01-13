@@ -1,6 +1,6 @@
 # [Time Sheet] - [Before-Save] - [Record-Triggered] - Approval
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Time_Sheet_Before_Save_Record_Triggered_Approval-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

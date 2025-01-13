@@ -1,6 +1,6 @@
 # [Service Appointment][After-Save][Record-Triggered] Set Service Territory
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Service_Appointment_After_Save_Record_Triggered_Set_Service_Territory-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

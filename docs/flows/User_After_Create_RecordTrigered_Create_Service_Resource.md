@@ -1,6 +1,6 @@
 # [User] [After Create] [RecordTrigered] Create Service Resource
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](User_After_Create_RecordTrigered_Create_Service_Resource-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

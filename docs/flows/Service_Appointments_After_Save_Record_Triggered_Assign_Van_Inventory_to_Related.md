@@ -1,6 +1,6 @@
 # [Service Appointments][After-Save][Record-Triggered] Assign Van Inventory to Related WO
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

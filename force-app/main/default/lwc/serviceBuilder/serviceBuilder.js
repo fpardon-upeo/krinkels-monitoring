@@ -44,7 +44,12 @@ import ServiceBuilder_ActionsColumnLabel from "@salesforce/label/c.ServiceBuilde
 import ServiceBuilder_EstimatedDurationHelpText from "@salesforce/label/c.ServiceBuilder_EstimatedDurationHelpText";
 import ServiceBuilder_CalculatedDurationHelpText from "@salesforce/label/c.ServiceBuilder_CalculatedDurationHelpText";
 import ServiceBuilder_MissingFieldsMessage from "@salesforce/label/c.ServiceBuilder_MissingFieldsMessage";
-
+import ServiceBuilder_Title from "@salesforce/label/c.ServiceBuilder_Title";
+import ServiceBuilder_GeolocationText from "@salesforce/label/c.ServiceBuilder_GeolocationText";
+import ServiceBuilder_AddressText from "@salesforce/label/c.ServiceBuilder_AddressText";
+import ServiceBuilder_AddRowButtonLabel from "@salesforce/label/c.ServiceBuilder_AddRowButtonLabel";
+import ServiceBuilder_UpdateRecurrenceButtonLabel from "@salesforce/label/c.ServiceBuilder_UpdateRecurrenceButtonLabel";
+import ServiceBuilder_SaveButtonLabel from "@salesforce/label/c.ServiceBuilder_SaveButtonLabel";
 export default class ServiceBuilder extends LightningElement {
   labels = {
     ServiceBuilder_WarningText,
@@ -73,7 +78,13 @@ export default class ServiceBuilder extends LightningElement {
     ServiceBuilder_ActionsColumnLabel,
     ServiceBuilder_EstimatedDurationHelpText,
     ServiceBuilder_CalculatedDurationHelpText,
-    ServiceBuilder_MissingFieldsMessage
+    ServiceBuilder_MissingFieldsMessage,
+    ServiceBuilder_Title,
+    ServiceBuilder_GeolocationText,
+    ServiceBuilder_AddressText,
+    ServiceBuilder_AddRowButtonLabel,
+    ServiceBuilder_UpdateRecurrenceButtonLabel,
+    ServiceBuilder_SaveButtonLabel
   };
 
   // API Properties

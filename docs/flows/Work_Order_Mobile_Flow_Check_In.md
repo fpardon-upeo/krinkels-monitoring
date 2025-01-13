@@ -1,6 +1,6 @@
 # [Work Order][Mobile Flow] Check In
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Work_Order_Mobile_Flow_Check_In-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

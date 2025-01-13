@@ -1,6 +1,6 @@
 # Send Better Email Testflow
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Send_Better_Email_Testflow-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

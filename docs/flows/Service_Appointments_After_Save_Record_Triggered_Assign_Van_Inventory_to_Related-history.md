@@ -67,6 +67,8 @@
     
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|

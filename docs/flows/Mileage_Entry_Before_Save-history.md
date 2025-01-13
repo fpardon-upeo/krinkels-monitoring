@@ -149,6 +149,8 @@
     linkStyle 0,14 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     
@@ -441,6 +443,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -503,6 +507,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

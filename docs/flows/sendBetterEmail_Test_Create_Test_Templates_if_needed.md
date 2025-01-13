@@ -1,6 +1,6 @@
 # sendBetterEmail Test - Create Test Templates if Needed
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](sendBetterEmail_Test_Create_Test_Templates_if_needed-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

@@ -56,6 +56,8 @@
     
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|

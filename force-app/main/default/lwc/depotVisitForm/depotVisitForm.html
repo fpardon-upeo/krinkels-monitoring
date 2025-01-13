@@ -1,7 +1,7 @@
 <template>
   <!-- Step Header -->
   <div class="slds-page-header slds-p-top_medium">
-    <h1 class="slds-page-header__title">Depot Visit</h1>
+    <h1 class="slds-page-header__title">{labels.DepotVisitForm_Title}</h1>
   </div>
 
   <div
@@ -13,7 +13,7 @@
       <div class="slds-form-element slds-form-element_stacked">
         <lightning-input
           type="text"
-          label="Subject"
+          label={labels.DepotVisitForm_SubjectLabel}
           value={subject}
           onchange={handleSubjectChange}
           class="slds-m-bottom_medium"
@@ -25,7 +25,7 @@
       <div class="slds-form-element slds-form-element_stacked">
         <lightning-combobox
           name="depotKGC"
-          label="Depot KGC"
+          label={labels.DepotVisitForm_DepotKGC}
           value={selectedDepotId}
           options={depotOptions}
           onchange={handleDepotChange}
@@ -39,7 +39,7 @@
       <div class="slds-form-element slds-form-element_stacked">
         <lightning-textarea
           name="dropOffItems"
-          label="Drop Off Items"
+          label={labels.DepotVisitForm_DropOffItemsLabel}
           value={dropOffItems}
           onchange={handleDropOffItemsChange}
           class="slds-m-bottom_medium"
@@ -51,7 +51,7 @@
       <div class="slds-form-element slds-form-element_stacked">
         <lightning-textarea
           name="pickUpItems"
-          label="Pick Up Items"
+          label={labels.DepotVisitForm_PickUpItemsLabel}
           value={pickUpItems}
           onchange={handlePickUpItemsChange}
           class="slds-m-bottom_medium"
@@ -65,13 +65,13 @@
     <div class="slds-docked-form-footer">
       <div class="slds-grid slds-grid_align-spread">
         <lightning-button
-          label="Back"
+          label={labels.DepotVisitForm_BackButtonLabel}
           onclick={handleBack}
           class="slds-m-right_medium"
         >
         </lightning-button>
         <lightning-button
-          label="Create"
+          label={labels.DepotVisitForm_CreateButtonLabel}
           variant="brand"
           onclick={handleCreate}
           disabled={isCreateDisabled}

@@ -104,6 +104,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Update_Work_Order_Information
@@ -219,6 +221,8 @@
     classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
       
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -347,6 +351,8 @@
     linkStyle 3,4 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 2 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Variables
     
@@ -501,6 +507,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

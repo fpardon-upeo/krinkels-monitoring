@@ -104,6 +104,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Get_Contract_Manager
@@ -174,6 +176,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

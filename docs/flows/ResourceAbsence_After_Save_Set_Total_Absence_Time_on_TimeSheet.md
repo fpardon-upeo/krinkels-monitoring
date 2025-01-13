@@ -1,6 +1,6 @@
 # [ResourceAbsence] - After Save - Set Total Absence Time on TimeSheet
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](ResourceAbsence_After_Save_Set_Total_Absence_Time_on_TimeSheet-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

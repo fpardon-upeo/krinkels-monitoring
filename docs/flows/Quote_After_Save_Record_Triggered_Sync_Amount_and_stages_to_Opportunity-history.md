@@ -144,6 +144,8 @@
     linkStyle 14 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -343,6 +345,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -419,6 +423,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

@@ -118,6 +118,8 @@
     linkStyle 1 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Update_Status_of_Service_Appointment
@@ -252,6 +254,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## 🟩Formulas
     
     |Name|Data Type|Expression|Description|
@@ -323,6 +327,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

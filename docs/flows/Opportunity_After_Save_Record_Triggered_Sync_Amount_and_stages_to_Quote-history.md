@@ -180,6 +180,8 @@
     linkStyle 8,11,12,13,14 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -408,6 +410,8 @@
     linkStyle 2 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Status
@@ -507,6 +511,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

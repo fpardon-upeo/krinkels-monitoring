@@ -1,6 +1,6 @@
 # [Operator_Created_Event__e] - Create Service Resource
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Operator_Created_Event_e_Create_Service_Resource-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

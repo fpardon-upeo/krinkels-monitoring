@@ -1,6 +1,6 @@
 # test
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](test-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

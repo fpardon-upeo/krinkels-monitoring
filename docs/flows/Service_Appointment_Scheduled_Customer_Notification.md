@@ -1,6 +1,6 @@
 # [Service Appointment] [Scheduled] Customer Notification
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Service_Appointment_Scheduled_Customer_Notification-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

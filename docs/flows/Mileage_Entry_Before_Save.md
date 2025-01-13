@@ -1,6 +1,6 @@
 # [Mileage Entry] - [Before-Save] - [Record-Triggered]
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Mileage_Entry_Before_Save-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

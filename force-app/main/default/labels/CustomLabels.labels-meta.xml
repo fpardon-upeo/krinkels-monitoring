@@ -772,7 +772,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Calendar_In_Mileage_Entries_Description</shortDescription>
-        <value>View or add In mileage records</value>
+        <value>View or add Starting mileage records</value>
     </labels>
     <labels>
         <fullName>Calendar_Mileage_Allowance</fullName>
@@ -900,7 +900,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Calendar_Out_Mileage_Entries_Description</shortDescription>
-        <value>View or add out mileage records</value>
+        <value>View or add Ending mileage records</value>
     </labels>
     <labels>
         <fullName>Calendar_Save</fullName>
@@ -1764,7 +1764,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Mileage_View_Add_EndMileage</shortDescription>
-        <value>View or add ending mileage records</value>
+        <value>View or add Ending mileage record</value>
     </labels>
     <labels>
         <fullName>Mileage_View_Add_OwnMileage</fullName>
@@ -1772,7 +1772,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Mileage_View_Add_OwnMileage</shortDescription>
-        <value>View or add own vehicle mileage records</value>
+        <value>View or add Own vehicle mileage record</value>
     </labels>
     <labels>
         <fullName>Mileage_View_Add_StartMileage</fullName>
@@ -1780,7 +1780,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Mileage_View_Add_StartMileage</shortDescription>
-        <value>View or add starting mileage records</value>
+        <value>View or add Starting mileage record</value>
     </labels>
     <labels>
         <fullName>StartDay_Back_To_Menu_Button</fullName>
@@ -3900,5 +3900,157 @@
         <protected>false</protected>
         <shortDescription>ServiceBuilder_ZipCodeColumnLabel</shortDescription>
         <value>Zip Code</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentPicker_Success_Toast_Title</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Success_Toast_Title</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_BackButtonLabel</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_BackButtonLabel</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_CreateButtonLabel</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_CreateButtonLabel</shortDescription>
+        <value>Create</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_DepotKGC</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_DepotKGC</shortDescription>
+        <value>Depot KGC</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_DropOffItemsLabel</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_DropOffItemsLabel</shortDescription>
+        <value>Drop Off Items</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_ErrorToastMessage</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_ErrorToastMessage</shortDescription>
+        <value>An unexpected error occurred creating the depot visit work order</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_ErrorToastTitle</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_ErrorToastTitle</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_PickUpItemsLabel</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_PickUpItemsLabel</shortDescription>
+        <value>Pick Up Items</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_SubjectLabel</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_SubjectLabel</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_SuccessToastMessage</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_SuccessToastMessage</shortDescription>
+        <value>Depot Visit Work Order created successfully</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_SuccessToastTitle</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_SuccessToastTitle</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>DepotVisitForm_Title</fullName>
+        <categories>DepotVisitForm</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepotVisitForm_Title</shortDescription>
+        <value>Depot Visit</value>
+    </labels>
+    <labels>
+        <fullName>ResourceCalendar_Error_Loading_Appointments_Message</fullName>
+        <categories>ResourceCalendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ResourceCalendar_Error_Loading_Appointments_Message</shortDescription>
+        <value>Error loading appointments</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_AddRowButtonLabel</fullName>
+        <categories>ServiceBuilder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_AddRowButtonLabel</shortDescription>
+        <value>Add Row</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_AddressText</fullName>
+        <categories>ServiceBuilder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_AddressText</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_GeolocationText</fullName>
+        <categories>ServiceBuilder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_GeolocationText</shortDescription>
+        <value>Geolocation</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_SaveButtonLabel</fullName>
+        <categories>ServiceBuilder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_SaveButtonLabel</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_Title</fullName>
+        <categories>ServiceBuilder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_Title</shortDescription>
+        <value>Contract Services</value>
+    </labels>
+    <labels>
+        <fullName>ServiceBuilder_UpdateRecurrenceButtonLabel</fullName>
+        <categories>ServiceBuilder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceBuilder_UpdateRecurrenceButtonLabel</shortDescription>
+        <value>Update Recurrence</value>
     </labels>
 </CustomLabels>

@@ -1,6 +1,6 @@
 # [Opportunity][Screen-Flow] Pricing Request
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Opportunity_Screen_Flow_Pricing_Request-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

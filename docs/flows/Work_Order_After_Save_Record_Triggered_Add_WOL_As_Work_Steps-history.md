@@ -142,6 +142,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Set_Values_for_Work_Steps
@@ -309,6 +311,8 @@
     linkStyle 1,3,4,14 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 13 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -488,6 +492,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -638,6 +644,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -781,6 +789,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Set_Values_for_Work_Steps
@@ -879,6 +889,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

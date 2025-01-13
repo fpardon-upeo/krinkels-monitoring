@@ -125,6 +125,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -291,6 +293,8 @@
     linkStyle 6 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 2,3,5,13 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -506,6 +510,8 @@
     linkStyle 4 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Variables
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
@@ -714,6 +720,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Variables
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
@@ -857,6 +865,8 @@
     linkStyle 2,3,4,9 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 1 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -1063,6 +1073,8 @@
     linkStyle 2,3,4 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Variables
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
@@ -1257,6 +1269,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

@@ -1,6 +1,6 @@
 # Create Internal Work Order
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Work_Order_Screen_Flow_Create_Internal_Work-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

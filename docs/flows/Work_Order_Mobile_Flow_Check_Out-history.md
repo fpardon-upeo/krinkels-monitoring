@@ -154,6 +154,8 @@
     linkStyle 5 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Variables
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
@@ -362,6 +364,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## 🟩Formulas
     
     |Name|Data Type|Expression|Description|
@@ -556,6 +560,8 @@
     linkStyle 0,4,5,10,11 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 2,3,9 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Variables
     
@@ -752,6 +758,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

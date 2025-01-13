@@ -1,6 +1,6 @@
 # Resource Absence - Before Save
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Resource_Absence_Before_Save-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

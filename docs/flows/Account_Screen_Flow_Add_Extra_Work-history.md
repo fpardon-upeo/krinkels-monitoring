@@ -227,6 +227,8 @@
     linkStyle 8,11,12,17,22,23,30 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     
@@ -674,6 +676,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Create_Opportunity
@@ -852,6 +856,8 @@
     classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
       
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -1046,6 +1052,8 @@
     classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
       
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -1289,6 +1297,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

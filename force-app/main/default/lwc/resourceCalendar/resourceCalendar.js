@@ -19,6 +19,7 @@ import ResourceCalendar_SundayWord_Abbreviation from "@salesforce/label/c.Resour
 import ResourceCalendar_MondayWord_Abbreviation from "@salesforce/label/c.ResourceCalendar_MondayWord_Abbreviation";
 import ResourceCalendar_TuesdayWord_Abbreviation from "@salesforce/label/c.ResourceCalendar_TuesdayWord_Abbreviation";
 import ResourceCalendar_WednesdayWord_Abbreviation from "@salesforce/label/c.ResourceCalendar_WednesdayWord_Abbreviation";
+import ResourceCalendar_Error_Loading_Appointments_Message from "@salesforce/label/c.ResourceCalendar_Error_Loading_Appointments_Message";
 
 export default class ResourceCalendar extends LightningElement {
   labels = {
@@ -35,7 +36,8 @@ export default class ResourceCalendar extends LightningElement {
     ResourceCalendar_SundayWord_Abbreviation,
     ResourceCalendar_MondayWord_Abbreviation,
     ResourceCalendar_TuesdayWord_Abbreviation,
-    ResourceCalendar_WednesdayWord_Abbreviation
+    ResourceCalendar_WednesdayWord_Abbreviation,
+    ResourceCalendar_Error_Loading_Appointments_Message
   };
 
   @track currentDate = new Date();
@@ -142,7 +144,8 @@ export default class ResourceCalendar extends LightningElement {
       // Optionally show error toast
       this.dispatchEvent(
         new ShowToastEvent({
-          title: "Error loading appointments",
+          title:
+            this.labels.ResourceCalendar_Error_Loading_Appointments_Message,
           message: error.message,
           variant: "error"
         })

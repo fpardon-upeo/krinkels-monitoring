@@ -145,6 +145,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -261,6 +263,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

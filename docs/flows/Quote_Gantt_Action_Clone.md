@@ -1,6 +1,6 @@
 # [Quote] - [Gantt Action] - Clone
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Quote_Gantt_Action_Clone-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

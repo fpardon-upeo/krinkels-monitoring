@@ -1112,6 +1112,8 @@
         <members>AppointmentPicker_Simple_Checkout_Button_Text</members>
         <members>AppointmentPicker_Spinner</members>
         <members>AppointmentPicker_Spinner</members>
+        <members>AppointmentPicker_Success_Toast_Title</members>
+        <members>AppointmentPicker_Success_Toast_Title</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>AppointmentPicker_Travel_Started_Toast</members>
         <members>Calendar_Add_Break</members>
@@ -1286,6 +1288,28 @@
         <members>CreateInternalWorkOrder_SuccessMessage</members>
         <members>CreateInternalWorkOrder_SuccessTitle</members>
         <members>CreateInternalWorkOrder_SuccessTitle</members>
+        <members>DepotVisitForm_BackButtonLabel</members>
+        <members>DepotVisitForm_BackButtonLabel</members>
+        <members>DepotVisitForm_CreateButtonLabel</members>
+        <members>DepotVisitForm_CreateButtonLabel</members>
+        <members>DepotVisitForm_DepotKGC</members>
+        <members>DepotVisitForm_DepotKGC</members>
+        <members>DepotVisitForm_DropOffItemsLabel</members>
+        <members>DepotVisitForm_DropOffItemsLabel</members>
+        <members>DepotVisitForm_ErrorToastMessage</members>
+        <members>DepotVisitForm_ErrorToastMessage</members>
+        <members>DepotVisitForm_ErrorToastTitle</members>
+        <members>DepotVisitForm_ErrorToastTitle</members>
+        <members>DepotVisitForm_PickUpItemsLabel</members>
+        <members>DepotVisitForm_PickUpItemsLabel</members>
+        <members>DepotVisitForm_SubjectLabel</members>
+        <members>DepotVisitForm_SubjectLabel</members>
+        <members>DepotVisitForm_SuccessToastMessage</members>
+        <members>DepotVisitForm_SuccessToastMessage</members>
+        <members>DepotVisitForm_SuccessToastTitle</members>
+        <members>DepotVisitForm_SuccessToastTitle</members>
+        <members>DepotVisitForm_Title</members>
+        <members>DepotVisitForm_Title</members>
         <members>DepotVisit_Header</members>
         <members>DepotVisit_Header</members>
         <members>DepotVisit_NameText</members>
@@ -1570,6 +1594,8 @@
         <members>ResourceCalendar_AvailableHours_Word</members>
         <members>ResourceCalendar_Available_Text</members>
         <members>ResourceCalendar_Available_Text</members>
+        <members>ResourceCalendar_Error_Loading_Appointments_Message</members>
+        <members>ResourceCalendar_Error_Loading_Appointments_Message</members>
         <members>ResourceCalendar_FridayWord_Abbreviation</members>
         <members>ResourceCalendar_FridayWord_Abbreviation</members>
         <members>ResourceCalendar_FullyBooked_Text</members>
@@ -1650,6 +1676,10 @@
         <members>Send_Sign_Request</members>
         <members>ServiceBuilder_ActionsColumnLabel</members>
         <members>ServiceBuilder_ActionsColumnLabel</members>
+        <members>ServiceBuilder_AddRowButtonLabel</members>
+        <members>ServiceBuilder_AddRowButtonLabel</members>
+        <members>ServiceBuilder_AddressText</members>
+        <members>ServiceBuilder_AddressText</members>
         <members>ServiceBuilder_CalculatedDurationColumnLabel</members>
         <members>ServiceBuilder_CalculatedDurationColumnLabel</members>
         <members>ServiceBuilder_CalculatedDurationHelpText</members>
@@ -1676,6 +1706,8 @@
         <members>ServiceBuilder_EstimatedDurationColumnLabel</members>
         <members>ServiceBuilder_EstimatedDurationHelpText</members>
         <members>ServiceBuilder_EstimatedDurationHelpText</members>
+        <members>ServiceBuilder_GeolocationText</members>
+        <members>ServiceBuilder_GeolocationText</members>
         <members>ServiceBuilder_LatitudeColumnLabel</members>
         <members>ServiceBuilder_LatitudeColumnLabel</members>
         <members>ServiceBuilder_LongitudeColumnLabel</members>
@@ -1684,6 +1716,8 @@
         <members>ServiceBuilder_MissingFieldsMessage</members>
         <members>ServiceBuilder_ProjectCodeColumnLabel</members>
         <members>ServiceBuilder_ProjectCodeColumnLabel</members>
+        <members>ServiceBuilder_SaveButtonLabel</members>
+        <members>ServiceBuilder_SaveButtonLabel</members>
         <members>ServiceBuilder_ServiceTypeColumnLabel</members>
         <members>ServiceBuilder_ServiceTypeColumnLabel</members>
         <members>ServiceBuilder_StartDateColumnLabel</members>
@@ -1698,6 +1732,10 @@
         <members>ServiceBuilder_SuccessMessageSavingRecord</members>
         <members>ServiceBuilder_SuccessTitle</members>
         <members>ServiceBuilder_SuccessTitle</members>
+        <members>ServiceBuilder_Title</members>
+        <members>ServiceBuilder_Title</members>
+        <members>ServiceBuilder_UpdateRecurrenceButtonLabel</members>
+        <members>ServiceBuilder_UpdateRecurrenceButtonLabel</members>
         <members>ServiceBuilder_WarningText</members>
         <members>ServiceBuilder_WarningText</members>
         <members>ServiceBuilder_ZipCodeColumnLabel</members>

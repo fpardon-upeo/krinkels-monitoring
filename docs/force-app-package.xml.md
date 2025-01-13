@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3552
+Metadatas: 3571
 
 <details><summary>ApexClass (141)</summary>
 
@@ -1152,7 +1152,7 @@ Metadatas: 3552
 
 </details>
 
-<details><summary>CustomLabel (488)</summary>
+<details><summary>CustomLabel (507)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">AppointmentPicker_Appointments_Header</a><br/>
@@ -1179,6 +1179,7 @@ Metadatas: 3552
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">AppointmentPicker_Simple_Checkout_Button_Sub_Text</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">AppointmentPicker_Simple_Checkout_Button_Text</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">AppointmentPicker_Spinner</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">AppointmentPicker_Success_Toast_Title</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">AppointmentPicker_Travel_Started_Toast</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">Calendar_Add_Break</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">Calendar_Add_Break_Description</a><br/>
@@ -1266,6 +1267,17 @@ Metadatas: 3552
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">CreateInternalWorkOrder_StartDateTimeLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">CreateInternalWorkOrder_SuccessMessage</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">CreateInternalWorkOrder_SuccessTitle</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_BackButtonLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_CreateButtonLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_DepotKGC</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_DropOffItemsLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_ErrorToastMessage</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_ErrorToastTitle</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_PickUpItemsLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_SubjectLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_SuccessToastMessage</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_SuccessToastTitle</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisitForm_Title</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisit_Header</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">DepotVisit_NameText</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ExportCLI_Error_Toast_Message</a><br/>
@@ -1408,6 +1420,7 @@ Metadatas: 3552
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ResourceCalendar_AppointmentsCount_Word</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ResourceCalendar_AvailableHours_Word</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ResourceCalendar_Available_Text</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ResourceCalendar_Error_Loading_Appointments_Message</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ResourceCalendar_FridayWord_Abbreviation</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ResourceCalendar_FullyBooked_Text</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ResourceCalendar_MondayWord_Abbreviation</a><br/>
@@ -1448,6 +1461,8 @@ Metadatas: 3552
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ScheduleWO_SuccessTitle</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">Send_Sign_Request</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_ActionsColumnLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_AddRowButtonLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_AddressText</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_CalculatedDurationColumnLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_CalculatedDurationHelpText</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_CityColumnLabel</a><br/>
@@ -1461,10 +1476,12 @@ Metadatas: 3552
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_ErrorTitle</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_EstimatedDurationColumnLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_EstimatedDurationHelpText</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_GeolocationText</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_LatitudeColumnLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_LongitudeColumnLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_MissingFieldsMessage</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_ProjectCodeColumnLabel</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_SaveButtonLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_ServiceTypeColumnLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_StartDateColumnLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_StreetColumnLabel</a><br/>
@@ -1472,6 +1489,8 @@ Metadatas: 3552
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_SuccessMessageRecurrenceApplied</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_SuccessMessageSavingRecord</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_SuccessTitle</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_Title</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_UpdateRecurrenceButtonLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_WarningText</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">ServiceBuilder_ZipCodeColumnLabel</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">SimpleDispatcher_ResourceLabel</a><br/>

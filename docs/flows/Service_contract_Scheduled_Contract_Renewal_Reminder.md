@@ -1,6 +1,6 @@
 # [Service contract] [Scheduled] Contract Renewal Reminder
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Service_contract_Scheduled_Contract_Renewal_Reminder-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

@@ -1,6 +1,6 @@
 # [Work Order] - Send Customer Notification Crew Inbound
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Work_Order_Send_Customer_Notification_Crew_Inbound-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

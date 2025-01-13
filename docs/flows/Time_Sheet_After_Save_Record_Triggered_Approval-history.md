@@ -139,6 +139,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Submit_Record_for_Approval
@@ -246,6 +248,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

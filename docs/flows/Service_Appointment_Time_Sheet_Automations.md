@@ -1,6 +1,6 @@
 # [Service Appointment] - [After-Save] - [Record-Triggered] - Time Sheet Automations
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Service_Appointment_Time_Sheet_Automations-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

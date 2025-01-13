@@ -1,6 +1,6 @@
 # [Location Passport][Mobile Flow][Screen flow] View Location Passport Information
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Location_Passport_Mobile_Flow_Screen_flow_View_Location_Passport_Information-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

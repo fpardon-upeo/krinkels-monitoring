@@ -4,7 +4,7 @@
 
 <template>
   <lightning-card
-    title="Contract Services"
+    title={labels.ServiceBuilder_Title}
     icon-name="standard:contract_line_item"
   >
     <div class="mainContainer">
@@ -24,7 +24,7 @@
         <div class="slds-form-element">
           <label class="slds-checkbox_toggle slds-grid">
             <span class="slds-form-element__label slds-m-bottom_none"
-              >Geolocation</span
+              >{labels.ServiceBuilder_GeolocationText}</span
             >
             <input
               type="checkbox"
@@ -39,7 +39,7 @@
             </span>
             <span
               class="slds-form-element__label slds-m-bottom_none slds-p-left_x-small"
-              >Address</span
+              >{labels.ServiceBuilder_AddressText}</span
             >
           </label>
         </div>
@@ -192,7 +192,7 @@
                 >
                   {endDateLabel}
                 </th>
-                <th class="slds-text-align_center">Actions</th>
+                <th class="slds-text-align_center">{actionsLabel}</th>
               </tr>
               <!--- search boxes under each column header, not working for the lookup component -->
               <tr>
@@ -585,17 +585,17 @@
 
       <div class="button-container">
         <lightning-button
-          label="Add Row"
+          label={labels.ServiceBuilder_AddRowButtonLabel}
           class="slds-m-right_small"
           onclick={handleAddActionRow}
         ></lightning-button>
         <lightning-button
-          label="Update Recurrence"
+          label={labels.ServiceBuilder_UpdateRecurrenceButtonLabel}
           class="slds-m-right_small"
           onclick={handleMassEditRecurrence}
         ></lightning-button>
         <lightning-button
-          label="Save"
+          label={labels.ServiceBuilder_SaveButtonLabel}
           onclick={handleSaveAll}
           variant="brand"
         ></lightning-button>

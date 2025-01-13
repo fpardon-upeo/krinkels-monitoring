@@ -1,6 +1,6 @@
 # [Work Step][After-Save][Record-Triggered] Relink Before Work Photos to WO
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

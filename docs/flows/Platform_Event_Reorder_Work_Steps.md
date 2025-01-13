@@ -1,6 +1,6 @@
 # [Platform-Event] Reorder Work Steps
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Platform_Event_Reorder_Work_Steps-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

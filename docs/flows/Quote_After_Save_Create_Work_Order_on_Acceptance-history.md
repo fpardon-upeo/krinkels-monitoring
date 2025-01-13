@@ -139,6 +139,8 @@
     linkStyle 4,5 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## Formulas
     
     |Name|Data Type|Expression|Description|
@@ -352,6 +354,8 @@
     linkStyle 3,4,9,10,11 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 2,8 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Variables
     
@@ -592,6 +596,8 @@
     linkStyle 5 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -761,6 +767,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -861,6 +869,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

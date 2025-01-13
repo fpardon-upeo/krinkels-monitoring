@@ -40,6 +40,7 @@ import AppointmentPicker_Simple_Checkout_Button_Text from "@salesforce/label/c.A
 import AppointmentPicker_Simple_Checkout_Button_Sub_Text from "@salesforce/label/c.AppointmentPicker_Simple_Checkout_Button_Sub_Text";
 import AppointmentPicker_InternalWO_Title from "@salesforce/label/c.AppointmentPicker_InternalWO_Title";
 import AppointmentPicker_Select_Appointment_Title from "@salesforce/label/c.AppointmentPicker_Select_Appointment_Title";
+import AppointmentPicker_Success_Toast_Title from "@salesforce/label/c.AppointmentPicker_Success_Toast_Title";
 
 import { NavigationMixin } from "lightning/navigation";
 import { ToastTypes } from "c/utilsImageCapture";
@@ -120,7 +121,8 @@ export default class NextAppointmentPicker extends NavigationMixin(
     AppointmentPicker_Simple_Checkout_Button_Text,
     AppointmentPicker_Simple_Checkout_Button_Sub_Text,
     AppointmentPicker_InternalWO_Title,
-    AppointmentPicker_Select_Appointment_Title
+    AppointmentPicker_Select_Appointment_Title,
+    AppointmentPicker_Success_Toast_Title
   };
 
   columns = [
@@ -595,11 +597,13 @@ export default class NextAppointmentPicker extends NavigationMixin(
     createRecord(recordInput)
       .then(() => {
         console.log("ResourceAbsence record created");
+
         const toastEvent = new ShowToastEvent({
-          title: "Success",
+          title: this.labels.AppointmentPicker_Success_Toast_Title,
           message: this.labels.AppointmentPicker_Break_Success_Message,
           variant: "success"
         });
+
         this.dispatchEvent(toastEvent);
         setTimeout(() => {
           this[NavigationMixin.Navigate]({

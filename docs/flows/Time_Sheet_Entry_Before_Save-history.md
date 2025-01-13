@@ -131,6 +131,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Formulas
     
     |Name|Data Type|Expression|Description|
@@ -270,6 +272,8 @@
     classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
       
     ```
+    
+    <!-- Flow description -->
     
     ## Formulas
     
@@ -443,6 +447,8 @@
     linkStyle 0,1,4,5,8,11,12,15 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 7,14 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -653,6 +659,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Formulas
     
     |Name|Data Type|Expression|Description|
@@ -774,6 +782,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Formulas
     
     |Name|Data Type|Expression|Description|
@@ -894,6 +904,8 @@
     classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
       
     ```
+    
+    <!-- Flow description -->
     
     ## Formulas
     
@@ -1039,6 +1051,8 @@
     linkStyle 3,4,5,6,7,8,9 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 1,2 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Flow Nodes Details
     
@@ -1234,6 +1248,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     |<!-- -->|<!-- -->|
@@ -1305,6 +1321,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

@@ -117,6 +117,10 @@
         <name>AppointmentPicker_Spinner</name>
     </customLabels>
     <customLabels>
+        <label><!-- AppointmentPicker_Success_Toast_Title --></label>
+        <name>AppointmentPicker_Success_Toast_Title</name>
+    </customLabels>
+    <customLabels>
         <label><!-- AppointmentPicker_Travel_Started_Toast --></label>
         <name>AppointmentPicker_Travel_Started_Toast</name>
     </customLabels>
@@ -463,6 +467,50 @@
     <customLabels>
         <label><!-- CreateInternalWorkOrder_SuccessTitle --></label>
         <name>CreateInternalWorkOrder_SuccessTitle</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_BackButtonLabel --></label>
+        <name>DepotVisitForm_BackButtonLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_CreateButtonLabel --></label>
+        <name>DepotVisitForm_CreateButtonLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_DepotKGC --></label>
+        <name>DepotVisitForm_DepotKGC</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_DropOffItemsLabel --></label>
+        <name>DepotVisitForm_DropOffItemsLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_ErrorToastMessage --></label>
+        <name>DepotVisitForm_ErrorToastMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_ErrorToastTitle --></label>
+        <name>DepotVisitForm_ErrorToastTitle</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_PickUpItemsLabel --></label>
+        <name>DepotVisitForm_PickUpItemsLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_SubjectLabel --></label>
+        <name>DepotVisitForm_SubjectLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_SuccessToastMessage --></label>
+        <name>DepotVisitForm_SuccessToastMessage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_SuccessToastTitle --></label>
+        <name>DepotVisitForm_SuccessToastTitle</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepotVisitForm_Title --></label>
+        <name>DepotVisitForm_Title</name>
     </customLabels>
     <customLabels>
         <label><!-- DepotVisit_Header --></label>
@@ -1033,6 +1081,10 @@
         <name>ResourceCalendar_Available_Text</name>
     </customLabels>
     <customLabels>
+        <label><!-- ResourceCalendar_Error_Loading_Appointments_Message --></label>
+        <name>ResourceCalendar_Error_Loading_Appointments_Message</name>
+    </customLabels>
+    <customLabels>
         <label><!-- ResourceCalendar_FridayWord_Abbreviation --></label>
         <name>ResourceCalendar_FridayWord_Abbreviation</name>
     </customLabels>
@@ -1193,6 +1245,14 @@
         <name>ServiceBuilder_ActionsColumnLabel</name>
     </customLabels>
     <customLabels>
+        <label><!-- ServiceBuilder_AddRowButtonLabel --></label>
+        <name>ServiceBuilder_AddRowButtonLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_AddressText --></label>
+        <name>ServiceBuilder_AddressText</name>
+    </customLabels>
+    <customLabels>
         <label><!-- ServiceBuilder_CalculatedDurationColumnLabel --></label>
         <name>ServiceBuilder_CalculatedDurationColumnLabel</name>
     </customLabels>
@@ -1245,6 +1305,10 @@
         <name>ServiceBuilder_EstimatedDurationHelpText</name>
     </customLabels>
     <customLabels>
+        <label><!-- ServiceBuilder_GeolocationText --></label>
+        <name>ServiceBuilder_GeolocationText</name>
+    </customLabels>
+    <customLabels>
         <label><!-- ServiceBuilder_LatitudeColumnLabel --></label>
         <name>ServiceBuilder_LatitudeColumnLabel</name>
     </customLabels>
@@ -1259,6 +1323,10 @@
     <customLabels>
         <label><!-- ServiceBuilder_ProjectCodeColumnLabel --></label>
         <name>ServiceBuilder_ProjectCodeColumnLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_SaveButtonLabel --></label>
+        <name>ServiceBuilder_SaveButtonLabel</name>
     </customLabels>
     <customLabels>
         <label><!-- ServiceBuilder_ServiceTypeColumnLabel --></label>
@@ -1287,6 +1355,14 @@
     <customLabels>
         <label><!-- ServiceBuilder_SuccessTitle --></label>
         <name>ServiceBuilder_SuccessTitle</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_Title --></label>
+        <name>ServiceBuilder_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ServiceBuilder_UpdateRecurrenceButtonLabel --></label>
+        <name>ServiceBuilder_UpdateRecurrenceButtonLabel</name>
     </customLabels>
     <customLabels>
         <label><!-- ServiceBuilder_WarningText --></label>

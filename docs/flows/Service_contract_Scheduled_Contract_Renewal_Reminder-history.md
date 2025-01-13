@@ -103,6 +103,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -216,6 +218,8 @@
     classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
       
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     
@@ -331,6 +335,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -445,6 +451,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -515,6 +523,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

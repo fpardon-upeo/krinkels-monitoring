@@ -313,45 +313,4 @@ export default class TimesheetEntryForm extends LightningElement {
     this.workOrderId = selectedRows[0].ParentRecordId;
     this.disableNextButton = selectedRows.length === 0;
   }
-
-  get buttonLabel() {
-    return this.workOrderId
-      ? this.labelsText.TimeSheetEntryForm_WO_Text
-      : this.labelsText.TimeSheetEntryForm_SelectWorkOrder;
-  }
-
-  get variables() {
-    return {
-      userId: ID
-    };
-  }
-
-  get serviceAppointmentsVariables() {
-    // Get the dates for last week's start and next week's end
-    const today = new Date();
-    const lastWeekStart = new Date(today);
-    lastWeekStart.setDate(today.getDate() - 3); // Beginning of last week
-    const nextWeekEnd = new Date(today);
-    nextWeekEnd.setDate(today.getDate() - today.getDay() + 3); // End of next week
-
-    console.log("lastweekstart", lastWeekStart.toISOString());
-    console.log("nextweekend", nextWeekEnd.toISOString());
-
-    return {
-      serviceResourceId: this.serviceResourceId,
-      startDate: { value: lastWeekStart.toISOString() },
-      endDate: { value: nextWeekEnd.toISOString() }
-    };
-  }
-
-  get timeSheetVariables() {
-    let todayAsDate = new Date();
-    let today = todayAsDate.toISOString();
-    today = today.split("T")[0];
-    console.log("today", today);
-    return {
-      resourceId: this.serviceResourceId,
-      today: { value: today }
-    };
-  }
 }

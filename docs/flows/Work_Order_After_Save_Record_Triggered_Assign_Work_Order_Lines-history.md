@@ -127,6 +127,8 @@
     linkStyle 4 stroke:#ff0000,stroke-width:4px,color:red;
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -269,6 +271,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -385,6 +389,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## General Information
     
     #### Filters (logic: **and**)
@@ -457,6 +463,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     

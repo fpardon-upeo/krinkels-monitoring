@@ -1,6 +1,6 @@
 # [Quote][After-Save][Record-Triggered] Sync Amount and stages to Opportunity
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

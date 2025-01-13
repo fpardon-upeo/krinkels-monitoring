@@ -1,6 +1,6 @@
 # Asset - Notify Business Support for ATAK Project
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Asset_Notify_Business_Support_for_ATAK_Project-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

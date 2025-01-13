@@ -6,6 +6,17 @@ import { LightningElement, api, track } from "lwc";
 import getDepots from "@salesforce/apex/SFS_WorkOrderCreatorController.getDepots";
 import createDepotVisitWorkOrder from "@salesforce/apex/SFS_WorkOrderCreatorController.createDepotVisitWorkOrder";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import DepotVisitForm_BackButtonLabel from "@salesforce/label/c.DepotVisitForm_BackButtonLabel";
+import DepotVisitForm_CreateButtonLabel from "@salesforce/label/c.DepotVisitForm_CreateButtonLabel";
+import DepotVisitForm_PickUpItemsLabel from "@salesforce/label/c.DepotVisitForm_PickUpItemsLabel";
+import DepotVisitForm_DropOffItemsLabel from "@salesforce/label/c.DepotVisitForm_DropOffItemsLabel";
+import DepotVisitForm_DepotKGC from "@salesforce/label/c.DepotVisitForm_DepotKGC";
+import DepotVisitForm_SubjectLabel from "@salesforce/label/c.DepotVisitForm_SubjectLabel";
+import DepotVisitForm_Title from "@salesforce/label/c.DepotVisitForm_Title";
+import DepotVisitForm_SuccessToastTitle from "@salesforce/label/c.DepotVisitForm_SuccessToastTitle";
+import DepotVisitForm_SuccessToastMessage from "@salesforce/label/c.DepotVisitForm_SuccessToastMessage";
+import DepotVisitForm_ErrorToastTitle from "@salesforce/label/c.DepotVisitForm_ErrorToastTitle";
+import DepotVisitForm_ErrorToastMessage from "@salesforce/label/c.DepotVisitForm_ErrorToastMessage";
 
 export default class DepotVisitForm extends LightningElement {
   @api recordId;
@@ -16,6 +27,20 @@ export default class DepotVisitForm extends LightningElement {
   @track subject = "Internal Work Order";
   @track dropOffItems = "";
   @track pickUpItems = "";
+
+  labels = {
+    DepotVisitForm_BackButtonLabel,
+    DepotVisitForm_CreateButtonLabel,
+    DepotVisitForm_PickUpItemsLabel,
+    DepotVisitForm_DropOffItemsLabel,
+    DepotVisitForm_DepotKGC,
+    DepotVisitForm_SubjectLabel,
+    DepotVisitForm_Title,
+    DepotVisitForm_SuccessToastTitle,
+    DepotVisitForm_SuccessToastMessage,
+    DepotVisitForm_ErrorToastTitle,
+    DepotVisitForm_ErrorToastMessage
+  };
 
   get isCreateDisabled() {
     return !this.selectedDepotId;
@@ -79,8 +104,8 @@ export default class DepotVisitForm extends LightningElement {
       this.dispatchEvent(
         new CustomEvent("close", {
           detail: {
-            title: "Success",
-            message: "Depot Visit Work Order created successfully",
+            title: this.labels.DepotVisitForm_SuccessToastTitle,
+            message: this.labels.DepotVisitForm_SuccessToastMessage,
             variant: "success"
           }
         })
@@ -89,8 +114,8 @@ export default class DepotVisitForm extends LightningElement {
       this.dispatchEvent(
         new CustomEvent("close", {
           detail: {
-            title: "Error",
-            message: error.body?.message || "An unexpected error occurred",
+            title: this.labels.DepotVisitForm_ErrorToastTitle,
+            message: this.labels.DepotVisitForm_ErrorToastMessage,
             variant: "error"
           }
         })

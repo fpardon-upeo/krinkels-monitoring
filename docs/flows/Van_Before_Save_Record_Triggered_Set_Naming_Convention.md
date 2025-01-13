@@ -1,6 +1,6 @@
 # [Van][Before-Save][Record-Triggered] Set Naming Convention & Inventory Location
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Van_Before_Save_Record_Triggered_Set_Naming_Convention-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

@@ -1,6 +1,6 @@
 # [Service Appointment][Mobile flow][Screen flow] Send Service Report to Customer
 
-## Flow Diagram
+## Flow Diagram [(_View History_)](Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer-history.md)
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

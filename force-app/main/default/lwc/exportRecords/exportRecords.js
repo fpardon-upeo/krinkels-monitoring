@@ -16,7 +16,11 @@ export default class ExportRecords extends LightningElement {
 
   labels = {
     ExportCLI_Header,
-    ExportCLI_ExportButton
+    ExportCLI_ExportButton,
+    ExportCLI_Error_Toast_Title,
+    ExportCLI_Error_Toast_Message,
+    ExportCLI_Success_Toast_Title,
+    ExportCLI_Success_Toast_Message
   };
 
   renderedCallback() {
@@ -54,18 +58,18 @@ export default class ExportRecords extends LightningElement {
 
       this.dispatchEvent(
         new ShowToastEvent({
-          title: ExportCLI_Success_Toast_Title,
-          message: ExportCLI_Success_Toast_Message,
+          title: this.labels.ExportCLI_Success_Toast_Title,
+          message: this.labels.ExportCLI_Success_Toast_Message,
           variant: "success"
         })
       );
 
       this.closeQuickAction();
     } catch (error) {
-      this.error = error.message || ExportCLI_Error_Toast_Message;
+      this.error = error.message || this.labels.ExportCLI_Error_Toast_Message;
       this.dispatchEvent(
         new ShowToastEvent({
-          title: ExportCLI_Error_Toast_Title,
+          title: this.labels.ExportCLI_Error_Toast_Title,
           message: this.error,
           variant: "error"
         })

@@ -212,6 +212,8 @@
       
     ```
     
+    <!-- Flow description -->
+    
     ## Flow Nodes Details
     
     ### Get_Assigned_Resources_Completed
@@ -439,6 +441,8 @@
     classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
       
     ```
+    
+    <!-- Flow description -->
     
     ## Formulas
     
@@ -756,6 +760,8 @@
     linkStyle 17,18,19,28,32,33,42,43,47,48 stroke:#00ff00,stroke-width:4px,color:green;
     linkStyle 15,16,21,22,27,30,31,39,40,41,46 stroke:#ff0000,stroke-width:4px,color:red;
     ```
+    
+    <!-- Flow description -->
     
     ## Formulas
     
@@ -1159,6 +1165,8 @@
     
     
     ```
+    
+    <!-- Flow description -->
     
     ## General Information
     
