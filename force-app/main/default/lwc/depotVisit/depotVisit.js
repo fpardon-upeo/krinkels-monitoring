@@ -6,7 +6,6 @@
 import { LightningElement, api, wire } from "lwc";
 import { getRecord } from "lightning/uiRecordApi";
 import getTimeSlots from "@salesforce/apex/AccountDetailsController.getTimeSlots";
-import getContentDocuments from "@salesforce/apex/AccountDetailsController.getContentDocuments";
 import { NavigationMixin } from "lightning/navigation";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import createFeedbackPost from "@salesforce/apex/AccountDetailsController.createFeedbackPost";
@@ -93,21 +92,7 @@ export default class LocationPassport extends NavigationMixin(
       console.log("slotsLoaded: ", this.slotsLoaded);
     }
   }
-
-  @wire(getContentDocuments, { workOrderId: "$recordId" })
-  wiredContentDocuments(result) {
-    if (result.data) {
-      this.contentDocuments = {
-        data: result.data.map((doc) => ({
-          ...doc,
-          iconName: this.getDocumentIcon(doc.FileExtension)
-        }))
-      };
-      this.docsLoaded = false; //Disable until I figure out how to open the preview link
-      console.log("docsLoaded: ", this.docsLoaded);
-    }
-  }
-
+  
   formatTime(timeString) {
     console.log("timeString: ", timeString);
     //We get timestrings as 25200000 for 7:00 AM

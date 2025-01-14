@@ -25,7 +25,8 @@ public without sharing class ServiceResourceHandler {
 
     public static String createServiceUser(String personnelId){
 
-        ATAK_Personnel__c personnel = [SELECT Id, Name, First_Name__c, Last_Name__c, Phone__c, Mobile__c, Email__c, Code__c, Sitemanager_Code__c FROM ATAK_Personnel__c WHERE Id = :personnelId];
+        ATAK_Personnel__c personnel = [SELECT Id, Name, First_Name__c, Last_Name__c, Phone__c, Mobile__c, Email__c, Code__c, Sitemanager_Code__c, Department_Name__c FROM ATAK_Personnel__c WHERE Id = :personnelId];
+        String profileName = personnel.Department_Name__c == 'Landscaping - Billing Plan' ? 'Operator Indoor' : 'Operator Outdoor';
         User user = new User();
         user.FirstName = personnel.First_Name__c;
         user.LastName = personnel.Last_Name__c;
@@ -39,7 +40,7 @@ public without sharing class ServiceResourceHandler {
         user.TimeZoneSidKey = 'Europe/Brussels';
         user.LocaleSidKey = 'en_US';
         user.EmailEncodingKey = 'UTF-8';
-        user.ProfileId = [SELECT Id FROM Profile WHERE Name = 'Operator Outdoor'].Id;
+        user.ProfileId = [SELECT Id FROM Profile WHERE Name =:profileName].Id;
         user.LanguageLocaleKey = 'en_US';
         user.IsActive = true;
         user.ATAK_Code__c = personnel.Code__c;
@@ -51,7 +52,14 @@ public without sharing class ServiceResourceHandler {
     }
 
     public static void createPermissionSetAssignments(String userId){
-        List<PermissionSet> permissionSets = [SELECT Id FROM PermissionSet WHERE Label IN ('Field Service Mobile License', 'Field Service Resource License', 'Field Service Resource Permissions', 'Field Service Agent Permissions', 'Field Service Mobile Custom Permission Set')];
+        List<PermissionSet> permissionSets = [
+                SELECT Id
+                FROM PermissionSet
+                WHERE Label IN
+                ('Field Service Mobile License', 'Field Service Resource License',
+                        'Field Service Resource Permissions', 'Field Service Agent Permissions',
+                        'APEX Class Access Mobile Operator', 'File Upload Improved',
+                        'Field Service Mobile Custom Permission Set')];
         List<PermissionSetAssignment> permissionSetAssignments = new List<PermissionSetAssignment>();
         for(PermissionSet permissionSet : permissionSets){
             PermissionSetAssignment permissionSetAssignment = new PermissionSetAssignment();
@@ -130,8 +138,6 @@ public without sharing class ServiceResourceHandler {
 
         insert serviceTerritoryMembers;
         upsert personnelRecords Code__c;
-
-
 
     }
 }

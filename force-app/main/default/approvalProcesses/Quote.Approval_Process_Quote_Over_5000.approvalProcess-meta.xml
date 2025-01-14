@@ -27,8 +27,8 @@
         </approvalActions>
         <assignedApprover>
             <approver>
-                <name>frederik.pardon@krinkels.be</name>
-                <type>user</type>
+                <name>Owner</name>
+                <type>relatedUserField</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>

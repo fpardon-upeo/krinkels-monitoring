@@ -17,6 +17,9 @@ import {
 import { NavigationMixin } from "lightning/navigation";
 import getWorkOrderIdFromWorkStepId from "@salesforce/apex/ImageCaptureService.getWorkOrderIdFromWorkStepId";
 import { CloseActionScreenEvent } from "lightning/actions";
+import imageCapture_ErrorMessages from "@salesforce/label/c.imageCapture_ErrorMessages";
+import imageCapture_SuccessMessages from "@salesforce/label/c.imageCapture_SuccessMessages";
+
 export default class ImageCapture extends NavigationMixin(LightningElement) {
   // This allows the component to be placed on a record page, or other record
   // context, and receive the record's ID when it runs
@@ -30,6 +33,11 @@ export default class ImageCapture extends NavigationMixin(LightningElement) {
   allImagesData = [];
 
   workOrderId;
+
+  labels = {
+    imageCapture_ErrorMessages,
+    imageCapture_SuccessMessages
+  };
 
   compressionOptions = {
     compressionEnabled: true,
@@ -74,13 +82,14 @@ export default class ImageCapture extends NavigationMixin(LightningElement) {
       case ToastTypes.Success: {
         const imageString =
           this.numPhotosToUpload > 1 ? "images were" : "image was";
-        return `${this.numPhotosToUpload} ${imageString} added to the record.`;
+
+        return `${this.labels.imageCapture_SuccessMessages}`;
       }
       case ToastTypes.Error: {
-        return "We couldn't add the images to the record. Try again.";
+        return `${this.labels.imageCapture_ErrorMessages}`;
       }
       case ToastTypes.Warning: {
-        return `We couldn't add ${this.numFailedUploadPhotos}/${this.numPhotosToUpload} images to the record. Try again or contact your admin for help.`;
+        return `${this.labels.imageCapture_ErrorMessages}`;
       }
       default: {
         return "";

@@ -1,16 +1,15 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+approvalProcesses/Quote.Approval_Process_Quote_Over_5000.approvalProcess-meta.xml," ",ApprovalProcess Quote.Approval_Process_Quote_Over_5000,M,,log,📰
+classes/ServiceResourceHandler.cls," ",ApexClass ServiceResourceHandler,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+flexipages/B2B_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage B2B_Opportunity_Record_Page,M,,log,📰
+flexipages/Maintenance_Plan_Record_Page.flexipage-meta.xml," ",FlexiPage Maintenance_Plan_Record_Page,M,,log,📰
+flexipages/Public_Tender_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Public_Tender_Opportunity_Record_Page,M,,log,📰
+flexipages/Quick_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Quick_Opportunity_Record_Page,M,,log,📰
 labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-lwc/contractLineEditor/contractLineEditor.html," ",LightningComponentBundle contractLineEditor/contractLineEditor.html,M,,log,📰
-lwc/depotVisitForm/depotVisitForm.html," ",LightningComponentBundle depotVisitForm/depotVisitForm.html,M,,log,📰
-lwc/depotVisitForm/depotVisitForm.js," ",LightningComponentBundle depotVisitForm/depotVisitForm.js,M,,log,📰
-lwc/exportRecords/exportRecords.js," ",LightningComponentBundle exportRecords/exportRecords.js,M,,log,📰
-lwc/nextAppointmentPicker/nextAppointmentPicker.js," ",LightningComponentBundle nextAppointmentPicker/nextAppointmentPicker.js,M,,log,📰
-lwc/resourceCalendar/resourceCalendar.js," ",LightningComponentBundle resourceCalendar/resourceCalendar.js,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
-lwc/timeSheetHeader/timeSheetHeader.html," ",LightningComponentBundle timeSheetHeader/timeSheetHeader.html,M,,log,📰
-lwc/timesheetEntryForm/timesheetEntryForm.js," ",LightningComponentBundle timesheetEntryForm/timesheetEntryForm.js,M,,log,📰
+lwc/depotVisit/depotVisit.js," ",LightningComponentBundle depotVisit/depotVisit.js,M,,log,📰
+lwc/imageCapture/imageCapture.js," ",LightningComponentBundle imageCapture/imageCapture.js,M,,log,📰
+lwc/imageCaptureTest/imageCaptureTest.js," ",LightningComponentBundle imageCaptureTest/imageCaptureTest.js,M,,log,📰
 translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
 translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
 translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰

@@ -4053,4 +4053,20 @@
         <shortDescription>ServiceBuilder_UpdateRecurrenceButtonLabel</shortDescription>
         <value>Update Recurrence</value>
     </labels>
+    <labels>
+        <fullName>imageCapture_ErrorMessages</fullName>
+        <categories>imageCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>imageCapture_ErrorMessages</shortDescription>
+        <value>There was a problem with the image/s upload/s.</value>
+    </labels>
+    <labels>
+        <fullName>imageCapture_SuccessMessages</fullName>
+        <categories>imageCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>imageCapture_SuccessMessages</shortDescription>
+        <value>The image/s was/were added to the record.</value>
+    </labels>
 </CustomLabels>

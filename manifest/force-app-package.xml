@@ -1590,6 +1590,8 @@
         <members>fsc_UserOrGroup</members>
         <members>fsc_Users</members>
         <members>fsc_Value_Label</members>
+        <members>imageCapture_ErrorMessages</members>
+        <members>imageCapture_SuccessMessages</members>
         <members>sremailNoSearchResultsMessage</members>
         <members>sremailSearchMembers</members>
         <members>timeSheetHeader_HoursText</members>

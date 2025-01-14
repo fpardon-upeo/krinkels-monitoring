@@ -15,13 +15,14 @@ import {
   dataURLtoFile
 } from "c/utilsImageCapture";
 import { NavigationMixin } from "lightning/navigation";
+import getWorkOrderIdFromWorkStepId from "@salesforce/apex/ImageCaptureService.getWorkOrderIdFromWorkStepId";
 import { CloseActionScreenEvent } from "lightning/actions";
+import imageCapture_ErrorMessages from "@salesforce/label/c.imageCapture_ErrorMessages";
+import imageCapture_SuccessMessages from "@salesforce/label/c.imageCapture_SuccessMessages";
 
 export default class ImageCaptureTest extends NavigationMixin(
   LightningElement
 ) {
-  // This allows the component to be placed on a record page, or other record
-  // context, and receive the record's ID when it runs
   @api
   recordId;
 
@@ -30,6 +31,8 @@ export default class ImageCaptureTest extends NavigationMixin(
 
   @track
   allImagesData = [];
+
+  workOrderId;
 
   compressionOptions = {
     compressionEnabled: true,
@@ -53,6 +56,11 @@ export default class ImageCaptureTest extends NavigationMixin(
   numPhotosToUpload = 0;
   numSuccessfullyUploadedPhotos = 0;
 
+  labels = {
+    imageCapture_ErrorMessages,
+    imageCapture_SuccessMessages
+  };
+
   get isImageSelected() {
     return this.selectedImageInfo != null;
   }
@@ -74,18 +82,30 @@ export default class ImageCaptureTest extends NavigationMixin(
       case ToastTypes.Success: {
         const imageString =
           this.numPhotosToUpload > 1 ? "images were" : "image was";
-        return `${this.numPhotosToUpload} ${imageString} added to the record with Id ${this.recordId}.`;
+        return `${this.labels.imageCapture_SuccessMessages}`;
       }
       case ToastTypes.Error: {
-        return `We couldn't add the images to the record with Id ${this.recordId}. Try again.`;
+        return `${this.labels.imageCapture_ErrorMessages}`;
       }
       case ToastTypes.Warning: {
-        return `We couldn't add ${this.numFailedUploadPhotos}/${this.numPhotosToUpload} images to the record. Try again or contact your admin for help.`;
+        return `${this.labels.imageCapture_ErrorMessages}`;
       }
       default: {
         return "";
       }
     }
+  }
+
+  connectedCallback() {
+    debug(`Working on ${this.objectApiName} with Id '${this.recordId}'`);
+    getWorkOrderIdFromWorkStepId({ workStepId: this.recordId })
+      .then((result) => {
+        this.workOrderId = result;
+        debug(`Work Order Id: ${this.workOrderId}`);
+      })
+      .catch((error) => {
+        log(`Error getting Work Order Id: ${error}`);
+      });
   }
 
   async handleImagesSelected(event) {
@@ -261,7 +281,7 @@ export default class ImageCaptureTest extends NavigationMixin(
       this.deleteImageById(item.id);
     }
 
-    this.dispatchEvent(new CloseActionScreenEvent());
+    await this.updateWorkStepRecord();
   }
 
   getFullFileName(item) {
@@ -313,6 +333,30 @@ export default class ImageCaptureTest extends NavigationMixin(
       .catch((e) => {
         log(`Failed to create a CDL: ${JSON.stringify(e)}`);
         throw e;
+      });
+  }
+
+  navigateToWorkSteps() {
+    this[NavigationMixin.Navigate]({
+      type: "standard__webPage",
+      attributes: {
+        url: `com.salesforce.fieldservice://v1/sObject/${this.workOrderId}/workplans`
+      }
+    });
+  }
+
+  async updateWorkStepRecord() {
+    const fields = {};
+    fields.Id = this.recordId;
+    fields.Status = "Completed";
+    const recordInput = { fields };
+
+    updateRecord(recordInput)
+      .then(() => {
+        log("Record is updated successfully.");
+      })
+      .catch((error) => {
+        log("Error updating record: " + JSON.stringify(error));
       });
   }
 }

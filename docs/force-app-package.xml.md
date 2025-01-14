@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3571
+Metadatas: 3573
 
 <details><summary>ApexClass (141)</summary>
 
@@ -1152,7 +1152,7 @@ Metadatas: 3571
 
 </details>
 
-<details><summary>CustomLabel (507)</summary>
+<details><summary>CustomLabel (509)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">AppointmentPicker_Appointments_Header</a><br/>
@@ -1659,6 +1659,8 @@ Metadatas: 3571
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">fsc_UserOrGroup</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">fsc_Users</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">fsc_Value_Label</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">imageCapture_ErrorMessages</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">imageCapture_SuccessMessages</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">sremailNoSearchResultsMessage</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">sremailSearchMembers</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomLabels/home" target="_blank">timeSheetHeader_HoursText</a><br/>

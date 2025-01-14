@@ -2072,6 +2072,10 @@
         <members>fsc_Users</members>
         <members>fsc_Value_Label</members>
         <members>fsc_Value_Label</members>
+        <members>imageCapture_ErrorMessages</members>
+        <members>imageCapture_ErrorMessages</members>
+        <members>imageCapture_SuccessMessages</members>
+        <members>imageCapture_SuccessMessages</members>
         <members>sremailNoSearchResultsMessage</members>
         <members>sremailNoSearchResultsMessage</members>
         <members>sremailSearchMembers</members>

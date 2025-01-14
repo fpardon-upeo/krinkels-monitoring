@@ -2037,6 +2037,14 @@
         <name>fsc_Value_Label</name>
     </customLabels>
     <customLabels>
+        <label><!-- imageCapture_ErrorMessages --></label>
+        <name>imageCapture_ErrorMessages</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- imageCapture_SuccessMessages --></label>
+        <name>imageCapture_SuccessMessages</name>
+    </customLabels>
+    <customLabels>
         <label><!-- NoSearchResultsMessage --></label>
         <name>sremailNoSearchResultsMessage</name>
     </customLabels>

@@ -443,10 +443,6 @@
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
-                    <name>conditionalFormatRuleset</name>
-                    <value>Price_Request_Status_Icon</value>
-                </fieldInstanceProperties>
-                <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
