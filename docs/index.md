@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (16005) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (3993) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (16008) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (3995) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3573) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3575) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -146,6 +146,7 @@ ___
 | WorkPlan | [Work_Plan_Extra_Work_Steps](flows/Work_Plan_Extra_Work_Steps.md) [🕒](flows/Work_Plan_Extra_Work_Steps-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO-history.md) | RecordAfterSave |  |
+| WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record](flows/Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status](flows/Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable](flows/Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable.md) | RecordBeforeSave | When the applicable fields are filled in, this flow updates the value of the work step to 'Not Applicable'. |
 | cadmus_sign2__Sign_request__c | [Sign_Request_After_Save_Update_quote_signing_info](flows/Sign_Request_After_Save_Update_quote_signing_info.md) [🕒](flows/Sign_Request_After_Save_Update_quote_signing_info-history.md) | RecordAfterSave | Update quotes based on the sign request status |

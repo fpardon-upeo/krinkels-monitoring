@@ -6,7 +6,7 @@
     <name>kgc_signerRequestCreated_en</name>
     <relatedEntityType>Quote</relatedEntityType>
     <style>none</style>
-    <subject>KGC Please sign your document with name [[!SignButler.SignRequestName!]]</subject>
+    <subject>Document ready for signature</subject>
     <type>custom</type>
     <uiType>SFX</uiType>
 </EmailTemplate>

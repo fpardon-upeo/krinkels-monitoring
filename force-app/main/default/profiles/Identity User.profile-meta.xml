@@ -4598,6 +4598,10 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
+        <flow>Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
         <flow>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</flow>
     </flowAccesses>
     <flowAccesses>

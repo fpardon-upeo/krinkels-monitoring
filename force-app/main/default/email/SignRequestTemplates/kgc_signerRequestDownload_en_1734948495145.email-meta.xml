@@ -6,7 +6,7 @@
     <name>kgc_signerRequestDownload_en</name>
     <relatedEntityType>Quote</relatedEntityType>
     <style>none</style>
-    <subject>KGC The document with name [[!SignButler.SignRequestName!]] is signed</subject>
+    <subject>Confirmation of receipt of digital signature</subject>
     <type>custom</type>
     <uiType>SFX</uiType>
 </EmailTemplate>

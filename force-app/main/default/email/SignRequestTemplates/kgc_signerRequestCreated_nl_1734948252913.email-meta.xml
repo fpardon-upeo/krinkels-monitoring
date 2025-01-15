@@ -6,7 +6,7 @@
     <name>kgc_signerRequestCreated_nl</name>
     <relatedEntityType>Quote</relatedEntityType>
     <style>none</style>
-    <subject>KGC Ondertekening gevraagd [[!SignButler.SignRequestName!]]</subject>
+    <subject>Document ter ondertekening ontvangen</subject>
     <type>custom</type>
     <uiType>SFX</uiType>
 </EmailTemplate>

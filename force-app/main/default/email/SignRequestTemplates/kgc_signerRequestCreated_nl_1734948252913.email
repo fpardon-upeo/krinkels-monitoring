@@ -1,74 +1,87 @@
-<html>
- <head>
-  <title></title>
- </head>
- <body style="height: auto; min-height: auto;">
-  <table cellpadding="0" cellspacing="0" class="contentpageDefaultEmailTemplatePageTemplate" id="contentpage_emailTemplateBodyContent" style="background-color:#E9EAEC;" width="100%">
-   <tbody>
-    <tr>
-     <td align="center" width="100%">
-      <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" class="contentRoot" width="600">
-       <tbody>
-        <tr>
-         <td style="padding-right:px;padding-bottom:px;padding-top:px;padding-left:px;"><img alt="logo_krinkelsbelgie_balk_kort (1)" src="{[devName:logo_krinkelsbelgie_balk_kort_1]}" style="max-width: 655.685546875px" title="logo_krinkelsbelgie_balk_kort (1)" />
-          <table bgcolor="" cellpadding="0" cellspacing="0" class="contentbuilderBaseColumnRow" width="100%">
-           <tbody>
-            <tr valign="top">
-             <td class="columnCell" style="vertical-align:top;" width="100%">
-              <table cellpadding="0" cellspacing="0" style="font-size:14px;width:100%;border-collapse:collapse;word-break:break-word;">
-               <tbody>
-                <tr>
-                 <td style="font-family:Arial,Helvetica,sans-serif;padding-right:10px;padding-bottom:10px;padding-top:10px;padding-left:10px;">YO [[!SignButler.Recipient.FirstName!]],<br /> <br /> [[!SignButler.Sender.Name!]] has a document for you to validate and sign.</td>
-                </tr>
-               </tbody>
-              </table></td>
-            </tr>
-           </tbody>
-          </table>
-          <table bgcolor="" cellpadding="0" cellspacing="0" class="contentbuilderBaseColumnRow" width="100%">
-           <tbody>
-            <tr valign="middle">
-             <td class="columnCell" style="vertical-align:middle;" width="100%">
-              <div style="text-align:center;word-break:break-word;margin-left:10px;margin-right:10px;margin-bottom:10px;margin-top:10px;">
-               <div style="display:inline-block;"><a href="[[!SignButler.SignURL!]]" style="direction:ltr;display:block;mso-padding-alt:0;margin:0;text-align:center;border:0px solid #FF5F3C;font-family:Arial,sans-serif;background-color:#FF5F3C;padding-right:20px;color:#ffffff;padding-bottom:10px;text-decoration:none;padding-top:10px;padding-left:20px;font-size:16px;" target="_blank"><span>SIGN DOCUMENT</span> </a>
-               </div>
-              </div></td>
-            </tr>
-           </tbody>
-          </table>
-          <table bgcolor="" cellpadding="0" cellspacing="0" class="contentbuilderBaseColumnRow" width="100%">
-           <tbody>
-            <tr valign="top">
-             <td class="columnCell" style="vertical-align:top;" width="100%">
-              <table cellpadding="0" cellspacing="0" style="font-size:14px;width:100%;border-collapse:collapse;word-break:break-word;">
-               <tbody>
-                <tr>
-                 <td style="font-family:Arial,Helvetica,sans-serif;padding-right:10px;padding-bottom:10px;padding-top:10px;padding-left:10px;">Regards,<br /> [[!SignButler.Sender.Name!]]<br /> [[!SignButler.Sender.Email!]]</td>
-                </tr>
-               </tbody>
-              </table></td>
-            </tr>
-           </tbody>
-          </table>
-          <table bgcolor="#E9EAEC" cellpadding="0" cellspacing="0" class="contentbuilderBaseColumnRow" width="100%">
-           <tbody>
-            <tr valign="top">
-             <td class="columnCell" style="vertical-align:top;" width="100%">
-              <table cellpadding="0" cellspacing="0" style="font-size:14px;width:100%;border-collapse:collapse;word-break:break-word;">
-               <tbody>
-                <tr>
-                 <td style="font-family:Arial,Helvetica,sans-serif;padding-right:10px;padding-bottom:10px;padding-top:10px;padding-left:10px;"><strong>Do not share this e-mail</strong><br /> This email contains a safe, one-time URL to sign the document and is addressed specifically to you. Do not share this email nor URL with others.<br /> <br /> <strong>Questions about the document?</strong><br /> If you have questions on the details or the contents of the document, please make direct contact with the sender via email: [[!SignButler.Sender.Email!]]<br /> <br /> <span style="font-size:8px;">This message is sent by&nbsp;[[!SignButler.Sender.Name!]] who is using the SIGN Butler digital signature service. If you do not want to be contacted, make direct contact with the original sender of this request.</span></td>
-                </tr>
-               </tbody>
-              </table></td>
-            </tr>
-           </tbody>
-          </table></td>
-        </tr>
-       </tbody>
-      </table></td>
-    </tr>
-   </tbody>
-  </table>
- </body>
+<!DOCTYPE html>
+<html style="overflow-y: hidden;">
+<head>
+	<title>Email Template</title>
+	<meta><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="IE=edge">
+	<style type="text/css">@media screen and (max-width: 480px) {
+			.contentbuilderBaseColumnRow .columnCell {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		.contentpageDefaultEmailTemplatePageTemplate .contentRoot {
+			width: 600px;
+		}
+		@media only screen and (max-width: 480px) {
+			.contentpageDefaultEmailTemplatePageTemplate .contentRoot {
+				width: 320px;
+			}
+		}
+	</style>
+</head>
+<body style="background-color: #E9EAEC; height: auto; min-height: auto;">
+<table cellpadding="0" cellspacing="0" class="contentpageDefaultEmailTemplatePageTemplate" style="background-color:#E9EAEC;" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" width="100%">
+			<table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" class="contentRoot" width="600">
+				<tbody>
+					<tr>
+						<td>
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 10px;">
+									<p>Beste [[!SignButler.Recipient.FirstName!]] [[!SignButler.Recipient.LastName!]],<br />
+									<br />
+									<br />
+									U heeft zojuist een document van ons ontvangen dat klaarstaat voor digitale ondertekening.<br />
+									<br />
+									Wij verzoeken u vriendelijk het document zorgvuldig door te nemen en digitaal te ondertekenen via de meegeleverde link.</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="text-align: center; padding: 10px;"><a href="[[!SignButler.SignURL!]]" style="display: inline-block; background-color: #82B71C; color: #FFFFFF; text-decoration: none; font-family: Arial, sans-serif; font-size: 16px; padding: 10px 20px; border-radius: 4px;" target="_blank">DOCUMENT ONDERTEKENEN</a></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 10px;">
+									<p>Heeft u vragen of ondervindt u problemen? Neem gerust contact met ons op.<br />
+									<br />
+									Alvast bedankt voor uw medewerking.<br />
+									<br />
+									<br />
+									Met vriendelijke groet,<br />
+									<strong>[[!SignButler.Sender.Name!]]</strong><br />
+									[[!SignButler.Sender.Email!]]</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div style="background-color: #FFFFFF; font-family: Calibri, sans-serif; font-size: 11pt; padding: 10px; margin-top: 10px;">
+						<p><img alt="Logo" height="115" src="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=015KF000001kxni&oid=00DKF000000H0PT&lastMod=1734432753000" style="display: block;" width="216" /></p>
+
+						<p style="font-size: 9pt; color: #80BA27;">Please consider the environment before printing this email</p>
+
+						<p style="font-size: 9pt; color: #6A737B;"><b>Krinkels Greencare nv</b> - RPR Brussel &ndash; BE 0457 071 225 - Rue Emile Path&eacute;straat 410, 1190 Bruxelles/Brussel</p>
+						</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
 </html>

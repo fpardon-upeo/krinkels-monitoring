@@ -6,7 +6,7 @@
     <name>kgc_signerRequestDownload_nl</name>
     <relatedEntityType>Quote</relatedEntityType>
     <style>none</style>
-    <subject>KGC Document is ondertekend</subject>
+    <subject>Bevestiging van ontvangst digitale handtekening</subject>
     <type>custom</type>
     <uiType>SFX</uiType>
 </EmailTemplate>

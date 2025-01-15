@@ -1,15 +1,49 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-approvalProcesses/Quote.Approval_Process_Quote_Over_5000.approvalProcess-meta.xml," ",ApprovalProcess Quote.Approval_Process_Quote_Over_5000,M,,log,📰
-classes/ServiceResourceHandler.cls," ",ApexClass ServiceResourceHandler,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/B2B_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage B2B_Opportunity_Record_Page,M,,log,📰
-flexipages/Maintenance_Plan_Record_Page.flexipage-meta.xml," ",FlexiPage Maintenance_Plan_Record_Page,M,,log,📰
-flexipages/Public_Tender_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Public_Tender_Opportunity_Record_Page,M,,log,📰
-flexipages/Quick_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Quick_Opportunity_Record_Page,M,,log,📰
-labels/CustomLabels.labels-meta.xml," ",CustomLabel CustomLabels,M,,log,📰
-lwc/depotVisit/depotVisit.js," ",LightningComponentBundle depotVisit/depotVisit.js,M,,log,📰
-lwc/imageCapture/imageCapture.js," ",LightningComponentBundle imageCapture/imageCapture.js,M,,log,📰
-lwc/imageCaptureTest/imageCaptureTest.js," ",LightningComponentBundle imageCaptureTest/imageCaptureTest.js,M,,log,📰
+email/SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937.email," ",EmailTemplate SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937,M,,log,📰
+email/SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937.email-meta.xml," ",EmailTemplate SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132,M,,log,📰
+email/SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132,M,,log,📰
+flowDefinitions/Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template,M,,log,📰
+flowDefinitions/Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record.flowDefinition-meta.xml,A,FlowDefinition Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record,,,log,📰
+flows/Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template.flow-meta.xml," ",Flow Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template,M,,log,📰
+flows/Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record.flow-meta.xml,A,Flow Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record,,,log,📰
+layouts/TimeSheetEntry-Time Sheet Entry Layout.layout-meta.xml," ",Layout TimeSheetEntry-Time Sheet Entry Layout,M,,log,📰
+objects/User/fields/ATAK_Id__c.field-meta.xml," ",CustomField ATAK_Id__c,M,,log,📰
+profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
+profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
+profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
+profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
+profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
+profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
+profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
+profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
+profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
+profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
+profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
+profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
+profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
+profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
+profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
+profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
+profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
+profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
+profiles/Operator Indoor.profile-meta.xml," ",Profile Operator Indoor,M,,log,📰
+profiles/Operator Outdoor.profile-meta.xml," ",Profile Operator Outdoor,M,,log,📰
+profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
+profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
+profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
+profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
+profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
+profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
 translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
 translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
 translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰

@@ -194,6 +194,8 @@ nav:
         flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO.md
       Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO: >-
         flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO.md
+      Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record: >-
+        flows/Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record.md
       Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status: flows/Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status.md
       Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable: >-
         flows/Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable.md

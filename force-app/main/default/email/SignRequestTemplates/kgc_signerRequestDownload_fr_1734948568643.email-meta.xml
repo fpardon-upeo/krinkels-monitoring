@@ -6,7 +6,7 @@
     <name>kgc_signerRequestDownload_fr</name>
     <relatedEntityType>Quote</relatedEntityType>
     <style>none</style>
-    <subject>KGC Document Signé</subject>
+    <subject>Confirmation de la réception de la signature électronique</subject>
     <type>custom</type>
     <uiType>SFX</uiType>
 </EmailTemplate>

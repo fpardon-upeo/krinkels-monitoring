@@ -2032,6 +2032,7 @@
         <members>Work_Plan_Extra_Work_Steps</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
+        <members>Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
         <members>Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
@@ -2141,6 +2142,7 @@
         <members>Work_Plan_Extra_Work_Steps</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO</members>
         <members>Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO</members>
+        <members>Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record</members>
         <members>Work_Step_After_Save_Record_Triggered_Update_Related_WOL_Status</members>
         <members>Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable</members>
         <members>sendBetterEmail_Test_Create_Test_Templates_if_needed</members>
