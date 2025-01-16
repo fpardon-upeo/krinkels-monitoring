@@ -136,6 +136,10 @@
                 <behavior>Edit</behavior>
                 <field>Fixed_date_Already_planned__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Service_Package__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -285,6 +289,10 @@
         <fields>NAME</fields>
         <fields>Operator__c</fields>
         <relatedList>Linked_Operator__c.Location_Visit__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Location_Asset__c.Location_Visit__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

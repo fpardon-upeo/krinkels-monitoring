@@ -11,7 +11,7 @@
 
 flowchart TB
 START(["START<br/><b>Screen Flow</b>"]):::startClass
-click START "#general-information" "705287189"
+click START "#general-information" "3789167563"
 
 Set_Default_Department_Variable[\"🟰 <em></em><br/>Set Default Department Variable"/]:::assignments
 click Set_Default_Department_Variable "#set_default_department_variable" "1953268795"
@@ -23,7 +23,7 @@ Set_Department_Variable_Indoor[\"🟰 <em></em><br/>Set Department Variable Indo
 click Set_Department_Variable_Indoor "#set_department_variable_indoor" "556235771"
 
 Set_Work_Order_Values[\"🟰 <em></em><br/>Set Work Order Values"/]:::assignments
-click Set_Work_Order_Values "#set_work_order_values" "156156866"
+click Set_Work_Order_Values "#set_work_order_values" "257265313"
 
 Check_Service_Resource_Type{"🔀 <em></em><br/>Check Service Resource Type"}:::decisions
 click Check_Service_Resource_Type "#check_service_resource_type" "18318353"
@@ -59,7 +59,7 @@ ServiceAppointment(["💻 <em></em><br/>ServiceAppointment"]):::screens
 click ServiceAppointment "#serviceappointment" "3513791040"
 
 Work_Order_Initial_Screen(["💻 <em></em><br/>Work Order Initial Screen"]):::screens
-click Work_Order_Initial_Screen "#work_order_initial_screen" "2030505052"
+click Work_Order_Initial_Screen "#work_order_initial_screen" "2278745711"
 
 Set_Default_Department_Variable --> Get_Asset_for_Work_Order
 Set_Department_Variable --> Get_Asset_for_Work_Order
@@ -101,13 +101,15 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 ```
 
+<!-- Flow description -->
+
 ## General Information
 
 |<!-- -->|<!-- -->|
 |:---|:---|
 |Process Type| Flow|
 |Label|Create Internal Work Order|
-|Status|Active|
+|Status|⚠️ Draft|
 |Environments|Default|
 |Interview Label|[Work Order] - [Screen Flow] - Create Internal Work {!$Flow.CurrentDateTime}|
 | Builder Type (PM)|LightningFlowBuilder|
@@ -210,6 +212,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |workOrder.WorkTypeId| Assign|Get_Work_Type.Id|
 |workOrder.Scheduled_Date__c| Assign|Start|
 |workOrder.AccountId| Assign|Get_Krinkels_Internal_Account.Id|
+|workOrder.Location__c| Assign|Location|
 
 
 
@@ -640,6 +643,21 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
 |Is Required|⬜|
 |Visibility Rule|conditionLogic: and<br/>conditions:<br/>&nbsp;&nbsp;leftValueReference: Select_Internal_Work_Type<br/>&nbsp;&nbsp;operator: EqualTo<br/>&nbsp;&nbsp;rightValue:<br/>&nbsp;&nbsp;&nbsp;&nbsp;stringValue: Machine Maintenance<br/>|
+|Parent Field|[Work_Order_Initial_Screen_Section2_Column1](#work_order_initial_screen_section2_column1)|
+
+
+
+
+#### Location
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Data Type|String|
+|Field Text|Location|
+|Field Type| Input Field|
+|Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+|Is Required|⬜|
+|Visibility Rule|conditionLogic: and<br/>conditions:<br/>&nbsp;&nbsp;leftValueReference: Select_Internal_Work_Type<br/>&nbsp;&nbsp;operator: EqualTo<br/>&nbsp;&nbsp;rightValue:<br/>&nbsp;&nbsp;&nbsp;&nbsp;stringValue: Medical Examination<br/>|
 |Parent Field|[Work_Order_Initial_Screen_Section2_Column1](#work_order_initial_screen_section2_column1)|
 
 

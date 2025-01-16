@@ -1038,6 +1038,11 @@
             <field>Has_Kilometers_Booked__c</field>
             <table>Account.WorkOrders</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Location__c</field>
+            <table>Account.WorkOrders</table>
+        </columns>
         <masterLabel>Work Orders</masterLabel>
     </sections>
 </ReportType>

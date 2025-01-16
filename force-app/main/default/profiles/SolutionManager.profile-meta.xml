@@ -1082,12 +1082,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Asset.Additional_Scheduling_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Asset.Contract_Line_Item__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Asset.Default_Duration_in_Minutes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Asset.Desired_Visual_Quality__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1267,6 +1277,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ContractLineItem.Additional_Scheduling_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ContractLineItem.Calculated_Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1274,6 +1289,11 @@
         <editable>false</editable>
         <field>ContractLineItem.Cost_Center_Code__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContractLineItem.Desired_Visual_Quality__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1617,6 +1637,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>LMRA__c.Other_Risks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>LMRA__c.Project_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1628,6 +1653,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>LMRA__c.Tasks_of_the_Day__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LMRA__c.Thermal_Burner_Used__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1698,6 +1728,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Location.Van_Crew__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Asset__c.Evaluation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Asset__c.Location_Visit__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1898,6 +1938,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Location_Visit__c.Service_Package_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location_Visit__c.Service_Package__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3926,6 +3971,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>WorkOrder.Mobile_Contract_Manager__c</field>
         <readable>true</readable>
@@ -4880,6 +4930,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location-Van Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Location_Asset__c-Location Asset Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location_Passport__c-Location Passport Layout</layout>

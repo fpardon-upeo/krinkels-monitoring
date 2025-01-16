@@ -1,23 +1,42 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+classes/MaintenancePlanService.cls," ",ApexClass MaintenancePlanService,M,,log,📰
+classes/ServiceBuilderController.cls," ",ApexClass ServiceBuilderController,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-email/SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937.email," ",EmailTemplate SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937,M,,log,📰
-email/SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937.email-meta.xml," ",EmailTemplate SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestCreated_nl_1734948252913,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_en_1734948495145,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_fr_1734948568643,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132.email," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132,M,,log,📰
-email/SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132.email-meta.xml," ",EmailTemplate SignRequestTemplates/kgc_signerRequestDownload_nl_1734948552132,M,,log,📰
-flowDefinitions/Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template,M,,log,📰
-flowDefinitions/Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record.flowDefinition-meta.xml,A,FlowDefinition Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record,,,log,📰
-flows/Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template.flow-meta.xml," ",Flow Service_Appointment_Before_Save_Record_Triggered_Add_Service_Document_Template,M,,log,📰
-flows/Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record.flow-meta.xml,A,Flow Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record,,,log,📰
-layouts/TimeSheetEntry-Time Sheet Entry Layout.layout-meta.xml," ",Layout TimeSheetEntry-Time Sheet Entry Layout,M,,log,📰
-objects/User/fields/ATAK_Id__c.field-meta.xml," ",CustomField ATAK_Id__c,M,,log,📰
+email/CustomerNotifications/Service_Report_Notification_fr_1736243090285.email,A,EmailTemplate CustomerNotifications/Service_Report_Notification_fr_1736243090285,,,log,📰
+email/CustomerNotifications/Service_Report_Notification_fr_1736243090285.email-meta.xml,A,EmailTemplate CustomerNotifications/Service_Report_Notification_fr_1736243090285,,,log,📰
+email/CustomerNotifications/Service_Report_Notification_nl_1736243282018.email,A,EmailTemplate CustomerNotifications/Service_Report_Notification_nl_1736243282018,,,log,📰
+email/CustomerNotifications/Service_Report_Notification_nl_1736243282018.email-meta.xml,A,EmailTemplate CustomerNotifications/Service_Report_Notification_nl_1736243282018,,,log,📰
+flexipages/LMRA_Record_Page.flexipage-meta.xml," ",FlexiPage LMRA_Record_Page,M,,log,📰
+flexipages/Location_Visit_Record_Page.flexipage-meta.xml," ",FlexiPage Location_Visit_Record_Page,M,,log,📰
+flexipages/Product_Record_Page.flexipage-meta.xml," ",FlexiPage Product_Record_Page,M,,log,📰
+flexipages/Service_Contract_Record_Page.flexipage-meta.xml," ",FlexiPage Service_Contract_Record_Page,M,,log,📰
+flowDefinitions/Service_Appointment_Scheduled_Customer_Notification.flowDefinition-meta.xml," ",FlowDefinition Service_Appointment_Scheduled_Customer_Notification,M,,log,📰
+flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+flows/Service_Appointment_Scheduled_Customer_Notification.flow-meta.xml," ",Flow Service_Appointment_Scheduled_Customer_Notification,M,,log,📰
+flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information,M,,log,📰
+flows/Work_Order_Screen_Flow_Create_Internal_Work.flow-meta.xml," ",Flow Work_Order_Screen_Flow_Create_Internal_Work,M,,log,📰
+layouts/ContractLineItem-Contract Line Item Layout.layout-meta.xml," ",Layout ContractLineItem-Contract Line Item Layout,M,,log,📰
+layouts/Location_Asset__c-Location Asset Layout.layout-meta.xml,A,Layout Location_Asset__c-Location Asset Layout,,,log,📰
+layouts/Location_Visit__c-Location Visit Layout.layout-meta.xml," ",Layout Location_Visit__c-Location Visit Layout,M,,log,📰
+layouts/WorkOrder-Work Order Layout.layout-meta.xml," ",Layout WorkOrder-Work Order Layout,M,,log,📰
+lwc/contractLineEditor/contractLineEditor.html," ",LightningComponentBundle contractLineEditor/contractLineEditor.html,M,,log,📰
+objects/Asset/fields/Additional_Scheduling_Information__c.field-meta.xml,A,CustomField Additional_Scheduling_Information__c,,,log,📰
+objects/Asset/fields/Desired_Visual_Quality__c.field-meta.xml,A,CustomField Desired_Visual_Quality__c,,,log,📰
+objects/ContractLineItem/fields/Additional_Scheduling_Information__c.field-meta.xml,A,CustomField Additional_Scheduling_Information__c,,,log,📰
+objects/ContractLineItem/fields/Desired_Visual_Quality__c.field-meta.xml,A,CustomField Desired_Visual_Quality__c,,,log,📰
+objects/LMRA__c/fields/Other_Risks__c.field-meta.xml,A,CustomField Other_Risks__c,,,log,📰
+objects/LMRA__c/fields/Thermal_Burner_Used__c.field-meta.xml,A,CustomField Thermal_Burner_Used__c,,,log,📰
+objects/Location_Asset__c/Location_Asset__c.object-meta.xml,A,CustomObject Location_Asset__c/Location_Asset__c,,,log,📰
+objects/Location_Asset__c/fields/Evaluation__c.field-meta.xml,A,CustomField Evaluation__c,,,log,📰
+objects/Location_Asset__c/fields/Location_Visit__c.field-meta.xml,A,CustomField Location_Visit__c,,,log,📰
+objects/Location_Visit__c/fields/Demand_type__c.field-meta.xml," ",CustomField Demand_type__c,M,,log,📰
+objects/Location_Visit__c/fields/Frequency_Type__c.field-meta.xml," ",CustomField Frequency_Type__c,M,,log,📰
+objects/Location_Visit__c/fields/Priority_Request__c.field-meta.xml," ",CustomField Priority_Request__c,M,,log,📰
+objects/Location_Visit__c/fields/Scoring__c.field-meta.xml," ",CustomField Scoring__c,M,,log,📰
+objects/Location_Visit__c/fields/Service_Package__c.field-meta.xml,A,CustomField Service_Package__c,,,log,📰
+objects/ServiceContract/fields/Product__c.field-meta.xml," ",CustomField Product__c,M,,log,📰
+objects/WorkOrder/fields/Location__c.field-meta.xml,A,CustomField Location__c,,,log,📰
+permissionsets/Query_All_Files.permissionset-meta.xml," ",PermissionSet Query_All_Files,M,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -44,6 +63,18 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
+quickActions/ServiceContract.Create_Service_Contract.quickAction-meta.xml," ",QuickAction ServiceContract.Create_Service_Contract,M,,log,📰
+reportTypes/Accounts_with_Work_Orders.reportType-meta.xml," ",ReportType Accounts_with_Work_Orders,M,,log,📰
+reportTypes/Assets_with_Work_Orders_and_Service_Appointments.reportType-meta.xml," ",ReportType Assets_with_Work_Orders_and_Service_Appointments,M,,log,📰
+reportTypes/Service_Contracts_with_Work_Orders.reportType-meta.xml," ",ReportType Service_Contracts_with_Work_Orders,M,,log,📰
+reportTypes/Work_Order_W_SA_and_Service_Resource.reportType-meta.xml," ",ReportType Work_Order_W_SA_and_Service_Resource,M,,log,📰
+reportTypes/Work_Orders.reportType-meta.xml," ",ReportType Work_Orders,M,,log,📰
+reportTypes/Work_Orders_w_Time_Sheets_Entries.reportType-meta.xml," ",ReportType Work_Orders_w_Time_Sheets_Entries,M,,log,📰
+reportTypes/Work_Orders_with_Work_Plans_Steps.reportType-meta.xml," ",ReportType Work_Orders_with_Work_Plans_Steps,M,,log,📰
+reportTypes/Work_Orders_with_service_appointments.reportType-meta.xml," ",ReportType Work_Orders_with_service_appointments,M,,log,📰
+settings/Search.settings-meta.xml," ",Settings Search,M,,log,📰
+sharingRules/Location_Asset__c.sharingRules-meta.xml,A,SharingRules Location_Asset__c,,,log,📰
+topicsForObjects/Location_Asset__c.topicsForObjects-meta.xml,A,TopicsForObjects Location_Asset__c,,,log,📰
 translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
 translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
 translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰

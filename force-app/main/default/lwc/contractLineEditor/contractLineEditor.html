@@ -56,7 +56,7 @@
           <lightning-input-field field-name="StartDate"></lightning-input-field>
           <lightning-input-field field-name="EndDate"></lightning-input-field>
           <lightning-input-field
-            field-name="Planning_Type__c"
+            field-name="Notify_Customer_When_En_Route__c"
           ></lightning-input-field>
 
           <lightning-input-field field-name="LMRA__c"></lightning-input-field>
@@ -67,6 +67,14 @@
 
           <lightning-input-field
             field-name="Calculated_Duration__c"
+          ></lightning-input-field>
+
+          <lightning-input-field
+                  field-name="Desired_Visual_Quality__c"
+          ></lightning-input-field>
+
+          <lightning-input-field
+                  field-name="Additional_Scheduling_Information__c"
           ></lightning-input-field>
 
           <template if:true={locationColumns.isAddress}>

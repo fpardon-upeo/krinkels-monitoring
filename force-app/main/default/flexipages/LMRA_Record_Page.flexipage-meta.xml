@@ -68,6 +68,12 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Other_Risks__c</fieldItem>
+                <identifier>RecordOther_Risks__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-eb0c76d7-cdd8-4a62-9fc2-49aad47ef27e</name>
         <type>Facet</type>
     </flexiPageRegions>

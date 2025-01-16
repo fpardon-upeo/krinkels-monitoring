@@ -11,7 +11,7 @@
 
 flowchart TB
 START(["START"]):::startClass
-click START "#general-information" "459049158"
+click START "#general-information" "4117675639"
 
 Set_Tasks_Of_Day_Value[\"🟰 <em></em><br/>Set Tasks Of Day Value"/]:::assignments
 click Set_Tasks_Of_Day_Value "#set_tasks_of_day_value" "3916738752"
@@ -29,7 +29,7 @@ Loop_Lines{{"🔁 <em></em><br/>Loop Lines"}}:::loops
 click Loop_Lines "#loop_lines" "1034807019"
 
 Create_Full_LMRA[("➕ <em></em><br/>Create Full LMRA")]:::recordCreates
-click Create_Full_LMRA "#create_full_lmra" "3999568703"
+click Create_Full_LMRA "#create_full_lmra" "1934845254"
 
 Create_Limited_LMRA[("➕ <em></em><br/>Create Limited LMRA")]:::recordCreates
 click Create_Limited_LMRA "#create_limited_lmra" "2204160202"
@@ -56,10 +56,10 @@ Update_Work_Step_Status_to_Complete_After[("🛠️ <em></em><br/>Update Work St
 click Update_Work_Step_Status_to_Complete_After "#update_work_step_status_to_complete_after" "247084983"
 
 Full_LMRA_Information(["💻 <em></em><br/>Full LMRA Information"]):::screens
-click Full_LMRA_Information "#full_lmra_information" "793521090"
+click Full_LMRA_Information "#full_lmra_information" "2668930695"
 
 Limited_LMRA_Information(["💻 <em></em><br/>Limited LMRA Information"]):::screens
-click Limited_LMRA_Information "#limited_lmra_information" "3519037032"
+click Limited_LMRA_Information "#limited_lmra_information" "2814735025"
 
 LMRA_Done_Message(["💻 <em></em><br/>LMRA Done Message"]):::screens
 click LMRA_Done_Message "#lmra_done_message" "581062939"
@@ -108,13 +108,15 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 ```
 
+<!-- Flow description -->
+
 ## General Information
 
 |<!-- -->|<!-- -->|
 |:---|:---|
 |Process Type| Field Service Mobile|
 |Label|[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information|
-|Status|Active|
+|Status|⚠️ Draft|
 |Environments|Default|
 |Interview Label|[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information {!$Flow.CurrentDateTime}|
 | Builder Type (PM)|LightningFlowBuilder|
@@ -268,9 +270,11 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Corrective_Measures__c|Corrective_Measures_1|
 |EPC_EPI_CBM_PBM__c|EPC_EPI_CBM_PBM_1|
 |LMRA_Type__c|Full|
+|Other_Risks__c|Other_Risks|
 |Project_Lead__c|Project_Lead_Full|
 |Surrounding_Risks__c|Surrounding_Risks_1|
 |Tasks_of_the_Day__c|Tasks_of_the_Day_1|
+|Thermal_Burner_Used__c|Do_you_have_to_use_a_thermal_burner_because_there_is_no_alternative|
 |Work_Order__c|workOrderRecord.Id|
 
 
@@ -583,6 +587,18 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 
+#### Other_Risks
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Field Text|Other Risks|
+|Field Type| Large Text Area|
+|Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+|Is Required|✅|
+
+
+
+
 #### FileUpload
 
 |<!-- -->|<!-- -->|
@@ -627,7 +643,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |<!-- -->|<!-- -->|
 |:---|:---|
 |Data Type|Boolean|
-|Field Text|Limited LMRA Done|
+|Field Text|LMRA Checks Done|
 |Field Type| Input Field|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
 |Is Required|✅|
@@ -639,7 +655,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |<!-- -->|<!-- -->|
 |:---|:---|
-|Field Text|<p><em>To confirm that a limited LMRA has been done, please tick the box.</em></p>|
+|Field Text|<p><em>To confirm that a LMRA has been done, please tick the box.</em></p>|
 |Field Type| Display Text|
 
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to customer for Service Report</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Service Report Notification_nl</name>
+    <pageDevName>Service_Report_Notification_nl</pageDevName>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>Uitvoeringsrapport - {{{WorkOrder.WorkOrderNumber}}}{{{WorkOrder.Customer_Reference__c}}}</subject>
+    <textOnly>Geachte klant,
+
+Goed nieuws! Het uitvoeringsrapport voor uw recente interventie is beschikbaar.
+
+U vindt de belangrijkste details in de PDF bij deze e-mail.
+
+Hartelijk dank voor uw vertrouwen!
+
+Met vriendelijke groeten,
+
+{{{WorkOrder.Name_Contract_Manager__c}}}
+
+{{{WorkOrder.Mobile_Contract_Manager__c}}}
+
+[Image alt text: Logo]
+
+Please consider the environment before printing this email
+
+Krinkels Greencare nv- RPR Brussel – BE 0457 071 225 - Rue Emile Pathéstraat 410, 1190 Bruxelles/Brussel</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

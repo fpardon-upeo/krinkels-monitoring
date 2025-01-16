@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Demand_type__c</fullName>
+    <inlineHelpText>Was the additional work initiated by Krinkels or the customer?</inlineHelpText>
     <label>Demand Type</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
@@ -11,9 +12,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>TBD</fullName>
+                <fullName>Internal</fullName>
                 <default>false</default>
-                <label>TBD</label>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>External</fullName>
+                <default>false</default>
+                <label>External</label>
             </value>
         </valueSetDefinition>
     </valueSet>

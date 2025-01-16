@@ -5,16 +5,10 @@
     <label>Service (Package)</label>
     <lookupFilter>
         <active>true</active>
-        <booleanFilter>1 OR 2</booleanFilter>
         <filterItems>
             <field>Product2.RecordType.Name</field>
             <operation>equals</operation>
             <value>Service Package</value>
-        </filterItems>
-        <filterItems>
-            <field>Product2.RecordType.Name</field>
-            <operation>equals</operation>
-            <value>Service</value>
         </filterItems>
         <isOptional>false</isOptional>
     </lookupFilter>

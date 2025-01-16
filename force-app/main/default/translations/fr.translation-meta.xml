@@ -3910,6 +3910,9 @@
                     <name>Header</name>
                 </fields>
                 <fields>
+                    <name>Other_Risks</name>
+                </fields>
+                <fields>
                     <name>Project_Lead_Full</name>
                 </fields>
                 <fields>
@@ -4050,6 +4053,9 @@
             <screens>
                 <fields>
                     <name>End</name>
+                </fields>
+                <fields>
+                    <name>Location</name>
                 </fields>
                 <fields>
                     <name>Machine_Vehicle_Number</name>

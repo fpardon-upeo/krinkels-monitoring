@@ -1644,8 +1644,10 @@
         <members>Activity.FSL__Event_Type__c</members>
         <members>Asset.ATAK_Project_Code__c</members>
         <members>Asset.ATAK_Project__c</members>
+        <members>Asset.Additional_Scheduling_Information__c</members>
         <members>Asset.Contract_Line_Item__c</members>
         <members>Asset.Default_Duration_in_Minutes__c</members>
+        <members>Asset.Desired_Visual_Quality__c</members>
         <members>Asset.LMRA__c</members>
         <members>Asset.LastSuggestedMaintenanceDate__c</members>
         <members>Asset.Notify_Customer_When_En_Route__c</members>
@@ -1682,8 +1684,10 @@
         <members>Contact.cadmus_sign2__LocaleSidKey__c</members>
         <members>ContentVersion.Guest_Record_fileupload__c</members>
         <members>ContentVersion.cadmus_sign2__File_Mac__c</members>
+        <members>ContractLineItem.Additional_Scheduling_Information__c</members>
         <members>ContractLineItem.Calculated_Duration__c</members>
         <members>ContractLineItem.Cost_Center_Code__c</members>
+        <members>ContractLineItem.Desired_Visual_Quality__c</members>
         <members>ContractLineItem.Estimated_Duration__c</members>
         <members>ContractLineItem.Geolocation__c</members>
         <members>ContractLineItem.LMRA__c</members>
@@ -2413,9 +2417,11 @@
         <members>LMRA__c.EPC_EPI_CBM_PBM__c</members>
         <members>LMRA__c.LMRA_Type__c</members>
         <members>LMRA__c.Limited_LMRA_Done__c</members>
+        <members>LMRA__c.Other_Risks__c</members>
         <members>LMRA__c.Project_Lead__c</members>
         <members>LMRA__c.Surrounding_Risks__c</members>
         <members>LMRA__c.Tasks_of_the_Day__c</members>
+        <members>LMRA__c.Thermal_Burner_Used__c</members>
         <members>LMRA__c.Work_Order__c</members>
         <members>Lead.Client_Sector__c</members>
         <members>Lead.Contract_Type__c</members>
@@ -2430,6 +2436,8 @@
         <members>Location.Driver_Code__c</members>
         <members>Location.License_Plate__c</members>
         <members>Location.Van_Crew__c</members>
+        <members>Location_Asset__c.Evaluation__c</members>
+        <members>Location_Asset__c.Location_Visit__c</members>
         <members>Location_Passport__c.Access_Information__c</members>
         <members>Location_Passport__c.Account__c</members>
         <members>Location_Passport__c.Attention_points_for_execution__c</members>
@@ -2470,6 +2478,7 @@
         <members>Location_Visit__c.Service_Contract_Status__c</members>
         <members>Location_Visit__c.Service_Contract__c</members>
         <members>Location_Visit__c.Service_Package_Name__c</members>
+        <members>Location_Visit__c.Service_Package__c</members>
         <members>Location_Visit__c.Site_Boundaries_Info__c</members>
         <members>Location_Visit__c.Status__c</members>
         <members>Location_Visit__c.Unit__c</members>
@@ -2882,6 +2891,7 @@
         <members>WorkOrder.LMRA_Done__c</members>
         <members>WorkOrder.LMRA_Type_formula__c</members>
         <members>WorkOrder.LMRA__c</members>
+        <members>WorkOrder.Location__c</members>
         <members>WorkOrder.Mobile_Contract_Manager__c</members>
         <members>WorkOrder.Name_Commercial_Contract__c</members>
         <members>WorkOrder.Name_Contract_Manager__c</members>
@@ -10839,6 +10849,7 @@
         <members>Linked_Operator__c</members>
         <members>Location</members>
         <members>LocationTrustMeasure</members>
+        <members>Location_Asset__c</members>
         <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
         <members>Logger_Settings__c</members>
@@ -12027,6 +12038,7 @@
         <members>LMRA__c-en_US</members>
         <members>Linked_Operator__c-en_US</members>
         <members>Location-en_US</members>
+        <members>Location_Asset__c-en_US</members>
         <members>Location_Passport__c-en_US</members>
         <members>Location_Visit__c-en_US</members>
         <members>Logger_Settings__c-en_US</members>
@@ -12676,6 +12688,8 @@
         <members>CustomerNotifications/Notification_Scheduled_WO_ENG_1732012994513</members>
         <members>CustomerNotifications/Notification_Scheduled_WO_FR_1732000418709</members>
         <members>CustomerNotifications/Service_Report_Notification</members>
+        <members>CustomerNotifications/Service_Report_Notification_fr_1736243090285</members>
+        <members>CustomerNotifications/Service_Report_Notification_nl_1736243282018</members>
         <members>SignRequestTemplates</members>
         <members>SignRequestTemplates/KCG_signerRequestCreated_en_1734947267937</members>
         <members>SignRequestTemplates/kgc_signerRequestCreated_fr_1734948274413</members>
@@ -13467,6 +13481,7 @@
         <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
         <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
         <members>Location-Van Layout</members>
+        <members>Location_Asset__c-Location Asset Layout</members>
         <members>Location_Passport__c-FSL Location Passport</members>
         <members>Location_Passport__c-Location Passport Layout</members>
         <members>Location_Visit__c-Location Visit Layout</members>
@@ -15407,6 +15422,7 @@
         <members>ListEmail</members>
         <members>Location</members>
         <members>LocationTrustMeasure</members>
+        <members>Location_Asset__c</members>
         <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
         <members>Macro</members>
@@ -16074,6 +16090,7 @@
         <members>LMRA__c</members>
         <members>Lead</members>
         <members>Linked_Operator__c</members>
+        <members>Location_Asset__c</members>
         <members>Location_Passport__c</members>
         <members>Location_Visit__c</members>
         <members>MaintenanceAsset</members>

@@ -59,7 +59,7 @@ IF(MONTH(TODAY()) = 12, 1, MONTH(TODAY()) + 1), 1
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Invoice_Type__c</field>
+                <field>Contract_type__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
@@ -77,11 +77,6 @@ IF(MONTH(TODAY()) = 12, 1, MONTH(TODAY()) + 1), 1
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Product__c</field>
-                <uiBehavior>Required</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
-                <field>Contract_type__c</field>
                 <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>

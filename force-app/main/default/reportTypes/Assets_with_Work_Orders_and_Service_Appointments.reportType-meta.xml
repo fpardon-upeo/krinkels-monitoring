@@ -314,6 +314,16 @@
             <field>Notify_Customer_When_En_Route__c</field>
             <table>Asset</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Desired_Visual_Quality__c</field>
+            <table>Asset</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Additional_Scheduling_Information__c</field>
+            <table>Asset</table>
+        </columns>
         <masterLabel>Assets</masterLabel>
     </sections>
     <sections>
@@ -935,6 +945,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Has_Kilometers_Booked__c</field>
+            <table>Asset.WorkOrders</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Location__c</field>
             <table>Asset.WorkOrders</table>
         </columns>
         <masterLabel>Work Orders</masterLabel>

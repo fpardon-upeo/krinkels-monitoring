@@ -89,6 +89,13 @@
                 <elementReference>Get_Krinkels_Internal_Account.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>workOrder.Location__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Location</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_Work_Order</targetReference>
         </connector>
@@ -552,6 +559,24 @@
                         </conditions>
                     </visibilityRule>
                 </fields>
+                <fields>
+                    <name>Location</name>
+                    <dataType>String</dataType>
+                    <fieldText>Location</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Select_Internal_Work_Type</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Medical Examination</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -596,7 +621,7 @@
             <targetReference>Work_Order_Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>departmentType</name>
         <dataType>String</dataType>

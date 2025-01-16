@@ -188,6 +188,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Other_Risks__c</field>
+            <value>
+                <elementReference>Other_Risks</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Project_Lead__c</field>
             <value>
                 <elementReference>Project_Lead_Full</elementReference>
@@ -203,6 +209,12 @@
             <field>Tasks_of_the_Day__c</field>
             <value>
                 <elementReference>Tasks_of_the_Day_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Thermal_Burner_Used__c</field>
+            <value>
+                <elementReference>Do_you_have_to_use_a_thermal_burner_because_there_is_no_alternative</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -482,6 +494,13 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
+            <name>Other_Risks</name>
+            <fieldText>Other Risks</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
             <name>FileUpload</name>
             <extensionName>forceContent:fileUpload</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -528,14 +547,14 @@
         <fields>
             <name>Limited_LMRA_Done</name>
             <dataType>Boolean</dataType>
-            <fieldText>Limited LMRA Done</fieldText>
+            <fieldText>LMRA Checks Done</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>confirmedLMRA</name>
-            <fieldText>&lt;p&gt;&lt;em&gt;To confirm that a limited LMRA has been done, please tick the box.&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;em&gt;To confirm that a LMRA has been done, please tick the box.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -568,7 +587,7 @@
             <targetReference>Get_Work_Step_Information</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>Id</name>
         <dataType>String</dataType>

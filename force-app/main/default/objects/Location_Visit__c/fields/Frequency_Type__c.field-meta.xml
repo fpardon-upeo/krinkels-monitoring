@@ -11,9 +11,29 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>TBD</fullName>
+                <fullName>Day</fullName>
                 <default>false</default>
-                <label>TBD</label>
+                <label>Day</label>
+            </value>
+            <value>
+                <fullName>Week</fullName>
+                <default>false</default>
+                <label>Week</label>
+            </value>
+            <value>
+                <fullName>Month</fullName>
+                <default>false</default>
+                <label>Month</label>
+            </value>
+            <value>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+                <label>Quarterly</label>
+            </value>
+            <value>
+                <fullName>Yearly</fullName>
+                <default>false</default>
+                <label>Yearly</label>
             </value>
         </valueSetDefinition>
     </valueSet>

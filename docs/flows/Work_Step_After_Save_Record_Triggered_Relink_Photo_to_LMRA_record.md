@@ -1,6 +1,6 @@
 # [Work Step][After-Save][Record-Triggered] Relink Photo to LMRA record
 
-## Flow Diagram [(_View History_)](Work_Step_After_Save_Record_Triggered_Relink_Photo_to_LMRA_record-history.md)
+## Flow Diagram
 
 ```mermaid
 %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.

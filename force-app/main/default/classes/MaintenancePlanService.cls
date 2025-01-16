@@ -145,7 +145,9 @@ public with sharing class MaintenancePlanService {
         Estimated_Duration__c,
         LMRA__c,
         ServiceContract.Priority__c,
-        Notify_Customer_When_En_Route__c
+        Notify_Customer_When_En_Route__c,
+        Desired_Visual_Quality__c,
+        Additional_Scheduling_Information__c
       FROM ContractLineItem
       WHERE ServiceContractId = :serviceContractId
     ];
@@ -312,6 +314,8 @@ public with sharing class MaintenancePlanService {
         asset.Recurrence_Pattern__c
       );
       asset.Notify_Customer_When_En_Route__c = line.Notify_Customer_When_En_Route__c;
+      asset.Additional_Scheduling_Information__c = line.Additional_Scheduling_Information__c;
+      asset.Desired_Visual_Quality__c = line.Desired_Visual_Quality__c;
 
       if (projectMap.containsKey(line.Project_Code__c)) {
         asset.ATAK_Project__c = projectMap.get(line.Project_Code__c).Id;
