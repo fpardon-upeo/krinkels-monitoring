@@ -98,11 +98,27 @@
     
     ### Set_Van_Naming_Convention
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Van Naming Convention|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |$Record.Name| Assign|VanNaming|
+    |$Record.IsInventoryLocation| Assign|✅|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>$Record.IsMobile</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     

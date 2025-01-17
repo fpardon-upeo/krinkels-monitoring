@@ -148,11 +148,27 @@
     
     ### Set_Values_for_Work_Steps
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Values for Work Steps|
+    |Connector|[Increment_Order](#increment_order)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |WorkStepRecord.WorkOrderId| Assign|$Record.Id|
+    |WorkStepRecord.Name| Assign|Loop_Through_WOL.Description|
+    |WorkStepRecord.WorkPlanId| Assign|Get_Work_Plan_Information.Id|
+    |WorkStepRecord.Work_Order_Line_Item__c| Assign|Loop_Through_WOL.Id|
+    |WorkStepRecord.ExecutionOrder| Assign|NextNumber|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.Added_from_WOL__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    |WorkStepCollection| Add|WorkStepRecord|
+    
+    
+    
     
     ___
     
@@ -318,44 +334,64 @@
     
     ### 🟩Set_beforeExecutions
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Set beforeExecutions</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_WOL](#get_wol)</b></span>|
     
+    
     #### 🟩Assignments
     
-    |Assign To Reference|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>BeforePhotosOrder</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|
     
+    
+    
+    
+    
     ### 🟩Check_beforeExectionsOrder
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Check beforeExectionsOrder</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_WOL](#get_wol)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Default Outcome</b></span>|
     
+    
     #### 🟩Rule Is_Null (Is Null)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Set_beforeExecutions](#set_beforeexecutions)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>BeforePhotosOrder</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     ### Get_Before_Work_Photos_Step_Information
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkStep|
+    |Label|Get Before Work Photos Step Information|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Assignments|assignToReference: BeforePhotosOrder<br/>field: ExecutionOrder<br/>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_WOL](#get_wol)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Check_beforeExectionsOrder](#check_beforeexectionsorder)</b></span>|
+    
+    
     
     ___
     
@@ -496,21 +532,58 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|WorkOrder|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Create And Update|
+    |Label|[Work Order][After-Save][Record-Triggered] Add WOL As Work Steps|
+    |Status|Active|
+    |Environments|Default|
+    |Interview Label|[Work Order][After-Save][Record-Triggered] Add WOL As Work Steps {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Work_Plan_Information](#get_work_plan_information)|
+    |Next Node|[Get_Work_Plan_Information](#get_work_plan_information)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Status| Is Changed|✅|
+    |2|Status| Equal To|Dispatched|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>3</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Work_Order_Type__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Not Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Depot Visit</i></span>|
+    
+    
     
     ## Flow Nodes Details
     
     ### Set_Values_for_Work_Steps
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Values for Work Steps|
+    |Connector|[Increment_Order](#increment_order)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |WorkStepRecord.WorkOrderId| Assign|$Record.Id|
+    |WorkStepRecord.Name| Assign|Loop_Through_WOL.Description|
+    |WorkStepRecord.WorkPlanId| Assign|Get_Work_Plan_Information.Id|
+    |WorkStepRecord.Work_Order_Line_Item__c| Assign|Loop_Through_WOL.Id|
+    |WorkStepRecord.ExecutionOrder| Assign|NextNumber|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>WorkStepRecord.ActionDefinition</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>WorkStep.Set_Service_Status</i></span>|
+    |WorkStepCollection| Add|WorkStepRecord|
+    
+    
+    
     
     ___
     
@@ -648,11 +721,32 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|WorkOrder|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Create And Update|
+    |Label|[Work Order][After-Save][Record-Triggered] Add WOL As Work Steps|
+    |Status|Active|
+    |Environments|Default|
+    |Interview Label|[Work Order][After-Save][Record-Triggered] Add WOL As Work Steps {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Work_Plan_Information](#get_work_plan_information)|
+    |Next Node|[Get_Work_Plan_Information](#get_work_plan_information)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Status| Is Changed|✅|
+    |2|Status| Equal To|Dispatched|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Work_Order_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Not Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Depot Visit</b></span>|
+    
+    
     
     ___
     
@@ -795,11 +889,27 @@
     
     ### Set_Values_for_Work_Steps
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Values for Work Steps|
+    |Connector|[Increment_Order](#increment_order)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |WorkStepRecord.WorkOrderId| Assign|$Record.Id|
+    |WorkStepRecord.Name| Assign|Loop_Through_WOL.Description|
+    |WorkStepRecord.WorkPlanId| Assign|Get_Work_Plan_Information.Id|
+    |WorkStepRecord.Work_Order_Line_Item__c| Assign|Loop_Through_WOL.Id|
+    |WorkStepRecord.ExecutionOrder| Assign|NextNumber|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.ActionDefinition</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStep.Set_Service_Status</b></span>|
+    |WorkStepCollection| Add|WorkStepRecord|
+    
+    
+    
     
     ___
     

@@ -151,17 +151,33 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|WorkStep|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Create And Update|
+    |Label|[Work Step][After-Save][Record-Triggered] Relink Before Work Photos to WO|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Active</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⚠️ Draft</b></span>|
+    |Environments|Default|
+    |Interview Label|[Work Step][After-Save][Record-Triggered] Set Service Territory {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Content_Document_Link](#get_content_document_link)|
+    |Next Node|[Get_Content_Document_Link](#get_content_document_link)|
+    
     
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Status| Is Changed|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Completed</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>3</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Name</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Take Before Work Photos</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Take Before Work Photos</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Not Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Completed</b></span>|
+    
+    
     
     ___
     

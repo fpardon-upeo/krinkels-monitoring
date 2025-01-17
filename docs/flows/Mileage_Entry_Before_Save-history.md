@@ -164,70 +164,94 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMAD](#kmad)</b></span>|
     
+    
     #### 🟩Assignments
     
-    |Assign To Reference|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>$Record.Codes_ATAK_Limbus__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMAD](#kmad)</b></span>|
     
+    
+    
+    
     ### 🟩KMAP
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMAP](#kmap)</b></span>|
     
+    
     #### 🟩Assignments
     
-    |Assign To Reference|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>$Record.Codes_ATAK_Limbus__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMAP](#kmap)</b></span>|
     
+    
+    
+    
     ### 🟩KMBD
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMBD](#kmbd)</b></span>|
     
+    
     #### 🟩Assignments
     
-    |Assign To Reference|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>$Record.Codes_ATAK_Limbus__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMBD](#kmbd)</b></span>|
     
+    
+    
+    
     ### 🟩KMBP
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMBP](#kmbp)</b></span>|
     
+    
     #### 🟩Assignments
     
-    |Assign To Reference|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>$Record.Codes_ATAK_Limbus__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMBP](#kmbp)</b></span>|
     
+    
+    
+    
     ### 🟩KMEV
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMEV](#kmev)</b></span>|
     
+    
     #### 🟩Assignments
     
-    |Assign To Reference|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>$Record.Codes_ATAK_Limbus__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMEV](#kmev)</b></span>|
     
+    
+    
+    
     ### 🟩Check_Code
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
+    |Type|Decision|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Code ATAK</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Check Code</b></span>|
+    |Default Connector Label|Default Outcome|
+    
+    
     
     #### 🟥Rule Needs_Update (Needs Update)
     
@@ -241,6 +265,10 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMAD](#kmad)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
+    
+    
+    
+    
     |Condition Id|Left Value Reference|Operator|Right Value|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Codes_ATAK_Limbus__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Is Null</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
@@ -250,6 +278,11 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>5</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Ending_Location_Type__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Is Changed</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Starting</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Allowance_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Starts With</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Driver</b></span>|
+    
+    
+    
+    
+    
     
     ### 🟥Update_ATAK_Codes
     
@@ -264,73 +297,107 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMBP](#kmbp)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
+    
+    
+    
     #### 🟥Input Assignments
     
     
     
-    |Field|Value|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Value</i></span>|
     |:-- |:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Codes_ATAK_Limbus__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>CalculatedATAKCode</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Soccode__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>CalculatedSoccode</i></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Ending</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Allowance_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Starts With</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Driver</b></span>|
+    
+    
+    
+    
+    
     
     #### 🟩Rule Passenger_Start_of_Day (Passenger - Start of Day)
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMAP](#kmap)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Starting</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Allowance_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Passenger</b></span>|
     
+    
+    
+    
     #### 🟩Rule Passenger_End_of_Day (Passenger - End of Day)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMBD](#kmbd)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Ending</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Allowance_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Passenger</b></span>|
     
+    
+    
+    
     #### 🟩Rule Own_Vehicle (Own Vehicle)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[KMEV](#kmev)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Allowance_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Own Vehicle</b></span>|
     
+    
+    
+    
     ### 🟩Code_ATAK
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Code ATAK</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Default Outcome</b></span>|
     
+    
     #### 🟩Rule Needs_Update (Needs Update)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Check_Code](#check_code)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>or</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Codes_ATAK_Limbus__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Starting_Mileage__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
@@ -338,6 +405,14 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>4</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Starting_Location_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>5</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Ending_Location_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>6</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -449,10 +524,23 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|Mileage_Entry__c|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record Before Save|
+    |Record Trigger Type| Create And Update|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Mileage Entry - Before Save</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⚠️ Draft</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Mileage Entry] - [Before-Save] - [Record-Triggered]</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Active</b></span>|
+    |Description|This flow is to update and automatically fill in specific fields|
+    |Environments|Default|
+    |Interview Label|Mileage Entry - Before Save {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Code_ATAK](#code_atak)|
+    |Next Node|[Code_ATAK](#code_atak)|
+    
     
     ___
     

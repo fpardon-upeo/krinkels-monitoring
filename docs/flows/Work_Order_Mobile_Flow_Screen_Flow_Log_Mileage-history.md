@@ -125,14 +125,40 @@
     
     ### Set_Mileage_Values
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Mileage Values|
+    |Connector|[Update_Kilometers](#update_kilometers)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>MileageEntryRecord.Starting_Mileage__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Starting_Kilomters</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>MileageEntryRecord.Starting_Mileage__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Starting_Kilometers</b></span>|
+    |MileageEntryRecord.Ending_Mileage__c| Assign|Ending_Kilometers|
+    |MileageEntryRecord.Work_Order__c| Assign|WorkStepRecord.WorkOrderId|
+    
+    
+    
     
     ### Log_KM
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Log KM|
+    |Allow Back|✅|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Back Button Label|Cancel|
+    |Show Footer|✅|
+    |Show Header|✅|
+    |Connector|[Set_Mileage_Values](#set_mileage_values)|
+    
+    
     
     #### 🟥Starting_Kilomters
     
@@ -141,8 +167,17 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Data Type|Number|
+    |Default Value|MileageEntryRecord.Starting_Mileage__c|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Starting Kilomters</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Starting Kilometers</b></span>|
+    |Field Type| Input Field|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|✅|
+    |Scale|0|
+    
+    
+    
     
     ___
     
@@ -282,20 +317,50 @@
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
     |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |MileageEntryRecord|SObject|⬜|⬜|⬜|Mileage_Entry__c|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>timesheetId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>UserId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|<!-- -->|
+    
     
     ## Flow Nodes Details
     
     ### Set_Mileage_Values
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Mileage Values|
+    |Connector|[Update_Kilometers](#update_kilometers)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |MileageEntryRecord.Starting_Mileage__c| Assign|Starting_Kilomters|
+    |MileageEntryRecord.Ending_Mileage__c| Assign|Ending_Kilometers|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>MileageEntryRecord.Work_Order__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.WorkOrderId</b></span>|
     
+    
+    
+    
+    
     ### Get_Mileage_Entry
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Lookup|
+    |Object|Mileage_Entry__c|
+    |Label|Get Mileage Entry|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Reference|MileageEntryRecord|
+    |Queried Fields|- Id<br/>- Starting_Mileage__c<br/>- Ending_Mileage__c<br/>|
+    |Sort Field|CreatedDate|
+    |Sort Order|Desc|
+    |Connector|[Log_KM](#log_km)|
+    
     
     #### Filters (logic: **and**)
     
@@ -305,9 +370,14 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Starting</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Time_Sheet__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>timesheetId</b></span>|
     
+    
+    
+    
+    
+    
     ### 🟩Get_Timesheet_Id
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TimeSheet</b></span>|
@@ -316,19 +386,32 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Output Assignments</b></span>|<span style="background-color: #a6e22e; color: black;"><b>assignToReference: timesheetId<br/>field: Id<br/></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Mileage_Entry](#get_mileage_entry)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>OwnerId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>UserId</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>StartDate</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Flow.CurrentDate</b></span>|
+    
+    
+    
+    
     
     ### Get_Work_Step
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkStep|
+    |Label|Get Work Step|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Reference|WorkStepRecord|
+    |Queried Fields|- Id<br/>- WorkOrderId<br/>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Mileage_Entry](#get_mileage_entry)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Timesheet_Id](#get_timesheet_id)</b></span>|
+    
+    
     
     ___
     

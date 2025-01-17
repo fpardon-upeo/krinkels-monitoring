@@ -136,8 +136,21 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|User|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Update|
+    |Label|[User] [After Update] [RecordTrigered] Create Service Resource|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Active</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Obsolete</b></span>|
+    |Environments|Default|
+    |Interview Label|[User] [After Update] [RecordTrigered] Create Service Resource {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Field_Service_Permission_Sets](#get_field_service_permission_sets)|
+    |Next Node|[Get_Field_Service_Permission_Sets](#get_field_service_permission_sets)|
+    
     
     ___
     

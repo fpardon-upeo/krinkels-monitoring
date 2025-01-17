@@ -74,7 +74,7 @@ public with sharing class SFS_WorkOrderCreatorController {
             // Get the parent work order info
             WorkOrder parentWO = [
                     SELECT Id, MaintenancePlanId, ServiceTerritoryId,
-                            AssetId
+                            AssetId, SuggestedMaintenanceDate, StartDate, EndDate
                     FROM WorkOrder
                     WHERE Id = :serviceAppointment.ParentRecordId
                     WITH SECURITY_ENFORCED
@@ -106,9 +106,9 @@ public with sharing class SFS_WorkOrderCreatorController {
                     Waste_Visit_Planned__c = true,
                     Waste_to_Drop_Off__c = wasteTypes,
                     Work_Order_Type__c = 'Waste Depot Visit',
-                    SuggestedMaintenanceDate = Date.today(),
-                    StartDate = Date.today(),
-                    EndDate = Date.today()
+                    SuggestedMaintenanceDate = parentWO.SuggestedMaintenanceDate,
+                    StartDate = parentWO.StartDate,
+                    EndDate = parentWO.EndDate
             );
 
             insert wo;
@@ -162,7 +162,7 @@ public with sharing class SFS_WorkOrderCreatorController {
             // Get the parent work order info
             WorkOrder parentWO = [
                     SELECT Id, MaintenancePlanId, ServiceTerritoryId,
-                            ServiceContractId, AssetId
+                            ServiceContractId, AssetId, SuggestedMaintenanceDate, StartDate, EndDate
                     FROM WorkOrder
                     WHERE Id = :serviceAppointment.ParentRecordId
                     WITH SECURITY_ENFORCED
@@ -196,9 +196,9 @@ public with sharing class SFS_WorkOrderCreatorController {
                     Drop_Off_Items__c = dropOffItems,
                     Pick_Up_Items__c = pickUpItems,
                     Work_Order_Type__c = 'Depot Visit',
-                    SuggestedMaintenanceDate = Date.today(),
-                    StartDate = Date.today(),
-                    EndDate = Date.today()
+                    SuggestedMaintenanceDate = parentWO.SuggestedMaintenanceDate,
+                    StartDate = parentWO.StartDate,
+                    EndDate = parentWO.EndDate
             );
 
             insert wo;
@@ -307,7 +307,7 @@ public with sharing class SFS_WorkOrderCreatorController {
             // Get parent work order info
             WorkOrder parentWO = [
                     SELECT Id, AccountId, AssetId, MaintenancePlanId,
-                            ServiceContractId, ServiceTerritoryId, WorkOrderNumber
+                            ServiceContractId, ServiceTerritoryId, WorkOrderNumber, SuggestedMaintenanceDate, StartDate, EndDate
                     FROM WorkOrder
                     WHERE Id = :serviceAppointment.ParentRecordId
                     WITH SECURITY_ENFORCED
@@ -336,9 +336,9 @@ public with sharing class SFS_WorkOrderCreatorController {
                     Rework_Planned__c = true,
                     Rework_reasons__c = reworkReason,
                     Rework_for_Work_Order__c = parentWO.Id,
-                    SuggestedMaintenanceDate = Date.today(),
-                    StartDate = Date.today(),
-                    EndDate = Date.today()
+                    SuggestedMaintenanceDate = parentWO.SuggestedMaintenanceDate,
+                    StartDate = parentWO.StartDate,
+                    EndDate = parentWO.EndDate
             );
 
             insert wo;

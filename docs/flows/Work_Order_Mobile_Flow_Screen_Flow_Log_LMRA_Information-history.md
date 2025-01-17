@@ -2,6 +2,292 @@
 
 <!-- This page has been generated to be viewed with mkdocs-material, you can not view it just as markdown . Activate tab plugin following the doc at https://squidfunk.github.io/mkdocs-material/reference/content-tabs/ -->
 
+=== "Jan 16, 2025"
+
+    _Jan 16, 2025, by fpardon-upeo in commit Org state on 2025-01-16 00:24 for monitoring_krinkelsgreencare__upeodev_sandbox [skip ci]_
+
+    
+    ## Flow Diagram
+    
+    ```mermaid
+    %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.
+    %% - If you are in VsCode, install extension `Markdown Preview Mermaid Support` at https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
+    %% - If you are using sfdx-hardis, try to define env variable `MERMAID_MODES=cli,docker` ,then run again the command to regenerate markdown with SVG images.
+    %% - If you are within mkdocs-material, define mermaid plugin in `mkdocs.yml` as described in https://squidfunk.github.io/mkdocs-material/extensions/mermaid/
+    %% - At last resort, you can copy-paste this MermaidJS code in https://mermaid.live/ to see the Flow Diagram
+    
+    flowchart TB
+    START(["<b>START</b>"]):::startClassChanged
+    
+    
+    click START "#general-information" "4117675639"
+    
+    
+    Set_Tasks_Of_Day_Value[\"🟰 <em></em><br/>Set Tasks Of Day Value"/]:::assignments
+    click Set_Tasks_Of_Day_Value "#set_tasks_of_day_value" "3916738752"
+    
+    Full_or_Limited_LMRA{"🔀 <em></em><br/>Full or Limited LMRA ?"}:::decisions
+    click Full_or_Limited_LMRA "#full_or_limited_lmra" "2088660188"
+    
+    Limited_LMRA_Confirmed{"🔀 <em></em><br/>Limited LMRA Confirmed ?"}:::decisions
+    click Limited_LMRA_Confirmed "#limited_lmra_confirmed" "2857364459"
+    
+    LMRA_Already_Done{"🔀 <em></em><br/>LMRA Already Done ?"}:::decisions
+    click LMRA_Already_Done "#lmra_already_done" "2884183025"
+    
+    Loop_Lines{{"🔁 <em></em><br/>Loop Lines"}}:::loops
+    click Loop_Lines "#loop_lines" "1034807019"
+    
+    Create_Full_LMRA[("<b>➕ <em></em><br/>Create Full LMRA</b>")]:::recordCreatesChanged
+    
+    
+    click Create_Full_LMRA "#create_full_lmra" "1934845254"
+    
+    
+    Create_Limited_LMRA[("➕ <em></em><br/>Create Limited LMRA")]:::recordCreates
+    click Create_Limited_LMRA "#create_limited_lmra" "2204160202"
+    
+    Get_Related_Operational_Account[("🔍 <em></em><br/>Get Related Operational Account")]:::recordLookups
+    click Get_Related_Operational_Account "#get_related_operational_account" "3839606916"
+    
+    Get_Related_Work_Order[("🔍 <em></em><br/>Get Related Work Order")]:::recordLookups
+    click Get_Related_Work_Order "#get_related_work_order" "514490499"
+    
+    Get_Work_Lines[("🔍 <em></em><br/>Get Work Lines")]:::recordLookups
+    click Get_Work_Lines "#get_work_lines" "2948152931"
+    
+    Get_Work_Step_Information[("🔍 <em></em><br/>Get Work Step Information")]:::recordLookups
+    click Get_Work_Step_Information "#get_work_step_information" "968707648"
+    
+    Confirmed_LMRA_Done_at_WO_level[("🛠️ <em></em><br/>Confirmed LMRA Done at WO level")]:::recordUpdates
+    click Confirmed_LMRA_Done_at_WO_level "#confirmed_lmra_done_at_wo_level" "3771151378"
+    
+    Update_Work_Step_Status_to_Complete[("🛠️ <em></em><br/>Update Work Step Status to Complete")]:::recordUpdates
+    click Update_Work_Step_Status_to_Complete "#update_work_step_status_to_complete" "1882464419"
+    
+    Update_Work_Step_Status_to_Complete_After[("🛠️ <em></em><br/>Update Work Step Status to Complete After")]:::recordUpdates
+    click Update_Work_Step_Status_to_Complete_After "#update_work_step_status_to_complete_after" "247084983"
+    
+    Full_LMRA_Information(["<b>💻 <em></em><br/>Full LMRA Information</b>"]):::screensChanged
+    
+    
+    click Full_LMRA_Information "#full_lmra_information" "2668930695"
+    
+    
+    Limited_LMRA_Information(["<b>💻 <em></em><br/>Limited LMRA Information</b>"]):::screensChanged
+    
+    
+    click Limited_LMRA_Information "#limited_lmra_information" "2814735025"
+    
+    
+    LMRA_Done_Message(["💻 <em></em><br/>LMRA Done Message"]):::screens
+    click LMRA_Done_Message "#lmra_done_message" "581062939"
+    
+    Set_Tasks_Of_Day_Value --> Loop_Lines
+    Full_or_Limited_LMRA --> |"Full"| Full_LMRA_Information
+    Full_or_Limited_LMRA --> |"Limited"| Limited_LMRA_Information
+    Limited_LMRA_Confirmed --> |"Yes"| Create_Limited_LMRA
+    Limited_LMRA_Confirmed --> |"No"| Limited_LMRA_Information
+    LMRA_Already_Done --> |"No"| Full_or_Limited_LMRA
+    LMRA_Already_Done --> |"Yes"| LMRA_Done_Message
+    Loop_Lines --> |"For Each"|Set_Tasks_Of_Day_Value
+    Loop_Lines ---> |"After Last"|LMRA_Already_Done
+    Create_Full_LMRA --> Update_Work_Step_Status_to_Complete_After
+    Create_Limited_LMRA --> Update_Work_Step_Status_to_Complete_After
+    Get_Related_Operational_Account --> Loop_Lines
+    Get_Related_Work_Order --> Get_Work_Lines
+    Get_Work_Lines --> Get_Related_Operational_Account
+    Get_Work_Step_Information --> Get_Related_Work_Order
+    Confirmed_LMRA_Done_at_WO_level --> END_Confirmed_LMRA_Done_at_WO_level
+    Update_Work_Step_Status_to_Complete --> END_Update_Work_Step_Status_to_Complete
+    Update_Work_Step_Status_to_Complete_After --> Confirmed_LMRA_Done_at_WO_level
+    Full_LMRA_Information --> Create_Full_LMRA
+    Limited_LMRA_Information --> Limited_LMRA_Confirmed
+    LMRA_Done_Message --> Update_Work_Step_Status_to_Complete
+    START -->  Get_Work_Step_Information
+    END_Confirmed_LMRA_Done_at_WO_level(( END )):::endClass
+    END_Update_Work_Step_Status_to_Complete(( END )):::endClass
+    
+    
+    classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+    classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+    classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+    classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+    classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+    classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+    classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+    classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+    classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+    classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+    classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
+    
+    
+    
+    classDef actionCallsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    
+    classDef actionCallsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    
+    classDef actionCallsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+      
+    ```
+    
+    <!-- Flow description -->
+    
+    ## General Information
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Process Type| Field Service Mobile|
+    |Label|[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Active</i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⚠️ Draft</b></span>|
+    |Environments|Default|
+    |Interview Label|[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Work_Step_Information](#get_work_step_information)|
+    |Next Node|[Get_Work_Step_Information](#get_work_step_information)|
+    
+    
+    ## Flow Nodes Details
+    
+    ### Create_Full_LMRA
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|LMRA__c|
+    |Label|Create Full LMRA|
+    |Connector|[Update_Work_Step_Status_to_Complete_After](#update_work_step_status_to_complete_after)|
+    
+    
+    #### Input Assignments
+    
+    |Field|Value|
+    |:-- |:--: |
+    |Corrective_Measures__c|Corrective_Measures_1|
+    |EPC_EPI_CBM_PBM__c|EPC_EPI_CBM_PBM_1|
+    |LMRA_Type__c|Full|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Other_Risks__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Other_Risks</b></span>|
+    |Project_Lead__c|Project_Lead_Full|
+    |Surrounding_Risks__c|Surrounding_Risks_1|
+    |Tasks_of_the_Day__c|Tasks_of_the_Day_1|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Thermal_Burner_Used__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Do_you_have_to_use_a_thermal_burner_because_there_is_no_alternative</b></span>|
+    |Work_Order__c|workOrderRecord.Id|
+    
+    
+    
+    
+    ### Full_LMRA_Information
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Full LMRA Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
+    |Connector|[Create_Full_LMRA](#create_full_lmra)|
+    
+    
+    #### 🟩Other_Risks
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |:---|:---|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Other Risks</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Large Text Area</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
+    
+    ### Limited_LMRA_Information
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Limited LMRA Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
+    |Connector|[Limited_LMRA_Confirmed](#limited_lmra_confirmed)|
+    
+    
+    #### Limited_LMRA_Done
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Data Type|Boolean|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Limited LMRA Done</i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>LMRA Checks Done</b></span>|
+    |Field Type| Input Field|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|✅|
+    
+    
+    
+    
+    #### confirmedLMRA
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><p><em>To confirm that a limited LMRA has been done, please tick the box.</em></p></i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p><em>To confirm that a LMRA has been done, please tick the box.</em></p></b></span>|
+    |Field Type| Display Text|
+    
+    
+    
+    
+    ___
+    
+    _Documentation generated from branch monitoring_krinkelsgreencare__upeodev_sandbox by [sfdx-hardis](https://sfdx-hardis.cloudity.com), featuring [salesforce-flow-visualiser](https://github.com/toddhalfpenny/salesforce-flow-visualiser)_
+
 === "Jan 11, 2025"
 
     _Jan 11, 2025, by fpardon-upeo in commit Org state on 2025-01-11 00:25 for monitoring_krinkelsgreencare__upeodev_sandbox [skip ci]_
@@ -190,30 +476,40 @@
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
     |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |RelatedAccount|SObject|⬜|⬜|⬜|Account|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>tasksOfDay</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>workLineLoopVar</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>workOrderLines</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |workOrderRecord|SObject|⬜|✅|⬜|WorkOrder|<!-- -->|
+    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|<!-- -->|
+    
     
     ## Flow Nodes Details
     
     
     ### 🟩Set_Tasks_Of_Day_Value
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Assignment</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Set Tasks Of Day Value</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Loop_Lines](#loop_lines)</b></span>|
     
+    
     #### 🟩Assignments
     
-    |Assign To Reference|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Assign To Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>tasksOfDay</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Add</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!workLineLoopVar.Description},</b></span>|
     
+    
+    
+    
+    
     ### 🟩Loop_Lines
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Loop</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Loop Lines</b></span>|
@@ -223,23 +519,41 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Next Value Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Set_Tasks_Of_Day_Value](#set_tasks_of_day_value)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>No More Values Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[LMRA_Already_Done](#lmra_already_done)</b></span>|
     
+    
+    
     ### Get_Related_Operational_Account
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|Account|
+    |Label|Get Related Operational Account|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Reference|RelatedAccount|
+    |Queried Fields|- Id<br/>- LMRA_Type__c<br/>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[LMRA_Already_Done](#lmra_already_done)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Loop_Lines](#loop_lines)</b></span>|
+    
+    
     
     ### Get_Related_Work_Order
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkOrder|
+    |Label|Get Related Work Order|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Reference|workOrderRecord|
+    |Queried Fields|- Id<br/>- WorkOrderNumber<br/>- LMRA__c<br/>- LMRA_Done__c<br/>- AccountId<br/>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Related_Operational_Account](#get_related_operational_account)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Work_Lines](#get_work_lines)</b></span>|
     
+    
+    
     ### 🟩Get_Work_Lines
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|
@@ -249,24 +563,46 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Queried Fields</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Id<br/>- Description<br/></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Related_Operational_Account](#get_related_operational_account)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.Id</b></span>|
     
+    
+    
+    
+    
     ### Full_LMRA_Information
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Full LMRA Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
+    |Connector|[Create_Full_LMRA](#create_full_lmra)|
+    
+    
     
     #### 🟩Header
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p style="text-align: center;"><img src="https://krinkelsgreencare--upeodev.sandbox.file.force.com/sfc/servlet.shepherd/version/download/068KF000001eO36?asPdf=false&amp;operationContext=CHATTER" alt="LMRA_Header.png"></p></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
     
+    
+    
+    
+    
     #### 🟩Do_you_have_to_use_a_thermal_burner_because_there_is_no_alternative
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Boolean</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Choice References</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Choice_Yes<br/>- Choice_No<br/></b></span>|
@@ -275,11 +611,22 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
+    
     #### Tasks_of_the_Day_1
     
     |<!-- -->|<!-- -->|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Value</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!tasksOfDay}</b></span>|
+    |Field Text|Tasks of the Day|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|✅|
+    
+    
+    
     
     ___
     
@@ -448,22 +795,46 @@
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
     |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>RelatedAccount</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Account</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |workOrderRecord|SObject|⬜|✅|⬜|WorkOrder|<!-- -->|
+    |WorkStepRecord|SObject|⬜|✅|⬜|WorkStep|<!-- -->|
+    
     
     ## Flow Nodes Details
     
     ### Full_or_Limited_LMRA
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Decision|
+    |Label|Full or Limited LMRA ?|
+    |Default Connector|[Limited_LMRA_Information](#limited_lmra_information)|
+    |Default Connector Label|Limited|
+    
+    
     #### Rule Full_Full_or_Limited_LMRA (Full)
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Connector|[Full_LMRA_Information](#full_lmra_information)|
+    |Condition Logic|and|
+    
+    
+    
     
     |Condition Id|Left Value Reference|Operator|Right Value|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>workOrderRecord.LMRA__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Full</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>RelatedAccount.LMRA_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Full</b></span>|
     
+    
+    
+    
+    
     ### 🟩Get_Related_Operational_Account
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Account</b></span>|
@@ -473,20 +844,32 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Queried Fields</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Id<br/>- LMRA_Type__c<br/></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[LMRA_Already_Done](#lmra_already_done)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.AccountId</b></span>|
+    
+    
+    
+    
     
     ### Get_Related_Work_Order
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkOrder|
+    |Label|Get Related Work Order|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Reference|workOrderRecord|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Queried Fields</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>- Id<br/>- WorkOrderNumber<br/>- LMRA__c<br/>- LMRA_Done__c<br/></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[LMRA_Already_Done](#lmra_already_done)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Queried Fields</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Id<br/>- WorkOrderNumber<br/>- LMRA__c<br/>- LMRA_Done__c<br/>- AccountId<br/></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Related_Operational_Account](#get_related_operational_account)</b></span>|
+    
+    
     
     ___
     
@@ -640,40 +1023,88 @@
     
     ### Full_LMRA_Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Full LMRA Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
+    |Connector|[Create_Full_LMRA](#create_full_lmra)|
+    
+    
     #### Project_Lead_Full
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Data Type|String|
+    |Field Text|Project Lead|
+    |Field Type| Input Field|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     #### Tasks_of_the_Day_1
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Field Text|Tasks of the Day|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     #### Surrounding_Risks_1
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Field Text|Surrounding Risks|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     #### Corrective_Measures_1
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Field Text|Corrective Measures|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     #### EPC_EPI_CBM_PBM_1
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Field Text|EPC - EPI/CBM - PBM|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     ___
     
@@ -843,36 +1274,54 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Create|
+    |Object|LMRA__c|
+    |Label|Create Full LMRA|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Confirmed_LMRA_Done_at_WO_level](#confirmed_lmra_done_at_wo_level)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Work_Step_Status_to_Complete_After](#update_work_step_status_to_complete_after)</b></span>|
+    
+    
     
     ### Create_Limited_LMRA
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Create|
+    |Object|LMRA__c|
+    |Label|Create Limited LMRA|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Confirmed_LMRA_Done_at_WO_level](#confirmed_lmra_done_at_wo_level)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Work_Step_Status_to_Complete_After](#update_work_step_status_to_complete_after)</b></span>|
     
+    
+    
     ### 🟩Update_Work_Step_Status_to_Complete_After
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStep</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Update Work Step Status to Complete After</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Confirmed_LMRA_Done_at_WO_level](#confirmed_lmra_done_at_wo_level)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.Id</b></span>|
     
+    
+    
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Completed</b></span>|
+    
+    
+    
+    
     
     ___
     
@@ -1048,25 +1497,41 @@
     
     ### 🟩Limited_LMRA_Confirmed
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Limited LMRA Confirmed ?</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>isGoTo: true<br/>targetReference: Limited_LMRA_Information<br/></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>No</b></span>|
     
+    
     #### 🟩Rule Yes (Yes)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Create_Limited_LMRA](#create_limited_lmra)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Limited_LMRA_Done</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     
+    
+    
+    
+    
     ### Create_Full_LMRA
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|LMRA__c|
+    |Label|Create Full LMRA|
+    |Connector|[Confirmed_LMRA_Done_at_WO_level](#confirmed_lmra_done_at_wo_level)|
+    
     
     #### Input Assignments
     
@@ -1077,44 +1542,81 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>EPC_EPI_CBM_PBM__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>EPC_EPI_CBM_PBM</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Corrective_Measures__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Corrective_Measures_1</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>EPC_EPI_CBM_PBM__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>EPC_EPI_CBM_PBM_1</b></span>|
+    |LMRA_Type__c|Full|
+    |Project_Lead__c|Project_Lead_Full|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Surrounding_Risks__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Surrounding_Risks</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Tasks_of_the_Day__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Tasks_of_the_Day</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Surrounding_Risks__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Surrounding_Risks_1</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Tasks_of_the_Day__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Tasks_of_the_Day_1</b></span>|
+    |Work_Order__c|workOrderRecord.Id|
+    
+    
+    
     
     ### Create_Limited_LMRA
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|LMRA__c|
+    |Label|Create Limited LMRA|
+    |Connector|[Confirmed_LMRA_Done_at_WO_level](#confirmed_lmra_done_at_wo_level)|
+    
     
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Date__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Date_Lmited</i></span>|
+    |LMRA_Type__c|Limited|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Project_Lead__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Project_Lead</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Limited_LMRA_Done__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Limited_LMRA_Done</b></span>|
+    |Work_Order__c|workOrderRecord.Id|
+    
+    
+    
     
     ### Full_LMRA_Information
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Screen|
+    |Label|Full LMRA Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Full_LMRA_Information_Part_Two](#full_lmra_information_part_two)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Create_Full_LMRA](#create_full_lmra)</b></span>|
     
+    
+    
+    
     #### 🟥FullLMRATitle
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><p><strong>Full LMRA</strong></p></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Display Text</i></span>|
     
+    
+    
+    
+    
     #### 🟥Date_Full
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Data Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Date</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Date</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Input Field</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Inputs On Next Nav To Assoc Scrn</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Use Stored Values</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
+    
+    
+    
+    
     
     ### 🟥Full_LMRA_Information_Part_Two
     
@@ -1136,14 +1638,19 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
     #### 🟥FullLMRATitleTwo
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><p><strong>Full LMRA</strong></p></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Display Text</i></span>|
+    
+    
     
     #### 🟩Surrounding_Risks_1
     
@@ -1158,6 +1665,13 @@
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Tasks of the Day</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Surrounding Risks</b></span>|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     #### 🟥Surrounding_Risks
     
@@ -1168,6 +1682,13 @@
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Surrounding Risks</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Corrective Measures</b></span>|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     #### 🟥Corrective_Measures
     
@@ -1178,6 +1699,13 @@
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Corrective Measures</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>EPC - EPI/CBM - PBM</b></span>|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     #### 🟥EPC_EPI_CBM_PBM
     
@@ -1190,25 +1718,44 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Large Text Area</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Extension Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b>forceContent:fileUpload</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Component Instance</b></span>|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Attach Photos</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Multiple (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Record Id (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.Id</b></span>|
     
+    
+    
+    
+    
     ### Limited_LMRA_Information
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Screen|
+    |Label|Limited LMRA Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Create_Limited_LMRA](#create_limited_lmra)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Limited_LMRA_Confirmed](#limited_lmra_confirmed)</b></span>|
     
+    
+    
+    
     #### 🟥LimitedLMRATitle
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><p><strong>Limited LMRA</strong></p></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Display Text</i></span>|
+    
+    
+    
+    
     
     #### LmitedLMRAMessage
     
@@ -1216,6 +1763,11 @@
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><p><strong style="color: rgb(231, 24, 24); font-size: 14px;">Don't forget your LMRA, avoid accidents!</strong></p></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p><strong style="font-size: 14px; color: rgb(11, 11, 11);">Don't forget your LMRA, avoid accidents!</strong></p></b></span>|
+    |Field Type| Display Text|
+    
+    
+    
+    
     
     #### 🟥Work_Order
     
@@ -1229,10 +1781,17 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Work Order</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Boolean</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Limited LMRA Done</b></span>|
+    |Field Type| Input Field|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Disabled</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>true</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Read Only</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>true</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
+    
     
     #### 🟥Date_Lmited
     
@@ -1249,15 +1808,24 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p><em>To confirm that a limited LMRA has been done, please tick the box.</em></p></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
     
+    
+    
+    
+    
+    
     #### 🟥Project_Lead
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Data Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Project Lead</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Input Field</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Inputs On Next Nav To Assoc Scrn</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Use Stored Values</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
+    
+    
+    
+    
     
     ___
     
@@ -1425,34 +1993,59 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkStep|
+    |Label|Get Work Step Information|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Reference|WorkStepRecord|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Queried Fields</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>- Id<br/>- WorkOrderId<br/></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Queried Fields</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Id<br/>- WorkOrderId<br/>- Status<br/></b></span>|
+    |Connector|[Get_Related_Work_Order](#get_related_work_order)|
+    
     
     ### 🟩Update_Work_Step_Status_to_Complete
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStep</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Update Work Step Status to Complete</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.Id</b></span>|
     
+    
+    
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Completed</b></span>|
+    
+    
+    
+    
     
     ### LMRA_Done_Message
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Screen|
+    |Label|LMRA Done Message|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Next Or Finish Button Label|Close|
+    |Show Footer|✅|
+    |Show Header|⬜|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Work_Step_Status_to_Complete](#update_work_step_status_to_complete)</b></span>|
+    
+    
     
     ___
     
@@ -1638,74 +2231,102 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Process Type| Field Service Mobile|
+    |Label|[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⚠️ Draft</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Active</b></span>|
+    |Environments|Default|
+    |Interview Label|[Work Order][Mobile Flow][Screen-Flow] Log LMRA Information {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Related_Work_Order](#get_related_work_order)</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Next Node</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Related_Work_Order](#get_related_work_order)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Work_Step_Information](#get_work_step_information)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Next Node</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Work_Step_Information](#get_work_step_information)</b></span>|
     
+    
+    
     ## Variables
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
     |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |workOrderRecord|SObject|⬜|✅|⬜|WorkOrder|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStep</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ## Flow Nodes Details
     
     
     ### 🟩Full_or_Limited_LMRA
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Full or Limited LMRA ?</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Limited_LMRA_Information](#limited_lmra_information)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Limited</b></span>|
     
+    
     #### 🟩Rule Full_Full_or_Limited_LMRA (Full)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Full_LMRA_Information](#full_lmra_information)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.LMRA__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Full</b></span>|
     
+    
+    
+    
     ### 🟩LMRA_Already_Done
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>LMRA Already Done ?</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[LMRA_Done_Message](#lmra_done_message)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Yes</b></span>|
     
+    
     #### 🟩Rule No (No)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Full_or_Limited_LMRA](#full_or_limited_lmra)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.LMRA_Done__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
     ### 🟩Create_Full_LMRA
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Create</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>LMRA__c</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Create Full LMRA</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Confirmed_LMRA_Done_at_WO_level](#confirmed_lmra_done_at_wo_level)</b></span>|
     
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Corrective_Measures__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Corrective_Measures</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Date__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Date_Full</b></span>|
@@ -1716,32 +2337,47 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Tasks_of_the_Day__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Tasks_of_the_Day</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Work_Order__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.Id</b></span>|
     
+    
+    
+    
     ### 🟩Create_Limited_LMRA
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Create</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>LMRA__c</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Create Limited LMRA</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Confirmed_LMRA_Done_at_WO_level](#confirmed_lmra_done_at_wo_level)</b></span>|
     
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Date__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Date_Lmited</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>LMRA_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Limited</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Project_Lead__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Project_Lead</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Work_Order__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.Id</b></span>|
     
+    
+    
+    
+    
     ### Get_Related_Work_Order
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkOrder|
+    |Label|Get Related Work Order|
+    |Assign Null Values If No Records Found|⬜|
+    |Output Reference|workOrderRecord|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Queried Fields</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>- Id<br/>- WorkOrderNumber<br/></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[LMRA_Information](#lmra_information)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Queried Fields</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Id<br/>- WorkOrderNumber<br/>- LMRA__c<br/>- LMRA_Done__c<br/></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[LMRA_Already_Done](#lmra_already_done)</b></span>|
+    
+    
     
     #### Filters (logic: **and**)
     
@@ -1749,6 +2385,11 @@
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Id</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.WorkOrderId</b></span>|
+    
+    
+    
+    
+    
     
     ### 🟥Equipment_Information
     
@@ -1772,15 +2413,21 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Queried Fields</b></span>|<span style="background-color: #a6e22e; color: black;"><b>- Id<br/>- WorkOrderId<br/></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Related_Work_Order](#get_related_work_order)</b></span>|
     
+    
+    
+    
     #### 🟥EPC_EPI_CBM_PBM
     
     #### 🟩Filters (logic: **and**)
     
     
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|
+    
+    
+    
     
     ### 🟩Confirmed_LMRA_Done_at_WO_level
     
@@ -1795,13 +2442,18 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrder</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Confirmed LMRA Done at WO level</b></span>|
     
+    
+    
+    
     #### 🟩Filters (logic: **and**)
     
     
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.Id</b></span>|
+    
+    
     
     ### 🟥LMRA_Information
     
@@ -1811,19 +2463,31 @@
     
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>LMRA_Done__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
     
     ### 🟩Full_LMRA_Information
     
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Screen|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>LMRA Information</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Full LMRA Information</b></span>|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Task_Information](#task_information)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Full_LMRA_Information_Part_Two](#full_lmra_information_part_two)</b></span>|
+    
+    
+    
     
     #### 🟥Work_Order_Number
     
@@ -1835,17 +2499,42 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p><strong>Full LMRA</strong></p></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
     
+    
+    
+    
     #### 🟩Work_Order_Full
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
+    |Data Type|String|
+    |Default Value|workOrderRecord.WorkOrderNumber|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Work Order Number</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Work Order</b></span>|
+    |Field Type| Input Field|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Disabled|true|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Read Only</b></span>|<span style="background-color: #a6e22e; color: black;"><b>true</b></span>|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     #### 🟥Date
     
     #### 🟩Date_Full
+    
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Data Type|Date|
+    |Field Text|Date|
+    |Field Type| Input Field|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|⬜|
+    
+    
+    
     
     
     #### 🟥LMRA_Type
@@ -1855,11 +2544,18 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Data Type|String|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Choice References</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>- Limited<br/>- Full<br/></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>LMRA Type</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Dropdown Box</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Project Lead</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Input Field</b></span>|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     ### 🟥Risk_Information
     
@@ -1868,12 +2564,20 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Screen|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Risk Information</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Allow Back</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Full LMRA Information - Part Two</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Allow Back</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Equipment_Information](#equipment_information)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Create_Full_LMRA](#create_full_lmra)</b></span>|
+    
+    
+    
     
     #### 🟥Surrounding_Risks
     
@@ -1886,11 +2590,21 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p><strong>Full LMRA</strong></p></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
     
+    
+    
+    
     #### 🟩Tasks_of_the_Day
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Tasks of the Day</b></span>|
+    |Field Type| Large Text Area|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     #### 🟥SurroundRisksPhoto
     
@@ -1903,10 +2617,15 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Component Instance</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Surrounding Risks</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Large Text Area</b></span>|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Record Id (input)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>workOrderRecord.Id</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label (input)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Surrounding Risks Photo</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    
+    
+    
     
     #### 🟥CorrectiveMeasuresPhoto
     
@@ -1919,10 +2638,16 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Component Instance</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>EPC - EPI/CBM - PBM</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Large Text Area</b></span>|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label (input)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Corrective Measures Photo</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Record Id (input)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>workOrderRecord.Id</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    
+    
+    
+    
     
     ### 🟥Task_Information
     
@@ -1931,12 +2656,20 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Screen|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Task Information</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Allow Back</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Limited LMRA Information</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Allow Back</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Risk_Information](#risk_information)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Create_Limited_LMRA](#create_limited_lmra)</b></span>|
+    
+    
+    
     
     #### 🟥Tasks_of_the_Day
     
@@ -1950,29 +2683,41 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p><strong>Limited LMRA</strong></p></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
     
+    
+    
+    
     #### 🟩LmitedLMRAMessage
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p><strong style="color: rgb(231, 24, 24); font-size: 14px;">Don't forget your LMRA, avoid accidents!</strong></p></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
     
+    
+    
+    
     #### 🟩Work_Order
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Value</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.WorkOrderNumber</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Work Order</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Input Field</b></span>|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Disabled</b></span>|<span style="background-color: #a6e22e; color: black;"><b>true</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Read Only</b></span>|<span style="background-color: #a6e22e; color: black;"><b>true</b></span>|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     #### 🟩Date_Lmited
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Date</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Date</b></span>|
@@ -1980,9 +2725,14 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
+    
+    
     #### 🟩Project_Lead
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Project Lead</b></span>|
@@ -1990,9 +2740,12 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
     ### 🟩LMRA_Done_Message
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Screen</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>LMRA Done Message</b></span>|
@@ -2003,12 +2756,21 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Show Footer</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Show Header</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
     #### 🟩LMRADoneMessage
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b><p>LMRA already done for this work order at this location. You can continue with your tasks.&nbsp;</p></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Display Text</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     

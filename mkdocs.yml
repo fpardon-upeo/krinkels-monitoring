@@ -138,6 +138,7 @@ nav:
       Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication: >-
         flows/Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication.md
       Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id: flows/Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id.md
+      Service_Crew_and_Van_Creator: flows/Service_Crew_and_Van_Creator.md
       Service_contract_Scheduled_Contract_Renewal_Reminder: flows/Service_contract_Scheduled_Contract_Renewal_Reminder.md
       Sign_Request_After_Save_Update_quote_signing_info: flows/Sign_Request_After_Save_Update_quote_signing_info.md
       TimeSheet_Record_Trigger_Set_Contract_Hours: flows/TimeSheet_Record_Trigger_Set_Contract_Hours.md

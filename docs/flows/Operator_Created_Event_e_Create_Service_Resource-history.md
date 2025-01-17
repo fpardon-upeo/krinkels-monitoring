@@ -116,8 +116,21 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|Operator_Created_Event__e|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Platform Event|
+    |Label|[Operator_Created_Event__e] - Create Service Resource|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Active</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Obsolete</b></span>|
+    |Flow Run As User|TriggeringUser|
+    |Environments|Default|
+    |Interview Label|[] {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_User_Details](#get_user_details)|
+    |Next Node|[Get_User_Details](#get_user_details)|
+    
     
     ___
     

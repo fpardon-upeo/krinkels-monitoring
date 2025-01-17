@@ -1996,6 +1996,7 @@
         <members>Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
+        <members>Service_Crew_and_Van_Creator</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
         <members>Sign_Request_After_Save_Update_quote_signing_info</members>
         <members>TimeSheet_Record_Trigger_Set_Contract_Hours</members>
@@ -2106,6 +2107,7 @@
         <members>Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related</members>
         <members>Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</members>
         <members>Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</members>
+        <members>Service_Crew_and_Van_Creator</members>
         <members>Service_contract_Scheduled_Contract_Renewal_Reminder</members>
         <members>Sign_Request_After_Save_Update_quote_signing_info</members>
         <members>TimeSheet_Record_Trigger_Set_Contract_Hours</members>
@@ -2801,6 +2803,7 @@
         <members>ServiceContract.Import_Lines</members>
         <members>ServiceContract.Prepare_for_Next_Year</members>
         <members>ServiceContract.Ready_for_Validation</members>
+        <members>ServiceCrew.Link_Van_and_Inventory</members>
         <members>Start_Day</members>
         <members>Task.Defer</members>
         <members>Task.Defer_0</members>

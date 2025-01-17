@@ -11,6 +11,7 @@
 | 💻 | [Quote_Gantt_Action_Clone](Quote_Gantt_Action_Clone.md) [🕒](Quote_Gantt_Action_Clone-history.md) | ScreenFlow |  |
 | 💻 | [Send_Better_Email_Testflow](Send_Better_Email_Testflow.md) [🕒](Send_Better_Email_Testflow-history.md) | ScreenFlow | A series of 5 examples for testing and demonstrating Send Better Email Action Component |
 | 💻 | [Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer](Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer.md) [🕒](Service_Appointment_Mobile_flow_Screen_flow_Send_Service_Report_to_Customer-history.md) | FieldServiceMobile | This flow allows the operator to send the service report to the customer. |
+| 💻 | [Service_Crew_and_Van_Creator](Service_Crew_and_Van_Creator.md) [🕒](Service_Crew_and_Van_Creator-history.md) | ScreenFlow |  |
 | 💻 | [Work_Order_Autolaunched_Flow_Update_PDF_Status](Work_Order_Autolaunched_Flow_Update_PDF_Status.md) [🕒](Work_Order_Autolaunched_Flow_Update_PDF_Status-history.md) | AutoLaunchedFlow |  |
 | 💻 | [Work_Order_Mobile_Flow_Check_In](Work_Order_Mobile_Flow_Check_In.md) [🕒](Work_Order_Mobile_Flow_Check_In-history.md) | FieldServiceMobile | This flow updates the status of the work order and the related service appointment to ‘In Progress’. |
 | 💻 | [Work_Order_Mobile_Flow_Check_Out](Work_Order_Mobile_Flow_Check_Out.md) [🕒](Work_Order_Mobile_Flow_Check_Out-history.md) | FieldServiceMobile | This flow updates the status of the work order and the related service appointment to ‘In Progress’. |

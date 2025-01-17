@@ -218,21 +218,53 @@
     
     ### Get_Assigned_Resources_Completed
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Lookup|
+    |Object|AssignedResource|
+    |Label|Get Assigned Resources Completed|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|⬜|
+    |Store Output Automatically|✅|
+    |Connector|[Loop_Assigned_Resources_Completed](#loop_assigned_resources_completed)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|ServiceAppointmentId| Equal To|$Record.Id|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Resource_Is_A_Person__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>User_Is_System_Admin__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    
+    
+    
     
     ### Get_Assigned_Resources_Travel
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Lookup|
+    |Object|AssignedResource|
+    |Label|Get Assigned Resources Travel|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|⬜|
+    |Store Output Automatically|✅|
+    |Connector|[Loop_Assigned_Resources](#loop_assigned_resources)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|ServiceAppointmentId| Equal To|$Record.Id|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Resource_Is_A_Person__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>User_Is_System_Admin__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    
+    
+    
     
     ___
     
@@ -448,6 +480,8 @@
     
     |Name|Data Type|Expression|Description|
     |:-- |:--:|:-- |:--  |
+    |CalculatedPauseTime|Number|({!Get_Latest_Pause_End_Time.Status_Change_Date__c}-{!Get_Latest_Pause_Start_Time.Status_Change_Date__c})*1440|<!-- -->|
+    |DebugFlow|String|RIGHT(LEFT(TEXT(DATETIMEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c})), 13), 2)|<!-- -->|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>isNightHourFull</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Boolean</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>AND(<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) >= 18,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) < 4<br/>    ),<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) < 4,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) >= 18<br/>    )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>isNightHourPartial</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Boolean</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>OR(<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) >= 18,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) < 4<br/>    ),<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) < 4,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) >= 18<br/>    )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>NightPauseTimeMinutes</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Number</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF(<br/>    AND(<br/>        {!Get_Latest_Pause_End_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>        ),<br/>        {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>        )<br/>    ),<br/>    (<br/>        (<br/>            IF(<br/>                {!Get_Latest_Pause_End_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                ),<br/>                {!Get_Latest_Pause_End_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                )<br/>            )<br/>        ) - (<br/>            IF(<br/>                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                ),<br/>                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                )<br/>            )<br/>        )<br/>    ) * 1440,<br/>    0<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
@@ -464,6 +498,9 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>PartialNightWorkStart</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DateTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF(<br/>    OR(<br/>        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) >= 19,<br/>        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) < 5<br/>    ),<br/>    {!Get_Completed_Start_Time.Status_Change_Date__c},<br/>    DATETIMEVALUE(<br/>        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & " 19:00:00"<br/>    )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>PartialNonNightWorkEnd</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DateTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF(<br/>    AND(<br/>        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) >= 5,<br/>        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) < 19<br/>    ),<br/>    {!Get_Completed_End_Time.Status_Change_Date__c},<br/>    DATETIMEVALUE(<br/>        TEXT(YEAR(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(MONTH(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(DAY(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) & " 19:00:00"<br/>    )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>PartialNonNightWorkStart</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DateTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF(<br/>    AND(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) >= 5,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) < 19<br/>    ),<br/>    {!Get_Completed_Start_Time.Status_Change_Date__c},<br/>    DATETIMEVALUE(<br/>        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "05:00:00"<br/>    )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |TopupNightPauseTimeMinutes|Number|{!$Record.Night_Pause_Duration__c}+{!NightPauseTimeMinutes}|<!-- -->|
+    |TopupNonNightPauseTimeMinutes|Number|{!$Record.Day_Pause_Duration__c}+{!NonNightPauseTimeMinutes}|<!-- -->|
+    
     
     ___
     
@@ -769,52 +806,137 @@
     |:-- |:--:|:-- |:--  |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CalculatedPauseTime</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Number</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>({!Get_Pause_End_Time.Status_Change_Date__c}-{!Get_Pause_Start_Time.Status_Change_Date__c})*1440</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculatedPauseTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Number</b></span>|<span style="background-color: #a6e22e; color: black;"><b>({!Get_Latest_Pause_End_Time.Status_Change_Date__c}-{!Get_Latest_Pause_Start_Time.Status_Change_Date__c})*1440</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |DebugFlow|String|RIGHT(LEFT(TEXT(DATETIMEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c})), 13), 2)|<!-- -->|
+    |isNightHourFull|Boolean|AND(<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) >= 18,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) < 4<br/>    ),<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) < 4,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) >= 18<br/>    )<br/>)|<!-- -->|
+    |isNightHourPartial|Boolean|OR(<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) >= 18,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) < 4<br/>    ),<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) < 4,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) >= 18<br/>    )<br/>)|<!-- -->|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>NightPauseTimeMinutes</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Number</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF(<br/>    AND(<br/>        {!Get_Pause_End_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>        ),<br/>        {!Get_Pause_Start_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>        )<br/>    ),<br/>    (<br/>        (<br/>            IF(<br/>                {!Get_Pause_End_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                ),<br/>                {!Get_Pause_End_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                )<br/>            )<br/>        ) - (<br/>            IF(<br/>                {!Get_Pause_Start_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                ),<br/>                {!Get_Pause_Start_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                )<br/>            )<br/>        )<br/>    ) * 1440,<br/>    0<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>NonNightPauseTimeMinutes</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Number</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF(<br/>    AND(<br/>        {!Get_Pause_End_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>        ),<br/>        {!Get_Pause_Start_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>        )<br/>    ),<br/>    (<br/>        (<br/>            IF(<br/>                {!Get_Pause_End_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                ),<br/>                {!Get_Pause_End_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                )<br/>            )<br/>        ) - (<br/>            IF(<br/>                {!Get_Pause_Start_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                ),<br/>                {!Get_Pause_Start_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                )<br/>            )<br/>        )<br/>    ) * 1440,<br/>    0<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>NightPauseTimeMinutes</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Number</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF(<br/>    AND(<br/>        {!Get_Latest_Pause_End_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>        ),<br/>        {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>        )<br/>    ),<br/>    (<br/>        (<br/>            IF(<br/>                {!Get_Latest_Pause_End_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                ),<br/>                {!Get_Latest_Pause_End_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                )<br/>            )<br/>        ) - (<br/>            IF(<br/>                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                ),<br/>                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                )<br/>            )<br/>        )<br/>    ) * 1440,<br/>    0<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>NonNightPauseTimeMinutes</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Number</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF(<br/>    AND(<br/>        {!Get_Latest_Pause_End_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>        ),<br/>        {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>            TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>            TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>        )<br/>    ),<br/>    (<br/>        (<br/>            IF(<br/>                {!Get_Latest_Pause_End_Time.Status_Change_Date__c} < DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                ),<br/>                {!Get_Latest_Pause_End_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 18:00:00"<br/>                )<br/>            )<br/>        ) - (<br/>            IF(<br/>                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c} > DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                ),<br/>                {!Get_Latest_Pause_Start_Time.Status_Change_Date__c},<br/>                DATETIMEVALUE(<br/>                    TEXT(YEAR(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(MONTH(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & "-" &<br/>                    TEXT(DAY(DATEVALUE({!Get_Latest_Pause_Start_Time.Status_Change_Date__c}))) & " 05:00:00"<br/>                )<br/>            )<br/>        )<br/>    ) * 1440,<br/>    0<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |PartialNightWorkEnd|DateTime|IF(<br/>    OR(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) >= 18,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 13), 2)) < 4<br/>    ),<br/>    {!Get_Completed_End_Time.Status_Change_Date__c},<br/>    DATETIMEVALUE(<br/>        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "05:00:00"<br/>    )<br/>)|<!-- -->|
+    |PartialNightWorkStart|DateTime|IF(<br/>    OR(<br/>        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) >= 18,<br/>        VALUE(MID(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 12, 2)) < 4<br/>    ),<br/>    {!Get_Completed_Start_Time.Status_Change_Date__c},<br/>    DATETIMEVALUE(<br/>        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & " 19:00:00"<br/>    )<br/>)|<!-- -->|
+    |PartialNonNightWorkEnd|DateTime|IF(<br/>    AND(<br/>        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) >= 4,<br/>        VALUE(MID(TEXT({!Get_Completed_End_Time.Status_Change_Date__c}), 12, 2)) < 18<br/>    ),<br/>    {!Get_Completed_End_Time.Status_Change_Date__c},<br/>    DATETIMEVALUE(<br/>        TEXT(YEAR(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(MONTH(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(DAY(DATEVALUE({!Get_Completed_End_Time.Status_Change_Date__c}))) & " 19:00:00"<br/>    )<br/>)|<!-- -->|
+    |PartialNonNightWorkStart|DateTime|IF(<br/>    AND(<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) >= 4,<br/>        VALUE(RIGHT(LEFT(TEXT({!Get_Completed_Start_Time.Status_Change_Date__c}), 13), 2)) < 18<br/>    ),<br/>    {!Get_Completed_Start_Time.Status_Change_Date__c},<br/>    DATETIMEVALUE(<br/>        TEXT(YEAR(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(MONTH(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "-" &<br/>        TEXT(DAY(DATEVALUE({!Get_Completed_Start_Time.Status_Change_Date__c}))) & "05:00:00"<br/>    )<br/>)|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>TopupNightPauseTimeMinutes</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Number</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!$Record.Night_Pause_Duration__c}+{!NightPauseTimeMinutes}</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>TopupNonNightPauseTimeMinutes</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Number</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!$Record.Day_Pause_Duration__c}+{!NonNightPauseTimeMinutes}</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ## Flow Nodes Details
     
     ### Prepare_Time_Sheet_Entry_Completed
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Prepare Time Sheet Entry Completed|
+    |Connector|[Loop_Assigned_Resources_Completed](#loop_assigned_resources_completed)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |CompletedTimesheetCurrent.StartTime| Assign|Get_Completed_Start_Time.Status_Change_Date__c|
+    |CompletedTimesheetCurrent.EndTime| Assign|Get_Completed_End_Time.Status_Change_Date__c|
+    |CompletedTimesheetCurrent.Type| Assign|Normal Hours|
+    |CompletedTimesheetCurrent.TimeSheetId| Assign|Get_Current_User_Time_Sheet_Completed.Id|
+    |CompletedTimesheetCurrent.Subject| Assign|Production Time|
+    |CompletedTimesheetCurrent.WorkOrderId| Assign|$Record.ParentRecordId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CompletedTimesheetCurrent.Pause_Duration__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>CalculatedPauseTime</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CompletedTimesheetCurrent.Pause_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Day_Pause_Duration__c</b></span>|
+    |CompletedTimeSheetEntryCollection| Add|CompletedTimesheetCurrent|
+    
+    
+    
     
     ### Prepare_Time_Sheet_Entry_Completed_Full_Night
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Prepare Time Sheet Entry Completed Full Night|
+    |Connector|[Loop_Assigned_Resources_Completed](#loop_assigned_resources_completed)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |CompletedTimesheetCurrent.StartTime| Assign|Get_Completed_Start_Time.Status_Change_Date__c|
+    |CompletedTimesheetCurrent.EndTime| Assign|Get_Completed_End_Time.Status_Change_Date__c|
+    |CompletedTimesheetCurrent.Type| Assign|Night Work|
+    |CompletedTimesheetCurrent.TimeSheetId| Assign|Get_Current_User_Time_Sheet_Completed.Id|
+    |CompletedTimesheetCurrent.Subject| Assign|Production Time|
+    |CompletedTimesheetCurrent.WorkOrderId| Assign|$Record.ParentRecordId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CompletedTimesheetCurrent.Pause_Duration__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>CalculatedPauseTime</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CompletedTimesheetCurrent.Pause_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Night_Pause_Duration__c</b></span>|
+    |CompletedTimeSheetEntryCollection| Add|CompletedTimesheetCurrent|
+    
+    
+    
     
     ### Prepare_Time_Sheet_Entry_Completed_Partial_Day
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Prepare Time Sheet Entry Completed Partial Day|
+    |Connector|[Prepare_Time_Sheet_Entry_Completed_Partial_Night](#prepare_time_sheet_entry_completed_partial_night)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |CompletedTimesheetCurrent.StartTime| Assign|PartialNonNightWorkStart|
+    |CompletedTimesheetCurrent.EndTime| Assign|PartialNonNightWorkEnd|
+    |CompletedTimesheetCurrent.Type| Assign|Normal Hours|
+    |CompletedTimesheetCurrent.TimeSheetId| Assign|Get_Current_User_Time_Sheet_Completed.Id|
+    |CompletedTimesheetCurrent.Subject| Assign|Production Time|
+    |CompletedTimesheetCurrent.WorkOrderId| Assign|$Record.ParentRecordId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CompletedTimesheetCurrent.Pause_Duration__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>NonNightPauseTimeMinutes</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CompletedTimesheetCurrent.Pause_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Day_Pause_Duration__c</b></span>|
+    |CompletedTimeSheetEntryCollection| Add|CompletedTimesheetCurrent|
+    
+    
+    
     
     ### Prepare_Time_Sheet_Entry_Completed_Partial_Night
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Prepare Time Sheet Entry Completed Partial Night|
+    |Connector|[Loop_Assigned_Resources_Completed](#loop_assigned_resources_completed)|
+    
+    
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |CompletedTimeSheetCurrentNight.StartTime| Assign|PartialNightWorkStart|
+    |CompletedTimeSheetCurrentNight.EndTime| Assign|PartialNightWorkEnd|
+    |CompletedTimeSheetCurrentNight.Type| Assign|Night Work|
+    |CompletedTimeSheetCurrentNight.TimeSheetId| Assign|Get_Current_User_Time_Sheet_Completed.Id|
+    |CompletedTimeSheetCurrentNight.Subject| Assign|Production Time|
+    |CompletedTimeSheetCurrentNight.WorkOrderId| Assign|$Record.ParentRecordId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CompletedTimeSheetCurrentNight.Pause_Duration__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>NightPauseTimeMinutes</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CompletedTimeSheetCurrentNight.Pause_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Night_Pause_Duration__c</b></span>|
+    |CompletedTimeSheetEntryCollection| Add|CompletedTimeSheetCurrentNight|
+    
+    
+    
     
     ### Status_is_changed
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Decision|
+    |Label|Status is changed|
+    |Default Connector Label|Default Outcome|
+    
+    
     
     #### 🟥Rule Travel (Travel)
     
@@ -825,16 +947,36 @@
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Condition Logic</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>and</i></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Condition Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Left Value Reference</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operator</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Right Value</i></span>|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Travelling</i></span>|
     
+    
+    
+    
     #### 🟥Rule In_Progress (In Progress)
+    
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
+    |:---|:---|
+    |Connector|[Get_Travel_Start_Time](#get_travel_start_time)|
+    |Condition Logic|and|
+    
+    
+    
     
     |Condition Id|Left Value Reference|Operator|Right Value|
     |:-- |:-- |:--:|:--: |
+    |1|$Record.Status| Equal To|In Progress|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Travel_is_Done__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Previous_Status__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Travelling</b></span>|
+    
+    
+    
+    
+    
     
     #### 🟥Rule Completed (Completed)
     
@@ -843,12 +985,23 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Connector|[Get_Completed_Start_Time](#get_completed_start_time)|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Condition Logic</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>and</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>or</b></span>|
     
+    
+    
+    
+    
     |Condition Id|Left Value Reference|Operator|Right Value|
     |:-- |:-- |:--:|:--: |
+    |1|$Record.Status| Equal To|Completed|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Cannot Complete</b></span>|
+    
+    
+    
+    
+    
     
     #### 🟥Rule Cancelled (Cancelled)
     
@@ -858,6 +1011,10 @@
     |<!-- -->|<!-- -->|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Latest_Pause_Start_Time](#get_latest_pause_start_time)</b></span>|
+    |Condition Logic|and|
+    
+    
+    
     
     |Condition Id|Left Value Reference|Operator|Right Value|
     |:-- |:-- |:--:|:--: |
@@ -865,54 +1022,92 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>In Progress</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Previous_Status__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Paused</b></span>|
     
+    
+    
+    
+    
+    
     #### 🟥Rule Cannot_Complete (Cannot Complete)
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Condition Logic</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>and</i></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Condition Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Left Value Reference</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operator</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Right Value</i></span>|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Cannot Complete</i></span>|
     
+    
+    
+    
     ### 🟥Was_there_a_Pause
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Decision</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Was there a Pause?</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Default Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Loop_Assigned_Resources_Completed](#loop_assigned_resources_completed)</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Default Connector Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Default Outcome</i></span>|
     
+    
     #### 🟥Rule YesPause (Yes)
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Pause_Start_Time](#get_pause_start_time)</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Condition Logic</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>and</i></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Condition Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Left Value Reference</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operator</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Right Value</i></span>|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Pause_Check](#get_pause_check)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Is Null</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
+    
+    
+    
+    
     
     ### Create_Status_Change_Log
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Create|
+    |Object|Service_Appointment_Status__c|
+    |Label|Create Status Change Log|
+    |Store Output Automatically|✅|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Previous_Status](#update_previous_status)</b></span>|
+    
+    
     
     ### Create_Timesheet_Entries_Travel
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Create|
+    |Label|Create Timesheet Entries Travel|
+    |Input Reference|TravelTimeSheetEntryCollection|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Flag_Travel_is_Done](#flag_travel_is_done)</i></span>|
+    
+    
     
     ### Get_Assigned_Resources_Completed
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|AssignedResource|
+    |Label|Get Assigned Resources Completed|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|⬜|
+    |Store Output Automatically|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Pause_Check](#get_pause_check)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Loop_Assigned_Resources_Completed](#loop_assigned_resources_completed)</b></span>|
+    
+    
     
     ### 🟥Get_Pause_Check
     
@@ -921,32 +1116,44 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|Service_Appointment_Status__c|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Get Pause Check</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get Latest Pause End Time</b></span>|
+    |Assign Null Values If No Records Found|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Get First Record Only</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Store Output Automatically</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Was_there_a_Pause](#was_there_a_pause)</i></span>|
     
+    
     #### 🟥Filters (logic: **1 AND (2 OR 3)**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Filter Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Field</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operator</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Value</i></span>|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Service_Appointment__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Id</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Previous_Status__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Paused</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>3</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>New_Status__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Paused</i></span>|
     
+    
+    
+    
     ### 🟥Get_Pause_End_Time
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Record Lookup</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Object</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Service_Appointment_Status__c</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Get Pause End Time</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Assign Null Values If No Records Found</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
+    |Get First Record Only|✅|
+    |Sort Field|Status_Change_Date__c|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Sort Order</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Asc</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Sort Order</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Desc</b></span>|
+    |Store Output Automatically|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Loop_Assigned_Resources_Completed](#loop_assigned_resources_completed)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Pauses](#update_pauses)</b></span>|
+    
+    
     
     ### 🟥Get_Pause_Start_Time
     
@@ -955,12 +1162,20 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|Service_Appointment_Status__c|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Get Pause Start Time</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get Latest Pause Start Time</b></span>|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Sort Field|Status_Change_Date__c|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Sort Order</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Asc</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Sort Order</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Desc</b></span>|
+    |Store Output Automatically|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Pause_End_Time](#get_pause_end_time)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Latest_Pause_End_Time](#get_latest_pause_end_time)</b></span>|
+    
+    
     
     ### 🟥Flag_Travel_is_Done
     
@@ -969,8 +1184,11 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Flag Travel is Done</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Update Pauses</b></span>|
+    |Input Reference|$Record|
+    
     
     #### Input Assignments
     
@@ -980,23 +1198,39 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Day_Pause_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TopupNonNightPauseTimeMinutes</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Night_Pause_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TopupNightPauseTimeMinutes</b></span>|
     
+    
+    
+    
+    
+    
     ### 🟩Update_Previous_Status
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Update Previous Status</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Input Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record</b></span>|
     
+    
+    
+    
     #### 🟩Input Assignments
     
     
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Previous_Status__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record__Prior.Status</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     

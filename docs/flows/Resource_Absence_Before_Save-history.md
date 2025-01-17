@@ -104,8 +104,21 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|ResourceAbsence|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record Before Save|
+    |Record Trigger Type| Create And Update|
+    |Label|Resource Absence - Before Save|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⚠️ Draft</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Obsolete</b></span>|
+    |Environments|Default|
+    |Interview Label|Resource Absence - Before Save {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Code_ATAK](#code_atak)|
+    |Next Node|[Code_ATAK](#code_atak)|
+    
     
     ___
     

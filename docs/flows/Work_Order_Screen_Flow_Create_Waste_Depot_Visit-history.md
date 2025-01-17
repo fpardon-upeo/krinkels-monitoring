@@ -130,11 +130,32 @@
     
     ### Create_Waste_Visit_WO
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|WorkOrder|
+    |Label|Create Waste Visit WO|
+    |Assign Record Id To Reference|WasteDepotVisitId|
+    |Connector|[Success_Message](#success_message)|
+    
+    
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |AccountId|Get_Selected_Account_Information.Id|
+    |MaintenancePlanId|Get_Work_Order_Information.MaintenancePlanId|
+    |ParentWorkOrderId|recordId|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ServiceTerritoryId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Work_Order_Information.ServiceTerritoryId</b></span>|
+    |Subject|Waste Depot Visit|
+    |SuggestedMaintenanceDate|today|
+    |Waste_Visit_Planned__c|✅|
+    |Waste_to_Drop_Off__c|Types_of_Waste_to_Drop_Off|
+    |WorkTypeId|Get_Work_Type.Id|
+    |Work_Order_Type__c|Waste Depot Visit|
+    
+    
+    
     
     ___
     
@@ -271,20 +292,68 @@
     
     ### Create_Waste_Visit_WO
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|WorkOrder|
+    |Label|Create Waste Visit WO|
+    |Assign Record Id To Reference|WasteDepotVisitId|
+    |Connector|[Success_Message](#success_message)|
+    
+    
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |AccountId|Get_Selected_Account_Information.Id|
+    |MaintenancePlanId|Get_Work_Order_Information.MaintenancePlanId|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ParentWorkOrderId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>recordId</b></span>|
+    |Subject|Waste Depot Visit|
+    |SuggestedMaintenanceDate|today|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Waste_Visit_Planned__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    |Waste_to_Drop_Off__c|Types_of_Waste_to_Drop_Off|
+    |WorkTypeId|Get_Work_Type.Id|
+    |Work_Order_Type__c|Waste Depot Visit|
+    
+    
+    
     
     ### List_of_Waste_Depot_Identified
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|List of Waste Depot Identified|
+    |Allow Back|✅|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
+    |Connector|[Get_Selected_Account_Information](#get_selected_account_information)|
+    
     
     #### WasteDepots
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Data Type Mappings|typeName: T<br/>typeValue: Account<br/>|
+    |Extension Name|flowruntime:datatable|
+    |Field Type| Component Instance|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|✅|
+    |Store Output Automatically|✅|
+    |Selection Mode (input)|SINGLE_SELECT|
+    |Min Row Selection (input)|1|
+    |Table Data (input)|[Get_Accounts](#get_accounts)|
+    |Should Display Label (input)|✅|
+    |Label (input)|Waste Depots Found|
+    |Max Row Selection (input)|1|
+    |Columns (input)|[{"apiName":"Name","guid":"column-843d","editable":false,"hasCustomHeaderLabel":true,"customHeaderLabel":"Waste Depot","wrapText":true,"order":0,"label":"Account Name","type":"text"},{"apiName":"Contract__c","guid":"column-896c","editable":false,"hasCustomHeaderLabel":false,"customHeaderLabel":"","wrapText":true,"order":1,"label":"Contract","type":"boolean"},{"apiName":"Type_of_Waste__c","guid":"column-7260","editable":false,"hasCustomHeaderLabel":false,"customHeaderLabel":"","wrapText":true,"order":2,"label":"Type of Waste","type":"customRichText"},{"apiName":"ShippingPostalCode","guid":"column-b534","editable":false,"hasCustomHeaderLabel":false,"customHeaderLabel":"","wrapText":true,"order":3,"label":"Shipping Zip/Postal Code","type":"text"},{"apiName":"ShippingCity","guid":"column-0ee8","editable":false,"hasCustomHeaderLabel":false,"customHeaderLabel":"","wrapText":true,"order":4,"label":"Shipping City","type":"text"}]|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Show Search Bar (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     ___
     

@@ -11,7 +11,7 @@
 
 flowchart TB
 START(["START<br/><b>Screen Flow</b>"]):::startClass
-click START "#general-information" "3789167563"
+click START "#general-information" "705287189"
 
 Set_Default_Department_Variable[\"🟰 <em></em><br/>Set Default Department Variable"/]:::assignments
 click Set_Default_Department_Variable "#set_default_department_variable" "1953268795"
@@ -109,7 +109,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:---|:---|
 |Process Type| Flow|
 |Label|Create Internal Work Order|
-|Status|⚠️ Draft|
+|Status|Active|
 |Environments|Default|
 |Interview Label|[Work Order] - [Screen Flow] - Create Internal Work {!$Flow.CurrentDateTime}|
 | Builder Type (PM)|LightningFlowBuilder|

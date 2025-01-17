@@ -139,6 +139,8 @@
     |:-- |:--:|:-- |:--  |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CalculateATAKCode</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF($Record.Urgent_Intervention__c, "DIVU", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "A",<br/>    "Illness",  "Z",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "AF",<br/>    "HR"<br/>  )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculateATAKCode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "HR", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "A",<br/>    "Illness",  "Z",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "AF",<br/>    "HR"<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |CalculatedSoccode|String|IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", "1706",<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)|<!-- -->|
+    
     
     ___
     
@@ -281,6 +283,8 @@
     |:-- |:--:|:-- |:--  |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CalculateATAKCode</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF($Record.Urgent_Intervention__c, "DI", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "A",<br/>    "Illness",  "Z",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "AF",<br/>    "HR"<br/>  )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculateATAKCode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "DIVU", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "A",<br/>    "Illness",  "Z",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "AF",<br/>    "HR"<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |CalculatedSoccode|String|IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", "1706",<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)|<!-- -->|
+    
     
     ___
     
@@ -455,43 +459,55 @@
     
     ### 🟩Change_by_CM_or_BS
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Change by CM or BS</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Description</b></span>|<span style="background-color: #a6e22e; color: black;"><b>is the current change made by BS or CM (Not for New TSE)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Default Outcome</b></span>|
     
+    
     #### 🟩Rule YesBS_CM (Yes)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Correction](#correction)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>or</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Profile_Current_User.Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Contains</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Contract Manager</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Profile_Current_User.Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Contains</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Business</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record__Prior.Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     
+    
+    
+    
+    
     ### 🟩Correction
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Correction?</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Description</b></span>|<span style="background-color: #a6e22e; color: black;"><b>TS = Submitted + change impacts type or duraction</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Default Outcome</b></span>|
     
+    
     #### 🟩Rule Yes_Correction (Yes Correction)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Set_Corrected_to_True](#set_corrected_to_true)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>1 AND ( 2 OR 3 OR 4 OR 5 OR 6 OR 7)</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.TimeSheet.Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Submitted</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.StartTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
@@ -501,15 +517,23 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>6</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Pause_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>7</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Break_Duration__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     
+    
+    
+    
+    
     ### Is_there_a_Break
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Decision|
+    |Label|Is there a Break?|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Profile_Current_User](#get_profile_current_user)</b></span>|
+    |Default Connector Label|Default Outcome|
+    
     
     ### 🟩Get_Profile_Current_User
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Profile</b></span>|
@@ -519,31 +543,45 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Change_by_CM_or_BS](#change_by_cm_or_bs)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$User.ProfileId</b></span>|
     
+    
+    
+    
     ### 🟩Set_Corrected_to_True
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Set Corrected to True</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Input Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record</b></span>|
     
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Corrected__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
     
     ### Update_Time_Sheet_Entry_with_Break
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
+    |Label|Update Time Sheet Entry with Break|
+    |Input Reference|$Record|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Profile_Current_User](#get_profile_current_user)</b></span>|
+    
+    
     
     ___
     
@@ -667,6 +705,8 @@
     |:-- |:--:|:-- |:--  |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CalculateATAKCode</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF($Record.Urgent_Intervention__c, "URG", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "HR",<br/>    "Illness",  "HR",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "HR",<br/>    ""<br/>  )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculateATAKCode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "DI", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "A",<br/>    "Illness",  "Z",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "AF",<br/>    "HR"<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |CalculatedSoccode|String|IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", "1706",<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)|<!-- -->|
+    
     
     ___
     
@@ -790,6 +830,8 @@
     |:-- |:--:|:-- |:--  |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CalculateATAKCode</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF($Record.Urgent_Intervention__c, "URG", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "HR",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "HR",<br/>    "Illness",  "HR",<br/>    "Recup Overtime", "SP",<br/>    "Absent Hours", "HR",<br/>    ""<br/>  )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculateATAKCode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "URG", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "RT",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "HR",<br/>    "Illness",  "HR",<br/>    "Recup Overtime", "SP-",<br/>    "Absent Hours", "HR",<br/>    ""<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |CalculatedSoccode|String|IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", "1706",<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)|<!-- -->|
+    
     
     ___
     
@@ -915,6 +957,8 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CalculatedSoccode</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", <br/>      IF($Record.Starting_Allowance_Winter_Service__c, "1710", "1706"),<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculateATAKCode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "URG", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "HR",<br/>    "Night Work", "NW",<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "HR",<br/>    "Illness",  "HR",<br/>    "Recup Overtime", "SP",<br/>    "Absent Hours", "HR",<br/>    ""<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculatedSoccode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", "1706",<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ___
     
@@ -1060,30 +1104,41 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Decision|
+    |Label|Code ATAK|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Break_Record_Type_ID](#get_break_record_type_id)</b></span>|
+    |Default Connector Label|Default Outcome|
+    
     
     ### 🟩Is_there_a_Break
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Is there a Break?</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Default Outcome</b></span>|
     
+    
     #### 🟩Rule Yes (Yes)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Time_Sheet_Entry_with_Break](#update_time_sheet_entry_with_break)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Break.Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
     ### 🟩Get_Break
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ResourceAbsence</b></span>|
@@ -1093,18 +1148,22 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Is_there_a_Break](#is_there_a_break)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ResourceId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.TimeSheet.ServiceResourceId</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>RecordTypeId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Break_Record_Type_ID.Id</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Start</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Greater Than Or Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.StartTime</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>4</b></span>|<span style="background-color: #a6e22e; color: black;"><b>End</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Less Than Or Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.EndTime</b></span>|
     
+    
+    
+    
     ### 🟩Get_Break_Record_Type_ID
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>RecordType</b></span>|
@@ -1114,35 +1173,56 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Break](#get_break)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DeveloperName</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Break</b></span>|
+    
+    
+    
+    
     
     ### Update_ATAK_Code
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
+    |Label|Update ATAK Code|
+    |Input Reference|$Record|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Break_Record_Type_ID](#get_break_record_type_id)</b></span>|
+    
+    
     
     ### 🟩Update_Time_Sheet_Entry_with_Break
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Update Time Sheet Entry with Break</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Input Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record</b></span>|
     
+    
+    
+    
     #### 🟩Input Assignments
     
     
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Resource_Absence__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Break.Id</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -1254,10 +1334,23 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|TimeSheetEntry|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record Before Save|
+    |Record Trigger Type| Create And Update|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Time Sheet Entry - Before Save</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⚠️ Draft</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Time Sheet Entry] - [Before-Save] - [Record-Triggered]</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Active</b></span>|
+    |Description|This flow is configured to update and fill in some data automatically on Time Sheet Entries|
+    |Environments|Default|
+    |Interview Label|Time Sheet Entry - Before Save {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Code_ATAK](#code_atak)|
+    |Next Node|[Code_ATAK](#code_atak)|
+    
     
     ## Formulas
     
@@ -1267,6 +1360,8 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>CalculatedSoccode</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", <br/>      IF($Record.Starting_Allowance_Winter_Service__c, "1710", "1706"),<br/>    "Machines", "",<br/>    ""<br/>  )<br/>)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculateATAKCode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "URG", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "HR", <br/>    "Travel Time", "HR",<br/>    "Night Work", <br/>      IF($Record.Starting_Allowance_Winter_Service__c, "P", "NW"),<br/>    "Machines", "MU",<br/>    "Frost Delay", "VV", <br/>    "Industrial Accident", "HR",<br/>    "Illness",  "HR",<br/>    "Recup Overtime", "SP",<br/>    "Absent Hours", "HR",<br/>    ""<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>CalculatedSoccode</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>IF($Record.Urgent_Intervention__c, "", <br/>  CASE($Record.Type, <br/>    "Normal Hours", "1010", <br/>    "Travel Time", "1010",<br/>    "Night Work", <br/>      IF($Record.Starting_Allowance_Winter_Service__c, "1710", "1706"),<br/>    "Machines", "",<br/>    "Frost Delay", "9720", <br/>    "Industrial Accident", "",<br/>    "Illness",  "",<br/>    "Recup Overtime", "4025",<br/>    "Absent Hours", "",<br/>    ""<br/>  )<br/>)</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ___
     

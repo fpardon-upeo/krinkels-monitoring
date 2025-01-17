@@ -114,8 +114,22 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|TimeSheet|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Update|
+    |Label|[Time Sheet] - [After-Save] - [Send to ATAK]|
+    |Status|Active|
+    |Does Require Record Changed To Meet Criteria|✅|
+    |Environments|Default|
+    |Interview Label|[Time Sheet] - [After-Save] - [Send to ATAK] {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Reset_Flag](#reset_flag)</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Next Node</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Reset_Flag](#reset_flag)</i></span>|
+    
+    
     
     ## Flow Nodes Details
     
@@ -123,7 +137,18 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Action Call|
+    |Label|Process Timesheet|
+    |Action Type|Apex|
+    |Action Name|ATAKPerformanceServiceInvocable|
+    |Flow Transaction Model|CurrentTransaction|
+    |Name Segment|ATAKPerformanceServiceInvocable|
+    |Offset|0|
+    |Version Segment|1|
+    |Timesheet Id (input)|$Record.Id|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Reset_Flag](#reset_flag)</b></span>|
+    
+    
     
     ___
     

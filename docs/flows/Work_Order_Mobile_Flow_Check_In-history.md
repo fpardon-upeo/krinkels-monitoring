@@ -126,31 +126,50 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
+    |Object|ServiceAppointment|
+    |Label|Update Status of Service Appointment|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Work_Step](#update_work_step)</b></span>|
+    
+    
     
     ### 🟩Update_Work_Step
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStep</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Update Work Step</b></span>|
     
+    
+    
+    
     #### 🟩Filters (logic: **and**)
     
     
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkStepRecord.Id</b></span>|
     
+    
+    
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Completed</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -258,19 +277,32 @@
     
     ## 🟩Formulas
     
-    |Name|Data Type|Expression|Description|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Expression</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Description</b></span>|
     |:-- |:--:|:-- |:--  |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Now</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DateTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b>NOW()</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ## Flow Nodes Details
     
     ### Update_Status_of_Service_Appointment
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Update|
+    |Object|ServiceAppointment|
+    |Label|Update Status of Service Appointment|
+    
     
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ActualStartTime</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Now</b></span>|
+    |Status|In Progress|
+    
+    
+    
     
     ___
     

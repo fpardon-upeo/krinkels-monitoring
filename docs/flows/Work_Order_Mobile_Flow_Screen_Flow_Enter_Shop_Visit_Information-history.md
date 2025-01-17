@@ -110,11 +110,26 @@
     
     ### Update_Work_Order_Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Update|
+    |Object|WorkOrder|
+    |Label|Update Work Order Information|
+    
+    
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |Collected_Items__c|Collected_Items|
+    |Shop_Name__c|Shop_Name|
+    |Shop_Visit_Date__c|Shop_Date|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Shop_Visit_Done__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    |Shop_Visit_End_Time__c|Shop_Visit_End_Time|
+    |Shop_Visit_Start_Time__c|Shop_Visit_Start_Time|
+    
+    
+    
     
     ___
     
@@ -228,12 +243,32 @@
     
     ### Collected_Items_Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Collected Items Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
+    |Connector|[Update_Work_Order_Information](#update_work_order_information)|
+    
+    
     #### FileUpload
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Extension Name|forceContent:fileUpload|
+    |Field Type| Component Instance|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label (input)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Upload File</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Attach Receipt</b></span>|
+    |Record Id (input)|workOrderRecord.Id|
+    
+    
+    
     
     ___
     
@@ -359,22 +394,39 @@
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
     |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>errorMessage</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+    |workOrderRecord|SObject|⬜|✅|⬜|WorkOrder|<!-- -->|
+    
     
     ## Flow Nodes Details
     
     ### Update_Work_Order_Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Update|
+    |Object|WorkOrder|
+    |Label|Update Work Order Information|
+    
+    
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |Collected_Items__c|Collected_Items|
+    |Shop_Name__c|Shop_Name|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Shop_Visit_Date__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Shop_Date</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Shop_Visit_End_Time__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Shop_Visit_End_Time</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Shop_Visit_Start_Time__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Shop_Visit_Start_Time</b></span>|
     
+    
+    
+    
+    
+    
     ### 🟩Collected_Items_Information
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Screen</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Collected Items Information</b></span>|
@@ -385,18 +437,22 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Show Header</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Update_Work_Order_Information](#update_work_order_information)</b></span>|
     
+    
     #### 🟩Collected_Items
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Collected Items</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Large Text Area</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
     #### 🟩FileUpload
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Extension Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b>forceContent:fileUpload</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Component Instance</b></span>|
@@ -405,22 +461,40 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Upload File</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Record Id (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>workOrderRecord.Id</b></span>|
     
+    
+    
+    
+    
     ### Shop_Visit_Information
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Screen|
+    |Label|Shop Visit Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Show Footer|✅|
+    |Show Header|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Update_Work_Order_Information](#update_work_order_information)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Collected_Items_Information](#collected_items_information)</b></span>|
     
+    
+    
+    
     #### 🟩Shop_Date
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Date</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Shop Date</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Input Field</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Inputs On Next Nav To Assoc Scrn</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Use Stored Values</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    
+    
+    
     
     #### 🟥Collected_Items
     
@@ -434,6 +508,12 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DateTime</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Shop Visit Start Time</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Input Field</b></span>|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|⬜|
+    
+    
+    
+    
     
     #### 🟥FileUpload
     
@@ -447,10 +527,19 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>DateTime</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Shop Visit End Time</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Input Field</b></span>|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label (input)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Upload File</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Record Id (input)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>workOrderRecord.Id</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Is Required</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     

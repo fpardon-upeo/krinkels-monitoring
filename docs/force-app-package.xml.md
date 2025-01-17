@@ -2,7 +2,7 @@
 
 Package.xml generated from content of SFDX package force-app (folder force-app)
 
-Metadatas: 3591
+Metadatas: 3594
 
 <details><summary>ApexClass (141)</summary>
 
@@ -2060,7 +2060,7 @@ Metadatas: 3591
 
 </details>
 
-<details><summary>Flow (107)</summary>
+<details><summary>Flow (108)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</a><br/>
@@ -2116,6 +2116,7 @@ Metadatas: 3591
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Service_Crew_and_Van_Creator</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Service_contract_Scheduled_Contract_Renewal_Reminder</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Sign_Request_After_Save_Update_quote_signing_info</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">TimeSheet_Record_Trigger_Set_Contract_Hours</a><br/>
@@ -2173,7 +2174,7 @@ Metadatas: 3591
 
 </details>
 
-<details><summary>FlowDefinition (107)</summary>
+<details><summary>FlowDefinition (108)</summary>
 
 
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
@@ -2229,6 +2230,7 @@ Metadatas: 3591
   • Service_Appointments_After_Save_Record_Triggered_Assign_Van_Inventory_to_Related<br/>
   • Service_Contract_After_Save_RecordTrigered_Account_Fields_duplication<br/>
   • Service_Contract_Before_Save_Record_Triggered_Set_Pricebook2Id<br/>
+  • Service_Crew_and_Van_Creator<br/>
   • Service_contract_Scheduled_Contract_Renewal_Reminder<br/>
   • Sign_Request_After_Save_Update_quote_signing_info<br/>
   • TimeSheet_Record_Trigger_Set_Contract_Hours<br/>
@@ -2967,7 +2969,7 @@ Metadatas: 3591
 
 </details>
 
-<details><summary>QuickAction (176)</summary>
+<details><summary>QuickAction (177)</summary>
 
 
   • ATAK_Personnel__c.Create_User<br/>
@@ -3011,6 +3013,7 @@ Metadatas: 3591
   • ServiceContract.Import_Lines<br/>
   • ServiceContract.Prepare_for_Next_Year<br/>
   • ServiceContract.Ready_for_Validation<br/>
+  • ServiceCrew.Link_Van_and_Inventory<br/>
   • Start_Day<br/>
   • Task.Defer<br/>
   • Task.Defer_0<br/>

@@ -6,6 +6,18 @@
  */
 
 public without sharing class ServiceBuilderController {
+
+  @AuraEnabled
+  public static String getContractPackageId(String recordId) {
+    ServiceContract serviceContract = [
+      SELECT Id, Product__c
+      FROM ServiceContract
+      WHERE Id = :recordId
+    ];
+
+    return serviceContract.Product__c;
+  }
+
   @AuraEnabled
   public static ServiceContract getServiceContract(Id recordId) {
     // Query the ServiceContract record with the specified recordId
@@ -62,8 +74,6 @@ public without sharing class ServiceBuilderController {
         Geolocation__Latitude__s,
         Geolocation__Longitude__s,
         Project_Code__c,
-        Additional_Scheduling_Information__c,
-        Desired_Visual_Quality__c,
         (
           SELECT
             Id,
@@ -107,9 +117,7 @@ public without sharing class ServiceBuilderController {
         Location__PostalCode__s,
         Location__StateCode__s,
         Location__CountryCode__s,
-        Project_Code__c,
-        Additional_Scheduling_Information__c,
-        Desired_Visual_Quality__c
+        Project_Code__c
       FROM ContractLineItem
       WHERE ServiceContractId = :recordId
     ];
@@ -201,9 +209,7 @@ public without sharing class ServiceBuilderController {
           Geolocation__Latitude__s,
           Geolocation__Longitude__s,
           Project_Code__c,
-          Additional_Scheduling_Information__c,
-          Desired_Visual_Quality__c,
-                (
+          (
             SELECT
               Id,
               Contract_Line_Item__c,

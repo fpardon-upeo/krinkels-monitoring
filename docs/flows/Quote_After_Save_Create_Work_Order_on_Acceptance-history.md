@@ -148,22 +148,35 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>assetName</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>"Extra Work - " +{!$Record.QuoteAccount.Parent.Alias_commercial_customer_name__c} +" - " + {!$Record.QuoteAccount.ShippingStreet}</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>assetName</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!$Record.Name}</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     
+    
+    
     ## Flow Nodes Details
     
     ### Create_Asset
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Create|
+    |Object|Asset|
+    |Label|Create Asset|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Operation Mult Matching Records</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>UpdateLatestRecord</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Operation One Matching Record</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>UpdateAllRecords</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Operation Zero Matching Records</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>AddRecord</i></span>|
+    |Store Output Automatically|✅|
+    |Connector|[Set_Work_Order_Initial_Values](#set_work_order_initial_values)|
+    
+    
     
     #### 🟥Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Filter Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Field</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operator</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Value</i></span>|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>AccountId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record__Prior.QuoteAccountId</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Product2Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Get_Extra_Work_Product.Id</i></span>|
+    
+    
+    
+    
     
     #### Input Assignments
     
@@ -171,10 +184,17 @@
     |:-- |:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>ATAK_Project__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Opportunity.ATAK_Projectx__c</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ATAK_Project__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.ATAK_Project__c</b></span>|
+    |AccountId|$Record.QuoteAccountId|
+    |Name|assetName|
+    |Product2Id|Get_Extra_Work_Product.Id|
+    |Service_Territory__c|$Record.Opportunity.ATAK_Projectx__r.Service_Territory__c|
+    
+    
+    
     
     ### 🟥Get_Extra_Work_Asset_for_Operational_Account
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Record Lookup</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Object</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Asset</i></span>|
@@ -184,19 +204,32 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Store Output Automatically</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Create_Asset](#create_asset)</i></span>|
     
+    
     #### 🟥Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Filter Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Field</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operator</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Value</i></span>|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Product2Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Get_Extra_Work_Product.Id</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>AccountId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.AccountId</i></span>|
+    
+    
+    
+    
     
     ### Get_Extra_Work_Product
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|Product2|
+    |Label|Get Extra Work Product|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Extra_Work_Asset_for_Operational_Account](#get_extra_work_asset_for_operational_account)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Create_Asset](#create_asset)</b></span>|
+    
+    
     
     ___
     
@@ -361,7 +394,10 @@
     
     |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
     |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+    |assetId|String|⬜|⬜|⬜|<!-- -->|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    |extraWorkOrder|SObject|⬜|⬜|⬜|WorkOrder|<!-- -->|
+    
     
     ## Formulas
     
@@ -370,9 +406,23 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>assetName</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>String</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>"Extra Work - " +{!$Record.Opportunity.Account.Alias_commercial_customer_name__c} +" - " + {!$Record.Opportunity.Account.ShippingStreet}</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>assetName</b></span>|<span style="background-color: #a6e22e; color: black;"><b>String</b></span>|<span style="background-color: #a6e22e; color: black;"><b>"Extra Work - " +{!$Record.QuoteAccount.Parent.Alias_commercial_customer_name__c} +" - " + {!$Record.QuoteAccount.ShippingStreet}</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     
+    
+    
     ## Flow Nodes Details
     
     ### Create_Asset
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|Asset|
+    |Label|Create Asset|
+    |Operation Mult Matching Records|UpdateLatestRecord|
+    |Operation One Matching Record|UpdateAllRecords|
+    |Operation Zero Matching Records|AddRecord|
+    |Store Output Automatically|✅|
+    |Connector|[Set_Work_Order_Initial_Values](#set_work_order_initial_values)|
+    
     
     #### Filters (logic: **and**)
     
@@ -380,38 +430,71 @@
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>AccountId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record__Prior.AccountId</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>AccountId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record__Prior.QuoteAccountId</b></span>|
+    |2|Product2Id| Equal To|Get_Extra_Work_Product.Id|
+    
+    
+    
     
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |ATAK_Project__c|$Record.Opportunity.ATAK_Projectx__c|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>AccountId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.AccountId</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>AccountId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.QuoteAccountId</b></span>|
+    |Name|assetName|
+    |Product2Id|Get_Extra_Work_Product.Id|
+    |Service_Territory__c|$Record.Opportunity.ATAK_Projectx__r.Service_Territory__c|
+    
+    
+    
     
     ### Create_Work_Order
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Create|
+    |Label|Create Work Order|
+    |Input Reference|extraWorkOrder|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Quote_Line_Items](#get_quote_line_items)</b></span>|
+    
+    
+    
     
     ### 🟩Create_Work_Order_Line
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Create</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WorkOrderLineItem</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Create Work Order Line</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Description</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Quote_Line_Items.Description</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Subject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Quote_Line_Items.Description</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>WorkOrderId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.Id</b></span>|
     
+    
+    
+    
+    
     ### Get_Maintenance_Plan
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Lookup|
+    |Object|MaintenancePlan|
+    |Label|Get Maintenance Plan|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
+    |Connector|[Get_Extra_Work_Product](#get_extra_work_product)|
+    
     
     #### Filters (logic: **and**)
     
@@ -420,18 +503,30 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>ServiceContractId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Service_Contract__c</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ServiceContractId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Random_Child_of_Parent_Contract.Id</b></span>|
     
+    
+    
+    
+    
     ### Get_Product_Work_Type
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkType|
+    |Label|Get Product Work Type|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Maintenance_Plan](#get_maintenance_plan)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Random_Child_of_Parent_Contract](#get_random_child_of_parent_contract)</b></span>|
+    
+    
     
     ### 🟩Get_Quote_Line_Items
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>QuoteLineItem</b></span>|
@@ -441,17 +536,23 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Create_Work_Order_Line](#create_work_order_line)</b></span>|
     
+    
+    
+    
     #### 🟩Filters (logic: **and**)
     
     
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>QuoteId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Id</b></span>|
     
+    
+    
+    
     ### 🟩Get_Random_Child_of_Parent_Contract
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ServiceContract</b></span>|
@@ -461,11 +562,20 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Maintenance_Plan](#get_maintenance_plan)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ParentServiceContractId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Service_Contract__c</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -600,6 +710,24 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|Quote|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Update|
+    |Label|[Quote] - [After-Save] - Create Work Order on Acceptance|
+    |Status|Active|
+    |Does Require Record Changed To Meet Criteria|✅|
+    |Environments|Default|
+    |Interview Label|[Quote] - [After-Save] - Create Work Order on Acceptance {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Product_Work_Type](#get_product_work_type)|
+    |Next Node|[Get_Product_Work_Type](#get_product_work_type)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
@@ -607,20 +735,46 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Accepted</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Ready for Execution</b></span>|
     
+    
+    
     ## Flow Nodes Details
     
     ### Set_Work_Order_Initial_Values
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Work Order Initial Values|
+    |Connector|[Create_Work_Order](#create_work_order)|
+    
     
     #### Assignments
     
     |Assign To Reference|Operator|Value|
     |:-- |:--:|:--: |
+    |extraWorkOrder.AccountId| Assign|$Record.QuoteAccountId|
+    |extraWorkOrder.ServiceContractId| Assign|$Record.Service_Contract__c|
+    |extraWorkOrder.Subject| Assign|$Record.Name|
+    |extraWorkOrder.Quote__c| Assign|$Record.Id|
+    |extraWorkOrder.Priority| Assign|High|
+    |extraWorkOrder.Street| Assign|$Record.QuoteAccount.ShippingStreet|
+    |extraWorkOrder.City| Assign|$Record.QuoteAccount.ShippingCity|
+    |extraWorkOrder.PostalCode| Assign|$Record.QuoteAccount.ShippingPostalCode|
+    |extraWorkOrder.Country| Assign|$Record.QuoteAccount.ShippingCountry|
+    |extraWorkOrder.AssetId| Assign|[Create_Asset](#create_asset)|
+    |extraWorkOrder.Status| Assign|Unscheduled|
+    |extraWorkOrder.ServiceTerritoryId| Assign|$Record.ATAK_Project__r.Service_Territory__c|
+    |extraWorkOrder.WorkTypeId| Assign|Get_Product_Work_Type.Id|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.SuggestedMaintenanceDate</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.ExpirationDate</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.MaintenancePlanId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Maintenance_Plan.Id</b></span>|
     
+    
+    
+    
+    
     ### 🟩Get_Maintenance_Plan
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>MaintenancePlan</b></span>|
@@ -630,18 +784,31 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Extra_Work_Product](#get_extra_work_product)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>ServiceContractId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Service_Contract__c</b></span>|
+    
+    
+    
+    
     
     ### Get_Product_Work_Type
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|WorkType|
+    |Label|Get Product Work Type|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Extra_Work_Product](#get_extra_work_product)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_Maintenance_Plan](#get_maintenance_plan)</b></span>|
+    
+    
     
     #### Filters (logic: **and**)
     
@@ -649,6 +816,14 @@
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Name</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Production Work</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Extra Work</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -773,12 +948,33 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|Quote|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Update|
+    |Label|[Quote] - [After-Save] - Create Work Order on Acceptance|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Status</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⚠️ Draft</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Active</b></span>|
+    |Does Require Record Changed To Meet Criteria|✅|
+    |Environments|Default|
+    |Interview Label|[Quote] - [After-Save] - Create Work Order on Acceptance {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Product_Work_Type](#get_product_work_type)|
+    |Next Node|[Get_Product_Work_Type](#get_product_work_type)|
+    
     
     ## Flow Nodes Details
     
     ### Set_Work_Order_Initial_Values
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Assignment|
+    |Label|Set Work Order Initial Values|
+    |Connector|[Create_Work_Order](#create_work_order)|
+    
     
     #### Assignments
     
@@ -788,8 +984,10 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>extraWorkOrder.ServiceContractId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Opportunity.Service_Contract__c</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.AccountId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.QuoteAccountId</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.ServiceContractId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Service_Contract__c</b></span>|
+    |extraWorkOrder.Subject| Assign|$Record.Name|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>extraWorkOrder.Opportunity__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.OpportunityId</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.Quote__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Id</b></span>|
+    |extraWorkOrder.Priority| Assign|High|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>extraWorkOrder.Street</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Opportunity.Account.ShippingStreet</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>extraWorkOrder.City</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Opportunity.Account.ShippingCity</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>extraWorkOrder.PostalCode</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Opportunity.Account.ShippingPostalCode</i></span>|
@@ -798,9 +996,16 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.City</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.QuoteAccount.ShippingCity</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.PostalCode</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.QuoteAccount.ShippingPostalCode</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.Country</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.QuoteAccount.ShippingCountry</b></span>|
+    |extraWorkOrder.AssetId| Assign|[Create_Asset](#create_asset)|
+    |extraWorkOrder.Status| Assign|Unscheduled|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>extraWorkOrder.ServiceTerritoryId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Opportunity.ATAK_Projectx__r.Service_Territory__c</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>extraWorkOrder.ServiceTerritoryId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Assign</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.ATAK_Project__r.Service_Territory__c</b></span>|
+    |extraWorkOrder.WorkTypeId| Assign|Get_Product_Work_Type.Id|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>extraWorkOrder.SuggestedMaintenanceDate</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Assign</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.Opportunity.CloseDate</i></span>|
+    
+    
+    
+    
     
     ___
     

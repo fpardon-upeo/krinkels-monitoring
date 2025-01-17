@@ -186,10 +186,24 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|Opportunity|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Create And Update|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Label</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Opportunity][After-Save][Record-Triggered] Sync Amount and stages to Quote</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Opportunity][After-Save][Record-Triggered] Sync Contact,Amount and stages to Quote</b></span>|
+    |Status|Active|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Description</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Keeps quote in sync when opportunity amounts are changed</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Description</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Keeps quote in sync when opportunity amounts or contact is changed</b></span>|
+    |Environments|Default|
+    |Interview Label|[Opportunity][After-Save][Record-Triggered] Sync Amount and stages to Quote {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Synced_Quote](#get_synced_quote)|
+    |Next Node|[Get_Synced_Quote](#get_synced_quote)|
+    
+    
     
     #### 🟥Filters (logic: **1 OR  (2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10))**)
     
@@ -198,80 +212,137 @@
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Amount__c| Is Changed|✅|
+    |2|StageName| Is Changed|✅|
+    |3|StageName| Equal To|New|
+    |4|StageName| Equal To|Evaluation|
+    |5|StageName| Equal To|Pricing|
+    |6|StageName| Equal To|Quote Sent|
+    |7|StageName| Equal To|Negotiation|
+    |8|StageName| Equal To|BAFO|
+    |9|StageName| Equal To|Closed Won|
+    |10|StageName| Equal To|Closed Lost|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>11</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Main_Contact__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>12</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Main_Contact__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ## Flow Nodes Details
     
     
     ### 🟩Contact_changed
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Contact changed?</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>No</b></span>|
     
+    
     #### 🟩Rule Yes_Contact_changed (Yes Contact changed)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Add_Contact_to_Quote](#add_contact_to_quote)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record__Prior.Main_Contact__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Not Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Main_Contact__c</b></span>|
+    
+    
+    
+    
     
     ### Status
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Decision|
+    |Label|[Status](#status)|
+    |Description|to which status the quote needs to be updated?|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Contact_changed](#contact_changed)</b></span>|
+    |Default Connector Label|Default Outcome|
+    
     
     ### 🟩Add_Contact_to_Quote
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Quote</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Add Contact to Quote</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Synced_Quote.Id</b></span>|
     
+    
+    
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ContactId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.Main_Contact__c</b></span>|
+    
+    
+    
+    
     
     ### Update_Quote_to_Accepted
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
+    |Object|Quote|
+    |Label|Update Quote to Accepted|
+    |Description|Update quote status + amount|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Contact_changed](#contact_changed)</b></span>|
+    
+    
     
     ### Update_Quote_to_Denied
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
+    |Object|Quote|
+    |Label|Update Quote to Denied|
+    |Description|Update quote status + amount|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Contact_changed](#contact_changed)</b></span>|
+    
+    
     
     ### Update_Quote_to_Draft
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
+    |Object|Quote|
+    |Label|Update Quote to Draft|
+    |Description|Update quote status + amount|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Contact_changed](#contact_changed)</b></span>|
+    
+    
     
     ### Update_Quote_to_Presented
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Update|
+    |Object|Quote|
+    |Label|Update Quote to Presented|
+    |Description|Update quote status + amount|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Contact_changed](#contact_changed)</b></span>|
+    
+    
     
     ___
     
@@ -416,19 +487,58 @@
     
     ### Status
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Decision|
+    |Label|[Status](#status)|
+    |Description|to which status the quote needs to be updated?|
+    |Default Connector Label|Default Outcome|
+    
+    
+    
     #### 🟥Rule To_Draft (To Draft)
     
     #### 🟩Rule To_Pricing (To Pricing)
     
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Connector|[Update_Quote_to_Draft](#update_quote_to_draft)|
+    |Condition Logic|or|
+    
+    
+    
+    
+    |Condition Id|Left Value Reference|Operator|Right Value|
+    |:-- |:-- |:--:|:--: |
+    |1|$Record.StageName| Equal To|New|
+    |2|$Record.StageName| Equal To|Evaluation|
+    |3|$Record.StageName| Equal To|Pricing|
+    
+    
+    
+    
     ### Update_Quote_to_Draft
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Update|
+    |Object|Quote|
+    |Label|Update Quote to Draft|
+    |Description|Update quote status + amount|
+    
     
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |Amount__c|$Record.Amount__c|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>[Status](#status)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Draft</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>[Status](#status)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Pricing</b></span>|
+    
+    
+    
+    
     
     ___
     

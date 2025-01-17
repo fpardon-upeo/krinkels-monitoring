@@ -121,25 +121,71 @@
     
     ### Create_Depot_WO
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|WorkOrder|
+    |Label|Create Depot WO|
+    |Assign Record Id To Reference|DepotVisitId|
+    |Connector|[Success_Message](#success_message)|
+    
+    
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |AccountId|Depot_KGC.selectedChoiceValues|
+    |AssetId|Get_Work_Order_Information.AssetId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Depot_Visit_Comments__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Depot_Visit_Comments</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Depot_Visit_Planned__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    |Drop_Off_Items__c|Drop_Off_Items|
+    |MaintenancePlanId|Get_Work_Order_Information.MaintenancePlanId|
+    |ParentWorkOrderId|Get_Work_Order_Information.Id|
+    |Pick_Up_Items__c|Pick_Up_Items|
+    |ServiceContractId|Get_Work_Order_Information.ServiceContractId|
+    |ServiceTerritoryId|Get_Work_Order_Information.ServiceTerritoryId|
+    |Subject|Subject|
+    |SuggestedMaintenanceDate|today|
+    |WorkTypeId|Get_Work_Type.Id|
+    
+    
+    
     
     ### Depot_Visit_Information
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Depot Visit Information|
+    |Allow Back|⬜|
+    |Allow Finish|✅|
+    |Allow Pause|⬜|
+    |Next Or Finish Button Label|Create|
+    |Show Footer|✅|
+    |Show Header|⬜|
+    |Connector|[Create_Depot_WO](#create_depot_wo)|
+    
     
     #### 🟥Depot_Visit_Comments
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
     |:---|:---|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Depot Visit Comments</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Large Text Area</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Inputs On Next Nav To Assoc Scrn</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Use Stored Values</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Is Required</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -261,11 +307,36 @@
     
     ### Create_Depot_WO
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|WorkOrder|
+    |Label|Create Depot WO|
+    |Assign Record Id To Reference|DepotVisitId|
+    |Connector|[Success_Message](#success_message)|
+    
+    
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |AccountId|Depot_KGC.selectedChoiceValues|
+    |AssetId|Get_Work_Order_Information.AssetId|
+    |Depot_Visit_Comments__c|Depot_Visit_Comments|
+    |Drop_Off_Items__c|Drop_Off_Items|
+    |MaintenancePlanId|Get_Work_Order_Information.MaintenancePlanId|
+    |ParentWorkOrderId|Get_Work_Order_Information.Id|
+    |Pick_Up_Items__c|Pick_Up_Items|
+    |ServiceContractId|Get_Work_Order_Information.ServiceContractId|
+    |ServiceTerritoryId|Get_Work_Order_Information.ServiceTerritoryId|
+    |Subject|Subject|
+    |SuggestedMaintenanceDate|today|
+    |WorkTypeId|Get_Work_Type.Id|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Work_Order_Type__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Depot Visit</i></span>|
+    
+    
+    
+    
     
     ___
     

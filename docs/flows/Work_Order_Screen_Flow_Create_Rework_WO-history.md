@@ -140,12 +140,34 @@
     
     ### Create_Rework_WO
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Create|
+    |Object|WorkOrder|
+    |Label|Create Rework WO|
+    |Assign Record Id To Reference|ReworkWOId|
+    |Connector|[Loop_Through_Selected_Existing_Tasks](#loop_through_selected_existing_tasks)|
+    
+    
     #### Input Assignments
     
     |Field|Value|
     |:-- |:--: |
+    |AccountId|Get_Work_Order_Information.AccountId|
+    |AssetId|Get_Work_Order_Information.AssetId|
+    |MaintenancePlanId|Get_Work_Order_Information.MaintenancePlanId|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ParentWorkOrderId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Work_Order_Information.Id</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Rework_Planned__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    |Rework_for_Work_Order__c|Get_Work_Order_Information.Id|
+    |Rework_reasons__c|Rework_reasons|
+    |ServiceContractId|Get_Work_Order_Information.ServiceContractId|
+    |ServiceTerritoryId|Get_Work_Order_Information.ServiceTerritoryId|
+    |Subject|Subject|
+    |SuggestedMaintenanceDate|today|
+    |WorkTypeId|Get_Work_Type.Id|
+    
+    
+    
     
     ___
     

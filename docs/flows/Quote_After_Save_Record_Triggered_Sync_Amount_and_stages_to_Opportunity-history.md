@@ -150,58 +150,87 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|Quote|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Create And Update|
+    |Label|[Quote][After-Save][Record-Triggered] Sync Amount and stages to Opportunity|
+    |Status|Active|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Filter Formula</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>{!$Record.IsSyncing} = True<br/>&&<br/>(<br/>ISNEW()<br/></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><br/>(<br/>ISCHANGED({!$Record.Amount__c})<br/></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><br/>ISCHANGED({!$Record.Status})<br/>)<br/>)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Formula</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!$Record.IsSyncing} = True<br/>&&<br/>(<br/>ISNEW()<br/></b></span>|<span style="background-color: #a6e22e; color: black;"><b><br/>(<br/>ISCHANGED({!$Record.Amount__c})<br/></b></span>|<span style="background-color: #a6e22e; color: black;"><b><br/>ISCHANGED({!$Record.Status})<br/></b></span>|<span style="background-color: #a6e22e; color: black;"><b> <br/>ISBLANK({!$Record.ContactId})<br/>)<br/>)</b></span>|
+    |Description|Keeps opportunity in sync when opportunity amounts are changed|
+    |Environments|Default|
+    |Interview Label|[Quote][After-Save][Record-Triggered] Sync Amount and stages to Opportunity {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Status](#status)</i></span>|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Next Node</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Status](#status)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_linked_Opportunity](#get_linked_opportunity)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Next Node</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_linked_Opportunity](#get_linked_opportunity)</b></span>|
+    
+    
     
     ## Flow Nodes Details
     
     
     ### 🟩Contact_on_Opportunity
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Contact on Opportunity?</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Status](#status)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>No</b></span>|
     
+    
     #### 🟩Rule Yes (Yes)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Add_Contact_to_Quote](#add_contact_to_quote)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_linked_Opportunity.Main_Contact__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
     ### 🟩Opportunity_Found
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Decision</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Opportunity Found</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Default Connector Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>No</b></span>|
     
+    
     #### 🟩Rule Yes_Opportunity_found (Yes Opportunity found)
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Contact_on_Opportunity](#contact_on_opportunity)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Get_linked_Opportunity](#get_linked_opportunity)</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
+    
     ### 🟩Get_linked_Opportunity
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Lookup</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Opportunity</b></span>|
@@ -211,26 +240,35 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Store Output Automatically</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Opportunity_Found](#opportunity_found)</b></span>|
     
+    
     #### 🟩Filters (logic: **and**)
     
-    |Filter Id|Field|Operator|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.OpportunityId</b></span>|
     
+    
+    
+    
     ### 🟩Add_Contact_to_Quote
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Add Contact to Quote</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Input Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Status](#status)</b></span>|
     
+    
     #### 🟩Input Assignments
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ContactId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_linked_Opportunity.Main_Contact__c</b></span>|
+    
+    
+    
+    
     
     ___
     
@@ -351,8 +389,23 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|Quote|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Create And Update|
+    |Label|[Quote][After-Save][Record-Triggered] Sync Amount and stages to Opportunity|
+    |Status|Active|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Filter Formula</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>{!$Record.IsSyncing} = True<br/>&&<br/>(ISNEW()<br/></i></span>|<span style="background-color: #ff7f7f; color: black;"><i><br/>(ISCHANGED({!$Record.Amount__c})</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>ISCHANGED({!$Record.Status})))</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Filter Formula</b></span>|<span style="background-color: #a6e22e; color: black;"><b>{!$Record.IsSyncing} = True<br/>&&<br/>(<br/>ISNEW()<br/></b></span>|<span style="background-color: #a6e22e; color: black;"><b><br/>(<br/>ISCHANGED({!$Record.Amount__c})<br/></b></span>|<span style="background-color: #a6e22e; color: black;"><b><br/>ISCHANGED({!$Record.Status})<br/>)<br/>)</b></span>|
+    |Description|Keeps opportunity in sync when opportunity amounts are changed|
+    |Environments|Default|
+    |Interview Label|[Quote][After-Save][Record-Triggered] Sync Amount and stages to Opportunity {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Status](#status)|
+    |Next Node|[Status](#status)|
+    
     
     ___
     

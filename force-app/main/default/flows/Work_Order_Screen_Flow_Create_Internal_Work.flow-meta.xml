@@ -621,7 +621,7 @@
             <targetReference>Work_Order_Initial_Screen</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>departmentType</name>
         <dataType>String</dataType>

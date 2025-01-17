@@ -110,12 +110,28 @@
     
     ### Get_Contract_Manager
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Lookup|
+    |Object|User|
+    |Label|Get Contract Manager|
+    |Description|Get the correct person to notify|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
+    |Connector|[Assign_Recipient_ID](#assign_recipient_id)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Id</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.ServiceContract.OwnerId</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.ServiceTerritory.OwnerId</b></span>|
+    
+    
+    
+    
     
     ___
     

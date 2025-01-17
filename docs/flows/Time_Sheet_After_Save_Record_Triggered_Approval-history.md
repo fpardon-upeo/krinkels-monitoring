@@ -147,15 +147,39 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Action Call|
+    |Label|Submit Record for Approval|
+    |Action Type|Submit|
+    |Action Name|submit|
+    |Flow Transaction Model|CurrentTransaction|
+    |Name Segment|submit|
+    |Offset|0|
+    |Store Output Automatically|✅|
+    |Version Segment|1|
+    |Object Id (input)|$Record.Id|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Submitter Id (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.ServiceResource.RelatedRecordId</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Skip Entry Criteria (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    |Connector|[Update_Entries_to_Submitted](#update_entries_to_submitted)|
+    
     
     ### Submit_Record_for_Automated_Approval
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Action Call|
+    |Label|Submit Record for Automated Approval|
+    |Action Type|Submit|
+    |Action Name|submit|
+    |Flow Transaction Model|CurrentTransaction|
+    |Name Segment|submit|
+    |Offset|0|
+    |Store Output Automatically|✅|
+    |Version Segment|1|
+    |Object Id (input)|$Record.Id|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Submitter Id (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record.ServiceResource.RelatedRecordId</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Skip Entry Criteria (input)</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
     
     ___
     

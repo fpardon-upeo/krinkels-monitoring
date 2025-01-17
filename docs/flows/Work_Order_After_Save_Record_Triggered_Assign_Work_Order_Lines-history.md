@@ -131,11 +131,34 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|WorkOrder|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Update|
+    |Label|[Work Order][After-Save][Record-Triggered] Assign Work Order Lines|
+    |Status|Active|
+    |Environments|Default|
+    |Interview Label|[Work Order][After-Save][Record-Triggered] Assign Work Order Lines {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Asset_Items](#get_asset_items)|
+    |Next Node|[Get_Asset_Items](#get_asset_items)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Status| Is Changed|✅|
+    |2|Status| Equal To|Scheduled|
+    |3|AssetId| Is Null|<!-- -->|
+    |4|Production_Work__c| Equal To|✅|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>5</b></span>|<span style="background-color: #a6e22e; color: black;"><b>WOL_Already_Added__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    
+    
     
     ## Flow Nodes Details
     
@@ -143,25 +166,41 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Create|
+    |Label|Create Work Order Lines|
+    |Input Reference|WorkOrderLineItems|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Flag_this_Work_Order_as_WOL_Already_Created](#flag_this_work_order_as_wol_already_created)</b></span>|
+    
+    
     
     ### 🟩Flag_this_Work_Order_as_WOL_Already_Created
     
     
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Record Update</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Flag this Work Order as WOL Already Created</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Input Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>$Record</b></span>|
     
+    
+    
+    
     #### 🟩Input Assignments
     
     
     
-    |Field|Value|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Value</b></span>|
     |:-- |:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>WOL_Already_Added__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -275,11 +314,33 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|WorkOrder|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Update|
+    |Label|[Work Order][After-Save][Record-Triggered] Assign Work Order Lines|
+    |Status|Active|
+    |Environments|Default|
+    |Interview Label|[Work Order][After-Save][Record-Triggered] Assign Work Order Lines {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Asset_Items](#get_asset_items)|
+    |Next Node|[Get_Asset_Items](#get_asset_items)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Status| Is Changed|✅|
+    |2|Status| Equal To|Scheduled|
+    |3|AssetId| Is Null|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>4</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Production_Work__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
+    
+    
     
     ___
     
@@ -393,11 +454,32 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|WorkOrder|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
+    |Record Trigger Type| Update|
+    |Label|[Work Order][After-Save][Record-Triggered] Assign Work Order Lines|
+    |Status|Active|
+    |Environments|Default|
+    |Interview Label|[Work Order][After-Save][Record-Triggered] Assign Work Order Lines {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Asset_Items](#get_asset_items)|
+    |Next Node|[Get_Asset_Items](#get_asset_items)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Status| Is Changed|✅|
+    |2|Status| Equal To|Scheduled|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>AssetId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ___
     

@@ -133,16 +133,18 @@
     
     ## 🟩Variables
     
-    |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Name</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Data Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Is Collection</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Is Input</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Is Output</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Object Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Description</b></span>|
     |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>currentItem_Filter_Out_Operating</b></span>|<span style="background-color: #a6e22e; color: black;"><b>SObject</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|<span style="background-color: #a6e22e; color: black;"><b>AccountContactRelation</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
+    
+    
     
     ## Flow Nodes Details
     
     
     ### 🟩Filter_Out_Operating
     
-    |<!-- -->|<!-- -->|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |:---|:---|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Collection Processor</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Label</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Filter Out Operating</b></span>|
@@ -153,35 +155,78 @@
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Contact_Found](#contact_found)</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Logic</b></span>|<span style="background-color: #a6e22e; color: black;"><b>and</b></span>|
     
-    |Condition Id|Left Value Reference|Operator|Right Value|
+    
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Condition Id</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Left Value Reference</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operator</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Right Value</b></span>|
     |:-- |:-- |:--:|:--: |
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>currentItem_Filter_Out_Operating.Roles</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Contains</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operational</b></span>|
     
+    
+    
+    
+    
     ### Contact_Found
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Decision|
+    |Label|Contact Found ?|
+    |Default Connector Label|No|
+    
+    
     #### Rule Yes (Yes)
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Connector|[Update_Contact_Field_on_WO](#update_contact_field_on_wo)|
+    |Condition Logic|and|
+    
+    
+    
     
     |Condition Id|Left Value Reference|Operator|Right Value|
     |:-- |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>1</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Get_Operational_Contact](#get_operational_contact)</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Is Null</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>⬜</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>1</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Filter_Out_Operating](#filter_out_operating)</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
     
+    
+    
+    
+    
     ### Get_Operational_Contact
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
+    |Object|AccountContactRelation|
+    |Label|Get Operational Contact|
+    |Assign Null Values If No Records Found|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Get First Record Only</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Get First Record Only</b></span>|<span style="background-color: #a6e22e; color: black;"><b>⬜</b></span>|
+    |Store Output Automatically|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Connector</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>[Contact_Found](#contact_found)</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Connector</b></span>|<span style="background-color: #a6e22e; color: black;"><b>[Filter_Out_Operating](#filter_out_operating)</b></span>|
+    
+    
     
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|AccountId| Equal To|$Record.AccountId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Roles</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Contains</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operational</i></span>|
     
+    
+    
+    
+    
     ### Update_Contact_Field_on_SA
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Update|
+    |Object|ServiceAppointment|
+    |Label|Update Contact Field on SA|
+    
     
     #### Input Assignments
     
@@ -190,7 +235,19 @@
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>ContactId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>$Record.ContactId</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ContactId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>currentItem_Filter_Out_Operating.ContactId</b></span>|
     
+    
+    
+    
+    
     ### Update_Contact_Field_on_WO
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Update|
+    |Label|Update Contact Field on WO|
+    |Input Reference|$Record|
+    |Connector|[Update_Contact_Field_on_SA](#update_contact_field_on_sa)|
+    
     
     #### Input Assignments
     
@@ -198,6 +255,14 @@
     |:-- |:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>ContactId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Get_Operational_Contact.ContactId</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ContactId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>currentItem_Filter_Out_Operating.ContactId</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     
@@ -313,27 +378,60 @@
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Object|WorkOrder|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Record After Save|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Record Trigger Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Create</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Record Trigger Type</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Update</b></span>|
+    |Label|[Work Order][After-Save][Record-Triggered] Populate Contact on WO and SA|
+    |Status|Active|
+    |Description|This flow populates the contact field on a work order and its related service appointment on creation. It takes an operational contact of the related operational account.|
+    |Environments|Default|
+    |Interview Label|[Work Order][After-Save][Record-Triggered] Populate Contact on WO and SA {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Operational_Contact](#get_operational_contact)|
+    |Next Node|[Get_Operational_Contact](#get_operational_contact)|
+    
     
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|ContactId| Is Null|<!-- -->|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>AccountId</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Null</b></span>|<span style="background-color: #a6e22e; color: black;"><b><!-- --></b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>3</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Is Changed</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>4</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Status</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Scheduled</b></span>|
+    
+    
     
     ## Flow Nodes Details
     
     ### Get_Operational_Contact
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Lookup|
+    |Object|AccountContactRelation|
+    |Label|Get Operational Contact|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
+    |Connector|[Contact_Found](#contact_found)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|AccountId| Equal To|$Record.AccountId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Roles</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operational</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Roles</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Contains</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operational</b></span>|
+    
+    
+    
+    
     
     ___
     
@@ -449,12 +547,28 @@
     
     ### Get_Operational_Contact
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Lookup|
+    |Object|AccountContactRelation|
+    |Label|Get Operational Contact|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
+    |Connector|[Contact_Found](#contact_found)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|AccountId| Equal To|$Record.AccountId|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operational_SPOC__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Roles</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operational</b></span>|
+    
+    
+    
+    
     
     ___
     
@@ -574,34 +688,76 @@
     
     ## 🟥Formulas
     
-    |Name|Data Type|Expression|Description|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Name</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Data Type</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Expression</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Description</i></span>|
     |:-- |:--:|:-- |:--  |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>TypeText</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Boolean</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>INCLUDES({!Get_Operational_Contact.Type__c}, 'Operational')</i></span>|<span style="background-color: #ff7f7f; color: black;"><i><!-- --></i></span>|
+    
+    
     
     ## Flow Nodes Details
     
     ### Contact_Found
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Decision|
+    |Label|Contact Found ?|
+    |Default Connector Label|No|
+    
+    
     #### Rule Yes (Yes)
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Connector|[Update_Contact_Field_on_WO](#update_contact_field_on_wo)|
+    |Condition Logic|and|
+    
+    
+    
     
     |Condition Id|Left Value Reference|Operator|Right Value|
     |:-- |:-- |:--:|:--: |
+    |1|[Get_Operational_Contact](#get_operational_contact)| Is Null|⬜|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>TypeText</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>✅</i></span>|
+    
+    
+    
+    
     
     ### Get_Operational_Contact
     
     |<!-- -->|<!-- -->|
     |:---|:---|
+    |Type|Record Lookup|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Object</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Contact</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Object</b></span>|<span style="background-color: #a6e22e; color: black;"><b>AccountContactRelation</b></span>|
+    |Label|Get Operational Contact|
+    |Assign Null Values If No Records Found|⬜|
+    |Get First Record Only|✅|
+    |Store Output Automatically|✅|
+    |Connector|[Contact_Found](#contact_found)|
+    
     
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|AccountId| Equal To|$Record.AccountId|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Operational_SPOC__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>✅</b></span>|
     
+    
+    
+    
+    
     ### Update_Contact_Field_on_WO
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Record Update|
+    |Label|Update Contact Field on WO|
+    |Input Reference|$Record|
+    |Connector|[Update_Contact_Field_on_SA](#update_contact_field_on_sa)|
+    
     
     #### Input Assignments
     
@@ -609,6 +765,14 @@
     |:-- |:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>ContactId</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Get_Operational_Contact.Id</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>ContactId</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Get_Operational_Contact.ContactId</b></span>|
+    
+    
+    
+    
+    
+    
+    
+    
     
     ___
     

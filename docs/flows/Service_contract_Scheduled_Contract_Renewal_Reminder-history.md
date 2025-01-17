@@ -107,12 +107,32 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|ServiceContract|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Scheduled|
+    |Label|[Service contract] [Scheduled] Contract Renewal Reminder|
+    |Status|Active|
+    |Description|sends reminder mail to the contract manager 3 months before the end of a contract|
+    |Environments|Default|
+    |Interview Label|[Service contract] [Scheduled] Contract Renewal reminder {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Contract_Manager](#get_contract_manager)|
+    |Next Node|[Get_Contract_Manager](#get_contract_manager)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Renewal_Reminder_Needed__c| Equal To|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Type__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Master Agreement</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Commercial Agreement</b></span>|
+    
+    
     
     ___
     
@@ -223,12 +243,31 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|ServiceContract|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Scheduled|
+    |Label|[Service contract] [Scheduled] Contract Renewal Reminder|
+    |Status|Active|
+    |Description|sends reminder mail to the contract manager 3 months before the end of a contract|
+    |Environments|Default|
+    |Interview Label|[Service contract] [Scheduled] Contract Renewal reminder {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Contract_Manager](#get_contract_manager)|
+    |Next Node|[Get_Contract_Manager](#get_contract_manager)|
+    
+    
     #### Schedules
     
     |Frequency|Start Date|Start Time|
     |:-- |:--:|:--: |
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>Daily</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Oct 31, 2024</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>04:00</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>Daily</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Nov 22, 2024</b></span>|<span style="background-color: #a6e22e; color: black;"><b>04:00</b></span>|
+    
+    
     
     ___
     
@@ -339,12 +378,32 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|ServiceContract|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Scheduled|
+    |Label|[Service contract] [Scheduled] Contract Renewal Reminder|
+    |Status|Active|
+    |Description|sends reminder mail to the contract manager 3 months before the end of a contract|
+    |Environments|Default|
+    |Interview Label|[Service contract] [Scheduled] Contract Renewal reminder {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Contract_Manager](#get_contract_manager)|
+    |Next Node|[Get_Contract_Manager](#get_contract_manager)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Renewal_Reminder_Needed__c| Equal To|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Contract_Type__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Master Agreement</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Master Agreement</b></span>|
+    
+    
     
     ___
     
@@ -455,12 +514,32 @@
     
     ## General Information
     
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Object|ServiceContract|
+    |Process Type| Auto Launched Flow|
+    |Trigger Type| Scheduled|
+    |Label|[Service contract] [Scheduled] Contract Renewal Reminder|
+    |Status|Active|
+    |Description|sends reminder mail to the contract manager 3 months before the end of a contract|
+    |Environments|Default|
+    |Interview Label|[Service contract] [Scheduled] Contract Renewal reminder {!$Flow.CurrentDateTime}|
+    | Builder Type (PM)|LightningFlowBuilder|
+    | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
+    | Origin Builder Type (PM)|LightningFlowBuilder|
+    |Connector|[Get_Contract_Manager](#get_contract_manager)|
+    |Next Node|[Get_Contract_Manager](#get_contract_manager)|
+    
+    
     #### Filters (logic: **and**)
     
     |Filter Id|Field|Operator|Value|
     |:-- |:-- |:--:|:--: |
+    |1|Renewal_Reminder_Needed__c| Equal To|✅|
     |🟥<span style="background-color: #ff7f7f; color: black;"><i>2</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Type__c</i></span>|<span style="background-color: #ff7f7f; color: black;"><i> Equal To</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Master Agreement</i></span>|
     |🟩<span style="background-color: #a6e22e; color: black;"><b>2</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Contract_Type__c</b></span>|<span style="background-color: #a6e22e; color: black;"><b> Equal To</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Master Agreement</b></span>|
+    
+    
     
     ___
     
