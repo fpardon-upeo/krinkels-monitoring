@@ -14,11 +14,14 @@ public without sharing class TimeSheetProjectLinkService {
         // First, query the trigger entries with their parent information
         Map<Id, TimeSheetEntry> triggerEntriesWithParents = new Map<Id, TimeSheetEntry>([
                 SELECT Id, TimeSheetId, WorkOrderId, StartTime,
-                        WorkOrder.WorkType.Name
+                        WorkOrder.WorkType.Name,
+                        WorkOrder.ParentWorkOrder.Id,
+                        WorkOrder.ParentWorkOrder.WorkOrderNumber
                 FROM TimeSheetEntry
                 WHERE Id IN :tseIds
         ]);
         System.debug('📊 Found ' + triggerEntriesWithParents.size() + ' trigger entries with parent info');
+        System.debug('📊 Found ' + triggerEntriesWithParents.size() + ' trigger entries with parent info' + triggerEntriesWithParents);
 
         // Query all other relevant TimeSheetEntries for the affected TimeSheets
         List<TimeSheetEntry> otherTimeSheetEntries = [
@@ -49,9 +52,17 @@ public without sharing class TimeSheetProjectLinkService {
         for(TimeSheetEntry triggerEntry : triggerEntriesWithParents.values()) {
             System.debug('⚡ Processing trigger entry: ' + triggerEntry.Id +
                     ' | Current WorkOrder: ' + triggerEntry.WorkOrderId +
-                    ' | WorkType: ' + triggerEntry.WorkOrder?.WorkType?.Name);
+                    ' | WorkType: ' + triggerEntry.WorkOrder?.WorkType?.Name +
+                    ' | TimeSheetId: ' + triggerEntry.TimeSheetId +
+                    ' | ParentWorkOrderId: ' + triggerEntry.WorkOrder?.ParentWorkOrder?.Id);
 
-            if(entriesByTimeSheet.containsKey(triggerEntry.TimeSheetId)) {
+            System.debug('triggerEntry: ' + triggerEntry);
+
+            if(entriesByTimeSheet.containsKey(triggerEntry.TimeSheetId) &&
+                    (triggerEntry.WorkOrder == null ||
+                            triggerEntry.WorkOrder.ParentWorkOrder == null ||
+                            String.isEmpty(triggerEntry.WorkOrder.ParentWorkOrder.Id))){
+                System.debug('📎 Found other entries for TimeSheet that has an empty parent ');
                 List<TimeSheetEntry> dayEntries = entriesByTimeSheet.get(triggerEntry.TimeSheetId);
                 System.debug('📋 Found ' + dayEntries.size() + ' other entries for TimeSheet ' + triggerEntry.TimeSheetId);
 

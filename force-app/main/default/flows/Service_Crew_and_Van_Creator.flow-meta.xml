@@ -5,7 +5,7 @@
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
         <locationX>578</locationX>
-        <locationY>1838</locationY>
+        <locationY>2354</locationY>
         <assignmentItems>
             <assignToReference>materialItems</assignToReference>
             <operator>Add</operator>
@@ -18,10 +18,42 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Set_Leader_Boolean_FALSE</name>
+        <label>Set Leader Boolean FALSE</label>
+        <locationX>182</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>hasLeader</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Up_Crew_and_Van_Initial</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Leader_Boolean_TRUE</name>
+        <label>Set Leader Boolean TRUE</label>
+        <locationX>446</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>hasLeader</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Up_Crew_and_Van_Initial</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Set_Material_Item_Values</name>
         <label>Set Material Item Values</label>
         <locationX>578</locationX>
-        <locationY>1730</locationY>
+        <locationY>2246</locationY>
         <assignmentItems>
             <assignToReference>materialItem.Product2Id</assignToReference>
             <operator>Assign</operator>
@@ -33,7 +65,7 @@
             <assignToReference>materialItem.LocationId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>locationId1.recordId</elementReference>
+                <elementReference>InventoryVan.selectedChoiceValues</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -51,9 +83,9 @@
         <name>Assignment_Check</name>
         <label>Assignment Check</label>
         <locationX>314</locationX>
-        <locationY>974</locationY>
+        <locationY>1598</locationY>
         <defaultConnector>
-            <targetReference>Get_Contract_Manager_Territory</targetReference>
+            <targetReference>Get_Materials</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -80,10 +112,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Has_Leader</name>
+        <label>Check Has Leader</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Set_Leader_Boolean_TRUE</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_Leader</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Crew_Leader</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Leader_Boolean_FALSE</targetReference>
+            </connector>
+            <label>Has Leader</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Crew_Leader_Check</name>
         <label>Crew Leader Check</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>1298</locationY>
         <defaultConnector>
             <targetReference>Assignment_Check</targetReference>
         </defaultConnector>
@@ -133,6 +190,30 @@
             <label>Has No Crew Leader And Selected Leader was False</label>
         </rules>
     </decisions>
+    <dynamicChoiceSets>
+        <name>contractManagers</name>
+        <collectionReference>Get_Territories_with_Responsibles</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>ServiceTerritory</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>inventoryLocations</name>
+        <collectionReference>Get_Vans_without_Service_Crews</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Location</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>serviceResources</name>
+        <collectionReference>Get_Resources_without_Vans</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>ServiceResource</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Service Crew and Van Creator {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Service Crew and Van Creator</label>
@@ -140,7 +221,7 @@
         <name>Loop_Selected_Materials</name>
         <label>Loop Selected Materials</label>
         <locationX>490</locationX>
-        <locationY>1622</locationY>
+        <locationY>2138</locationY>
         <collectionReference>productTable.selectedRows</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -173,7 +254,7 @@
         <name>Create_Material_Items</name>
         <label>Create Material Items</label>
         <locationX>490</locationX>
-        <locationY>2030</locationY>
+        <locationY>2546</locationY>
         <connector>
             <targetReference>Update_Van_With_Service_Crew</targetReference>
         </connector>
@@ -187,7 +268,7 @@
         <name>Create_Operator_Service_Crew_Member</name>
         <label>Create Operator Service Crew Member</label>
         <locationX>490</locationX>
-        <locationY>1406</locationY>
+        <locationY>1922</locationY>
         <connector>
             <targetReference>Get_Location_Details</targetReference>
         </connector>
@@ -209,7 +290,7 @@
         <inputAssignments>
             <field>ServiceResourceId</field>
             <value>
-                <elementReference>serviceResourceId.recordId</elementReference>
+                <elementReference>operatorId.selectedChoiceValues</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -225,7 +306,7 @@
         <name>Create_Service_Territory_Member_Crew</name>
         <label>Create Service Territory Member - Crew</label>
         <locationX>490</locationX>
-        <locationY>2354</locationY>
+        <locationY>2870</locationY>
         <connector>
             <targetReference>Finished</targetReference>
         </connector>
@@ -248,7 +329,7 @@
         <inputAssignments>
             <field>ServiceTerritoryId</field>
             <value>
-                <elementReference>Get_Contract_Manager_Territory.Id</elementReference>
+                <elementReference>Contract_Manager.selectedChoiceValues</elementReference>
             </value>
         </inputAssignments>
         <object>ServiceTerritoryMember</object>
@@ -258,7 +339,7 @@
         <name>Create_Van_Service_Resource</name>
         <label>Create Van Service Resource</label>
         <locationX>490</locationX>
-        <locationY>2246</locationY>
+        <locationY>2762</locationY>
         <connector>
             <targetReference>Create_Service_Territory_Member_Crew</targetReference>
         </connector>
@@ -294,41 +375,20 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Contract_Manager_Territory</name>
-        <label>Get Contract Manager Territory</label>
-        <locationX>490</locationX>
-        <locationY>1082</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Materials</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Main_Responsible__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>contractManagerId.recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>ServiceTerritory</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Crew_Leader</name>
         <label>Get Crew Leader</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Crew_Leader_Check</targetReference>
+            <targetReference>Get_Territories_with_Responsibles</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ServiceCrewId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>serviceCrewId.recordId</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </filters>
         <filters>
@@ -346,7 +406,7 @@
         <name>Get_Location_Details</name>
         <label>Get Location Details</label>
         <locationX>490</locationX>
-        <locationY>1514</locationY>
+        <locationY>2030</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Selected_Materials</targetReference>
@@ -360,7 +420,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>locationId1.recordId</elementReference>
+                <elementReference>InventoryVan.selectedChoiceValues</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -371,7 +431,7 @@
         <name>Get_Materials</name>
         <label>Get Materials</label>
         <locationX>490</locationX>
-        <locationY>1190</locationY>
+        <locationY>1706</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Up_Crew_and_Van_Van</targetReference>
@@ -397,17 +457,17 @@
         <name>Get_Other_Operator_Crew_Assignments</name>
         <label>Get Other Operator Crew Assignments</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>1190</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Crew_Leader</targetReference>
+            <targetReference>Crew_Leader_Check</targetReference>
         </connector>
         <filterLogic>1 AND (2 OR 3)</filterLogic>
         <filters>
             <field>ServiceResourceId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>serviceResourceId.recordId</elementReference>
+                <elementReference>operatorId.selectedChoiceValues</elementReference>
             </value>
         </filters>
         <filters>
@@ -432,7 +492,7 @@
         <name>Get_Resources_with_Selected_Van</name>
         <label>Get Resources with Selected Van</label>
         <locationX>314</locationX>
-        <locationY>242</locationY>
+        <locationY>974</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Service_Crew</targetReference>
@@ -442,7 +502,7 @@
             <field>LocationId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>locationId1.recordId</elementReference>
+                <elementReference>InventoryVan.selectedChoiceValues</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -450,10 +510,38 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Resources_without_Vans</name>
+        <label>Get Resources without Vans</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Vans_without_Service_Crews</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ResourceType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>T</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LocationId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ServiceResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Service_Crew</name>
         <label>Get Service Crew</label>
         <locationX>314</locationX>
-        <locationY>350</locationY>
+        <locationY>1082</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Other_Operator_Crew_Assignments</targetReference>
@@ -470,11 +558,60 @@
         <object>ServiceCrew</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Territories_with_Responsibles</name>
+        <label>Get Territories with Responsibles</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Resources_without_Vans</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentTerritoryId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Main_Responsible__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ServiceTerritory</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Vans_without_Service_Crews</name>
+        <label>Get Vans without Service Crews</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Has_Leader</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Van_Crew__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Location</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Van_With_Service_Crew</name>
         <label>Update Van With Service Crew</label>
         <locationX>490</locationX>
-        <locationY>2138</locationY>
+        <locationY>2654</locationY>
         <connector>
             <targetReference>Create_Van_Service_Resource</targetReference>
         </connector>
@@ -487,7 +624,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>locationId1.recordId</elementReference>
+                <elementReference>InventoryVan.selectedChoiceValues</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -502,7 +639,7 @@
         <name>Already_Has_Leader</name>
         <label>Already Has Leader</label>
         <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -521,7 +658,7 @@
         <name>Assignment_Check_Screen</name>
         <label>Assignment Check Screen</label>
         <locationX>138</locationX>
-        <locationY>1082</locationY>
+        <locationY>1706</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -562,7 +699,7 @@
         <name>Fault</name>
         <label>Fault</label>
         <locationX>2074</locationX>
-        <locationY>1514</locationY>
+        <locationY>2030</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -578,7 +715,7 @@
         <name>Finished</name>
         <label>Finished</label>
         <locationX>490</locationX>
-        <locationY>2462</locationY>
+        <locationY>2978</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -594,7 +731,7 @@
         <name>No_Leader_Selected</name>
         <label>No Leader Selected</label>
         <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -613,7 +750,7 @@
         <name>Set_Up_Crew_and_Van_Initial</name>
         <label>Set Up Crew and Van Initial</label>
         <locationX>314</locationX>
-        <locationY>134</locationY>
+        <locationY>866</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -632,71 +769,21 @@
                 <name>Set_Up_Crew_and_Van_Initial_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>serviceResourceId</name>
-                    <extensionName>flowruntime:lookup</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>fieldApiName</name>
-                        <value>
-                            <stringValue>ServiceResourceId</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Operator</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>objectApiName</name>
-                        <value>
-                            <stringValue>ServiceCrewMember</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>required</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
+                    <name>operatorId</name>
+                    <choiceReferences>serviceResources</choiceReferences>
+                    <extensionName>flowruntime:choiceLookup</extensionName>
+                    <fieldText>Operator</fieldText>
+                    <fieldType>ComponentChoice</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>contractManagerId</name>
-                    <extensionName>flowruntime:lookup</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>fieldApiName</name>
-                        <value>
-                            <stringValue>Contract_Manager__c</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Contract Manager</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>objectApiName</name>
-                        <value>
-                            <stringValue>Location</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>$User.Id</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>required</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
+                    <name>Contract_Manager</name>
+                    <choiceReferences>contractManagers</choiceReferences>
+                    <extensionName>flowruntime:choiceLookup</extensionName>
+                    <fieldText>Contract Manager</fieldText>
+                    <fieldType>ComponentChoice</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -751,33 +838,11 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>locationId1</name>
-                    <extensionName>flowruntime:lookup</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>fieldApiName</name>
-                        <value>
-                            <stringValue>LocationId</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Van</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>objectApiName</name>
-                        <value>
-                            <stringValue>ServiceResource</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>required</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
+                    <name>InventoryVan</name>
+                    <choiceReferences>inventoryLocations</choiceReferences>
+                    <extensionName>flowruntime:choiceLookup</extensionName>
+                    <fieldText>Van</fieldText>
+                    <fieldType>ComponentChoice</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -802,6 +867,9 @@
                 <fields>
                     <name>Crew_Leader</name>
                     <dataType>Boolean</dataType>
+                    <defaultValue>
+                        <elementReference>hasLeader</elementReference>
+                    </defaultValue>
                     <fieldText>Crew Leader</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -836,7 +904,7 @@
         <name>Set_Up_Crew_and_Van_Van</name>
         <label>Set Up Crew and Van - Van</label>
         <locationX>490</locationX>
-        <locationY>1298</locationY>
+        <locationY>1814</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -903,10 +971,17 @@
         <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Set_Up_Crew_and_Van_Initial</targetReference>
+            <targetReference>Get_Crew_Leader</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <variables>
+        <name>hasLeader</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>materialItem</name>
         <dataType>SObject</dataType>

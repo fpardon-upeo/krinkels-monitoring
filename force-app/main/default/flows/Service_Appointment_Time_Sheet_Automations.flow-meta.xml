@@ -504,7 +504,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>In_Progress</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -517,13 +517,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Travelling</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Previous_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Dispatched</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1018,13 +1011,6 @@
             </value>
         </filters>
         <filters>
-            <field>Previous_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Travelling</stringValue>
-            </value>
-        </filters>
-        <filters>
             <field>New_Status__c</field>
             <operator>EqualTo</operator>
             <value>
@@ -1276,7 +1262,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>CompletedTimesheetCurrent</name>
         <dataType>SObject</dataType>

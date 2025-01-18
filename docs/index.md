@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (16028) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (4014) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (16033) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (4019) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3594) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3599) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -59,6 +59,7 @@ ___
 | 💻 | [Work_Order_Mobile_Flow_Log_Waste_Depot_Visit](flows/Work_Order_Mobile_Flow_Log_Waste_Depot_Visit.md) | FieldServiceMobile | This flow allows the operator to log a waste depot visit |
 | 💻 | [Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit](flows/Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit.md) | FieldServiceMobile | This flow allows an operator to execute a depot visit. |
 | 💻 | [Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information](flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.md) [🕒](flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information-history.md) | FieldServiceMobile | This flow allows an operator to enter the necessary information when collecting items from a shop. |
+| 💻 | [Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information](flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information.md) [🕒](flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information-history.md) | FieldServiceMobile |  |
 | 💻 | [Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information](flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.md) [🕒](flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information-history.md) | FieldServiceMobile |  |
 | 💻 | [Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage](flows/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.md) [🕒](flows/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage-history.md) | FieldServiceMobile |  |
 | 💻 | [Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos](flows/Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos.md) [🕒](flows/Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos-history.md) | FieldServiceMobile | This screen flow allows the operator to attach photos taken after the execution of a work order. |
@@ -143,7 +144,7 @@ ___
 | WorkOrder | [Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work](flows/Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work.md) [🕒](flows/Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work-history.md) | RecordAfterSave | Sets the PDF Status for Extra Work and Small Works |
 | WorkOrder | [Work_Order_Scheduled_High_Prio_Work_Order_Overdue](flows/Work_Order_Scheduled_High_Prio_Work_Order_Overdue.md) [🕒](flows/Work_Order_Scheduled_High_Prio_Work_Order_Overdue-history.md) | Scheduled | sends notification to Contract Manager when a high prio work order is overdue |
 | WorkOrder | [Work_Order_Send_Customer_Notification_Crew_Inbound](flows/Work_Order_Send_Customer_Notification_Crew_Inbound.md) [🕒](flows/Work_Order_Send_Customer_Notification_Crew_Inbound-history.md) | RecordAfterSave |  |
-| WorkOrder | [Work_Order_Set_Customer_Notification_Flag](flows/Work_Order_Set_Customer_Notification_Flag.md) [🕒](flows/Work_Order_Set_Customer_Notification_Flag-history.md) | RecordBeforeSave |  |
+| WorkOrder | [Work_Order_Set_Customer_Notification_Flag](flows/Work_Order_Set_Customer_Notification_Flag.md) [🕒](flows/Work_Order_Set_Customer_Notification_Flag-history.md) | RecordAfterSave |  |
 | WorkPlan | [Work_Plan_Extra_Work_Steps](flows/Work_Plan_Extra_Work_Steps.md) [🕒](flows/Work_Plan_Extra_Work_Steps-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_After_Work_Photos_to_WO-history.md) | RecordAfterSave |  |
 | WorkStep | [Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO.md) [🕒](flows/Work_Step_After_Save_Record_Triggered_Relink_Before_Work_Photos_to_WO-history.md) | RecordAfterSave |  |

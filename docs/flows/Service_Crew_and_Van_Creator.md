@@ -11,16 +11,25 @@
 
 flowchart TB
 START(["START<br/><b>Screen Flow</b>"]):::startClass
-click START "#general-information" "1016284696"
+click START "#general-information" "1919138572"
 
 Add_to_Collection[\"🟰 <em></em><br/>Add to Collection"/]:::assignments
 click Add_to_Collection "#add_to_collection" "3225575366"
 
+Set_Leader_Boolean_FALSE[\"🟰 <em></em><br/>Set Leader Boolean FALSE"/]:::assignments
+click Set_Leader_Boolean_FALSE "#set_leader_boolean_false" "2883449932"
+
+Set_Leader_Boolean_TRUE[\"🟰 <em></em><br/>Set Leader Boolean TRUE"/]:::assignments
+click Set_Leader_Boolean_TRUE "#set_leader_boolean_true" "906910096"
+
 Set_Material_Item_Values[\"🟰 <em></em><br/>Set Material Item Values"/]:::assignments
-click Set_Material_Item_Values "#set_material_item_values" "3899277848"
+click Set_Material_Item_Values "#set_material_item_values" "1572834968"
 
 Assignment_Check{"🔀 <em></em><br/>Assignment Check"}:::decisions
-click Assignment_Check "#assignment_check" "908254881"
+click Assignment_Check "#assignment_check" "3117658656"
+
+Check_Has_Leader{"🔀 <em></em><br/>Check Has Leader"}:::decisions
+click Check_Has_Leader "#check_has_leader" "1299673393"
 
 Crew_Leader_Check{"🔀 <em></em><br/>Crew Leader Check"}:::decisions
 click Crew_Leader_Check "#crew_leader_check" "719244804"
@@ -32,37 +41,43 @@ Create_Material_Items[("➕ <em></em><br/>Create Material Items")]:::recordCreat
 click Create_Material_Items "#create_material_items" "1748562060"
 
 Create_Operator_Service_Crew_Member[("➕ <em></em><br/>Create Operator Service Crew Member")]:::recordCreates
-click Create_Operator_Service_Crew_Member "#create_operator_service_crew_member" "1983556553"
+click Create_Operator_Service_Crew_Member "#create_operator_service_crew_member" "2888426388"
 
 Create_Service_Territory_Member_Crew[("➕ <em></em><br/>Create Service Territory Member - Crew")]:::recordCreates
-click Create_Service_Territory_Member_Crew "#create_service_territory_member_crew" "2171394913"
+click Create_Service_Territory_Member_Crew "#create_service_territory_member_crew" "894228951"
 
 Create_Van_Service_Resource[("➕ <em></em><br/>Create Van Service Resource")]:::recordCreates
 click Create_Van_Service_Resource "#create_van_service_resource" "3411393155"
 
-Get_Contract_Manager_Territory[("🔍 <em></em><br/>Get Contract Manager Territory")]:::recordLookups
-click Get_Contract_Manager_Territory "#get_contract_manager_territory" "98312420"
-
 Get_Crew_Leader[("🔍 <em></em><br/>Get Crew Leader")]:::recordLookups
-click Get_Crew_Leader "#get_crew_leader" "88061955"
+click Get_Crew_Leader "#get_crew_leader" "2507821244"
 
 Get_Location_Details[("🔍 <em></em><br/>Get Location Details")]:::recordLookups
-click Get_Location_Details "#get_location_details" "2512987820"
+click Get_Location_Details "#get_location_details" "2689841567"
 
 Get_Materials[("🔍 <em></em><br/>Get Materials")]:::recordLookups
 click Get_Materials "#get_materials" "2016564228"
 
 Get_Other_Operator_Crew_Assignments[("🔍 <em></em><br/>Get Other Operator Crew Assignments")]:::recordLookups
-click Get_Other_Operator_Crew_Assignments "#get_other_operator_crew_assignments" "3800445213"
+click Get_Other_Operator_Crew_Assignments "#get_other_operator_crew_assignments" "2959076420"
 
 Get_Resources_with_Selected_Van[("🔍 <em></em><br/>Get Resources with Selected Van")]:::recordLookups
-click Get_Resources_with_Selected_Van "#get_resources_with_selected_van" "4020251228"
+click Get_Resources_with_Selected_Van "#get_resources_with_selected_van" "1334986424"
+
+Get_Resources_without_Vans[("🔍 <em></em><br/>Get Resources without Vans")]:::recordLookups
+click Get_Resources_without_Vans "#get_resources_without_vans" "3550989278"
 
 Get_Service_Crew[("🔍 <em></em><br/>Get Service Crew")]:::recordLookups
 click Get_Service_Crew "#get_service_crew" "1903918792"
 
+Get_Territories_with_Responsibles[("🔍 <em></em><br/>Get Territories with Responsibles")]:::recordLookups
+click Get_Territories_with_Responsibles "#get_territories_with_responsibles" "2680619349"
+
+Get_Vans_without_Service_Crews[("🔍 <em></em><br/>Get Vans without Service Crews")]:::recordLookups
+click Get_Vans_without_Service_Crews "#get_vans_without_service_crews" "1141818508"
+
 Update_Van_With_Service_Crew[("🛠️ <em></em><br/>Update Van With Service Crew")]:::recordUpdates
-click Update_Van_With_Service_Crew "#update_van_with_service_crew" "3258997831"
+click Update_Van_With_Service_Crew "#update_van_with_service_crew" "4169054419"
 
 Already_Has_Leader(["💻 <em></em><br/>Already Has Leader"]):::screens
 click Already_Has_Leader "#already_has_leader" "1724040800"
@@ -80,15 +95,19 @@ No_Leader_Selected(["💻 <em></em><br/>No Leader Selected"]):::screens
 click No_Leader_Selected "#no_leader_selected" "4102343959"
 
 Set_Up_Crew_and_Van_Initial(["💻 <em></em><br/>Set Up Crew and Van Initial"]):::screens
-click Set_Up_Crew_and_Van_Initial "#set_up_crew_and_van_initial" "632498749"
+click Set_Up_Crew_and_Van_Initial "#set_up_crew_and_van_initial" "2686222543"
 
 Set_Up_Crew_and_Van_Van(["💻 <em></em><br/>Set Up Crew and Van - Van"]):::screens
 click Set_Up_Crew_and_Van_Van "#set_up_crew_and_van_van" "4092614594"
 
 Add_to_Collection --> Loop_Selected_Materials
+Set_Leader_Boolean_FALSE --> Set_Up_Crew_and_Van_Initial
+Set_Leader_Boolean_TRUE --> Set_Up_Crew_and_Van_Initial
 Set_Material_Item_Values --> Add_to_Collection
 Assignment_Check --> |"Already Assigned"| Assignment_Check_Screen
-Assignment_Check --> |"Default Outcome"| Get_Contract_Manager_Territory
+Assignment_Check --> |"Default Outcome"| Get_Materials
+Check_Has_Leader --> |"Has Leader"| Set_Leader_Boolean_FALSE
+Check_Has_Leader --> |"Default Outcome"| Set_Leader_Boolean_TRUE
 Crew_Leader_Check --> |"Already Has Crew Leader And Selected Leader was True"| Already_Has_Leader
 Crew_Leader_Check --> |"Has No Crew Leader And Selected Leader was False"| No_Leader_Selected
 Crew_Leader_Check --> |"Default Outcome"| Assignment_Check
@@ -102,14 +121,16 @@ Create_Service_Territory_Member_Crew --> Finished
 Create_Service_Territory_Member_Crew -. Fault .->Fault
 Create_Van_Service_Resource --> Create_Service_Territory_Member_Crew
 Create_Van_Service_Resource -. Fault .->Fault
-Get_Contract_Manager_Territory --> Get_Materials
-Get_Crew_Leader --> Crew_Leader_Check
+Get_Crew_Leader --> Get_Territories_with_Responsibles
 Get_Location_Details --> Loop_Selected_Materials
 Get_Location_Details -. Fault .->Fault
 Get_Materials --> Set_Up_Crew_and_Van_Van
-Get_Other_Operator_Crew_Assignments --> Get_Crew_Leader
+Get_Other_Operator_Crew_Assignments --> Crew_Leader_Check
 Get_Resources_with_Selected_Van --> Get_Service_Crew
+Get_Resources_without_Vans --> Get_Vans_without_Service_Crews
 Get_Service_Crew --> Get_Other_Operator_Crew_Assignments
+Get_Territories_with_Responsibles --> Get_Resources_without_Vans
+Get_Vans_without_Service_Crews --> Check_Has_Leader
 Update_Van_With_Service_Crew --> Create_Van_Service_Resource
 Update_Van_With_Service_Crew -. Fault .->Fault
 Already_Has_Leader --> Assignment_Check
@@ -119,7 +140,7 @@ Finished --> END_Finished
 No_Leader_Selected --> Assignment_Check
 Set_Up_Crew_and_Van_Initial --> Get_Resources_with_Selected_Van
 Set_Up_Crew_and_Van_Van --> Create_Operator_Service_Crew_Member
-START -->  Set_Up_Crew_and_Van_Initial
+START -->  Get_Crew_Leader
 END_Assignment_Check_Screen(( END )):::endClass
 END_Fault(( END )):::endClass
 END_Finished(( END )):::endClass
@@ -151,20 +172,21 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:---|:---|
 |Process Type| Flow|
 |Label|Service Crew and Van Creator|
-|Status|Active|
+|Status|⚠️ Draft|
 |Environments|Default|
 |Interview Label|Service Crew and Van Creator {!$Flow.CurrentDateTime}|
 | Builder Type (PM)|LightningFlowBuilder|
 | Canvas Mode (PM)|AUTO_LAYOUT_CANVAS|
 | Origin Builder Type (PM)|LightningFlowBuilder|
-|Connector|[Set_Up_Crew_and_Van_Initial](#set_up_crew_and_van_initial)|
-|Next Node|[Set_Up_Crew_and_Van_Initial](#set_up_crew_and_van_initial)|
+|Connector|[Get_Crew_Leader](#get_crew_leader)|
+|Next Node|[Get_Crew_Leader](#get_crew_leader)|
 
 
 ## Variables
 
 |Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
 |:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|hasLeader|Boolean|⬜|⬜|⬜|<!-- -->|<!-- -->|
 |materialItem|SObject|⬜|⬜|⬜|ProductItem|<!-- -->|
 |materialItems|SObject|✅|⬜|⬜|ProductItem|<!-- -->|
 |productsData|SObject|✅|⬜|⬜|Product2|<!-- -->|
@@ -191,6 +213,42 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 
+### Set_Leader_Boolean_FALSE
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Assignment|
+|Label|Set Leader Boolean FALSE|
+|Connector|[Set_Up_Crew_and_Van_Initial](#set_up_crew_and_van_initial)|
+
+
+#### Assignments
+
+|Assign To Reference|Operator|Value|
+|:-- |:--:|:--: |
+|hasLeader| Assign|⬜|
+
+
+
+
+### Set_Leader_Boolean_TRUE
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Assignment|
+|Label|Set Leader Boolean TRUE|
+|Connector|[Set_Up_Crew_and_Van_Initial](#set_up_crew_and_van_initial)|
+
+
+#### Assignments
+
+|Assign To Reference|Operator|Value|
+|:-- |:--:|:--: |
+|hasLeader| Assign|✅|
+
+
+
+
 ### Set_Material_Item_Values
 
 |<!-- -->|<!-- -->|
@@ -205,7 +263,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Assign To Reference|Operator|Value|
 |:-- |:--:|:--: |
 |materialItem.Product2Id| Assign|Loop_Selected_Materials.Id|
-|materialItem.LocationId| Assign|locationId1.recordId|
+|materialItem.LocationId| Assign|InventoryVan.selectedChoiceValues|
 |materialItem.QuantityOnHand| Assign|1000|
 
 
@@ -217,7 +275,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:---|:---|
 |Type|Decision|
 |Label|Assignment Check|
-|Default Connector|[Get_Contract_Manager_Territory](#get_contract_manager_territory)|
+|Default Connector|[Get_Materials](#get_materials)|
 |Default Connector Label|Default Outcome|
 
 
@@ -235,6 +293,33 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:-- |:-- |:--:|:--: |
 |1|[Get_Resources_with_Selected_Van](#get_resources_with_selected_van)| Is Null|⬜|
 |2|[Get_Other_Operator_Crew_Assignments](#get_other_operator_crew_assignments)| Is Null|⬜|
+
+
+
+
+### Check_Has_Leader
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Decision|
+|Label|Check Has Leader|
+|Default Connector|[Set_Leader_Boolean_TRUE](#set_leader_boolean_true)|
+|Default Connector Label|Default Outcome|
+
+
+#### Rule Has_Leader (Has Leader)
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Connector|[Set_Leader_Boolean_FALSE](#set_leader_boolean_false)|
+|Condition Logic|and|
+
+
+
+
+|Condition Id|Left Value Reference|Operator|Right Value|
+|:-- |:-- |:--:|:--: |
+|1|[Get_Crew_Leader](#get_crew_leader)| Is Null|⬜|
 
 
 
@@ -326,7 +411,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:-- |:--: |
 |IsLeader|Crew_Leader|
 |ServiceCrewId|serviceCrewId.recordId|
-|ServiceResourceId|serviceResourceId.recordId|
+|ServiceResourceId|operatorId.selectedChoiceValues|
 |StartDate|$Flow.CurrentDateTime|
 
 
@@ -350,7 +435,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:-- |:--: |
 |EffectiveStartDate|$Flow.CurrentDateTime|
 |ServiceResourceId|[Create_Van_Service_Resource](#create_van_service_resource)|
-|ServiceTerritoryId|Get_Contract_Manager_Territory.Id|
+|ServiceTerritoryId|Contract_Manager.selectedChoiceValues|
 
 
 
@@ -379,28 +464,6 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 
-### Get_Contract_Manager_Territory
-
-|<!-- -->|<!-- -->|
-|:---|:---|
-|Type|Record Lookup|
-|Object|ServiceTerritory|
-|Label|Get Contract Manager Territory|
-|Assign Null Values If No Records Found|⬜|
-|Get First Record Only|✅|
-|Store Output Automatically|✅|
-|Connector|[Get_Materials](#get_materials)|
-
-
-#### Filters (logic: **and**)
-
-|Filter Id|Field|Operator|Value|
-|:-- |:-- |:--:|:--: |
-|1|Main_Responsible__c| Equal To|contractManagerId.recordId|
-
-
-
-
 ### Get_Crew_Leader
 
 |<!-- -->|<!-- -->|
@@ -411,14 +474,14 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Assign Null Values If No Records Found|⬜|
 |Get First Record Only|✅|
 |Store Output Automatically|✅|
-|Connector|[Crew_Leader_Check](#crew_leader_check)|
+|Connector|[Get_Territories_with_Responsibles](#get_territories_with_responsibles)|
 
 
 #### Filters (logic: **and**)
 
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
-|1|ServiceCrewId| Equal To|serviceCrewId.recordId|
+|1|ServiceCrewId| Equal To|recordId|
 |2|IsLeader| Equal To|✅|
 
 
@@ -442,7 +505,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
-|1|Id| Equal To|locationId1.recordId|
+|1|Id| Equal To|InventoryVan.selectedChoiceValues|
 
 
 
@@ -481,14 +544,14 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Assign Null Values If No Records Found|⬜|
 |Get First Record Only|✅|
 |Store Output Automatically|✅|
-|Connector|[Get_Crew_Leader](#get_crew_leader)|
+|Connector|[Crew_Leader_Check](#crew_leader_check)|
 
 
 #### Filters (logic: **1 AND (2 OR 3)**)
 
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
-|1|ServiceResourceId| Equal To|serviceResourceId.recordId|
+|1|ServiceResourceId| Equal To|operatorId.selectedChoiceValues|
 |2|StartDate| Less Than Or Equal To|$Flow.CurrentDateTime|
 |3|EndDate| Is Null|<!-- -->|
 
@@ -512,7 +575,30 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
-|1|LocationId| Equal To|locationId1.recordId|
+|1|LocationId| Equal To|InventoryVan.selectedChoiceValues|
+
+
+
+
+### Get_Resources_without_Vans
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Record Lookup|
+|Object|ServiceResource|
+|Label|Get Resources without Vans|
+|Assign Null Values If No Records Found|⬜|
+|Get First Record Only|⬜|
+|Store Output Automatically|✅|
+|Connector|[Get_Vans_without_Service_Crews](#get_vans_without_service_crews)|
+
+
+#### Filters (logic: **and**)
+
+|Filter Id|Field|Operator|Value|
+|:-- |:-- |:--:|:--: |
+|1|ResourceType| Equal To|T|
+|2|LocationId| Is Null|<!-- -->|
 
 
 
@@ -539,6 +625,51 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 
+### Get_Territories_with_Responsibles
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Record Lookup|
+|Object|ServiceTerritory|
+|Label|Get Territories with Responsibles|
+|Assign Null Values If No Records Found|⬜|
+|Get First Record Only|⬜|
+|Store Output Automatically|✅|
+|Connector|[Get_Resources_without_Vans](#get_resources_without_vans)|
+
+
+#### Filters (logic: **and**)
+
+|Filter Id|Field|Operator|Value|
+|:-- |:-- |:--:|:--: |
+|1|ParentTerritoryId| Is Null|<!-- -->|
+|2|Main_Responsible__c| Is Null|<!-- -->|
+
+
+
+
+### Get_Vans_without_Service_Crews
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Record Lookup|
+|Object|Location|
+|Label|Get Vans without Service Crews|
+|Assign Null Values If No Records Found|⬜|
+|Get First Record Only|⬜|
+|Store Output Automatically|✅|
+|Connector|[Check_Has_Leader](#check_has_leader)|
+
+
+#### Filters (logic: **and**)
+
+|Filter Id|Field|Operator|Value|
+|:-- |:-- |:--:|:--: |
+|1|Van_Crew__c| Is Null|<!-- -->|
+
+
+
+
 ### Update_Van_With_Service_Crew
 
 |<!-- -->|<!-- -->|
@@ -554,7 +685,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
-|1|Id| Equal To|locationId1.recordId|
+|1|Id| Equal To|InventoryVan.selectedChoiceValues|
 
 
 
@@ -721,39 +852,34 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 
-#### serviceResourceId
+#### operatorId
 
 |<!-- -->|<!-- -->|
 |:---|:---|
-|Extension Name|flowruntime:lookup|
-|Field Type| Component Instance|
+|Choice References|serviceResources|
+|Extension Name|flowruntime:choiceLookup|
+|Field Text|Operator|
+|Field Type| Component Choice|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
 |Is Required|✅|
 |Store Output Automatically|✅|
 |Parent Field|[Set_Up_Crew_and_Van_Initial_Section1_Column1](#set_up_crew_and_van_initial_section1_column1)|
-|Field Api Name (input)|ServiceResourceId|
-|Label (input)|Operator|
-|Object Api Name (input)|ServiceCrewMember|
-|Required (input)|✅|
 
 
 
 
-#### contractManagerId
+#### Contract_Manager
 
 |<!-- -->|<!-- -->|
 |:---|:---|
-|Extension Name|flowruntime:lookup|
-|Field Type| Component Instance|
+|Choice References|contractManagers|
+|Extension Name|flowruntime:choiceLookup|
+|Field Text|Contract Manager|
+|Field Type| Component Choice|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
 |Is Required|✅|
 |Store Output Automatically|✅|
 |Parent Field|[Set_Up_Crew_and_Van_Initial_Section1_Column1](#set_up_crew_and_van_initial_section1_column1)|
-|Field Api Name (input)|Contract_Manager__c|
-|Label (input)|Contract Manager|
-|Object Api Name (input)|Location|
-|Record Id (input)|$User.Id|
-|Required (input)|✅|
 
 
 
@@ -789,20 +915,18 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 
-#### locationId1
+#### InventoryVan
 
 |<!-- -->|<!-- -->|
 |:---|:---|
-|Extension Name|flowruntime:lookup|
-|Field Type| Component Instance|
+|Choice References|inventoryLocations|
+|Extension Name|flowruntime:choiceLookup|
+|Field Text|Van|
+|Field Type| Component Choice|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
 |Is Required|✅|
 |Store Output Automatically|✅|
 |Parent Field|[Set_Up_Crew_and_Van_Initial_Section1_Column2](#set_up_crew_and_van_initial_section1_column2)|
-|Field Api Name (input)|LocationId|
-|Label (input)|Van|
-|Object Api Name (input)|ServiceResource|
-|Required (input)|✅|
 
 
 
@@ -835,6 +959,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |<!-- -->|<!-- -->|
 |:---|:---|
 |Data Type|Boolean|
+|Default Value|hasLeader|
 |Field Text|Crew Leader|
 |Field Type| Input Field|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|

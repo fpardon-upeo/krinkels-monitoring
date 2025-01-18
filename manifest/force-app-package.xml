@@ -1047,6 +1047,7 @@
         <members>WorkOrder.Rework_reasons__c</members>
         <members>WorkOrder.Scheduled_Date__c</members>
         <members>WorkOrder.Shop_Name__c</members>
+        <members>WorkOrder.Shop_Visit_Amount__c</members>
         <members>WorkOrder.Shop_Visit_Date__c</members>
         <members>WorkOrder.Shop_Visit_Done__c</members>
         <members>WorkOrder.Shop_Visit_Duration__c</members>
@@ -1059,6 +1060,8 @@
         <members>WorkOrder.Type__c</members>
         <members>WorkOrder.WOL_Already_Added__c</members>
         <members>WorkOrder.WO_with_Goodwill_Tasks__c</members>
+        <members>WorkOrder.Waste_Quantity__c</members>
+        <members>WorkOrder.Waste_Unit_of_Measure__c</members>
         <members>WorkOrder.Waste_Visit_Done__c</members>
         <members>WorkOrder.Waste_Visit_Planned__c</members>
         <members>WorkOrder.Waste_to_Drop_Off__c</members>
@@ -2029,6 +2032,7 @@
         <members>Work_Order_Mobile_Flow_Log_Waste_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos</members>
@@ -2140,6 +2144,7 @@
         <members>Work_Order_Mobile_Flow_Log_Waste_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</members>
+        <members>Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</members>
         <members>Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos</members>

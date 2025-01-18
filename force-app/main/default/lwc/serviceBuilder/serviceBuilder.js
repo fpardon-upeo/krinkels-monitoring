@@ -10,6 +10,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getContractLines from "@salesforce/apex/ServiceBuilderController.getContractLines";
 import saveContractLine from "@salesforce/apex/ServiceBuilderController.saveContractLine";
 import deleteContractLine from "@salesforce/apex/ServiceBuilderController.deleteContractLine";
+import getContractPackageId from "@salesforce/apex/ServiceBuilderController.getContractPackageId";
 import insertOrRemoveContractLineFinancialAccount from "@salesforce/apex/ServiceBuilderController.insertOrRemoveContractLineFinancialAccount";
 import updateServiceContractLocationType from "@salesforce/apex/ServiceBuilderController.updateServiceContractLocationType";
 import getProductRecordTypeIds from "@salesforce/apex/ServiceBuilderController.getProductRecordTypeIds";
@@ -110,6 +111,8 @@ export default class ServiceBuilder extends LightningElement {
   isModalOpen = false;
   maintenancePlan = false;
   isLoading = true;
+  contractStartDate;
+  mainPackageId;
 
   // Accordion Sections
   activeSections = ["generalInfo", "locationInfo", "priceInfo"];
@@ -195,28 +198,49 @@ export default class ServiceBuilder extends LightningElement {
    * @description Lifecycle hook called when the component is inserted into the DOM
    */
   connectedCallback() {
-    getProductRecordTypeIds().then((result) => {
-      const recordTypeIds = result;
-      console.log("recordTypeIds", recordTypeIds);
-      this.filterService = {
-        criteria: [
-          {
-            fieldPath: "RecordTypeId",
-            operator: "eq",
-            value: recordTypeIds.Service
-          },
-          {
-            fieldPath: "RecordTypeId",
-            operator: "eq",
-            value: recordTypeIds.ServicePackage
-          }
-        ],
-        filterLogic: "1 OR 2"
-      };
+    getContractPackageId({ recordId: this.recordId }).then((resultPackage) => {
+      console.log("mainPackageId", resultPackage);
+      this.mainPackageId = resultPackage;
+      getProductRecordTypeIds().then((result) => {
+        const recordTypeIds = result;
+        console.log("recordTypeIds", recordTypeIds);
+        console.log("recordTypeIds.Service", recordTypeIds.Service);
+        console.log("resultPackage", resultPackage);
+        this.filterService = {
+          criteria: [
+            {
+              fieldPath: "Service_Package_Product__c",
+              operator: "eq",
+              value: '01tVc000006MpzhIAC'
+            },
+            {
+              fieldPath: "RecordTypeId",
+              operator: "eq",
+              value: recordTypeIds.Service
+            }
+          ]
+        };
+      });
+      this.loadContractLines();
+      this.handleSubscribe();
+    }).catch((error) => {
+      getProductRecordTypeIds().then((result) => {
+        const recordTypeIds = result;
+        console.log("recordTypeIds", recordTypeIds);
+        console.log("recordTypeIds.Service", recordTypeIds.Service);
+        this.filterService = {
+          criteria: [
+            {
+              fieldPath: "RecordTypeId",
+              operator: "eq",
+              value: recordTypeIds.Service
+            }
+          ]
+        };
+      });
+      this.loadContractLines();
+      this.handleSubscribe();
     });
-    this.loadContractLines();
-
-    this.handleSubscribe();
   }
 
   handleSubscribe() {
@@ -284,6 +308,10 @@ export default class ServiceBuilder extends LightningElement {
             this.locationType =
               serviceContractResult.Location_Type__c || "Address";
             this.isLoading = false;
+            let startDate = new Date(serviceContractResult.StartDate);
+            //Convert to ISO8601 formatted date
+            this.contractStartDate = startDate.toISOString().split("T")[0];
+            console.log("contractStartDate", this.contractStartDate);
 
             this.maintenancePlan =
               serviceContractResult.MaintenancePlans?.length > 0;
@@ -704,7 +732,7 @@ export default class ServiceBuilder extends LightningElement {
 
     const newRow = {
       Id: null,
-      Product2Id: this.serviceContract.Product__c,
+      //Product2Id: this.serviceContract.Product__c,
       Frequency__c: "",
       Planning_Type__c: "",
       LMRA__c: defaultLMRA,
@@ -1016,6 +1044,10 @@ export default class ServiceBuilder extends LightningElement {
         }
       });
     }
+  }
+
+  get contractStartDateForMin(){
+    return this.contractStartDate;
   }
 
   /**

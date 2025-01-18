@@ -10,5 +10,10 @@ trigger WorkOrderTrigger on WorkOrder (after update, after insert) {
         System.debug('WorkOrderTrigger: after insert');
         handler.afterInsert(Trigger.new);
     }
-    
+
+    if(Trigger.isAfter && Trigger.isUpdate){
+        System.debug('WorkOrderTrigger: after update');
+        handler.afterUpdate(Trigger.new, Trigger.oldMap);
+    }
+
 }

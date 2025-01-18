@@ -234,12 +234,33 @@ public with sharing class ServiceAppointmentTriggerHandler {
     public void afterUpdate(List<ServiceAppointment> newServiceAppointments, Map<Id, ServiceAppointment> oldServiceAppointmentsMap) {
         Map<String, String> parentIdToStatus = new Map<String, String>();
         List<String> workOrderIds = new List<String>();
+        List<String> unscheduledWorkOrderIds = new List<String>();
+        List<String> unscheduledAppointmentIds = new List<String>();
         for(ServiceAppointment sa : newServiceAppointments){
             if(sa.ParentRecordId.getSobjectType() == WorkOrder.SObjectType && sa.Status != oldServiceAppointmentsMap.get(sa.Id).Status){
                 parentIdToStatus.put(sa.ParentRecordId, sa.Status);
                 workOrderIds.add(sa.ParentRecordId);
             }
+            if(((sa.Status == 'Scheduled') || sa.Status == 'Dispatched' || sa.Status == 'Unscheduled' )
+                    && (oldServiceAppointmentsMap.get(sa.Id).Status == 'Dispatched'
+                    || oldServiceAppointmentsMap.get(sa.Id).Status == 'Scheduled'
+                    || oldServiceAppointmentsMap.get(sa.Id).Status == 'In Progress'
+                    || oldServiceAppointmentsMap.get(sa.Id).Status == 'Travelling')
+            ){
+                System.debug('Service Appointment Id: ' + sa.Id + ' is in Scheduled or Dispatched status, adding to list');
+                unscheduledWorkOrderIds.add(sa.ParentRecordId);
+                unscheduledAppointmentIds.add(sa.Id);
+            }
         }
+
+        List<Service_Appointment_Status__c> serviceAppointmentStatuses = [
+                SELECT Id, Name
+                FROM Service_Appointment_Status__c
+                WHERE Service_Appointment__c IN :unscheduledAppointmentIds
+        ];
+
+
+        delete serviceAppointmentStatuses;
 
         List<WorkOrder> workOrders = new List<WorkOrder>();
         for(String workOrderId : parentIdToStatus.keySet()){

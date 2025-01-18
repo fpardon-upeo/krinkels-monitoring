@@ -11,13 +11,13 @@
 
 flowchart TB
 START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Record After Save</b>"]):::startClass
-click START "#general-information" "2629820792"
+click START "#general-information" "930083117"
 
 Add_to_Collection[\"🟰 <em></em><br/>Add to Collection"/]:::assignments
 click Add_to_Collection "#add_to_collection" "2093847205"
 
 Create_Resource_Absence_Break[\"🟰 <em></em><br/>Create Resource Absence Break"/]:::assignments
-click Create_Resource_Absence_Break "#create_resource_absence_break" "3023409388"
+click Create_Resource_Absence_Break "#create_resource_absence_break" "1654522149"
 
 Check_Resource_Type{"🔀 <em></em><br/>Check Resource Type"}:::decisions
 click Check_Resource_Type "#check_resource_type" "52591280"
@@ -29,7 +29,10 @@ Create_Absence_Records[("➕ <em></em><br/>Create Absence Records")]:::recordCre
 click Create_Absence_Records "#create_absence_records" "4286375857"
 
 Get_All_Active_Crew_Members[("🔍 <em></em><br/>Get All Active Crew Members")]:::recordLookups
-click Get_All_Active_Crew_Members "#get_all_active_crew_members" "2659357698"
+click Get_All_Active_Crew_Members "#get_all_active_crew_members" "3121819883"
+
+Get_Record_Type[("🔍 <em></em><br/>Get Record Type")]:::recordLookups
+click Get_Record_Type "#get_record_type" "4191922071"
 
 Add_to_Collection --> Loop_Crew_Members
 Create_Resource_Absence_Break --> Add_to_Collection
@@ -38,7 +41,8 @@ Check_Resource_Type --> |"Default Outcome"| END_Check_Resource_Type
 Loop_Crew_Members --> |"For Each"|Create_Resource_Absence_Break
 Loop_Crew_Members ---> |"After Last"|Create_Absence_Records
 Create_Absence_Records --> END_Create_Absence_Records
-Get_All_Active_Crew_Members --> Loop_Crew_Members
+Get_All_Active_Crew_Members --> Get_Record_Type
+Get_Record_Type --> Loop_Crew_Members
 START -->  Check_Resource_Type
 END_Check_Resource_Type(( END )):::endClass
 END_Create_Absence_Records(( END )):::endClass
@@ -62,6 +66,8 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 ```
 
+<!-- Flow description -->
+
 ## General Information
 
 |<!-- -->|<!-- -->|
@@ -71,7 +77,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Trigger Type| Record After Save|
 |Record Trigger Type| Create|
 |Label|[ResourceAbsence] - After Save  - Copy Breaks from Crew to Agents|
-|Status|Active|
+|Status|⚠️ Draft|
 |Environments|Default|
 |Interview Label|[ResourceAbsence] - After Save  - Copy Breaks from Crew to Agents {!$Flow.CurrentDateTime}|
 | Builder Type (PM)|LightningFlowBuilder|
@@ -127,6 +133,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |resourceAbsence.Type_of_Absence__c| Assign|$Record.Type_of_Absence__c|
 |resourceAbsence.Start| Assign|$Record.Start|
 |resourceAbsence.End| Assign|$Record.End|
+|resourceAbsence.RecordTypeId| Assign|Get_Record_Type.Id|
 
 
 
@@ -188,7 +195,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Assign Null Values If No Records Found|⬜|
 |Get First Record Only|⬜|
 |Store Output Automatically|✅|
-|Connector|[Loop_Crew_Members](#loop_crew_members)|
+|Connector|[Get_Record_Type](#get_record_type)|
 
 
 #### Filters (logic: **and**)
@@ -197,6 +204,29 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:-- |:-- |:--:|:--: |
 |1|ServiceCrewId| Equal To|$Record.Resource.ServiceCrewId|
 |2|Active_Member__c| Equal To|✅|
+
+
+
+
+### Get_Record_Type
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Type|Record Lookup|
+|Object|RecordType|
+|Label|Get Record Type|
+|Assign Null Values If No Records Found|⬜|
+|Get First Record Only|✅|
+|Store Output Automatically|✅|
+|Connector|[Loop_Crew_Members](#loop_crew_members)|
+
+
+#### Filters (logic: **and**)
+
+|Filter Id|Field|Operator|Value|
+|:-- |:-- |:--:|:--: |
+|1|SobjectType| Equal To|ResourceAbsence|
+|2|Name| Equal To|Break|
 
 
 

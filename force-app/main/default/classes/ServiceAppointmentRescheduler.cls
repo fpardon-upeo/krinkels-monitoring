@@ -69,13 +69,16 @@ public without sharing class ServiceAppointmentRescheduler {
     public static List<ServiceAppointment> getRelatedFutureAppointments(String serviceAppointmentId){
         ServiceAppointment sa = [SELECT Id, SchedStartTime, SchedEndTime, DueDate, AppointmentNumber,
                 TYPEOF ParentRecord
-                        WHEN WorkOrder THEN Asset.Recurrence_Pattern__c, Asset.Id
+                        WHEN WorkOrder THEN Asset.Recurrence_Pattern__c, Asset.Id, WorkType.Name
                 END
         FROM ServiceAppointment WHERE Id = :serviceAppointmentId LIMIT 1];
 
 
         if(sa.ParentRecord instanceof WorkOrder){
+
+
             WorkOrder wo = (WorkOrder)sa.ParentRecord;
+
             String recurrencePattern = wo.Asset.Recurrence_Pattern__c;
             System.debug('Original Pattern: ' + recurrencePattern);
             System.debug('Asset Id : ' + wo.Asset.Id);
@@ -87,6 +90,7 @@ public without sharing class ServiceAppointmentRescheduler {
                     WHERE ParentRecordId IN (SELECT Id FROM WorkOrder WHERE AssetId = :wo.Asset.Id)
                     AND DueDate >= :sa.SchedStartTime
                     AND Id != :sa.Id
+                    AND WorkType.Name = 'Production Work'
                     ORDER BY DueDate];
 
             System.debug('Future Appointments: ' + futureAppointments.size());

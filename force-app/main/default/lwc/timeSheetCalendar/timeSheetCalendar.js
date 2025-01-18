@@ -381,7 +381,7 @@ export default class TimeSheetCalendar extends LightningElement {
 
           if (timeSheet.timeSheet?.Mileage_Entries__r) {
             timeSheet.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
-              if (mileageEntry.Work_Order__c) {
+              if (mileageEntry.Work_Order__c && mileageEntry.Type__c === "Starting") {
                 workOrderIds.push(mileageEntry.Work_Order__c);
               }
             });
@@ -452,12 +452,23 @@ export default class TimeSheetCalendar extends LightningElement {
           workOrderIds.includes(entry.WorkOrderId)
         );
       })
-      .map((entry) => ({
+      .map((entry) => {
+
+        const entryData = {
+          type: entry.Type,
+          subject: entry.Subject,
+          startTime: JSON.stringify(entry.StartTime),
+          endTime: JSON.stringify(entry.EndTime)
+        };
+        console.log('TimeSheet Entry Data:', JSON.stringify(entryData));
+
+        return {
+
         id: entry.Id,
         start: entry.StartTime,
-        end: entry.EndTime,
-        title: entry.Subject
-          ? `${entry.Type} - ${entry.Subject}`
+        end: entry.EndTime !== null ? entry.EndTime : entry.StartTime,
+        title: entry.WorkOrder.WorkType.Name
+          ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
           : `${entry.Type}`,
         backgroundColor:
           entry.Type === "Normal Hours"
@@ -480,21 +491,33 @@ export default class TimeSheetCalendar extends LightningElement {
         extendedProps: {
           recordType: "TimeSheetEntry"
         }
-      }));
+       };
+      });
 
-    const absenceEvents = this.resourceAbsences.map((absence) => ({
-      id: absence.Id,
-      start: absence.Start,
-      end: absence.End,
-      title: absence.Description ? `Break - ${absence.Description}` : "Break",
-      backgroundColor: "#c23934",
-      borderColor: "#c23934",
-      // Only allow editing if the TimeSheet is not submitted or approved
-      editable: !this.isTimeSheetSubmittedOrApproved,
-      extendedProps: {
-        recordType: "ResourceAbsence"
-      }
-    }));
+    const absenceEvents = this.resourceAbsences.map((absence) => {
+
+      const absenceData = {
+        type: absence.Type,
+        subject: absence.Subject,
+        startTime: JSON.stringify(absence.Start),
+        endTime: JSON.stringify(absence.End)
+      };
+      console.log('TimeSheet Entry Data:', JSON.stringify(absenceData));
+
+      return {
+        id: absence.Id,
+        start: absence.Start,
+        end: absence.End,
+        title: absence.Description ? `Break - ${absence.Description}` : "Break",
+        backgroundColor: "#c23934",
+        borderColor: "#c23934",
+        // Only allow editing if the TimeSheet is not submitted or approved
+        editable: !this.isTimeSheetSubmittedOrApproved,
+        extendedProps: {
+          recordType: "ResourceAbsence"
+        }
+      };
+    });
 
     const allEvents = [...timeSheetEvents, ...absenceEvents];
 
@@ -510,7 +533,29 @@ export default class TimeSheetCalendar extends LightningElement {
         ? this.msToHoursMinutes(this.user.End_Time__c)
         : "24:00:00",
       height: "auto",
-      headerToolbar: false,
+      slotDuration: "00:15:00",
+      slotEventOverlap: false,   // prevent events from overlapping visually
+      eventMinHeight: null,      // override the minimum height
+      slotLabelFormat: {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+        omitZeroMinute: false
+      },
+      contentHeight: 'auto',
+      headerToolbar: {
+        right: "timeGridDay,listDay",
+      },
+      views: {
+        timeGridDay: {
+          type: 'timeGridDay',
+          buttonText: 'Day'
+        },
+        listDay: {
+          type: 'listDay',
+          buttonText: 'List'
+        }
+      },
       selectable: true,
       // Increase delays and make more forgiving
       eventLongPressDelay: 600,
@@ -526,11 +571,6 @@ export default class TimeSheetCalendar extends LightningElement {
       },
       eventResizeGrow: true,
       initialDate: this.startDate,
-      slotLabelFormat: {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false
-      },
       eventTimeFormat: {
         hour: "2-digit",
         minute: "2-digit",
@@ -544,6 +584,15 @@ export default class TimeSheetCalendar extends LightningElement {
       // Event styling
       eventDidMount: (info) => {
         const eventEl = info.el.querySelector(".fc-event-main");
+
+        console.log('Event mounted:', JSON.stringify({
+          title: info.event.title,
+          start: info.event.start,
+          end: info.event.end,
+          duration: info.event.end - info.event.start,
+          heightPx: info.el.offsetHeight
+        }));
+
         if (eventEl) {
           eventEl.style.color = "white";
           eventEl.style.fontSize = "15px";
@@ -1000,9 +1049,9 @@ export default class TimeSheetCalendar extends LightningElement {
             id: entry.Id,
             start: entry.StartTime,
             end: entry.EndTime,
-            title: entry.Subject
-              ? `${entry.Type} - ${entry.Subject}`
-              : `${entry.Type}`,
+            title: entry.WorkOrder.WorkType.Name
+                ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
+                : `${entry.Type}`,
             backgroundColor:
               entry.Type === "Normal Hours"
                 ? "#6DA241"
@@ -1232,9 +1281,9 @@ export default class TimeSheetCalendar extends LightningElement {
             id: entry.Id,
             start: entry.StartTime,
             end: entry.EndTime,
-            title: entry.Subject
-              ? `${entry.Type} - ${entry.Subject}`
-              : `${entry.Type}`,
+            title: entry.WorkOrder.WorkType.Name
+                ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
+                : `${entry.Type}`,
             backgroundColor:
               entry.Type === "Normal Hours"
                 ? "#6DA241"
@@ -1723,9 +1772,9 @@ export default class TimeSheetCalendar extends LightningElement {
             id: entry.Id,
             start: entry.StartTime,
             end: entry.EndTime,
-            title: entry.Subject
-              ? `${entry.Type} - ${entry.Subject}`
-              : `${entry.Type}`,
+            title: entry.WorkOrder.WorkType.Name
+                ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
+                : `${entry.Type}`,
             backgroundColor:
               entry.Type === "Normal Hours"
                 ? "#6DA241"

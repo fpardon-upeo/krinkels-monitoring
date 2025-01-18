@@ -10,8 +10,8 @@
 %% - At last resort, you can copy-paste this MermaidJS code in https://mermaid.live/ to see the Flow Diagram
 
 flowchart TB
-START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Record Before Save</b>"]):::startClass
-click START "#general-information" "3227362678"
+START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Record After Save</b>"]):::startClass
+click START "#general-information" "2641860004"
 
 Set_Notification_Flag[("🛠️ <em></em><br/>Set Notification Flag")]:::recordUpdates
 click Set_Notification_Flag "#set_notification_flag" "76100509"
@@ -39,16 +39,19 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 ```
 
+<!-- Flow description -->
+
 ## General Information
 
 |<!-- -->|<!-- -->|
 |:---|:---|
 |Object|WorkOrder|
 |Process Type| Auto Launched Flow|
-|Trigger Type| Record Before Save|
+|Trigger Type| Record After Save|
 |Record Trigger Type| Update|
 |Label|[Work Order] - Set Customer Notification Flag|
-|Status|Active|
+|Status|⚠️ Draft|
+|Does Require Record Changed To Meet Criteria|✅|
 |Environments|Default|
 |Interview Label|[Work Order] - Set Customer Notification Flag {!$Flow.CurrentDateTime}|
 | Builder Type (PM)|LightningFlowBuilder|
@@ -62,8 +65,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
-|1|Status| Is Changed|✅|
-|2|Status| Equal To|Travelling|
+|1|Status| Equal To|Travelling|
 
 
 ## Flow Nodes Details

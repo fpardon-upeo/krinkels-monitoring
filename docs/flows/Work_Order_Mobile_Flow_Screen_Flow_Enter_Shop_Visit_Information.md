@@ -17,13 +17,13 @@ Get_Work_Order_Information[("🔍 <em></em><br/>Get Work Order Information")]:::
 click Get_Work_Order_Information "#get_work_order_information" "2677918915"
 
 Update_Work_Order_Information[("🛠️ <em></em><br/>Update Work Order Information")]:::recordUpdates
-click Update_Work_Order_Information "#update_work_order_information" "4278615457"
+click Update_Work_Order_Information "#update_work_order_information" "4203336991"
 
 Collected_Items_Information(["💻 <em></em><br/>Collected Items Information"]):::screens
-click Collected_Items_Information "#collected_items_information" "2978779251"
+click Collected_Items_Information "#collected_items_information" "4281700232"
 
 Shop_Visit_Information(["💻 <em></em><br/>Shop Visit Information"]):::screens
-click Shop_Visit_Information "#shop_visit_information" "3415546656"
+click Shop_Visit_Information "#shop_visit_information" "1635880700"
 
 Get_Work_Order_Information --> Shop_Visit_Information
 Update_Work_Order_Information --> END_Update_Work_Order_Information
@@ -33,23 +33,25 @@ START -->  Get_Work_Order_Information
 END_Update_Work_Order_Information(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
+
+<!-- Flow description -->
 
 ## General Information
 
@@ -70,11 +72,18 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 
 ## Variables
 
-|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-|:-- |:--:|:--:|:--:|:--:|:--: |
-|errorMessage|String|⬜|✅|⬜|<!-- -->|
-|Id|String|⬜|✅|⬜|<!-- -->|
-|workOrderRecord|SObject|⬜|✅|⬜|WorkOrder|
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|errorMessage|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+|Id|String|⬜|✅|⬜|<!-- -->|<!-- -->|
+|workOrderRecord|SObject|⬜|✅|⬜|WorkOrder|<!-- -->|
+
+
+## Formulas
+
+|Name|Data Type|Expression|Description|
+|:-- |:--:|:-- |:--  |
+|visitDate|Date|DATEVALUE({!Shop_Visit_Start_Time})|<!-- -->|
 
 
 ## Flow Nodes Details
@@ -125,7 +134,8 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |:-- |:--: |
 |Collected_Items__c|Collected_Items|
 |Shop_Name__c|Shop_Name|
-|Shop_Visit_Date__c|Shop_Date|
+|Shop_Visit_Amount__c|Amount|
+|Shop_Visit_Date__c|visitDate|
 |Shop_Visit_Done__c|✅|
 |Shop_Visit_End_Time__c|Shop_Visit_End_Time|
 |Shop_Visit_Start_Time__c|Shop_Visit_Start_Time|
@@ -154,7 +164,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Field Text|Collected Items|
 |Field Type| Large Text Area|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
-|Is Required|⬜|
+|Is Required|✅|
 
 
 
@@ -187,19 +197,6 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Connector|[Collected_Items_Information](#collected_items_information)|
 
 
-#### Shop_Date
-
-|<!-- -->|<!-- -->|
-|:---|:---|
-|Data Type|Date|
-|Field Text|Shop Date|
-|Field Type| Input Field|
-|Inputs On Next Nav To Assoc Scrn| Use Stored Values|
-|Is Required|⬜|
-
-
-
-
 #### Shop_Name
 
 |<!-- -->|<!-- -->|
@@ -208,7 +205,21 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Field Text|Shop Name|
 |Field Type| Input Field|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
-|Is Required|⬜|
+|Is Required|✅|
+
+
+
+
+#### Amount
+
+|<!-- -->|<!-- -->|
+|:---|:---|
+|Data Type|Currency|
+|Field Text|Amount|
+|Field Type| Input Field|
+|Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+|Is Required|✅|
+|Scale|2|
 
 
 
@@ -221,7 +232,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Field Text|Shop Visit Start Time|
 |Field Type| Input Field|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
-|Is Required|⬜|
+|Is Required|✅|
 
 
 
@@ -234,7 +245,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Field Text|Shop Visit End Time|
 |Field Type| Input Field|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
-|Is Required|⬜|
+|Is Required|✅|
 
 
 

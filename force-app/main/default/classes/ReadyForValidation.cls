@@ -1,7 +1,7 @@
 public with sharing class ReadyForValidation {
   @TestVisible
   private static List<ATAK_Project__c> getATAKProjects(String projectCode) {
-    return [SELECT Id FROM ATAK_Project__c WHERE Name = :projectCode];
+    return [SELECT Id FROM ATAK_Project__c WHERE SubProject_ATAK__c = :projectCode];
   }
 
   @TestVisible
@@ -9,7 +9,7 @@ public with sharing class ReadyForValidation {
     Set<String> projectCodes
   ) {
     return [
-      SELECT Id, SubProject_ATAK__c, OwnerId
+      SELECT Id, SubProject_ATAK__c, OwnerId, Service_Territory__r.Main_Responsible__c
       FROM ATAK_Project__c
       WHERE SubProject_ATAK__c IN :projectCodes
     ];
@@ -46,11 +46,17 @@ public with sharing class ReadyForValidation {
       projectCodes.add(cli.Project_Code__c);
     }
 
+    System.debug('projectCodes: ' + projectCodes);
+
     // Get owners to notify
     Set<String> ownersToNotify = new Set<String>();
     for (ATAK_Project__c proj : getATAKProjectsForNotification(projectCodes)) {
-      ownersToNotify.add(proj.OwnerId);
+      if(proj.Service_Territory__r.Main_Responsible__c != null){
+        ownersToNotify.add(proj.Service_Territory__r.Main_Responsible__c);
+      }
     }
+
+    System.debug('ownersToNotify: ' + ownersToNotify);
 
     // Get notification type
     CustomNotificationType notificationType = [
@@ -59,6 +65,8 @@ public with sharing class ReadyForValidation {
       WHERE DeveloperName = 'Service_Contract_Approval_Notification'
       LIMIT 1
     ];
+
+    System.debug('notificationType: ' + notificationType);
 
     // Send notification
     Messaging.CustomNotification notification = new Messaging.CustomNotification();

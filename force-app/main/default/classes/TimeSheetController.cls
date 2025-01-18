@@ -33,6 +33,8 @@ public with sharing class TimeSheetController {
             Subject,
             Type,
             Code_ATAK_Limbus__c,
+            WorkOrder.Asset.Name,
+            WorkOrder.WorkType.Name,
             WorkOrderId
           FROM TimeSheetEntries
           ORDER BY StartTime ASC

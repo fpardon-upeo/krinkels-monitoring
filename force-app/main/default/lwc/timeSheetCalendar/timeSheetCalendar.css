@@ -1,3 +1,19 @@
+/* Add this to your CSS */
+.fullcalendar .fc .fc-timegrid-slot {
+  height: 25px !important;
+}
+
+.fullcalendar .fc-timegrid-event {
+  min-height: 0 !important;
+  height: 25px !important;
+}
+
+.fullcalendar .fc-v-event {
+  min-height: 0 !important;
+  border: none !important;
+}
+
+
 .slds-modal__footer {
   display: flex;
   justify-content: center;

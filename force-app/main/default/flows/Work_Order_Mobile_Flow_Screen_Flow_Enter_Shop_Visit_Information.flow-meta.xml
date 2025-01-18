@@ -2,6 +2,11 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>This flow allows an operator to enter the necessary information when collecting items from a shop.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>visitDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!Shop_Visit_Start_Time})</expression>
+    </formulas>
     <interviewLabel>[Work Order] {!$Flow.CurrentDateTime}</interviewLabel>
     <label>[Work Order][Mobile Flow][Screen-Flow] Enter Shop Visit Information</label>
     <processMetadataValues>
@@ -70,9 +75,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Shop_Visit_Amount__c</field>
+            <value>
+                <elementReference>Amount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Shop_Visit_Date__c</field>
             <value>
-                <elementReference>Shop_Date</elementReference>
+                <elementReference>visitDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -111,7 +122,7 @@
             <fieldText>Collected Items</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
+            <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>FileUpload</name>
@@ -147,20 +158,21 @@
             <targetReference>Collected_Items_Information</targetReference>
         </connector>
         <fields>
-            <name>Shop_Date</name>
-            <dataType>Date</dataType>
-            <fieldText>Shop Date</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
             <name>Shop_Name</name>
             <dataType>String</dataType>
             <fieldText>Shop Name</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Amount</name>
+            <dataType>Currency</dataType>
+            <fieldText>Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <scale>2</scale>
         </fields>
         <fields>
             <name>Shop_Visit_Start_Time</name>
@@ -168,7 +180,7 @@
             <fieldText>Shop Visit Start Time</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
+            <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Shop_Visit_End_Time</name>
@@ -176,7 +188,7 @@
             <fieldText>Shop Visit End Time</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
+            <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

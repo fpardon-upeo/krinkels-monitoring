@@ -176,6 +176,8 @@ nav:
       Work_Order_Mobile_Flow_Log_Waste_Depot_Visit: flows/Work_Order_Mobile_Flow_Log_Waste_Depot_Visit.md
       Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit: flows/Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit.md
       Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information: flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.md
+      Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information: >-
+        flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information.md
       Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information: flows/Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information.md
       Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage: flows/Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage.md
       Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos: flows/Work_Order_Mobile_Flow_Screen_Flow_Take_After_Work_Photos.md

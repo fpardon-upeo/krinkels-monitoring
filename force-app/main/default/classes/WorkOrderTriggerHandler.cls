@@ -4,17 +4,45 @@ public without sharing class WorkOrderTriggerHandler {
         Set<Id> workOrdersToProcess = new Set<Id>();
 
         for(WorkOrder wo : newWorkOrders) {
-            // Only process if lat/long changed AND it wasn't set from a batch process
-            if((wo.Latitude != oldWorkOrderMap.get(wo.Id).Latitude ||
-                    wo.Longitude != oldWorkOrderMap.get(wo.Id).Longitude) &&
-                    !System.isBatch()) {
+            if(wo.Status == 'Travelling' && oldWorkOrderMap.get(wo.Id).Status != 'Travelling' && wo.Trigger_Notification_to_Customer__c == false) {
+                System.debug('Work Order Id: ' + wo.Id + ' is in Travelling status and needs to notify customer, adding to list');
                 workOrdersToProcess.add(wo.Id);
             }
         }
 
         if(!workOrdersToProcess.isEmpty()) {
-            updateWorkOrderLocations(workOrdersToProcess);
+            List<WorkOrder> workOrders = [
+                    SELECT Id, Asset.Notify_Customer_When_En_Route__c
+                    FROM WorkOrder
+                    WHERE Id IN :workOrdersToProcess
+            ];
+
+            System.debug('Work Orders to process: ' + workOrders.size());
+
+            List<WorkOrder> workOrdersToUpdate = new List<WorkOrder>();
+            for(WorkOrder wo : workOrders) {
+                if(wo.Asset.Notify_Customer_When_En_Route__c == true){
+                    System.debug('Work Order Id: ' + wo.Id + ' is in Travelling status and needs to notify customer');
+                    WorkOrder newWo = new WorkOrder(
+                            Id = wo.Id,
+                            Trigger_Notification_to_Customer__c = true
+                    );
+                    workOrdersToUpdate.add(newWo);
+                }
+            }
+
+            System.debug('Work Orders to update: ' + workOrdersToUpdate.size());
+
+            if(!workOrdersToUpdate.isEmpty()) {
+                try {
+                    update workOrdersToUpdate;
+                    System.debug('Work Orders updated successfully');
+                } catch(Exception e) {
+                    System.debug('Error updating work orders: ' + e.getMessage());
+                }
+            }
         }
+
     }
 
     public void afterInsert(List<WorkOrder> newWorkOrders) {

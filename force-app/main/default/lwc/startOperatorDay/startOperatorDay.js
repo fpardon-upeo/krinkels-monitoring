@@ -3,7 +3,7 @@
  */
 
 import { LightningElement, api, wire, track } from "lwc";
-import { gql, graphql } from "lightning/uiGraphQLApi";
+import { gql, graphql, refreshGraphQL } from "lightning/uiGraphQLApi";
 import { getRecord, updateRecord } from "lightning/uiRecordApi";
 import ID from "@salesforce/user/Id";
 //LABELS
@@ -78,6 +78,7 @@ export default class StartOperatorDay extends NavigationMixin(
   selectedRows = [];
   hasFirstWorkOrder = false;
   notifyCustomer = false;
+  graphQLServiceAppointments;
 
   labels = {
     StartDay_Start_Button_Text,
@@ -181,6 +182,16 @@ export default class StartOperatorDay extends NavigationMixin(
   }
 
   //--------------------------------------WIRE-----------------------------------------//
+
+  @api
+  async handleServiceAppointmentsRefresh() {
+    try {
+      console.log("Refreshing service appointments");
+      await refreshGraphQL(this.graphQLServiceAppointments);
+    } catch (error) {
+      console.error("Error refreshing service appointments", error);
+    }
+  }
 
   @wire(graphql, {
     query: gql`
@@ -323,26 +334,24 @@ export default class StartOperatorDay extends NavigationMixin(
     `,
     variables: "$serviceAppointmentsVariables"
   })
-  appointmentsQueryResult({ error, data }) {
-    if (data) {
-      this.data = data.uiapi.query.AssignedResource.edges.map(
-        (edge) => edge.node.ServiceAppointment
+  appointmentsQueryResult(result) {
+    this.graphQLServiceAppointments = result;
+    if (result.data) {
+      this.data = result.data.uiapi.query.AssignedResource.edges.map(
+          (edge) => edge.node.ServiceAppointment
       );
-
-      console.log("data", JSON.stringify(data));
-
       this.serviceAppointments = this.data.map((appointment) => {
         //Pretty schedule start time
         let date = new Date(appointment.SchedStartTime.value);
         //Use the date and the cleaned up hours and minutes, use 24h format
         let dateFormatted =
-          date.getDate() +
-          "/" +
-          (date.getMonth() + 1) +
-          " " +
-          date.getHours() +
-          ":" +
-          date.getMinutes();
+            date.getDate() +
+            "/" +
+            (date.getMonth() + 1) +
+            " " +
+            date.getHours() +
+            ":" +
+            date.getMinutes();
         //Make sure we don't return things like 14:0, but 14:00
         dateFormatted = dateFormatted.replace(/:(\d)$/, ":0$1");
 
@@ -354,30 +363,25 @@ export default class StartOperatorDay extends NavigationMixin(
         } else {
           icon = "💲";
         }
-
         return {
           Appointment:
-            icon +
-            " " +
-            appointment.Account.Name.value +
-            " - " +
-            dateFormatted +
-            " - " +
-            appointment.WorkType.Name.value,
+              icon +
+              " " +
+              appointment.Account.Name.value +
+              " - " +
+              dateFormatted +
+              " - " +
+              appointment.WorkType.Name.value,
           AppointmentNumber: appointment.AppointmentNumber.value,
           Subject: appointment.Subject.value,
           Id: appointment.Id,
           SchedStartTime: appointment.SchedStartTime.value,
-          ParentRecordId: appointment.ParentRecordId.value,
-          WorkOrderType: appointment.WorkType.Name.value
+          ParentRecordId: appointment.ParentRecordId.value
         };
       });
-      console.log(
-        "serviceAppointments",
-        JSON.stringify(this.serviceAppointments)
-      );
-    } else if (error) {
-      console.log(error);
+      console.log(JSON.stringify(this.serviceAppointments));
+    } else if (result.error) {
+      console.log(result.error);
     }
   }
 
@@ -537,7 +541,8 @@ export default class StartOperatorDay extends NavigationMixin(
   }
 
   //TESTING
-  handleRefreshAll() {
+  async handleRefreshAll() {
+    await this.handleServiceAppointmentsRefresh();
     const timeSheetCalendar = this.template.querySelector(
       "c-time-sheet-calendar"
     );

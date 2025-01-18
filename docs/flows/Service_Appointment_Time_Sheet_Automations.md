@@ -11,7 +11,7 @@
 
 flowchart TB
 START(["START<br/><b>AutoLaunched Flow</b></br>Type: <b> Record After Save</b>"]):::startClass
-click START "#general-information" "1658851445"
+click START "#general-information" "3914849024"
 
 Prepare_Time_Sheet_Entry_Completed[\"🟰 <em></em><br/>Prepare Time Sheet Entry Completed"/]:::assignments
 click Prepare_Time_Sheet_Entry_Completed "#prepare_time_sheet_entry_completed" "412108352"
@@ -38,7 +38,7 @@ Is_Night_Hour{"🔀 <em></em><br/>Is Night Hour"}:::decisions
 click Is_Night_Hour "#is_night_hour" "218543052"
 
 Status_is_changed{"🔀 <em></em><br/>Status is changed"}:::decisions
-click Status_is_changed "#status_is_changed" "2284239343"
+click Status_is_changed "#status_is_changed" "33115718"
 
 Loop_Assigned_Resources{{"🔁 <em></em><br/>Loop Assigned Resources"}}:::loops
 click Loop_Assigned_Resources "#loop_assigned_resources" "198473609"
@@ -65,7 +65,7 @@ Get_Completed_End_Time[("🔍 <em></em><br/>Get Completed End Time")]:::recordLo
 click Get_Completed_End_Time "#get_completed_end_time" "1294393676"
 
 Get_Completed_Start_Time[("🔍 <em></em><br/>Get Completed Start Time")]:::recordLookups
-click Get_Completed_Start_Time "#get_completed_start_time" "2028093998"
+click Get_Completed_Start_Time "#get_completed_start_time" "2392191815"
 
 Get_Current_User_Time_Sheet_Completed[("🔍 <em></em><br/>Get Current User Time Sheet Completed")]:::recordLookups
 click Get_Current_User_Time_Sheet_Completed "#get_current_user_time_sheet_completed" "4149562848"
@@ -167,7 +167,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Trigger Type| Record After Save|
 |Record Trigger Type| Create And Update|
 |Label|[Service Appointment] - [After-Save] - [Record-Triggered] - Time Sheet Automations|
-|Status|Active|
+|Status|⚠️ Draft|
 |Description|This flows creates the automatic time sheet entries based on the evolving status of the service appointment|
 |Environments|Default|
 |Interview Label|Service Appointment - Time Sheet Automations {!$Flow.CurrentDateTime}|
@@ -519,7 +519,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |<!-- -->|<!-- -->|
 |:---|:---|
 |Connector|[Get_Travel_Start_Time](#get_travel_start_time)|
-|Condition Logic|1 AND (2 OR 3)|
+|Condition Logic|and|
 
 
 
@@ -528,7 +528,6 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:-- |:-- |:--:|:--: |
 |1|$Record.Status| Equal To|In Progress|
 |2|$Record.Previous_Status__c| Equal To|Travelling|
-|3|$Record.Previous_Status__c| Equal To|Dispatched|
 
 
 
@@ -728,8 +727,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |Filter Id|Field|Operator|Value|
 |:-- |:-- |:--:|:--: |
 |1|Service_Appointment__c| Equal To|$Record.Id|
-|2|Previous_Status__c| Equal To|Travelling|
-|3|New_Status__c| Equal To|In Progress|
+|2|New_Status__c| Equal To|In Progress|
 
 
 

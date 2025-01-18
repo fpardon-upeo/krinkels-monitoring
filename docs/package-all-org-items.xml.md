@@ -2,7 +2,7 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 16028
+Metadatas: 16033
 
 <details><summary>ApexClass (1070)</summary>
 
@@ -1604,7 +1604,7 @@ Metadatas: 16028
 
 </details>
 
-<details><summary>CustomField (1650)</summary>
+<details><summary>CustomField (1653)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/A/FieldsAndRelationships/T/view" target="_blank">ATAK_Internal_Project_Map__mdt.ATAK_Code__c</a><br/>
@@ -2986,6 +2986,7 @@ Metadatas: 16028
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/R/FieldsAndRelationships/e/view" target="_blank">WorkOrder.Rework_reasons__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/c/view" target="_blank">WorkOrder.Scheduled_Date__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/h/view" target="_blank">WorkOrder.Shop_Name__c</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/h/view" target="_blank">WorkOrder.Shop_Visit_Amount__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/h/view" target="_blank">WorkOrder.Shop_Visit_Date__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/h/view" target="_blank">WorkOrder.Shop_Visit_Done__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/h/view" target="_blank">WorkOrder.Shop_Visit_Duration__c</a><br/>
@@ -2998,6 +2999,8 @@ Metadatas: 16028
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/T/FieldsAndRelationships/y/view" target="_blank">WorkOrder.Type__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/O/view" target="_blank">WorkOrder.WOL_Already_Added__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/O/view" target="_blank">WorkOrder.WO_with_Goodwill_Tasks__c</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/a/view" target="_blank">WorkOrder.Waste_Quantity__c</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/a/view" target="_blank">WorkOrder.Waste_Unit_of_Measure__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/a/view" target="_blank">WorkOrder.Waste_Visit_Done__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/a/view" target="_blank">WorkOrder.Waste_Visit_Planned__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/a/view" target="_blank">WorkOrder.Waste_to_Drop_Off__c</a><br/>
@@ -13182,7 +13185,7 @@ Metadatas: 16028
 
 </details>
 
-<details><summary>Flow (102)</summary>
+<details><summary>Flow (103)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</a><br/>
@@ -13267,6 +13270,7 @@ Metadatas: 16028
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Work_Order_Mobile_Flow_Log_Waste_Depot_Visit</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work</a><br/>
@@ -13290,7 +13294,7 @@ Metadatas: 16028
 
 </details>
 
-<details><summary>FlowDefinition (102)</summary>
+<details><summary>FlowDefinition (103)</summary>
 
 
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
@@ -13375,6 +13379,7 @@ Metadatas: 16028
   • Work_Order_Mobile_Flow_Log_Waste_Depot_Visit<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Depot_Visit<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information<br/>
+  • Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_LMRA_Information<br/>
   • Work_Order_Mobile_Flow_Screen_Flow_Log_Mileage<br/>
   • Work_Order_Record_Triggered_Flow_Set_PDF_Status_for_Extra_Work<br/>

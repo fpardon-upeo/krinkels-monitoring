@@ -4056,6 +4056,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Shop_Visit_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.Shop_Visit_Date__c</field>
         <readable>true</readable>
@@ -4114,6 +4119,16 @@
         <editable>true</editable>
         <field>WorkOrder.WO_with_Goodwill_Tasks__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Waste_Quantity__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>WorkOrder.Waste_Unit_of_Measure__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4589,6 +4604,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

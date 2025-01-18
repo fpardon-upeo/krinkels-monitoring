@@ -8,6 +8,8 @@ public with sharing class TimeSheetHandler {
 
         try {
 
+        Date startDate = timeSheets[0].StartDate;
+
         //Get the service resources tied ti the timesheets
         List<String> resourceIds = new List<String>();
         for(TimeSheet ts : timeSheets){
@@ -18,6 +20,7 @@ public with sharing class TimeSheetHandler {
 
         Map<Id, ServiceResource> serviceResources = new Map<Id, ServiceResource>([SELECT Id, Name, Work_Schedule__c FROM ServiceResource WHERE Id IN :resourceIds]);
         Map<String, ServiceResource> timeSheetResourceMap = new Map<String, ServiceResource>();
+        Map<String, String> resourceToTimeSheetMap = new Map<String, String>();
         List<String> workScheduleIds = new List<String>();
 
         System.debug('Service Resources: ' + serviceResources);
@@ -29,11 +32,19 @@ public with sharing class TimeSheetHandler {
             System.debug('Service Resource: ' + serviceResources.get(ts.ServiceResourceId));
             System.debug('Service Resource Work Schedule: ' + serviceResources.get(ts.ServiceResourceId).Work_Schedule__c);
             timeSheetResourceMap.put(ts.ServiceResourceId, serviceResources.get(ts.ServiceResourceId));
+            resourceToTimeSheetMap.put(ts.ServiceResourceId, ts.Id);
             if(serviceResources.get(ts.ServiceResourceId).Work_Schedule__c != null && workScheduleIds.contains(serviceResources.get(ts.ServiceResourceId).Work_Schedule__c) == false){
                 workScheduleIds.add(serviceResources.get(ts.ServiceResourceId).Work_Schedule__c);
             }
         }
 
+        List<ResourceAbsence> resourceAbsences = [SELECT Id, Start, End, ResourceId FROM ResourceAbsence WHERE ResourceId IN :resourceIds AND DAY_ONLY(Start) <= :startDate AND DAY_ONLY(Start) >= :startDate];
+        Map<String, ResourceAbsence> resourceAbsenceMap = new Map<String, ResourceAbsence>();
+        for(ResourceAbsence ra : resourceAbsences){
+            ra.Time_Sheet__c = resourceToTimeSheetMap.get(ra.ResourceId);
+        }
+
+        System.debug('Resource Absences: ' + resourceAbsences);
         System.debug('Work Schedule Ids: ' + workScheduleIds);
         System.debug('TimeSheet Resource Map: ' + timeSheetResourceMap);
 
@@ -56,8 +67,6 @@ public with sharing class TimeSheetHandler {
         }
 
         System.debug('Work Schedule Day Map: ' + workScheduleDayMap);
-
-
         List<TimeSheet> timeSheetsToUpdate = new List<TimeSheet>();
 
         //Now for each timesheet, get the Hours for that day based on the work schedule and the service resource
@@ -73,6 +82,7 @@ public with sharing class TimeSheetHandler {
         System.debug('TimeSheets with working hours: ' + timeSheets);
 
         update timeSheetsToUpdate;
+        update resourceAbsences;
 
         } catch (Exception e){
             System.debug('Error: ' + e.getMessage());

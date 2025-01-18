@@ -5,7 +5,7 @@
         <name>Add_to_Collection</name>
         <label>Add to Collection</label>
         <locationX>138</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>resourceAbsences</assignToReference>
             <operator>Add</operator>
@@ -21,7 +21,7 @@
         <name>Create_Resource_Absence_Break</name>
         <label>Create Resource Absence Break</label>
         <locationX>138</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <assignmentItems>
             <assignToReference>resourceAbsence.ResourceId</assignToReference>
             <operator>Assign</operator>
@@ -57,6 +57,13 @@
                 <elementReference>$Record.End</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>resourceAbsence.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Record_Type.Id</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_to_Collection</targetReference>
         </connector>
@@ -90,7 +97,7 @@
         <name>Loop_Crew_Members</name>
         <label>Loop Crew Members</label>
         <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <collectionReference>Get_All_Active_Crew_Members</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -123,7 +130,7 @@
         <name>Create_Absence_Records</name>
         <label>Create Absence Records</label>
         <locationX>50</locationX>
-        <locationY>947</locationY>
+        <locationY>1055</locationY>
         <inputReference>resourceAbsences</inputReference>
     </recordCreates>
     <recordLookups>
@@ -133,7 +140,7 @@
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Loop_Crew_Members</targetReference>
+            <targetReference>Get_Record_Type</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -154,6 +161,34 @@
         <object>ServiceCrewMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type</name>
+        <label>Get Record Type</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Crew_Members</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>ResourceAbsence</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Break</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>56</locationX>
         <locationY>0</locationY>
@@ -164,7 +199,7 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>resourceAbsence</name>
         <dataType>SObject</dataType>
