@@ -1,59 +1,18 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-classes/GanttRoundPinAction.cls," ",ApexClass GanttRoundPinAction,M,,log,📰
-classes/ReadyForValidation.cls," ",ApexClass ReadyForValidation,M,,log,📰
-classes/ServiceAppointmentRescheduler.cls," ",ApexClass ServiceAppointmentRescheduler,M,,log,📰
-classes/ServiceAppointmentTriggerHandler.cls," ",ApexClass ServiceAppointmentTriggerHandler,M,,log,📰
-classes/TimeSheetController.cls," ",ApexClass TimeSheetController,M,,log,📰
-classes/TimeSheetHandler.cls," ",ApexClass TimeSheetHandler,M,,log,📰
-classes/TimeSheetProjectLinkService.cls," ",ApexClass TimeSheetProjectLinkService,M,,log,📰
-classes/WorkOrderTriggerHandler.cls," ",ApexClass WorkOrderTriggerHandler,M,,log,📰
+applications/Krinkels_Admin.app-meta.xml," ",CustomApplication Krinkels_Admin,M,,log,📰
+applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
+applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.flowDefinition-meta.xml," ",FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information,M,,log,📰
-flowDefinitions/Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information.flowDefinition-meta.xml,A,FlowDefinition Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information,,,log,📰
-flows/ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents.flow-meta.xml," ",Flow ResourceAbsence_After_Save_Copy_Breaks_from_Crew_to_Agents,M,,log,📰
-flows/Service_Appointment_Time_Sheet_Automations.flow-meta.xml," ",Flow Service_Appointment_Time_Sheet_Automations,M,,log,📰
-flows/Service_Crew_and_Van_Creator.flow-meta.xml," ",Flow Service_Crew_and_Van_Creator,M,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information.flow-meta.xml," ",Flow Work_Order_Mobile_Flow_Screen_Flow_Enter_Shop_Visit_Information,M,,log,📰
-flows/Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information.flow-meta.xml,A,Flow Work_Order_Mobile_Flow_Screen_Flow_Enter_Waste_Visit_Information,,,log,📰
-flows/Work_Order_Set_Customer_Notification_Flag.flow-meta.xml," ",Flow Work_Order_Set_Customer_Notification_Flag,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.html," ",LightningComponentBundle serviceBuilder/serviceBuilder.html,M,,log,📰
-lwc/serviceBuilder/serviceBuilder.js," ",LightningComponentBundle serviceBuilder/serviceBuilder.js,M,,log,📰
-lwc/startOperatorDay/startOperatorDay.js," ",LightningComponentBundle startOperatorDay/startOperatorDay.js,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.css," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.css,M,,log,📰
-lwc/timeSheetCalendar/timeSheetCalendar.js," ",LightningComponentBundle timeSheetCalendar/timeSheetCalendar.js,M,,log,📰
-objects/Location_Visit__c/fields/Demand_type__c.field-meta.xml," ",CustomField Demand_type__c,M,,log,📰
-objects/WorkOrder/fields/Shop_Visit_Amount__c.field-meta.xml,A,CustomField Shop_Visit_Amount__c,,,log,📰
-objects/WorkOrder/fields/Waste_Quantity__c.field-meta.xml,A,CustomField Waste_Quantity__c,,,log,📰
-objects/WorkOrder/fields/Waste_Unit_of_Measure__c.field-meta.xml,A,CustomField Waste_Unit_of_Measure__c,,,log,📰
-profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
-profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
-profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
-profiles/Business Support.profile-meta.xml," ",Profile Business Support,M,,log,📰
-profiles/CPQ Integration User.profile-meta.xml," ",Profile CPQ Integration User,M,,log,📰
-profiles/Chatter External User.profile-meta.xml," ",Profile Chatter External User,M,,log,📰
-profiles/Chatter Free User.profile-meta.xml," ",Profile Chatter Free User,M,,log,📰
-profiles/Chatter Moderator User.profile-meta.xml," ",Profile Chatter Moderator User,M,,log,📰
-profiles/Contract Manager %28custom%29.profile-meta.xml," ",Profile Contract Manager %28custom%29,M,,log,📰
-profiles/ContractManager.profile-meta.xml," ",Profile ContractManager,M,,log,📰
-profiles/Customer Community Plus User.profile-meta.xml," ",Profile Customer Community Plus User,M,,log,📰
-profiles/External Operator.profile-meta.xml," ",Profile External Operator,M,,log,📰
-profiles/Guest License User.profile-meta.xml," ",Profile Guest License User,M,,log,📰
-profiles/Identity User.profile-meta.xml," ",Profile Identity User,M,,log,📰
-profiles/Manager.profile-meta.xml," ",Profile Manager,M,,log,📰
-profiles/MarketingProfile.profile-meta.xml," ",Profile MarketingProfile,M,,log,📰
-profiles/Minimum Access - API Only Integrations.profile-meta.xml," ",Profile Minimum Access - API Only Integrations,M,,log,📰
-profiles/Minimum Access - Salesforce.profile-meta.xml," ",Profile Minimum Access - Salesforce,M,,log,📰
-profiles/Operator Indoor.profile-meta.xml," ",Profile Operator Indoor,M,,log,📰
-profiles/Operator Outdoor.profile-meta.xml," ",Profile Operator Outdoor,M,,log,📰
-profiles/Partner Community User.profile-meta.xml," ",Profile Partner Community User,M,,log,📰
-profiles/Read Only.profile-meta.xml," ",Profile Read Only,M,,log,📰
-profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insights Integration User,M,,log,📰
-profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
-profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
-profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
-translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
-translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
-translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
-triggers/WorkOrderTrigger.trigger," ",ApexTrigger WorkOrderTrigger,M,,log,📰
-manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
-manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰
+layouts/Account-Group Account Layout.layout-meta.xml," ",Layout Account-Group Account Layout,M,,log,📰
+layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
+layouts/Account-Other Account Layout.layout-meta.xml," ",Layout Account-Other Account Layout,M,,log,📰
+layouts/CampaignMember-Campaign Member Page Layout.layout-meta.xml," ",Layout CampaignMember-Campaign Member Page Layout,M,,log,📰
+layouts/EmailMessage-Email Message Layout.layout-meta.xml," ",Layout EmailMessage-Email Message Layout,M,,log,📰
+layouts/Location-Van Layout.layout-meta.xml," ",Layout Location-Van Layout,M,,log,📰
+layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
+objects/ATAK_Personnel__c/ATAK_Personnel__c.object-meta.xml," ",CustomObject ATAK_Personnel__c/ATAK_Personnel__c,M,,log,📰
+objects/ATAK_Project_Financial_Account__c/ATAK_Project_Financial_Account__c.object-meta.xml," ",CustomObject ATAK_Project_Financial_Account__c/ATAK_Project_Financial_Account__c,M,,log,📰
+objects/ATAK_Project__c/ATAK_Project__c.object-meta.xml," ",CustomObject ATAK_Project__c/ATAK_Project__c,M,,log,📰
+objects/LMRA__c/LMRA__c.object-meta.xml," ",CustomObject LMRA__c/LMRA__c,M,,log,📰
+objects/Location_Passport__c/Location_Passport__c.object-meta.xml," ",CustomObject Location_Passport__c/Location_Passport__c,M,,log,📰
+objects/Location_Visit__c/Location_Visit__c.object-meta.xml," ",CustomObject Location_Visit__c/Location_Visit__c,M,,log,📰
