@@ -1,18 +1,2 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-applications/Krinkels_Admin.app-meta.xml," ",CustomApplication Krinkels_Admin,M,,log,📰
-applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
-applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-layouts/Account-Group Account Layout.layout-meta.xml," ",Layout Account-Group Account Layout,M,,log,📰
-layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
-layouts/Account-Other Account Layout.layout-meta.xml," ",Layout Account-Other Account Layout,M,,log,📰
-layouts/CampaignMember-Campaign Member Page Layout.layout-meta.xml," ",Layout CampaignMember-Campaign Member Page Layout,M,,log,📰
-layouts/EmailMessage-Email Message Layout.layout-meta.xml," ",Layout EmailMessage-Email Message Layout,M,,log,📰
-layouts/Location-Van Layout.layout-meta.xml," ",Layout Location-Van Layout,M,,log,📰
-layouts/ServiceContract-Service Contract Layout.layout-meta.xml," ",Layout ServiceContract-Service Contract Layout,M,,log,📰
-objects/ATAK_Personnel__c/ATAK_Personnel__c.object-meta.xml," ",CustomObject ATAK_Personnel__c/ATAK_Personnel__c,M,,log,📰
-objects/ATAK_Project_Financial_Account__c/ATAK_Project_Financial_Account__c.object-meta.xml," ",CustomObject ATAK_Project_Financial_Account__c/ATAK_Project_Financial_Account__c,M,,log,📰
-objects/ATAK_Project__c/ATAK_Project__c.object-meta.xml," ",CustomObject ATAK_Project__c/ATAK_Project__c,M,,log,📰
-objects/LMRA__c/LMRA__c.object-meta.xml," ",CustomObject LMRA__c/LMRA__c,M,,log,📰
-objects/Location_Passport__c/Location_Passport__c.object-meta.xml," ",CustomObject Location_Passport__c/Location_Passport__c,M,,log,📰
-objects/Location_Visit__c/Location_Visit__c.object-meta.xml," ",CustomObject Location_Visit__c/Location_Visit__c,M,,log,📰
