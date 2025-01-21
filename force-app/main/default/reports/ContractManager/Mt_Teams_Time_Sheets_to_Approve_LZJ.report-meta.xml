@@ -46,6 +46,13 @@
             <operator>equals</operator>
             <value>Submitted,Needs Review</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>TimeSheet$Current_User_is_CM__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Summary</format>
@@ -60,7 +67,7 @@
         <value>1</value>
     </params>
     <reportType>TimeSheets__c</reportType>
-    <scope>team</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>

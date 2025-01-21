@@ -11,6 +11,7 @@
 | ATAK_Project_Name__c | ATAK Project Name | Text | <!-- --> |
 | Billing_Type__c | Billing Type | Picklist | <!-- --> |
 | Cost_Center__c | Cost Center | Text | <!-- --> |
+| Current_User_is_Manager__c | Current User is Manager | Checkbox | <!-- --> |
 | Day_Pause_Duration__c | Day Pause Duration | Number | <!-- --> |
 | Due_Date_in_the_Past__c | Due Date in the past | Checkbox | Field to indicate if the Due  date is in the past |
 | Financial_Accounts_Billing__c | Financial Accounts Billing | Text | <!-- --> |

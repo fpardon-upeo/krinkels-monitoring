@@ -11,6 +11,7 @@
 | Break_Duration_in_Minutes__c | Break Duration (in Minutes) | Number | <!-- --> |
 | Code_ATAK_Limbus__c | Code ATAK/Limbus | Picklist | <!-- --> |
 | Corrected__c | Corrected | Checkbox | TSE was corrected by CM or BS after submission  - added via flow |
+| Current_User_is_Manager__c | Current User is Manager | Checkbox | Technical Field used in Report Filtering |
 | Invoice_Type__c | Invoice Type | Text | For Reporting Purposes |
 | Is_Kilometer_Allowance__c | Is Kilometer Allowance | Checkbox | <!-- --> |
 | Is_Kilometer_Allowance_Entry__c | Is Kilometer Allowance Entry | Checkbox | <!-- --> |

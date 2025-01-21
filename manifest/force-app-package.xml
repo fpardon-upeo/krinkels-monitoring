@@ -823,6 +823,7 @@
         <members>ServiceAppointment.Asset__c</members>
         <members>ServiceAppointment.Billing_Type__c</members>
         <members>ServiceAppointment.Cost_Center__c</members>
+        <members>ServiceAppointment.Current_User_is_Manager__c</members>
         <members>ServiceAppointment.Day_Pause_Duration__c</members>
         <members>ServiceAppointment.Due_Date_in_the_Past__c</members>
         <members>ServiceAppointment.FSL__Appointment_Grade__c</members>
@@ -972,6 +973,7 @@
         <members>TimeSheetEntry.Break_Duration_in_Minutes__c</members>
         <members>TimeSheetEntry.Code_ATAK_Limbus__c</members>
         <members>TimeSheetEntry.Corrected__c</members>
+        <members>TimeSheetEntry.Current_User_is_Manager__c</members>
         <members>TimeSheetEntry.Invoice_Type__c</members>
         <members>TimeSheetEntry.Is_Kilometer_Allowance_Entry__c</members>
         <members>TimeSheetEntry.Is_Kilometer_Allowance__c</members>
@@ -3010,6 +3012,7 @@
         <members>BusienssSupport/New_Time_Sheets_with_Mileage_Report_cMK</members>
         <members>BusienssSupport/Nieuw_Deelproject_nodig_voor_Meerwerk_VJp</members>
         <members>BusienssSupport/Ongoing_Price_Request_WUN</members>
+        <members>BusienssSupport/Submission_Deadlines_Open_Oppties_kwL</members>
         <members>BusienssSupport/Time_Sheets_to_Approve_hhh</members>
         <members>ContractManager/</members>
         <members>ContractManager/Mt_Teams_Mileage_Entries_This_Month_mza</members>

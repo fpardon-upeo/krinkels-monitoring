@@ -318,6 +318,11 @@
             <field>Operator__c</field>
             <table>TimeSheet.TimeSheetEntries</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Current_User_is_Manager__c</field>
+            <table>TimeSheet.TimeSheetEntries</table>
+        </columns>
         <masterLabel>Time Sheet Entries</masterLabel>
     </sections>
 </ReportType>

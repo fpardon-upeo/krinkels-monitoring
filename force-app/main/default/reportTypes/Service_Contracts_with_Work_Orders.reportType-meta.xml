@@ -1565,6 +1565,11 @@
             <field>Cost_Center__c</field>
             <table>ServiceContract.WorkOrders.ServiceAppointments</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Current_User_is_Manager__c</field>
+            <table>ServiceContract.WorkOrders.ServiceAppointments</table>
+        </columns>
         <masterLabel>Service Appointments</masterLabel>
     </sections>
 </ReportType>

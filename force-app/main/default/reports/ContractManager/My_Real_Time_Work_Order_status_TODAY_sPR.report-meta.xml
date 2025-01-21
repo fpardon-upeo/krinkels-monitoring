@@ -20,13 +20,20 @@
     </columns>
     <description>All work orders Today</description>
     <filter>
-        <booleanFilter>1</booleanFilter>
+        <booleanFilter>1 AND 2</booleanFilter>
         <criteriaItems>
             <column>ServiceAppointment$SchedStartTime</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ServiceAppointment$Current_User_is_Manager__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -47,7 +54,7 @@
         <value>1</value>
     </params>
     <reportType>Service_Appointments_with_Service_Resources__c</reportType>
-    <scope>team</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>true</showSubTotals>

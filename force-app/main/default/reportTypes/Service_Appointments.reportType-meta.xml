@@ -510,6 +510,11 @@
             <field>Cost_Center__c</field>
             <table>ServiceAppointment</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Current_User_is_Manager__c</field>
+            <table>ServiceAppointment</table>
+        </columns>
         <masterLabel>Service Appointments</masterLabel>
     </sections>
     <sections>

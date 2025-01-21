@@ -2966,6 +2966,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ServiceAppointment.Current_User_is_Manager__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceAppointment.Day_Pause_Duration__c</field>
         <readable>true</readable>
@@ -3683,6 +3688,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSheetEntry.Corrected__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>TimeSheetEntry.Current_User_is_Manager__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

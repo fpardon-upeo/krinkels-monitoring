@@ -38,6 +38,13 @@
             <operator>lessOrEqual</operator>
             <value>NEXT_N_WEEKS:2</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>ServiceAppointment$Current_User_is_Manager__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Summary</format>
@@ -56,7 +63,7 @@
         <value>1</value>
     </params>
     <reportType>Service_Appointments_with_Service_Resources__c</reportType>
-    <scope>team</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>true</showSubTotals>
