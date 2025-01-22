@@ -4909,6 +4909,9 @@
         <layout>FlowInterview-Flow Interview Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>FlowOrchestrationInstance-Orchestration Run Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4963,6 +4966,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location-Van Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LocationTrustMeasure-Location Trust Measure Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location_Asset__c-Location Asset Layout</layout>

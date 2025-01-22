@@ -4909,6 +4909,9 @@
         <layout>FlowInterview-Flow Interview Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>FlowOrchestrationInstance-Orchestration Run Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>FlowPersonalConfiguration__c-Flow Personal Configuration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4963,6 +4966,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location-Van Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LocationTrustMeasure-Location Trust Measure Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Location_Asset__c-Location Asset Layout</layout>
@@ -5588,7 +5594,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Asset_Scheduler</tab>
-        <visibility>DefaultOff</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Error_Log__c</tab>
@@ -5597,10 +5603,6 @@
     <tabVisibilities>
         <tab>Inbound_Log__c</tab>
         <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Knowledge__kav</tab>
-        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>LMRA__c</tab>
