@@ -772,7 +772,7 @@
                     <name>operatorId</name>
                     <choiceReferences>serviceResources</choiceReferences>
                     <extensionName>flowruntime:choiceLookup</extensionName>
-                    <fieldText>Operator</fieldText>
+                    <fieldText>Main Operator</fieldText>
                     <fieldType>ComponentChoice</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>

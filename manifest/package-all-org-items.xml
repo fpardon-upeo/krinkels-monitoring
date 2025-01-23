@@ -703,6 +703,7 @@
         <members>GetRecordsIn</members>
         <members>GetRecordsInTest</members>
         <members>ImageCaptureService</members>
+        <members>ImportRecordsController</members>
         <members>InboundLoggerService</members>
         <members>InternalWorkOrderController</members>
         <members>LocationMonitorController</members>
@@ -1567,6 +1568,8 @@
         <members>ATAK_Project__c.Cost_centre_Atak_Id__c</members>
         <members>ATAK_Project__c.Department_Code__c</members>
         <members>ATAK_Project__c.Department_Name__c</members>
+        <members>ATAK_Project__c.Depot_Manager_Code__c</members>
+        <members>ATAK_Project__c.Depot_Manager__c</members>
         <members>ATAK_Project__c.Depot__c</members>
         <members>ATAK_Project__c.Discipline__c</members>
         <members>ATAK_Project__c.Dossier__c</members>
@@ -1575,6 +1578,7 @@
         <members>ATAK_Project__c.Group__c</members>
         <members>ATAK_Project__c.Language__c</members>
         <members>ATAK_Project__c.Parent_Subproject__c</members>
+        <members>ATAK_Project__c.Project_Type__c</members>
         <members>ATAK_Project__c.Region__c</members>
         <members>ATAK_Project__c.Service_Territory__c</members>
         <members>ATAK_Project__c.Site_Manager_Code__c</members>
@@ -1698,6 +1702,7 @@
         <members>ContractLineItem.Project_Code__c</members>
         <members>ContractLineItem.Recurrence_Pattern__c</members>
         <members>ContractLineItem.Scheduling_Interval__c</members>
+        <members>ContractLineItem.Signature_Required__c</members>
         <members>Contract_Event__e.Record_Id__c</members>
         <members>Contract_Line_Financial_Account__c.Contract_Line_Item__c</members>
         <members>Contract_Line_Financial_Account__c.Financial_Customer__c</members>
@@ -2552,6 +2557,7 @@
         <members>Opportunity__hd.StageName__c</members>
         <members>Outbound_Log__c.Error_Message__c</members>
         <members>Outbound_Log__c.JSON_Body__c</members>
+        <members>PricebookEntry.External_Id__c</members>
         <members>Product2.ATAK_Code__c</members>
         <members>Product2.Code__c</members>
         <members>Product2.Date_Out_of_Service__c</members>
@@ -2769,6 +2775,7 @@
         <members>ServiceContract.Service_Appointments_Color_on_Gantt__c</members>
         <members>ServiceContract.Service_Appointments_Icon_on_Gantt__c</members>
         <members>ServiceContract.Service_Package_Type__c</members>
+        <members>ServiceContract.Signature_Required__c</members>
         <members>ServiceContract.Status_custom__c</members>
         <members>ServiceContract.Tender_Code__c</members>
         <members>ServiceContract.Type__c</members>
@@ -2776,6 +2783,7 @@
         <members>ServiceCrew.FSL__GanttColor__c</members>
         <members>ServiceCrew.Has_Leader__c</members>
         <members>ServiceCrewMember.Active_Member__c</members>
+        <members>ServiceCrewMember.Crew_Already_Has_Leader__c</members>
         <members>ServiceCrewMember.Crew_Has_Leader__c</members>
         <members>ServiceCrewMember.FSL__GanttLabel__c</members>
         <members>ServiceResource.FSL__Efficiency__c</members>
@@ -13050,6 +13058,7 @@
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Asset_Notify_Business_Support_for_ATAK_Project</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
+        <members>ContractLineItem_After_Save_Add_Default_Field_Values</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>CrewMember_Save_Check_for_Crew_Leader</members>
         <members>Datatable_Configuration_Wizard5</members>
@@ -13156,6 +13165,7 @@
         <members>Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request</members>
         <members>Asset_Notify_Business_Support_for_ATAK_Project</members>
         <members>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</members>
+        <members>ContractLineItem_After_Save_Add_Default_Field_Values</members>
         <members>ContractLineItem_After_Save_Add_Default_Financial_Accounts</members>
         <members>CrewMember_Save_Check_for_Crew_Leader</members>
         <members>Datatable_Configuration_Wizard5</members>
@@ -14166,6 +14176,8 @@
         <members>ProcessException.all_process_exceptions</members>
         <members>Product2.AllProducts</members>
         <members>Product2.AllProducts</members>
+        <members>Product2.Service_Packages</members>
+        <members>Product2.Service_Packages</members>
         <members>ProductConsumedState.All_ProductConsumedStates</members>
         <members>ProductConsumedState.All_ProductConsumedStates</members>
         <members>ProductConsumedState.My_ProductConsumedStates</members>
@@ -14444,6 +14456,7 @@
     </types>
     <types>
         <members>Account.Commercial_Account</members>
+        <members>Account.Commercial_Account_VAT</members>
         <members>Account.Standard_Account_Match_Rule_v1_0</members>
         <members>Contact.Contact_Mobile_Phone</members>
         <members>Contact.Standard_Contact_Match_Rule_v1_1</members>
@@ -14504,6 +14517,7 @@
         <members>FSL_Resource_Permissions</members>
         <members>Field_Service_Mobile_Custom_Permission_Set</members>
         <members>Lightning_Email_Template_Builder</members>
+        <members>Manage_List_Views</members>
         <members>PDF_Butler_Admin_Local</members>
         <members>Query_All_Files</members>
         <members>USF_Flow_Screen_Component_Custom_Objects</members>

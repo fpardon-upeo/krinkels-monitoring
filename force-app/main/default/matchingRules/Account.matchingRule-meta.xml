@@ -31,4 +31,40 @@
         </matchingRuleItems>
         <ruleStatus>Active</ruleStatus>
     </matchingRules>
+    <matchingRules>
+        <fullName>Commercial_Account_VAT</fullName>
+        <booleanFilter>1 OR 2 OR (3 AND 4 AND 5) OR 6</booleanFilter>
+        <label>Commercial Account_VAT</label>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>Name</fieldName>
+            <matchingMethod>CompanyName</matchingMethod>
+        </matchingRuleItems>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>Phone</fieldName>
+            <matchingMethod>Phone</matchingMethod>
+        </matchingRuleItems>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>ShippingStreet</fieldName>
+            <matchingMethod>Street</matchingMethod>
+        </matchingRuleItems>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>ShippingCity</fieldName>
+            <matchingMethod>City</matchingMethod>
+        </matchingRuleItems>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>ShippingPostalCode</fieldName>
+            <matchingMethod>Zip</matchingMethod>
+        </matchingRuleItems>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>Enterprise_Number__c</fieldName>
+            <matchingMethod>Exact</matchingMethod>
+        </matchingRuleItems>
+        <ruleStatus>Active</ruleStatus>
+    </matchingRules>
 </MatchingRules>

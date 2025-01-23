@@ -16,6 +16,8 @@
 | Department_Code__c | Department Code | Text | <!-- --> |
 | Department_Name__c | Department Name | Text | <!-- --> |
 | Depot__c | Depot | Text | <!-- --> |
+| Depot_Manager__c | Depot Manager | Lookup | <!-- --> |
+| Depot_Manager_Code__c | Depot Manager Code | Text | <!-- --> |
 | Discipline__c | Discipline | Text | <!-- --> |
 | Dossier__c | Dossier | Text | <!-- --> |
 | End_Date__c | End Date | Date | <!-- --> |
@@ -23,6 +25,7 @@
 | Group__c | Group | Text | <!-- --> |
 | Language__c | Language | Text | <!-- --> |
 | Parent_Subproject__c | Parent Subproject | Lookup | <!-- --> |
+| Project_Type__c | Project Type | Text | <!-- --> |
 | Region__c | Region | Text | <!-- --> |
 | Service_Territory__c | Service Territory | Lookup | <!-- --> |
 | Site_Manager_Code__c | Site Manager Code | Text | <!-- --> |

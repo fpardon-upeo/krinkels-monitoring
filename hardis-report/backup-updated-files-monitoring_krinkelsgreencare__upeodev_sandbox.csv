@@ -1,7 +1,38 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+classes/ExportRecordsController.cls," ",ApexClass ExportRecordsController,M,,log,📰
+classes/ImportRecordsController.cls,A,ApexClass ImportRecordsController,,,log,📰
+classes/ImportRecordsController.cls-meta.xml,A,ApexClass ImportRecordsController,,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-layouts/FlowOrchestrationInstance-Orchestration Run Layout.layout-meta.xml,A,Layout FlowOrchestrationInstance-Orchestration Run Layout,,,log,📰
-layouts/LocationTrustMeasure-Location Trust Measure Layout.layout-meta.xml,A,Layout LocationTrustMeasure-Location Trust Measure Layout,,,log,📰
+customMetadata/Export_Configuration.ServiceContract.md-meta.xml," ",CustomMetadata Export_Configuration.ServiceContract,M,,log,📰
+flexipages/ATAK_Project_Record_Page.flexipage-meta.xml," ",FlexiPage ATAK_Project_Record_Page,M,,log,📰
+flexipages/Commercial_Account_Record_Page.flexipage-meta.xml," ",FlexiPage Commercial_Account_Record_Page,M,,log,📰
+flowDefinitions/ContractLineItem_After_Save_Add_Default_Field_Values.flowDefinition-meta.xml,A,FlowDefinition ContractLineItem_After_Save_Add_Default_Field_Values,,,log,📰
+flows/ContractLineItem_After_Save_Add_Default_Field_Values.flow-meta.xml,A,Flow ContractLineItem_After_Save_Add_Default_Field_Values,,,log,📰
+flows/Service_Crew_and_Van_Creator.flow-meta.xml," ",Flow Service_Crew_and_Van_Creator,M,,log,📰
+layouts/Account-Commercial Account Layout.layout-meta.xml," ",Layout Account-Commercial Account Layout,M,,log,📰
+layouts/Account-Financial Account Layout.layout-meta.xml," ",Layout Account-Financial Account Layout,M,,log,📰
+layouts/Account-Group Account Layout.layout-meta.xml," ",Layout Account-Group Account Layout,M,,log,📰
+layouts/Account-Operational Account Layout.layout-meta.xml," ",Layout Account-Operational Account Layout,M,,log,📰
+layouts/Account-Other Account Layout.layout-meta.xml," ",Layout Account-Other Account Layout,M,,log,📰
+layouts/AccountContactRelation-Account Contact Relationship Layout.layout-meta.xml," ",Layout AccountContactRelation-Account Contact Relationship Layout,M,,log,📰
+layouts/ContractLineItem-Contract Line Item Layout.layout-meta.xml," ",Layout ContractLineItem-Contract Line Item Layout,M,,log,📰
+layouts/Location-Van Layout.layout-meta.xml," ",Layout Location-Van Layout,M,,log,📰
+layouts/PricebookEntry-Price Book Entry Layout.layout-meta.xml," ",Layout PricebookEntry-Price Book Entry Layout,M,,log,📰
+layouts/ServiceCrew-Van Crew Layout.layout-meta.xml," ",Layout ServiceCrew-Van Crew Layout,M,,log,📰
+layouts/Work_Schedule__c-Work Schedule Layout.layout-meta.xml," ",Layout Work_Schedule__c-Work Schedule Layout,M,,log,📰
+lwc/exportRecords/exportRecords.js," ",LightningComponentBundle exportRecords/exportRecords.js,M,,log,📰
+lwc/importCLI/importCLI.js," ",LightningComponentBundle importCLI/importCLI.js,M,,log,📰
+matchingRules/Account.matchingRule-meta.xml," ",MatchingRules Account,M,,log,📰
+objects/ATAK_Project__c/fields/Depot_Manager_Code__c.field-meta.xml,A,CustomField Depot_Manager_Code__c,,,log,📰
+objects/ATAK_Project__c/fields/Depot_Manager__c.field-meta.xml,A,CustomField Depot_Manager__c,,,log,📰
+objects/ATAK_Project__c/fields/Project_Type__c.field-meta.xml,A,CustomField Project_Type__c,,,log,📰
+objects/ContractLineItem/fields/Signature_Required__c.field-meta.xml,A,CustomField Signature_Required__c,,,log,📰
+objects/PricebookEntry/PricebookEntry.object-meta.xml,A,CustomObject PricebookEntry/PricebookEntry,,,log,📰
+objects/PricebookEntry/fields/External_Id__c.field-meta.xml,A,CustomField External_Id__c,,,log,📰
+objects/ServiceContract/fields/Signature_Required__c.field-meta.xml,A,CustomField Signature_Required__c,,,log,📰
+objects/ServiceCrewMember/fields/Crew_Already_Has_Leader__c.field-meta.xml,A,CustomField Crew_Already_Has_Leader__c,,,log,📰
+objects/User/fields/ATAK_Code__c.field-meta.xml," ",CustomField ATAK_Code__c,M,,log,📰
+permissionsets/Manage_List_Views.permissionset-meta.xml,A,PermissionSet Manage_List_Views,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -28,5 +59,8 @@ profiles/Sales Insights Integration User.profile-meta.xml," ",Profile Sales Insi
 profiles/Salesforce API Only System Integrations.profile-meta.xml," ",Profile Salesforce API Only System Integrations,M,,log,📰
 profiles/SolutionManager.profile-meta.xml," ",Profile SolutionManager,M,,log,📰
 profiles/Standard.profile-meta.xml," ",Profile Standard,M,,log,📰
+translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
+translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
+translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰
 manifest/package-all-org-items.xml," ",manifest/package-all-org-items.xml,M,,log,📰
 manifest/package-backup-items.xml," ",manifest/package-backup-items.xml,M,,log,📰

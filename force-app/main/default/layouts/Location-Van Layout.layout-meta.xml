@@ -13,14 +13,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Van_Crew__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Contract_Manager__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Description</field>
             </layoutItems>
         </layoutColumns>
@@ -28,10 +20,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>License_Plate__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Driver_Code__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -98,8 +86,7 @@
     <relatedLists>
         <fields>Name</fields>
         <fields>Product2</fields>
-        <fields>QuantityOnHand</fields>
-        <fields>QuantityUnitOfMeasure</fields>
+        <fields>Is_Temporary__c</fields>
         <relatedList>ProductItems</relatedList>
     </relatedLists>
     <relatedObjects>ParentLocationId</relatedObjects>
@@ -107,7 +94,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h07000001m7dq</masterLabel>
+        <masterLabel>00hVc000000QPeA</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

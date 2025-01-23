@@ -90,6 +90,24 @@
                 <identifier>RecordActive__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Depot_Manager__c</fieldItem>
+                <identifier>RecordDepot_Manager__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Depot_Manager_Code__c</fieldItem>
+                <identifier>RecordDepot_Manager_Code__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Project_Type__c</fieldItem>
+                <identifier>RecordProject_Type__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-aab991b4-abe4-47de-88d8-594d83049792</name>
         <type>Facet</type>
     </flexiPageRegions>

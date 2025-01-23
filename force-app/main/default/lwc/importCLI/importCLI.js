@@ -1,9 +1,6 @@
 import { LightningElement } from "lwc";
-import { createRecord } from "lightning/uiRecordApi";
-import { updateRecord } from "lightning/uiRecordApi";
+import createUpdateRecord from "@salesforce/apex/ImportRecordsController.createUpdateRecord";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
-import { CloseActionScreenEvent } from "lightning/actions";
-import CONTRACT_LINE_ITEM_OBJECT from "@salesforce/schema/ContractLineItem";
 import ImportCLI_WrongFile_Message from "@salesforce/label/c.ImportCLI_WrongFile_Message";
 import ImportCLI_Error_Toast_Title from "@salesforce/label/c.ImportCLI_Error_Toast_Title";
 import ImportCLI_Error_Toast_Message from "@salesforce/label/c.ImportCLI_Error_Toast_Message";
@@ -23,110 +20,155 @@ export default class ImportCsv extends LightningElement {
     ImportCLI_Success_Toast_Message
   };
 
+  // Known field types that need special handling
+  fieldTypes = {
+    'Notify_Customer_When_En_Route__c': 'BOOLEAN'
+  };
+
+  convertFieldValue(value, fieldName) {
+    if (!value) return null;
+
+    const fieldType = this.fieldTypes[fieldName];
+    if (fieldType === 'BOOLEAN') {
+      const upperValue = value.toUpperCase();
+      if (upperValue === 'TRUE') return true;
+      if (upperValue === 'FALSE') return false;
+      return null;
+    }
+
+    return value;
+  }
+
   handleFileUpload(event) {
     const file = event.target.files[0];
 
     if (file) {
-      // //Error handling - validate that it's a CSV file
       if (!file.name.endsWith(".csv")) {
         console.error("Invalid file type. Please upload a CSV file.");
-
-        const event = new ShowToastEvent({
+        this.dispatchEvent(new ShowToastEvent({
           title: this.labels.ImportCLI_Error_Toast_Title,
           message: this.labels.ImportCLI_WrongFile_Message,
           variant: "error"
-        });
-
-        this.dispatchEvent(event);
-
+        }));
         return;
       }
 
       const reader = new FileReader();
       reader.onload = () => {
         const fileContent = reader.result;
+        // Split by newlines and filter out empty rows
+        const rows = fileContent.split(/\r?\n/).filter(row => row.trim().length > 0);
 
-        // Parse the content into rows for use later
-        const rows = fileContent.split("\n");
-
-        //Grab the headers values
-        const headers = rows[0]
-          .split(",")
-          .map((header) => header.replace(/\r/g, "").trim());
-
-        //For each row, grab the values and create an object with the headers as keys
-        const rowObjectsArray = rows.slice(1).map((row) => {
-          const values = row
-            .split(",")
-            .map((value) => value.replace(/\r/g, "").trim());
-
-          const rowObject = {};
-
-          headers.forEach((header, index) => {
-            rowObject[header] = values[index];
-          });
-
-          return rowObject;
-        });
-
-        try {
-          rowObjectsArray.forEach((rowObject) => {
-            this.createOrUpdateContractLineItem(rowObject);
-          });
-
-          const event = new ShowToastEvent({
-            title: this.labels.ImportCLI_Success_Toast_Title,
-            message: this.labels.ImportCLI_Success_Toast_Message,
-            variant: "success"
-          });
-
-          this.dispatchEvent(event);
-        } catch (error) {
-          const event = new ShowToastEvent({
+        if (rows.length < 2) {
+          this.dispatchEvent(new ShowToastEvent({
             title: this.labels.ImportCLI_Error_Toast_Title,
-            message: this.labels.ImportCLI_Error_Toast_Message,
+            message: "CSV file is empty or has no data rows",
             variant: "error"
-          });
+          }));
+          return;
+        }
 
-          this.dispatchEvent(event);
+        const headers = rows[0].split(",").map(header => header.trim());
+
+        const rowObjectsArray = rows
+            .slice(1)
+            .filter(row => row.trim().length > 0)  // Additional check for empty rows
+            .map(row => {
+              const values = row.split(",").map(value => value.trim());
+
+              // Skip rows that don't have enough values
+              if (values.length !== headers.length) {
+                console.warn('Skipping row due to mismatched column count:', row);
+                return null;
+              }
+
+              const rowObject = {};
+              let hasData = false;  // Flag to check if row has any non-empty values
+
+              headers.forEach((header, index) => {
+                const value = this.convertFieldValue(values[index], header);
+                if (value !== null) {
+                  rowObject[header] = value;
+                  hasData = true;
+                }
+              });
+
+              return hasData ? rowObject : null;
+            })
+            .filter(row => row !== null);  // Remove any null rows
+
+        if (rowObjectsArray.length > 0) {
+          this.processRows(rowObjectsArray);
+        } else {
+          this.dispatchEvent(new ShowToastEvent({
+            title: this.labels.ImportCLI_Error_Toast_Title,
+            message: "No valid data rows found in CSV",
+            variant: "error"
+          }));
         }
       };
       reader.readAsText(file);
     }
   }
 
+  async processRows(rowObjectsArray) {
+    try {
+      for (const rowObject of rowObjectsArray) {
+        await this.createOrUpdateContractLineItem(rowObject);
+      }
+
+      this.dispatchEvent(new ShowToastEvent({
+        title: this.labels.ImportCLI_Success_Toast_Title,
+        message: this.labels.ImportCLI_Success_Toast_Message,
+        variant: "success"
+      }));
+    } catch (error) {
+      console.error('Error processing rows:', error);
+      this.dispatchEvent(new ShowToastEvent({
+        title: this.labels.ImportCLI_Error_Toast_Title,
+        message: error.message || this.labels.ImportCLI_Error_Toast_Message,
+        variant: "error"
+      }));
+    }
+  }
+
   async createOrUpdateContractLineItem(rowObject) {
     try {
+      const pricebookEntryExternalId = rowObject['PricebookEntry_External_Id__c'];
+
+      // Create fields object with all fields except PricebookEntry.External_Id__c
       const fields = {};
-      for (const key in rowObject) {
-        // Skip empty values and don't include Id
-        if (rowObject[key] && key !== "Id") {
-          fields[key] = rowObject[key];
+      for (const [key, value] of Object.entries(rowObject)) {
+        if (value !== null && value !== undefined && key !== 'PricebookEntry_External_Id__c') {
+          fields[key] = value;
         }
       }
 
-      if (rowObject.Id) {
-        // For update include Id in fields and not in apiName
-        fields.Id = rowObject.Id;
-        //As it's an update, we can't include ServiceContractId in the fields object otherwise it won't update.
-        delete fields.ServiceContractId;
-
-        await updateRecord({ fields });
-
-        console.log("Updated Contract Line Item:", rowObject.Id);
-      } else {
-        // For create include apiName but no Id
-        const recordInput = {
-          apiName: CONTRACT_LINE_ITEM_OBJECT.objectApiName,
-          fields: fields
-        };
-
-        const result = await createRecord(recordInput);
-
-        console.log("Created Contract Line Item:", result.id);
+      // Skip if no fields to process
+      if (Object.keys(fields).length === 0) {
+        console.warn('Skipping empty row');
+        return;
       }
+
+      const result = await createUpdateRecord({
+        fields: fields,
+        pricebookEntryExternalId: pricebookEntryExternalId
+      });
+
+      if (!result.success) {
+        throw new Error(result.error);
+      }
+
+      console.log(fields.Id ?
+          `Updated Contract Line Item: ${result.recordId}` :
+          `Created Contract Line Item: ${result.recordId}`
+      );
     } catch (error) {
-      console.error("There was an error creating or updating the CLI:", error);
+      console.error("There was an error creating or updating the CLI:",
+          JSON.stringify(rowObject),
+          error.message || error
+      );
+      throw error;
     }
   }
 }

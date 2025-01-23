@@ -55,6 +55,10 @@
                 <behavior>Edit</behavior>
                 <field>Desired_Visual_Quality__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Signature_Required__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

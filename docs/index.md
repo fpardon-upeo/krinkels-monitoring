@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (16038) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (4024) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (16052) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (4036) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3604) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3616) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -77,6 +77,7 @@ ___
 | Approval | [Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request](flows/Approval_Scheduled_flow_Send_Reminder_for_Pending_Approval_Request.md) |  Scheduled | This flow sends a reminder to Koen when a quote approval request has been in the pending status for two days. |
 | Asset | [Asset_Notify_Business_Support_for_ATAK_Project](flows/Asset_Notify_Business_Support_for_ATAK_Project.md) [🕒](flows/Asset_Notify_Business_Support_for_ATAK_Project-history.md) |  Record After Save | <!-- --> |
 | AssignedResource | [Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type](flows/Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type.md) |  Record Before Save | For reporting purposes, this flow will allow identifying the type of resource assigned to a service appointment. <br/>This flow will also allow the identification of whether the assigned resource is linked to a system admin user for the purpose of timesheet entry creation. |
+| ContractLineItem | [ContractLineItem_After_Save_Add_Default_Field_Values](flows/ContractLineItem_After_Save_Add_Default_Field_Values.md) [🕒](flows/ContractLineItem_After_Save_Add_Default_Field_Values-history.md) |  Record After Save | <!-- --> |
 | ContractLineItem | [ContractLineItem_After_Save_Add_Default_Financial_Accounts](flows/ContractLineItem_After_Save_Add_Default_Financial_Accounts.md) |  Record After Save | <!-- --> |
 | Lead | [Lead_After_Save_Record_Triggered_Populate_Client_Sector_Industry_Type_on_Account](flows/Lead_After_Save_Record_Triggered_Populate_Client_Sector_Industry_Type_on_Account.md) |  Record After Save | <!-- --> |
 | Location | [Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member](flows/Van_After_Save_Record_Triggered_Assign_Van_to_Lead_Crew_Member.md) |  Record After Save | This flow populates the Van field on the service resource record of the lead van crew member, allowing him to log the products consumed. |
@@ -199,6 +200,7 @@ ___
 | [Operator_Created_Event__e](objects/Operator_Created_Event__e.md) |  | <!-- --> |
 | [Opportunity](objects/Opportunity.md) |  | <!-- --> |
 | [Outbound_Log__c](objects/Outbound_Log__c.md) | Outbound Log | <!-- --> |
+| [PricebookEntry](objects/PricebookEntry.md) |  | <!-- --> |
 | [Product2](objects/Product2.md) |  | <!-- --> |
 | [ProductConsumed](objects/ProductConsumed.md) |  | <!-- --> |
 | [ProductItem](objects/ProductItem.md) |  | <!-- --> |
@@ -243,7 +245,7 @@ ___
 To read the documentation as HTML pages, run the following code (you need [**Python**](https://www.python.org/downloads/) on your computer)
 
 ```python
-pip install mkdocs-material mdx_truly_sane_lists || python -m pip install mkdocs-material mdx_truly_sane_lists || py -m pip install mkdocs-material mdx_truly_sane_lists
+pip install mkdocs-material mkdocs-exclude-search mdx_truly_sane_lists || python -m pip install mkdocs-material mkdocs-exclude-search mdx_truly_sane_lists || py -m pip install mkdocs-material mkdocs-exclude-search mdx_truly_sane_lists
 mkdocs serve || python -m mkdocs serve || py -m mkdocs serve
 ```
 

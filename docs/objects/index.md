@@ -42,6 +42,7 @@
 | [Operator_Created_Event__e](Operator_Created_Event__e.md) |  | <!-- --> |
 | [Opportunity](Opportunity.md) |  | <!-- --> |
 | [Outbound_Log__c](Outbound_Log__c.md) | Outbound Log | <!-- --> |
+| [PricebookEntry](PricebookEntry.md) |  | <!-- --> |
 | [Product2](Product2.md) |  | <!-- --> |
 | [ProductConsumed](ProductConsumed.md) |  | <!-- --> |
 | [ProductItem](ProductItem.md) |  | <!-- --> |

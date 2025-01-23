@@ -20,12 +20,14 @@
 | Project_Code__c | Project Code | Text | <!-- --> |
 | Recurrence_Pattern__c | Recurrence Pattern | Text | <!-- --> |
 | Scheduling_Interval__c | Scheduling Interval | Number | <!-- --> |
+| Signature_Required__c | Signature Required? | Checkbox | <!-- --> |
 
 
 ## Related Flows
 
 | Object | Name      | Type | Description |
 | :----  | :-------- | :--: | :---------- | 
+| ContractLineItem | [ContractLineItem_After_Save_Add_Default_Field_Values](../flows/ContractLineItem_After_Save_Add_Default_Field_Values.md) [🕒](../flows/ContractLineItem_After_Save_Add_Default_Field_Values-history.md) |  Record After Save | <!-- --> |
 | ContractLineItem | [ContractLineItem_After_Save_Add_Default_Financial_Accounts](../flows/ContractLineItem_After_Save_Add_Default_Financial_Accounts.md) |  Record After Save | <!-- --> |
 
 

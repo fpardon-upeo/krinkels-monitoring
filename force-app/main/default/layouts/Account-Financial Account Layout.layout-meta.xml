@@ -199,8 +199,6 @@
     <relatedLists>
         <fields>CONTACT.FULL_NAME</fields>
         <fields>CONTACT.ACCOUNT_NAME</fields>
-        <fields>ACCCONRELATION.ROLES</fields>
-        <fields>CONTACT.TITLE</fields>
         <fields>CONTACT.EMAIL</fields>
         <fields>CONTACT.PHONE1</fields>
         <relatedList>RelatedAccountContactRelationList</relatedList>

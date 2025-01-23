@@ -214,6 +214,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ImportRecordsController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>InboundLoggerService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -732,6 +736,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ATAK_Project__c.Depot_Manager_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Depot_Manager__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ATAK_Project__c.Depot__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -768,6 +782,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ATAK_Project__c.Parent_Subproject__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ATAK_Project__c.Project_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1343,6 +1362,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ContractLineItem.Scheduling_Interval__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContractLineItem.Signature_Required__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2263,6 +2287,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Outbound_Log__c.JSON_Body__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>PricebookEntry.External_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3352,6 +3381,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceContract.Signature_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceContract.Status_custom__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3383,6 +3417,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ServiceCrewMember.Active_Member__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceCrewMember.Crew_Already_Has_Leader__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4322,6 +4361,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>ContractLineItem_After_Save_Add_Default_Field_Values</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

@@ -40,6 +40,7 @@
 | Service_Appointments_Color_on_Gantt__c | Service Appointments Color on Gantt | Text | <!-- --> |
 | Service_Appointments_Icon_on_Gantt__c | Service Appointments Icon on Gantt | Url | <!-- --> |
 | Service_Package_Type__c | Service Package Type | Picklist | <!-- --> |
+| Signature_Required__c | Signature Required? | Checkbox | <!-- --> |
 | SLA__c | SLA | LongTextArea | <!-- --> |
 | SPOC_Client__c | SPOC Client | Lookup | <!-- --> |
 | SPOC_KGC__c | SPOC KGC | Lookup | <!-- --> |

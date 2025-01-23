@@ -84,46 +84,55 @@ export default class ExportRecords extends LightningElement {
 
     // Create header row using allFields
     const headerRow = allFields
-      .map((header) => this.escapeCSVValue(header))
-      .join(",");
+        .map((header) => this.escapeCSVValue(header))
+        .join(",");
 
     // Create data rows ensuring all fields are included
     const rows = data.map((record) => {
       return allFields
-        .map((field) => {
-          const value = record[field] || ""; // Use empty string for null/undefined values
+          .map((field) => {
+            // Always include the field, even if it's null/undefined
+            const value = record.hasOwnProperty(field) ? record[field] : "";
 
-          // Check if this is a date field
-          const fieldType = this.exportResponse.fieldTypes[field];
-          if ((fieldType === "DATE" || fieldType === "DATETIME") && value) {
-            // Parse the date parts - handle both "MM/DD/YYYY" and existing date formats
-            const dateParts = value.split(/[\/\-]/);
-            let year, month, day;
+            // Handle special field types
+            const fieldType = this.exportResponse.fieldTypes[field];
 
-            if (dateParts[2] && dateParts[2].length === 4) {
-              // If format is MM/DD/YYYY
-              month = dateParts[0].padStart(2, "0");
-              day = dateParts[1].padStart(2, "0");
-              year = dateParts[2];
-            } else {
-              // Try creating a date object and formatting it
-              const date = new Date(value);
-              if (!isNaN(date.getTime())) {
-                year = date.getFullYear();
-                month = String(date.getMonth() + 1).padStart(2, "0");
-                day = String(date.getDate()).padStart(2, "0");
+            // Handle boolean values
+            if (fieldType === "BOOLEAN") {
+              return value === true ? "true" : "false";
+            }
+
+            // Handle date fields
+            if ((fieldType === "DATE" || fieldType === "DATETIME") && value) {
+              const dateParts = value.split(/[\/\-]/);
+              let year, month, day;
+
+              if (dateParts[2] && dateParts[2].length === 4) {
+                month = dateParts[0].padStart(2, "0");
+                day = dateParts[1].padStart(2, "0");
+                year = dateParts[2];
+              } else {
+                const date = new Date(value);
+                if (!isNaN(date.getTime())) {
+                  year = date.getFullYear();
+                  month = String(date.getMonth() + 1).padStart(2, "0");
+                  day = String(date.getDate()).padStart(2, "0");
+                }
+              }
+
+              if (year && month && day) {
+                return `="${year}-${month}-${day}"`;
               }
             }
 
-            if (year && month && day) {
-              // Force Excel to treat it as a string
-              return `="${year}-${month}-${day}"`;
+            // Handle other field types
+            if (fieldType === "PICKLIST" || fieldType === "STRING" || fieldType === "TEXTAREA") {
+              return this.escapeCSVValue(value || "");
             }
-          }
 
-          return this.escapeCSVValue(value);
-        })
-        .join(",");
+            return this.escapeCSVValue(value);
+          })
+          .join(",");
     });
 
     // Combine with CRLF line endings for Excel

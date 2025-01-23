@@ -31,14 +31,6 @@
                 <behavior>Readonly</behavior>
                 <field>LastModifiedById</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Driver_Code__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Has_Leader__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -104,20 +96,13 @@
         <relatedList>Location.Van_Crew__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>Name</fields>
-        <fields>Product2</fields>
-        <fields>Location</fields>
-        <fields>QuantityOnHand</fields>
-        <relatedList>ProductItem.Van_Crew__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h07000001mA7a</masterLabel>
+        <masterLabel>00hVc000000QPeC</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

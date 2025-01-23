@@ -2,10 +2,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (16038) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (4024) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (16052) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (4036) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3604) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3616) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 

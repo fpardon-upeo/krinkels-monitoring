@@ -69,6 +69,7 @@ nav:
       Asset_Notify_Business_Support_for_ATAK_Project: flows/Asset_Notify_Business_Support_for_ATAK_Project.md
       Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type: >-
         flows/Assigned_Resource_Before_Save_Record_Triggered_Identify_Assigned_Resource_Type.md
+      ContractLineItem_After_Save_Add_Default_Field_Values: flows/ContractLineItem_After_Save_Add_Default_Field_Values.md
       ContractLineItem_After_Save_Add_Default_Financial_Accounts: flows/ContractLineItem_After_Save_Add_Default_Financial_Accounts.md
       CrewMember_Save_Check_for_Crew_Leader: flows/CrewMember_Save_Check_for_Crew_Leader.md
       Datatable_Configuration_Wizard5: flows/Datatable_Configuration_Wizard5.md
@@ -246,6 +247,7 @@ nav:
       Operator_Created_Event__e: objects/Operator_Created_Event__e.md
       Opportunity: objects/Opportunity.md
       Outbound_Log__c: objects/Outbound_Log__c.md
+      PricebookEntry: objects/PricebookEntry.md
       Product2: objects/Product2.md
       ProductConsumed: objects/ProductConsumed.md
       ProductItem: objects/ProductItem.md
@@ -281,3 +283,11 @@ nav:
       Work_Schedule__c: objects/Work_Schedule__c.md
       cadmus_sign2__Sign_request__c: objects/cadmus_sign2__Sign_request__c.md
       ers_datatableConfig__c: objects/ers_datatableConfig__c.md
+plugins:
+  - search
+  - exclude-search:
+      exclude:
+        - index.md
+        - cache-ai-results/*.md
+        - '*package.xml.md'
+        - package-*items.xml.md

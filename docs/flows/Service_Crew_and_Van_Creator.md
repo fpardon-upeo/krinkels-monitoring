@@ -95,7 +95,7 @@ No_Leader_Selected(["💻 <em></em><br/>No Leader Selected"]):::screens
 click No_Leader_Selected "#no_leader_selected" "4102343959"
 
 Set_Up_Crew_and_Van_Initial(["💻 <em></em><br/>Set Up Crew and Van Initial"]):::screens
-click Set_Up_Crew_and_Van_Initial "#set_up_crew_and_van_initial" "2686222543"
+click Set_Up_Crew_and_Van_Initial "#set_up_crew_and_van_initial" "1977539098"
 
 Set_Up_Crew_and_Van_Van(["💻 <em></em><br/>Set Up Crew and Van - Van"]):::screens
 click Set_Up_Crew_and_Van_Van "#set_up_crew_and_van_van" "4092614594"
@@ -858,7 +858,7 @@ classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 |:---|:---|
 |Choice References|serviceResources|
 |Extension Name|flowruntime:choiceLookup|
-|Field Text|Operator|
+|Field Text|Main Operator|
 |Field Type| Component Choice|
 |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
 |Is Required|✅|

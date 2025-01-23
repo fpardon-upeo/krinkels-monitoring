@@ -7,6 +7,7 @@
 | Name      | Label | Type | Description |
 | :-------- | :---- | :--: | :---------- | 
 | Active_Member__c | Active Member | Checkbox | <!-- --> |
+| Crew_Already_Has_Leader__c | Crew Already Has Leader | Checkbox | <!-- --> |
 | Crew_Has_Leader__c | Crew Has Leader | Checkbox | <!-- --> |
 | FSL__GanttLabel__c | Gantt Label | Text | <!-- --> |
 

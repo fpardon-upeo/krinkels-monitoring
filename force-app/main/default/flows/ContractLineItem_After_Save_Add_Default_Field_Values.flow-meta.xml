@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>[ContractLineItem] - [After Save] - Add Default Field Values {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[ContractLineItem] - [After Save] - Add Default Field Values</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Default_Values_From_Contract</name>
+        <label>Set Default Values From Contract</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>Notify_Customer_When_En_Route__c</field>
+            <value>
+                <elementReference>$Record.ServiceContract.Notify_Customer_When_En_Route__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Signature_Required__c</field>
+            <value>
+                <elementReference>$Record.ServiceContract.Signature_Required__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Default_Values_From_Contract</targetReference>
+        </connector>
+        <object>ContractLineItem</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>
