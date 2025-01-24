@@ -2,6 +2,260 @@
 
 <!-- This page has been generated to be viewed with mkdocs-material, you can not view it just as markdown . Activate tab plugin following the doc at https://squidfunk.github.io/mkdocs-material/reference/content-tabs/ -->
 
+=== "Jan 23, 2025"
+
+    _Jan 23, 2025, by fpardon-upeo in commit Org state on 2025-01-23 00:25 for monitoring_krinkelsgreencare__upeodev_sandbox [skip ci]_
+
+    
+    ## Flow Diagram
+    
+    ```mermaid
+    %% If you read this, your Markdown visualizer does not handle MermaidJS syntax.
+    %% - If you are in VsCode, install extension `Markdown Preview Mermaid Support` at https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
+    %% - If you are using sfdx-hardis, try to define env variable `MERMAID_MODES=cli,docker` ,then run again the command to regenerate markdown with SVG images.
+    %% - If you are within mkdocs-material, define mermaid plugin in `mkdocs.yml` as described in https://squidfunk.github.io/mkdocs-material/extensions/mermaid/
+    %% - At last resort, you can copy-paste this MermaidJS code in https://mermaid.live/ to see the Flow Diagram
+    
+    flowchart TB
+    START(["START<br/><b>Screen Flow</b>"]):::startClass
+    click START "#general-information" "1919138572"
+    
+    Add_to_Collection[\"🟰 <em></em><br/>Add to Collection"/]:::assignments
+    click Add_to_Collection "#add_to_collection" "3225575366"
+    
+    Set_Leader_Boolean_FALSE[\"🟰 <em></em><br/>Set Leader Boolean FALSE"/]:::assignments
+    click Set_Leader_Boolean_FALSE "#set_leader_boolean_false" "2883449932"
+    
+    Set_Leader_Boolean_TRUE[\"🟰 <em></em><br/>Set Leader Boolean TRUE"/]:::assignments
+    click Set_Leader_Boolean_TRUE "#set_leader_boolean_true" "906910096"
+    
+    Set_Material_Item_Values[\"🟰 <em></em><br/>Set Material Item Values"/]:::assignments
+    click Set_Material_Item_Values "#set_material_item_values" "1572834968"
+    
+    Assignment_Check{"🔀 <em></em><br/>Assignment Check"}:::decisions
+    click Assignment_Check "#assignment_check" "3117658656"
+    
+    Check_Has_Leader{"🔀 <em></em><br/>Check Has Leader"}:::decisions
+    click Check_Has_Leader "#check_has_leader" "1299673393"
+    
+    Crew_Leader_Check{"🔀 <em></em><br/>Crew Leader Check"}:::decisions
+    click Crew_Leader_Check "#crew_leader_check" "719244804"
+    
+    Loop_Selected_Materials{{"🔁 <em></em><br/>Loop Selected Materials"}}:::loops
+    click Loop_Selected_Materials "#loop_selected_materials" "3776720875"
+    
+    Create_Material_Items[("➕ <em></em><br/>Create Material Items")]:::recordCreates
+    click Create_Material_Items "#create_material_items" "1748562060"
+    
+    Create_Operator_Service_Crew_Member[("➕ <em></em><br/>Create Operator Service Crew Member")]:::recordCreates
+    click Create_Operator_Service_Crew_Member "#create_operator_service_crew_member" "2888426388"
+    
+    Create_Service_Territory_Member_Crew[("➕ <em></em><br/>Create Service Territory Member - Crew")]:::recordCreates
+    click Create_Service_Territory_Member_Crew "#create_service_territory_member_crew" "894228951"
+    
+    Create_Van_Service_Resource[("➕ <em></em><br/>Create Van Service Resource")]:::recordCreates
+    click Create_Van_Service_Resource "#create_van_service_resource" "3411393155"
+    
+    Get_Crew_Leader[("🔍 <em></em><br/>Get Crew Leader")]:::recordLookups
+    click Get_Crew_Leader "#get_crew_leader" "2507821244"
+    
+    Get_Location_Details[("🔍 <em></em><br/>Get Location Details")]:::recordLookups
+    click Get_Location_Details "#get_location_details" "2689841567"
+    
+    Get_Materials[("🔍 <em></em><br/>Get Materials")]:::recordLookups
+    click Get_Materials "#get_materials" "2016564228"
+    
+    Get_Other_Operator_Crew_Assignments[("🔍 <em></em><br/>Get Other Operator Crew Assignments")]:::recordLookups
+    click Get_Other_Operator_Crew_Assignments "#get_other_operator_crew_assignments" "2959076420"
+    
+    Get_Resources_with_Selected_Van[("🔍 <em></em><br/>Get Resources with Selected Van")]:::recordLookups
+    click Get_Resources_with_Selected_Van "#get_resources_with_selected_van" "1334986424"
+    
+    Get_Resources_without_Vans[("🔍 <em></em><br/>Get Resources without Vans")]:::recordLookups
+    click Get_Resources_without_Vans "#get_resources_without_vans" "3550989278"
+    
+    Get_Service_Crew[("🔍 <em></em><br/>Get Service Crew")]:::recordLookups
+    click Get_Service_Crew "#get_service_crew" "1903918792"
+    
+    Get_Territories_with_Responsibles[("🔍 <em></em><br/>Get Territories with Responsibles")]:::recordLookups
+    click Get_Territories_with_Responsibles "#get_territories_with_responsibles" "2680619349"
+    
+    Get_Vans_without_Service_Crews[("🔍 <em></em><br/>Get Vans without Service Crews")]:::recordLookups
+    click Get_Vans_without_Service_Crews "#get_vans_without_service_crews" "1141818508"
+    
+    Update_Van_With_Service_Crew[("🛠️ <em></em><br/>Update Van With Service Crew")]:::recordUpdates
+    click Update_Van_With_Service_Crew "#update_van_with_service_crew" "4169054419"
+    
+    Already_Has_Leader(["💻 <em></em><br/>Already Has Leader"]):::screens
+    click Already_Has_Leader "#already_has_leader" "1724040800"
+    
+    Assignment_Check_Screen(["💻 <em></em><br/>Assignment Check Screen"]):::screens
+    click Assignment_Check_Screen "#assignment_check_screen" "1464280964"
+    
+    Fault(["💻 <em></em><br/>Fault"]):::screens
+    click Fault "#fault" "1056579750"
+    
+    Finished(["💻 <em></em><br/>Finished"]):::screens
+    click Finished "#finished" "2499694865"
+    
+    No_Leader_Selected(["💻 <em></em><br/>No Leader Selected"]):::screens
+    click No_Leader_Selected "#no_leader_selected" "4102343959"
+    
+    Set_Up_Crew_and_Van_Initial(["<b>💻 <em></em><br/>Set Up Crew and Van Initial</b>"]):::screensChanged
+    
+    
+    click Set_Up_Crew_and_Van_Initial "#set_up_crew_and_van_initial" "1977539098"
+    
+    
+    Set_Up_Crew_and_Van_Van(["💻 <em></em><br/>Set Up Crew and Van - Van"]):::screens
+    click Set_Up_Crew_and_Van_Van "#set_up_crew_and_van_van" "4092614594"
+    
+    Add_to_Collection --> Loop_Selected_Materials
+    Set_Leader_Boolean_FALSE --> Set_Up_Crew_and_Van_Initial
+    Set_Leader_Boolean_TRUE --> Set_Up_Crew_and_Van_Initial
+    Set_Material_Item_Values --> Add_to_Collection
+    Assignment_Check --> |"Already Assigned"| Assignment_Check_Screen
+    Assignment_Check --> |"Default Outcome"| Get_Materials
+    Check_Has_Leader --> |"Has Leader"| Set_Leader_Boolean_FALSE
+    Check_Has_Leader --> |"Default Outcome"| Set_Leader_Boolean_TRUE
+    Crew_Leader_Check --> |"Already Has Crew Leader And Selected Leader was True"| Already_Has_Leader
+    Crew_Leader_Check --> |"Has No Crew Leader And Selected Leader was False"| No_Leader_Selected
+    Crew_Leader_Check --> |"Default Outcome"| Assignment_Check
+    Loop_Selected_Materials --> |"For Each"|Set_Material_Item_Values
+    Loop_Selected_Materials ---> |"After Last"|Create_Material_Items
+    Create_Material_Items --> Update_Van_With_Service_Crew
+    Create_Material_Items -. Fault .->Fault
+    Create_Operator_Service_Crew_Member --> Get_Location_Details
+    Create_Operator_Service_Crew_Member -. Fault .->Fault
+    Create_Service_Territory_Member_Crew --> Finished
+    Create_Service_Territory_Member_Crew -. Fault .->Fault
+    Create_Van_Service_Resource --> Create_Service_Territory_Member_Crew
+    Create_Van_Service_Resource -. Fault .->Fault
+    Get_Crew_Leader --> Get_Territories_with_Responsibles
+    Get_Location_Details --> Loop_Selected_Materials
+    Get_Location_Details -. Fault .->Fault
+    Get_Materials --> Set_Up_Crew_and_Van_Van
+    Get_Other_Operator_Crew_Assignments --> Crew_Leader_Check
+    Get_Resources_with_Selected_Van --> Get_Service_Crew
+    Get_Resources_without_Vans --> Get_Vans_without_Service_Crews
+    Get_Service_Crew --> Get_Other_Operator_Crew_Assignments
+    Get_Territories_with_Responsibles --> Get_Resources_without_Vans
+    Get_Vans_without_Service_Crews --> Check_Has_Leader
+    Update_Van_With_Service_Crew --> Create_Van_Service_Resource
+    Update_Van_With_Service_Crew -. Fault .->Fault
+    Already_Has_Leader --> Assignment_Check
+    Assignment_Check_Screen --> END_Assignment_Check_Screen
+    Fault --> END_Fault
+    Finished --> END_Finished
+    No_Leader_Selected --> Assignment_Check
+    Set_Up_Crew_and_Van_Initial --> Get_Resources_with_Selected_Van
+    Set_Up_Crew_and_Van_Van --> Create_Operator_Service_Crew_Member
+    START -->  Get_Crew_Leader
+    END_Assignment_Check_Screen(( END )):::endClass
+    END_Fault(( END )):::endClass
+    END_Finished(( END )):::endClass
+    
+    
+    classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+    classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+    classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+    classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+    classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+    classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+    classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+    classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+    classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+    classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+    classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+    classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
+    
+    
+    
+    classDef actionCallsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassAdded fill:green,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    
+    classDef actionCallsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassRemoved fill:red,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    
+    classDef actionCallsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef assignmentsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef collectionProcessorsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef customErrorsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef decisionsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef loopsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordCreatesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordDeletesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordLookupsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef recordUpdatesChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef screensChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef subflowsChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+    classDef startClassChanged fill:orange,color:white,stroke-width:4px,text-decoration:none,max-height:100px
+      
+    ```
+    
+    <!-- Flow description -->
+    
+    ## Flow Nodes Details
+    
+    ### Set_Up_Crew_and_Van_Initial
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Type|Screen|
+    |Label|Set Up Crew and Van Initial|
+    |Allow Back|✅|
+    |Allow Finish|✅|
+    |Allow Pause|✅|
+    |Show Footer|✅|
+    |Show Header|✅|
+    |Connector|[Get_Resources_with_Selected_Van](#get_resources_with_selected_van)|
+    
+    
+    #### operatorId
+    
+    |<!-- -->|<!-- -->|
+    |:---|:---|
+    |Choice References|serviceResources|
+    |Extension Name|flowruntime:choiceLookup|
+    |🟥<span style="background-color: #ff7f7f; color: black;"><i>Field Text</i></span>|<span style="background-color: #ff7f7f; color: black;"><i>Operator</i></span>|
+    |🟩<span style="background-color: #a6e22e; color: black;"><b>Field Text</b></span>|<span style="background-color: #a6e22e; color: black;"><b>Main Operator</b></span>|
+    |Field Type| Component Choice|
+    |Inputs On Next Nav To Assoc Scrn| Use Stored Values|
+    |Is Required|✅|
+    |Store Output Automatically|✅|
+    |Parent Field|[Set_Up_Crew_and_Van_Initial_Section1_Column1](#set_up_crew_and_van_initial_section1_column1)|
+    
+    
+    
+    
+    ___
+    
+    _Documentation generated from branch monitoring_krinkelsgreencare__upeodev_sandbox by [sfdx-hardis](https://sfdx-hardis.cloudity.com), featuring [salesforce-flow-visualiser](https://github.com/toddhalfpenny/salesforce-flow-visualiser)_
+
 === "Jan 18, 2025"
 
     _Jan 18, 2025, by fpardon-upeo in commit Org state on 2025-01-18 00:24 for monitoring_krinkelsgreencare__upeodev_sandbox [skip ci]_
