@@ -1,2 +1,7 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
+classes/AccountImagesController.cls," ",ApexClass AccountImagesController,M,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
+flexipages/Work_Order_Record_Page.flexipage-meta.xml," ",FlexiPage Work_Order_Record_Page,M,,log,📰
+lwc/locationPassportImages/locationPassportImages.css," ",LightningComponentBundle locationPassportImages/locationPassportImages.css,M,,log,📰
+lwc/locationPassportImages/locationPassportImages.html," ",LightningComponentBundle locationPassportImages/locationPassportImages.html,M,,log,📰
+lwc/locationPassportImages/locationPassportImages.js," ",LightningComponentBundle locationPassportImages/locationPassportImages.js,M,,log,📰

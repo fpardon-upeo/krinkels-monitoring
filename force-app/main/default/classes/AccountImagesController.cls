@@ -2,14 +2,12 @@ public with sharing class AccountImagesController {
     public class ImageWrapper {
         @AuraEnabled public String Id;
         @AuraEnabled public String Title;
-        @AuraEnabled public String base64Data;
+        @AuraEnabled public String contentVersionId;  // Added to store the version ID
+        @AuraEnabled public String contentUrl;        // URL to load the image
     }
-
-    private static final Integer MAX_STRING_LENGTH = 1000000; // ~1MB after base64 encoding
 
     @AuraEnabled
     public static List<ImageWrapper> getAccountImages(Id accountId) {
-
         System.debug('Account Id: ' + accountId);
 
         List<ContentDocumentLink> links = [
@@ -24,7 +22,7 @@ public with sharing class AccountImagesController {
         }
 
         List<ContentVersion> versions = [
-                SELECT Id, Title, VersionData, FileType, ContentDocumentId
+                SELECT Id, Title, FileType, ContentDocumentId
                 FROM ContentVersion
                 WHERE ContentDocumentId IN :documentIds
                 AND IsLatest = true
@@ -34,31 +32,22 @@ public with sharing class AccountImagesController {
         ];
 
         List<ImageWrapper> wrappers = new List<ImageWrapper>();
+        String baseUrl = URL.getOrgDomainUrl().toExternalForm();
 
         for(ContentVersion version : versions) {
             try {
                 ImageWrapper wrapper = new ImageWrapper();
                 wrapper.Id = version.ContentDocumentId;
                 wrapper.Title = version.Title;
-
-                // Convert the image to base64
-                String base64 = EncodingUtil.base64Encode(version.VersionData);
-
-                // If the base64 string is too long, truncate it
-                if (base64.length() > MAX_STRING_LENGTH) {
-                    base64 = base64.substring(0, MAX_STRING_LENGTH);
-                }
-
-                wrapper.base64Data = 'data:image/' + version.FileType.toLowerCase() + ';base64,' + base64;
+                wrapper.contentVersionId = version.Id;
+                // Create a URL that will serve the image content
+                wrapper.contentUrl = baseUrl + '/sfc/servlet.shepherd/version/download/' + version.Id;
                 wrappers.add(wrapper);
-
             } catch(Exception e) {
                 System.debug('Error processing image: ' + version.Title + ' - ' + e.getMessage());
                 continue;
             }
         }
-
-        System.debug('Wrappers: ' + wrappers);
 
         return wrappers;
     }

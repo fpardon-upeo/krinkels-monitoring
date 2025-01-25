@@ -11,6 +11,7 @@ export default class AccountImages extends NavigationMixin(LightningElement) {
     @api accountId;
     images;
     imagesLoaded = false;
+    selectedImage = null;
 
     labels = {
         LocationPassport_Images_Header,
@@ -45,7 +46,11 @@ export default class AccountImages extends NavigationMixin(LightningElement) {
     }
 
     handleImageClick(event) {
-        const docId = event.currentTarget.dataset.id;
-        console.log('Image clicked:', docId);
+        const imageId = event.currentTarget.dataset.id;
+        this.selectedImage = this.images.data.find(img => img.Id === imageId);
+    }
+
+    handleCloseModal() {
+        this.selectedImage = null;
     }
 }
