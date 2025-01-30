@@ -95,4 +95,23 @@
 | Quote | [Quote_After_Save_Update_Status_to_RfE](../flows/Quote_After_Save_Update_Status_to_RfE.md) |  Record After Save | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [SFS_WorkOrderCreatorController](../apex/SFS_WorkOrderCreatorController.md) | Lightning Controller |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [B2B_Opportunity_Record_Page.](../pages/B2B_Opportunity_Record_Page..md) |  Record Page |
+| [Home_Page_Business_Support.](../pages/Home_Page_Business_Support..md) |  Home Page |
+| [Public_Tender_Opportunity_Record_Page.](../pages/Public_Tender_Opportunity_Record_Page..md) |  Record Page |
+| [Quick_Opportunity_Record_Page.](../pages/Quick_Opportunity_Record_Page..md) |  Record Page |
+| [Quote_Quick_Quote_Record_Page.](../pages/Quote_Quick_Quote_Record_Page..md) |  Record Page |
+| [Quote_Record_Page.](../pages/Quote_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

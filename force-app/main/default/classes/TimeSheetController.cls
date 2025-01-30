@@ -24,6 +24,7 @@ public with sharing class TimeSheetController {
         Total_Travel_Time__c,
         Total_Break_Time__c,
         Total_Hours_Minus_Breaks__c,
+        Total_Break_and_Absent_Time_Minutes__c,
         Status,
         (
           SELECT
@@ -35,6 +36,7 @@ public with sharing class TimeSheetController {
             Code_ATAK_Limbus__c,
             WorkOrder.Asset.Name,
             WorkOrder.WorkType.Name,
+            WorkOrder.Account.Name,
             WorkOrderId
           FROM TimeSheetEntries
           ORDER BY StartTime ASC

@@ -18,4 +18,13 @@
 | User | [User_After_Update_RecordTrigered_Create_Service_Resource](../flows/User_After_Update_RecordTrigered_Create_Service_Resource.md) [🕒](../flows/User_After_Update_RecordTrigered_Create_Service_Resource-history.md) |  Record After Save | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ServiceResourceHandler](../apex/ServiceResourceHandler.md) | Class |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

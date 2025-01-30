@@ -4069,4 +4069,36 @@
         <shortDescription>imageCapture_SuccessMessages</shortDescription>
         <value>The image/s was/were added to the record.</value>
     </labels>
+    <labels>
+        <fullName>AppointmentPicker_Checkout_Error</fullName>
+        <categories>AppointmentPicker</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppointmentPicker_Checkout_Error</shortDescription>
+        <value>Cannot complete this Work Order. Did you check in correctly?</value>
+    </labels>
+    <labels>
+        <fullName>Calendar_ErrorToast_Locked_Message</fullName>
+        <categories>Calendar</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calendar_ErrorToast_Locked_Message</shortDescription>
+        <value>The calendar is locked. Either it is already submitted or you did not unlock it.</value>
+    </labels>
+    <labels>
+        <fullName>Checkin_Error</fullName>
+        <categories>Checkin</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Validation Error</shortDescription>
+        <value>This Work Order cannot be started. Have you started the travel time already?</value>
+    </labels>
+    <labels>
+        <fullName>InternalWorkOrder_Select_Waste_Account_Text</fullName>
+        <categories>InternalWorkOrder</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InternalWorkOrder_Select_Waste_Account_Text</shortDescription>
+        <value>Select Waste Handler</value>
+    </labels>
 </CustomLabels>

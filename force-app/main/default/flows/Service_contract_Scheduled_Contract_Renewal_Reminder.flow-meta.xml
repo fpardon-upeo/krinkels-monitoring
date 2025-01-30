@@ -177,7 +177,7 @@ Kind rergards</text>
     <textTemplates>
         <name>EmailSubject</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>Renwal due for Account {!$Record.Account.Name}</text>
+        <text>Renewal due for Account {!$Record.Account.Name}</text>
     </textTemplates>
     <variables>
         <name>varRecipientList</name>

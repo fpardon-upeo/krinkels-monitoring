@@ -16,4 +16,14 @@
 
 
 
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Location_Passport_Record_Page.](../pages/Location_Passport_Record_Page..md) |  Record Page |
+| [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

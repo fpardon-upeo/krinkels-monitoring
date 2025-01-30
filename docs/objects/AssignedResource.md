@@ -32,4 +32,21 @@
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed](../flows/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.md) |  Record After Save | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [CreateChildWorkOrderController](../apex/CreateChildWorkOrderController.md) | Visualforce Controller |
+| [FirstWorkOrderChecker](../apex/FirstWorkOrderChecker.md) | Lightning Controller |
+| [FirstWorkOrderCheckerTest](../apex/FirstWorkOrderCheckerTest.md) | Test |
+| [GanttRoundPinAction](../apex/GanttRoundPinAction.md) | Class |
+| [GanttRoundPinActionTest](../apex/GanttRoundPinActionTest.md) | Test |
+| [InternalWorkOrderController](../apex/InternalWorkOrderController.md) | Lightning Controller |
+| [SchedulingController](../apex/SchedulingController.md) | Lightning Controller |
+| [ServiceAppointmentTriggerHandler](../apex/ServiceAppointmentTriggerHandler.md) | Trigger Handler |
+| [ServiceAppointmentTriggerHandlerTest](../apex/ServiceAppointmentTriggerHandlerTest.md) | Test |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

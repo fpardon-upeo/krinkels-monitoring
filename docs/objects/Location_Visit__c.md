@@ -75,4 +75,13 @@
 | Location_Visit__c | [Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit](../flows/Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit.md) |  Record After Save | Send a notification to the expected visitor that they are expected to do a visit |
 
 
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

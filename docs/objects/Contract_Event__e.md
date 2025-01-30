@@ -11,4 +11,13 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ServiceBuilderController](../apex/ServiceBuilderController.md) | Lightning Controller |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

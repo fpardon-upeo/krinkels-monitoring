@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>N.A</fullName>
+        <default>false</default>
+        <label>N.A</label>
+    </customValue>
+    <customValue>
+        <fullName>Required</fullName>
+        <default>false</default>
+        <label>Required</label>
+    </customValue>
+    <customValue>
+        <fullName>Available</fullName>
+        <default>false</default>
+        <label>Available</label>
+    </customValue>
+    <customValue>
+        <fullName>Requested/Created</fullName>
+        <default>false</default>
+        <label>Requested/Created</label>
+    </customValue>
+    <customValue>
+        <fullName>Received</fullName>
+        <default>false</default>
+        <label>Received</label>
+    </customValue>
+    <customValue>
+        <fullName>Done</fullName>
+        <default>false</default>
+        <label>Done</label>
+    </customValue>
+    <masterLabel>Infosheet Statuses 1</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

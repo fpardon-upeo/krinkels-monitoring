@@ -18,4 +18,13 @@
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines](../flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines.md) [🕒](../flows/Work_Order_After_Save_Record_Triggered_Assign_Work_Order_Lines-history.md) |  Record After Save | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [MaintenancePlanService](../apex/MaintenancePlanService.md) | Lightning Controller |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

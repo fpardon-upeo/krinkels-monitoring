@@ -14,4 +14,13 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [SDWorxToResourceAbsenceService](../apex/SDWorxToResourceAbsenceService.md) | Class |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

@@ -30,4 +30,16 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [SDWorxAbsenceBatch](../apex/SDWorxAbsenceBatch.md) | Batch |
+| [SDWorxToResourceAbsenceService](../apex/SDWorxToResourceAbsenceService.md) | Class |
+| [SDWorxToResourceAbsenceServiceTest](../apex/SDWorxToResourceAbsenceServiceTest.md) | Test |
+| [ServiceReportGenerationBatch](../apex/ServiceReportGenerationBatch.md) | Batch |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

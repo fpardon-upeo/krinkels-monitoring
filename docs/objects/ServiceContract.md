@@ -68,4 +68,33 @@
 | ServiceContract | [Service_contract_Scheduled_Contract_Renewal_Reminder](../flows/Service_contract_Scheduled_Contract_Renewal_Reminder.md) [🕒](../flows/Service_contract_Scheduled_Contract_Renewal_Reminder-history.md) |  Scheduled | sends reminder mail to the contract manager 3 months before the end of a contract |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ExtraWorkOrderController](../apex/ExtraWorkOrderController.md) | Lightning Controller |
+| [ImportRecordsController](../apex/ImportRecordsController.md) | Lightning Controller |
+| [MaintenancePlanService](../apex/MaintenancePlanService.md) | Lightning Controller |
+| [MaintenancePlanServiceTest](../apex/MaintenancePlanServiceTest.md) | Test |
+| [ReadyForValidation](../apex/ReadyForValidation.md) | Lightning Controller |
+| [ReadyForValidationTest](../apex/ReadyForValidationTest.md) | Test |
+| [SFS_WorkOrderCreatorController](../apex/SFS_WorkOrderCreatorController.md) | Lightning Controller |
+| [ServiceAppointmentTriggerHandler](../apex/ServiceAppointmentTriggerHandler.md) | Trigger Handler |
+| [ServiceAppointmentTriggerHandlerTest](../apex/ServiceAppointmentTriggerHandlerTest.md) | Test |
+| [ServiceBuilderController](../apex/ServiceBuilderController.md) | Lightning Controller |
+| [ServiceBuilderControllerTest](../apex/ServiceBuilderControllerTest.md) | Test |
+| [ServiceContractHandler](../apex/ServiceContractHandler.md) | Class |
+| [ServiceContractTriggerHandler](../apex/ServiceContractTriggerHandler.md) | Trigger Handler |
+| [WorkOrderScheduler](../apex/WorkOrderScheduler.md) | Class |
+| [WorkOrderSchedulerBatch](../apex/WorkOrderSchedulerBatch.md) | Batch |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Commercial_Account_Record_Page.](../pages/Commercial_Account_Record_Page..md) |  Record Page |
+| [Service_Contract_Record_Page.](../pages/Service_Contract_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

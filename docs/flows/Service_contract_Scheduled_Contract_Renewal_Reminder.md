@@ -35,23 +35,25 @@ END_Send_Renewal_Reminder_Mail(( END )):::endClass
 END_CM_Found_and_Active(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
+
+<!-- Flow description -->
 
 ## General Information
 
@@ -89,17 +91,17 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 
 ## Variables
 
-|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-|:-- |:--:|:--:|:--:|:--:|:--: |
-|varRecipientList|String|✅|⬜|⬜|<!-- -->|
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|varRecipientList|String|✅|⬜|⬜|<!-- -->|<!-- -->|
 
 
 ## Text Templates
 
-|Name|Text|
-|:-- |:--  |
-|EmailBody|Hello<br/><br/>the renewal for contract {!$Record.Name} and account {!$Record.Account.Name} is upcoming. End date for the contract is {!$Record.EndDate}.<br/>Link to Contract: https://krinkelsgreencare--upeodev.sandbox.lightning.force.com/lightning/r/ServiceContract/{!$Record.Id}/view<br/><br/>Kind rergards|
-|EmailSubject|Renwal due for Account {!$Record.Account.Name}|
+|Name|Text|Description|
+|:-- |:-- |:--  |
+|EmailBody|Hello<br/><br/>the renewal for contract {!$Record.Name} and account {!$Record.Account.Name} is upcoming. End date for the contract is {!$Record.EndDate}.<br/>Link to Contract: https://krinkelsgreencare--upeodev.sandbox.lightning.force.com/lightning/r/ServiceContract/{!$Record.Id}/view<br/><br/>Kind rergards|<!-- -->|
+|EmailSubject|Renewal due for Account {!$Record.Account.Name}|<!-- -->|
 
 
 ## Flow Nodes Details

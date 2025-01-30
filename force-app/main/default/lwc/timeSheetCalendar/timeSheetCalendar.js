@@ -76,6 +76,7 @@ import Calendar_SuccessToast_UpdatedTimeSheetEntry_Message from "@salesforce/lab
 import Calendar_ErrorToast_SubmitTimeSheet_Message from "@salesforce/label/c.Calendar_ErrorToast_SubmitTimeSheet_Message";
 import Calendar_ErrorToast_EditUserSettings_Message from "@salesforce/label/c.Calendar_ErrorToast_EditUserSettings_Message";
 import Calendar_ErrorToast_NewUserSettings_Message from "@salesforce/label/c.Calendar_ErrorToast_NewUserSettings_Message";
+import Calendar_ErrorToast_Locked_Message from "@salesforce/label/c.Calendar_ErrorToast_Locked_Message";
 import Calendar_ErrorToast_UserSettings_Message from "@salesforce/label/c.Calendar_ErrorToast_UserSettings_Message";
 
 export default class TimeSheetCalendar extends LightningElement {
@@ -99,6 +100,7 @@ export default class TimeSheetCalendar extends LightningElement {
 
   @track startDate;
   @track endDate;
+  @track isLocked = true;
 
   @track startDateAndHours;
   @track endDateAndHours;
@@ -142,6 +144,8 @@ export default class TimeSheetCalendar extends LightningElement {
   @track isFurtherButtonDisabled = false;
   @track isBackButtonDisabled = false;
   @track showNewBreakEntryModal = false;
+  @track entryStartDate;
+  @track entryEndDate;
 
   @track minValue = 0;
   @track maxValue = 24;
@@ -194,7 +198,6 @@ export default class TimeSheetCalendar extends LightningElement {
     Calendar_WorkHours_Header,
     Calendar_TotalKM_Header,
     Calendar_TotalBreak_Header,
-    Calendar_ErrorToast_UserSettings_Message,
     Calendar_ErrorToast_SubmitTimeSheet_Message,
     Calendar_ErrorToast_EditUserSettings_Message,
     Calendar_ErrorToast_NewUserSettings_Message,
@@ -209,11 +212,22 @@ export default class TimeSheetCalendar extends LightningElement {
     Calendar_SuccessToast_CreatedResourceAbsence_Message,
     Calendar_SuccessToast_UpdatedResourceAbsence_Message,
     Calendar_SuccessToast_CreatedTimeSheetEntry_Message,
-    Calendar_SuccessToast_UpdatedTimeSheetEntry_Message
+    Calendar_SuccessToast_UpdatedTimeSheetEntry_Message,
+    Calendar_ErrorToast_Locked_Message
   };
 
   @api refreshCalendar() {
     this.handleRefresh();
+  }
+
+  handleUnlock() {
+    console.log("unlocking");
+    this.isLocked = false;
+  }
+
+  handleLock() {
+    console.log("locking");
+    this.isLocked = true;
   }
 
   connectedCallback() {
@@ -317,7 +331,7 @@ export default class TimeSheetCalendar extends LightningElement {
             this.kmAmount = timeSheet.timeSheet.Total_KM__c || 0;
             this.totalHours = timeSheet.timeSheet.Total_Normal_Hours__c || 0;
             this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
-              timeSheet.timeSheet.Total_Break_Time__c || 0
+              timeSheet.timeSheet.Total_Break_and_Absent_Time_Minutes__c || 0
             );
           }
 
@@ -384,6 +398,7 @@ export default class TimeSheetCalendar extends LightningElement {
               if (mileageEntry.Work_Order__c && mileageEntry.Type__c === "Starting") {
                 workOrderIds.push(mileageEntry.Work_Order__c);
               }
+              console.log(workOrderIds);
             });
 
             this.mileageEntries = [...timeSheet.timeSheet.Mileage_Entries__r];
@@ -462,14 +477,19 @@ export default class TimeSheetCalendar extends LightningElement {
         };
         console.log('TimeSheet Entry Data:', JSON.stringify(entryData));
 
+        let entryTitle = entry.WorkOrder.WorkType.Name
+            ? `${entry.Type} - ${entry.WorkOrder.Asset.Name}`
+            : `${entry.Type}`;
+        if(entry.Type === 'Travel Time'){
+          entryTitle = 'Travel Time';
+        }
+
         return {
 
         id: entry.Id,
         start: entry.StartTime,
         end: entry.EndTime !== null ? entry.EndTime : entry.StartTime,
-        title: entry.WorkOrder.WorkType.Name
-          ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
-          : `${entry.Type}`,
+        title: entryTitle,
         backgroundColor:
           entry.Type === "Normal Hours"
             ? "#6DA241"
@@ -487,7 +507,7 @@ export default class TimeSheetCalendar extends LightningElement {
                 ? "#DAA520"
                 : "#c23934",
         // Only allow editing if the TimeSheet is not submitted or approved
-        editable: !this.isTimeSheetSubmittedOrApproved,
+        editable: this.isEditable,
         extendedProps: {
           recordType: "TimeSheetEntry"
         }
@@ -512,7 +532,7 @@ export default class TimeSheetCalendar extends LightningElement {
         backgroundColor: "#c23934",
         borderColor: "#c23934",
         // Only allow editing if the TimeSheet is not submitted or approved
-        editable: !this.isTimeSheetSubmittedOrApproved,
+        editable: this.isEditable,
         extendedProps: {
           recordType: "ResourceAbsence"
         }
@@ -562,14 +582,14 @@ export default class TimeSheetCalendar extends LightningElement {
       longPressDelay: 600,
       selectLongPressDelay: 600,
       // Event settings
-      eventDurationEditable: true,
-      eventStartEditable: true,
-      eventResizableFromStart: true,
+      //eventDurationEditable: true,
+      //eventStartEditable: true,
+      //eventResizableFromStart: true,
       selectConstraint: {
         start: "00:00",
         end: "24:00"
       },
-      eventResizeGrow: true,
+      //eventResizeGrow: true,
       initialDate: this.startDate,
       eventTimeFormat: {
         hour: "2-digit",
@@ -578,14 +598,14 @@ export default class TimeSheetCalendar extends LightningElement {
       },
       snapDuration: "00:05:00",
       events: allEvents,
-      editable: !this.isTimeSheetSubmittedOrApproved,
+      editable: false,
       selectMirror: true,
 
       // Event styling
       eventDidMount: (info) => {
         const eventEl = info.el.querySelector(".fc-event-main");
 
-        console.log('Event mounted:', JSON.stringify({
+        console.log('Event mounted 1:', JSON.stringify({
           title: info.event.title,
           start: info.event.start,
           end: info.event.end,
@@ -613,7 +633,7 @@ export default class TimeSheetCalendar extends LightningElement {
       // Click event
       eventClick: (info) => {
         // Only allow clicking if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApproved) {
+        if (!this.isEditable()) {
           this.handleEventClick(info);
         }
       },
@@ -623,10 +643,10 @@ export default class TimeSheetCalendar extends LightningElement {
         const startTime = info.event.start.toISOString();
         const endTime = info.event.end.toISOString();
 
-        console.log("in event drop");
+        console.log("in event drop", JSON.stringify(info.event));
 
         // Only allow dragging if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApproved) {
+        if (!this.isEditable()) {
           console.log("update time sheet entry after drag and drop");
           if (info.event.extendedProps.recordType === "TimeSheetEntry") {
             updateTimeSheetEntry({
@@ -678,6 +698,9 @@ export default class TimeSheetCalendar extends LightningElement {
                 console.error("Error:", error);
               });
           }
+        } else {
+          this.handleLockedCalendar();
+          info.revert();
         }
       },
       // Resize event
@@ -687,7 +710,7 @@ export default class TimeSheetCalendar extends LightningElement {
         const endTime = info.event.end;
 
         // Only allow resizing if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApproved) {
+        if (!this.isEditable()) {
           if (info.event.extendedProps.recordType === "TimeSheetEntry") {
             updateTimeSheetEntry({
               timeSheetEntryId: info.event.id,
@@ -738,18 +761,51 @@ export default class TimeSheetCalendar extends LightningElement {
                 console.error("Error:", error);
               });
           }
+        } else {
+            this.handleLockedCalendar();
+            info.revert();
         }
       },
       // When multiple rows or cells are selected
       select: (info) => {
         // Only allow selecting if the TimeSheet is not submitted or approved
-        if (!this.isTimeSheetSubmittedOrApproved) {
+        if (!this.isEditable()) {
           this.handleDateClick(info);
         }
       }
     });
 
     this.calendar.render();
+  }
+
+  /**
+   * Show a toast to warn that the calendar is locked
+   */
+    handleLockedCalendar() {
+    const event = new ShowToastEvent({
+      title: this.labels.Calendar_ErrorToast_Title,
+      message: this.labels.Calendar_ErrorToast_Locked_Message,
+      variant: "error"
+    });
+    this.dispatchEvent(event);
+  }
+
+  isEditable(){
+    console.log('checking editable');
+    let shouldLock = true;
+    if(this.isTimeSheetSubmittedOrApproved){
+      console.log('timesheet is submitted or approved');
+      return shouldLock;
+    } else if (this.isLocked === false){
+        console.log('timesheet is not submitted or approved and is not locked');
+      shouldLock = false;
+      return shouldLock;
+    } else {
+        console.log('timesheet is not submitted or approved but is locked');
+        shouldLock = true;
+        console.log('shouldLock', shouldLock);
+        return shouldLock;
+    }
   }
 
   /**
@@ -1003,7 +1059,7 @@ export default class TimeSheetCalendar extends LightningElement {
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
           this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
-            result.timeSheet.Total_Break_Time__c || 0
+            result.timeSheet.Total_Break_and_Absent_Time_Minutes__c || 0
           );
 
           this.startDate = result.timeSheet.StartDate;
@@ -1013,7 +1069,7 @@ export default class TimeSheetCalendar extends LightningElement {
         // Handle mileage entries
         if (result.timeSheet?.Mileage_Entries__r) {
           result.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
-            if (mileageEntry.Work_Order__c) {
+            if (mileageEntry.Work_Order__c && mileageEntry.Type__c === "Starting") {
               workOrderIds.push(mileageEntry.Work_Order__c);
             }
           });
@@ -1038,41 +1094,49 @@ export default class TimeSheetCalendar extends LightningElement {
         // Create new TimeSheet events
         if (result.timeSheet?.TimeSheetEntries) {
           const timeSheetEvents = result.timeSheet.TimeSheetEntries.filter(
-            (entry) => {
-              // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
-              return !(
-                entry.Code_ATAK_Limbus__c === "RT" &&
-                workOrderIds.includes(entry.WorkOrderId)
-              );
+              (entry) => {
+                // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
+                return !(
+                    entry.Code_ATAK_Limbus__c === "RT" &&
+                    workOrderIds.includes(entry.WorkOrderId)
+                );
+              }
+          ).map((entry) => {
+            // Process title separately to handle the Travel Time case
+            let entryTitle = entry.WorkOrder.WorkType.Name
+                ? `${entry.Type} - ${entry.WorkOrder.Asset.Name}`
+                : `${entry.Type}`;
+            if(entry.Type === 'Travel Time') {
+              entryTitle = 'Travel Time';
             }
-          ).map((entry) => ({
-            id: entry.Id,
-            start: entry.StartTime,
-            end: entry.EndTime,
-            title: entry.WorkOrder.WorkType.Name
-                ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
-                : `${entry.Type}`,
-            backgroundColor:
-              entry.Type === "Normal Hours"
-                ? "#6DA241"
-                : entry.Type === "Travel Time"
-                  ? "#009FBD"
-                  : entry.Type === "Night Work" || entry.Type === "Machine"
-                    ? "#DAA520"
-                    : "#c23934",
-            borderColor:
-              entry.Type === "Normal Hours"
-                ? "#6DA241"
-                : entry.Type === "Travel Time"
-                  ? "#009FBD"
-                  : entry.Type === "Night Work" || entry.Type === "Machine"
-                    ? "#DAA520"
-                    : "#c23934",
-            editable: !this.isTimeSheetSubmittedOrApproved,
-            extendedProps: {
-              recordType: "TimeSheetEntry"
-            }
-          }));
+
+            return {
+              id: entry.Id,
+              start: entry.StartTime,
+              end: entry.EndTime !== null ? entry.EndTime : entry.StartTime,
+              title: entryTitle,
+              backgroundColor:
+                  entry.Type === "Normal Hours"
+                      ? "#6DA241"
+                      : entry.Type === "Travel Time"
+                          ? "#009FBD"
+                          : entry.Type === "Night Work" || entry.Type === "Machine"
+                              ? "#DAA520"
+                              : "#c23934",
+              borderColor:
+                  entry.Type === "Normal Hours"
+                      ? "#6DA241"
+                      : entry.Type === "Travel Time"
+                          ? "#009FBD"
+                          : entry.Type === "Night Work" || entry.Type === "Machine"
+                              ? "#DAA520"
+                              : "#c23934",
+              editable: this.isEditable,
+              extendedProps: {
+                recordType: "TimeSheetEntry"
+              }
+            };
+          });
           timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
         }
 
@@ -1087,7 +1151,7 @@ export default class TimeSheetCalendar extends LightningElement {
               : "Break",
             backgroundColor: "#c23934",
             borderColor: "#c23934",
-            editable: !this.isTimeSheetSubmittedOrApproved,
+            editable: this.isEditable,
             extendedProps: {
               recordType: "ResourceAbsence"
             }
@@ -1235,7 +1299,7 @@ export default class TimeSheetCalendar extends LightningElement {
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
           this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
-            result.timeSheet.Total_Break_Time__c || 0
+            result.timeSheet.Total_Break_and_Absent_Time_Minutes__c || 0
           );
 
           this.startDate = result.timeSheet.StartDate;
@@ -1245,7 +1309,7 @@ export default class TimeSheetCalendar extends LightningElement {
         // Handle mileage entries
         if (result.timeSheet?.Mileage_Entries__r) {
           result.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
-            if (mileageEntry.Work_Order__c) {
+            if (mileageEntry.Work_Order__c && mileageEntry.Type__c === "Starting") {
               workOrderIds.push(mileageEntry.Work_Order__c);
             }
           });
@@ -1270,41 +1334,49 @@ export default class TimeSheetCalendar extends LightningElement {
         // Create new TimeSheet events
         if (result.timeSheet?.TimeSheetEntries) {
           const timeSheetEvents = result.timeSheet.TimeSheetEntries.filter(
-            (entry) => {
-              // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
-              return !(
-                entry.Code_ATAK_Limbus__c === "RT" &&
-                workOrderIds.includes(entry.WorkOrderId)
-              );
+              (entry) => {
+                // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
+                return !(
+                    entry.Code_ATAK_Limbus__c === "RT" &&
+                    workOrderIds.includes(entry.WorkOrderId)
+                );
+              }
+          ).map((entry) => {
+            // Process title separately to handle the Travel Time case
+            let entryTitle = entry.WorkOrder.WorkType.Name
+                ? `${entry.Type} - ${entry.WorkOrder.Asset.Name}`
+                : `${entry.Type}`;
+            if(entry.Type === 'Travel Time') {
+              entryTitle = 'Travel Time';
             }
-          ).map((entry) => ({
-            id: entry.Id,
-            start: entry.StartTime,
-            end: entry.EndTime,
-            title: entry.WorkOrder.WorkType.Name
-                ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
-                : `${entry.Type}`,
-            backgroundColor:
-              entry.Type === "Normal Hours"
-                ? "#6DA241"
-                : entry.Type === "Travel Time"
-                  ? "#009FBD"
-                  : entry.Type === "Night Work" || entry.Type === "Machine"
-                    ? "#DAA520"
-                    : "#c23934",
-            borderColor:
-              entry.Type === "Normal Hours"
-                ? "#6DA241"
-                : entry.Type === "Travel Time"
-                  ? "#009FBD"
-                  : entry.Type === "Night Work" || entry.Type === "Machine"
-                    ? "#DAA520"
-                    : "#c23934",
-            editable: !this.isTimeSheetSubmittedOrApproved,
-            extendedProps: {
-              recordType: "TimeSheetEntry"
-            }
-          }));
+
+            return {
+              id: entry.Id,
+              start: entry.StartTime,
+              end: entry.EndTime !== null ? entry.EndTime : entry.StartTime,
+              title: entryTitle,
+              backgroundColor:
+                  entry.Type === "Normal Hours"
+                      ? "#6DA241"
+                      : entry.Type === "Travel Time"
+                          ? "#009FBD"
+                          : entry.Type === "Night Work" || entry.Type === "Machine"
+                              ? "#DAA520"
+                              : "#c23934",
+              borderColor:
+                  entry.Type === "Normal Hours"
+                      ? "#6DA241"
+                      : entry.Type === "Travel Time"
+                          ? "#009FBD"
+                          : entry.Type === "Night Work" || entry.Type === "Machine"
+                              ? "#DAA520"
+                              : "#c23934",
+              editable: this.isEditable,
+              extendedProps: {
+                recordType: "TimeSheetEntry"
+              }
+            };
+          });
           timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
         }
 
@@ -1319,7 +1391,7 @@ export default class TimeSheetCalendar extends LightningElement {
               : "Break",
             backgroundColor: "#c23934",
             borderColor: "#c23934",
-            editable: !this.isTimeSheetSubmittedOrApproved,
+            editable: this.isEditable,
             extendedProps: {
               recordType: "ResourceAbsence"
             }
@@ -1735,7 +1807,7 @@ export default class TimeSheetCalendar extends LightningElement {
           this.kmAmount = result.timeSheet.Total_KM__c || 0;
           this.totalHours = result.timeSheet.Total_Hours__c || 0;
           this.totalBreakHours = this.convertMinutesToHoursAndMinutes(
-            result.timeSheet.Total_Break_Time__c || 0
+            result.timeSheet.Total_Break_and_Absent_Time_Minutes__c || 0
           );
         }
 
@@ -1750,7 +1822,7 @@ export default class TimeSheetCalendar extends LightningElement {
 
         if (result.timeSheet.Mileage_Entries__r) {
           result.timeSheet.Mileage_Entries__r.forEach((mileageEntry) => {
-            if (mileageEntry.Work_Order__c) {
+            if (mileageEntry.Work_Order__c && mileageEntry.Type__c === "Starting") {
               workOrderIds.push(mileageEntry.Work_Order__c);
             }
           });
@@ -1761,41 +1833,49 @@ export default class TimeSheetCalendar extends LightningElement {
         // Create new TimeSheet events
         if (result.timeSheet?.TimeSheetEntries) {
           const timeSheetEvents = result.timeSheet.TimeSheetEntries.filter(
-            (entry) => {
-              // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
-              return !(
-                entry.Code_ATAK_Limbus__c === "RT" &&
-                workOrderIds.includes(entry.WorkOrderId)
-              );
+              (entry) => {
+                // Exclude entries where Code_ATAK_Limbus__c is 'RT' AND WorkOrderId is in workOrderIds
+                return !(
+                    entry.Code_ATAK_Limbus__c === "RT" &&
+                    workOrderIds.includes(entry.WorkOrderId)
+                );
+              }
+          ).map((entry) => {
+            // Process title separately to handle the Travel Time case
+            let entryTitle = entry.WorkOrder.WorkType.Name
+                ? `${entry.Type} - ${entry.WorkOrder.Asset.Name}`
+                : `${entry.Type}`;
+            if(entry.Type === 'Travel Time') {
+              entryTitle = 'Travel Time';
             }
-          ).map((entry) => ({
-            id: entry.Id,
-            start: entry.StartTime,
-            end: entry.EndTime,
-            title: entry.WorkOrder.WorkType.Name
-                ? `${entry.WorkOrder.WorkType.Name} - ${entry.WorkOrder.Asset.Name}`
-                : `${entry.Type}`,
-            backgroundColor:
-              entry.Type === "Normal Hours"
-                ? "#6DA241"
-                : entry.Type === "Travel Time"
-                  ? "#009FBD"
-                  : entry.Type === "Night Work" || entry.Type === "Machine"
-                    ? "#DAA520"
-                    : "#c23934",
-            borderColor:
-              entry.Type === "Normal Hours"
-                ? "#6DA241"
-                : entry.Type === "Travel Time"
-                  ? "#009FBD"
-                  : entry.Type === "Night Work" || entry.Type === "Machine"
-                    ? "#DAA520"
-                    : "#c23934",
-            editable: !this.isTimeSheetSubmittedOrApproved,
-            extendedProps: {
-              recordType: "TimeSheetEntry"
-            }
-          }));
+
+            return {
+              id: entry.Id,
+              start: entry.StartTime,
+              end: entry.EndTime !== null ? entry.EndTime : entry.StartTime,
+              title: entryTitle,
+              backgroundColor:
+                  entry.Type === "Normal Hours"
+                      ? "#6DA241"
+                      : entry.Type === "Travel Time"
+                          ? "#009FBD"
+                          : entry.Type === "Night Work" || entry.Type === "Machine"
+                              ? "#DAA520"
+                              : "#c23934",
+              borderColor:
+                  entry.Type === "Normal Hours"
+                      ? "#6DA241"
+                      : entry.Type === "Travel Time"
+                          ? "#009FBD"
+                          : entry.Type === "Night Work" || entry.Type === "Machine"
+                              ? "#DAA520"
+                              : "#c23934",
+              editable: this.isEditable,
+              extendedProps: {
+                recordType: "TimeSheetEntry"
+              }
+            };
+          });
           timeSheetEvents.forEach((event) => this.calendar.addEvent(event));
         }
 
@@ -1810,7 +1890,7 @@ export default class TimeSheetCalendar extends LightningElement {
               : "Break",
             backgroundColor: "#c23934",
             borderColor: "#c23934",
-            editable: !this.isTimeSheetSubmittedOrApproved,
+            editable: this.isEditable,
             extendedProps: {
               recordType: "ResourceAbsence"
             }
@@ -1983,6 +2063,22 @@ export default class TimeSheetCalendar extends LightningElement {
 
   handleNewBreak() {
     this.handleCloseForm();
+
+    console.log("End date:", this.endDate);
+    console.log("Start date: ", this.startDate);
+    //We need the start date with a time of 12:00:00 AM and the end date of 12:30:00 AM
+    const startDate = new Date(this.startDate);
+    startDate.setHours(12, 0, 0, 0);
+    const endDate = new Date(this.startDate);
+    endDate.setHours(12, 30, 0, 0);
+    console.log("Start date:", startDate);
+    console.log("End date:", endDate);
+    //The format needed is 2025-01-27T00:00:00.000Z
+    this.entryStartDate = startDate.toISOString();
+    this.entryEndDate = endDate.toISOString();
+    console.log("Start date:", this.entryStartDate);
+    console.log("End date:", this.entryEndDate);
+
     this.showNewBreakEntryModal = true;
   }
 

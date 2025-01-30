@@ -40,4 +40,23 @@
 | WorkStep | [Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable](../flows/Work_Step_Before_Save_Record_Triggered_Update_Status_to_Not_Applicable.md) |  Record Before Save | When the applicable fields are filled in, this flow updates the value of the work step to 'Not Applicable'. |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [CheckInService](../apex/CheckInService.md) | Lightning Controller |
+| [ImageCaptureService](../apex/ImageCaptureService.md) | Lightning Controller |
+| [OverrideNotApplicableController](../apex/OverrideNotApplicableController.md) | Visualforce Controller |
+| [WorkStepSignatureController](../apex/WorkStepSignatureController.md) | Lightning Controller |
+| [WorkStepSignatureControllerTest](../apex/WorkStepSignatureControllerTest.md) | Test |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
+| [Work_Step_Record_Page.](../pages/Work_Step_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

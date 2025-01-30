@@ -12,4 +12,14 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [InboundLoggerService](../apex/InboundLoggerService.md) | Class |
+| [OutboundLoggerService](../apex/OutboundLoggerService.md) | Class |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

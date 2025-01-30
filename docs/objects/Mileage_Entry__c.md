@@ -37,4 +37,25 @@
 | Mileage_Entry__c | [Mileage_Entry_Before_Save](../flows/Mileage_Entry_Before_Save.md) [🕒](../flows/Mileage_Entry_Before_Save-history.md) |  Record Before Save | This flow is to update and automatically fill in specific fields |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ATAKPerformanceService](../apex/ATAKPerformanceService.md) | Callout |
+| [ATAKPerformanceServiceTest](../apex/ATAKPerformanceServiceTest.md) | Test |
+| [ATAKWorkLogService](../apex/ATAKWorkLogService.md) | Class |
+| [ATAKWorkLogServiceTest](../apex/ATAKWorkLogServiceTest.md) | Test |
+| [MileageEntryProjectLinkService](../apex/MileageEntryProjectLinkService.md) | Class |
+| [MileageEntryProjectLinkServiceTest](../apex/MileageEntryProjectLinkServiceTest.md) | Test |
+| [TimeSheetControllerTest](../apex/TimeSheetControllerTest.md) | Test |
+| [ValidationService](../apex/ValidationService.md) | Class |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Mileage_Entry_Record_Page.](../pages/Mileage_Entry_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

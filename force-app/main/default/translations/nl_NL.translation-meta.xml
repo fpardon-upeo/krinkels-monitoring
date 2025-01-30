@@ -49,6 +49,10 @@
         <name>AppointmentPicker_Cancel_Button</name>
     </customLabels>
     <customLabels>
+        <label><!-- AppointmentPicker_Checkout_Error --></label>
+        <name>AppointmentPicker_Checkout_Error</name>
+    </customLabels>
+    <customLabels>
         <label><!-- AppointmentPicker_Day_Ended_Toast --></label>
         <name>AppointmentPicker_Day_Ended_Toast</name>
     </customLabels>
@@ -191,6 +195,10 @@
     <customLabels>
         <label><!-- Calendar_ErrorToast_EditUserSettings_Message --></label>
         <name>Calendar_ErrorToast_EditUserSettings_Message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calendar_ErrorToast_Locked_Message --></label>
+        <name>Calendar_ErrorToast_Locked_Message</name>
     </customLabels>
     <customLabels>
         <label><!-- Calendar_ErrorToast_NewUserSettings_Message --></label>
@@ -379,6 +387,10 @@
     <customLabels>
         <label><!-- Calendar_WorkHours_Header --></label>
         <name>Calendar_WorkHours_Header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validation Error --></label>
+        <name>Checkin_Error</name>
     </customLabels>
     <customLabels>
         <label><!-- Loading Spinner Message --></label>
@@ -679,6 +691,10 @@
     <customLabels>
         <label><!-- InternalWorkOrder_Select_WO_Warning_Text --></label>
         <name>InternalWorkOrder_Select_WO_Warning_Text</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InternalWorkOrder_Select_Waste_Account_Text --></label>
+        <name>InternalWorkOrder_Select_Waste_Account_Text</name>
     </customLabels>
     <customLabels>
         <label><!-- InternalWorkOrder_Start_Travel_Sub_Text --></label>

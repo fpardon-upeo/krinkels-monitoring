@@ -12,4 +12,17 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [AccountImagesController](../apex/AccountImagesController.md) | Lightning Controller |
+| [FileUploadImprovedHelper](../apex/FileUploadImprovedHelper.md) | Invocable |
+| [FileUploadImproved_Test](../apex/FileUploadImproved_Test.md) | Test |
+| [WorkStepSignatureController](../apex/WorkStepSignatureController.md) | Lightning Controller |
+| [WorkStepSignatureControllerTest](../apex/WorkStepSignatureControllerTest.md) | Test |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

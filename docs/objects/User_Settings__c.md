@@ -14,4 +14,14 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [TimeSheetController](../apex/TimeSheetController.md) | Lightning Controller |
+| [TimeSheetControllerTest](../apex/TimeSheetControllerTest.md) | Test |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

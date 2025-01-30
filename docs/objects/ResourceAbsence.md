@@ -54,4 +54,27 @@
 | TimeSheetEntry | [Time_Sheet_Entry_Before_Save](../flows/Time_Sheet_Entry_Before_Save.md) [🕒](../flows/Time_Sheet_Entry_Before_Save-history.md) |  Record Before Save | This flow is configured to update and fill in some data automatically on Time Sheet Entries |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [FieldServiceTestData](../apex/FieldServiceTestData.md) | Test |
+| [SDWorxAbsenceBatch](../apex/SDWorxAbsenceBatch.md) | Batch |
+| [SDWorxToResourceAbsenceService](../apex/SDWorxToResourceAbsenceService.md) | Class |
+| [SDWorxToResourceAbsenceServiceTest](../apex/SDWorxToResourceAbsenceServiceTest.md) | Test |
+| [TimeSheetCalculationInvocable](../apex/TimeSheetCalculationInvocable.md) | Invocable |
+| [TimeSheetCalculationService](../apex/TimeSheetCalculationService.md) | Class |
+| [TimeSheetCalculationServiceTest](../apex/TimeSheetCalculationServiceTest.md) | Test |
+| [TimeSheetController](../apex/TimeSheetController.md) | Lightning Controller |
+| [TimeSheetControllerTest](../apex/TimeSheetControllerTest.md) | Test |
+| [TimeSheetHandler](../apex/TimeSheetHandler.md) | Class |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Resource_Absence_Record_Page.](../pages/Resource_Absence_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

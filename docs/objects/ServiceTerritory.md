@@ -30,4 +30,37 @@
 | Operator_Created_Event__e | [Operator_Created_Event_e_Create_Service_Resource](../flows/Operator_Created_Event_e_Create_Service_Resource.md) [🕒](../flows/Operator_Created_Event_e_Create_Service_Resource-history.md) |  Platform Event | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [AccountDetailsController](../apex/AccountDetailsController.md) | Lightning Controller |
+| [AccountDetailsControllerTest](../apex/AccountDetailsControllerTest.md) | Test |
+| [ExtraWorkOrderController](../apex/ExtraWorkOrderController.md) | Lightning Controller |
+| [FieldServiceTestData](../apex/FieldServiceTestData.md) | Test |
+| [FirstWorkOrderCheckerTest](../apex/FirstWorkOrderCheckerTest.md) | Test |
+| [GanttRoundPinActionTest](../apex/GanttRoundPinActionTest.md) | Test |
+| [InternalWorkOrderController](../apex/InternalWorkOrderController.md) | Lightning Controller |
+| [MaintenancePlanService](../apex/MaintenancePlanService.md) | Lightning Controller |
+| [SFS_WorkOrderCreatorController](../apex/SFS_WorkOrderCreatorController.md) | Lightning Controller |
+| [SchedulingController](../apex/SchedulingController.md) | Lightning Controller |
+| [ServiceAppointmentTriggerHandler](../apex/ServiceAppointmentTriggerHandler.md) | Trigger Handler |
+| [ServiceAppointmentTriggerHandlerTest](../apex/ServiceAppointmentTriggerHandlerTest.md) | Test |
+| [ServiceResourceHandler](../apex/ServiceResourceHandler.md) | Class |
+| [WorkOrderLocationBatch](../apex/WorkOrderLocationBatch.md) | Batch |
+| [WorkOrderLocationQueueable](../apex/WorkOrderLocationQueueable.md) | Class |
+| [WorkOrderSchedulerBatch](../apex/WorkOrderSchedulerBatch.md) | Batch |
+| [WorkOrderTriggerHandler](../apex/WorkOrderTriggerHandler.md) | Trigger Handler |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
+| [Service_Appointment_Service_Report_NL.](../pages/Service_Appointment_Service_Report_NL..md) |  Service Document |
+| [Service_Appointment_Service_Report_Without_Signature_NL.](../pages/Service_Appointment_Service_Report_Without_Signature_NL..md) |  Service Document |
+| [Service_Territory_Record_Page.](../pages/Service_Territory_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

@@ -39,4 +39,38 @@
 | Quote | [Quote_After_Save_Create_Work_Order_on_Acceptance](../flows/Quote_After_Save_Create_Work_Order_on_Acceptance.md) [🕒](../flows/Quote_After_Save_Create_Work_Order_on_Acceptance-history.md) |  Record After Save | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ATAKMaterialService](../apex/ATAKMaterialService.md) | Class |
+| [ATAKPerformanceService](../apex/ATAKPerformanceService.md) | Callout |
+| [ATAKPerformanceServiceTest](../apex/ATAKPerformanceServiceTest.md) | Test |
+| [ATAKVehicleService](../apex/ATAKVehicleService.md) | Class |
+| [ATAKWorkLogService](../apex/ATAKWorkLogService.md) | Class |
+| [ATAKWorkLogServiceTest](../apex/ATAKWorkLogServiceTest.md) | Test |
+| [ExtraWorkOrderController](../apex/ExtraWorkOrderController.md) | Lightning Controller |
+| [FieldServiceTestData](../apex/FieldServiceTestData.md) | Test |
+| [GanttRoundPinActionTest](../apex/GanttRoundPinActionTest.md) | Test |
+| [MachineRestResourceTest](../apex/MachineRestResourceTest.md) | Test |
+| [MaintenancePlanService](../apex/MaintenancePlanService.md) | Lightning Controller |
+| [MaintenancePlanServiceTest](../apex/MaintenancePlanServiceTest.md) | Test |
+| [MaterialPickupController](../apex/MaterialPickupController.md) | Lightning Controller |
+| [ReadyForValidationTest](../apex/ReadyForValidationTest.md) | Test |
+| [SchedulingController](../apex/SchedulingController.md) | Lightning Controller |
+| [ServiceAppointmentTriggerHandlerTest](../apex/ServiceAppointmentTriggerHandlerTest.md) | Test |
+| [ServiceBuilderController](../apex/ServiceBuilderController.md) | Lightning Controller |
+| [ServiceBuilderControllerTest](../apex/ServiceBuilderControllerTest.md) | Test |
+| [ServiceBuilderWrapper](../apex/ServiceBuilderWrapper.md) | Class |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Product_Record_Page.](../pages/Product_Record_Page..md) |  Record Page |
+| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
+| [Work_Order_Service_Report.](../pages/Work_Order_Service_Report..md) |  Service Document |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

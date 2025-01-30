@@ -14,4 +14,13 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ExportRecordsController](../apex/ExportRecordsController.md) | Lightning Controller |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

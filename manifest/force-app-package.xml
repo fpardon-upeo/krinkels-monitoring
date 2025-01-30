@@ -656,36 +656,74 @@
         <members>Opportunity.ATAK_Project_Suggested_Name__c</members>
         <members>Opportunity.ATAK_Projectx__c</members>
         <members>Opportunity.Amount__c</members>
+        <members>Opportunity.Authorization_s__c</members>
+        <members>Opportunity.Award_criteriaImplementation_details__c</members>
+        <members>Opportunity.Award_criteriaOther__c</members>
+        <members>Opportunity.Award_criteriaPrice_details__c</members>
+        <members>Opportunity.Award_criteriaSocial_employment_details__c</members>
+        <members>Opportunity.Award_criteria_Implementation_plan__c</members>
+        <members>Opportunity.Award_criteria_Price__c</members>
+        <members>Opportunity.Award_criteria_Social_employment__c</members>
+        <members>Opportunity.Bank_statement__c</members>
+        <members>Opportunity.Bill_of_materials__c</members>
         <members>Opportunity.Budget_Confirmed__c</members>
         <members>Opportunity.Business_Type__c</members>
         <members>Opportunity.Channel_Partner__c</members>
         <members>Opportunity.Competitor_Information__c</members>
+        <members>Opportunity.Contact_form__c</members>
         <members>Opportunity.Contract_Type__c</members>
+        <members>Opportunity.Contractor_Certification__c</members>
+        <members>Opportunity.Criminal_record_KGC__c</members>
+        <members>Opportunity.Criminal_record_KHV__c</members>
         <members>Opportunity.Customer_Reference__c</members>
         <members>Opportunity.Discovery_Completed__c</members>
+        <members>Opportunity.Dossier_Requirements_Notes__c</members>
         <members>Opportunity.Expected_Contract_Start_Date__c</members>
         <members>Opportunity.Extra_Work_Description__c</members>
+        <members>Opportunity.General_Liability_Insurance_BA__c</members>
+        <members>Opportunity.Guarantee_modalities__c</members>
+        <members>Opportunity.Guarantee_required__c</members>
+        <members>Opportunity.Indexation__c</members>
         <members>Opportunity.Initiative_Party__c</members>
+        <members>Opportunity.Inventory__c</members>
         <members>Opportunity.Language__c</members>
         <members>Opportunity.Loss_Reason__c</members>
         <members>Opportunity.Main_Contact__c</members>
+        <members>Opportunity.Notarial_Certificate__c</members>
         <members>Opportunity.Our_Reference__c</members>
         <members>Opportunity.Price_Request_BS_Comments__c</members>
         <members>Opportunity.Price_Request_Demand_Comments__c</members>
         <members>Opportunity.Price_Request_Priority__c</members>
         <members>Opportunity.Price_Request_Status__c</members>
         <members>Opportunity.Pricing_Request_Needed__c</members>
+        <members>Opportunity.Project_Plan__c</members>
         <members>Opportunity.Quick_Quote__c</members>
+        <members>Opportunity.Quotation_Form__c</members>
         <members>Opportunity.ROI_Analysis_Completed__c</members>
+        <members>Opportunity.Reference_list__c</members>
+        <members>Opportunity.Risk_Analysis_Safety_Plan__c</members>
         <members>Opportunity.Service_Contract__c</members>
         <members>Opportunity.Service_Package__c</members>
+        <members>Opportunity.Site_Visit_Certificate__c</members>
+        <members>Opportunity.Social_security_certificate_RSZ__c</members>
+        <members>Opportunity.Special_format_requirement_Tender__c</members>
         <members>Opportunity.Specification_Number__c</members>
+        <members>Opportunity.Specification_number_Client_reference__c</members>
+        <members>Opportunity.Statement_of_Equipment__c</members>
+        <members>Opportunity.Statement_of_Proper_Execution__c</members>
+        <members>Opportunity.Statement_of_Truth__c</members>
         <members>Opportunity.Subject__c</members>
         <members>Opportunity.Submission_Date_Due__c</members>
         <members>Opportunity.Submission_Method__c</members>
+        <members>Opportunity.Sustainability_Declaration__c</members>
+        <members>Opportunity.Tax_certificate__c</members>
+        <members>Opportunity.Tender_Documents_Requirements_Notes__c</members>
+        <members>Opportunity.Turnover_Statement__c</members>
         <members>Opportunity.Type_Code__c</members>
+        <members>Opportunity.UEA__c</members>
         <members>Opportunity.Weighted_Amount__c</members>
         <members>Opportunity.Work_Size__c</members>
+        <members>Opportunity.Workers_Compensat_Insurance_AO__c</members>
         <members>Outbound_Log__c.Error_Message__c</members>
         <members>Outbound_Log__c.JSON_Body__c</members>
         <members>PricebookEntry.External_Id__c</members>
@@ -1116,6 +1154,7 @@
         <members>AppointmentPicker_Break_Form_Title</members>
         <members>AppointmentPicker_Break_Success_Message</members>
         <members>AppointmentPicker_Cancel_Button</members>
+        <members>AppointmentPicker_Checkout_Error</members>
         <members>AppointmentPicker_Day_Ended_Toast</members>
         <members>AppointmentPicker_End_Day_Button</members>
         <members>AppointmentPicker_End_Day_Button_Sub_Text</members>
@@ -1152,6 +1191,7 @@
         <members>Calendar_Edit_Mileage_Entry</members>
         <members>Calendar_Edit_Time_Sheet_Entry</members>
         <members>Calendar_ErrorToast_EditUserSettings_Message</members>
+        <members>Calendar_ErrorToast_Locked_Message</members>
         <members>Calendar_ErrorToast_NewUserSettings_Message</members>
         <members>Calendar_ErrorToast_SubmitTimeSheet_Message</members>
         <members>Calendar_ErrorToast_Title</members>
@@ -1199,6 +1239,7 @@
         <members>Calendar_User_Settings_Time_Range</members>
         <members>Calendar_Warning_Submit_Timesheet</members>
         <members>Calendar_WorkHours_Header</members>
+        <members>Checkin_Error</members>
         <members>Checkin_Loading</members>
         <members>Checkin_locationError</members>
         <members>ContractLineEditor_CancelButton</members>
@@ -1274,6 +1315,7 @@
         <members>InternalWorkOrder_Select_Account_Warning_Text</members>
         <members>InternalWorkOrder_Select_WO_Text</members>
         <members>InternalWorkOrder_Select_WO_Warning_Text</members>
+        <members>InternalWorkOrder_Select_Waste_Account_Text</members>
         <members>InternalWorkOrder_Start_Travel_Sub_Text</members>
         <members>InternalWorkOrder_Start_Travel_Text</members>
         <members>InternalWorkOrder_SuccessMessage</members>
@@ -2202,6 +2244,8 @@
         <members>Contract_Type</members>
         <members>Default_LMRA</members>
         <members>Industry_Type</members>
+        <members>Infosheet_Statuses_1</members>
+        <members>Infosheet_Statuses_2</members>
         <members>Invoice_Type</members>
         <members>LMRA_Type</members>
         <members>Language</members>
@@ -2212,6 +2256,7 @@
         <members>Service_package_type</members>
         <members>Type_of_Waste</members>
         <members>Work_Type</members>
+        <members>Yes_No_Choice</members>
         <name>GlobalValueSet</name>
     </types>
     <types>

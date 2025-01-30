@@ -269,6 +269,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -285,12 +325,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -301,8 +361,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -315,6 +395,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -337,8 +421,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -353,8 +453,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -365,12 +493,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -443,32 +595,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -659,6 +849,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -675,12 +905,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -691,8 +941,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -705,6 +975,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -727,8 +1001,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -743,8 +1033,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -755,12 +1073,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -833,32 +1175,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1053,6 +1433,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1069,12 +1489,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -1085,8 +1525,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -1099,6 +1559,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -1121,8 +1585,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -1137,8 +1617,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -1149,12 +1657,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -1228,32 +1760,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1444,6 +2014,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1460,12 +2070,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -1476,8 +2106,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -1490,6 +2140,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -1512,8 +2166,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -1528,8 +2198,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -1540,12 +2238,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -1618,32 +2340,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -1838,6 +2598,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -1854,12 +2654,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -1870,8 +2690,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -1884,6 +2724,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -1906,8 +2750,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -1922,8 +2782,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -1934,12 +2822,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2013,32 +2925,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2229,6 +3179,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2245,12 +3235,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -2261,8 +3271,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -2275,6 +3305,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -2297,8 +3331,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -2313,8 +3363,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -2325,12 +3403,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2403,32 +3505,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -2623,6 +3763,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -2639,12 +3819,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -2655,8 +3855,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -2669,6 +3889,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -2691,8 +3915,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -2707,8 +3947,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -2719,12 +3987,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2798,32 +4090,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3014,6 +4344,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -3030,12 +4400,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -3046,8 +4436,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -3060,6 +4470,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -3082,8 +4496,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -3098,8 +4528,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -3110,12 +4568,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -3188,32 +4670,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3408,6 +4928,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -3424,12 +4984,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -3440,8 +5020,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -3454,6 +5054,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -3476,8 +5080,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -3492,8 +5112,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -3504,12 +5152,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -3583,32 +5255,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -3799,6 +5509,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -3815,12 +5565,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -3831,8 +5601,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -3845,6 +5635,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -3867,8 +5661,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -3883,8 +5693,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -3895,12 +5733,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -3973,32 +5835,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -4193,6 +6093,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -4209,12 +6149,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -4225,8 +6185,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -4239,6 +6219,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -4261,8 +6245,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -4277,8 +6277,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -4289,12 +6317,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -4368,32 +6420,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>
@@ -4584,6 +6674,46 @@
             <label>ATAK Project Suggested  Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008ks5</field>
+            <label>Authorization(s)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k5h</field>
+            <label>Award criteria-Implementation details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008juP</field>
+            <label>Award criteria-Implementation plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jso</field>
+            <label>Award criteria-Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jsn</field>
+            <label>Award criteria-Price</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k45</field>
+            <label>Award criteria-Price details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jw1</field>
+            <label>Award criteria-Social employment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jrC</field>
+            <label>Award criteria-Social employment details</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kCA</field>
+            <label>Bank statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kVV</field>
+            <label>Bill of materials</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Ht</field>
             <label>Budget Confirmed</label>
         </opportunityListFieldsLabelMappings>
@@ -4600,12 +6730,32 @@
             <label>Competitor Information</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kth</field>
+            <label>Contact form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kYj</field>
+            <label>Contractor Certification</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85O6</field>
             <label>Contract Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaL</field>
+            <label>Criminal record KGC</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kbx</field>
+            <label>Criminal record KHV</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hu</field>
             <label>Discovery Completed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kyX</field>
+            <label>Dossier Requirements Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OB</field>
@@ -4616,8 +6766,28 @@
             <label>Extra Work Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kdZ</field>
+            <label>General Liability Insurance (BA)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7J</field>
+            <label>Guarantee modalities</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxd</field>
+            <label>Guarantee required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfC</field>
+            <label>Indexation</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OG</field>
             <label>Initiative Party</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kvJ</field>
+            <label>Inventory</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -4630,6 +6800,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7f6Q</field>
             <label>Main Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kIn</field>
+            <label>Notarial Certificate</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6bmk</field>
@@ -4652,8 +6826,24 @@
             <label>Pricing Request Needed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kwv</field>
+            <label>Project Plan</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U8i</field>
             <label>Quick Quote</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l1l</field>
+            <label>Quotation Form</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k7K</field>
+            <label>Reference list</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaM</field>
+            <label>Risk Analysis/Safety Plan</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N07000002R5Hv</field>
@@ -4668,8 +6858,36 @@
             <label>Service Package Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l4z</field>
+            <label>Site Visit Certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jo0</field>
+            <label>Social security certificate (RSZ)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008k8v</field>
+            <label>Special (format) requirement Tender</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OL</field>
             <label>Specification Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008jxe</field>
+            <label>Specification number/ Client reference</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kiP</field>
+            <label>Statement of Equipment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kk1</field>
+            <label>Statement of Proper Execution</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008l6b</field>
+            <label>Statement of Truth</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q85OQ</field>
@@ -4680,12 +6898,36 @@
             <label>Submission Method</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kaN</field>
+            <label>Sustainability Declaration</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kld</field>
+            <label>Tax certificate</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kfB</field>
+            <label>Tender Documents Requirements Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008knF</field>
+            <label>Turnover Statement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7U9H</field>
             <label>Type Code</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kor</field>
+            <label>UEA</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Ndu0000008kqT</field>
+            <label>Workers&apos; Compensat Insurance (AO)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -4758,32 +7000,70 @@
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008ks5</field>
+            <field>00Ndu0000008k5h</field>
+            <field>00Ndu0000008juP</field>
+            <field>00Ndu0000008jso</field>
+            <field>00Ndu0000008jsn</field>
+            <field>00Ndu0000008k45</field>
+            <field>00Ndu0000008jw1</field>
+            <field>00Ndu0000008jrC</field>
+            <field>00Ndu0000008kCA</field>
+            <field>00Ndu0000008kVV</field>
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
             <field>00NKF00000Q85Mj</field>
+            <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008kYj</field>
             <field>00NKF00000Q85O6</field>
+            <field>00Ndu0000008kaL</field>
+            <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
+            <field>00Ndu0000008kyX</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
+            <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008k7J</field>
+            <field>00Ndu0000008jxd</field>
+            <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
+            <field>00Ndu0000008kIn</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
+            <field>00Ndu0000008kwv</field>
             <field>00NKF00000Q7U8i</field>
+            <field>00Ndu0000008l1l</field>
+            <field>00Ndu0000008k7K</field>
+            <field>00Ndu0000008kaM</field>
             <field>00N07000002R5Hv</field>
             <field>00NKF00000Q6cGh</field>
             <field>00NKF00000Q7SEJ</field>
+            <field>00Ndu0000008l4z</field>
+            <field>00Ndu0000008jo0</field>
+            <field>00Ndu0000008k8v</field>
             <field>00NKF00000Q85OL</field>
+            <field>00Ndu0000008jxe</field>
+            <field>00Ndu0000008kiP</field>
+            <field>00Ndu0000008kk1</field>
+            <field>00Ndu0000008l6b</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
+            <field>00Ndu0000008kaN</field>
+            <field>00Ndu0000008kld</field>
+            <field>00Ndu0000008kfB</field>
+            <field>00Ndu0000008knF</field>
             <field>00NKF00000Q7U9H</field>
+            <field>00Ndu0000008kor</field>
             <field>00NKF00000Q7uAd</field>
+            <field>00Ndu0000008kqT</field>
             <field>00NKF00000Q6cIx</field>
             <field>OPPORTUNITY.ISPRIORITYRECORD</field>
             <field>OPPORTUNITY.LAST_STG_CHG_DAYS</field>

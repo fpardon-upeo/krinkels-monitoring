@@ -23,4 +23,21 @@
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed](../flows/Work_Order_After_Save_Record_Triggered_Assign_Products_Consumed.md) |  Record After Save | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ATAKPerformanceServiceTest](../apex/ATAKPerformanceServiceTest.md) | Test |
+| [ATAKVehicleService](../apex/ATAKVehicleService.md) | Class |
+| [ATAKWorkLogServiceTest](../apex/ATAKWorkLogServiceTest.md) | Test |
+| [MaterialPickupController](../apex/MaterialPickupController.md) | Lightning Controller |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Product_Item_Record_Page.](../pages/Product_Item_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

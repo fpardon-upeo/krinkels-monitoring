@@ -35,4 +35,18 @@
 | Operator_Created_Event__e | [Operator_Created_Event_e_Create_Service_Resource](../flows/Operator_Created_Event_e_Create_Service_Resource.md) [🕒](../flows/Operator_Created_Event_e_Create_Service_Resource-history.md) |  Platform Event | <!-- --> |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [FieldServiceTestData](../apex/FieldServiceTestData.md) | Test |
+| [FirstWorkOrderCheckerTest](../apex/FirstWorkOrderCheckerTest.md) | Test |
+| [GanttRoundPinActionTest](../apex/GanttRoundPinActionTest.md) | Test |
+| [SchedulingController](../apex/SchedulingController.md) | Lightning Controller |
+| [ServiceAppointmentTriggerHandlerTest](../apex/ServiceAppointmentTriggerHandlerTest.md) | Test |
+| [ServiceResourceHandler](../apex/ServiceResourceHandler.md) | Class |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

@@ -104,4 +104,39 @@
 | WorkOrder | [Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status](../flows/Work_Order_After_Save_Record_Triggered_Update_Related_SA_Status.md) |  Record After Save | This flow updates the status of the related service appointment so that it is aligned and has the same status. |
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [CheckInService](../apex/CheckInService.md) | Lightning Controller |
+| [CreateChildWorkOrderController](../apex/CreateChildWorkOrderController.md) | Visualforce Controller |
+| [FirstWorkOrderChecker](../apex/FirstWorkOrderChecker.md) | Lightning Controller |
+| [FirstWorkOrderCheckerTest](../apex/FirstWorkOrderCheckerTest.md) | Test |
+| [GanttRoundPinAction](../apex/GanttRoundPinAction.md) | Class |
+| [GanttRoundPinActionTest](../apex/GanttRoundPinActionTest.md) | Test |
+| [InternalWorkOrderController](../apex/InternalWorkOrderController.md) | Lightning Controller |
+| [SFS_WorkOrderCreatorController](../apex/SFS_WorkOrderCreatorController.md) | Lightning Controller |
+| [SFS_WorkOrderCreatorControllerTest](../apex/SFS_WorkOrderCreatorControllerTest.md) | Test |
+| [SchedulingController](../apex/SchedulingController.md) | Lightning Controller |
+| [ServiceAppointmentRescheduler](../apex/ServiceAppointmentRescheduler.md) | Class |
+| [ServiceAppointmentTriggerHandler](../apex/ServiceAppointmentTriggerHandler.md) | Trigger Handler |
+| [ServiceAppointmentTriggerHandlerTest](../apex/ServiceAppointmentTriggerHandlerTest.md) | Test |
+| [WorkOrderLocationBatch](../apex/WorkOrderLocationBatch.md) | Batch |
+| [WorkOrderLocationQueueable](../apex/WorkOrderLocationQueueable.md) | Class |
+| [WorkOrderReviewController](../apex/WorkOrderReviewController.md) | Lightning Controller |
+| [WorkOrderTriggerHandler](../apex/WorkOrderTriggerHandler.md) | Trigger Handler |
+| [fsl_Console_AccountController](../apex/fsl_Console_AccountController.md) | Lightning Controller |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
+| [Service_Appointment_Record_Page.](../pages/Service_Appointment_Record_Page..md) |  Record Page |
+| [Service_Appointment_Service_Report_NL.](../pages/Service_Appointment_Service_Report_NL..md) |  Service Document |
+| [Service_Appointment_Service_Report_Without_Signature_NL.](../pages/Service_Appointment_Service_Report_Without_Signature_NL..md) |  Service Document |
+| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

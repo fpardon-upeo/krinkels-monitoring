@@ -31,4 +31,21 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [ATAKPersonnelService](../apex/ATAKPersonnelService.md) | Class |
+| [PersonnelRestResourceTest](../apex/PersonnelRestResourceTest.md) | Test |
+| [ServiceResourceHandler](../apex/ServiceResourceHandler.md) | Class |
+| [ServiceResourceHandlerTest](../apex/ServiceResourceHandlerTest.md) | Test |
+
+
+## Related Lightning Pages
+
+| Lightning Page | Type |
+| :----      | :--: | 
+| [ATAK_Personnel_Record_Page.](../pages/ATAK_Personnel_Record_Page..md) |  Record Page |
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

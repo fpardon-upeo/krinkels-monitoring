@@ -11,4 +11,14 @@
 
 
 
+## Related Apex Classes
+
+| Apex Class | Type |
+| :----      | :--: | 
+| [AddressSearchService](../apex/AddressSearchService.md) | Lightning Controller |
+| [MapsGeoCodeService](../apex/MapsGeoCodeService.md) | Callout |
+
+
+
+
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_
