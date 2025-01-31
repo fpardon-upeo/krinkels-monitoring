@@ -11,13 +11,25 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>External</fullName>
+                <default>false</default>
+                <label>External</label>
+            </value>
+            <value>
                 <fullName>KGC</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>KGC</label>
             </value>
             <value>
                 <fullName>Lead/Customer</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Lead/Customer</label>
             </value>
         </valueSetDefinition>

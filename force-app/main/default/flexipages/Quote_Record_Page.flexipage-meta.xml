@@ -1360,6 +1360,12 @@
                 </componentInstanceProperties>
                 <componentName>cadmus_core:LC_WGenerateAndUploadDocuments</componentName>
                 <identifier>cadmus_core_LC_WGenerateAndUploadDocuments</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Contact.Email}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1486,10 +1492,21 @@
                 <componentName>cadmus_core:LC_ConvertComponent</componentName>
                 <identifier>cadmus_core_LC_ConvertComponent</identifier>
                 <visibilityRule>
+                    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Opportunity.Type}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Extra Work</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Opportunity.Type}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Small Work</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Approval_Open__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

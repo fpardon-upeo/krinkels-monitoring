@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Presented_only_when_Go</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL( Status , &quot;Presented&quot;) ,
+ Opportunity.Go_No_Go__c = false
+)</errorConditionFormula>
+    <errorMessage>You need to add a formal Go on the Opportunity before setting the Quote to Presented.</errorMessage>
+</ValidationRule>

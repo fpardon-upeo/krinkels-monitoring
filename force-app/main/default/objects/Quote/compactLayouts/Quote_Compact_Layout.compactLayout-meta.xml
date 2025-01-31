@@ -4,7 +4,6 @@
     <fields>Name</fields>
     <fields>QuoteNumber</fields>
     <fields>Offer_Valid_For__c</fields>
-    <fields>QuoteAccountId</fields>
     <fields>Amount__c</fields>
     <label>Quote Compact Layout</label>
 </CompactLayout>

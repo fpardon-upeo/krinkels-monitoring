@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Quick_Quote</fullName>
-    <active>true</active>
+    <active>false</active>
     <label>Quick Quote</label>
     <picklistValues>
         <picklist>ATAK_Project_Request_Priority__c</picklist>
@@ -169,16 +169,8 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Offered</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Pricing</fullName>
             <default>true</default>
-        </values>
-        <values>
-            <fullName>Ready for Execution</fullName>
-            <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>

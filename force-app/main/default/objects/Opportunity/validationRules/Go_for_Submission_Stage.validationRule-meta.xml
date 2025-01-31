@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Go_for_Submission_Stage</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Go_No_Go__c = false ,
+  OR(ISPICKVAL(StageName, &quot;Submitted&quot;),
+     ISPICKVAL(StageName, &quot;In Negotiation&quot;))
+)</errorConditionFormula>
+    <errorMessage>You need to flag this Opportunity as &quot;Go&quot; before going to the Submitted stage or further.</errorMessage>
+</ValidationRule>

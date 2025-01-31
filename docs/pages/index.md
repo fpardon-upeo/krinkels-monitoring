@@ -19,6 +19,7 @@
 | [Create_Internal_Work_Order.](Create_Internal_Work_Order..md) |  App Page |
 | [Financial_Account_Record_Page.](Financial_Account_Record_Page..md) |  Record Page |
 | [FlowsApp_UtilityBar.](FlowsApp_UtilityBar..md) |  Utility Bar |
+| [General_Opportunity_Record_Page.](General_Opportunity_Record_Page..md) |  Record Page |
 | [Group_Account_Record_Page.](Group_Account_Record_Page..md) |  Record Page |
 | [Home_Page_Business_Support.](Home_Page_Business_Support..md) |  Home Page |
 | [Home_Page_Contract_Manager.](Home_Page_Contract_Manager..md) |  Home Page |
@@ -54,6 +55,7 @@
 | [Notification_Scheduled_WO_Day_NL.](Notification_Scheduled_WO_Day_NL..md) |  Email Template Page |
 | [Notification_Scheduled_WO_ENG.](Notification_Scheduled_WO_ENG..md) |  Email Template Page |
 | [Notification_Scheduled_WO_FR.](Notification_Scheduled_WO_FR..md) |  Email Template Page |
+| [One_Shot_Record_Page.](One_Shot_Record_Page..md) |  Record Page |
 | [Operating_Hours_Record_Page.](Operating_Hours_Record_Page..md) |  Record Page |
 | [Operational_Account_Record_Page.](Operational_Account_Record_Page..md) |  Record Page |
 | [Opportunity_Product_Record_Page.](Opportunity_Product_Record_Page..md) |  Record Page |

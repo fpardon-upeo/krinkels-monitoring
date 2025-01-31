@@ -71,7 +71,7 @@
 
 | Rule      | Active | Description | Formula |
 | :-------- | :---- | :---------- | :------ |
-| ATAK_Project_needed_for_Closed | Yes |  | `AND(
+| ATAK_Project_needed_for_Closed | No ⚠️ |  | `AND(
  ISBLANK(ATAK_Project__c ),
  ISPICKVAL(Status, 'Accepted') ,
   Opportunity.RecordTypeId = '012KF000003QSlNYAW'
@@ -79,6 +79,9 @@
 | Maximum_Value_for_Quick_Quote | Yes |  | `AND(
    RecordType.DeveloperName ='Quick_Quote'   ,
  Amount__c  > 5000
+)` |
+| Presented_only_when_Go | Yes |  | `AND( ISPICKVAL( Status , "Presented") ,
+ Opportunity.Go_No_Go__c = false
 )` |
 
 
@@ -93,6 +96,7 @@
 | Quote | [Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity](../flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.md) [🕒](../flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity-history.md) |  Record After Save | Keeps opportunity in sync when opportunity amounts are changed |
 | Quote | [Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process](../flows/Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process.md) |  Record After Save | This flow triggers the approval process for the quote over 5000€. |
 | Quote | [Quote_After_Save_Update_Status_to_RfE](../flows/Quote_After_Save_Update_Status_to_RfE.md) |  Record After Save | <!-- --> |
+| Quote | [Quote_Before_Save_Record_Triggered_Update_Amount](../flows/Quote_Before_Save_Record_Triggered_Update_Amount.md) [🕒](../flows/Quote_Before_Save_Record_Triggered_Update_Amount-history.md) |  Record Before Save | <!-- --> |
 
 
 ## Related Apex Classes
@@ -107,7 +111,9 @@
 | Lightning Page | Type |
 | :----      | :--: | 
 | [B2B_Opportunity_Record_Page.](../pages/B2B_Opportunity_Record_Page..md) |  Record Page |
+| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
 | [Home_Page_Business_Support.](../pages/Home_Page_Business_Support..md) |  Home Page |
+| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
 | [Public_Tender_Opportunity_Record_Page.](../pages/Public_Tender_Opportunity_Record_Page..md) |  Record Page |
 | [Quick_Opportunity_Record_Page.](../pages/Quick_Opportunity_Record_Page..md) |  Record Page |
 | [Quote_Quick_Quote_Record_Page.](../pages/Quote_Quick_Quote_Record_Page..md) |  Record Page |

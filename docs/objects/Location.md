@@ -54,6 +54,7 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
+| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
 | [Location_Passport_Record_Page.](../pages/Location_Passport_Record_Page..md) |  Record Page |
 | [Location_Record_Page.](../pages/Location_Record_Page..md) |  Record Page |
 | [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
@@ -62,6 +63,7 @@
 | [Notification_REScheduled_WO_ENG.](../pages/Notification_REScheduled_WO_ENG..md) |  Email Template Page |
 | [Notification_Scheduled_WO_Day_ENG.](../pages/Notification_Scheduled_WO_Day_ENG..md) |  Email Template Page |
 | [Notification_Scheduled_WO_ENG.](../pages/Notification_Scheduled_WO_ENG..md) |  Email Template Page |
+| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
 | [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
 | [Service_Contract_Record_Page.](../pages/Service_Contract_Record_Page..md) |  Record Page |
 | [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |

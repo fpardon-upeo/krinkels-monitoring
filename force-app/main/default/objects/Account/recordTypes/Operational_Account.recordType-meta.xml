@@ -7,39 +7,27 @@
     <picklistValues>
         <picklist>AccountSource</picklist>
         <values>
-            <fullName>Campaign</fullName>
+            <fullName>Event</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Chat bot</fullName>
+            <fullName>Existing Customer</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Lead suggestion</fullName>
+            <fullName>Network</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Live Chat</fullName>
+            <fullName>Referral Customer</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Marketplace</fullName>
+            <fullName>Referral Krinkels</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Messaging</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Prospector</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Web forms</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Web visitor</fullName>
+            <fullName>Website</fullName>
             <default>false</default>
         </values>
     </picklistValues>

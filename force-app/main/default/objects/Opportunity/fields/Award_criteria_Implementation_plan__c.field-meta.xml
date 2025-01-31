@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Award_criteria_Implementation_plan__c</fullName>
-    <label>Award criteria-Implementation plan</label>
+    <label>Award Criteria-Implementation Plan</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

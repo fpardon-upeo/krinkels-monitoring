@@ -11,7 +11,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -23,11 +23,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -71,7 +75,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -95,11 +99,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -110,16 +114,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -128,6 +140,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -139,11 +155,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -151,11 +167,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -187,7 +207,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -231,7 +251,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -239,7 +259,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -254,16 +274,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -275,15 +295,19 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -299,7 +323,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -320,6 +344,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -347,7 +375,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -383,7 +411,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -402,16 +430,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -439,11 +479,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -481,13 +525,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -501,32 +545,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -542,6 +596,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -573,7 +628,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -585,11 +640,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -633,7 +692,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -657,11 +716,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -672,16 +731,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -690,6 +757,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -701,11 +772,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -713,11 +784,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -749,7 +824,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -793,7 +868,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -801,7 +876,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -816,16 +891,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -837,15 +912,19 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -861,7 +940,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -882,6 +961,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -909,7 +992,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -945,7 +1028,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -964,16 +1047,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -1001,11 +1096,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1043,13 +1142,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -1063,32 +1162,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -1104,6 +1213,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -1135,7 +1245,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -1147,11 +1257,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -1195,7 +1309,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -1219,11 +1333,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -1234,16 +1348,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -1252,6 +1374,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -1263,11 +1389,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -1275,11 +1401,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -1311,7 +1441,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -1355,7 +1485,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -1363,7 +1493,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -1378,16 +1508,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -1399,7 +1529,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SPLITAMOUNT</field>
@@ -1407,11 +1537,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -1427,7 +1561,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -1448,6 +1582,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -1475,7 +1613,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -1511,7 +1649,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -1530,16 +1668,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -1567,11 +1717,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -1610,13 +1764,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -1630,32 +1784,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -1671,6 +1835,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -1702,7 +1867,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -1714,11 +1879,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -1762,7 +1931,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -1786,11 +1955,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -1801,16 +1970,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -1819,6 +1996,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -1830,11 +2011,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -1842,11 +2023,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -1878,7 +2063,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -1922,7 +2107,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -1930,7 +2115,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -1945,16 +2130,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -1966,15 +2151,19 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -1990,7 +2179,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -2011,6 +2200,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -2038,7 +2231,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -2074,7 +2267,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -2093,16 +2286,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -2130,11 +2335,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2172,13 +2381,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -2192,32 +2401,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -2233,6 +2452,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -2264,7 +2484,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -2276,11 +2496,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -2324,7 +2548,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2348,11 +2572,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -2363,16 +2587,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -2381,6 +2613,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -2392,11 +2628,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -2404,11 +2640,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -2440,7 +2680,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -2484,7 +2724,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -2492,7 +2732,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -2507,16 +2747,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -2528,7 +2768,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SPLITAMOUNT</field>
@@ -2536,11 +2776,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -2556,7 +2800,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -2577,6 +2821,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -2604,7 +2852,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -2640,7 +2888,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -2659,16 +2907,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -2696,11 +2956,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -2739,13 +3003,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -2759,32 +3023,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -2800,6 +3074,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -2831,7 +3106,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -2843,11 +3118,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -2891,7 +3170,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -2915,11 +3194,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -2930,16 +3209,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -2948,6 +3235,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -2959,11 +3250,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -2971,11 +3262,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -3007,7 +3302,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -3051,7 +3346,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -3059,7 +3354,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -3074,16 +3369,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -3095,15 +3390,19 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -3119,7 +3418,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -3140,6 +3439,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -3167,7 +3470,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -3203,7 +3506,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -3222,16 +3525,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -3259,11 +3574,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -3301,13 +3620,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -3321,32 +3640,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -3362,6 +3691,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -3393,7 +3723,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -3405,11 +3735,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -3453,7 +3787,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -3477,11 +3811,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -3492,16 +3826,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -3510,6 +3852,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -3521,11 +3867,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -3533,11 +3879,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -3569,7 +3919,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -3613,7 +3963,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -3621,7 +3971,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -3636,16 +3986,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -3657,7 +4007,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SPLITAMOUNT</field>
@@ -3665,11 +4015,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -3685,7 +4039,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -3706,6 +4060,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -3733,7 +4091,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -3769,7 +4127,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -3788,16 +4146,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -3825,11 +4195,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -3868,13 +4242,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -3888,32 +4262,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -3929,6 +4313,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -3960,7 +4345,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -3972,11 +4357,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -4020,7 +4409,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -4044,11 +4433,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -4059,16 +4448,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -4077,6 +4474,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -4088,11 +4489,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -4100,11 +4501,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -4136,7 +4541,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -4180,7 +4585,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -4188,7 +4593,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -4203,16 +4608,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -4224,15 +4629,19 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -4248,7 +4657,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -4269,6 +4678,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -4296,7 +4709,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -4332,7 +4745,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -4351,16 +4764,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -4388,11 +4813,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -4430,13 +4859,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -4450,32 +4879,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -4491,6 +4930,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -4522,7 +4962,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -4534,11 +4974,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -4582,7 +5026,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -4606,11 +5050,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -4621,16 +5065,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -4639,6 +5091,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -4650,11 +5106,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -4662,11 +5118,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -4698,7 +5158,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -4742,7 +5202,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -4750,7 +5210,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -4765,16 +5225,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -4786,7 +5246,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SPLITAMOUNT</field>
@@ -4794,11 +5254,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -4814,7 +5278,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -4835,6 +5299,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -4862,7 +5330,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -4898,7 +5366,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -4917,16 +5385,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -4954,11 +5434,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -4997,13 +5481,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -5017,32 +5501,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -5058,6 +5552,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -5089,7 +5584,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -5101,11 +5596,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -5149,7 +5648,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -5173,11 +5672,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -5188,16 +5687,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -5206,6 +5713,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -5217,11 +5728,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -5229,11 +5740,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -5265,7 +5780,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -5309,7 +5824,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -5317,7 +5832,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -5332,16 +5847,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -5353,15 +5868,19 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -5377,7 +5896,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -5398,6 +5917,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -5425,7 +5948,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -5461,7 +5984,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -5480,16 +6003,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -5517,11 +6052,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -5559,13 +6098,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -5579,32 +6118,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -5620,6 +6169,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -5651,7 +6201,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -5663,11 +6213,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -5711,7 +6265,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -5735,11 +6289,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -5750,16 +6304,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -5768,6 +6330,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -5779,11 +6345,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -5791,11 +6357,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -5827,7 +6397,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -5871,7 +6441,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -5879,7 +6449,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -5894,16 +6464,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -5915,7 +6485,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SPLITAMOUNT</field>
@@ -5923,11 +6493,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -5943,7 +6517,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -5964,6 +6538,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -5991,7 +6569,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -6027,7 +6605,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -6046,16 +6624,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -6083,11 +6673,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -6126,13 +6720,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -6146,32 +6740,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -6187,6 +6791,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -6218,7 +6823,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Close Date</label>
+            <label>Expected Close Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q84QV</field>
@@ -6230,11 +6835,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxd</field>
-            <label>Guarantee required</label>
+            <label>Guarantee Required</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qEL</field>
+            <label>Internal Validation Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jxe</field>
-            <label>Specification number/ Client reference</label>
+            <label>Specification Number/ Client Reference</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
@@ -6278,7 +6887,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kaL</field>
-            <label>Criminal record KGC</label>
+            <label>Criminal Record KGC</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6cIx</field>
@@ -6302,11 +6911,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7J</field>
-            <label>Guarantee modalities</label>
+            <label>Guarantee Modalities</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k7K</field>
-            <label>Reference list</label>
+            <label>Reference List</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
@@ -6317,16 +6926,24 @@
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qe9</field>
+            <label>Contract Duration Type</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q75fP</field>
-            <label>Amount</label>
+            <label>Estimated Amount</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qxV</field>
+            <label>Contract End Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Type</label>
+            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kCA</field>
-            <label>Bank statement</label>
+            <label>Bank Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
@@ -6335,6 +6952,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <label>Last Modified Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qhN</field>
+            <label>Go / No Go</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>DESCRIPTION</field>
@@ -6346,11 +6967,11 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jrC</field>
-            <label>Award criteria-Social employment details</label>
+            <label>Award Criteria-Social Employment Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kbx</field>
-            <label>Criminal record KHV</label>
+            <label>Criminal Record KHV</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kIn</field>
@@ -6358,11 +6979,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k8v</field>
-            <label>Special (format) requirement Tender</label>
+            <label>Special (format) Requirement Tender</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
             <label>Quantity</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qfl</field>
+            <label>Attention Points</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.AGE_IN_DAYS</field>
@@ -6394,7 +7019,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85OV</field>
-            <label>Submission Method</label>
+            <label>Submit Via</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7SEJ</field>
@@ -6438,7 +7063,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jso</field>
-            <label>Award criteria-Other</label>
+            <label>Award Criteria-Other</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9H</field>
@@ -6446,7 +7071,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jsn</field>
-            <label>Award criteria-Price</label>
+            <label>Award Criteria-Price</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kfC</field>
@@ -6461,16 +7086,16 @@
             <label>Next Step</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qHZ</field>
+            <label>Q&amp;A</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00Ndu0000008knF</field>
             <label>Turnover Statement</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bmf</field>
             <label>Price Request Demand Comments</label>
-        </forecastingObjectListLabelMappings>
-        <forecastingObjectListLabelMappings>
-            <field>00NKF00000Q85O6</field>
-            <label>Contract Type</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q6bma</field>
@@ -6482,15 +7107,19 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k45</field>
-            <label>Award criteria-Price details</label>
+            <label>Award Criteria-Price Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q85Mj</field>
-            <label>Competitor Information</label>
+            <label>Competitor Extra Information</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
             <label>Synced Quote</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qr3</field>
+            <label>Number Contract Years Fixed</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008l4z</field>
@@ -6506,7 +7135,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kth</field>
-            <label>Contact form</label>
+            <label>Contact Form</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>ACCOUNT.SITE</field>
@@ -6527,6 +7156,10 @@
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kdZ</field>
             <label>General Liability Insurance (BA)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qFx</field>
+            <label>Location Visit Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kld</field>
@@ -6554,7 +7187,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jo0</field>
-            <label>Social security certificate (RSZ)</label>
+            <label>Social Security Certificate (RSZ)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
@@ -6590,7 +7223,7 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008k5h</field>
-            <label>Award criteria-Implementation details</label>
+            <label>Award Criteria-Implementation Details</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7fCj</field>
@@ -6609,16 +7242,28 @@
             <label>Owner Full Name</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qcX</field>
+            <label>Competitor</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7uAd</field>
             <label>Weighted Amount</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008jw1</field>
-            <label>Award criteria-Social employment</label>
+            <label>Award Criteria-Social Employment</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qsf</field>
+            <label>Number Contract Years Optional</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qJB</field>
+            <label>Submission Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008kVV</field>
-            <label>Bill of materials</label>
+            <label>Bill of Materials</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00NKF00000Q7U9W</field>
@@ -6646,11 +7291,15 @@
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>00Ndu0000008juP</field>
-            <label>Award criteria-Implementation plan</label>
+            <label>Award Criteria-Implementation Plan</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>FORECAST_CATEGORY</field>
             <label>Forecast Category</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008qiz</field>
+            <label>Go/No Go Description</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListSelectedSettings>
             <field>OPPORTUNITY.NAME</field>
@@ -6688,13 +7337,13 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q7U9q</field>
             <field>00NKF00000Q7U9g</field>
             <field>00NKF00000Q7U9W</field>
             <field>00NKF00000Q7U9l</field>
             <field>00NKF00000Q7U9R</field>
             <field>00NKF00000Q7U9M</field>
+            <field>00Ndu0000008qfl</field>
             <field>00Ndu0000008ks5</field>
             <field>00Ndu0000008k5h</field>
             <field>00Ndu0000008juP</field>
@@ -6708,32 +7357,42 @@
             <field>00N07000002R5Ht</field>
             <field>00NKF00000Q84QV</field>
             <field>00NKF00000Q84J3</field>
+            <field>00Ndu0000008qcX</field>
             <field>00NKF00000Q85Mj</field>
             <field>00Ndu0000008kth</field>
+            <field>00Ndu0000008qe9</field>
+            <field>00Ndu0000008qxV</field>
             <field>00Ndu0000008kYj</field>
-            <field>00NKF00000Q85O6</field>
             <field>00Ndu0000008kaL</field>
             <field>00Ndu0000008kbx</field>
             <field>00N07000002R5Hu</field>
             <field>00Ndu0000008kyX</field>
+            <field>00NKF00000Q75fP</field>
             <field>00NKF00000Q85OB</field>
             <field>00NKF00000Q7tru</field>
             <field>00Ndu0000008kdZ</field>
+            <field>00Ndu0000008qhN</field>
+            <field>00Ndu0000008qiz</field>
             <field>00Ndu0000008k7J</field>
             <field>00Ndu0000008jxd</field>
             <field>00Ndu0000008kfC</field>
             <field>00NKF00000Q85OG</field>
+            <field>00Ndu0000008qEL</field>
             <field>00Ndu0000008kvJ</field>
             <field>00NKF00000Q7fCj</field>
+            <field>00Ndu0000008qFx</field>
             <field>00N07000002R5Hw</field>
             <field>00NKF00000Q7f6Q</field>
             <field>00Ndu0000008kIn</field>
+            <field>00Ndu0000008qr3</field>
+            <field>00Ndu0000008qsf</field>
             <field>00NKF00000Q6bmk</field>
             <field>00NKF00000Q6bmf</field>
             <field>00NKF00000Q6bma</field>
             <field>00NKF00000Q6bH8</field>
             <field>00NKF00000Q6bmQ</field>
             <field>00Ndu0000008kwv</field>
+            <field>00Ndu0000008qHZ</field>
             <field>00NKF00000Q7U8i</field>
             <field>00Ndu0000008l1l</field>
             <field>00Ndu0000008k7K</field>
@@ -6749,6 +7408,7 @@
             <field>00Ndu0000008kiP</field>
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
+            <field>00Ndu0000008qJB</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>

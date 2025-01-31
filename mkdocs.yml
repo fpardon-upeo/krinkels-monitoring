@@ -90,6 +90,7 @@ nav:
       Operator_Created_Event_e_Create_Service_Resource: flows/Operator_Created_Event_e_Create_Service_Resource.md
       Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote: >-
         flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.md
+      Opportunity_Before_Save_Record_Triggered_Naming_Convention: flows/Opportunity_Before_Save_Record_Triggered_Naming_Convention.md
       Opportunity_Screen_Flow_ATAK_Project_Request: flows/Opportunity_Screen_Flow_ATAK_Project_Request.md
       Opportunity_Screen_Flow_Pricing_Request: flows/Opportunity_Screen_Flow_Pricing_Request.md
       Platform_Event_Reorder_Work_Steps: flows/Platform_Event_Reorder_Work_Steps.md
@@ -101,6 +102,7 @@ nav:
       Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process: >-
         flows/Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process.md
       Quote_After_Save_Update_Status_to_RfE: flows/Quote_After_Save_Update_Status_to_RfE.md
+      Quote_Before_Save_Record_Triggered_Update_Amount: flows/Quote_Before_Save_Record_Triggered_Update_Amount.md
       Quote_Gantt_Action_Clone: flows/Quote_Gantt_Action_Clone.md
       ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet: >-
         flows/ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet.md
@@ -431,6 +433,7 @@ nav:
       Create_Internal_Work_Order.: pages/Create_Internal_Work_Order..md
       Financial_Account_Record_Page.: pages/Financial_Account_Record_Page..md
       FlowsApp_UtilityBar.: pages/FlowsApp_UtilityBar..md
+      General_Opportunity_Record_Page.: pages/General_Opportunity_Record_Page..md
       Group_Account_Record_Page.: pages/Group_Account_Record_Page..md
       Home_Page_Business_Support.: pages/Home_Page_Business_Support..md
       Home_Page_Contract_Manager.: pages/Home_Page_Contract_Manager..md
@@ -466,6 +469,7 @@ nav:
       Notification_Scheduled_WO_Day_NL.: pages/Notification_Scheduled_WO_Day_NL..md
       Notification_Scheduled_WO_ENG.: pages/Notification_Scheduled_WO_ENG..md
       Notification_Scheduled_WO_FR.: pages/Notification_Scheduled_WO_FR..md
+      One_Shot_Record_Page.: pages/One_Shot_Record_Page..md
       Operating_Hours_Record_Page.: pages/Operating_Hours_Record_Page..md
       Operational_Account_Record_Page.: pages/Operational_Account_Record_Page..md
       Opportunity_Product_Record_Page.: pages/Opportunity_Product_Record_Page..md

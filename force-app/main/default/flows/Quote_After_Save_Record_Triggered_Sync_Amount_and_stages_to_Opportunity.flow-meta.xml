@@ -186,7 +186,7 @@
         <inputAssignments>
             <field>StageName</field>
             <value>
-                <stringValue>Quote Sent</stringValue>
+                <stringValue>Submitted</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

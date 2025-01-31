@@ -71,7 +71,7 @@
         <inputAssignments>
             <field>StageName</field>
             <value>
-                <stringValue>Pricing</stringValue>
+                <stringValue>Price Requested</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

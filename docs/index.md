@@ -4,10 +4,10 @@
 
 | Package name | Description |
 | :----------- | :---------- |
-| [package-all-org-items.xml](package-all-org-items.xml.md) (16101) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
-| [package-backup-items.xml](package-backup-items.xml.md) (4085) | Contains the list of metadatas that are in the git backup |
+| [package-all-org-items.xml](package-all-org-items.xml.md) (16121) | Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup) |
+| [package-backup-items.xml](package-backup-items.xml.md) (4103) | Contains the list of metadatas that are in the git backup |
 | [package-skip-items.xml](package-skip-items.xml.md) (9) | Contains the list of metadatas that are excluded from the backup.<br/>Other metadata types might be skipped using environment variable MONITORING_BACKUP_SKIP_METADATA_TYPES |
-| [Package folder: force-app](force-app-package.xml.md) (3661) | Package.xml generated from content of SFDX package force-app (folder force-app) |
+| [Package folder: force-app](force-app-package.xml.md) (3689) | Package.xml generated from content of SFDX package force-app (folder force-app) |
 
 ___
 
@@ -220,6 +220,7 @@ ___
 | Mileage_Entry__c | [Mileage_Entry_Before_Save](flows/Mileage_Entry_Before_Save.md) [🕒](flows/Mileage_Entry_Before_Save-history.md) |  Record Before Save | This flow is to update and automatically fill in specific fields |
 | Operator_Created_Event__e | [Operator_Created_Event_e_Create_Service_Resource](flows/Operator_Created_Event_e_Create_Service_Resource.md) [🕒](flows/Operator_Created_Event_e_Create_Service_Resource-history.md) |  Platform Event | <!-- --> |
 | Opportunity | [Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote](flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.md) [🕒](flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote-history.md) |  Record After Save | Keeps quote in sync when opportunity amounts or contact is changed |
+| Opportunity | [Opportunity_Before_Save_Record_Triggered_Naming_Convention](flows/Opportunity_Before_Save_Record_Triggered_Naming_Convention.md) [🕒](flows/Opportunity_Before_Save_Record_Triggered_Naming_Convention-history.md) |  Record Before Save | <!-- --> |
 | ProductConsumed | [Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand](flows/Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand.md) [🕒](flows/Product_Consumed_After_Save_Record_Triggered_Reset_Quantity_on_Hand-history.md) |  Record After Save | <!-- --> |
 | ProductItem | [Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field](flows/Material_Item_After_Save_Record_Triggered_Populate_Van_Crew_Field.md) |  Record After Save | This flow populates the 'Van Crew' field on the Material Item object. This way, the van's materials is displayed at the van crew object level. |
 | ProductItem | [Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field](flows/Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field.md) [🕒](flows/Material_Item_Before_Save_Record_Triggered_Populate_Van_Crew_Field-history.md) |  Record After Save | This flow populates the 'Van Crew' field on the Material Item object. This way, the van's materials is displayed at the van crew object level. |
@@ -227,6 +228,7 @@ ___
 | Quote | [Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity](flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.md) [🕒](flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity-history.md) |  Record After Save | Keeps opportunity in sync when opportunity amounts are changed |
 | Quote | [Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process](flows/Quote_After_Save_Record_Triggered_Trigged_Quote_Approval_Process.md) |  Record After Save | This flow triggers the approval process for the quote over 5000€. |
 | Quote | [Quote_After_Save_Update_Status_to_RfE](flows/Quote_After_Save_Update_Status_to_RfE.md) |  Record After Save | <!-- --> |
+| Quote | [Quote_Before_Save_Record_Triggered_Update_Amount](flows/Quote_Before_Save_Record_Triggered_Update_Amount.md) [🕒](flows/Quote_Before_Save_Record_Triggered_Update_Amount-history.md) |  Record Before Save | <!-- --> |
 | Reorder_Work_Step__e | [Platform_Event_Reorder_Work_Steps](flows/Platform_Event_Reorder_Work_Steps.md) [🕒](flows/Platform_Event_Reorder_Work_Steps-history.md) |  Platform Event | <!-- --> |
 | ResourceAbsence | [ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet](flows/ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet.md) [🕒](flows/ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet-history.md) |  Record Before Delete | <!-- --> |
 | ResourceAbsence | [ResourceAbsence_After_Save_Break_Time](flows/ResourceAbsence_After_Save_Break_Time.md) |  Record After Save | <!-- --> |
@@ -309,6 +311,7 @@ ___
 | [Create_Internal_Work_Order.](pages/Create_Internal_Work_Order..md) |  App Page |
 | [Financial_Account_Record_Page.](pages/Financial_Account_Record_Page..md) |  Record Page |
 | [FlowsApp_UtilityBar.](pages/FlowsApp_UtilityBar..md) |  Utility Bar |
+| [General_Opportunity_Record_Page.](pages/General_Opportunity_Record_Page..md) |  Record Page |
 | [Group_Account_Record_Page.](pages/Group_Account_Record_Page..md) |  Record Page |
 | [Home_Page_Business_Support.](pages/Home_Page_Business_Support..md) |  Home Page |
 | [Home_Page_Contract_Manager.](pages/Home_Page_Contract_Manager..md) |  Home Page |
@@ -344,6 +347,7 @@ ___
 | [Notification_Scheduled_WO_Day_NL.](pages/Notification_Scheduled_WO_Day_NL..md) |  Email Template Page |
 | [Notification_Scheduled_WO_ENG.](pages/Notification_Scheduled_WO_ENG..md) |  Email Template Page |
 | [Notification_Scheduled_WO_FR.](pages/Notification_Scheduled_WO_FR..md) |  Email Template Page |
+| [One_Shot_Record_Page.](pages/One_Shot_Record_Page..md) |  Record Page |
 | [Operating_Hours_Record_Page.](pages/Operating_Hours_Record_Page..md) |  Record Page |
 | [Operational_Account_Record_Page.](pages/Operational_Account_Record_Page..md) |  Record Page |
 | [Opportunity_Product_Record_Page.](pages/Opportunity_Product_Record_Page..md) |  Record Page |

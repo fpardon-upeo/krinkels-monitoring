@@ -59,6 +59,7 @@
 | [B2B_Opportunity_Record_Page.](../pages/B2B_Opportunity_Record_Page..md) |  Record Page |
 | [Commercial_Account_Record_Page.](../pages/Commercial_Account_Record_Page..md) |  Record Page |
 | [Contract_Line_Item_Record_Page.](../pages/Contract_Line_Item_Record_Page..md) |  Record Page |
+| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
 | [Home_Page_Contract_Manager.](../pages/Home_Page_Contract_Manager..md) |  Home Page |
 | [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
 | [Notification_Crew_on_its_way_ENG.](../pages/Notification_Crew_on_its_way_ENG..md) |  Email Template Page |
@@ -76,6 +77,7 @@
 | [Notification_Scheduled_WO_Day_NL.](../pages/Notification_Scheduled_WO_Day_NL..md) |  Email Template Page |
 | [Notification_Scheduled_WO_ENG.](../pages/Notification_Scheduled_WO_ENG..md) |  Email Template Page |
 | [Notification_Scheduled_WO_FR.](../pages/Notification_Scheduled_WO_FR..md) |  Email Template Page |
+| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
 | [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
 | [Other_Record_Page.](../pages/Other_Record_Page..md) |  Record Page |
 | [Public_Tender_Opportunity_Record_Page.](../pages/Public_Tender_Opportunity_Record_Page..md) |  Record Page |

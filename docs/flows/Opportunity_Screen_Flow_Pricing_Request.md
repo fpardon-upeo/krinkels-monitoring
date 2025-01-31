@@ -14,7 +14,7 @@ START(["START<br/><b>Screen Flow</b>"]):::startClass
 click START "#general-information" "3231175236"
 
 Update_Opportunity[("🛠️ <em></em><br/>Update Opportunity")]:::recordUpdates
-click Update_Opportunity "#update_opportunity" "2880567800"
+click Update_Opportunity "#update_opportunity" "606709325"
 
 Pricing_Request(["💻 <em></em><br/>Pricing Request"]):::screens
 click Pricing_Request "#pricing_request" "2526170698"
@@ -25,23 +25,25 @@ START -->  Pricing_Request
 END_Update_Opportunity(( END )):::endClass
 
 
-classDef actionCalls fill:#D4E4FC,color:black,max-height:100px
-classDef assignments fill:#FBEED7,color:black,max-height:100px
-classDef collectionProcessors fill:#F0E3FA,color:black,max-height:100px
-classDef customErrors fill:#FFE9E9,color:black,max-height:100px
-classDef decisions fill:#FDEAF6,color:black,max-height:100px
-classDef loops fill:#FDEAF6,color:black,max-height:100px
-classDef recordCreates fill:#FFF8C9,color:black,max-height:100px
-classDef recordDeletes fill:#FFF8C9,color:black,max-height:100px
-classDef recordLookups fill:#EDEAFF,color:black,max-height:100px
-classDef recordUpdates fill:#FFF8C9,color:black,max-height:100px
-classDef screens fill:#DFF6FF,color:black,max-height:100px
-classDef subflows fill:#D4E4FC,color:black,max-height:100px
-classDef startClass fill:#D9F2E6,color:black,max-height:100px
-classDef endClass fill:#F9BABA,color:black,max-height:100px
+classDef actionCalls fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef assignments fill:#FBEED7,color:black,text-decoration:none,max-height:100px
+classDef collectionProcessors fill:#F0E3FA,color:black,text-decoration:none,max-height:100px
+classDef customErrors fill:#FFE9E9,color:black,text-decoration:none,max-height:100px
+classDef decisions fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef loops fill:#FDEAF6,color:black,text-decoration:none,max-height:100px
+classDef recordCreates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordDeletes fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef recordLookups fill:#EDEAFF,color:black,text-decoration:none,max-height:100px
+classDef recordUpdates fill:#FFF8C9,color:black,text-decoration:none,max-height:100px
+classDef screens fill:#DFF6FF,color:black,text-decoration:none,max-height:100px
+classDef subflows fill:#D4E4FC,color:black,text-decoration:none,max-height:100px
+classDef startClass fill:#D9F2E6,color:black,text-decoration:none,max-height:100px
+classDef endClass fill:#F9BABA,color:black,text-decoration:none,max-height:100px
 
 
 ```
+
+<!-- Flow description -->
 
 ## General Information
 
@@ -61,9 +63,9 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 
 ## Variables
 
-|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|
-|:-- |:--:|:--:|:--:|:--:|:--: |
-|recordId|String|⬜|✅|⬜|<!-- -->|
+|Name|Data Type|Is Collection|Is Input|Is Output|Object Type|Description|
+|:-- |:--:|:--:|:--:|:--:|:--:|:--  |
+|recordId|String|⬜|✅|⬜|<!-- -->|<!-- -->|
 
 
 ## Flow Nodes Details
@@ -94,7 +96,7 @@ classDef endClass fill:#F9BABA,color:black,max-height:100px
 |Price_Request_Priority__c|Priority|
 |Price_Request_Status__c|Requested|
 |Pricing_Request_Needed__c|✅|
-|StageName|Pricing|
+|StageName|Price Requested|
 
 
 

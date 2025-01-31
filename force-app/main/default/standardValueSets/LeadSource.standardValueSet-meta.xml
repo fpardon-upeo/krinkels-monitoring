@@ -2,48 +2,33 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Prospector</fullName>
+        <fullName>Existing Customer</fullName>
         <default>false</default>
-        <label>Prospector</label>
+        <label>Existing Customer</label>
     </standardValue>
     <standardValue>
-        <fullName>Lead suggestion</fullName>
+        <fullName>Network</fullName>
         <default>false</default>
-        <label>Lead suggestion</label>
+        <label>Network</label>
     </standardValue>
     <standardValue>
-        <fullName>Web forms</fullName>
+        <fullName>Event</fullName>
         <default>false</default>
-        <label>Web forms</label>
+        <label>Event</label>
     </standardValue>
     <standardValue>
-        <fullName>Chat bot</fullName>
+        <fullName>Website</fullName>
         <default>false</default>
-        <label>Chat bot</label>
+        <label>Website</label>
     </standardValue>
     <standardValue>
-        <fullName>Live Chat</fullName>
+        <fullName>Referral Krinkels</fullName>
         <default>false</default>
-        <label>Live Chat</label>
+        <label>Referral Krinkels</label>
     </standardValue>
     <standardValue>
-        <fullName>Web visitor</fullName>
+        <fullName>Referral Customer</fullName>
         <default>false</default>
-        <label>Web visitor</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Campaign</fullName>
-        <default>false</default>
-        <label>Campaign</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Marketplace</fullName>
-        <default>false</default>
-        <label>Marketplace</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Messaging</fullName>
-        <default>false</default>
-        <label>Messaging</label>
+        <label>Referral Customer</label>
     </standardValue>
 </StandardValueSet>

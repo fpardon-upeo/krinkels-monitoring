@@ -3070,6 +3070,10 @@
         <fullName>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows/>
+        <fullName>Opportunity_Before_Save_Record_Triggered_Naming_Convention</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows>
             <screens>
                 <fields>
@@ -3125,6 +3129,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>Quote_After_Save_Update_Status_to_RfE</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Quote_Before_Save_Record_Triggered_Update_Amount</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows>

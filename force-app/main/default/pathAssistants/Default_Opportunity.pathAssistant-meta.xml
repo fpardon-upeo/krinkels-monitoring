@@ -17,13 +17,5 @@
         <info>&lt;img alt=&quot;User-added image&quot; src=&quot;https://krinkelsgreencare--upeodev.sandbox.file.force.com/servlet/rtaImage?eid=1CF07000000bsIR&amp;amp;feoid=Info&amp;amp;refid=0EM07000006iOFv&quot; style=&quot;height: 118px; width: 500px;&quot;&gt;&lt;/img&gt;</info>
         <picklistValueName>Closed Won</picklistValueName>
     </pathAssistantSteps>
-    <pathAssistantSteps>
-        <fieldNames>Amount</fieldNames>
-        <fieldNames>CloseDate</fieldNames>
-        <info>&lt;strong&gt;Negotiate value and resolve objections.&lt;/strong&gt;
-
-&lt;ul&gt;&lt;li&gt;Have you confirmed all key decision makers are on board?&lt;/li&gt;&lt;li&gt;Have you focused enough on selling the value to negotiate the best price?&lt;/li&gt;&lt;/ul&gt;</info>
-        <picklistValueName>Negotiation</picklistValueName>
-    </pathAssistantSteps>
     <recordTypeName>__MASTER__</recordTypeName>
 </PathAssistant>

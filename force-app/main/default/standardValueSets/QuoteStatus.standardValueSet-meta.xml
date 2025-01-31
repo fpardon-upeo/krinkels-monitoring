@@ -26,12 +26,6 @@
         <allowEmail>true</allowEmail>
     </standardValue>
     <standardValue>
-        <fullName>Offered</fullName>
-        <default>false</default>
-        <label>Offered</label>
-        <allowEmail>false</allowEmail>
-    </standardValue>
-    <standardValue>
         <fullName>Rejected</fullName>
         <default>false</default>
         <label>Rejected</label>
@@ -54,11 +48,5 @@
         <default>false</default>
         <label>Denied</label>
         <allowEmail>true</allowEmail>
-    </standardValue>
-    <standardValue>
-        <fullName>Ready for Execution</fullName>
-        <default>false</default>
-        <label>Ready for Execution</label>
-        <allowEmail>false</allowEmail>
     </standardValue>
 </StandardValueSet>

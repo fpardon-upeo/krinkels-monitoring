@@ -27,9 +27,11 @@
 | [Commercial_Account_Record_Page.](../pages/Commercial_Account_Record_Page..md) |  Record Page |
 | [Contact_Record_Page.](../pages/Contact_Record_Page..md) |  Record Page |
 | [Financial_Account_Record_Page.](../pages/Financial_Account_Record_Page..md) |  Record Page |
+| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
 | [Group_Account_Record_Page.](../pages/Group_Account_Record_Page..md) |  Record Page |
 | [Lead_Record_Page.](../pages/Lead_Record_Page..md) |  Record Page |
 | [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
+| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
 | [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
 | [Opportunity_Record_Page.](../pages/Opportunity_Record_Page..md) |  Record Page |
 | [Other_Record_Page.](../pages/Other_Record_Page..md) |  Record Page |

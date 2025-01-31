@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Award_criteriaImplementation_details__c</fullName>
     <inlineHelpText>Please indicate the weight in the decision or any other relevant information</inlineHelpText>
-    <label>Award criteria-Implementation details</label>
+    <label>Award Criteria-Implementation Details</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

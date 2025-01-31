@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Competitor</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You can only select Accounts of record type Other and Sub-Type Competitor.</errorMessage>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Other</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Sub_Type__c</field>
+            <operation>equals</operation>
+            <value>Competitor</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Opportunities (Competitor)</relationshipLabel>
+    <relationshipName>Opportunities1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

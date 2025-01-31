@@ -1401,9 +1401,9 @@
         <name>BriefcaseDefinition</name>
     </types>
     <types>
-        <members>Opportunity.B2B Tender</members>
-        <members>Opportunity.Public Tender</members>
-        <members>Opportunity.Quick Quote</members>
+        <members>Opportunity.One Shot</members>
+        <members>Opportunity.Standard</members>
+        <members>Opportunity.Tender</members>
         <name>BusinessProcess</name>
     </types>
     <types>
@@ -2522,6 +2522,7 @@
         <members>Opportunity.ATAK_Project_Suggested_Name__c</members>
         <members>Opportunity.ATAK_Projectx__c</members>
         <members>Opportunity.Amount__c</members>
+        <members>Opportunity.Attention_Points__c</members>
         <members>Opportunity.Authorization_s__c</members>
         <members>Opportunity.Award_criteriaImplementation_details__c</members>
         <members>Opportunity.Award_criteriaOther__c</members>
@@ -2536,8 +2537,10 @@
         <members>Opportunity.Business_Type__c</members>
         <members>Opportunity.Channel_Partner__c</members>
         <members>Opportunity.Competitor_Information__c</members>
+        <members>Opportunity.Competitor__c</members>
         <members>Opportunity.Contact_form__c</members>
-        <members>Opportunity.Contract_Type__c</members>
+        <members>Opportunity.Contract_Duration_Type__c</members>
+        <members>Opportunity.Contract_End_Date__c</members>
         <members>Opportunity.Contractor_Certification__c</members>
         <members>Opportunity.Criminal_record_KGC__c</members>
         <members>Opportunity.Criminal_record_KHV__c</members>
@@ -2546,21 +2549,28 @@
         <members>Opportunity.Expected_Contract_Start_Date__c</members>
         <members>Opportunity.Extra_Work_Description__c</members>
         <members>Opportunity.General_Liability_Insurance_BA__c</members>
+        <members>Opportunity.Go_No_Go_Description__c</members>
+        <members>Opportunity.Go_No_Go__c</members>
         <members>Opportunity.Guarantee_modalities__c</members>
         <members>Opportunity.Guarantee_required__c</members>
         <members>Opportunity.Indexation__c</members>
         <members>Opportunity.Initiative_Party__c</members>
+        <members>Opportunity.Internal_validation_date__c</members>
         <members>Opportunity.Inventory__c</members>
         <members>Opportunity.Language__c</members>
+        <members>Opportunity.Location_visit_date__c</members>
         <members>Opportunity.Loss_Reason__c</members>
         <members>Opportunity.Main_Contact__c</members>
         <members>Opportunity.Notarial_Certificate__c</members>
+        <members>Opportunity.Number_Contract_Years_Fixed__c</members>
+        <members>Opportunity.Number_Contract_Years_Optional__c</members>
         <members>Opportunity.Price_Request_BS_Comments__c</members>
         <members>Opportunity.Price_Request_Demand_Comments__c</members>
         <members>Opportunity.Price_Request_Priority__c</members>
         <members>Opportunity.Price_Request_Status__c</members>
         <members>Opportunity.Pricing_Request_Needed__c</members>
         <members>Opportunity.Project_Plan__c</members>
+        <members>Opportunity.Q_A__c</members>
         <members>Opportunity.Quick_Quote__c</members>
         <members>Opportunity.Quotation_Form__c</members>
         <members>Opportunity.ROI_Analysis_Completed__c</members>
@@ -2577,7 +2587,8 @@
         <members>Opportunity.Statement_of_Proper_Execution__c</members>
         <members>Opportunity.Statement_of_Truth__c</members>
         <members>Opportunity.Submission_Date_Due__c</members>
-        <members>Opportunity.Submission_Method__c</members>
+        <members>Opportunity.Submission_date__c</members>
+        <members>Opportunity.Submit_Via__c</members>
         <members>Opportunity.Sustainability_Declaration__c</members>
         <members>Opportunity.Tax_certificate__c</members>
         <members>Opportunity.Tender_Documents_Requirements_Notes__c</members>
@@ -12103,6 +12114,7 @@
         <members>Logger_Settings__c-en_US</members>
         <members>Mileage_Entry__c-en_US</members>
         <members>Operator_Created_Event__e-en_US</members>
+        <members>Opportunity-en_US</members>
         <members>Outbound_Log__c-en_US</members>
         <members>ProductItem-en_US</members>
         <members>ProductItemTransaction-en_US</members>
@@ -13012,6 +13024,7 @@
         <members>FSL__CapacityManagement</members>
         <members>Financial_Account_Record_Page</members>
         <members>FlowsApp_UtilityBar</members>
+        <members>General_Opportunity_Record_Page</members>
         <members>Group_Account_Record_Page</members>
         <members>Home_Page_Business_Support</members>
         <members>Home_Page_Contract_Manager</members>
@@ -13047,6 +13060,7 @@
         <members>Notification_Scheduled_WO_Day_NL</members>
         <members>Notification_Scheduled_WO_ENG</members>
         <members>Notification_Scheduled_WO_FR</members>
+        <members>One_Shot_Record_Page</members>
         <members>Operating_Hours_Record_Page</members>
         <members>Operational_Account_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
@@ -13056,7 +13070,6 @@
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>Public_Tender_Opportunity_Record_Page</members>
-        <members>Quick_Opportunity_Record_Page</members>
         <members>Quote_Quick_Quote_Record_Page</members>
         <members>Quote_Record_Page</members>
         <members>Resource_Absence_Record_Page</members>
@@ -13118,6 +13131,7 @@
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
+        <members>Opportunity_Before_Save_Record_Triggered_Naming_Convention</members>
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
@@ -13125,6 +13139,7 @@
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Update_Status_to_RfE</members>
+        <members>Quote_Before_Save_Record_Triggered_Update_Amount</members>
         <members>Quote_Gantt_Action_Clone</members>
         <members>ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
@@ -13225,6 +13240,7 @@
         <members>Mileage_Entry_Before_Save</members>
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
+        <members>Opportunity_Before_Save_Record_Triggered_Naming_Convention</members>
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
@@ -13232,6 +13248,7 @@
         <members>Quote_After_Save_Create_Work_Order_on_Acceptance</members>
         <members>Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity</members>
         <members>Quote_After_Save_Update_Status_to_RfE</members>
+        <members>Quote_Before_Save_Record_Triggered_Update_Amount</members>
         <members>Quote_Gantt_Action_Clone</members>
         <members>ResourceAbsence_After_Delete_Set_Total_Absence_Time_on_TimeSheet</members>
         <members>ResourceAbsence_After_Save_Break_Time</members>
@@ -14876,9 +14893,9 @@
         <members>FSL__Work_Rule__c.FSL__Time_Rule_Service</members>
         <members>Knowledge__kav.FAQ</members>
         <members>Knowledge__kav.Procedure</members>
-        <members>Opportunity.B2B_Tender</members>
-        <members>Opportunity.Public_Tender</members>
-        <members>Opportunity.Quick_Quote</members>
+        <members>Opportunity.One_Shot</members>
+        <members>Opportunity.Standard</members>
+        <members>Opportunity.Tender</members>
         <members>Product2.Extra_Work</members>
         <members>Product2.Material</members>
         <members>Product2.Service</members>
@@ -16270,6 +16287,7 @@
         <members>Create_Internal_Work_Order</members>
         <members>FSL__CapacityManagement</members>
         <members>Financial_Account_Record_Page</members>
+        <members>General_Opportunity_Record_Page</members>
         <members>Group_Account_Record_Page</members>
         <members>LMRA_Record_Page</members>
         <members>Lead_Record_Page</members>
@@ -16280,6 +16298,7 @@
         <members>Maintenance_Plan_Record_Page</members>
         <members>Maintenance_Work_Rule_Record_Page</members>
         <members>Mileage_Entry_Record_Page</members>
+        <members>One_Shot_Record_Page</members>
         <members>Operating_Hours_Record_Page</members>
         <members>Operational_Account_Record_Page</members>
         <members>Opportunity_Product_Record_Page</members>
@@ -16289,7 +16308,6 @@
         <members>Product_Item_Record_Page</members>
         <members>Product_Record_Page</members>
         <members>Public_Tender_Opportunity_Record_Page</members>
-        <members>Quick_Opportunity_Record_Page</members>
         <members>Quote_Quick_Quote_Record_Page</members>
         <members>Quote_Record_Page</members>
         <members>Resource_Absence_Record_Page</members>
@@ -16341,9 +16359,11 @@
         <members>Location_Visit__c.Internal_Visitor_Mandatory</members>
         <members>Location_Visit__c.Planned_Date</members>
         <members>Mileage_Entry__c.End_Mileage_cannot_be_lower_than_start</members>
+        <members>Opportunity.Go_for_Submission_Stage</members>
+        <members>Opportunity.Loss_Reason_Mandatory</members>
         <members>Opportunity.Maximum_Value_for_Quick_Quote</members>
         <members>Quote.ATAK_Project_needed_for_Closed</members>
-        <members>Quote.Maximum_Value_for_Quick_Quote</members>
+        <members>Quote.Presented_only_when_Go</members>
         <members>ResourceAbsence.FSL__Absence_Color_HEX_Format</members>
         <members>ResourceAbsence.FSL__startShouldPrecedeEnd</members>
         <members>ServiceAppointment.FSL__Dont_allow_scheduled_or_dispatched</members>
