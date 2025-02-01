@@ -30,7 +30,7 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Maintenance_Asset_Record_Page.](../pages/Maintenance_Asset_Record_Page..md) |  Record Page |
+| [Maintenance_Asset_Record_Page](../pages/Maintenance_Asset_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

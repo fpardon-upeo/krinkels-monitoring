@@ -3075,6 +3075,35 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows>
+            <textTemplates>
+                <name>InternalValidationEmailTemplate</name>
+            </textTemplates>
+            <textTemplates>
+                <name>InternalValidationSubject</name>
+            </textTemplates>
+            <textTemplates>
+                <name>LocationVisitBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>LocationVisitSubject</name>
+            </textTemplates>
+            <textTemplates>
+                <name>QABody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>QASubject</name>
+            </textTemplates>
+            <textTemplates>
+                <name>SubmissionBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>SubmissionSubject</name>
+            </textTemplates>
+        </flows>
+        <fullName>Opportunity_Scheduled_Flow_Reminders_for_Deadlines</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
             <screens>
                 <fields>
                     <name>ATAKProjectTitle</name>

@@ -37,12 +37,12 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
-| [Service_Appointment_Service_Report_NL.](../pages/Service_Appointment_Service_Report_NL..md) |  Service Document |
-| [Service_Appointment_Service_Report_Without_Signature_NL.](../pages/Service_Appointment_Service_Report_Without_Signature_NL..md) |  Service Document |
-| [Work_Order_Line_Item_Record_Page.](../pages/Work_Order_Line_Item_Record_Page..md) |  Record Page |
-| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
-| [Work_Order_Service_Report.](../pages/Work_Order_Service_Report..md) |  Service Document |
+| [Service_Appointment](../pages/Service_Appointment.md) |  Service Document |
+| [Service_Appointment_Service_Report_NL](../pages/Service_Appointment_Service_Report_NL.md) |  Service Document |
+| [Service_Appointment_Service_Report_Without_Signature_NL](../pages/Service_Appointment_Service_Report_Without_Signature_NL.md) |  Service Document |
+| [Work_Order_Line_Item_Record_Page](../pages/Work_Order_Line_Item_Record_Page.md) |  Record Page |
+| [Work_Order_Record_Page](../pages/Work_Order_Record_Page.md) |  Record Page |
+| [Work_Order_Service_Report](../pages/Work_Order_Service_Report.md) |  Service Document |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

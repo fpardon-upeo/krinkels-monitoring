@@ -55,8 +55,8 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
-| [Work_Step_Record_Page.](../pages/Work_Step_Record_Page..md) |  Record Page |
+| [Work_Order_Record_Page](../pages/Work_Order_Record_Page.md) |  Record Page |
+| [Work_Step_Record_Page](../pages/Work_Step_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

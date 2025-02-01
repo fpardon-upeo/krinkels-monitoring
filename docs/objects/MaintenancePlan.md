@@ -40,8 +40,8 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Maintenance_Plan_Record_Page.](../pages/Maintenance_Plan_Record_Page..md) |  Record Page |
-| [Service_Contract_Record_Page.](../pages/Service_Contract_Record_Page..md) |  Record Page |
+| [Maintenance_Plan_Record_Page](../pages/Maintenance_Plan_Record_Page.md) |  Record Page |
+| [Service_Contract_Record_Page](../pages/Service_Contract_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

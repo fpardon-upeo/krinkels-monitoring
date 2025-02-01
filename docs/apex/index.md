@@ -111,6 +111,7 @@
 | [TimeSheetCalculationServiceTest](TimeSheetCalculationServiceTest.md) | Test |
 | [TimeSheetController](TimeSheetController.md) | Lightning Controller |
 | [TimeSheetControllerTest](TimeSheetControllerTest.md) | Test |
+| [TimeSheetEntryController](TimeSheetEntryController.md) | Lightning Controller |
 | [TimeSheetHandler](TimeSheetHandler.md) | Class |
 | [TimeSheetMapController](TimeSheetMapController.md) | Lightning Controller |
 | [TimeSheetProjectLinkService](TimeSheetProjectLinkService.md) | Class |

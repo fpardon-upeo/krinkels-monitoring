@@ -52,8 +52,8 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Contract_Line_Item_Record_Page.](../pages/Contract_Line_Item_Record_Page..md) |  Record Page |
-| [Service_Contract_Record_Page.](../pages/Service_Contract_Record_Page..md) |  Record Page |
+| [Contract_Line_Item_Record_Page](../pages/Contract_Line_Item_Record_Page.md) |  Record Page |
+| [Service_Contract_Record_Page](../pages/Service_Contract_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

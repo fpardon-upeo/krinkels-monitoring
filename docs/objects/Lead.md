@@ -33,10 +33,10 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
-| [LMRA_Record_Page.](../pages/LMRA_Record_Page..md) |  Record Page |
-| [Lead_Record_Page.](../pages/Lead_Record_Page..md) |  Record Page |
-| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
+| [General_Opportunity_Record_Page](../pages/General_Opportunity_Record_Page.md) |  Record Page |
+| [LMRA_Record_Page](../pages/LMRA_Record_Page.md) |  Record Page |
+| [Lead_Record_Page](../pages/Lead_Record_Page.md) |  Record Page |
+| [One_Shot_Record_Page](../pages/One_Shot_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

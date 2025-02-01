@@ -38,6 +38,7 @@
 | Owner__c | Owner | Text | <!-- --> |
 | Payment_Term__c | Payment Term | Number | <!-- --> |
 | Permanence_Fee__c | Permanence Fee | Currency | <!-- --> |
+| Place_Document_signature__c | Place Document signature | Text | <!-- --> |
 | PO_NUmber__c | PO NUmber | Text | <!-- --> |
 | Price_Request_BS_Comments__c | Price Request BS Comments | TextArea | <!-- --> |
 | Price_Request_Demand_Comments__c | Price Request Demand Comments | TextArea | <!-- --> |
@@ -110,14 +111,14 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [B2B_Opportunity_Record_Page.](../pages/B2B_Opportunity_Record_Page..md) |  Record Page |
-| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
-| [Home_Page_Business_Support.](../pages/Home_Page_Business_Support..md) |  Home Page |
-| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
-| [Public_Tender_Opportunity_Record_Page.](../pages/Public_Tender_Opportunity_Record_Page..md) |  Record Page |
-| [Quick_Opportunity_Record_Page.](../pages/Quick_Opportunity_Record_Page..md) |  Record Page |
-| [Quote_Quick_Quote_Record_Page.](../pages/Quote_Quick_Quote_Record_Page..md) |  Record Page |
-| [Quote_Record_Page.](../pages/Quote_Record_Page..md) |  Record Page |
+| [B2B_Opportunity_Record_Page](../pages/B2B_Opportunity_Record_Page.md) |  Record Page |
+| [General_Opportunity_Record_Page](../pages/General_Opportunity_Record_Page.md) |  Record Page |
+| [Home_Page_Business_Support](../pages/Home_Page_Business_Support.md) |  Home Page |
+| [One_Shot_Record_Page](../pages/One_Shot_Record_Page.md) |  Record Page |
+| [Public_Tender_Opportunity_Record_Page](../pages/Public_Tender_Opportunity_Record_Page.md) |  Record Page |
+| [Quick_Opportunity_Record_Page](../pages/Quick_Opportunity_Record_Page.md) |  Record Page |
+| [Quote_Quick_Quote_Record_Page](../pages/Quote_Quick_Quote_Record_Page.md) |  Record Page |
+| [Quote_Record_Page](../pages/Quote_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

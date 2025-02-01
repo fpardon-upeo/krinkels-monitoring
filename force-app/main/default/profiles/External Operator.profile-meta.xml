@@ -482,6 +482,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TimeSheetEntryController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TimeSheetHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1995,6 +1999,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Location_Visit__c.Visit_Date_date_only__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Location_Visit__c.Visitor_Internal__c</field>
         <readable>true</readable>
@@ -2470,6 +2479,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Submission_Date_date_only__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Submission_date__c</field>
         <readable>true</readable>
@@ -2842,6 +2856,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Quote.Permanence_Fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Place_Document_signature__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4658,6 +4677,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>Opportunity_Before_Save_Record_Triggered_Naming_Convention</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Opportunity_Scheduled_Flow_Reminders_for_Deadlines</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

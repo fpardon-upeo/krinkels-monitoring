@@ -32,8 +32,8 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Product_Consumed_Record_Page.](../pages/Product_Consumed_Record_Page..md) |  Record Page |
-| [Work_Order_Service_Report.](../pages/Work_Order_Service_Report..md) |  Service Document |
+| [Product_Consumed_Record_Page](../pages/Product_Consumed_Record_Page.md) |  Record Page |
+| [Work_Order_Service_Report](../pages/Work_Order_Service_Report.md) |  Service Document |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

@@ -159,6 +159,7 @@
 | [ServiceAppointmentTriggerHandlerTest](../apex/ServiceAppointmentTriggerHandlerTest.md) | Test |
 | [ServiceReportGenerationBatch](../apex/ServiceReportGenerationBatch.md) | Batch |
 | [TimeSheetController](../apex/TimeSheetController.md) | Lightning Controller |
+| [TimeSheetEntryController](../apex/TimeSheetEntryController.md) | Lightning Controller |
 | [TimeSheetProjectLinkService](../apex/TimeSheetProjectLinkService.md) | Class |
 | [TimeSheetProjectLinkServiceTest](../apex/TimeSheetProjectLinkServiceTest.md) | Test |
 | [ValidationService](../apex/ValidationService.md) | Class |
@@ -178,33 +179,33 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Home_Page_Business_Support.](../pages/Home_Page_Business_Support..md) |  Home Page |
-| [Home_Page_Contract_Manager.](../pages/Home_Page_Contract_Manager..md) |  Home Page |
-| [Notification_Crew_on_its_way_ENG.](../pages/Notification_Crew_on_its_way_ENG..md) |  Email Template Page |
-| [Notification_Crew_on_its_way_FR.](../pages/Notification_Crew_on_its_way_FR..md) |  Email Template Page |
-| [Notification_Crew_on_its_way_NL.](../pages/Notification_Crew_on_its_way_NL..md) |  Email Template Page |
-| [Notification_Planned_WO_NL.](../pages/Notification_Planned_WO_NL..md) |  Email Template Page |
-| [Notification_REScheduled_WO_Day_ENG.](../pages/Notification_REScheduled_WO_Day_ENG..md) |  Email Template Page |
-| [Notification_REScheduled_WO_Day_FR.](../pages/Notification_REScheduled_WO_Day_FR..md) |  Email Template Page |
-| [Notification_REScheduled_WO_Day_NL.](../pages/Notification_REScheduled_WO_Day_NL..md) |  Email Template Page |
-| [Notification_REScheduled_WO_ENG.](../pages/Notification_REScheduled_WO_ENG..md) |  Email Template Page |
-| [Notification_REScheduled_WO_FR.](../pages/Notification_REScheduled_WO_FR..md) |  Email Template Page |
-| [Notification_REScheduled_WO_NL.](../pages/Notification_REScheduled_WO_NL..md) |  Email Template Page |
-| [Notification_Scheduled_WO_Day_ENG.](../pages/Notification_Scheduled_WO_Day_ENG..md) |  Email Template Page |
-| [Notification_Scheduled_WO_Day_FR.](../pages/Notification_Scheduled_WO_Day_FR..md) |  Email Template Page |
-| [Notification_Scheduled_WO_Day_NL.](../pages/Notification_Scheduled_WO_Day_NL..md) |  Email Template Page |
-| [Notification_Scheduled_WO_ENG.](../pages/Notification_Scheduled_WO_ENG..md) |  Email Template Page |
-| [Notification_Scheduled_WO_FR.](../pages/Notification_Scheduled_WO_FR..md) |  Email Template Page |
-| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
-| [Service_Appointment_Service_Report_NL.](../pages/Service_Appointment_Service_Report_NL..md) |  Service Document |
-| [Service_Appointment_Service_Report_Without_Signature_NL.](../pages/Service_Appointment_Service_Report_Without_Signature_NL..md) |  Service Document |
-| [Service_Report_Notification.](../pages/Service_Report_Notification..md) |  Email Template Page |
-| [Service_Report_Notification_fr.](../pages/Service_Report_Notification_fr..md) |  Email Template Page |
-| [Service_Report_Notification_nl.](../pages/Service_Report_Notification_nl..md) |  Email Template Page |
-| [Time_Sheet_Record_Page.](../pages/Time_Sheet_Record_Page..md) |  Record Page |
-| [Work_Order_Line_Item_Record_Page.](../pages/Work_Order_Line_Item_Record_Page..md) |  Record Page |
-| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
-| [Work_Order_Service_Report.](../pages/Work_Order_Service_Report..md) |  Service Document |
+| [Home_Page_Business_Support](../pages/Home_Page_Business_Support.md) |  Home Page |
+| [Home_Page_Contract_Manager](../pages/Home_Page_Contract_Manager.md) |  Home Page |
+| [Notification_Crew_on_its_way_ENG](../pages/Notification_Crew_on_its_way_ENG.md) |  Email Template Page |
+| [Notification_Crew_on_its_way_FR](../pages/Notification_Crew_on_its_way_FR.md) |  Email Template Page |
+| [Notification_Crew_on_its_way_NL](../pages/Notification_Crew_on_its_way_NL.md) |  Email Template Page |
+| [Notification_Planned_WO_NL](../pages/Notification_Planned_WO_NL.md) |  Email Template Page |
+| [Notification_REScheduled_WO_Day_ENG](../pages/Notification_REScheduled_WO_Day_ENG.md) |  Email Template Page |
+| [Notification_REScheduled_WO_Day_FR](../pages/Notification_REScheduled_WO_Day_FR.md) |  Email Template Page |
+| [Notification_REScheduled_WO_Day_NL](../pages/Notification_REScheduled_WO_Day_NL.md) |  Email Template Page |
+| [Notification_REScheduled_WO_ENG](../pages/Notification_REScheduled_WO_ENG.md) |  Email Template Page |
+| [Notification_REScheduled_WO_FR](../pages/Notification_REScheduled_WO_FR.md) |  Email Template Page |
+| [Notification_REScheduled_WO_NL](../pages/Notification_REScheduled_WO_NL.md) |  Email Template Page |
+| [Notification_Scheduled_WO_Day_ENG](../pages/Notification_Scheduled_WO_Day_ENG.md) |  Email Template Page |
+| [Notification_Scheduled_WO_Day_FR](../pages/Notification_Scheduled_WO_Day_FR.md) |  Email Template Page |
+| [Notification_Scheduled_WO_Day_NL](../pages/Notification_Scheduled_WO_Day_NL.md) |  Email Template Page |
+| [Notification_Scheduled_WO_ENG](../pages/Notification_Scheduled_WO_ENG.md) |  Email Template Page |
+| [Notification_Scheduled_WO_FR](../pages/Notification_Scheduled_WO_FR.md) |  Email Template Page |
+| [Service_Appointment](../pages/Service_Appointment.md) |  Service Document |
+| [Service_Appointment_Service_Report_NL](../pages/Service_Appointment_Service_Report_NL.md) |  Service Document |
+| [Service_Appointment_Service_Report_Without_Signature_NL](../pages/Service_Appointment_Service_Report_Without_Signature_NL.md) |  Service Document |
+| [Service_Report_Notification](../pages/Service_Report_Notification.md) |  Email Template Page |
+| [Service_Report_Notification_fr](../pages/Service_Report_Notification_fr.md) |  Email Template Page |
+| [Service_Report_Notification_nl](../pages/Service_Report_Notification_nl.md) |  Email Template Page |
+| [Time_Sheet_Record_Page](../pages/Time_Sheet_Record_Page.md) |  Record Page |
+| [Work_Order_Line_Item_Record_Page](../pages/Work_Order_Line_Item_Record_Page.md) |  Record Page |
+| [Work_Order_Record_Page](../pages/Work_Order_Record_Page.md) |  Record Page |
+| [Work_Order_Service_Report](../pages/Work_Order_Service_Report.md) |  Service Document |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

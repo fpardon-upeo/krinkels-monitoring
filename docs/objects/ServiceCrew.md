@@ -39,9 +39,9 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Service_Appointment_Record_Page.](../pages/Service_Appointment_Record_Page..md) |  Record Page |
-| [Service_Crew_Record_Page.](../pages/Service_Crew_Record_Page..md) |  Record Page |
-| [Van_Crew_Member_Record_Page.](../pages/Van_Crew_Member_Record_Page..md) |  Record Page |
+| [Service_Appointment_Record_Page](../pages/Service_Appointment_Record_Page.md) |  Record Page |
+| [Service_Crew_Record_Page](../pages/Service_Crew_Record_Page.md) |  Record Page |
+| [Van_Crew_Member_Record_Page](../pages/Van_Crew_Member_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

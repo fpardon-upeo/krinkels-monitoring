@@ -373,8 +373,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>startOperatorDay</componentName>
-                <identifier>c_startOperatorDay</identifier>
+                <componentName>timeSheetEntryReview</componentName>
+                <identifier>c_timeSheetEntryReview</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-c2bd72e0-d828-46cf-bf63-8259b57bde03</name>

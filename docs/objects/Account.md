@@ -120,26 +120,26 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [ATAK_Project_Financial_Account_Record_Page.](../pages/ATAK_Project_Financial_Account_Record_Page..md) |  Record Page |
-| [Account_Record_Page.](../pages/Account_Record_Page..md) |  Record Page |
-| [Asset_Record_Page.](../pages/Asset_Record_Page..md) |  Record Page |
-| [B2B_Opportunity_Record_Page.](../pages/B2B_Opportunity_Record_Page..md) |  Record Page |
-| [Commercial_Account_Record_Page.](../pages/Commercial_Account_Record_Page..md) |  Record Page |
-| [Contact_Record_Page.](../pages/Contact_Record_Page..md) |  Record Page |
-| [Contract_Line_Item_Record_Page.](../pages/Contract_Line_Item_Record_Page..md) |  Record Page |
-| [Financial_Account_Record_Page.](../pages/Financial_Account_Record_Page..md) |  Record Page |
-| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
-| [Group_Account_Record_Page.](../pages/Group_Account_Record_Page..md) |  Record Page |
-| [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
-| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
-| [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
-| [Other_Record_Page.](../pages/Other_Record_Page..md) |  Record Page |
-| [Public_Tender_Opportunity_Record_Page.](../pages/Public_Tender_Opportunity_Record_Page..md) |  Record Page |
-| [Quick_Opportunity_Record_Page.](../pages/Quick_Opportunity_Record_Page..md) |  Record Page |
-| [Quote_Quick_Quote_Record_Page.](../pages/Quote_Quick_Quote_Record_Page..md) |  Record Page |
-| [Quote_Record_Page.](../pages/Quote_Record_Page..md) |  Record Page |
-| [Service_Contract_Record_Page.](../pages/Service_Contract_Record_Page..md) |  Record Page |
-| [Work_Order_Service_Report.](../pages/Work_Order_Service_Report..md) |  Service Document |
+| [ATAK_Project_Financial_Account_Record_Page](../pages/ATAK_Project_Financial_Account_Record_Page.md) |  Record Page |
+| [Account_Record_Page](../pages/Account_Record_Page.md) |  Record Page |
+| [Asset_Record_Page](../pages/Asset_Record_Page.md) |  Record Page |
+| [B2B_Opportunity_Record_Page](../pages/B2B_Opportunity_Record_Page.md) |  Record Page |
+| [Commercial_Account_Record_Page](../pages/Commercial_Account_Record_Page.md) |  Record Page |
+| [Contact_Record_Page](../pages/Contact_Record_Page.md) |  Record Page |
+| [Contract_Line_Item_Record_Page](../pages/Contract_Line_Item_Record_Page.md) |  Record Page |
+| [Financial_Account_Record_Page](../pages/Financial_Account_Record_Page.md) |  Record Page |
+| [General_Opportunity_Record_Page](../pages/General_Opportunity_Record_Page.md) |  Record Page |
+| [Group_Account_Record_Page](../pages/Group_Account_Record_Page.md) |  Record Page |
+| [Location_Visit_Record_Page](../pages/Location_Visit_Record_Page.md) |  Record Page |
+| [One_Shot_Record_Page](../pages/One_Shot_Record_Page.md) |  Record Page |
+| [Operational_Account_Record_Page](../pages/Operational_Account_Record_Page.md) |  Record Page |
+| [Other_Record_Page](../pages/Other_Record_Page.md) |  Record Page |
+| [Public_Tender_Opportunity_Record_Page](../pages/Public_Tender_Opportunity_Record_Page.md) |  Record Page |
+| [Quick_Opportunity_Record_Page](../pages/Quick_Opportunity_Record_Page.md) |  Record Page |
+| [Quote_Quick_Quote_Record_Page](../pages/Quote_Quick_Quote_Record_Page.md) |  Record Page |
+| [Quote_Record_Page](../pages/Quote_Record_Page.md) |  Record Page |
+| [Service_Contract_Record_Page](../pages/Service_Contract_Record_Page.md) |  Record Page |
+| [Work_Order_Service_Report](../pages/Work_Order_Service_Report.md) |  Service Document |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

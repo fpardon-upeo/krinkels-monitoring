@@ -42,9 +42,9 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [LMRA_Record_Page.](../pages/LMRA_Record_Page..md) |  Record Page |
-| [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
-| [Service_Contract_Record_Page.](../pages/Service_Contract_Record_Page..md) |  Record Page |
+| [LMRA_Record_Page](../pages/LMRA_Record_Page.md) |  Record Page |
+| [Operational_Account_Record_Page](../pages/Operational_Account_Record_Page.md) |  Record Page |
+| [Service_Contract_Record_Page](../pages/Service_Contract_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

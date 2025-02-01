@@ -157,6 +157,7 @@ public with sharing class ATAKPerformanceService {
                         Starting_Allowance_Winter_Service__c, Urgent_Intervention__c
                 FROM TimeSheetEntry
                 WHERE TimesheetId = :tsId
+                AND Type != 'Small Leave'
                 ORDER BY StartTime ASC
         ];
         System.debug('ATAKPerformanceService.prepareATAKPerformanceData - tsEntries: ' + tsEntries);

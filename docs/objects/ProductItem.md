@@ -37,7 +37,7 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Product_Item_Record_Page.](../pages/Product_Item_Record_Page..md) |  Record Page |
+| [Product_Item_Record_Page](../pages/Product_Item_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

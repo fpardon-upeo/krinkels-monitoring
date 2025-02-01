@@ -68,9 +68,9 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Product_Record_Page.](../pages/Product_Record_Page..md) |  Record Page |
-| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
-| [Work_Order_Service_Report.](../pages/Work_Order_Service_Report..md) |  Service Document |
+| [Product_Record_Page](../pages/Product_Record_Page.md) |  Record Page |
+| [Service_Appointment](../pages/Service_Appointment.md) |  Service Document |
+| [Work_Order_Service_Report](../pages/Work_Order_Service_Report.md) |  Service Document |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

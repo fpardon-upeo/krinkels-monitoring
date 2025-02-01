@@ -63,6 +63,7 @@
 | [TimeSheetCalculationServiceTest](../apex/TimeSheetCalculationServiceTest.md) | Test |
 | [TimeSheetController](../apex/TimeSheetController.md) | Lightning Controller |
 | [TimeSheetControllerTest](../apex/TimeSheetControllerTest.md) | Test |
+| [TimeSheetEntryController](../apex/TimeSheetEntryController.md) | Lightning Controller |
 | [TimeSheetProjectLinkService](../apex/TimeSheetProjectLinkService.md) | Class |
 | [TimeSheetProjectLinkServiceTest](../apex/TimeSheetProjectLinkServiceTest.md) | Test |
 | [ValidationService](../apex/ValidationService.md) | Class |
@@ -73,7 +74,7 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Time_Sheet_Entry_Record_Page.](../pages/Time_Sheet_Entry_Record_Page..md) |  Record Page |
+| [Time_Sheet_Entry_Record_Page](../pages/Time_Sheet_Entry_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

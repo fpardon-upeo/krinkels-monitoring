@@ -25,12 +25,12 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Commercial_Account_Record_Page.](../pages/Commercial_Account_Record_Page..md) |  Record Page |
-| [Contact_Record_Page.](../pages/Contact_Record_Page..md) |  Record Page |
-| [Financial_Account_Record_Page.](../pages/Financial_Account_Record_Page..md) |  Record Page |
-| [Group_Account_Record_Page.](../pages/Group_Account_Record_Page..md) |  Record Page |
-| [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
-| [Other_Record_Page.](../pages/Other_Record_Page..md) |  Record Page |
+| [Commercial_Account_Record_Page](../pages/Commercial_Account_Record_Page.md) |  Record Page |
+| [Contact_Record_Page](../pages/Contact_Record_Page.md) |  Record Page |
+| [Financial_Account_Record_Page](../pages/Financial_Account_Record_Page.md) |  Record Page |
+| [Group_Account_Record_Page](../pages/Group_Account_Record_Page.md) |  Record Page |
+| [Operational_Account_Record_Page](../pages/Operational_Account_Record_Page.md) |  Record Page |
+| [Other_Record_Page](../pages/Other_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

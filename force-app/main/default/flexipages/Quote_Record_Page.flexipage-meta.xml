@@ -310,6 +310,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Place_Document_signature__c</fieldItem>
+                <identifier>RecordPlace_Document_signature_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.BillingName</fieldItem>
                 <identifier>RecordBillingNameField</identifier>
             </fieldInstance>

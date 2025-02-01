@@ -1,0 +1,170 @@
+<!-- Time Sheet Entry Review -->
+<template>
+    <lightning-card title="Time Sheet Entries" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                    class="slds-m-bottom_small"
+                    type="toggle"
+                    label="Edit"
+                    checked={isEditable}
+                    message-toggle-active=""
+                    message-toggle-inactive=""
+                    onchange={toggleEdit}></lightning-input>
+            <table class="slds-table slds-table_striped slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col" style="width: 20%">Work Order</th>
+                    <th scope="col" style="width: 30%">Start</th>
+                    <th scope="col" style="width: 30%">End</th>
+                    <th scope="col" style="width: 10%">Type</th>
+                    <th scope="col" style="width: 5%" class="slds-text-align_center">Start. Allow.</th>
+                    <th scope="col" style="width: 5%" class="slds-text-align_center">Urgent Int.</th>
+                </tr>
+                </thead>
+                <tbody>
+                <template for:each={timeSheetEntries} for:item="entry">
+                    <tr key={entry.Id}>
+                        <td>
+                            <template if:true={isEditable}>
+                                <lightning-record-picker
+                                        display-info={displayInfo}
+                                        filter={filter}
+                                        object-api-name="WorkOrder"
+                                        value={entry.WorkOrderId}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        variant="label-hidden"
+                                        data-field="WorkOrder"
+                                        label="Work Order">
+                                </lightning-record-picker>
+                            </template>
+                            <template if:false={isEditable}>
+                                {entry.WorkOrder.WorkOrderNumber}
+                            </template>
+                        </td>
+                        <td>
+                            <template if:true={isEditable}>
+                                <lightning-input
+                                        type="datetime"
+                                        value={entry.StartTime}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        date-style="short"
+                                        time-style="short"
+                                        variant="label-hidden"
+                                        data-field="StartTime">
+                                </lightning-input>
+                            </template>
+                            <template if:false={isEditable}>
+                                <lightning-formatted-date-time
+                                        value={entry.StartTime}
+                                        year="2-digit"
+                                        month="2-digit"
+                                        day="2-digit"
+                                        hour="2-digit"
+                                        minute="2-digit"
+                                        time-zone="CET"
+                                        hour12="false">
+                                </lightning-formatted-date-time>
+                            </template>
+                        </td>
+                        <td>
+                            <template if:true={isEditable}>
+                                <lightning-input
+                                        type="datetime"
+                                        value={entry.EndTime}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        date-style="short"
+                                        time-style="short"
+                                        variant="label-hidden"
+                                        data-field="EndTime">
+                                </lightning-input>
+                            </template>
+                            <template if:false={isEditable}>
+                                <lightning-formatted-date-time
+                                        value={entry.EndTime}
+                                        year="2-digit"
+                                        month="2-digit"
+                                        day="2-digit"
+                                        hour="2-digit"
+                                        minute="2-digit"
+                                        time-zone="CET"
+                                        hour12="false">
+                                </lightning-formatted-date-time>
+                            </template>
+                        </td>
+                        <td>
+                            <template if:true={isEditable}>
+                                <lightning-combobox
+                                        value={entry.Type}
+                                        placeholder="Choose Type"
+                                        options={typeOptions}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        variant="label-hidden"
+                                        data-field="Type">
+                                </lightning-combobox>
+                            </template>
+                            <template if:false={isEditable}>
+                                {entry.Type}
+                            </template>
+                        </td>
+                        <td class="slds-text-align_center">
+                            <template if:true={isEditable}>
+                                <lightning-input
+                                        type="checkbox"
+                                        checked={entry.Start_Allowed__c}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        data-field="Start_Allowed__c"
+                                        >
+                                </lightning-input>
+                            </template>
+                            <template if:false={isEditable}>
+                                <lightning-input
+                                        type="checkbox"
+                                        checked={entry.Starting_Allowance_Winter_Service__c}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        data-field="Starting_Allowance_Winter_Service__c"
+                                        disabled>
+                                </lightning-input>
+                            </template>
+                        </td>
+                        <td class="slds-text-align_center">
+                            <template if:true={isEditable}>
+                                <lightning-input
+                                        type="checkbox"
+                                        checked={entry.Urgent_Intervention__c}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        data-field="Urgent_Intervention__c"
+                                        >
+                                </lightning-input>
+                            </template>
+                            <template if:false={isEditable}>
+                                <lightning-input
+                                        type="checkbox"
+                                        checked={entry.Urgent_Intervention__c}
+                                        onchange={handleInputChange}
+                                        data-id={entry.Id}
+                                        data-field="Urgent_Intervention__c"
+                                        disabled>
+                                </lightning-input>
+                            </template>
+                        </td>
+                    </tr>
+                </template>
+                </tbody>
+            </table>
+            <div class="slds-m-top_medium">
+                <lightning-button
+                        label="Save"
+                        variant="brand"
+                        onclick={handleAddRow}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

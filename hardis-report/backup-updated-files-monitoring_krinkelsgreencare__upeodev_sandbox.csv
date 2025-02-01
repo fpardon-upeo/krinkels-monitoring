@@ -1,78 +1,22 @@
 File,ChangeType,FileHuman,WorkingDir,PrevName,severity,severityIcon
-applications/Bussiness_Support.app-meta.xml," ",CustomApplication Bussiness_Support,M,,log,📰
-applications/Krinkels_Admin.app-meta.xml," ",CustomApplication Krinkels_Admin,M,,log,📰
-applications/Krinkels_Field_Service.app-meta.xml," ",CustomApplication Krinkels_Field_Service,M,,log,📰
-applications/Management.app-meta.xml," ",CustomApplication Management,M,,log,📰
-applications/Sales.app-meta.xml," ",CustomApplication Sales,M,,log,📰
+classes/ATAKPerformanceService.cls," ",ApexClass ATAKPerformanceService,M,,log,📰
+classes/TimeSheetEntryController.cls,A,ApexClass TimeSheetEntryController,,,log,📰
+classes/TimeSheetEntryController.cls-meta.xml,A,ApexClass TimeSheetEntryController,,,log,📰
 cleanDataServices/DataCloudGeoLocation.cleanDataService-meta.xml," ",CleanDataService DataCloudGeoLocation,M,,log,📰
-flexipages/B2B_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage B2B_Opportunity_Record_Page,M,,log,📰
-flexipages/General_Opportunity_Record_Page.flexipage-meta.xml,A,FlexiPage General_Opportunity_Record_Page,,,log,📰
-flexipages/One_Shot_Record_Page.flexipage-meta.xml,A,FlexiPage One_Shot_Record_Page,,,log,📰
-flexipages/Public_Tender_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage Public_Tender_Opportunity_Record_Page,M,,log,📰
+flexipages/General_Opportunity_Record_Page.flexipage-meta.xml," ",FlexiPage General_Opportunity_Record_Page,M,,log,📰
 flexipages/Quote_Record_Page.flexipage-meta.xml," ",FlexiPage Quote_Record_Page,M,,log,📰
-flowDefinitions/Opportunity_Before_Save_Record_Triggered_Naming_Convention.flowDefinition-meta.xml,A,FlowDefinition Opportunity_Before_Save_Record_Triggered_Naming_Convention,,,log,📰
-flowDefinitions/Opportunity_Screen_Flow_Pricing_Request.flowDefinition-meta.xml," ",FlowDefinition Opportunity_Screen_Flow_Pricing_Request,M,,log,📰
-flowDefinitions/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flowDefinition-meta.xml," ",FlowDefinition Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,M,,log,📰
-flowDefinitions/Quote_Before_Save_Record_Triggered_Update_Amount.flowDefinition-meta.xml,A,FlowDefinition Quote_Before_Save_Record_Triggered_Update_Amount,,,log,📰
-flows/Opportunity_Before_Save_Record_Triggered_Naming_Convention.flow-meta.xml,A,Flow Opportunity_Before_Save_Record_Triggered_Naming_Convention,,,log,📰
-flows/Opportunity_Screen_Flow_Pricing_Request.flow-meta.xml," ",Flow Opportunity_Screen_Flow_Pricing_Request,M,,log,📰
-flows/Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity.flow-meta.xml," ",Flow Quote_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Opportunity,M,,log,📰
-flows/Quote_Before_Save_Record_Triggered_Update_Amount.flow-meta.xml,A,Flow Quote_Before_Save_Record_Triggered_Update_Amount,,,log,📰
-objects/Account/recordTypes/Commercial_Account.recordType-meta.xml," ",RecordType Commercial_Account,M,,log,📰
-objects/Account/recordTypes/Financial_Account.recordType-meta.xml," ",RecordType Financial_Account,M,,log,📰
-objects/Account/recordTypes/Group_Account.recordType-meta.xml," ",RecordType Group_Account,M,,log,📰
-objects/Account/recordTypes/Operational_Account.recordType-meta.xml," ",RecordType Operational_Account,M,,log,📰
-objects/Account/recordTypes/Other.recordType-meta.xml," ",RecordType Other,M,,log,📰
-objects/Opportunity/businessProcesses/One Shot.businessProcess-meta.xml,A,BusinessProcess One Shot,,,log,📰
-objects/Opportunity/businessProcesses/Standard.businessProcess-meta.xml,A,BusinessProcess Standard,,,log,📰
-objects/Opportunity/businessProcesses/Tender.businessProcess-meta.xml,A,BusinessProcess Tender,,,log,📰
-objects/Opportunity/fields/Amount__c.field-meta.xml," ",CustomField Amount__c,M,,log,📰
-objects/Opportunity/fields/Attention_Points__c.field-meta.xml,A,CustomField Attention_Points__c,,,log,📰
-objects/Opportunity/fields/Award_criteriaImplementation_details__c.field-meta.xml," ",CustomField Award_criteriaImplementation_details__c,M,,log,📰
-objects/Opportunity/fields/Award_criteriaOther__c.field-meta.xml," ",CustomField Award_criteriaOther__c,M,,log,📰
-objects/Opportunity/fields/Award_criteriaPrice_details__c.field-meta.xml," ",CustomField Award_criteriaPrice_details__c,M,,log,📰
-objects/Opportunity/fields/Award_criteriaSocial_employment_details__c.field-meta.xml," ",CustomField Award_criteriaSocial_employment_details__c,M,,log,📰
-objects/Opportunity/fields/Award_criteria_Implementation_plan__c.field-meta.xml," ",CustomField Award_criteria_Implementation_plan__c,M,,log,📰
-objects/Opportunity/fields/Award_criteria_Price__c.field-meta.xml," ",CustomField Award_criteria_Price__c,M,,log,📰
-objects/Opportunity/fields/Award_criteria_Social_employment__c.field-meta.xml," ",CustomField Award_criteria_Social_employment__c,M,,log,📰
-objects/Opportunity/fields/Bank_statement__c.field-meta.xml," ",CustomField Bank_statement__c,M,,log,📰
-objects/Opportunity/fields/Bill_of_materials__c.field-meta.xml," ",CustomField Bill_of_materials__c,M,,log,📰
-objects/Opportunity/fields/Competitor_Information__c.field-meta.xml," ",CustomField Competitor_Information__c,M,,log,📰
-objects/Opportunity/fields/Competitor__c.field-meta.xml,A,CustomField Competitor__c,,,log,📰
-objects/Opportunity/fields/Contact_form__c.field-meta.xml," ",CustomField Contact_form__c,M,,log,📰
-objects/Opportunity/fields/Contract_Duration_Type__c.field-meta.xml,A,CustomField Contract_Duration_Type__c,,,log,📰
-objects/Opportunity/fields/Contract_End_Date__c.field-meta.xml,A,CustomField Contract_End_Date__c,,,log,📰
-objects/Opportunity/fields/Criminal_record_KGC__c.field-meta.xml," ",CustomField Criminal_record_KGC__c,M,,log,📰
-objects/Opportunity/fields/Criminal_record_KHV__c.field-meta.xml," ",CustomField Criminal_record_KHV__c,M,,log,📰
-objects/Opportunity/fields/Go_No_Go_Description__c.field-meta.xml,A,CustomField Go_No_Go_Description__c,,,log,📰
-objects/Opportunity/fields/Go_No_Go__c.field-meta.xml,A,CustomField Go_No_Go__c,,,log,📰
-objects/Opportunity/fields/Guarantee_modalities__c.field-meta.xml," ",CustomField Guarantee_modalities__c,M,,log,📰
-objects/Opportunity/fields/Guarantee_required__c.field-meta.xml," ",CustomField Guarantee_required__c,M,,log,📰
-objects/Opportunity/fields/Initiative_Party__c.field-meta.xml," ",CustomField Initiative_Party__c,M,,log,📰
-objects/Opportunity/fields/Internal_validation_date__c.field-meta.xml,A,CustomField Internal_validation_date__c,,,log,📰
-objects/Opportunity/fields/Location_visit_date__c.field-meta.xml,A,CustomField Location_visit_date__c,,,log,📰
-objects/Opportunity/fields/Loss_Reason__c.field-meta.xml," ",CustomField Loss_Reason__c,M,,log,📰
-objects/Opportunity/fields/Number_Contract_Years_Fixed__c.field-meta.xml,A,CustomField Number_Contract_Years_Fixed__c,,,log,📰
-objects/Opportunity/fields/Number_Contract_Years_Optional__c.field-meta.xml,A,CustomField Number_Contract_Years_Optional__c,,,log,📰
-objects/Opportunity/fields/Q_A__c.field-meta.xml,A,CustomField Q_A__c,,,log,📰
-objects/Opportunity/fields/Reference_list__c.field-meta.xml," ",CustomField Reference_list__c,M,,log,📰
-objects/Opportunity/fields/Social_security_certificate_RSZ__c.field-meta.xml," ",CustomField Social_security_certificate_RSZ__c,M,,log,📰
-objects/Opportunity/fields/Special_format_requirement_Tender__c.field-meta.xml," ",CustomField Special_format_requirement_Tender__c,M,,log,📰
-objects/Opportunity/fields/Specification_number_Client_reference__c.field-meta.xml," ",CustomField Specification_number_Client_reference__c,M,,log,📰
-objects/Opportunity/fields/Submission_date__c.field-meta.xml,A,CustomField Submission_date__c,,,log,📰
-objects/Opportunity/fields/Submit_Via__c.field-meta.xml,A,CustomField Submit_Via__c,,,log,📰
-objects/Opportunity/recordTypes/One_Shot.recordType-meta.xml,A,RecordType One_Shot,,,log,📰
-objects/Opportunity/recordTypes/Standard.recordType-meta.xml,A,RecordType Standard,,,log,📰
-objects/Opportunity/recordTypes/Tender.recordType-meta.xml,A,RecordType Tender,,,log,📰
-objects/Opportunity/validationRules/Go_for_Submission_Stage.validationRule-meta.xml,A,ValidationRule Go_for_Submission_Stage,,,log,📰
-objects/Opportunity/validationRules/Loss_Reason_Mandatory.validationRule-meta.xml,A,ValidationRule Loss_Reason_Mandatory,,,log,📰
-objects/Quote/compactLayouts/Quote_Compact_Layout.compactLayout-meta.xml," ",CompactLayout Quote_Compact_Layout,M,,log,📰
-objects/Quote/recordTypes/B2B_Tender.recordType-meta.xml," ",RecordType B2B_Tender,M,,log,📰
-objects/Quote/recordTypes/Public_Tender.recordType-meta.xml," ",RecordType Public_Tender,M,,log,📰
-objects/Quote/recordTypes/Quick_Quote.recordType-meta.xml," ",RecordType Quick_Quote,M,,log,📰
-objects/Quote/validationRules/ATAK_Project_needed_for_Closed.validationRule-meta.xml," ",ValidationRule ATAK_Project_needed_for_Closed,M,,log,📰
-objects/Quote/validationRules/Presented_only_when_Go.validationRule-meta.xml,A,ValidationRule Presented_only_when_Go,,,log,📰
-pathAssistants/Default_Opportunity.pathAssistant-meta.xml," ",PathAssistant Default_Opportunity,M,,log,📰
+flexipages/Time_Sheet_Record_Page.flexipage-meta.xml," ",FlexiPage Time_Sheet_Record_Page,M,,log,📰
+flowDefinitions/Opportunity_Scheduled_Flow_Reminders_for_Deadlines.flowDefinition-meta.xml,A,FlowDefinition Opportunity_Scheduled_Flow_Reminders_for_Deadlines,,,log,📰
+flows/Opportunity_Scheduled_Flow_Reminders_for_Deadlines.flow-meta.xml,A,Flow Opportunity_Scheduled_Flow_Reminders_for_Deadlines,,,log,📰
+lwc/timeSheetEntryReview/timeSheetEntryReview.css,A,LightningComponentBundle timeSheetEntryReview/timeSheetEntryReview.css,,,log,📰
+lwc/timeSheetEntryReview/timeSheetEntryReview.html,A,LightningComponentBundle timeSheetEntryReview/timeSheetEntryReview.html,,,log,📰
+lwc/timeSheetEntryReview/timeSheetEntryReview.js,A,LightningComponentBundle timeSheetEntryReview/timeSheetEntryReview.js,,,log,📰
+lwc/timeSheetEntryReview/timeSheetEntryReview.js-meta.xml,A,LightningComponentBundle timeSheetEntryReview/timeSheetEntryReview.js-meta.xml,,,log,📰
+notificationTypeConfig/NotificationTypeConfig.config-meta.xml," ",NotificationTypeConfig NotificationTypeConfig,M,,log,📰
+notificationtypes/Deadlines.notiftype-meta.xml,A,CustomNotificationType Deadlines,,,log,📰
+objects/Location_Visit__c/fields/Visit_Date_date_only__c.field-meta.xml,A,CustomField Visit_Date_date_only__c,,,log,📰
+objects/Opportunity/fields/Submission_Date_date_only__c.field-meta.xml,A,CustomField Submission_Date_date_only__c,,,log,📰
+objects/Quote/fields/Place_Document_signature__c.field-meta.xml,A,CustomField Place_Document_signature__c,,,log,📰
 profiles/Admin.profile-meta.xml," ",Profile Admin,M,,log,📰
 profiles/Analytics Cloud Integration User.profile-meta.xml," ",Profile Analytics Cloud Integration User,M,,log,📰
 profiles/Analytics Cloud Security User.profile-meta.xml," ",Profile Analytics Cloud Security User,M,,log,📰
@@ -103,9 +47,6 @@ reportTypes/Opportunities_with_Historical_Trending.reportType-meta.xml," ",Repor
 reportTypes/Quotes.reportType-meta.xml," ",ReportType Quotes,M,,log,📰
 settings/Forecasting.settings-meta.xml," ",Settings Forecasting,M,,log,📰
 settings/ForecastingObjectList.settings-meta.xml," ",Settings ForecastingObjectList,M,,log,📰
-standardValueSets/LeadSource.standardValueSet-meta.xml," ",StandardValueSet LeadSource,M,,log,📰
-standardValueSets/OpportunityStage.standardValueSet-meta.xml," ",StandardValueSet OpportunityStage,M,,log,📰
-standardValueSets/QuoteStatus.standardValueSet-meta.xml," ",StandardValueSet QuoteStatus,M,,log,📰
 translations/en_US.translation-meta.xml," ",Translations en_US,M,,log,📰
 translations/fr.translation-meta.xml," ",Translations fr,M,,log,📰
 translations/nl_NL.translation-meta.xml," ",Translations nl_NL,M,,log,📰

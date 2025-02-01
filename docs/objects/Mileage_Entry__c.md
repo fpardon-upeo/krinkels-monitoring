@@ -55,7 +55,7 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Mileage_Entry_Record_Page.](../pages/Mileage_Entry_Record_Page..md) |  Record Page |
+| [Mileage_Entry_Record_Page](../pages/Mileage_Entry_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

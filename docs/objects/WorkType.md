@@ -52,9 +52,9 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Service_Contract_Record_Page.](../pages/Service_Contract_Record_Page..md) |  Record Page |
-| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
-| [Work_Type_Record_Page.](../pages/Work_Type_Record_Page..md) |  Record Page |
+| [Service_Contract_Record_Page](../pages/Service_Contract_Record_Page.md) |  Record Page |
+| [Work_Order_Record_Page](../pages/Work_Order_Record_Page.md) |  Record Page |
+| [Work_Type_Record_Page](../pages/Work_Type_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

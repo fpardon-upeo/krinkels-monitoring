@@ -82,6 +82,7 @@
 | Statement_of_Truth__c | Statement of Truth | Picklist | <!-- --> |
 | Subject__c | Subject | Text | <!-- --> |
 | Submission_date__c | Submission Date | DateTime | <!-- --> |
+| Submission_Date_date_only__c | Submission Date (date only) | Date | <!-- --> |
 | Submission_Date_Due__c | Submission Date Due | Date | <!-- --> |
 | Submission_Method__c | Submission Method | Picklist | <!-- --> |
 | Submit_Via__c | Submit Via | Picklist | <!-- --> |
@@ -119,6 +120,7 @@
 | :----  | :-------- | :--: | :---------- | 
 | 💻 | [Account_Screen_Flow_Add_Extra_Work](../flows/Account_Screen_Flow_Add_Extra_Work.md) [🕒](../flows/Account_Screen_Flow_Add_Extra_Work-history.md) |  Screen Flow | <!-- --> |
 | 💻 | [Account_Screen_Flow_Add_Extra_Work_Quote](../flows/Account_Screen_Flow_Add_Extra_Work_Quote.md) |  Screen Flow | <!-- --> |
+| 💻 | [Opportunity_Scheduled_Flow_Reminders_for_Deadlines](../flows/Opportunity_Scheduled_Flow_Reminders_for_Deadlines.md) [🕒](../flows/Opportunity_Scheduled_Flow_Reminders_for_Deadlines-history.md) |  Scheduled | <!-- --> |
 | 💻 | [Opportunity_Screen_Flow_ATAK_Project_Request](../flows/Opportunity_Screen_Flow_ATAK_Project_Request.md) |  Screen Flow | <!-- --> |
 | 💻 | [Opportunity_Screen_Flow_Pricing_Request](../flows/Opportunity_Screen_Flow_Pricing_Request.md) [🕒](../flows/Opportunity_Screen_Flow_Pricing_Request-history.md) |  Screen Flow | <!-- --> |
 | Opportunity | [Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote](../flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote.md) [🕒](../flows/Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote-history.md) |  Record After Save | Keeps quote in sync when opportunity amounts or contact is changed |
@@ -137,16 +139,16 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [B2B_Opportunity_Record_Page.](../pages/B2B_Opportunity_Record_Page..md) |  Record Page |
-| [General_Opportunity_Record_Page.](../pages/General_Opportunity_Record_Page..md) |  Record Page |
-| [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
-| [One_Shot_Record_Page.](../pages/One_Shot_Record_Page..md) |  Record Page |
-| [Opportunity_Product_Record_Page.](../pages/Opportunity_Product_Record_Page..md) |  Record Page |
-| [Opportunity_Record_Page.](../pages/Opportunity_Record_Page..md) |  Record Page |
-| [Public_Tender_Opportunity_Record_Page.](../pages/Public_Tender_Opportunity_Record_Page..md) |  Record Page |
-| [Quick_Opportunity_Record_Page.](../pages/Quick_Opportunity_Record_Page..md) |  Record Page |
-| [Quote_Quick_Quote_Record_Page.](../pages/Quote_Quick_Quote_Record_Page..md) |  Record Page |
-| [Quote_Record_Page.](../pages/Quote_Record_Page..md) |  Record Page |
+| [B2B_Opportunity_Record_Page](../pages/B2B_Opportunity_Record_Page.md) |  Record Page |
+| [General_Opportunity_Record_Page](../pages/General_Opportunity_Record_Page.md) |  Record Page |
+| [Location_Visit_Record_Page](../pages/Location_Visit_Record_Page.md) |  Record Page |
+| [One_Shot_Record_Page](../pages/One_Shot_Record_Page.md) |  Record Page |
+| [Opportunity_Product_Record_Page](../pages/Opportunity_Product_Record_Page.md) |  Record Page |
+| [Opportunity_Record_Page](../pages/Opportunity_Record_Page.md) |  Record Page |
+| [Public_Tender_Opportunity_Record_Page](../pages/Public_Tender_Opportunity_Record_Page.md) |  Record Page |
+| [Quick_Opportunity_Record_Page](../pages/Quick_Opportunity_Record_Page.md) |  Record Page |
+| [Quote_Quick_Quote_Record_Page](../pages/Quote_Quick_Quote_Record_Page.md) |  Record Page |
+| [Quote_Record_Page](../pages/Quote_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

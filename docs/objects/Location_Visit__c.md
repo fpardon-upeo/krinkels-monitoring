@@ -48,6 +48,7 @@
 | Unit__c | Unit | Picklist | <!-- --> |
 | Visit_Address__c | Visit Address | Address | <!-- --> |
 | Visit_Date__c | Visit Date | DateTime | <!-- --> |
+| Visit_Date_date_only__c | Visit Date (date only) | Date | <!-- --> |
 | Visit_Notes__c | Visit Notes | Html | <!-- --> |
 | Visitor_Internal__c | Visitor (Internal) | Lookup | <!-- --> |
 | Work_Order__c | Work Order | Lookup | <!-- --> |
@@ -72,6 +73,7 @@
 
 | Object | Name      | Type | Description |
 | :----  | :-------- | :--: | :---------- | 
+| 💻 | [Opportunity_Scheduled_Flow_Reminders_for_Deadlines](../flows/Opportunity_Scheduled_Flow_Reminders_for_Deadlines.md) [🕒](../flows/Opportunity_Scheduled_Flow_Reminders_for_Deadlines-history.md) |  Scheduled | <!-- --> |
 | Location_Visit__c | [Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit](../flows/Location_Visit_After_Save_Record_Triggered_Inform_visitor_when_Opportunity_visit.md) |  Record After Save | Send a notification to the expected visitor that they are expected to do a visit |
 
 
@@ -81,7 +83,7 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
+| [Location_Visit_Record_Page](../pages/Location_Visit_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

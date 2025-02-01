@@ -68,9 +68,9 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [ATAK_Project_Record_Page.](../pages/ATAK_Project_Record_Page..md) |  Record Page |
-| [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
-| [Quote_Quick_Quote_Record_Page.](../pages/Quote_Quick_Quote_Record_Page..md) |  Record Page |
+| [ATAK_Project_Record_Page](../pages/ATAK_Project_Record_Page.md) |  Record Page |
+| [Operational_Account_Record_Page](../pages/Operational_Account_Record_Page.md) |  Record Page |
+| [Quote_Quick_Quote_Record_Page](../pages/Quote_Quick_Quote_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

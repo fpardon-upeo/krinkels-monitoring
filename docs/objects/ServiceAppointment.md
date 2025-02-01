@@ -132,11 +132,11 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
-| [Service_Appointment_Record_Page.](../pages/Service_Appointment_Record_Page..md) |  Record Page |
-| [Service_Appointment_Service_Report_NL.](../pages/Service_Appointment_Service_Report_NL..md) |  Service Document |
-| [Service_Appointment_Service_Report_Without_Signature_NL.](../pages/Service_Appointment_Service_Report_Without_Signature_NL..md) |  Service Document |
-| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
+| [Service_Appointment](../pages/Service_Appointment.md) |  Service Document |
+| [Service_Appointment_Record_Page](../pages/Service_Appointment_Record_Page.md) |  Record Page |
+| [Service_Appointment_Service_Report_NL](../pages/Service_Appointment_Service_Report_NL.md) |  Service Document |
+| [Service_Appointment_Service_Report_Without_Signature_NL](../pages/Service_Appointment_Service_Report_Without_Signature_NL.md) |  Service Document |
+| [Work_Order_Record_Page](../pages/Work_Order_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

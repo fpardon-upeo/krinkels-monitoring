@@ -2,9 +2,9 @@
 
 Contains the entire list of metadatas that are present in the monitored org (not all of them are in the git backup)
 
-Metadatas: 16121
+Metadatas: 16129
 
-<details><summary>ApexClass (1071)</summary>
+<details><summary>ApexClass (1072)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">ATAKMaterialService</a><br/>
@@ -776,6 +776,7 @@ Metadatas: 16121
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">TimeSheetCalculationServiceTest</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">TimeSheetController</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">TimeSheetControllerTest</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">TimeSheetEntryController</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">TimeSheetHandler</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">TimeSheetProjectLinkService</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ApexClasses/home" target="_blank">TimeSheetProjectLinkServiceTest</a><br/>
@@ -1605,7 +1606,7 @@ Metadatas: 16121
 
 </details>
 
-<details><summary>CustomField (1711)</summary>
+<details><summary>CustomField (1714)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/A/FieldsAndRelationships/T/view" target="_blank">ATAK_Internal_Project_Map__mdt.ATAK_Code__c</a><br/>
@@ -2567,6 +2568,7 @@ Metadatas: 16121
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/U/FieldsAndRelationships/n/view" target="_blank">Location_Visit__c.Unit__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/V/FieldsAndRelationships/i/view" target="_blank">Location_Visit__c.Visit_Address__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/V/FieldsAndRelationships/i/view" target="_blank">Location_Visit__c.Visit_Date__c</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/V/FieldsAndRelationships/i/view" target="_blank">Location_Visit__c.Visit_Date_date_only__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/V/FieldsAndRelationships/i/view" target="_blank">Location_Visit__c.Visitor_Internal__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/W/FieldsAndRelationships/o/view" target="_blank">Location_Visit__c.Work_Order__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/E/FieldsAndRelationships/n/view" target="_blank">Logger_Settings__c.Enable_Inbound_Logs__c</a><br/>
@@ -2665,6 +2667,7 @@ Metadatas: 16121
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/t/view" target="_blank">Opportunity.Statement_of_Proper_Execution__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/t/view" target="_blank">Opportunity.Statement_of_Truth__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/u/view" target="_blank">Opportunity.Submission_Date_Due__c</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/u/view" target="_blank">Opportunity.Submission_Date_date_only__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/u/view" target="_blank">Opportunity.Submission_date__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/u/view" target="_blank">Opportunity.Submit_Via__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/S/FieldsAndRelationships/u/view" target="_blank">Opportunity.Sustainability_Declaration__c</a><br/>
@@ -2746,6 +2749,7 @@ Metadatas: 16121
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/P/FieldsAndRelationships/O/view" target="_blank">Quote.PO_NUmber__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/P/FieldsAndRelationships/a/view" target="_blank">Quote.Payment_Term__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/P/FieldsAndRelationships/e/view" target="_blank">Quote.Permanence_Fee__c</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/P/FieldsAndRelationships/l/view" target="_blank">Quote.Place_Document_signature__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/P/FieldsAndRelationships/r/view" target="_blank">Quote.Price_Request_BS_Comments__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/P/FieldsAndRelationships/r/view" target="_blank">Quote.Price_Request_Demand_Comments__c</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/ObjectManager/P/FieldsAndRelationships/r/view" target="_blank">Quote.Price_Request_Priority__c</a><br/>
@@ -10846,9 +10850,10 @@ Metadatas: 16121
 
 </details>
 
-<details><summary>CustomNotificationType (2)</summary>
+<details><summary>CustomNotificationType (3)</summary>
 
 
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomNotifications/home" target="_blank">Deadlines</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomNotifications/home" target="_blank">Service_Contract_Approval_Notification</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/CustomNotifications/home" target="_blank">Standard_Notification</a><br/>
 
@@ -13254,7 +13259,7 @@ Metadatas: 16121
 
 </details>
 
-<details><summary>Flow (106)</summary>
+<details><summary>Flow (107)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner</a><br/>
@@ -13279,6 +13284,7 @@ Metadatas: 16121
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Operator_Created_Event_e_Create_Service_Resource</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Opportunity_Before_Save_Record_Triggered_Naming_Convention</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Opportunity_Scheduled_Flow_Reminders_for_Deadlines</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Opportunity_Screen_Flow_ATAK_Project_Request</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Opportunity_Screen_Flow_Pricing_Request</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/Flows/home" target="_blank">Platform_Event_Reorder_Work_Steps</a><br/>
@@ -13366,7 +13372,7 @@ Metadatas: 16121
 
 </details>
 
-<details><summary>FlowDefinition (106)</summary>
+<details><summary>FlowDefinition (107)</summary>
 
 
   • ATAK_Project_After_Save_Record_Triggered_Set_Territory_And_Owner<br/>
@@ -13391,6 +13397,7 @@ Metadatas: 16121
   • Operator_Created_Event_e_Create_Service_Resource<br/>
   • Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote<br/>
   • Opportunity_Before_Save_Record_Triggered_Naming_Convention<br/>
+  • Opportunity_Scheduled_Flow_Reminders_for_Deadlines<br/>
   • Opportunity_Screen_Flow_ATAK_Project_Request<br/>
   • Opportunity_Screen_Flow_Pricing_Request<br/>
   • Platform_Event_Reorder_Work_Steps<br/>
@@ -13918,7 +13925,7 @@ Metadatas: 16121
 
 </details>
 
-<details><summary>LightningComponentBundle (236)</summary>
+<details><summary>LightningComponentBundle (237)</summary>
 
 
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">FSL__animation</a><br/>
@@ -14148,6 +14155,7 @@ Metadatas: 16121
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">startStopTimer</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">timeSheetCalendar</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">timeSheetCalendarCustom</a><br/>
+  • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">timeSheetEntryReview</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">timeSheetHeader</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">timesheetEntryForm</a><br/>
   • <a href="https://krinkelsgreencare--upeodev.sandbox.my.salesforce.com/lightning/setup/LightningComponents/home" target="_blank">toastMessage</a><br/>

@@ -77,8 +77,8 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Service_Appointment_Record_Page.](../pages/Service_Appointment_Record_Page..md) |  Record Page |
-| [Service_Resource_Record_Page.](../pages/Service_Resource_Record_Page..md) |  Record Page |
+| [Service_Appointment_Record_Page](../pages/Service_Appointment_Record_Page.md) |  Record Page |
+| [Service_Resource_Record_Page](../pages/Service_Resource_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

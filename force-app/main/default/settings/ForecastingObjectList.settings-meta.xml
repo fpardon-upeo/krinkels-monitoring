@@ -110,6 +110,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -597,6 +601,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -727,6 +732,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -1214,6 +1223,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -1344,6 +1354,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -1836,6 +1850,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -1966,6 +1981,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -2453,6 +2472,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -2583,6 +2603,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -3075,6 +3099,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -3205,6 +3230,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -3692,6 +3721,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -3822,6 +3852,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -4314,6 +4348,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -4444,6 +4479,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -4931,6 +4970,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -5061,6 +5101,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -5553,6 +5597,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -5683,6 +5728,10 @@
             <label>Last Stage Change Date</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
             <label>Contract Number</label>
         </forecastingObjectListLabelMappings>
@@ -6170,6 +6219,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -6298,6 +6348,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
             <label>Last Stage Change Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
@@ -6792,6 +6846,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>
@@ -6920,6 +6975,10 @@
         <forecastingObjectListLabelMappings>
             <field>OPPORTUNITY.LAST_STAGE_CHANGE</field>
             <label>Last Stage Change Date</label>
+        </forecastingObjectListLabelMappings>
+        <forecastingObjectListLabelMappings>
+            <field>00Ndu0000008ylN</field>
+            <label>Submission Date (date only)</label>
         </forecastingObjectListLabelMappings>
         <forecastingObjectListLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
@@ -7409,6 +7468,7 @@
             <field>00Ndu0000008kk1</field>
             <field>00Ndu0000008l6b</field>
             <field>00Ndu0000008qJB</field>
+            <field>00Ndu0000008ylN</field>
             <field>00NKF00000Q85OQ</field>
             <field>00NKF00000Q85OV</field>
             <field>00Ndu0000008kaN</field>

@@ -62,13 +62,13 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Asset_Record_Page.](../pages/Asset_Record_Page..md) |  Record Page |
-| [Asset_Scheduler.](../pages/Asset_Scheduler..md) |  App Page |
-| [Location_Visit_Record_Page.](../pages/Location_Visit_Record_Page..md) |  Record Page |
-| [Maintenance_Asset_Record_Page.](../pages/Maintenance_Asset_Record_Page..md) |  Record Page |
-| [Operational_Account_Record_Page.](../pages/Operational_Account_Record_Page..md) |  Record Page |
-| [Service_Appointment.](../pages/Service_Appointment..md) |  Service Document |
-| [Work_Order_Service_Report.](../pages/Work_Order_Service_Report..md) |  Service Document |
+| [Asset_Record_Page](../pages/Asset_Record_Page.md) |  Record Page |
+| [Asset_Scheduler](../pages/Asset_Scheduler.md) |  App Page |
+| [Location_Visit_Record_Page](../pages/Location_Visit_Record_Page.md) |  Record Page |
+| [Maintenance_Asset_Record_Page](../pages/Maintenance_Asset_Record_Page.md) |  Record Page |
+| [Operational_Account_Record_Page](../pages/Operational_Account_Record_Page.md) |  Record Page |
+| [Service_Appointment](../pages/Service_Appointment.md) |  Service Document |
+| [Work_Order_Service_Report](../pages/Work_Order_Service_Report.md) |  Service Document |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

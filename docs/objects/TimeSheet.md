@@ -59,6 +59,7 @@
 | [TimeSheetCalculationServiceTest](../apex/TimeSheetCalculationServiceTest.md) | Test |
 | [TimeSheetController](../apex/TimeSheetController.md) | Lightning Controller |
 | [TimeSheetControllerTest](../apex/TimeSheetControllerTest.md) | Test |
+| [TimeSheetEntryController](../apex/TimeSheetEntryController.md) | Lightning Controller |
 | [TimeSheetHandler](../apex/TimeSheetHandler.md) | Class |
 | [TimeSheetMapController](../apex/TimeSheetMapController.md) | Lightning Controller |
 | [TimeSheetProjectLinkService](../apex/TimeSheetProjectLinkService.md) | Class |
@@ -71,10 +72,10 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Home_Page_Contract_Manager.](../pages/Home_Page_Contract_Manager..md) |  Home Page |
-| [Time_Sheet_Entry_Record_Page.](../pages/Time_Sheet_Entry_Record_Page..md) |  Record Page |
-| [Time_Sheet_Record_Page.](../pages/Time_Sheet_Record_Page..md) |  Record Page |
-| [Work_Order_Record_Page.](../pages/Work_Order_Record_Page..md) |  Record Page |
+| [Home_Page_Contract_Manager](../pages/Home_Page_Contract_Manager.md) |  Home Page |
+| [Time_Sheet_Entry_Record_Page](../pages/Time_Sheet_Entry_Record_Page.md) |  Record Page |
+| [Time_Sheet_Record_Page](../pages/Time_Sheet_Record_Page.md) |  Record Page |
+| [Work_Order_Record_Page](../pages/Work_Order_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_

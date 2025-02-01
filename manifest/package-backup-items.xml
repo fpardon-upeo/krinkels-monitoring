@@ -115,6 +115,7 @@
         <members>TimeSheetCalculationServiceTest</members>
         <members>TimeSheetController</members>
         <members>TimeSheetControllerTest</members>
+        <members>TimeSheetEntryController</members>
         <members>TimeSheetHandler</members>
         <members>TimeSheetProjectLinkService</members>
         <members>TimeSheetProjectLinkServiceTest</members>
@@ -606,6 +607,7 @@
         <members>Location_Visit__c.Unit__c</members>
         <members>Location_Visit__c.Visit_Address__c</members>
         <members>Location_Visit__c.Visit_Date__c</members>
+        <members>Location_Visit__c.Visit_Date_date_only__c</members>
         <members>Location_Visit__c.Visitor_Internal__c</members>
         <members>Location_Visit__c.Work_Order__c</members>
         <members>Logger_Settings__c.Enable_Inbound_Logs__c</members>
@@ -704,6 +706,7 @@
         <members>Opportunity.Statement_of_Proper_Execution__c</members>
         <members>Opportunity.Statement_of_Truth__c</members>
         <members>Opportunity.Submission_Date_Due__c</members>
+        <members>Opportunity.Submission_Date_date_only__c</members>
         <members>Opportunity.Submission_date__c</members>
         <members>Opportunity.Submit_Via__c</members>
         <members>Opportunity.Sustainability_Declaration__c</members>
@@ -785,6 +788,7 @@
         <members>Quote.PO_NUmber__c</members>
         <members>Quote.Payment_Term__c</members>
         <members>Quote.Permanence_Fee__c</members>
+        <members>Quote.Place_Document_signature__c</members>
         <members>Quote.Price_Request_BS_Comments__c</members>
         <members>Quote.Price_Request_Demand_Comments__c</members>
         <members>Quote.Price_Request_Priority__c</members>
@@ -2176,6 +2180,7 @@
         <name>CustomMetadata</name>
     </types>
     <types>
+        <members>Deadlines</members>
         <members>Service_Contract_Approval_Notification</members>
         <members>Standard_Notification</members>
         <name>CustomNotificationType</name>
@@ -2507,6 +2512,7 @@
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
         <members>Opportunity_Before_Save_Record_Triggered_Naming_Convention</members>
+        <members>Opportunity_Scheduled_Flow_Reminders_for_Deadlines</members>
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
@@ -2614,6 +2620,7 @@
         <members>Operator_Created_Event_e_Create_Service_Resource</members>
         <members>Opportunity_After_Save_Record_Triggered_Sync_Amount_and_stages_to_Quote</members>
         <members>Opportunity_Before_Save_Record_Triggered_Naming_Convention</members>
+        <members>Opportunity_Scheduled_Flow_Reminders_for_Deadlines</members>
         <members>Opportunity_Screen_Flow_ATAK_Project_Request</members>
         <members>Opportunity_Screen_Flow_Pricing_Request</members>
         <members>Platform_Event_Reorder_Work_Steps</members>
@@ -3126,6 +3133,7 @@
         <members>startStopTimer</members>
         <members>timeSheetCalendar</members>
         <members>timeSheetCalendarCustom</members>
+        <members>timeSheetEntryReview</members>
         <members>timeSheetHeader</members>
         <members>timesheetEntryForm</members>
         <members>toastMessage</members>

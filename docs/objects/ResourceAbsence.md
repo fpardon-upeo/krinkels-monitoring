@@ -74,7 +74,7 @@
 
 | Lightning Page | Type |
 | :----      | :--: | 
-| [Resource_Absence_Record_Page.](../pages/Resource_Absence_Record_Page..md) |  Record Page |
+| [Resource_Absence_Record_Page](../pages/Resource_Absence_Record_Page.md) |  Record Page |
 
 
 _Documentation generated with [sfdx-hardis](https://sfdx-hardis.cloudity.com)_
